@@ -22,20 +22,36 @@ A tavern that serves as a cover for shady dealings, harboring fugitives, and cov
 
 ---
 
+## The Five Great Houses of DragonLand
+
+**Type:** Feudal nobility — the political backbone of DragonLand
+
+Five great houses rule the domains of DragonLand, each associated with an element. A sixth zone — the **Dragon Scar** — is unclaimed no-man's-land where La Última Gota tavern sits.
+
+| House | Element | Domain | Title | Known Members |
+|-------|---------|--------|-------|--------------|
+| **Casa Gremmory** | Fire | Noctyra | Lords of Noctyra | XXXX Gremmory "El Sabio Zafiro" (criminal leader of Brastabro), Verly Gremmory, Torin Gremmory "El Paladín Sangriento" |
+| **Casa IcePeak** | Ice | Valdrenor | Lords of Valdrenor | Lunei (Rudolph) IcePeak, Blitzen IcePeak (Supreme Lord), + 7 siblings (WinterSpeak dynasty) |
+| **DragonHeart** | Arcana | Kharvok | Lords of Kharvok | *(No named members yet)* |
+| **Casa DeepWater** | Sea/Rivers | Draknor | Lords of Draknor and Other Lands | *(No named members yet)* |
+| **Casa Draksky** | Air/Wind | — | Union of minor lords | Farquad Drasky (military commander), Ginger Drasky |
+
+---
+
 ## Dragonforce
 
-**Type:** Criminal / military organization
+**Type:** Military / special forces of DragonLand (not a criminal organization)
 **Known For:** Assassination-by-arson tactics (gunpowder trails + fire)
 **Symbol:** Logo appears on the bounty hunter's left pauldron
 
-A powerful organization with both military and criminal operations. Tidus was a former member (special agent for dragonborn royalty) and instantly recognized their arson method when Red's crew deployed it at the tavern. The Bald Enemy's Dragonforce superior was impersonated by Zacarías using Minor Illusion, confirming a chain of command exists within the organization. Red's crew uses Dragonforce methods — possibly on Malacor's behalf — but it is **unconfirmed** whether Malacor formally leads or belongs to Dragonforce.
+The military and special forces of DragonLand — not a criminal organization per se, though individual operatives may act on behalf of criminal interests. Tidus was a former member (special agent for dragonborn royalty, akin to a "Dragonborn Delta Force") and instantly recognized their arson method when Red's crew deployed it at the tavern. The Bald Enemy's Dragonforce superior was impersonated by Zacarías using Minor Illusion, confirming a chain of command exists within the organization. Red's crew uses Dragonforce methods — possibly on Malacor's behalf — but it is **unconfirmed** whether Malacor formally leads or belongs to Dragonforce.
 
 | Person | Connection | Status |
 |--------|------------|--------|
 | **Tidus** | Former member / special agent | Left before campaign |
 | **The Bounty Hunter** | Wears Dragonforce logo prominently | Alive |
 | **The Bald Enemy** | Active soldier, subordinate of Malacor | **Dead** |
-| **Red / Reto** | Uses Dragonforce arson playbook | Alive — escaped |
+| **Red / Reto** | Uses Dragonforce arson playbook; holds Tidus's secret | **Uncertain** — DM notes suggest dead; transcripts show escape |
 
 ---
 
@@ -84,10 +100,11 @@ The bounty hunter's primary affiliation. Identified by a secret verbal code that
 **Type:** Espionage and intelligence network
 **Known Operations:** Has sentinels and operatives; a sentinel with a dragon-hand mark on his forehead fled through the mountain caves carrying intelligence to DragonLand.
 
-An organization with operatives in the field. Their insignia appears on the bounty hunter's armor alongside Dragonforce and La Piedra Sangrante. Malacor's interference is disrupting La Blanca's operations, according to Dracus.
+An organization with operatives in the field. Their insignia appears on the bounty hunter's armor alongside Dragonforce and La Piedra Sangrante. Malacor's interference is disrupting La Blanca's operations, according to Dracus. **Khael Varos "El Heraldo"** (garbled in transcripts as "Caelvaros") is a confirmed operative of this organization.
 
 | Person | Connection | Status |
 |--------|------------|--------|
+| **Khael Varos "El Heraldo"** | Operative (top-priority poison target at tavern) | Alive — hiding, suspicious |
 | **The Bounty Hunter** | Wears their insignia | Alive |
 | **The Sentinel** | Operative; fled to DragonLand with intel | Presumably reached destination |
 
@@ -102,33 +119,33 @@ No members identified. No further details available.
 
 ---
 
-## Caste of the Dead Without Names (Nameless Order)
+## Orden del Silencio (Order of Silence)
 
-**Type:** Monastic order
+**Type:** Monastic order (formerly referred to as "Caste of the Dead Without Names" / Nameless Order)
 **Philosophy:** Monks sacrifice their identities to achieve mastery over body and spirit
 **Master's Master:** A forest elf
 
-An order of monks who erase their names and histories to pursue three disciplines: Healing (orange flame), Invisibility (black flame), and Brute Force (red flame). Señor Nadie holds the rank of "Lower Master" (Maestro Inferior).
+An order of monks who erase their names and histories to pursue three disciplines: Healing (orange flame), Invisibility (black flame), and Brute Force (red flame). Their true name is the **Orden del Silencio** (Order of Silence). The master known as **Señor Nadie** is in fact **Faorus Rain "The Silent Monk"**, holding the rank of "Lower Master" (Maestro Inferior).
 
-| Person | Discipline | Status |
-|--------|-----------|--------|
-| **Señor Nadie** | Master — all three disciplines | Alive, allied |
-| **Rodrigo** | Chi of Healing (orange) | **Dead** — darts through the neck |
-| **Fuercitas** | Brute Force (red) | Alive, traveling with Nadie |
-| **Fresitas** | Invisibility (black) | Missing — still imprisoned? |
+| Person | True Name | Discipline | Status |
+|--------|-----------|-----------|--------|
+| **Señor Nadie** | **Faorus Rain** "The Silent Monk" | Master — all three disciplines | Alive, allied |
+| **Rodrigo** | "The Healing Silent Monk" | Chi of Healing (orange) | **Dead** — darts through the neck |
+| **Fuercitas** | "The Strong Silent Monk" | Brute Force (red) | Alive, traveling with Nadie |
+| **Fresitas** | "The Invisible Silent Monk" | Invisibility (black) | Missing — still imprisoned? |
 
 ---
 
 ## Farquad's Forces
 
 **Type:** Military / paramilitary
-**Commander:** Farquad
+**Commander:** Farquad Drasky (Casa Draksky — House of Air/Wind)
 
-A military force with soldiers, dragon trainers equipped with dragon whistles, and at least one Level 15 elven tactician. Used a Prison Tortuga to transport captured enemies to DragonLand. Connected to the Golden Crown through Farquad.
+A military force with soldiers, dragon trainers equipped with dragon whistles, and at least one Level 15 elven tactician. Used a Prison Tortuga to transport captured enemies to DragonLand. Connected to the Golden Crown through Farquad. Farquad is from **Casa Draksky**, the union of minor lords associated with the element of Air/Wind.
 
 | Person | Role | Status |
 |--------|------|--------|
-| **Farquad** | Commander | Active |
+| **Farquad Drasky** | Commander (Casa Draksky) | Active |
 | **The Elven Tactician** | Elite operative (~Level 15) | Active |
 | **Dragon Trainers** | Carry dragon whistles | Active |
 
@@ -146,7 +163,7 @@ Malacor's operatives use Dragonforce methods, but whether Malacor formally leads
 |--------|------|--------|
 | **Malacor** | Leader | At large |
 | **The Bald Enemy** | Enforcer | **Dead** |
-| **Red / Reto** | Operative using Dragonforce methods | Alive — escaped |
+| **Red / Reto** | Operative using Dragonforce methods; holds Tidus's secret | **Uncertain** — DM notes suggest dead; transcripts show escape |
 
 ---
 

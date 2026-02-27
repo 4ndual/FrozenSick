@@ -12,13 +12,15 @@
 
 **Backstory:** Became an orphan at fifteen when the southern elven tribe was destroyed by betrayal. Taken in by a northern tribe — tolerated, not trusted. Learned to lie, persuade, and move unseen. Through usefulness rather than birth, he became involved with dragonborn royalty as a special agent in **Dragonforce** — handling problems that couldn't be solved openly. One mission went badly wrong; wounded, he sought refuge in a dwarven city. They kept him alive and hid him. He repaid the debt and never forgot it. His strongest bonds are with dwarves (who remember debts) and dragonborn (who understand discipline). Speaks "picón" with Zacarías. Has dragon-riding training from his past. Once traveled the caves with a beautiful elf woman he taught the "survival dance." Has worked at the tavern for ~2 years.
 
-**Secret:** Killed Prince Roto, the heir to the Dragonborn throne.
+**Secret:** Killed Prince Roto (Ala Rota), the legitimate heir to the Dragonborn throne. His half-brother Dranlek "El Oscuro" (La Iguana) then seized power.
+
+**Secret-Keeper:** **Red** held Tidus's secret. Red's current status is **uncertain** — DM planning notes suggest he is dead, but session transcripts show him escaping the tavern alive. If dead, Tidus's secret may have died with him or been passed on before death. If alive, Red can expose Tidus at any moment — especially dangerous given the party is currently in Dragon Born.
 
 ---
 
 ## Chapter 1 — The Tavern
 
-Delivered poisoned "special orders" (prepared by Nixira) to targets including Caelvaros. Recognized gunpowder trails from Dragonforce's arson method — the exact playbook he once followed. Tackled and knocked out Dracus when he drew a dagger, but was spotted by Farquad, triggering a chase by Dracus's 5 allies.
+Delivered poisoned "special orders" (prepared by Nixira) to targets including Khael Varos "El Heraldo" (Caelvaros). Recognized gunpowder trails from Dragonforce's arson method — the exact playbook he once followed. Tackled and knocked out Dracus when he drew a dagger, but was spotted by Farquad, triggering a chase by Dracus's 5 allies.
 
 In the dark combat aftermath, got the killing blow on the bald enemy (broke his neck while the enemy bled out). Looted a scimitar, light crossbow, gold, and silver. Nearly killed by a crossbow shot before using a super healing potion.
 

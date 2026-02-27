@@ -8,7 +8,42 @@
 
 **Dragon Born** is a smaller island off DragonLand's eastern coast — the fortress-capital of Dragonborn power. It houses the throne, the military headquarters (Dragonforce), castles, barracks, and an execution plaza. The population speaks Draconic. The party is currently here after being transported via Prison Tortuga and escaping.
 
-After Prince Robin's assassination, **La Iguana** seized the throne at Dragon Born and established a dictatorial regime over DragonLand. **Dragonforce** — once the legitimate military serving dragonborn royalty — now enforces the new order.
+**The Throne of DragonLand** is contested between two half-brothers:
+
+- **Ala Rota** (a.k.a. Prince Roto / Robin) — the legitimate heir, now assassinated.
+- **Dranlek "El Oscuro"** (a.k.a. La Iguana) — the bastard half-brother who seized the throne and is the **current king** of DragonLand.
+
+After Prince Robin's assassination, Dranlek seized the throne at Dragon Born and established a dictatorial regime over DragonLand. **Dragonforce** — once the legitimate military serving dragonborn royalty — now enforces the new order.
+
+### The Five Great Houses of DragonLand
+
+DragonLand is governed by a feudal system of five noble houses, each associated with an element and ruling a domain:
+
+| House | Element | Domain | Title |
+|-------|---------|--------|-------|
+| **Casa Gremmory** | Fire | Noctyra | Lords of Noctyra |
+| **Casa IcePeak** | Ice | Valdrenor | Lords of Valdrenor |
+| **DragonHeart** | Arcana | Kharvok | Lords of Kharvok |
+| **Casa DeepWater** | Sea/Rivers | Draknor | Lords of Draknor and Other Lands |
+| **Casa Draksky** | Air/Wind | — | Union of minor lords, regional rulers |
+
+Between the house domains lies the **Dragon Scar** — a no-man's-land also known as "Tierras de Lunei," where La Última Gota tavern is located.
+
+### The WinterSpeak Dynasty (Casa IcePeak)
+
+The IcePeak dynasty is led by **Marco Claus** and **Lady Claus** (a Santa Claus parody — all members are named after Santa's reindeer). **Lunei Milei Maili** is in fact **Rudolph IcePeak**, Lord of Commerce — one of nine IcePeak siblings:
+
+| Name | Title |
+|------|-------|
+| **Rudolph (Lunei) IcePeak** | Lord of Commerce (Señor del Comercio) |
+| **Blitzen IcePeak** | Supreme Lord of IcePeak (Señor Supremo) |
+| **Donner IcePeak** | Lord of War (Señor de la Guerra) |
+| **Prancer IcePeak** | Lord of Seas (Señor de los Mares) |
+| **Cupid IcePeak** | Lord of Pleasures (Señor de los Placeres) |
+| **Dancer IcePeak** | Lord of Whispers (Señor de los Susurros) |
+| **Comet IcePeak** | Lord of Dreams (Señor de los Sueños) |
+| **Dasher IcePeak** | Lord of Horses (Señor de los Caballos) |
+| **Vixen IcePeak** | The Traveler (El Viajero) |
 
 ---
 
@@ -24,8 +59,8 @@ After Prince Robin's assassination, **La Iguana** seized the throne at Dragon Bo
 The elves treat this as an ancient bedtime story — "like Santa Claus for elves." Lock and Hook left the Lándicas because of this prophecy. The party does not yet understand its full implications, but Prince Robin's assassination and La Iguana's rise to power may have already triggered the first conditions.
 
 **Possible Connections:**
-- "The death of the hybrid prince" → Prince Robin's assassination
-- "The rise of the lying tongue" → La Iguana seizing the throne? Or the Veil of the Seven Songs placing agents on every throne?
+- "The death of the hybrid prince" → Prince Robin (Ala Rota)'s assassination
+- "The rise of the lying tongue" → Dranlek "El Oscuro" (La Iguana) seizing the throne? Or the Veil of the Seven Songs placing agents on every throne?
 - "The true dragon" → Unknown
 - "The Tree of Life" → Unknown location/artifact
 - "The sleeping dragon" → Unknown — a cataclysmic entity
@@ -34,12 +69,12 @@ The elves treat this as an ancient bedtime story — "like Santa Claus for elves
 
 ## Historical Events
 
-### The Assassination of Prince Robin (Príncipe Roto)
+### The Assassination of Prince Robin / Ala Rota (Príncipe Roto)
 
 **When:** Before the campaign
 **Significance:** Destabilized the political order of all kingdoms
 
-Prince Robin was a Dragonborn — great-great-grandson of the original dragon who fused his bloodline with humanity. Massive (~2.50m) with large wings (lost one fighting the Crystal Elemental Dragon). The only Dragonborn in the bloodline who emerged victorious from great battles. His **assassination** — killer never found — upended the political landscape. After his death, La Iguana seized the throne and established a dictatorial regime.
+Prince Robin — also known as **Ala Rota** ("Broken Wing") — was a Dragonborn and the legitimate heir to the DragonLand throne. He was the great-great-grandson of the original dragon who fused his bloodline with humanity. Massive (~2.50m) with large wings (lost one fighting the Crystal Elemental Dragon). The only Dragonborn in the bloodline who emerged victorious from great battles. His **assassination** — killer never found — upended the political landscape. After his death, his half-brother **Dranlek "El Oscuro"** (the bastard heir, known derogatorily as "La Iguana") seized the throne and established a dictatorial regime.
 
 The demon Victus was tasked by his god to "destroy the Fallen Prince" — this may refer to Robin or a connected figure.
 

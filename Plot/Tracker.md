@@ -29,6 +29,19 @@
 
 ## Subplots (Character-Specific)
 
+### The Secret-Keepers — Each PC Has a Linked NPC
+- **What:** Each player character has an NPC who knows (or knew) their deepest secret. This creates a web of vulnerability.
+
+| PC | Secret-Keeper | Secret | Status |
+|----|--------------|--------|--------|
+| **Nixira** | **Rainbow** | Unknown — Rainbow held Nixira's secret | **Uncertain** — DM notes suggest Rainbow is dead (secret may have died with him or been passed on); transcripts show he escaped alive |
+| **Tidus** | **Red** | Unknown — Red held Tidus's secret | **Uncertain** — DM notes suggest Red is dead (secret may have died with him or been passed on); transcripts show he escaped alive |
+| **Zacarías** | **Farquad Drasky** | Unknown — Farquad holds Zacarías's secret | **Active threat** — Farquad is alive and in command |
+
+- **Why it matters:** If a secret-keeper is alive, they can leverage or expose the PC's secret at any moment. If dead, the secret may have been shared before death, or may be truly buried. Farquad is the only confirmed living secret-keeper — making Zacarías the most vulnerable.
+
+---
+
 ### Zacarías — The Arcane Library
 - **What:** A hidden chamber in the mountain caves absorbed his raven familiar and promised: *"Read me, for there lies your power."*
 - **Status:** Unexplored. Zacarías will need to return to the caves.
@@ -86,7 +99,7 @@
 ### Tidus — Why Did He Kill Prince Roto?
 - **What:** Tidus's deepest secret is that he assassinated Prince Roto, the heir to the Dragonborn throne. But he is **Chaotic Good** — loyal, protective of innocents, merciful in combat (spared the dwarf, mercy-killed Borax). A Good-aligned character doesn't commit regicide without a compelling reason.
 - **Questions:** Was it an order from within Dragonforce? Was Prince Roto corrupt, dangerous, or about to cause something worse? Was Tidus manipulated? Is this connected to the Grey Dream prophecy ("the death of the hybrid prince")? Does Tidus carry guilt, or does he believe it was righteous?
-- **Why it matters:** This act triggered La Iguana's rise, the dictatorship, and possibly the entire prophecy. The *reason* could change everything.
+- **Why it matters:** This act triggered Dranlek "El Oscuro" (La Iguana)'s rise, the dictatorship, and possibly the entire prophecy. The *reason* could change everything.
 
 ### Zacarías — Why Did He Fall from Paladin to Warlock?
 - **What:** Zacarías was once a paladin with holy abilities and divine protection. He "lost" those abilities and made a pact with Malfas, Prince of Ravens. What did he *do* to lose divine favor?
@@ -146,14 +159,18 @@
 - **What:** Found in Lunei's pocket. 24 names — possibly witnesses, targets, debts, or quest hooks.
 - **Status:** Not examined in detail. Held by Nixira/party.
 
-### Caelvaros — Did He Drink the Poison?
-- **What:** Top-priority poison target (circled in red by Lunei). Received the poisoned drink from Tidus. Unclear whether he consumed it. Now thinks the PCs tried to assassinate him.
+### Khael Varos "El Heraldo" (Caelvaros) — Did He Drink the Poison?
+- **What:** Top-priority poison target (circled in red by Lunei). A **La Blanca (Centinela Era Blanca) operative**. Received the poisoned drink from Tidus. Unclear whether he consumed it. Now thinks the PCs tried to assassinate him.
 - **Status:** Last seen hiding under a table at the tavern.
-- **Risk:** If alive and suspicious, he could become an enemy or informant against the party.
+- **Risk:** If alive and suspicious, he could become an enemy or informant against the party. As a La Blanca operative, his intelligence network could make him especially dangerous.
 
-### Rainbow — Nixira's Rival
-- **What:** Erupted in fury when Nixira's name was announced. A poisoned dish was prepared for him. The nature of their feud is unknown.
-- **Status:** Last seen at the tavern. Unknown if he consumed the poisoned food.
+### Rainbow — Nixira's Rival and Secret-Keeper
+- **What:** Erupted in fury when Nixira's name was announced. A poisoned dish was prepared for him. The nature of their feud is unknown. **Rainbow held Nixira's secret** — a critical piece of leverage.
+- **Status:** **Uncertain** — DM planning notes mark him as dead (pink), but session transcripts show him escaping the tavern alive. Unknown if he consumed the poisoned food. If dead, Nixira's secret may have died with him or been passed on. If alive, he's a walking threat.
+
+### Red — Tidus's Secret-Keeper
+- **What:** Red held **Tidus's secret** — critical leverage over the rogue. His crew laid gunpowder trails using Dragonforce arson methods.
+- **Status:** **Uncertain** — DM planning notes mark him as dead (pink), but session transcripts show him escaping the tavern alive. If dead, Tidus's secret may have died with him. If alive, he can expose Tidus at any moment.
 
 ### Red's Gunpowder
 - **What:** Gunpowder trails were laid across the tavern floor and never fully neutralized.
@@ -205,7 +222,7 @@
 
 ### The Grey Dream's Progress
 - **What:** The prophecy warns of a true dragon seeking the throne, destroying the Tree of Life, and awakening the sleeping dragon.
-- **Questions:** Have any conditions already been met? Is La Iguana "the lying tongue"? Who is "the true dragon"?
+- **Questions:** Have any conditions already been met? Is Dranlek "El Oscuro" (La Iguana) "the lying tongue"? Who is "the true dragon"?
 
 ### Val's Counter — What Happens at 20?
 - **What:** Tidus's Val medallion now tracks mercy kills (1/20). The god of death is watching.

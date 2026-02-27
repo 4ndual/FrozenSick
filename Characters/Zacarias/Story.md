@@ -9,6 +9,8 @@
 
 **Personality:** Resourceful and scheming ("I always have a plan"). Ultra-chaotic by his own admission. Reckless to the point his companions call him suicidal. Manipulative — freely uses deception and trickery. Greedy — instinctively gravitates toward loot. Despite his self-serving nature, ultimately loyal to the group.
 
+**Secret-Keeper:** **Farquad Drasky** (Casa Draksky) holds Zacarías's secret. Farquad is **alive and in command** — making Zacarías the most vulnerable PC, as his secret-keeper is an active antagonist with military resources.
+
 **Backstory:** Once a paladin who lost his holy abilities and divine protection. Made a pact with Malfas, Prince of Ravens, gaining a raven familiar and warlock powers. Was questioned and underestimated because of being a gnome, which drove his ambition. Was once close friends with Malacor/Malaquías — they shared a faith or order — but something went wrong between them. Denies giving Malacor "the golden crown." The raven that occasionally visited the tavern was always his familiar in disguise. Speaks "picón" (a shared secret language) with Tidus.
 
 **Abilities:**

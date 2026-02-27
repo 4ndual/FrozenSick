@@ -13,7 +13,19 @@
 
 DragonLand is a large island continent and the primary setting of the campaign. It is the homeland of the Dragonborn and the seat of their political power. The landscape is varied: dense forests (green regions), arid plains and deserts (tan interior), mountains, and coastal settlements. A network of roads and trade routes (dashed red lines on the map) connects the major towns.
 
-After Prince Robin's assassination, La Iguana seized the throne and turned DragonLand into a dictatorial regime. **Dragonforce** is the kingdom's military / special forces.
+After Prince Robin (Ala Rota)'s assassination, his half-brother **Dranlek "El Oscuro"** (a.k.a. La Iguana) seized the throne and turned DragonLand into a dictatorial regime. **Dragonforce** is the kingdom's military / special forces.
+
+**House Domains:** The Five Great Houses of DragonLand each rule a province aligned with their element:
+
+| House | Element | Domain Province |
+|-------|---------|----------------|
+| **Casa Gremmory** | Fire | Noctyra |
+| **Casa IcePeak** | Ice | Valdrenor |
+| **DragonHeart** | Arcana | Kharvok |
+| **Casa DeepWater** | Sea/Rivers | Draknor (possibly Drakmor on map) |
+| **Casa Draksky** | Air/Wind | *(Union of minor lords — no single domain)* |
+
+The **Dragon Scar** is unclaimed no-man's-land between the house domains — also known as "Tierras de Lunei." This is where La Última Gota tavern is located.
 
 **Provinces of DragonLand:**
 
@@ -27,7 +39,7 @@ After Prince Robin's assassination, La Iguana seized the throne and turned Drago
 | **Aerthalon** | Core | Matonceton, Bromermouth, Dunsterwick |
 | **Mystralyn** | Core | Uxbridling, Fineton |
 | **Bridbury Landgrave** | Core | Leighbrid, Salboneroe |
-| **Dragon Scar** | Core | Malistoles, Rothbrid, Seaton |
+| **Dragon Scar** | No-man's-land ("Tierras de Lunei") | Malistoles, Rothbrid, Seaton — **La Última Gota tavern is here** |
 | **Sanvily Islands** | Islands | Patise, Chargissoy, Giviers |
 | **Goc Island** | Island | Bosbokeroe |
 | **Knutsted Territory** | Territory | Stansham area |
@@ -137,8 +149,8 @@ The Prison Tortuga was heading here. The party arrived after escaping the turtle
 ### La Última Gota (The Last Drop)
 
 **Type:** Tavern / covert operations base
-**Location:** Center of DragonLand (red tavern pin on map)
-**Owner:** Lunei Milei Maili
+**Location:** Dragon Scar (no-man's-land, "Tierras de Lunei") — geographic center of DragonLand (red tavern pin on map)
+**Owner:** Lunei Milei Maili (a.k.a. Rudolph IcePeak, Casa IcePeak)
 **Chapter(s):** 1
 
 A tavern at the heart of DragonLand that serves as a front for covert operations. Positioned centrally on the continent, making it a crossroads for travelers, merchants, and fugitives from all directions. Features hidden weapons (Protocol Three crossbows), coded service diagrams, centipede essence poison, and a famous enchanted cocktail. The party's home base and employer. Currently closed — a sign reads: *"Please don't bother. Die somewhere else."*

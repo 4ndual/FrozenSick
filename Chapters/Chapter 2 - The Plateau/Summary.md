@@ -129,12 +129,12 @@ Dracus confirms Malacor is wielding the Golden Crown to control people and desta
 | **Dracus** | Was doing business with Lunei; entangled with Malacor's interference | Attempting to free Tidus during ambush |
 | **Malacor** | Wielding the Golden Crown; disrupting La Blanca | At large — not present |
 
-### Farquad's Forces
-Military contingent that set up the ambush at the cave exit.
+### Farquad Drasky's Forces (Casa Draksky)
+Military contingent that set up the ambush at the cave exit. Farquad is from **Casa Draksky** (Air/Wind), one of the Five Great Houses.
 
 | Person | Role | Status |
 |--------|------|--------|
-| **Farquad** | Commander on horseback | Active — captured the party |
+| **Farquad Drasky** | Commander on horseback (Casa Draksky) | Active — captured the party |
 | **The Elven Tactician** | Infiltrated the 23 refugees, knocked out Zacarías | Active |
 | **Dragon Trainers** | Armed with dragon whistles | Active |
 | **Soldiers** | Ground forces | Active |

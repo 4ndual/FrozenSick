@@ -6,10 +6,12 @@
 
 ---
 
-### Lunei Milei Maili
+### Lunei Milei Maili (Rudolph IcePeak)
 
 | Detail | Info |
 |--------|------|
+| **True Name** | **Rudolph IcePeak** — Lord of Commerce (Señor del Comercio) |
+| **House** | **Casa IcePeak** (WinterSpeak Dynasty, Ice element, Lords of Valdrenor) |
 | **Race** | Not confirmed |
 | **Class** | Invoker / Paladin / Unknown 3rd class (multi-class) |
 | **Role** | Owner and operator of La Última Gota tavern |
@@ -54,14 +56,17 @@
 
 ---
 
-### Farquad / Lord Far / Pascual / Facua
+### Farquad Drasky / Lord Far / Pascual / Facua
 
 | Detail | Info |
 |--------|------|
+| **True Name** | **Farquad Drasky** |
+| **House** | **Casa Draksky** (Air/Wind element, union of minor lords) |
 | **Role** | Antagonist — tavern patron turned military commander |
 | **Note** | Name garbled by voice-to-text as Facua, Facul, Farf, Pascual, etc. All the same person. |
+| **Secret Link** | Holds **Zacarías's secret** |
 
-**Description:** Involved in fugitive transport. Commands soldiers including dragon trainers with dragon whistles. Allied with or controls Malacor. Connected to the Golden Crown (Corona Dorada) — an artifact that compels obedience with a single command. On horseback when commanding his forces.
+**Description:** Involved in fugitive transport. Commands soldiers including dragon trainers with dragon whistles. Allied with or controls Malacor. Connected to the Golden Crown (Corona Dorada) — an artifact that compels obedience with a single command. On horseback when commanding his forces. A member of **Casa Draksky** — one of the Five Great Houses of DragonLand.
 
 **Key Events:**
 - **Ch.1:** Interrogated by the bounty hunter, revealed information under pressure. Witnessed Tidus knocking out Dracus and alerted Dracus's allies. Started a fight at the bar.
@@ -115,9 +120,9 @@
 - Targeted by Protocol Three crossbow — the bolt **missed** and killed Buster instead.
 - Reacted with fury when Nixira's name was announced.
 
-**Relationships:** Dragonforce (uses their methods), Malacor (likely his superior)
+**Relationships:** Dragonforce (uses their methods), Malacor (likely his superior). Held **Tidus's secret**.
 
-**Current Status:** Alive. Escaped the tavern. Gunpowder is still on the floor.
+**Current Status:** **Uncertain** — DM notes suggest dead; transcripts show he escaped the tavern alive. Gunpowder is still on the floor.
 
 ---
 
@@ -142,13 +147,14 @@
 
 ---
 
-### Señor Nadie ("Nobody") — The Nameless Master Monk
+### Señor Nadie ("Nobody") — Faorus Rain "The Silent Monk"
 
 | Detail | Info |
 |--------|------|
+| **True Name** | **Faorus Rain** "The Silent Monk" |
 | **Race** | Human (or human-presenting) |
 | **Class** | Monk — Rank of "Lower Master" (Maestro Inferior) |
-| **Caste** | Caste of the Dead Without Names |
+| **Order** | **Orden del Silencio** (Order of Silence) — formerly called "Caste of the Dead Without Names" |
 
 **Description:** Appears as a frail ~90-year-old man — pale, thin, bearded, serene. Can transform into a muscular ~40-year-old. Carries a guidance staff. His master is a forest elf.
 
@@ -266,11 +272,11 @@
 
 | Name | Details | Last Chapter | Status |
 |------|---------|--------------|--------|
-| **Rainbow / Don Rainbow** | Tavern patron. Bitter, rageful rival of Nixira. Erupted in fury when her name was announced. | Ch.1 | Alive |
-| **Caelvaros / Cael** | Tavern patron — top-priority poison target (circled in red by Lunei). Thinks PCs tried to assassinate him. | Ch.1 | Alive — hiding, suspicious |
-| **Prince Robin / Príncipe Roto** | Dragonborn historical figure. Great-great-grandson of the original dragon. ~2.50m, large wings. **Assassinated** — killer never found. His death upended all kingdoms. | Pre-campaign | **Dead** |
+| **Rainbow / Don Rainbow** | Tavern patron. Bitter, rageful rival of Nixira. Erupted in fury when her name was announced. Held **Nixira's secret**. | Ch.1 | **Uncertain** — DM notes suggest dead; transcripts show escape |
+| **Khael Varos "El Heraldo"** (Caelvaros / Cael) | Tavern patron — top-priority poison target (circled in red by Lunei). La Blanca operative (Centinela Era Blanca). Thinks PCs tried to assassinate him. | Ch.1 | Alive — hiding, suspicious |
+| **Prince Robin / Ala Rota / Príncipe Roto** | Dragonborn legitimate heir. Great-great-grandson of the original dragon. ~2.50m, large wings. Half-brother of Dranlek. **Assassinated** — killer never found. His death upended all kingdoms. | Pre-campaign | **Dead** |
 | **Keylan** | Connected to the Veil of the Seven Songs. Someone close to him corrupted the Veil. Betrayed and framed Nixira. | Unknown | Unknown — presumably with the Veil |
-| **La Iguana** | Current ruler / usurper. Seized power after Prince Robin's assassination. Runs a dictatorial regime. | Pre-campaign | Alive, ruling |
+| **Dranlek "El Oscuro" (La Iguana)** | Current king / usurper. Bastard half-brother of Prince Robin (Ala Rota). Seized power after the assassination. Runs a dictatorial regime. | Pre-campaign | Alive, ruling |
 | **Rodrigo** | Monk pupil — Discipline of Wisdom (orange flame). Freed by PCs. Killed by darts in trap corridor. Gave healing potion before dying. | Ch.3 | **Dead** |
 | **Fuercitas** | Monk pupil — Discipline of Brute Force (red flame). The youngest. Stole the forbidden chi-astral book. | Ch.3 | Alive, with Señor Nadie |
 | **Fresitas** | Monk pupil — Discipline of Invisibility (black flame). Not yet found. | Unknown | Missing — presumably imprisoned |

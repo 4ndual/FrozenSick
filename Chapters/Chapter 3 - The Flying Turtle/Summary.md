@@ -21,7 +21,7 @@ Zacarías, ever methodical, remembers that the guards left their confiscated equ
 
 Then he finds *him*.
 
-In the last cell sits a frail, ancient man — pale, shaking, barely able to stand. "Names are not necessary in this place," the old man says. "I've already forgotten mine." Zacarías offers to help. The old man accepts. And then, with a calm that borders on terrifying, **Señor Nadie** grips the iron bars of his cell and *tears them apart with his bare hands*, his skeletal frame erupting into corded muscle before compressing back to its withered state. He is a **Master Monk of the Nameless Order** — practitioners who sacrifice their identities to achieve enlightenment — and he has mastered three disciplines: the Chi of Healing, the Art of Invisibility, and the Art of Brute Force. His signature: a walking staff, now locked in a trapped cell, marked by three colored flames.
+In the last cell sits a frail, ancient man — pale, shaking, barely able to stand. "Names are not necessary in this place," the old man says. "I've already forgotten mine." Zacarías offers to help. The old man accepts. And then, with a calm that borders on terrifying, **Señor Nadie** grips the iron bars of his cell and *tears them apart with his bare hands*, his skeletal frame erupting into corded muscle before compressing back to its withered state. He is a **Master Monk of the Orden del Silencio (Order of Silence)** — practitioners who sacrifice their identities to achieve enlightenment — and he has mastered three disciplines: the Chi of Healing, the Art of Invisibility, and the Art of Brute Force. His true name is **Faorus Rain "The Silent Monk"**. His signature: a walking staff, now locked in a trapped cell, marked by three colored flames.
 
 Meanwhile, Nixira is having a worse time of it. She smashes her way out of her shackles, catches acid from the tortoise's bleeding defense glands in the chest, and takes a micro-scale spike to the lung. She's breathing blood when one of Señor Nadie's pupils — the monk of healing, who gives his name only as **Rodrigo** — presses his hands to her back and seals the wound with chi. She can breathe again, but the pain lingers.
 
@@ -69,7 +69,7 @@ Nixira sees her friend fall and something breaks inside her. She nocks an arrow.
 
 - **Lunei Milei Maili is far more dangerous than anyone realized.** The party's tavern-owner boss once cut the wings off a demon as punishment for theft. The casual brutality of this act — and the fear it inspires in Victus — reframes everything the party knows about their employer.
 - **Victus was a Fallen Paladin**, not merely a demon. He was commanded by his god to destroy "the Fallen Prince" and failed. His damnation was his punishment. His death was a mercy.
-- **Señor Nadie and the Nameless Order** are monks who erase their identities to achieve mastery. Their master is an elf. One of three pupils (Rodrigo, the healer) is now dead. Two remain: the monk of Invisibility and the monk of Brute Force ("Fuercitas").
+- **Señor Nadie (Faorus Rain) and the Orden del Silencio (Order of Silence)** are monks who erase their identities to achieve mastery. Their master is an elf. One of three pupils (Rodrigo, the healer) is now dead. Two remain: the monk of Invisibility (Fresitas) and the monk of Brute Force (Fuercitas).
 - **Malfas, Prince of Ravens**, will answer Zacarías's calls — but grudgingly, at a cost, and with open contempt. The patron-warlock relationship is transactional and volatile.
 - **Prison Tortugas** are mobile, living prisons — elemental beasts whose bodies serve as trap-laden dungeons, ferrying captives between kingdoms.
 
@@ -108,8 +108,8 @@ The PCs are still operating as tavern employees, but the revelation about Lunei 
 | **Nixira** | Combat bard — psychological warfare, killed Victus with the final shot | Alive, injured |
 | **Zacarías** | Breakout specialist — escaped cell, allied with monks, backstabbed the demon | 0 HP — dying |
 
-#### Caste of the Dead Without Names (Nameless Order)
-A monastic order encountered inside the Prison Tortuga. Monks sacrifice their identities for mastery over body and spirit. The party freed them and gained powerful allies.
+#### Orden del Silencio (Order of Silence)
+A monastic order (formerly called "Caste of the Dead Without Names") encountered inside the Prison Tortuga. Monks sacrifice their identities for mastery over body and spirit. The party freed them and gained powerful allies.
 
 | Person | Discipline | Role in Chapter | Status |
 |--------|-----------|----------------|--------|
@@ -134,8 +134,8 @@ Zacarías called upon Malfas after losing his raven. Malfas granted the blood-we
 
 ### NPC Tracker — Chapter 3
 
-#### Señor Nadie ("Nobody") — The Nameless Master Monk
-- **Who:** Master Monk of the Caste of the Dead Without Names. Appears as a frail ~90-year-old; can transform into a muscular ~40-year-old warrior. Carries a guidance staff with three flames (healing, invisibility, brute force). His master is a forest elf.
+#### Señor Nadie (Faorus Rain "The Silent Monk") — Master of the Orden del Silencio
+- **Who:** Master Monk of the Orden del Silencio (Order of Silence). True name: **Faorus Rain**. Appears as a frail ~90-year-old; can transform into a muscular ~40-year-old warrior. Carries a guidance staff with three flames (healing, invisibility, brute force). His master is a forest elf.
 - **What he did:** Ripped open his cell bars with brute force. Healed Nixira's punctured lung. Turned invisible to scout the Prison Tortuga. Broke Zacarías's shackle. Killed a mimic with a kicked cell bar. Retrieved his staff from a trapped cell. Navigated trap corridors with Zacarías using combined invisibility and illusions.
 - **Related to:** Rodrigo (pupil — dead), Fuercitas (pupil — alive), Fresitas (pupil — missing), his unnamed elf master
 - **End status:** **Alive.** Staff recovered, at full power. Allied with the party. Lost one pupil.

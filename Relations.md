@@ -25,23 +25,28 @@ graph LR
 graph TD
     Malacor["Malacor (The White Rat)"]
     Crown["Corona Dorada (Golden Crown)"]
-    Farquad["Farquad (Military Commander)"]
+    Farquad["Farquad Drasky (Casa Draksky)"]
     BaldEnemy["The Bald Enemy DEAD"]
-    Red["Red / Reto (Assassin Leader)"]
-    Dragonforce["Dragonforce (Military Org)"]
+    Red["Red / Reto — STATUS UNCERTAIN"]
+    Dragonforce["Dragonforce (Military of DragonLand)"]
     ElvenTac["Elven Tactician (~Level 15)"]
     DragonTrainers["Dragon Trainers (with whistles)"]
     Borax["Borax DEAD"]
     StoneInvoker["Stone Invoker (Elementalist)"]
+    Dranlek["Dranlek 'El Oscuro' (La Iguana) — CURRENT KING"]
 
+    Dranlek -->|"commands"| Dragonforce
     Malacor -->|"wields"| Crown
     Malacor -->|"commands"| BaldEnemy
     Malacor -->|"directs"| Red
     Red -->|"uses methods of"| Dragonforce
+    Red -->|"holds secret of"| TidusRef["Tidus"]
     BaldEnemy -->|"member of"| Dragonforce
     Farquad -->|"allied with / controls"| Malacor
+    Farquad -->|"Casa Draksky"| CasaDraksky["Casa Draksky (Air/Wind)"]
     Farquad -->|"commands"| ElvenTac
     Farquad -->|"commands"| DragonTrainers
+    Farquad -->|"holds secret of"| ZacRef["Zacarías"]
     Borax -->|"former apprentice"| Dragonforce
     StoneInvoker -->|"soldier of"| Dragonforce
 ```
@@ -70,21 +75,24 @@ graph TD
 
     subgraph enemies [Enemies]
         Malacor["Malacor"]
-        Farquad["Farquad"]
+        Farquad["Farquad Drasky (Casa Draksky)"]
         Veil["Veil of the Seven Songs"]
         Keylan["Keylan"]
         Borax2["Borax DEAD"]
         StoneInv["Stone Invoker"]
         DwarfMother["Dwarf Mother"]
+        Dranlek["Dranlek El Oscuro (La Iguana) — KING"]
     end
 
     subgraph unknown [Unknown Alignment]
         BountyHunter["Bounty Hunter"]
         MysteryWoman["Mysterious Woman (Crimson Eyes)"]
-        Rainbow["Rainbow"]
+        Rainbow["Rainbow — STATUS UNCERTAIN"]
+        Red2["Red — STATUS UNCERTAIN"]
     end
 
     Tidus -->|"employer"| Lunei
+    Tidus -->|"secret held by (uncertain status)"| Red2
     Tidus -->|"old companion"| Dracus
     Tidus -->|"tamed"| Line
     Tidus -->|"former member"| Dragonforce2["Dragonforce"]
@@ -92,6 +100,7 @@ graph TD
     Tidus -->|"Val medallion (1/20)"| Val["Val (God of Death)"]
 
     Zacarias -->|"employer"| Lunei
+    Zacarias -->|"secret held by"| Farquad
     Zacarias -->|"patron pact"| Malfas["Malfas (Prince of Ravens)"]
     Zacarias -->|"former friend / now enemy"| Malacor
     Zacarias -->|"ally"| Nadie
@@ -100,7 +109,7 @@ graph TD
     Nixira -->|"employer"| Lunei
     Nixira -->|"former member"| Veil
     Nixira -->|"betrayed by"| Keylan
-    Nixira -->|"bitter rival"| Rainbow
+    Nixira -->|"bitter rival; he held her secret"| Rainbow
     Nixira -->|"song for"| Rodrigo2["Rodrigo DEAD"]
     Nixira -->|"companion"| Robinson
     Nixira -->|"cursed by (asesina de niños)"| DwarfMother
@@ -117,17 +126,27 @@ graph TD
 ```mermaid
 graph TD
     Unei["La Última Gota (The Tavern)"]
-    DF["Dragonforce"]
+    DF["Dragonforce (Military of DragonLand)"]
     Veil["Veil of the Seven Songs"]
     Blanca["La Blanca (Sentinels)"]
     Cuerdas["Las Cuerdas Rotas (Broken Strings)"]
     Piedra["La Piedra Sangrante (Bleeding Stone)"]
     MalNet["Malacor's Network"]
-    FarForces["Farquad's Forces"]
-    Nameless["Nameless Order (Monks)"]
+    FarForces["Farquad's Forces (Casa Draksky)"]
+    OrdenSilencio["Orden del Silencio (Monks)"]
     Rebels["Rebel Forces"]
     Limpiadores["Los Limpiadores (Neutral)"]
 
+    subgraph houses [Five Great Houses]
+        Gremmory["Casa Gremmory (Fire/Noctyra)"]
+        IcePeak["Casa IcePeak (Ice/Valdrenor)"]
+        DragonHeart["DragonHeart (Arcana/Kharvok)"]
+        DeepWater["Casa DeepWater (Sea/Draknor)"]
+        Draksky["Casa Draksky (Air/Wind)"]
+    end
+
+    Unei -->|"Lunei = Rudolph IcePeak"| IcePeak
+    FarForces -->|"Farquad Drasky"| Draksky
     MalNet -->|"uses methods of"| DF
     MalNet -->|"disrupting operations of"| Blanca
     FarForces -->|"allied with"| MalNet
@@ -136,6 +155,7 @@ graph TD
     Rebels -->|"fighting against"| DF
     Limpiadores ---|"neutral / respected by all"| DF
     Limpiadores ---|"neutral / respected by all"| Rebels
+    Blanca -->|"Khael Varos is operative"| KV["Khael Varos 'El Heraldo'"]
 
     BH["Bounty Hunter"]
     BH -->|"affiliated"| Cuerdas
@@ -151,7 +171,7 @@ graph TD
 | When | Event | Relationships Formed/Broken |
 |------|-------|-----------------------------|
 | ~90 years ago | Southern elven tribe destroyed | Tidus loses his people; taken in by northern tribe |
-| Years ago | Tidus joins Dragonforce | Tidus ↔ Dragonforce, Tidus ↔ Dragonborn royalty |
+| Years ago | Tidus joins Dragonforce | Tidus ↔ Dragonforce (military of DragonLand), Tidus ↔ Dragonborn royalty |
 | Years ago | Tidus & Dracus run missions together | Tidus ↔ Dracus (old companions) |
 | Years ago | Borax serves as castle apprentice under Tidus | Tidus ↔ Borax (superior/subordinate, envy) |
 | Years ago | Zacarías & Malacor are close friends | Zacarías ↔ Malacor (brothers in faith) |

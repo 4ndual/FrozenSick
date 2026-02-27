@@ -10,6 +10,8 @@
 
 **Personality:** Emotional but tough. Fiery — literally has fire in her eyes when provoked, and small horns emerge when angered. Dramatic and proud with strong stage presence. Deeply loyal to friends. Competitive (bitter rivalry with Rainbow). Hot-headed and honor-obsessed — challenges others to dragon chess when offended. Stubborn but forgiving, genuinely moved by apologies. Self-deprecating about her cooking versus her music. Creative in combat — uses multiple voices and psychological warfare through music. Carries deep guilt and fear about her past. Brave enough to reveal her secret history to the group.
 
+**Secret-Keeper:** **Rainbow** held Nixira's secret. Rainbow's current status is **uncertain** — DM planning notes suggest he is dead, but session transcripts show him escaping the tavern alive. If dead, Nixira's secret may have died with him. If alive, Rainbow's bitter rivalry with Nixira makes him especially dangerous as a secret-holder.
+
 **Backstory:** A famous cornetist not heard publicly in over 5 years. Former member of the **Veil of the Seven Songs** — a secret society of musical witches that originally used mental manipulation through music for palliative care (easing suffering of the magically ill). The organization was corrupted by someone close to **Keylan**, who weaponized their powers to infiltrate the politics of every kingdom, placing agents on every throne. Nixira fled when she discovered the corruption. **Keylan betrayed and framed her**, and the Veil is hunting her. She hid at the tavern for ~2 years, working in the kitchen where no one sees her. Her identity was exposed during a performance. Possibly has a twin sister.
 
 **Abilities:**

@@ -107,14 +107,14 @@ The tavern itself — a front for covert operations with hidden weapons (Protoco
 | **The Mute Dwarf** | Nixira's band — synthesizer sounds | Active — performing on stage |
 
 ### Dragonforce
-Criminal/military organization known for assassination-by-arson tactics. Multiple representatives present at the tavern.
+Military / special forces of DragonLand, known for assassination-by-arson tactics. Multiple representatives or affiliates present at the tavern.
 
 | Person | Connection | Status |
 |--------|-----------|--------|
 | **Tidus** | Former member — recognized their arson method from personal experience | Left the organization before the campaign |
 | **The Bounty Hunter** | Wears Dragonforce logo prominently on left pauldron | Alive, still at the tavern |
 | **The Bald Enemy ("El Calvo")** | Active soldier/enforcer, subordinate of Malacor | **Dead** — killed by Tidus |
-| **Red / Reto** | Uses Dragonforce arson playbook (gunpowder + fire) | Alive — escaped |
+| **Red / Reto** | Uses Dragonforce arson playbook (gunpowder + fire); holds Tidus's secret | **Uncertain** — escaped tavern, DM notes suggest dead |
 | **Red's crew (5 people)** | Operatives spreading gunpowder trails | Alive — most escaped |
 
 ### Las Cuerdas Rotas (The Broken Strings)
@@ -148,7 +148,7 @@ The off-screen antagonist pulling strings. Former friend of Zacarías who now wi
 |--------|-----------|--------|
 | **Zacarías** | Former close friend and brother in faith — now enemies | Active (PC) |
 | **The Bald Enemy** | Subordinate / enforcer sent to the tavern | **Dead** |
-| **Red / Reto** | Operative using Dragonforce methods on Malacor's behalf | Alive — escaped |
+| **Red / Reto** | Operative using Dragonforce methods on Malacor's behalf; secret-keeper for Tidus | **Uncertain** — escaped tavern, DM notes suggest dead |
 | **Dracus** | Was doing business with Lunei, got entangled with Malacor | Unconscious — dragged away by allies |
 
 ---
@@ -182,19 +182,19 @@ The off-screen antagonist pulling strings. Former friend of Zacarías who now wi
 ---
 
 ### Red / Reto
-- **Who:** Covert operative and assassin leader. Commands a crew of 5.
+- **Who:** Covert operative and assassin leader. Commands a crew of 5. Held **Tidus's secret**.
 - **What he did:** Had his crew secretly spread gunpowder trails across the tavern floor — an assassination-by-arson setup. Grabbed a PC and whispered *"I'll handle it"* and *"Go"* — suggesting a complex, possibly dual allegiance.
 - **What happened to him:** Targeted by Lunei's crossbow (Protocol Three) but the bolt **missed** and killed Buster instead. Scrambled for the exit during the chaos.
-- **Related to:** Dragonforce (uses their methods), Malacor (likely his superior), Nixira (reacted with fury at her name)
-- **End status:** **Alive — escaped.** Gunpowder is still on the tavern floor.
+- **Related to:** Dragonforce (uses their methods), Malacor (likely his superior), Nixira (reacted with fury at her name), **Tidus (secret-keeper)**
+- **End status:** **Uncertain** — DM notes suggest dead; transcripts show him scrambling for the exit. Gunpowder is still on the tavern floor.
 
 ---
 
-### Farquad / Lord Far / Pascual
-- **Who:** Tavern patron involved in fugitive transport. Later revealed as a military commander with soldiers and dragon trainers.
+### Farquad Drasky / Lord Far / Pascual (Casa Draksky)
+- **Who:** Tavern patron involved in fugitive transport. Later revealed as a military commander with soldiers and dragon trainers. Member of **Casa Draksky** (Air/Wind). Holds **Zacarías's secret**.
 - **What he did:** Sat quietly, cancelled his order when the bounty hunter arrived. Interrogated by the bounty hunter — cracked under pressure and revealed information. Witnessed Tidus knocking out Dracus. **Alerted Dracus's 5 allies**, turning them against Tidus. Started a fight at the bar near Rainbow.
 - **What happened to him:** Escaped the tavern during the chaos. Later reappears in Chapter 2 as the commander who ambushes the party at the cave exit.
-- **Related to:** Malacor/Malacock (allied with or controls him), the Golden Crown
+- **Related to:** Malacor/Malacock (allied with or controls him), the Golden Crown, **Casa Draksky**
 - **End status:** **Alive — escaped.** Will return as a major threat.
 
 ---
@@ -208,11 +208,11 @@ The off-screen antagonist pulling strings. Former friend of Zacarías who now wi
 
 ---
 
-### Caelvaros / Cael
-- **Who:** Tavern patron of some importance. Lunei circled his name in **red ink** as the top-priority target for the poisoned special order.
+### Khael Varos "El Heraldo" (Caelvaros / Cael)
+- **Who:** Tavern patron of some importance. A **La Blanca (Centinela Era Blanca) operative**. Lunei circled his name in **red ink** as the top-priority target for the poisoned special order.
 - **What he did:** Received the poisoned "licor de menta" from Tidus as a "courtesy of the house." Snatched the cup impatiently but was told to wait until the song ends (tradition).
-- **What happened to him:** The stray crossbow bolt killed **Buster** right next to him. Caelvaros thinks the PCs tried to assassinate *him*. Dove under a table and barricaded himself.
-- **Related to:** Unknown — Lunei clearly considered him a threat important enough to poison
+- **What happened to him:** The stray crossbow bolt killed **Buster** right next to him. Khael Varos thinks the PCs tried to assassinate *him*. Dove under a table and barricaded himself.
+- **Related to:** **La Blanca** (intelligence operative) — Lunei clearly considered him a threat important enough to poison
 - **End status:** **Alive.** Hiding under a table, terrified and deeply suspicious. Unclear whether he consumed the poisoned drink.
 
 ---
@@ -225,11 +225,11 @@ The off-screen antagonist pulling strings. Former friend of Zacarías who now wi
 ---
 
 ### Rainbow / Don Rainbow
-- **Who:** Tavern patron with a bitter, rageful rivalry with Nixira. Volatile and proud.
+- **Who:** Tavern patron with a bitter, rageful rivalry with Nixira. Volatile and proud. Held **Nixira's secret**.
 - **What he did:** When Nixira's name was announced, he **erupted with fury** — his companions had to physically restrain him. Muttered a threat only one PC could hear.
 - **What happened to him:** A poisoned "special order" (cerdo ardiente — burning pork) was prepared for him by Nixira. During the chaos, Farquad started a fight near his table.
-- **Related to:** Nixira (bitter rival — the nature of their feud is unknown)
-- **End status:** **Alive.** Last seen at his table during the chaos. Unknown whether he consumed the poisoned dish.
+- **Related to:** Nixira (bitter rival and secret-keeper — the nature of their feud is unknown)
+- **End status:** **Uncertain** — DM notes suggest dead; transcripts show him at his table during the chaos. Unknown whether he consumed the poisoned dish.
 
 ---
 
