@@ -1,0 +1,96 @@
+---
+description: Rules for extracting characters and data from D&D session transcripts (voice-to-text in Spanish)
+globs: "**/*.txt"
+alwaysApply: false
+---
+
+# Session Transcript Extraction Rules
+
+These transcripts are voice-to-text captures of a Spanish-language D&D campaign ("Frozen Sick"). Names are frequently garbled. Apply these corrections when extracting characters.
+
+## Character Name Corrections
+
+| Correct Name | Common Garbled Variants |
+|-------------|------------------------|
+| **Lunei Milei Maili** | Lunay, Luna, Unai, Leonel, Leo, Lune, Brunein, mi Lady, mi Ley |
+| **Tidus** | Tibus, Tidios, Tillus, Tirus, Tiros, Didus, Titi |
+| **Nixira** (also Kenitzira / Mai Melody / Melo) | Ni Sira, Mi Sira, My Melo, Melody, My Melody, Listonixina, Zaruma |
+| **Farquad** | Facua, Facul, Farf, Lord Far, Pascual |
+| **Zacarías** | Zacarías Belmonte, Zacarías Flores |
+
+## Critical Identity Rules
+
+- **Nixira and Melo are the SAME character.** Any references to "Melo", "My Melo", or "Melody" as a separate PC are Nixira.
+- **Farquad and Facua are the SAME character.** The tavern patron and the military commander are one person.
+- **Lunei Milei Maili** is the tavern boss. Any name that sounds similar (Lunay, Luna, Leonel, etc.) refers to him.
+
+## Ability Attribution
+
+- **Speak with Animals** belongs to **Zacarías** (Warlock), NOT Tidus. If a transcript mentions someone talking to animals, attribute it to Zacarías.
+- **Zacarías** also speaks serpentine language ("Pársel") and has Animal Handling.
+- **Tidus** does NOT have animal communication abilities. His dragon taming was physical (silence, touch, feeding), not magical.
+
+## Place Name Corrections
+
+| Correct Name | Common Garbled Variants |
+|-------------|------------------------|
+| **DragonLand** | Dragon Ball, Dragonball, Dragon ball, Dragonlance |
+
+- **DragonLand** is the Dragonborn kingdom/continent. Voice-to-text consistently renders it as "Dragon Ball."
+- **Dragonforce** is the military / special forces of DragonLand (not a criminal organization). Tidus was a former special agent ("Dragonborn Delta force").
+
+## NPC Name Confirmations
+
+| Correct Name | Context |
+|-------------|---------|
+| **Borax** | Black dragonborn, former DragonForce apprentice. Killed by Tidus at Robinson Bridge (Ch.4). Voice-to-text may render as "bórax" or "borras". |
+| **Robinson** | Companion traveling with Nixira. Knows Dragon Born city layout. Active from Ch.4 onward. |
+| **Bixira** | Rebel commander near the Mansion. Voice-to-text may render as "bitsira", "bixby", "visita". This is NOT Nixira — they are different characters. |
+| **Pikachu** | Nickname for Tidus's baby rock dragon (Line). Used as combat companion in Ch.4. |
+| **Lupe** | Possibly a weapon, companion, or alias used in the tower scenes. Context unclear — may be a nickname for Line or another entity. |
+
+## Non-Characters
+
+- **Anakin** is the Dungeon Master's cat, NOT a player character or NPC. Ignore any references to Anakin as a character.
+- **Jenny** is a reference to **Gemini AI** (used out-of-game to generate recaps). NOT a character. Ignore any mentions of Jenny.
+
+## Tavern Roles
+
+- **Zacarías** = Guard / Doorman
+- **Tidus** = Waiter (delivers food/drinks to tables, works the floor)
+- **Nixira** = Cook (prepares food and poisons in the kitchen, also performs on stage)
+
+## Player Characters (3 PCs)
+
+1. **Zacarías Belmonte** — Gnome Warlock (Pact of the Chain), patron Malfas/Melfas, former Paladin. Tavern guard.
+2. **Tidus** — Elf/Half-Elf Ranger/Rogue, former Dragonforce member. Tavern waiter.
+3. **Nixira Silverson / Kenitzira / Mai Melody / Melo** — Tiefling Bard, former Veil of the Seven Songs member. Tavern cook and band leader.
+
+## Key NPC: Lunei Milei Maili
+
+Tavern owner (La Última Gota). Invoker/Paladin multi-class. Currently dying in a magical coma.
+
+## Loose End Detection Framework
+
+After EVERY session extraction, run through these 7 categories to find untracked loose ends. Update Plot/Tracker.md with anything new.
+
+### 1. MOTIVATION GAPS — "Why did X do Y?"
+For every significant action by a PC or NPC, if the reason is not explicitly stated, it is a loose end. Pay special attention to actions that contradict a character's alignment or established personality.
+
+### 2. CONTRADICTION FLAGS — "This doesn't add up"
+When a stated fact contradicts another fact, or a character's action contradicts their alignment/nature, the explanation is a loose end. Example: Chaotic Good + regicide = needs justification.
+
+### 3. UNRESOLVED REFERENCES — "Who/what is X?"
+Every name, place, item, or concept that is mentioned but not explained is a loose end. If someone says a name and nobody explains who that person is, track it.
+
+### 4. CONSEQUENCES NOT YET FELT — "This should have ripple effects"
+For every major event, ask: "What SHOULD happen as a result of this?" If the consequence hasn't materialized yet, it's a loose end. Especially: identity reveals, killings, escapes, intelligence leaks.
+
+### 5. ORIGIN GAPS — "Where did this come from?"
+If the party has an item, ability, ally, or knowledge that was never shown being acquired on-screen, track the gap. Also applies to NPCs whose backstory is incomplete.
+
+### 6. KNOWLEDGE ASYMMETRIES — "Who knows what?"
+For every secret held by a PC or NPC, ask: "What happens when someone else finds out?" Track who knows what, and who DOESN'T know what. The moment of discovery is a future plot bomb.
+
+### 7. SHARED HISTORY GAPS — "Why do these two know each other?"
+When two characters have an unexplained connection (shared language, shared past, mutual recognition), the origin of that connection is a loose end.
