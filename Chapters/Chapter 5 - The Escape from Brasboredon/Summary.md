@@ -245,6 +245,156 @@ The portal flickers above the city. Three turns left. Whatever Bixira opened, it
 
 ---
 
+**Bixira's Last Breath — Nixira on the Mansion Roof**
+
+While Tidus fought through the crossing and market, Nixira's battle on the Mansion roof reached its end. The General released Bixira from his grip — and in that instant, as his face dropped to her abdomen, Bixira opened her eyes. *"Qué fácil es engañar a estas estúpidas lagartijas."* She drove her dagger into the General's heart.
+
+All magic vanished. The General collapsed. Both bodies crashed onto the Mansion grounds, two meters from Nixira.
+
+Nixira lifted the General's corpse with Mage Hand and knelt beside Bixira. Her body was evaporating — she had used her soul for the dark blessing. No healing could bring her back. Only last words.
+
+Nixira took Bixira in her arms, looking into her eyes at the last particle of soul remaining. She thanked her for saving everyone, held her close, and whispered into her ear: *"Te vengaremos. No dejes que el señor de la Centinela Era Blanca tome el trono."*
+
+Bixira left a mark on Nixira's neck and placed a **warlord medallion** on her chest. Then she evaporated. It began to rain.
+
+Nixira kept the medallion — not because she wanted it, but because Bixira gave it to her. She tucked it into her clothes, tore a strip of her dress to cover the dwarven curse on her face, and descended from the Mansion.
+
+---
+
+**The Blood Oath — Zacarías at the Dwarven Dead**
+
+After the Troll fell, Zacarías walked alone to the bodies of the fallen dwarves. He knelt. He prayed — to Val and to Malfas — and offered the blood of the dead as tribute. Then he drew his dagger and cut his own arm.
+
+The blood didn't fall. It wrapped around his forearm, forming a sigil. The **mark of Val** burned itself into his skin. A sworn oath to the god of death: Zacarías is now **obligated to protect any dwarf he encounters**.
+
+The DM's observation hung in the air: *"Un asesino de enanos y un protector de enanos."* Nixira carries the curse of a child-killer. Zacarías carries the oath of a guardian. The party walks a razor's edge between damnation and redemption.
+
+---
+
+**Donner's Farewell**
+
+Donner sat on a broken stump, listening to the radio confirm casualties. Every name drew another tear. *"Todas estas bajas? Qué clase de idiota organizó este ataque..."* Forty years of service. Three or four times he had prevented this kind of massacre.
+
+He slapped Tidus. *"Niño estúpido. Solo hiciste la mitad del trabajo. Creías que por matarlo no iba a su séquito a tomar el poder?"* The revolution wasn't supposed to be today — Bixira forced it because they needed to rescue Tidus. He was a symbol. The few dragons who respected other races needed him alive. For two years, everyone thought he was dead. Funerals were held. People wept.
+
+Tidus answered: *"Esa era la idea. Tiene que haber un símbolo. No puede ser una persona. Si es una persona se pierde la esperanza."*
+
+Donner broke. He wept for his dead, listening to the radio confirm name after name. Then he composed himself: *"No dejes que muera la esperanza. Si necesitas ayuda estaremos tratando despejar del camino en las puertas. La esperanza es Lunei y no soy yo."*
+
+He tossed an **IcePeak favor coin** in the air. *"Obtuviste la joya para despertar a mi hermano. Si te encuentras alguno de mis hermanos, dale eso."*
+
+He stood. *"No le digas a nadie que me viste llorar."* And left.
+
+---
+
+**The Cart — Heading for the Gate**
+
+The group reunited in the market. Nixira covered her face with the torn cloth. Zacarías walked in silence, the mark of Val fresh on his arm. They found a cart — Cory and Messi on either side, Berlin curled asleep in the middle.
+
+Nixira looked at the dwarves and told the truth about the dead. *"Este puto los mató. El otro lo mató. Robinson. Estamos ahí los tres y yo. Robinson puede o no estar vivo."*
+
+Silence. The wheels of the cart turning on stone.
+
+They disguised themselves as dwarves — Zacarías crouching to appear shorter. Cory delivered the report: the outer gate was clear, but two witches were blocking it. They were letting civilians pass, but searching for someone. A warlock-killer. Someone had murdered two warlocks in the main plaza and the witches wanted blood.
+
+---
+
+**Draxa — The Veil's Emissary**
+
+The cart rolled toward the gate. Zacarías stopped. A beautiful woman appeared at his side — five strings attached to a wooden palm on her arm. She reached toward Nixira and stroked her face.
+
+*"¿Qué haces acá?"*
+
+The four strings vibrated. **Absolutum** — a compulsion of truth. Psychic compression seized Nixira. She had one minute to answer.
+
+Nixira tried Deception: *"Vinimos con mis amigos a buscar una cura para nuestro jefe porque fue herido y necesitamos salvarlo. Nunca fue nuestra intención estar aquí."*
+
+Draxa interrogated her calmly. How long working for him? Any connection to the revolution? How many dwarves killed? *"¿De casualidad sabes algo respecto a la muerte de dos warlocks?"*
+
+Nixira's deception cracked. The witches burned the cart. Everyone scrambled out.
+
+Zacarías studied her face and felt a chill. He recognized her. **Draxa** — connected to the **Llama Oscura**, the supposed god of life. A bard of the Song. She always maintains a clone of herself due to trauma from her twin sister's murder in childhood. They were fighting one witch in two bodies. She had **500 HP** when Zacarías last knew her — and that was years ago.
+
+He relayed everything through the communication stone: *"Tengan cuidado con Draxa. Es una barda de la canción. Todo lo que salga de su boca es peligroso."*
+
+---
+
+**The Battle at the Gate**
+
+The fight began at the outer wall — the final barrier between the party and freedom.
+
+**Nixira** opened first. Mage Hand hurled both remaining bombs at the twin witches. The explosions cracked their invisible protection wall — first defense shattered. 50 damage.
+
+**Tidus** fired with Sneak Attack. An arrow passed through one witch's body — semi-incorporeal, but it drew blood. A black drop fell. If it bleeds, it can die. He directed Messi to fire too — a natural 20 on the crossbow bolt, 16 damage. The wound closed slowly. She could regenerate — but not fast enough.
+
+**Zacarías** launched Eldritch Blast through his raven. First shot missed (14). Second hit her full in the face (19) — and the flesh recomposed itself. Cory charged with his maul — 24 damage to the chest. The witch decorporeized and appeared beside him.
+
+**Draxa exposed Nixira.** She ripped the cloth from Nixira's face, revealing the dwarven curse mark to the entire group. She invoked ancestral rites — the rune blazed with fire so bright it couldn't be denied. *"¡Miren! ¡Miren la marca hecha por sus matronas antiguas! ¡Miren el crimen que ha cometido!"*
+
+Messi froze. Cory turned, maul raised, and charged toward Nixira.
+
+Nixira spoke fast: *"Oye, es una bruja. ¿En serio le vas a creer? Es uno de sus trucos."* Deception: 14 + 7 = 21.
+
+Cory stopped. He spat dirt at her feet. *"Arreglaremos esto después. Esa marca no se puede fingir. Solo porque tienes el favor de Donner no la mataré. Pero en cuanto mandemos a esas malditas brujas, ella es la que sigue."*
+
+He turned his maul back toward the witches.
+
+---
+
+**Cory's Death — The Veil's Venom**
+
+Nixira sat on the ground. Exhausted. Bleeding. Heartbroken. She reached for the last thing she had left — her voice. She began to sing **Misty Mountain** — the song of dwarves searching for a home, of feeling limited, of never arriving. **Bardic Inspiration** flowed outward.
+
+The dwarves turned to listen. For one moment, the rage in Cory's eyes softened.
+
+That was all Draxa needed. The witch struck — a needle from her hand, driven into Cory's neck. His skin turned completely black. It was one of the most potent and mysterious venoms of the **Veil of the Seven Songs**.
+
+Cory fell backward. Dead.
+
+---
+
+**The Final Strike — Draxa Falls**
+
+Donner's voice crackled through the communication stone: *"¿Necesitan ayuda?"* Dwarf reinforcements — two rounds away. This was no longer a fight to kill. It was a fight to survive.
+
+One of the Draxas began generating a portal. The other removed the strings from her arm and cast an arcane amplification — doubling all attacks. Eight strikes incoming.
+
+Zacarías's magic was failing — **magical dystrophy** setting in, his body betraying him. His Eldritch Blast missed. He stumbled. His legs gave out and he fell forward on the stone.
+
+The witch's amplified attacks lashed out as sharpened magical strings. Zacarías threw himself in front of Berlin, shielding the goblin with his body. Two strings struck Berlin — one ripping out his eye. Berlin screamed.
+
+Zacarías felt his blood oath ignite. The mark of Val burned on his arm. He had sworn to protect. He rose.
+
+*"Todos — ¡ahora!"*
+
+The DM set the stakes: 500 damage to break Draxa's final threshold. Everything in one combined attack.
+
+Zacarías sprinted at Draxa, drew both daggers, leapt into a pirouette, and drove them into her eyes. Simultaneously, Messi fired three arrows — forehead, chest, abdomen — the shafts passing Zacarías mid-air as he spun. Nixira launched a **Firebolt** combined with **Vicious Mockery**. Every remaining ally struck at once.
+
+**411 points of damage.** All of it connected.
+
+Draxa's layers of magical skin peeled away. Beneath the glamour: an old face. Wrinkled. Tired. She looked at Nixira and spoke the words that changed everything:
+
+*"La canción de los siete velos ahora sabe que estás acá."*
+
+The portal materialized behind her. Through it, seated on a **silver throne** draped with pine-scented cushions, sat **Calium** — Keylan. Alive. After two years, alive, directing the brotherhood from his throne.
+
+He stood. He launched a fireball through the portal — the blast reached the height of the sky, incinerating the ground in front of them. The party dodged. The portal closed.
+
+Draxa's remaining soldiers retreated into a mine-shaft portal. *"No más guerra por esta decana. Volveremos."*
+
+---
+
+**The Walk Out**
+
+Messi approached Zacarías. *"Cuenta conmigo si nos volvemos a encontrar."* He produced a **golden arrow** — decorative, a keepsake from his final tournament. He handed it over and walked into the portal with the remaining dwarven forces.
+
+The four of them — Tidus, Nixira, Zacarías, and Berlin — walked out of Brasboredon together. Battered. One-handed. Cursed. Marked by gods. Carrying a gem that could save their boss and the knowledge that the Veil of the Seven Songs knows exactly where Nixira is.
+
+Behind them, the city burned.
+
+---
+
 ### Key Revelations
 
 - **Zacarías's death and return:** After dying last session, Zacarías passed before Val, Malfas, and three other deities — including the **Llama Negra** bearing the Altaflama insignia. Malfas intervened to prevent Val from keeping his soul. His connection to his patron is now severely weakened; a second death may be permanent unless he performs an epic feat to restore Malfas's favor.
@@ -254,19 +404,28 @@ The portal flickers above the city. Three turns left. Whatever Bixira opened, it
 - **Zafiro Esmeralda acquired:** The gemstone needed to cure Lunei of Frigid Woe has been retrieved from a Gremory warehouse, obtained through a Deception check on Berlin the goblin.
 - **Bomba de Oscuridad acquired:** A non-explosive weapon that transports any unprotected organic creature it touches into the Dark Dimension — an inescapable prison plane.
 - **600 gold pieces acquired** from Berlin's bag.
+- **Bixira's sacrifice and death:** Bixira faked unconsciousness, let the General grab her, and drove her dagger into his heart. She used her soul for the dark blessing — no revival possible. She died in Nixira's arms and left her a **warlord medallion** and a mark on her neck. Her last words: *"No dejes que el señor de la Centinela Era Blanca tome el trono."*
 - **Bixira's portal:** The collision of Bixira's soul-light and the General's volcanic meteorite opened an interdimensional portal to the Plano Oscuro. It is stable for five turns total. Whatever passes through — or comes through — remains unknown.
+- **Zacarías's blood oath to Val:** After the Troll battle, Zacarías prayed over the dwarven dead and cut his own arm. The mark of Val sealed itself onto his skin — an irrevocable oath to protect any dwarf he encounters.
 - **Sniper's capability:** He uses explosive arrowheads in addition to standard rounds. He possesses the **Lluvia de Flechas** ability (Rain of Arrows), which summons a storm cloud and converts rainfall into arrows over a wide area. He functions alone, using only a single high-precision weapon system.
-- **Brasboredon's escape route** requires passing through Sniper's kill zone. Donner's Rito shield can absorb three or four of his shots — enough for one clean counter.
+- **Draxa identified:** A bard of the **Veil of the Seven Songs** (Canción de los Siete Velos). Always maintains a clone of herself due to childhood trauma. Uses **Absolutum** — a compulsion requiring truthful answers. Her venom killed Cory instantly.
+- **Nixira's curse exposed:** Draxa ripped the covering from Nixira's face, revealing the dwarven curse to Cory and Messi. Cory spared Nixira only because of Donner's favor — but the threat remains.
+- **Calium (Keylan) is alive:** Seen through Draxa's portal, seated on a silver throne, commanding the Veil of the Seven Songs. He launched a fireball through the portal before it closed.
+- **The Veil knows Nixira's location:** Draxa's final words — *"La canción de los siete velos ahora sabe que estás acá"* — mean the brotherhood is now hunting Nixira specifically.
+- **Golden arrow (Messi's keepsake):** A decorative arrow given to Zacarías by Messi as a token of alliance before the dwarf forces withdrew.
+- **IcePeak favor coin acquired** by Tidus from Donner — usable with any IcePeak heir.
 
 ---
 
 ### Consequences
 
-Sid is dead. Achawn is dead. Cory is dead. The portal above Brasboredon is closing. Altaflama, the most powerful false prophet they have encountered, has been destroyed — but his death triggered a divine crisis in Donner that nearly killed Nixira and ended with two gods fighting over a dwarf warrior's body in a market square. Tidus's medallion holds the echoes of that collision now, stronger but burdened.
+Sid is dead. Achawn is dead. Cory is dead — killed by Draxa's venom at the gate. Bixira is dead — her soul consumed to destroy the General. Berlin lost an eye to Draxa's magical strings. Zacarías carries the mark of Val and is sworn to protect every dwarf. Nixira carries the warlord medallion and the knowledge that the Veil of the Seven Songs has marked her. Tidus carries the Zafiro Esmeralda and an IcePeak coin that opens doors across a dynasty.
 
-The group has what they came for: the Zafiro Esmeralda, gold, a weapon that imprisons rather than kills, and the grudging alliance of one of the most celebrated warriors on the continent. What they don't have is a way out. Sniper still controls the killing ground between Brasboredon and the road home. Robinson's carts — the only transport Zacarías can envision — may not exist anymore.
+The party escaped Brasboredon. Draxa survived — badly wounded, 411 of her estimated 1000 HP taken — and retreated through a portal that revealed the most dangerous truth of all: Calium sits on a silver throne, alive, directing the Veil. He saw them. He attacked. He will come again.
 
-Above it all, the portal pulsates. Green and red. A door Bixira paid everything to open.
+Donner departed to rally what remains of the dwarf rebellion. Messi left with the retreating forces, leaving Zacarías a golden arrow and a promise. The four who walk out — Tidus, Nixira, Zacarías, Berlin — carry more power and more enemies than when they entered.
+
+Behind them, Brasboredon burns. Ahead: the road to cure Lunei, with the Veil of the Seven Songs now hunting them.
 
 The city lets you in. Getting out is a different kind of war.
 

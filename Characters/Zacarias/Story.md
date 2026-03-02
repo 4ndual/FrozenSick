@@ -69,6 +69,20 @@ The Troll charged him directly. Used **Chill Touch** through his raven familiar 
 
 Received the **Capa Sagrada** — Altaflama's robe materialized on his shoulders after the false prophet's destruction elsewhere in the city. Effect: **+5 Religión damage**. The robe adhered, became translucent, and shifted to fit.
 
+**Blood oath to Val:** Walked alone to the bodies of the fallen dwarves. Knelt and prayed to Val and Malfas, offering the blood of the dead. Cut his own arm with his dagger. The blood wrapped around his forearm — the **mark of Val** sealed itself onto his skin. An irrevocable oath: **obligated to protect any dwarf he encounters**. The irony — a dwarf-killer's companion now sworn to protect dwarves — was not lost on anyone.
+
+**Donner's farewell:** Confronted by Donner, who slapped him and called him a fool for only killing the leader without dismantling the power structure behind him. Donner revealed the revolution wasn't supposed to happen today — Bixira forced it to rescue Zacarías. Zacarías defended his choice: *"No puede ser una persona. Si es una persona se pierde la esperanza."* Donner departed with the remaining forces, leaving the **IcePeak favor coin** with Tidus and the words: *"No dejes que muera la esperanza."*
+
+**Draxa confrontation:** Identified the witch at the gate as **Draxa** — a bard of the Veil of the Seven Songs. Recognized her clone technique (trauma from her twin's childhood murder) and relayed intelligence via communication stone: she had 500 HP when he last knew her, everything from her mouth is dangerous, and they needed to identify the real body.
+
+**Final battle:** Launched **Eldritch Blast** through his raven — first missed, second hit Draxa's face. His magic began failing (**magical dystrophy**) — legs gave out mid-sprint. Threw himself in front of Berlin to shield him from Draxa's string attacks — Berlin lost an eye. When the mark of Val burned on his arm, Zacarías rose and charged Draxa. Leapt into a pirouette, drove both daggers into her eyes while Messi's three arrows passed him mid-air. Combined party damage: **411 points**.
+
+Through Draxa's escape portal, saw **Calium** (Keylan) alive on a silver throne, directing the Veil of the Seven Songs. Calium launched a fireball through the portal before it closed.
+
+**Messi's goodbye:** The dwarf archer approached Zacarías before leaving with the retreating forces. *"Cuenta conmigo si nos volvemos a encontrar."* Gave him a **golden arrow** — a decorative keepsake from his final tournament.
+
+Walked out of Brasboredon with Tidus, Nixira, and Berlin.
+
 ---
 
 ## Current Status
@@ -77,6 +91,6 @@ Received the **Capa Sagrada** — Altaflama's robe materialized on his shoulders
 |-------|-------|
 | **Level** | 3 |
 | **HP** | Recovering |
-| **Location** | Brasboredon — inner district, near the Troll battleground |
-| **Conditions** | **Right hand severed**, bald (scalp ripped off), **Capa Sagrada** equipped (+5 Religión), patron connection critically weakened |
-| **Key Items** | **Capa Sagrada** (+5 Religión), Moonstone (10 platinum), cave maps, climbing gear, communication stone |
+| **Location** | Outside Brasboredon — on the road |
+| **Conditions** | **Right hand severed**, bald (scalp ripped off), **Capa Sagrada** equipped (+5 Religión), patron connection critically weakened, **mark of Val** (sworn to protect dwarves), **magical dystrophy** (intermittent spell failure) |
+| **Key Items** | **Capa Sagrada** (+5 Religión), Moonstone (10 platinum), cave maps, climbing gear, communication stone, **golden arrow** (Messi's keepsake) |

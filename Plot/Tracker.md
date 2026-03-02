@@ -20,11 +20,11 @@
 - **Status:** No progress. Dracus's fate after Farquad's ambush is uncertain.
 - **Stakes:** Malacor can compel obedience from anyone with a single command. As long as the Crown exists, no one is safe.
 
-### 3. Escape from Brasboredon
-- **Objective:** Escape the city alive with the Zafiro Esmeralda. The revolution is winding down — evacuation bells are ringing.
-- **Status:** Significant progress but not resolved. **Sniper is dead** (killed by Donner). The Troll blocking the inner gate was defeated by Zacarías and the dwarf escort. Bixira opened an **interdimensional portal to the Plano Oscuro** (closing — ~2 turns left). Robinson is presumed dead. The General (level 32 warlord) is still active. Tidus has the Zafiro Esmeralda, Bomba de Oscuridad, and 600 gp. Zacarías has the Capa Sagrada. Nixira is fighting the Dragon Trainer on the Mansion roof.
-- **Casualties:** Sid (Sniper headshot), Achawn (Lluvia de Flechas), Cory (final battle). Messi survived.
-- **Stakes:** The General is still in play. The portal is closing. The party needs transport back to La Última Gota — Robinson's supply carts may not exist anymore.
+### 3. Escape from Brasboredon — COMPLETED
+- **Objective:** Escape the city alive with the Zafiro Esmeralda.
+- **Status:** **Resolved.** The party escaped Brasboredon. Bixira killed the General (dagger to the heart) and died — soul consumed. Donner killed Sniper. Zacarías defeated the Troll. The party fought Draxa (Veil of the Seven Songs) at the outer gate, dealt 411 damage, and forced her retreat through a portal. Through the portal, they saw **Calium alive on a silver throne**, commanding the Veil. The party walked out with Tidus, Nixira, Zacarías, and Berlin.
+- **Casualties:** Sid (Sniper headshot), Achawn (Lluvia de Flechas), Cory (Draxa's venom), Bixira (soul consumed), The General (killed by Bixira). Robinson presumed dead. Messi survived — departed with dwarven forces.
+- **New threats from the escape:** The Veil of the Seven Songs now knows Nixira's location. Calium is alive. Draxa survived.
 
 ---
 
@@ -67,10 +67,15 @@
 - **Status:** Active. Donner departed to rejoin his forces but offered a final advantage against Sniper.
 - **Questions:** Will the IcePeak family become a lasting alliance? How will they react when Lunei is cured? Does the favor coin have limits?
 
-### Nixira — The Veil's Hunt
-- **What:** Nixira's identity as Kenitzira is now public. The Veil of the Seven Songs is hunting her. Keylan framed her.
-- **Status:** Identity exposed since Chapter 1. No Veil agents have appeared yet, but it's a matter of time.
-- **Questions:** Will the Veil send agents? Does Nixira's "don" have combat applications she hasn't used? Is there a twin sister?
+### Nixira — The Veil's Hunt (ESCALATED)
+- **What:** Nixira's identity as Kenitzira is now public. The Veil of the Seven Songs is hunting her. Keylan framed her. **Draxa — a Veil bard — confronted Nixira directly at the Brasboredon gate (Ch.5).** Draxa's final words: *"La canción de los siete velos ahora sabe que estás acá."* Calium was seen alive through the portal, commanding the Veil from a silver throne.
+- **Status:** **Critical.** The Veil has confirmed Nixira's location and involvement. Draxa survived with ~589 HP remaining. Calium — believed dead for two years — is alive and directing operations. The hunt is no longer hypothetical.
+- **Questions:** Will Draxa return? Is Calium coming personally? Does Nixira's Bixira medallion offer any protection? What is the Veil's full strength?
+
+### Zacarías — Blood Oath to Val
+- **What:** After the Troll battle (Ch.5), Zacarías prayed over the dwarven dead, cut his own arm, and swore a blood oath to Val. The **mark of Val** sealed onto his forearm — he is now **obligated to protect any dwarf he encounters**. This creates a direct tension with Nixira's "asesina de niños" curse.
+- **Status:** Active. Irrevocable oath. The DM noted the irony: *"Un asesino de enanos y un protector de enanos."*
+- **Questions:** What happens when Zacarías learns the full truth of Nixira's curse? Does the oath have combat implications? Can Val enforce it through punishment?
 
 ### Nixira — Serpent Venom Timer
 - **What:** Bitten by a serpent in Chapter 2. ~22 hours until anaphylactic reaction.
@@ -93,10 +98,10 @@
 - **Status:** Counter advancing. Medallion growing stronger from divine energy absorption.
 - **Questions:** Does each mercy kill increment the counter? Is this a blessing or a curse? What is Val's endgame? Does absorbing divine energy count toward the 20?
 
-### Nixira — The Dwarf Curse ("Asesina de Niños")
-- **What:** A dwarf mother cursed Nixira with a facial rune after the fire ballista killed dwarven children. The curse is permanent — every dwarf who sees the rune will despise Nixira.
-- **Status:** Active. Cannot be removed by known means. Will create hostile encounters with any dwarf faction.
-- **Questions:** Can the curse be lifted? Will it affect relations with the dwarven city? Does the Mute Dwarf in Nixira's band know?
+### Nixira — The Dwarf Curse ("Asesina de Niños") — EXPOSED
+- **What:** A dwarf mother cursed Nixira with a facial rune after the fire ballista killed dwarven children. The curse is permanent — every dwarf who sees the rune will despise Nixira. **In Ch.5, Draxa ripped the covering from Nixira's face, exposing the curse to Cory and Messi.** Cory nearly attacked Nixira but stood down after a Deception check (21). His final warning: *"Arreglaremos esto después. Esa marca no se puede fingir."* Cory is now dead (Draxa's venom), but Messi survived and departed with knowledge of the curse.
+- **Status:** Active and exposed. Messi knows. Donner may or may not know. The surviving dwarven forces could learn.
+- **Questions:** Will Messi tell other dwarves? Does this affect the IcePeak alliance? How does this interact with Zacarías's blood oath to protect dwarves?
 
 ### Zacarías — The Lost Hand
 - **What:** The stone invoker ripped off Zacarías's right hand during melee combat. For a warlock who channels pact magic through gestures, this is mechanically and narratively devastating.
@@ -253,10 +258,9 @@
 - **Status:** Closing — approximately 2 turns remaining at session's end.
 - **Questions:** Will the party use it? What comes through from the other side? Is this an escape route or a threat? What did it cost Bixira?
 
-### The General — Level 32 Warlord
-- **What:** The supreme military commander of Brasboredon's garrison. Mounted on a colossal dragon. Can summon volcanic meteorites. Circled the Mansion during the revolution.
-- **Status:** Alive and active. The party cannot fight him directly.
-- **Questions:** Will he pursue them? Is the portal his doing or Bixira's counter?
+### The General — Level 32 Warlord — RESOLVED
+- **What:** The supreme military commander of Brasboredon's garrison. Mounted on a colossal dragon. Can summon volcanic meteorites.
+- **Status:** **Dead.** Bixira drove a dagger into his heart after faking unconsciousness. Both fell onto the Mansion grounds. His death ended the volcanic magic.
 
 ### The Bomba de Oscuridad
 - **What:** A non-explosive weapon acquired by Tidus from Berlin. Transports any unprotected organic creature it touches into the **Dark Dimension** — an inescapable prison plane.
@@ -267,6 +271,26 @@
 - **What:** Robinson's explosive plan at the gatehouse failed and collapsed the surrounding buildings. He was beyond the city walls when the blast occurred.
 - **Status:** Presumed dead. No body recovered.
 - **Questions:** Is he truly dead? Could he have survived the blast?
+
+### Calium (Keylan) — Alive and Commanding the Veil
+- **What:** Believed dead for two years. Seen through Draxa's escape portal (Ch.5) seated on a **silver throne** with pine-scented cushions, directing the Veil of the Seven Songs. Launched a fireball through the portal before it closed.
+- **Status:** Alive. Active threat. Location unknown (wherever the portal leads).
+- **Questions:** Why was his death faked? What is the Veil's full agenda? Will he come for Nixira personally? What is his relationship to Draxa?
+
+### Draxa — Wounded Veil Operative
+- **What:** Bard of the Veil of the Seven Songs. Confronted the party at the Brasboredon gate. Used Absolutum on Nixira, exposed her curse, killed Cory with venom. Took 411 damage in the combined attack (estimated ~589 HP remaining) and escaped through a portal.
+- **Status:** Alive but wounded. Will likely return.
+- **Questions:** Is she Calium's second-in-command? What is her full power set? Does her clone technique have a weakness?
+
+### Zacarías — Magical Dystrophy
+- **What:** During the Draxa battle (Ch.5), Zacarías's Eldritch Blast began failing repeatedly. The DM introduced **magical dystrophy** — random spell failure and physical weakness. His legs gave out mid-sprint.
+- **Status:** Active debuff. May worsen.
+- **Questions:** Is this permanent? Connected to his weakened patron bond? Can it be cured by completing the false prophet mission?
+
+### Bixira's Last Words — "El Señor de la Centinela Era Blanca"
+- **What:** Bixira's dying words to Nixira: *"No dejes que el señor de la Centinela Era Blanca tome el trono."* A warning about a specific figure trying to seize power.
+- **Status:** Unresolved. Identity of this "lord" unknown.
+- **Questions:** Is this Calium? Someone else? Is this connected to the Khael Varos / La Blanca thread?
 
 ---
 
@@ -286,3 +310,6 @@
 | **Destroy Altaflama** | The most powerful false prophet was executed by Cory while Tidus looked away. His death triggered divine possession of Donner (Val + Moradin), broken by Tidus's medallion. His robe became the Capa Sagrada on Zacarías. | Ch.5 |
 | **Defeat the Troll** | Zacarías and Bixira's dwarf escort defeated the Troll blocking the inner gate using Onda Grupal, Fireball, Command, and Minor Illusion. Ten dwarves died in the fight. | Ch.5 |
 | **Acquire the Zafiro Esmeralda** | Tidus deceived Berlin the goblin into handing over the gem needed to cure Lunei. | Ch.5 |
+| **Kill the General** | Bixira faked unconsciousness, drove a dagger into his heart. Both fell. His death ended the volcanic magic. | Ch.5 |
+| **Escape Brasboredon** | The party fought through Sniper's crossing, the Troll, and Draxa's gate blockade. Walked out alive with Tidus, Nixira, Zacarías, and Berlin. | Ch.5 |
+| **Bixira's Sacrifice** | Used her soul to deflect the meteorite. Killed the General. Died in Nixira's arms. Left a warlord medallion and a warning. | Ch.5 |

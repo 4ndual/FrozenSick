@@ -64,6 +64,10 @@ Donner recovered with no memory of the possession. Gave Tidus an **IcePeak favor
 
 **Cory** survived the crossing and the Troll battle but died in the final battle. Messi survived.
 
+In the **final battle at the gate**, fought alongside Nixira and Zacarías against **Draxa** — a bard of the Veil of the Seven Songs — and her clone. Fired Sneak Attack arrows, drawing blood from the semi-incorporeal witch. Directed Messi's fire (natural 20, 16 damage). Kept shooting through the chaos as Draxa exposed Nixira's curse and killed Cory with venom. Participated in the combined final strike — 411 total damage — that broke Draxa's defenses and forced her retreat through a portal that revealed **Calium** alive on a silver throne.
+
+Walked out of Brasboredon with Nixira, Zacarías, and Berlin.
+
 ---
 
 ## Current Status
@@ -72,6 +76,6 @@ Donner recovered with no memory of the possession. Gave Tidus an **IcePeak favor
 |-------|-------|
 | **Level** | 3 |
 | **HP** | Injured (~22 HP, scratch from arrow rain) |
-| **Location** | Brasboredon — market district |
-| **Conditions** | Val medallion active (counter advancing), IcePeak favor coin |
+| **Location** | Outside Brasboredon — on the road |
+| **Conditions** | Val medallion active (counter advancing, +2 potency), IcePeak favor coin |
 | **Key Items** | Scimitar, light crossbow, shortbow, daggers, **Val medallion (+2 potency)**, **Zafiro Esmeralda**, **Bomba de Oscuridad**, 600 gp, IcePeak favor coin, communication stone |

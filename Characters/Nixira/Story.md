@@ -71,6 +71,18 @@ Fought a **Dragon Trainer** on the Mansion rooftop — a tall draconid chain-fig
 
 The trainer spit acid-venom — hit before she could dodge. Drank a potion simultaneously, skin dissolving and regenerating at once. Tried to throw him off the roof; he barely held on.
 
+**Bixira's death:** After the General fell, Nixira knelt beside Bixira on the Mansion grounds. Bixira's body was evaporating — her soul consumed for the dark blessing. No revival possible. Nixira held her, looked into her eyes at the last particle of soul, and whispered: *"Te vengaremos. No dejes que el señor de la Centinela Era Blanca tome el trono."* Bixira left a **mark on Nixira's neck** and a **warlord medallion** on her chest, then evaporated. It began to rain. Nixira kept the medallion — not out of pride, but because Bixira gave it to her.
+
+Tore a strip of her dress to cover the dwarven curse on her face. Descended from the Mansion.
+
+**Draxa confrontation:** At the outer gate, **Draxa** — a bard of the Veil of the Seven Songs — used **Absolutum** (a psychic compulsion of truth) on Nixira. Nixira attempted Deception but failed. Draxa burned the cart. Then Draxa ripped the covering from Nixira's face, exposing the **"asesina de niños" curse** to the dwarf escort. Cory nearly turned his maul on Nixira. Nixira talked him down: *"Es una bruja. ¿En serio le vas a creer?"* (Deception 21). Cory backed off, but warned: *"Arreglaremos esto después. Esa marca no se puede fingir."*
+
+**Final battle:** Opened the fight by throwing both bombs with Mage Hand — shattering Draxa's invisible protection wall (50 damage). Sang **Misty Mountain** — Bardic Inspiration for the group. While the dwarves listened, Draxa killed **Cory** with a venom needle to the neck — the Veil's deadliest poison. Nixira launched **Firebolt** and **Vicious Mockery** in the combined final strike (411 total damage). Draxa's glamour fell — revealing an old, wrinkled face. Her final words: *"La canción de los siete velos ahora sabe que estás acá."*
+
+Through Draxa's portal, Nixira saw **Calium** (Keylan) — alive, seated on a silver throne, commanding the Veil. He launched a fireball before the portal closed.
+
+Walked out of Brasboredon with Tidus, Zacarías, and Berlin. The Veil now knows her location.
+
 ---
 
 ## Current Status
@@ -79,6 +91,6 @@ The trainer spit acid-venom — hit before she could dodge. Drank a potion simul
 |-------|-------|
 | **Level** | 3 |
 | **HP** | Injured (acid facial burns, bruising, lingering wounds) |
-| **Location** | Brasboredon — Mansion rooftop |
-| **Conditions** | **"Asesina de niños" dwarven curse** (facial rune, permanent), serpent venom timer (unknown remaining), engaged in combat with Dragon Trainer |
-| **Key Items** | List of 24 people, dragon chess set, harp, cornet, mini percussion, communication stone |
+| **Location** | Outside Brasboredon — on the road |
+| **Conditions** | **"Asesina de niños" dwarven curse** (facial rune, permanent, exposed to surviving dwarves), serpent venom timer (unknown remaining), **hunted by the Veil of the Seven Songs** |
+| **Key Items** | List of 24 people, dragon chess set, harp, cornet, mini percussion, communication stone, **warlord medallion** (from Bixira), **mark on neck** (from Bixira) |
