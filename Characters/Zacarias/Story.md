@@ -43,9 +43,9 @@ Broke out of his cell using bed-frame rods. Summoned raven to scout (it was diss
 
 In the demon's lair, poisoned his daggers with corrosive venom from the demon's cauldron. Delivered a devastating critical backstab on the demon. Got grabbed, stabbed with his own burning dagger, and knocked to **0 HP**. Scalp ripped off by the demon. Making death saving throws as the session ends.
 
-## Chapter 4 — The Battle of Dragon Born
+## Chapter 4 — The Battle of Brasboredon
 
-Entered Dragon Born city through the main gate during the revolution. Summoned raven familiar to scout from above — witnessed the massacre: twenty children of all races dead in the streets, dwarven mothers wailing over charred bones. Initially called for "guerra muerte contra los dragones" over the communication stone.
+Entered Brasboredon through the main gate during the revolution. Summoned raven familiar to scout from above — witnessed the massacre: twenty children of all races dead in the streets, dwarven mothers wailing over charred bones. Initially called for "guerra muerte contra los dragones" over the communication stone.
 
 After seeing the bodies and being challenged by Tidus, delivered an **"I Have a Dream" speech** — a moment of moral clarity about racial harmony, refusing to repeat the cycles of hatred. *"Todos podemos ser diferentes. No tenemos que armar una guerra y repetir la historia."* Closed with the draconic prayer: *"Todos nacemos del fuego y morimos en el fuego."* Malfas responded with ravens. Gained **1 point of inspiration**.
 
@@ -55,6 +55,20 @@ After the party was separated by gates and gelatina barriers, ended up **trapped
 
 Meanwhile, Tidus found a trapped chest on a rooftop. Opened it with lockpicks, found stones inside. Pushed it off a trapdoor and heard someone calling for help — the session ended with Tidus attempting to disarm the bomb mechanism.
 
+## Chapter 5 — The Escape from Brasboredon
+
+Returned from death. After dying last session, Zacarías passed before Val, Malfas, and three other deities — including the **Llama Negra** bearing the Altaflama insignia — in the **Escritorio**, a timeless void where millennia pass in seconds. Malfas intervened to prevent Val from keeping his soul and gave him his mission: **find the false prophets**. His connection to his patron is now severely weakened; a second death may be permanent.
+
+Reunited with Nixira through an iron grate separating their sections of the city. Helped operate the crank-and-pulley mechanism from the tower roof to raise a heavy portcullis — Nixira providing Mage Hand assistance from below. *"Sí, necesito una mano literalmente."*
+
+Fought a **Troll** alongside twenty dwarves from Bixira's escort who used a level 8 group technique called **Onda Grupal** — synchronized hammer strikes bouncing the creature backward. Fired a **Fireball** from behind the Troll (nat 20, partially deflected — 72 damage). Used **Command** to force the Troll to strike itself (52 damage), creating an opening for the dwarf squad (240+ damage). Ten dwarves died from the Troll's thrashing — hurled against magical walls.
+
+Used **Minor Illusion** to produce the sound of a female Troll in distress — the creature's low intelligence (6) meant it worked. Introduced himself to the surviving ten dwarves: *"Mi nombre es Zacarías Belmonte. A su disposición."* They took him as their ally.
+
+The Troll charged him directly. Used **Chill Touch** through his raven familiar to slow it, then **Burning Hands** through the familiar's beak directly into the Troll's groin (21 damage). The Troll collapsed.
+
+Received the **Capa Sagrada** — Altaflama's robe materialized on his shoulders after the false prophet's destruction elsewhere in the city. Effect: **+5 Religión damage**. The robe adhered, became translucent, and shifted to fit.
+
 ---
 
 ## Current Status
@@ -62,7 +76,7 @@ Meanwhile, Tidus found a trapped chest on a rooftop. Opened it with lockpicks, f
 | Field | Value |
 |-------|-------|
 | **Level** | 3 |
-| **HP** | **~9 HP — Critical** |
-| **Location** | Dragon Born — near the Rivera district, fighting the stone invoker |
-| **Conditions** | **Right hand severed**, bald (scalp ripped off), has inspiration point, 16 blood-shield charges remaining |
-| **Key Items** | Moonstone (10 platinum), cave maps, climbing gear, 1 remaining dagger (left hand), 100 copper pieces, communication stone |
+| **HP** | Recovering |
+| **Location** | Brasboredon — inner district, near the Troll battleground |
+| **Conditions** | **Right hand severed**, bald (scalp ripped off), **Capa Sagrada** equipped (+5 Religión), patron connection critically weakened |
+| **Key Items** | **Capa Sagrada** (+5 Religión), Moonstone (10 platinum), cave maps, climbing gear, communication stone |

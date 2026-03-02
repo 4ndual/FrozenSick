@@ -45,7 +45,7 @@ Struggled to break out of her cell. Fought **two mimics** — incinerated one wi
 
 In the demon's lair, played calming harp to give Tidus advantage on charisma checks. Switched to war drums for combat. Used Thaumaturgy with multiple echoing voices to psychologically torment the demon, awakening **condemned spirits** — including the voice of his god. Kicked the demon for 1 damage. **Delivered the killing blow** with a crossbow bolt through the demon's skull, dedicating it to Zacarías: *"He may be an idiot, but he's MY idiot."*
 
-## Chapter 4 — The Battle of Dragon Born
+## Chapter 4 — The Battle of Brasboredon
 
 Stormed a watchtower during the revolution. Put tower guards to sleep with Command, executed them, and killed a regenerating green dragon. From the tower, fired the **fire ballistae** — releasing all remaining barrels at once, incinerating an enemy contingent below. The collateral damage killed dwarven children in the blast zone.
 
@@ -55,6 +55,22 @@ Rescued **Robinson** after he was knocked unconscious in the tower fighting. Led
 
 Witnessed the orc hero's sacrifice at the gate mechanism. The party was separated by falling gates and gelatina barriers. Later seen **riding a Wyvern** near the Mansion — daggers buried in its eyes, steering it by pain to crash into two other attacking wyverns. Fighting alongside Bixira in aerial combat.
 
+## Chapter 5 — The Escape from Brasboredon
+
+Regained consciousness inside the walls after the failed explosion. Robinson presumed dead beyond the city walls, lost in the blast. Located Zacarías through a stone grate separating their sections. Used **Vociferación** to shout across: *"¡Zacarías! ¿Cómo estás?"* — reassured him: *"No te preocupes, Zacarías, te aceptaremos tal y como eres, un Warlock."*
+
+Used **Mage Hand** to help operate the portcullis mechanism — first attempt failed (even a nat 20 wasn't enough alone), but combined with Zacarías pulling from the tower roof, they raised the gate together.
+
+Navigated the second gate by crawling underneath it — digging through loosened earth beneath the base, barely fitting through. Emerged next to the Troll on Zacarías's side.
+
+Climbed the **Mansion exterior** hand over hand up ivy to the roof. Found **Bixira** barely alive — half burned, fourteen arrows in her back, standing through sheer refusal to die. The General circled above on his dragon.
+
+Witnessed Bixira's sacrifice: she launched a beam of pure white light toward the heavens, colliding with the General's volcanic meteorite. The explosion opened an **interdimensional portal to the Plano Oscuro** — stable for approximately five turns.
+
+Fought a **Dragon Trainer** on the Mansion rooftop — a tall draconid chain-fighter and Bixira's former sparring partner. Pinned his chain with **Mage Hand**. Cast **Dissonant Whispers** — a note pitched to rupture his eardrums, leaving him completely deafened. Swept his legs, drove a dagger into his neck (6 damage). He kicked her back and partially freed his chain. Taunted him in sign language since he couldn't hear: *"Deberíamos besarnos para romper la tensión."*
+
+The trainer spit acid-venom — hit before she could dodge. Drank a potion simultaneously, skin dissolving and regenerating at once. Tried to throw him off the roof; he barely held on.
+
 ---
 
 ## Current Status
@@ -62,7 +78,7 @@ Witnessed the orc hero's sacrifice at the gate mechanism. The party was separate
 | Field | Value |
 |-------|-------|
 | **Level** | 3 |
-| **HP** | Injured (crossbow wound, facial rune burn, accumulated damage) |
-| **Location** | Dragon Born — near the Mansion, aerial combat on a Wyvern |
-| **Conditions** | **"Asesina de niños" dwarven curse** (facial rune, permanent), serpent venom timer (unknown remaining), identity exposed |
+| **HP** | Injured (acid facial burns, bruising, lingering wounds) |
+| **Location** | Brasboredon — Mansion rooftop |
+| **Conditions** | **"Asesina de niños" dwarven curse** (facial rune, permanent), serpent venom timer (unknown remaining), engaged in combat with Dragon Trainer |
 | **Key Items** | List of 24 people, dragon chess set, harp, cornet, mini percussion, communication stone |

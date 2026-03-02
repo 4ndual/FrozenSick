@@ -1,11 +1,11 @@
-# Chapter 4: The Battle of Dragon Born — Session 06
+# Chapter 4: The Battle of Brasboredon — Session 06
 ## *"The city burned from both sides, and the only currency left was blood."*
 
 ---
 
 ### Setting the Scene
 
-The party has arrived at **Dragon Born**, the capital island of DragonLand. Three days inside enemy territory. The city is tearing itself apart — a full-scale revolution rages through the streets. Rebel factions fight Dragonforce loyalists. Towers burn. Gates close. Gelatina barriers (living slime walls) seal off entire districts. Wyverns circle the skies above the Mansion. And somewhere in the chaos, three former tavern employees are trying to reach the heart of the city alive.
+The party has arrived at **Brasboredon**, a fortified town in the north-central region of DragonLand. Three days inside enemy territory. The city is tearing itself apart — a full-scale revolution rages through the streets. Rebel factions fight Dragonforce loyalists. Towers burn. Gates close. Gelatina barriers (living slime walls) seal off entire districts. Wyverns circle the skies above the Mansion. And somewhere in the chaos, three former tavern employees are trying to reach the heart of the city alive.
 
 They carry communication stones — small magical pebbles that let them speak across distances. They'll need them. By the end of this day, they won't be in the same part of the city anymore.
 
@@ -173,7 +173,7 @@ From somewhere nearby, Tidus's voice on the stone: *"I need help."*
 - **Borax** was a DragonForce apprentice from Tidus's past — present in the castle on the morning Tidus killed Prince Roto. He made a demonic pact that traded his soul for power, and the talisman he wore was nearly full when Tidus destroyed it.
 - **The dwarven curse** "asesina de niños" is a racial magical brand. Nixira now carries the permanent stigma of child-killer among all dwarves — a consequence of the fire ballista's collateral damage.
 - **Zacarías lost his right hand** to the stone invoker. For a warlock who channels magic through gestures, this is potentially devastating.
-- **Dragon Born city** is structured into distinct zones: Robinson Bridge (entry), Cadalso (gallows/execution plaza), the Mansion (target), Commerce district, the Rivera (military river supply), and the Cuartel (barracks). The zones are separated by defense walls and gelatina barriers.
+- **Brasboredon** is structured into distinct zones: Robinson Bridge (entry), Cadalso (gallows/execution plaza), the Mansion (target), Commerce district, the Rivera (military river supply), and the Cuartel (barracks). The zones are separated by defense walls and gelatina barriers.
 - **Los Limpiadores** (The Cleaners) are a neutral cross-faction cleanup crew, minimum level 10-12, who clear battlefields after combat. Nobody touches them.
 - **Communication stones** (piedritas comunicadoras) allow the party to coordinate across the city — connected to Bixira's command channel.
 - The party has been in DragonLand for approximately **3 days** — long enough for Zacarías to begin understanding spoken Draconic.
@@ -261,7 +261,7 @@ Neutral cleanup force that operates after combat. All races. Minimum level 10-12
 ---
 
 #### Robinson
-- **Who:** A companion traveling with Nixira. Provides combat support, beatbox rhythm for Vicious Mockery battles, and knowledge of Dragon Born city's layout.
+- **Who:** A companion traveling with Nixira. Provides combat support, beatbox rhythm for Vicious Mockery battles, and knowledge of Brasboredon's layout.
 - **What he did:** Fought alongside Nixira in the tower. Got knocked out during combat but was revived. Participated in the freestyle rap battle against draconid soldiers. Guided the party through city streets using his knowledge of the town.
 - **End status:** **Alive.** Active companion with Nixira.
 

@@ -6,7 +6,9 @@
 
 **DragonLand** is a large island continent — the Dragonborn homeland and primary setting. The tavern (La Última Gota) sits at its geographic center, a crossroads for all traffic across the continent. Forests cover much of the land, with arid plains in the interior and mountains dividing north from south. A network of trade routes connects dozens of settlements.
 
-**Dragon Born** is a smaller island off DragonLand's eastern coast — the fortress-capital of Dragonborn power. It houses the throne, the military headquarters (Dragonforce), castles, barracks, and an execution plaza. The population speaks Draconic. The party is currently here after being transported via Prison Tortuga and escaping.
+**Dragon Born** is a smaller island off DragonLand's eastern coast — the fortress-capital of Dragonborn power. It houses the throne, the military headquarters (Dragonforce), castles, barracks, and an execution plaza. The population speaks Draconic.
+
+**Brasboredon** is a fortified town in the north-central region of DragonLand. The party is currently here, fighting through a full-scale revolution.
 
 **The Throne of DragonLand** is contested between two half-brothers:
 

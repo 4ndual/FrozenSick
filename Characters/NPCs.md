@@ -268,6 +268,33 @@
 
 ---
 
+### Donner IcePeak
+
+| Detail | Info |
+|--------|------|
+| **True Name** | Donner IcePeak |
+| **House** | **Casa IcePeak** (Ice element, Lords of Valdrenor) |
+| **Race** | Dwarf |
+| **Class** | Martial-magical hybrid (Eldritch Knight or similar) |
+| **Role** | Renowned warrior, Lunei's older brother |
+
+**Description:** Recognized across every continent with an education system. Uses an esgrima needle that transforms into a greatsword. Carries the **Rito** enchantment — a quartz-activated spell that turns his skin crystalline like diamond armor. One of eight IcePeak brothers. Celebrated, proud, emotionally volatile when it comes to his family.
+
+**Key Events:**
+- **Ch.5:** Accompanied Tidus through the Sniper crossing and the Gremory market. Led the escort (Messi, Achawn, Cory, Sid). Coordinated shield formations under Sniper's fire. Briefed Tidus on Sniper's capabilities: *"No son varios, solo es Sniper."*
+- Received a quartz fragment from Berlin that activated his **Rito shield** — crystalline armor.
+- **Briefly possessed by two deities** (Val and Moradin) after Altaflama's death curse. Hurled a sword at Nixira while under possession. Saved by Tidus's medallion.
+- Revealed as **Lunei's brother** — furious that Lunei was left dying of Frigid Woe in Eiselcross. *"¿Por qué demonios dejaste a mi hermano en medio de Eiselcross?"*
+- Gave Tidus an **IcePeak favor coin** — valid with any of his seven brothers.
+- Delivered an emotional speech about the revolution: *"Eres un símbolo... no dejes que muera la esperanza."*
+- Offered one final advantage: his Rito shield can absorb 3–4 of Sniper's shots.
+
+**Relationships:** Lunei (brother — one of eight), Tidus (primary ally in Ch.5), House Gremory (by reputation), Berlin (employer connection)
+
+**Current Status:** Alive. Departed to rejoin his own forces after the market.
+
+---
+
 ## Secondary NPCs
 
 | Name | Details | Last Chapter | Status |
@@ -282,8 +309,13 @@
 | **Fresitas** | Monk pupil — Discipline of Invisibility (black flame). Not yet found. | Unknown | Missing — presumably imprisoned |
 | **The Orc Hero** | Unnamed orc rebel. Jammed both arms into the gate mechanism to hold the portcullis open, sacrificing himself so civilians and the party could escape. Bones ground by the mechanism. Last words: *"This is my last sacrifice."* | Ch.4 | **Dead / Dying** |
 | **The Stone Invoker** | Draconid elementalist guard. Stone/earth manipulation. Has psychic immunity (forehead mark). Ripped off Zacarías's right hand in melee combat. | Ch.4 | Alive — still fighting |
-| **Robinson** | Companion traveling with Nixira. Knows Dragon Born city layout. Provides combat support and beatbox for Vicious Mockery battles. Knocked unconscious during tower fighting, revived by Nixira. | Ch.4 | Alive, with Nixira |
-| **Bixira** | Rebel commander near the Mansion. Controls the rebel communication channel. Mounted a Wyvern — stabbing daggers in its eyes to steer it — fighting two others in aerial combat. | Ch.4 | Alive — aerial combat |
+| **Robinson** | Companion traveling with Nixira. Knows Brasboredon's layout. Provides combat support and beatbox for Vicious Mockery battles. Knocked unconscious during tower fighting, revived by Nixira. His explosive plan at the gatehouse failed and collapsed the surrounding buildings. | Ch.5 | **Presumed dead** — lost beyond the city walls in the blast |
+| **Bixira** | Rebel commander. Controlled the rebel communication channel. Fought wyverns at the Mansion. Half-burned, fourteen arrows in her back. Sacrificed herself to deflect the General's volcanic meteorite — launched a beam of soul-light that collided with it, opening an **interdimensional portal to the Plano Oscuro**. | Ch.5 | Alive — critical condition, fate unknown |
+| **Sniper** | Elite archer operating solo. Held the main crossing zone — sixty headshots, sixty kills. Uses explosive-tipped arrows and the **Lluvia de Flechas** ability (Rain of Arrows — storm cloud converts rainfall into arrows). Killed Sid and Achawn. Donner killed him by climbing his tower with Rito shield protection. | Ch.5 | **Dead** — killed by Donner |
+| **Altaflama** | Highest-ranking false prophet of the Val cult. Ejected unconscious from the dimensional collision above the Mansion. Delivered a divine condemnation of Donner, triggering dual possession by Val and Moradin. His robe became the **Capa Sagrada** on Zacarías (+5 Religión). | Ch.5 | **Dead** — executed by Cory |
+| **Berlin** | Goblin shop-keeper employed by House Gremory. Fastidious, devoted to his employer. Deceived by Tidus into handing over the **Zafiro Esmeralda**, the **Bomba de Oscuridad**, and 600 gold. Also provided Donner with a quartz for his Rito spell. | Ch.5 | Alive — remains in the market |
+| **Dragon Trainer** | Tall draconid chain-weapon fighter. Bixira's former sparring partner. Commands dragons. Engaged Nixira in a rooftop duel on the Mansion. Deafened by Dissonant Whispers. Can spit acid-venom. | Ch.5 | Alive — fighting Nixira |
+| **The General** | Level 32 warlord mounted on a colossal dragon. Supreme military commander of Brasboredon. Can summon volcanic meteorites. Circled the Mansion during the revolution. | Ch.5 | Alive — still active |
 
 ---
 
@@ -306,6 +338,10 @@
 | **The Dwarf Mother** | Enana with burned hands. Cursed Nixira with the "asesina de niños" rune on her face after Nixira's ballista killed children. Left alive after Nixira cast Command: Mercy. | Alive |
 | **Rubén** | Mentioned by Tidus during demon negotiation — significance unclear | Unknown |
 | **Keyla** | Mentioned once; may be connected to a planned storyline | Unknown |
+| **Sid** | Dwarven fighter in Donner's escort. First casualty during the Sniper crossing — explosive arrow split his shield, precision shot between the eyes. | **Dead** (Ch.5) |
+| **Cory** | Dwarven fighter with twin swords in Donner's escort. Saved Donner by throwing his shield. Executed Altaflama while Tidus looked away. Survived the Sniper crossing but killed in the final battle. | **Dead** (Ch.5) |
+| **Achawn** | Demolitions specialist in Donner's escort. Carried smoke bombs, explosives, and a distraction whistle. Deployed smoke cover during the crossing. Killed by Sniper's Lluvia de Flechas. | **Dead** (Ch.5) |
+| **Messi** | Dwarven ranged specialist in Donner's escort. Quiver of 20 arrows, 20 crossbow bolts, and a sling. Used a polished metal fragment to track Sniper's position. Survived the crossing. | Alive (Ch.5) |
 
 ---
 

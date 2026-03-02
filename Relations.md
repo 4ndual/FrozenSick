@@ -191,4 +191,4 @@ graph TD
 | Ch.4 | Nixira cursed by dwarf mother | Nixira vs. Dwarves (racial stigma) |
 | Ch.4 | Zacarías loses right hand to stone invoker | Zacarías vs. Stone Invoker |
 | Ch.4 | Nixira allies with Robinson and Bixira | Nixira ↔ Robinson (companion), Nixira ↔ Bixira (rebel alliance) |
-| Ch.4 | Party separated across Dragon Born | All PCs isolated — bonds tested by distance |
+| Ch.4 | Party separated across Brasboredon | All PCs isolated — bonds tested by distance |

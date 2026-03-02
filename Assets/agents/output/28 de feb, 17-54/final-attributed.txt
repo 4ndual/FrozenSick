@@ -1,0 +1,980 @@
+[DM | HIGH] Recontexualización de la sesión pasada. Panorama de nuestros jugadores de la última sesión: Nixira, te estás levantando después de una gran explosión en el fallido plan de Robinson, el cual presumes muerto estando por fuera de las murallas de la ciudad. Ves que el pasillo por el que querías pasar, en vez de abrirse, terminó cediendo los edificios aledaños y generando un bloque inamovible.
+
+[DM | HIGH] Estás tratando de levantarte, como volver a recobrar tus sentidos. Zacarías, acabas de volver de la muerte, de haberte comunicado directamente con tu Dios, en el que te explicó tu misión de encontrar a todos los falsos profetas.
+
+[DM | HIGH] En la última sesión te encomendaron la siguiente misión. Tu Dios, el Señor de los Cuervos, claramente no es una deidad mayor; es una deidad menor. Cuando llegaste al Panteón no estaba. Solo había tres deidades sentadas esperándote. A la cabeza de todos, Val, Señor de la Muerte.
+
+[DM | HIGH] Val, más poderoso que Melfas, sí es uno mayor. Susurros, básicamente el Dios del espionaje, como se conoce en la subcultura élfica. Y a la derecha de él, la Llama Negra. Pero viste algo muy curioso en la Llama Negra y es que tenía la insignia de Alta Llama. Te recordó el discurso del falso profeta de las religiones invertidas.
+
+[DM | HIGH] Básicamente estabas escuchando cómo Melfas intervenía ante ti por Val y decía: "Aún no es momento. Él nos servirá más adelante. No dejes que entre aún en nuestro reino, señor". Básicamente Melfas abogó para que no se quedaran con tu alma. Val, aún bien. Alta Llama, él medió toda esa conversación.
+
+[DM | HIGH] Te pasaron el escriptorio, que es básicamente una sala del tiempo en el que transcurren milenios en menos de un segundo. Entonces te pusieron a practicar, a entender, a reflexionar, y ahí fue que adquiriste tu poder arcano. Tu conexión es débil; después de que un Warlock muere por primera vez, es muy difícil que vuelva a contactar a su Dios.
+
+[DM | HIGH] A menos de que haya alguna hazaña épica para que se vuelva a ganar su favor. Entonces tienes que tener mucho cuidado frente a eso. Estás volviéndote a levantar, ves todo brumoso, ves el fondo que explotó, ves a los dos Warlocks enemigos muertos tirados en el piso. El que estaba justo frente tuyo totalmente partido a la mitad por la explosión de la cuchilla.
+
+[DM | HIGH] Recuerdas que te acaba de atravesar una cuchilla, una hoz. Volteas y la ves clavada en la parte de atrás aún derramando parte de tu sangre.
+
+[DM | HIGH] Murieron de una forma muy brutal y grotesca, aplastados y destruidos. Te quedan cinco soldados que te están acompañando, cuatro soldados y un capitán valiente con el que logras muy bien distinguir sus rasgos. Sabes que es bastante importante. La figura de un pico helado y lo reconoces muy bien porque es conocimiento popular.
+
+[DM | HIGH] En todos los continentes que tienen sistema educativo reconoces el famoso IcePeak. Te dices: "Ah, es Donner IcePeak". Lo dices para tus adentros. Sabes que estás con un poderoso guerrero que te será de mucha utilidad. Recuerda que se estaba enfrentando a Sniper, un soldado muy famoso por su excelente puntería. Tienen que encontrar una forma de llegar a la otra puerta para enfrentarse al otro Troll para poder abrirle paso a Zacarías.
+
+[DM | HIGH] Logré darle acceso de otra forma igual. Sabes que Zacarías no lo va a lograr solo, pero está siendo un predicamento lograr atravesar su zona planteada. Tú tienes pleno conocimiento de todo el mapa por el ratico que alcanzaste a estar en él. Todas las ubicaciones, ya identificaste el mercado.
+
+[DM | HIGH] Identificaste la ruta, ves la situación de la Mansión. Recordemos todos que en nuestra última escena, Bixira había matado casi que al 70% de los Warlocks que estaban acompañando al Gran Dragón del General. Tienen que evitar a toda costa enfrentarse con el General. Estamos hablando de un personaje de nivel 32. Evítenlo. No es para el que estaba hablando con el Mega dragón gigante.
+
+[DM | HIGH] Si consideran que es muy arriesgado pueden ir directamente al mercado o si ya se ven en las últimas... Nuestro objetivo es salir de la ciudad para que no los atrapen. Seguimos con la dinámica de cuatro para moverse. Nixira, ¿qué quieres hacer?
+
+[NIXIRA | HIGH] Me levanto. Me quedo viendo hacia arriba de la muralla. Y pienso en Robinson: "No, Robinson. Eras un buen compañero. Espero que estés bien, donde sea que estés, si estás".
+
+[NIXIRA | HIGH] Quiero lanzar percepción para ver cómo está el muro, si es escalable o si veo otra salida.
+
+[DM | HIGH] Se rompió un muro de cristal. A través del muro no puedes pasar, hay como otra segunda división de fortaleza, pero la parte que se rompió le permite ver en toda la parte de arriba el mecanismo de apertura del portón que no puedes pasar y por una reja alcanzas a ver a Zacarías.
+
+[NIXIRA | HIGH] Uso Vociferación para gritar: ¡Zacarías! ¿Cómo estás?
+
+[ZACARÍAS | HIGH] Me siento un poco confundido, siento que pasó muchísimo tiempo. Pero a la vez me siento... siento que puedo hacer cosas que antes no podía hacer.
+
+[UNKNOWN | LOW] ¿No los guardas o violaron?
+
+[NIXIRA | HIGH] No te preocupes, Zacarías, te aceptaremos tal y como eres, un Warlock.
+
+[ZACARÍAS | HIGH] Siempre hay que llevarlo con humor.
+
+[NIXIRA | MEDIUM] Es que tengo... bueno, a usted sí lo alcanzo a ver pero no lo veo completo, solo le veo la cara. Okay, entonces, Zacarías, avanza, necesitamos salir de aquí. Creo que veo un mecanismo que puede abrir la puerta. Habiendo hablado con Zacarías, quiero ver cómo funciona el mecanismo, cómo lo activo.
+
+[DM | HIGH] Pero te alejas de esta. Al costado se divisó una escalera. Tú no puedes acceder a ella. Hay que subir como tres pisos y simplemente es una palanca de polea. Se sube por el otro lado.
+
+[NIXIRA | HIGH] ¿Cuánto pesa? ¿Sabemos el peso que tiene que levantar eso?
+
+[DM | HIGH] No.
+
+[NIXIRA | HIGH] Voy a intentar usar Mano de Mago para ver si logro hacerla rotar. Es un cantrip.
+
+[DM | HIGH] 30 pies.
+
+[NIXIRA | HIGH] Pero no dice que tenga que lanzar algo. Bueno, no sé tú, dime qué pasa.
+
+[DM | HIGH] Puede cargar 10 libras. Entonces, de acuerdo al resultado de 20, tu mano agarra la manivela, empieza...
+
+[DM | HIGH] Te vas acercando a la puerta. Sientes en tu musculatura que tienes la conexión mágica para la puerta que está tratando de rodar. Da tres primeras vueltas y enrollas la cadena. Cuando se termina de tensar la cadena y empiezas a sentir una fuerza en tu brazo, al principio pequeña como si estuvieras tratando de empujar...
+
+[DM | HIGH] Empieza a empujar más y empiezas a sentir 20, 40, 50, 60, 70 kilos. Se te baja la mano, te dolió, la revisas. Es demasiado pesada para que la levante sola. Ni con el 20.
+
+[NIXIRA | HIGH] Mierda. ¿O sea que no hay forma de que yo llegue a esa palanca? Pero no entiendo, ¿si el torreón está tumbado?
+
+[DM | HIGH] Tiene un Torreón, una torre.
+
+[NIXIRA | HIGH] Pero por eso, viendo las escaleras del Torreón... ¿Y cuánto espacio hay desde el muro hasta la torre?
+
+[DM | HIGH] Es como una calle completa. Acuérdate que la explosión en un pedacito del muro hizo un roto que te deja apenas asomar la cabeza, pero no derrumbó todo lo demás y terminó generando un muro aún más macizo de escombros.
+
+[DM | HIGH] Imagínatelo. Se va a caer parte del techo y no te va a pasar, simplemente va a hacer que el escombro sea más grande. La explosión rompió la ventana. Entonces, ¿tú te estás asomando por la ventana por la que podías pasar?
+
+[NIXIRA | HIGH] Ah no, del frente del lado. O sea, el hueco está aquí.
+
+[DM | HIGH] Pero no se puede pasar.
+
+[NIXIRA | HIGH] ¿Cómo es la torre? ¿Tiene alguna saliente? ¿Tiene arriba algún pico o algo?
+
+[DM | HIGH] A tu manera podrías pedir ayuda interna.
+
+[NIXIRA | HIGH] ¡Hola! ¡Bueno! Entonces le digo a Zacarías que necesito ayuda.
+
+[DM | HIGH] Llegas hasta la torre caminando.
+
+[ZACARÍAS | HIGH] ¿Que cómo veo la torre?
+
+[DM | HIGH] Frente a ti se divisa un Torreón de piedra. La parte de arriba es totalmente plana. Es una estructura por dentro; probablemente sea una especie de granero o algo porque tiene una puerta y estaba bastante cerrada. No tiene ningún tipo de interés.
+
+[DM | HIGH] A un lado de la puerta hay una escalera para subir hasta la parte superior. Alcanzas a divisar el sistema de cadenas y de contrapesos por el lado de la torre, probablemente sea con el que se abre la puerta.
+
+[ZACARÍAS | HIGH] Subo a la torre a revisar qué hay en la plataforma de arriba, pues porque desde el suelo donde está no lo alcanzas a ver. ¿Cuántas acciones tengo?
+
+[DM | HIGH] Dos. Cada una te cuenta como una acción.
+
+[ZACARÍAS | HIGH] Okay. ¿Qué veo arriba?
+
+[DM | HIGH] Vas caminando justo. Desde arriba ves a Nixira por tu derecha. Justo en la mitad de todo este cuadro hay una puerta de manivela rotativa. Ahí está el mecanismo a la derecha y la puerta en el piso. ¿Utilizas el mecanismo? Hay unas gatillas al piso y está el mecanismo para abrir la puerta. ¿Cuál quieres utilizar?
+
+[ZACARÍAS | HIGH] ¿El mecanismo para abrir la puerta?
+
+[DM | HIGH] Eso ya cuenta como una acción. Un dado de 20 a ver si eres capaz de eso. Agarras la cadena.
+
+[ZACARÍAS | MEDIUM] Pero es que era... ¿Cómo voy a decir?
+
+[DM | HIGH] Apenas alcanzas a jalar un poco y te gana la fuerza de los dedos y se devuelve.
+
+[ZACARÍAS | MEDIUM] Entonces le digo: "Sí, necesito una mano literalmente".
+
+[NIXIRA | HIGH] Vuelvo a usar Mano de Mago. 15 y 12 y 11, 23. Entonces me sale.
+
+[DM | HIGH] Empiezan a tirar, los dos empiezan a sentir mucha fuerza en el brazo, a jalar: 50, 70, 80. Te faltaba un poquito, una ventaja para abrirla. Una ventaja literal, tu mano. Se le da mucho más fácil. ¿Qué más quieres hacer?
+
+[ZACARÍAS | HIGH] Choca esos cinco, Nixira.
+
+[ZACARÍAS | MEDIUM] Eh listo, entonces ya estoy ahí arriba. Ya abrí la puerta. En el piso hay unas gatillas, o sea ¿abajo del Torreón?
+
+[DM | HIGH] No, justo en el piso. Hazte cuenta acá, unas gatillas.
+
+[ZACARÍAS | HIGH] Okay. ¿Cómo es el mecanismo? Lo utilizo.
+
+[DM | HIGH] Bueno, entonces lanza un d20.
+
+[ZACARÍAS | HIGH] No, marica. Quiero saber si se neutraliza o cómo funciona si tengo una desventaja. ¿Puedo usar inspiración?
+
+[DM | HIGH] Puedes aprovechar que tienes un 18, volver a tirar otro para entender.
+
+[ZACARÍAS | HIGH] Eso es un siete.
+
+[ZACARÍAS | HIGH] Bueno, listo. Después del breakdown nervioso que tuve en la última sesión donde perdí toda la esperanza, me recompongo y pienso: "Yo llegué hasta aquí con fuerza bruta como se ha hecho antes y lo haré". Miro el terreno, ¿qué estoy viendo a mi alrededor?
+
+[DM | HIGH] La parte de donde vienes era una plazoleta como un parque principal. Es una calle amplia como cuatro carriles, pero no hay nada interesante. Son casas normales, tradicionales medievales. Acuérdate que todo eso tiene dos muros mágicos. La barrera mágica es más o menos de 10 pisos.
+
+[DM | HIGH] En la zona donde acabas de llegar es una especie de parque medieval. Estás teniendo un descanso, recuperando energía porque toda esta parte estaba separada por el distrito militar.
+
+[DM | HIGH] Justo enfrente de ustedes hay otra calle. Un pasillo para cruzar. Ves al fondo que hay como una especie de barricadas de madera que están separando el distrito. Sabes que la situación es bastante tensa porque justo antes de llegar a las barricadas ves varios cadáveres que corrieron a tratar de atravesarlas.
+
+[DM | HIGH] Por lo menos hay unos 60 y todos tienen una peculiaridad: tienen una flecha clavada directo en la cabeza, casi que un headshot perfecto.
+
+[DM | HIGH] Ahí desde tu perspectiva es un contingente y tú dices: "Tiene que haber demasiados arqueros", pero ya Donner te dijo: "No, no son varios, solo es Sniper".
+
+[ZACARÍAS | HIGH] Okay, bueno. Aquí está Donner. ¿No se murió? ¿Y Messi? ¿Hay algún animal por ahí?
+
+[DM | HIGH] No hay nadie vivo a la vista, ni pájaros ni nada. Solo ustedes.
+
+[ZACARÍAS | HIGH] Espera, Donner, pues sí... ¿quiénes más están?
+
+[DM | HIGH] Messi, Achawn y Cory.
+
+[DM | HIGH] ¿Qué quieres hacer?
+
+[ZACARÍAS | HIGH] Le he preguntado qué equipamiento tienen actualmente. ¡Messi! Muestra el arsenal.
+
+[DM as MESSI | HIGH] Messi se quita el escudo. Baja el escudo de la espalda y te das cuenta que parece ser de larga distancia. Tiene dos carcajes llenos: uno con 20 flechas y el otro con 20 birotes de ballesta. Adicional tiene un lanzapiedras.
+
+[DM as ACHAWN | HIGH] El especialista en distracción te muestra que en su escudo tiene aproximadamente 10 bombas de humo, dos explosivos de alta potencia y un silbato mágico de distracción que deja inhabilitado a quien lo escuche durante una acción. Pero ahora solo lo puede utilizar una vez.
+
+[DM as CORY | HIGH] Cory tiene dos espadas. Es un enano experto en marcialidad con armas.
+
+[ZACARÍAS | HIGH] Y Donner, ¿tú qué tienes?
+
+[DM as DONNER | HIGH] Saca su arma de esgrima, la aprieta y se convierte en un mandoble. La suelta y vuelve a su forma original. Te das cuenta de que es alguna especie de guerrero o mago que viene de la escuela de las armas.
+
+[ZACARÍAS | HIGH] Okay, Messi es ataque a distancia, el tanque es Cory con el mazo, Achawn es explosivos y Donner está roto. Todos tienen escudos. Messi tiene ballesta, arco y lanzapiedras, y Cory tiene un mazo enorme.
+
+[ZACARÍAS | HIGH] Veo el piso.
+
+## Attribution Summary
+- **DM**: 38 segments (Narration, NPC voicing: Messi, Achawn, Cory, Donner)
+- **Zacarías**: 22 segments (Actions, dialogue with Nixira/DM, equipment check)
+- **Nixira**: 19 segments (Actions, dialogue with Zacarías/DM, spell usage)
+- **UNKNOWN**: 1 segment (Line 33: "No los guardas o violaron [?]")
+
+**LOW-confidence segments:**
+- `[UNKNOWN | LOW] No los guardas o violaron [?]`: Unclear if this is a player joke or DM comment due to audio quality/context.
+- `[NIXIRA | MEDIUM] Es que tengo...`: Context suggests Nixira speaking to Zacarías across the wall, but tone is conversational.
+- `[ZACARÍAS | MEDIUM] Pero es que era [?] ¿Cómo voy a decir?`: Context suggests Zacarías reacting to a failed strength check.
+
+---
+
+[DM | HIGH] Lanza un [?] como de esgrima, pero su aguja de esgrima la aprieta y se convierte en un mandoble. Y la suelta y vuelve y se convierte en una [?] te das cuenta de que es alguna especie de mago hechicero, warlock o guerrero que tiene viene de la escuela de las armas?
+
+[DM | HIGH] Porque necesito un arma física. ¿La genera de algún tipo de material? ¿Viste al [?] rojo y café? No lograste distinguir qué material es el que usa el arma de.
+
+[ZACARÍAS | MEDIUM] Que Messi que es ataque a distancia tenemos a. Al tanque que es Cori que tiene un mazo. Tenemos a Achawn que es? Explosivos bombardero como un caster. Y tenemos? Y tenemos? A Donner que está roto. Y todos tienen escudos flechas unas las tiene mis órdenes. Pero Messi tiene una ballesta y un arco y un lanzapiedras y un lanzapiedras y Cori tiene un mazo enorme enorme.
+
+[ZACARÍAS | MEDIUM] Tengo 10 bombas de humo explosivos y un silbato de distracción y si solo tiene dos [?]. Bueno, tienes que estudiar más los números del [?], pero bueno pues intento.
+
+[ZACARÍAS | MEDIUM] Veo el piso.
+
+[ZACARÍAS | HIGH] No no quiero ser racista pero tú sabes. Yo he estado con ustedes. Y. Ustedes siempre han sido muy buenos excavadores ¿qué tanta posibilidad hay de que podamos excavar este piso? Que es tierra eh o para pasar por debajo de la arcada y encontrar un subterráneo van pasando?
+
+[DM as DONNER | HIGH] No vas a insultar a mi pueblo aquí construimos las putas alcantarillas de esta ciudad. ¿No crees que ya lo hemos intentado? El maldito Troll de atrás que lo [?] durante la última entrada a la siguiente está hasta el mercado, nuestro plan es distraerlo y bajar por ahí para llegar al maldito Palacio.
+
+[ZACARÍAS | HIGH] Y ¿quién de ustedes es más rápido? Messi estoy hablando. ¿Quién de ustedes tiene mejor visión? Messi es el arquero de [?]. Okay. Messi ¿sabes dónde está Sniper? Messi se va caminando así un enanito con su escudo. Ves que agarra saca uno de los picaportes de una de las puertas de las casas que tac-tac lo golpea y queda un pedacito como metal.
+
+[DM | HIGH] Ves que saca algo de su bolso y lo [?] y lo frota y lo frota y lo frota y lo levanta contra el aire y algo te destella en los ojos.
+
+[DM | MEDIUM] Inmediatamente apareció por esta parte del pasillo. Cayó al piso. Dirección este aproximadamente unos 14 m la distancia o sea como por aquí hacia arriba ¿sí? Probablemente está sobre un tejado. Aquí hay. Pues nada nos toca ir. Ensayemos esto primero. Eh Donner se adelanta ahí donde volvernos a proteger. O sea aquí estamos protegidos por aquí.
+
+[ZACARÍAS | HIGH] Tendríamos que llegar para volver a estar protegido. Eh marica, te voy a poner el área de riesgo. Esto es una [?]. Todo eso está al alcance.
+
+[ZACARÍAS | HIGH] Okay. ¿Cuánto espacio ocupa una bomba de humo? Eh una casilla nada más. Estamos hablando de un lugar enorme ¿no? No me cubre solo una casilla.
+
+[ZACARÍAS | HIGH] Teoría o sea yo yo me imagino que nosotros no tener [?]. Bueno! Nada eh. ¿Cuánto cuánto tiempo dura el efecto? La bomba una ronda? O sea y vuelve así. Okay ¿Y hasta qué distancia nos puede tirarla? Tiene que ser un dado de cuatro para ver qué tan lejos llega.
+
+[DM | HIGH] Te encuentras muy poquito de cuatro, es lo que me muevo por turno, o sea cada caso a cualquier persona que la agarre y la lance es un d4.
+
+[ZACARÍAS | HIGH] Listo eh ¿ay si, por ejemplo no sé saco un d4 y la lanzo desde aquí? Yo puedo dejársela aquí sí. Okay. Bueno les comento el plan. Bueno el plan se llama Encarámese. Listo. Eh bueno nada no nos compliquemos. Hacemos eh unas cuatro. Unas cuatro tres bombas de humo.
+
+[DM | MEDIUM] Para avanzar ¿en dónde tú? ¿Qué recomiendas? ¿Deberíamos avanzar en brigada o por separado? Donner se queda viendo la situación. Ves cómo se pone a castear justo frente a ti. Genera un mazo. Vas a golpear sus cosas se iluminan runas y ven una proyección de ustedes este si eso se llama [?] genera copias del equipo que se mueven.
+
+[DM | HIGH] Ven cómo van casi saliendo los cinco y apenas ven que no les disparan, pero justo cuando están a punto de llegar a la barricada, escuchas el sonido de pólvora y después una explosión el hijo de puta Sniper. Tiene explosivos también en sus flechas, al parecer los atan a la punta de la flecha y los envía cuando ve que pasan muchas personas que no alcanza dispararlos a todos.
+
+[ZACARÍAS | MEDIUM] Tendríamos que ir por brigadas. Quizá de a dos personas para no arriesgarnos a morir todos. Listo. Eh bueno yo puedo usar sneak, no me va a poder ver y menos si tengo una base de humo Messi es muy rápido. Manda a Messi bueno hace bueno voy a poner a Donner aquí.
+
+[DM | HIGH] Donner está con Messi pero lo primero que quiero es que que Cham tire. Tire bombas de humo. Aquí aquí y aquí o sea o sí tres bombas de listo lanza tres dados de cuatro. Esto cuenta como tu primera acción tres d4.
+
+[DM | MEDIUM] 1, 2, 2. ¿Dónde los puedo tirar? Tu arco es uno claramente acá. Y dos podría ser acá, acá o acá?
+
+[DM | HIGH] Bueno! Nixira. Tiró las dos bombas de humo y le dio tres. Sí, la otra acá estos tres puntos. Y nada quiero que Messi y Donner avancen protegidos con sus escudos hacia acá listo d4 a ver cuánto logran avanzar. ¿De cuál quieres?
+
+[NIXIRA | MEDIUM] No hay algún bono? Porque eso no es más rápido.
+
+[DM | HIGH] Pues yo Sniper escucho los pasos. Su armadura es pesada. El movimiento. Puedes utilizar cualquiera de los poderes que tienen pero siguen siendo dos acciones. Escucho los pasos. Apunta sus flechas. Suelta las flechas para bueno y para malo.
+
+[DM | HIGH] Al ver el humo. Entiende que no va a ser capaz de darles en el primer alcance, así que apunta directamente al segundo alcance. Tensa su flecha. Le ata un explosivo y la suelta.
+
+[DM | HIGH] 11 de golpe lanza tu dado para ver qué tanto protege el escudo de alguno de los dos elige ¿le da a Messi o le da a Donner? Dos dados sí, son dos escudos pero solo le va a dar a uno okay. ¿Puedes escoger?
+
+[DM | HIGH] 16. Le pega a Donner me dices. Crees que suena una explosión. Se disipa parte del humo, pero solo del lado que están ustedes. O sea el humo hace como más hacia el centro de un alcance y alcanzas a ver que Donner en un reflejo en el que pega un salto para que la flecha explosiva rebotara y explotó por el aire.
+
+[DM | HIGH] Por encima de ellos ves como Messi se adelanta pero Donner se puso a cubierta. Okay.
+
+[NIXIRA | HIGH] ¿A quién vas a criticar a Messi y a Donner? No. Ah bueno! Avanzo porque no veo ya se abrió la puerta así. Sí avanzo y antes de cruzar la puerta quiero lanzar Percepción para ver qué hay. Pues le percibí hasta el alma señor.
+
+[DM | HIGH] Después de que se alzan los muros de la ciudad de adentro, de verdad caminan tres espacios hacia enfrente porfa. Ves otro Torreón exactamente igual al que estaba abriendo la puerta escuchas un lanzapiedras saliendo por la parte de arriba ves humo volteas hacia arriba y ves que uno de los warlocks estaba viendo hacia tu posición, pero se está volteando.
+
+[DM | HIGH] Entiendes que te acaban de ver ingresar y están alertando de lo que recuerdas. Sabes que probablemente Bixira está peleando con ella en el techo, así que tienes que la única forma de lograr encontrarte con Zacarías es darle el paso y prestarle apoyo, porque claramente del otro lado del muro que los divide hay algo y es algo espantoso.
+
+[DM | MEDIUM] Ni su zona de contacto. No no aérea entonces y recuerden que tenemos.
+
+[DM | HIGH] ¿Qué miro qué veo en la torre? Todo es parte de tu gente. Mira hacia abajo y te das cuenta de que una cuadrilla de enanos que al parecer son como todos los que trajo Bixira en protección aproximadamente 20 enanos. Todos son fighters, entonces todos están con mazos y están con sus escudos.
+
+[DM | HIGH] Están haciendo algo que se llama Onda Grupal. Esto es un hechizo de aproximadamente nivel 8 de los guerreros y es que pueden arrojar una onda de expansión que genera muy poquito daño pero echa hacia atrás a tu enemigo. Los 15 están dando masazos en el piso para [?], y luego van dando hacia atrás, pero cada vez que lo botan hacia atrás bota masazos y termina matando de a uno a dos Trolls con los masazos.
+
+[DM | HIGH] Es una situación bastante crítica. Podrían esperar a ver si los enanos logran hacerle más daño al Troll o sorprenderlo por detrás, lo cual le daría más ventaja a los enanos.
+
+[NIXIRA | HIGH] Pero entonces para abrir la puerta me imagino que está la manivela. Pero no puedo abrir la [?] como el que abrió. Ni me acuerdo de contrapeso. Ah ¿tengo que soltar algo?
+
+[NIXIRA | HIGH] ¿Cómo así? Yo haría esto antes de irme para allá. No tiene dos o tres. Y no cabe, ¿podría intentarlo? Bueno entonces uso mi walkie-talkie mágico de piedrita y le digo a.
+
+[NIXIRA | HIGH] ¿Me copias Zacarías? Copiado, copiado. Le explico que la reja está en diagonal y que justo delante de la reja hay un Troll y que hay cien enanos intentando como derrotarlo. Pero que no sé si pueda abrirles la puerta entonces que intente meterse por debajo. Entonces que baje de la torre e intente pasar la puerta.
+
+[DM | HIGH] ¿Quieres gastar una acción para que llegues a la puerta?
+
+[ZACARÍAS | HIGH] ¿Qué haces papito ahí? Seguimos listo, entonces estoy detrás del Troll. Y pues lanzo un Fireball. Dado de 20. En efecto ya era momento. Eh momento que lancé un dado sin querer. Para el Fireball. Ah, pero estoy detrás, no sé, ataque de oportunidad.
+
+[DM | HIGH] Me parece excelente.
+
+[DM | MEDIUM] Un d10.
+
+[DM | HIGH] Felicidades, sorpresa. El Troll se distrae como que al ser mazo hacia arriba. Pero justo cuando va a hacer mazo tenía clavado como una especie de espada, un arma de los enanos y te deslumbra el choque de sol y fallas. Y es justo que pasa sobre el mazo, no le da a nadie, le da sobre el mazo y ves que la punta del mazo se prendió en candela.
+
+[ZACARÍAS | MEDIUM] Yo pensé que iba a seguir asignando enanos. Tenía que darle.
+
+[DM | HIGH] Sí, claro, no porque esta posición y eso. O sea aquí está en el Torreón, pero ¿cómo es el muro que está ahí como la división? Algo más que es una división mágica de [?]. O sea, ella ya está sobre el Torreón, pero no podría saltar porque chocaría como contra una pared física.
+
+[NIXIRA | HIGH] Y y o sea ¿esta? Todo esto es esa división mágica o... Pues sí okay. Eso también todo okay. Algunas partes que son físicas. Hay otras partes que son mágicas. Ahora depende de la descripción. Por ejemplo, este morado es físico. Esta va a desaparecer allá. Es física, los de la mitad son mágicos. Listo, entonces voy a usar Comando.
+
+[ZACARÍAS | HIGH] Golpéate a ti mismo. Bueno "golpéate" porque solo es una palabra, tienes que lanzar superar sabiduría 13 de Sabiduría. Eh ¿y cuánto se golpea? ¿Qué Command es solo la acción? [?] hizo. Parece que te digo.
+
+[DM | HIGH] Bueno, ¿recuerdas cuánto te tocó pegarle al puto Troll?
+
+[DM | HIGH] Hoy vi un [?] que sí hay cuánto pega tu personaje. Un 7, 18, 11 y 16. Aquí tenemos 45, 55, 65 y... 72 de daño. Es juego de Troll. Cuida su mazo. ¿Y el fuego? Tiene daño permanente. Se subió un poco el cráneo ¿no? O sea logró es con un huequito y que...
+
+[ZACARÍAS | HIGH] 72.
+
+[DM | HIGH] Utilidad señores utilidad. Generas un ataque de oportunidad para tu grupo de enanos. Entonces es un dado de 20 y multiplica por 15 porque pues están haciendo su ataque de oportunidad de lanzarles masazos. 16 * 15 = 240... [?] 320 de daño. Ves que mientras el Troll está con su mazo todos los enanos agarran sus mazos y empiezan pa pa... a ver pobrecito Morty un d20.
+
+[DM | HIGH] Es más grande 10 [?]. 10 enanos estallan contra el muro humano. Hay uno que lanzó tan alto que ves que va hacia ti. Te alcanzas a tapar y escuchas. Es un hueso, carne, ensalada cayendo por el muro mágico hasta el piso, indirectamente asesina al enano.
+
+[DM | HIGH] Están bien. Neta ya Joel, Joel y el que pegó contra la torre se llama un lugar mejor. Muchas gracias, muchas gracias. Eh Comandos en guerra pues mucho daño, muchas acciones y muchas cosas simultáneas.
+
+[DM | MEDIUM] Por eso yo estaba pidiendo una oveja para ver si la mando a explorar. ¿Y cómo la vas a obligar, empujándola?
+
+[ZACARÍAS | HIGH] Me limpio la mierda siempre termina vuelta mierda. Entonces no me limpio una monda y las otras fuentes.
+
+[DM | HIGH] Bueno d4, d4 primero para ver si pasa algo interesante.
+
+[DM | HIGH] Tu dado de daño normal. El Troll como se acaba de agachar no le diste pero levantó el mazo y el que más se [?] parte del mazo.
+
+[DM | HIGH] Pues como el mazo ahora está totalmente en llamas como hasta la mitad. Bueno, muchas gracias. Listo, desde la posición en que estoy en el Torreón.
+
+[NIXIRA | HIGH] ¿Qué alcanzo? Quiero saber como qué tanta distancia hay, ¿alcanzo a ver el Sniper? Alcanzo a ver, eso está atrás nada más y lo ves por arriba de las casas y [?] que hay.
+
+[DM | MEDIUM] No me bajo del Torreón. Voy caminando bueno sí, recorriendo, acercándome acá. Puertas macizas negras medievales de corredera obviamente con sus respectivos... estás viendo una [?] de madera de una [?], que es morosa como una pantaloneta pero [?]. Pantaloneta rota de madera y una raja de albañil, el culo del Troll mientras acaba de lanzar el [?] de cuero, de cuero. Y ves cómo está volviendo a lanzar otro masazo al piso.
+
+## Attribution Summary
+- **Speaker counts:**
+  - `[DM]`: 37 segments
+  - `[ZACARÍAS]`: 14 segments
+  - `[NIXIRA]`: 9 segments
+  - `[DM as DONNER]`: 1 segment
+- **Low-confidence segments:** None.
+- **Ambiguous scenes:** Some segments involve rapid back-and-forth or merged descriptions (e.g., Zacarías planning while DM narrating NPC movement), but clear identifiers like "Messi," "Donner," and Colombian slang ("marica," "monda," "papito") allowed for confident attribution. The transition between Nixira outside the wall and Zacarías inside was well-marked by the DM's narrative shifts.
+
+---
+
+[DM | HIGH] Bueno dado de cuatro de cuatro primero para ver si pasa algo interesante.
+
+[DM | HIGH] Tú dado de daño normal. El Troll ¿Cómo se acaba de agachar? No le diste pero levantó el mazo y el que más se parte del Mazo.
+
+[ZACARÍAS | HIGH] desde la posición en que estoy en la en el Torreón. ¿Qué alcanzo? Quiero saber cómo qué tanta distancia hay, alcanzo a ver a Nixira, alcanzó a ver eso está atrás nada más y lo ves por arriba de las casas y murallas que hay.
+
+[ZACARÍAS | HIGH] No me bajo del Torreón. Voy caminando Bueno sí recorriendo acercándome acá. Puertas macizas negras medievales de corredera obviamente con sus respectivos estás viendo una troza de madera de una troza de troza que es morosa como una pantaloneta pero troza. Pantaloneta rota de madera y una raja de albañil el culo del Troll mientras acaba de lanzar el pedazo de cuero de cuero Y ves como está volviendo a lanzar otro mazazo al piso.
+
+[DM | HIGH] Eso es lo que tuvo esa Apenas te asomas por el pasillo. ¿No doy cuenta que es un Troll? No obviamente es un Troll, es un troll.
+
+[ZACARÍAS | MEDIUM] O sea no puedo pasar por ahí no pero el uno se da cuenta de mi presencia.
+
+[DM | MEDIUM] Lo que voy a hacer. Zacarías o.
+
+[ZACARÍAS | HIGH] Voy! Ahí hay una piedrita por ahí.
+
+[ZACARÍAS | HIGH] Hago una piedra. Y se la se la lanzo al al Troll para llamar para que ya para llamar su atención. Okay lanza un dado de 20.
+
+[DM | HIGH] Ves como la piedra, cae y rebota? Inocente de mi presencia. Por enterado, marica y le diste en la nuca.
+
+[DM | HIGH] Normalmente cuando estás con criaturas que suelen tener inteligencia infrahumana, O sea que son muy estúpidos, no son sensibles a a cosas externas, o sea, le puedes lanzar piedras. Le puedes gritar cosas, no le va a prestar atención porque es como hablar con un mongolito marica por más de que usted le habla Entonces por qué fallas tan que tuviste una tirada alta porque con los trolls funcionan las tiradas funcionan hasta la inversa la inteligencia promedio de un troll es.
+
+[DM | HIGH] 6. Tenías que haber sacado menos de 6 en el dado para que el troll hiciera como Uh.
+
+[NIXIRA | MEDIUM] Esta puerta que ¿cómo es? Sí, tiene pelos. Como esta casa de ancho Entonces nada que los pueda derretir nada que los pueda romper. Las rendijas son de este tamaño se va apenas como para meter la cabeza y ya. Y está inclinada. Y no hay ningún mecanismo para que que yo pueda utilizar el niño.
+
+[NIXIRA | HIGH] En las dos contrapesos al lado este uno ya está. El otro que está arriba, sube la cabeza y está apenas el bordecito de una Mano de Nixira humeante. Sí, la necesito una mano. Otra mano. Ya intentaste pasar por el hueco que hay debajo de la puerta. Voy a intentarlo.
+
+[DM | HIGH] Listo, vamos a hacer una prueba de Es que confundí el hueco debajo de la puerta con la rendija. No es como dar una puerta maciza, ¿no? Que es de las que tienen huequitos una reja de los perritos. Vamos a ser lo interesante. No le va a poner dificultad sino hacer dados de 20.
+
+[TABLE | HIGH] Dados de 20 1. 2 3.
+
+[DM | HIGH] Del contrapeso. Se abrió como un en la parte de acá, la reja al levantarse que levantó la Tierra y ves un espacio pequeñito como para pasar arrastrándote, te agachas y empiezas a escarbar con tu mano. Escarbas escarbas escarbas escarba y empiezas a arrastrarte. Sales estás bastante cansado lleno de tierra y te paras justo del otro lado.
+
+[ZACARÍAS | HIGH] Es para que te gustó del otro lado de la reja. Gracias Nixira, me hiciste quedar como estúpido pero funcionó.
+
+[DM | HIGH] Tidus apenas Messi está en un lugar seguro. Dejas a Donner cubriendo a Messi o los mueves a los dos es tu elección, ¿Pero ya sabes qué pasa si los mueves a los dos?
+
+[DM | HIGH] No, no Nixira [?] hasta acá. Justo cuando Messi va corriendo hay una flecha en el aire. Esta es una flecha de fuego, sale disparada hacia Messi y ves como Cory con su mazo y dispara. Su escudo hacia el aire y fade [?]. Detiene la flecha que va justo hacia el dándole tiempo de esconderse, pero en ese preciso instante Donner se quedó sin protección y escuchas un de una segunda flecha que va en camino.
+
+[DM | HIGH] Entonces que todos están pasando simultáneamente va contigo más tu segunda acción.
+
+[TIDUS | MEDIUM] Nada, mi segunda acción es.
+
+[TIDUS | HIGH] una bomba de humo acá y al mismo tiempo eh Cory le tira su escudo a. Achawn lanzando más cosas.
+
+[DM | HIGH] Listo, apenas vieron que Donner lanzó el golpe hacia el escudo para darle al aire inmediatamente quien lanza el escudo eh lo lanzó Cory, Cory entendió la situación de que su jefe se iba a quedar sin defensa, fue corriendo y lanzó el escudo cuando vio que lanzó el escudo ¿Quiénes fueron de humo en el escudo antes de que saliera?
+
+[TIDUS | MEDIUM] Tú le gritaste ¡Donner, Donner! agarró el escudo justo a tiempo para que la flecha explotara sobre la bomba de humo. Está cubierta ¿la lograste? Continuó ¿qué le digo? movilícense eh y nos intentamos movilizar en grupo acerca detrás de Donner listo. Acuérdate que la de la primera casilla ya no tiene bomba de Exacto, pero la segunda sí la primera no, pero nos vamos a acercar listo y obviamente todo protegido con dos llegamos listo ¡Wait! para porque obviamente ataque de oportunidad van los cuatro caminando y con nuestro escudo y Entonces vamos por partes ¿quién está dando ventaja a la defensa?
+
+[TABLE | HIGH] 4 y 14.
+
+[TIDUS | MEDIUM] 17. ¿Qué vida tiene?
+
+[DM | HIGH] ¿Porque sacrifican? ¿Elija sigue a Cory? No no, Pero ¿por qué se va a morir? ¿A quién quieres salvar así con? Ya ya.
+
+[TIDUS | HIGH] No es cierto. ¿En qué orden salieron quién iba a la cabeza? A la cabeza Achawn detrás de ese Cham. En tercer lugar, sí y en cuarto lugar yo estoy lateral del lateral.
+
+[DM | HIGH] Van corriendo entre los cadáveres a toda mierda. Con sus escudos. Voltea su derecha estaba así, pues a su derecha y por un segundo. Ve a tres niños. Eran tres pequeños niños enanos apenas tenían su barbita saliendo. Los ve tan pequeños en brazos de su padre. Aplastados no murieron ni siquiera por las flechas murieron por el peso.
+
+[DM | HIGH] Su padre puede haber cayendo están cubiertos de sangre. Eso lo distrae un segundo. Mientras tú vas corriendo ves entre los escudos como la primera flecha impactó en el escudo de Cory y genera una explosión que los devuelve un poco hacia atrás. La explosión le abrió el escudo. Cory volteó a ver Sniper quien vio su oportunidad y lanza una flecha justo en medio de sus ojos, mientras ustedes iban corriendo con tu acrobacia.
+
+[DM | HIGH] Alcanzaste a hacer un salto para ver hacia atrás y ver justo en el momento en que la flecha entraba en medio de sus ojos y lo hacía caer. Te lo estás poniendo en el.
+
+[NIXIRA | MEDIUM] Ella perdió solo. Un poco.
+
+[NIXIRA | HIGH] Me costó la vida así.
+
+[DM | HIGH] Vamos a ver entonces del universo el este para la ciudad de mis jugadores el día de hoy.
+
+[DM | HIGH] ¿Quién quiere el seis? El 6 de qué listo. Justo cuando terminas de pasar la puerta. Ves al troll, ves cómo se agacha y por el dolor expulsa un gas. Te tragas como el gas enrarecido, lo cual genera triple desventaja. Ahora te tiraré las tres dados de 20 y siempre el dado más bajo va a ser el que utilicemos por dos rondas para cualquier cosa para cualquier cosa siempre van a ser menor.
+
+[DM | HIGH] Es el que usas Ese fue tu seis no es por las condiciones porque es plaga, Pero bueno, si les vuelve a salir va a ser diferente. ¿Quién quiere el 5?
+
+[TABLE | HIGH] 20 el que Okay el que saque más quiere. 19.
+
+[DM | HIGH] Todos tus enanos voltean a ver.
+
+[DM | HIGH] Donner ve. Está desesperado no vas a poder utilizarlos en el siguiente turno. Están en estado de shock. Tienen que ser acciones tuyas porque están desesperados. Llamada escuadrón de esperanza. La acción pudo haber funcionado diferente, pero precisamente contigo quiero tener esos dados. No los vas a poder utilizar para tener que hacer acciones tuyas y contigo.
+
+[DM | HIGH] Queda el cinco por durante durante 2 turnos. Por el siguiente turno, Ah el Mío Cid [?]. Eh Y a ti te da efecto campanilla oscuro empieza a escuchar unas campanas.
+
+[DM | HIGH] Tres campanas. ¿De qué? En sonido de [?]. ¿Reconoces ese sonido? ¿Qué es el Heraldo de las Siete Canciones? Volteas a dar hacia el Palacio. Y te das cuenta como uno de los warlocks. Se levanta y empiezas a ver tornasol arcoiris en todo su cuello. Reconoces muy bien a Kali.
+
+[DM | HIGH] La hija de Caledon [?]. La maldita está acá. Y acaba de hechizar a alguien ves como sale volando. ¿Que haya traído el Heraldo de las Siete Canciones? ¿Por qué trajeron a su tercer hombre más fuerte a esta ciudad? ¿Qué interés tienen en esa mansión?
+
+[ZACARÍAS | MEDIUM] Tienes desventaja por toda esta tirada porque está Saúl [?] Y eso ni siquiera. ¿Qué quieres hacer? Es una acción. ¿Cómo estoy de manos? Atadas ¿Qué quiero hacer qué quiero hacer?
+
+[ZACARÍAS | HIGH] El troll sigue ahí ¿cierto? Lo veo ahí. Pues es que yo ¿como cuántos metros estoy del troll? ¿A cuántos metros estoy del troll a uno a medio? Jueputa. ¿Qué puedo hacer que no sea tan peligroso? Con esa vaina bruta y quién sabe cuánto qué tanta fuerza y mucha vida.
+
+[ZACARÍAS | MEDIUM] Y eso ya fui a.
+
+[NIXIRA | HIGH] Resulta que. Mientras todo eso pasaba. Tidus accidentalmente activó su piedrita walkie talkie así y yo escuché todo lo que pasamos. Y mientras estoy pensando en Kali aún tiene hechizo y que hay que ir a la mansión rápido. Me quedo pensando si. Yo necesito calmarme y me siento y agarro mi piedrita walkie talkie y le digo.
+
+[NIXIRA | HIGH] ¿Estás ahí? No está. Una respuesta. Entonces agarro mi piedrita y empiezo a cantar.
+
+[NIXIRA | HIGH] ¡Entonces! Me hago bolita y agarro mi piedrita walkie talkie me empiezo a mecer y digo. Ay pues my fingers into my. Empiezo a cantar Duality para reconfortar a Cory y a Achawn y honrar la muerte.
+
+[DM | HIGH] Lo siento. Ve a sus compañeros desesperados. Les empieza a golpear que hagan un escudo [?]. Bueno podré hacer acción pero todos están en shock [?], lo cual te da ventaja para las acciones que vayas a hacer porque va está como protegido. Lanza un dado para ver si inspiraste también a los enanos que están al lado tuyo.
+
+[NIXIRA | HIGH] ¿Qué más quieres hacer? Nixira Obviamente que sea una inspiración, me imagino. No, no solo canté que. Los trolls ¿Cómo se reproducen? ¿Como los humanos?
+
+[NIXIRA | MEDIUM] No quiero ver, necesito información. Yo recuerda que interaccionar.
+
+[ZACARÍAS | HIGH] Entonces ve a los enanos están abajo peleando con el troll que ya se organizaron y están. Motivados. Y quiero lanzar. Quiero lanzar.
+
+[ZACARÍAS | HIGH] Voy a intentarlo pero no sé. Esto podría ser como un ataque no. Dentro de Command yo le puedo ordenar a alguien morir.
+
+[DM | HIGH] Por ejemplo, piensa en Chill Touch no necesariamente es una mano congelada que toca. Sino podría ser un Chill Touch que miras a alguien le pica el ojo y se le congela el cerebro. O sea tú lo interpretas que los efectos. De hecho piensa muy bien. Entonces degollarlos porque esa es la ventaja de los warlocks que son muy maleables a la situación.
+
+## Attribution Summary
+- DM: 28 segments
+- Zacarías: 11 segments
+- Nixira: 11 segments
+- Tidus: 6 segments
+- Table: 3 segments
+
+LOW-confidence segments: None.
+Ambiguous scenes: The transition between Nixira singing and Zacarías launching a spell (Segment 53) requires attention to the location context (Troll fight vs Tower area). Zacarías was previously at). However, Zacarías is the one confirmed to be with the NPC soldiers and the Troll.
+
+---
+
+[ZACARÍAS | MEDIUM] No quiero ver, necesito información. Yo recuerdo que hay que interaccionar.
+
+[ZACARÍAS | HIGH] Entonces vean, los enanos están abajo peleando con el Troll que ya se organizaron y están motivados. Y quiero lanzar. Quiero lanzar.
+
+[ZACARÍAS | HIGH] Voy a intentarlo pero no sé. Esto podría ser como un at no. Dentro de Command yo le puedo ordenar a alguien morir.
+
+[ZACARÍAS | MEDIUM] Yo siempre pensé que era un taxi. Es una guía. ¿Puedes hablar con el DM? Espero
+
+[DM | HIGH] Por ejemplo, piensa en Chill Touch no necesariamente es una mano congelada que toca. Si no podría ser un Chill Touch que miras a alguien le pica el ojo y se le congele el cerebro. O sea tú lo interpretas que los efectos. De hecho piensa muy bien. Entonces regularlos [?] porque esa es la ventana de los warlocks que son muy maleables a la situación.
+
+[ZACARÍAS | MEDIUM] Okay, okay.
+
+[NIXIRA | HIGH] No mentiras. No me imaginé algo pero voy a salir muy mal. Sí, no. Ya que estoy cantando a toda mierda voy a usar. ¿Cuál era? ¿Vicious Mockery? Las palabras. Y es un d6.
+
+[NIXIRA | HIGH] Te vas a romper? La situación es bastante épica. Cinco. ¡Hola! Está bien. Yo sigo cantando. Nada yo cancelo [?].
+
+[ZACARÍAS | HIGH] Me dicen. Y es que es que recuerdo cuando cuando se pegó el Troll a sí mismo y se veía durísimo, creo que un golpe. ¿Me podría matar ese pirobo? Entonces estoy cegado No, no estoy viendo. Después como entre [?] bueno.
+
+[DM | MEDIUM] Y es un sonido que sale por acá y escucho [?] y es un troll gritando [?]. Ah
+
+[ZACARÍAS | MEDIUM] Tienes que sacar menos de 8 chiquito chiquito
+
+[DM | MEDIUM] El Troll escuchó con tu Minor Illusion a una hembra troll en peligro. Desespero. Avanza tres casillas. Bien bueno. El humor se dice los enanos. Te ven pues cuatro enanos que ven los otros están en el piso. Vivos. Ah espera me presento, mi nombre es ¿qué? Mi nombre es Zacarías Belmonte.
+
+[ZACARÍAS | HIGH] A su disposición y espero que ustedes estén a mi disposición. Legión de Escudo eso van los días avanzando. Listo están los 10 son enanos como los de Todos son más. Todos son solo tienen un escudo. Es tu vida. Y me tomaron como su aliado y al diablo. No me han okay.
+
+[ZACARÍAS | HIGH] No, no me gusta de [?]. Hijo me atraparon. ¿De qué me queda desventaja? Digamos ahorita estaba viendo mugroso, ya pasó el ya pasó el pedo. Pero literal. Eh. Pero estoy en desventaja no ya no ya la perdí por lo que hice bien o sea excelente. Me salió eso. Y el man este sigue.
+
+[ZACARÍAS | MEDIUM] Dónde está listo?
+
+[ZACARÍAS | MEDIUM] Y claramente ¿a cuántos pies estoy de? Como unos 60 pies 60 pies.
+
+[ZACARÍAS | HIGH] Les digo a los a los enanos. Qué tantas variables que hay que controlar que? Piensas tanto? No esto.
+
+[ZACARÍAS | HIGH] Juicioso. Le digo a los trolls que a los enanos que debemos aprovechar que está de espaldas y todos ir sincronizadamente y golpearlo. Y mientras que todos lo golpean a la vez yo utilizo mi. Espera. Espere interpreto y en este hechizo. Entonces vamos a su turno cerca de la Mansión, ¿no?
+
+[ZACARÍAS | HIGH] Porque? Si no, ya tampoco correr saltar tirar fireballs cantar. Tampoco tengo tanto pulmón por favor. No y les tiro y entonces a la vez que que los que los no que los enanos sincronizadamente le van a pegar yo le lanzo un Eldritch Blast. Listo, no seas así con mi manito.
+
+[DM | MEDIUM] Lanza primero tu daño un dado de 10 y más tres 10. Este es el de 10 no. Aún se me confunden. Y si tenga un cero y es como una Pirinola. Este ah no no. 5 + 3 8 más lo que le hacen los. Va saliendo la nube de [?] estornudas sin estornudar o sea, sí.
+
+[DM | HIGH] Te sientes con rabia respiras profundamente y escuchas. Levantaste un orbe [?]. Brota un cuervo del orbe [?]. Ves como se está poniendo morado tu tu orbe [?] aún tan grande porque no lo ha cerrado. Las puntadas. Los brazos suelta la maza. Apenas ven que suelta la maza todos enanos empiezan a golpearlo en la espalda dado de 20 * 10.
+
+[ZACARÍAS | HIGH] Este es de 20 cierto? 8. * 10.
+
+[ZACARÍAS | HIGH] Se tiró cuenta ella tiene. Sí. Venga te lo decía más fácil que se me referencia de Pero es que tienen otro Troll para vencerlos, aunque era pendiente. Me queda, me queda una acción. El el Troll sigue después de un ataques, se volteó ¿qué hizo? Se volteó ya tiene la atención, a mí no me ha determinado.
+
+[ZACARÍAS | HIGH] Entonces! Hago lo siguiente.
+
+[ZACARÍAS | HIGH] Me preparo Ah y había un minion [?]. Saco mi cuervito.
+
+[ZACARÍAS | MEDIUM] Eso no se reiniciaron. Con. Con el descanso largo no.
+
+[ZACARÍAS | HIGH] Y ya tengo mi cuervito invocado y lo y lo acerco al Troll. Encima de él pero en una en un ángulo que que él no lo. Sí, exacto. Me queda más. Ah okay okay. Entonces hago lo siguiente.
+
+[ZACARÍAS | MEDIUM] O sea tú no te estás teniendo? Yo solo te estoy sosteniendo.
+
+[ZACARÍAS | HIGH] El Burning Hands es de contacto no. Pero entonces a través de las garras de mi de mi cuervo. Entonces ¿dónde está? ¿Dónde está Lunei [?]? Muy bien joven. Que si no me hablas si no estoy mal es una de las ideas que tiene que a través de mi de mi familiar.
+
+[ZACARÍAS | HIGH] Entonces este son los perros de cuervito y el pico también. Y entonces imagino que yo soy el cuervito y
+
+[ZACARÍAS | HIGH] Con cuántos eran? 3 de 6 o sea seis dados de seis tres dados de 6 no. No sé necesito.
+
+[ZACARÍAS | HIGH] O sea? Cuatro por dragones. El 612 6612 + 4. 12 + 9 21 21. Pero no alcanza ya no tiene más o listo?
+
+[ZACARÍAS | HIGH] Listo! Ellos me dicen [?], me encanta picotear con mi familiar Raven. Sí, eh bueno, ellos están sus con los dedos. Yo estoy sufriendo por la muerte de sí. Listo rápidamente, meto la mano en el bolsillo de Achawn y saco eh tres bombas de humo y las tiro alrededor. No sé si tengo que tirar para esto, pero tiro porque donde estoy y otra acá perfecto porque es una de distancia para las bolas [?], okay.
+
+[DM | HIGH] Eso me quitaría una acción, no va contigo. Estamos todavía con la dinámica de tiempo.
+
+[ZACARÍAS | MEDIUM] En efectivo. Tendrías que lanzar con desventaja o dejarlos lanzar dos dados y agarramos el menor okay nada agarro a Achawn y ellos no se quieren prevenir están resistiendo. Yo no no peleemos. Aquí lo empiezo a jalar para ir hacia acá listo. Entonces ahí va iría como un turno, no sé si tiempo tiempo.
+
+[ZACARÍAS | HIGH] Bueno, vuelvo a jalarlos. Aquí está él. También se movió a menos de que lo hubiera agarrado con el pico [?] pero no se me ocurrió. Uno nunca sabe son enanos en donde una vez empalaron a un Troll. Se lo empaló con el pico [?] y nunca se lo quitó. Entonces iba directo media campaña con un orto ricogelamiento, pero fallaron y le congelaron el pico [?] entonces el pobre.
+
+[DM | MEDIUM] La odia [?] y la puerta. Yo también. Parece que no se ha dado cuenta que está diciendo. Cuando se dé cuenta la reacción al mal? Quién quiere el uno? Cuál es que? Uno dos y tres.
+
+[DM | HIGH] Lanza un dado de 20. No parece que la oí cuando estoy destreza. Mi destreza 14. Más dos veces en la parte de arriba que el General está rondando la ciudad y ves una llamada. Te da justo el momento exacto para botarte de la Torre caer al piso. Te fuiste agarrando por la misma escalera, pero Ah Nixira [?] lánzate un dado de seis a ver cuánto te dañaste por caída.
+
+[ZACARÍAS | HIGH] Te fue muy bien. Ya ahorita lanzamos otro dado hijo lo prometo. Quién quiere dos? Yo por qué no hacer meta, pero recuerda que me hiciste un talismán con muertos e intento usarlo con el Troll, pero no me dice que pasara nada y ahora murió así. No sé qué tanto afecta se cargó otras tres entonces ya tres cadenas.
+
+[DM | HIGH] Ves que los enanos que estaban protegiéndote se desesperan de ver que lo golpean lo golpean y lo golpean y como que dicen No ya está muy débil. Abren los escudos empiezan a darle mazazos pero el Troll ya está en estado en ese y ya no lo distrae nada así que empieza a dar patadas.
+
+[ZACARÍAS | MEDIUM] Eso significa que lo bajito que tenía inteligencia se le baja más. O sea sería más difícil tratar de darle órdenes o.
+
+[DM | HIGH] 10. El jugador estaba demasiado desesperado, empezaron a golpearlo y empezó a aplastar a patear a golpear tata asesino de enanos sus órganos, su sangre, todo regado por el piso. Y te queda aquí tres y quedaron muertos último recorrido para llegar justo al último lugar. Espero utilizó su habilidad especial que es invocación de lluvia de flechas ves como en la parte justo arriba de ustedes se generó como una especie de nube de tormenta y empiezan a ver que al principio caer unas pequeñas gotas de agua, tú levantas la mirada y tú dices.
+
+[DM | HIGH] ¿Qué extraño que llueva sobre nosotros? Cuando ves que justo a la altura de tu ojo, una de las gotas se empieza como a volver de color café. Se está transformando en una flecha y te hace un rasguño ligero. Así pues en la frente tú dices cuidado. Todos se levantan los escudos y lanza seis dados de 20.
+
+[DM | HIGH] Pásale todos porque tiene que lanzarlos todos cuántos tienes? Ya es un muerto? Chiquito ni siquiera lo botas así. Bueno cada 40 cada 40 [?]. Todos se murieron, todos se murieron. Solo suéltalos no los hagas rodar. 17. 19 17. 10 20 30. Alcanza a pasar los 60 dos elige dos por qué me dice uno.
+
+[DM | HIGH] Cayó la lluvia de flechas literalmente les llovió flechas así. Nada quedaron quedaron Cori y Achawn dañados pero ninguno murió. Quiero morir. Fue tu culpa. Tú decidiste ponerle esos nombres? Yo no puedo escoger.
+
+[DM | HIGH] Porque toda la vida para resistir el daño. No tiene que ser un dado, tú eres 1 Cory es 2. Achawn es 3 y Messi es 4.
+
+[DM | MEDIUM] No saludó [?] y tú lo mataste levanta el escudo para ver si ya terminó la lluvia y me está contestando ves cómo cada espalda no sale sangre gota. Está totalmente bueno.
+
+[ZACARÍAS | MEDIUM] Y me saludó [?]. Sí, todo hermoso el
+
+[ZACARÍAS | MEDIUM] Fue tu culpa.
+
+[NIXIRA | HIGH] Tanto listo entonces. Quiero hacer lo siguiente. Ya bajé de la Torre. Listo, entonces los veo a lo lejos. ¿No estás por adentro todavía de la Torre? Ah, ya vi. Gracias ahora.
+
+[NIXIRA | MEDIUM] Se rumbo a la Mansión? No sé, no sé.
+
+[NIXIRA | HIGH] Ay mis choclitos. Mierda entonces para pasar a donde está el Troll tendría que bajarme por la puerta? Pasar por la Mansión. Por la Mansión forma de pasar. O sea por acá? Pero desde la torre no puedo. O sea no si vuelvo a subir a la torre.
+
+[NIXIRA | HIGH] Bueno entonces quiero lanzar Investigación para ver cómo puedo cruzar hacia donde estaba el Troll otra vez. 10.
+
+[NIXIRA | HIGH] Eh Okay. Tengo más dos en investigación. Cuatro. Te quedas viendo todo el lugar. Hay que pasar por la maldita Mansión. O sea ¿hago eso? Tengo que pasar por la Mansión lugares pasar por la Mansión? Bueno, pues voy por la Mansión. En dónde queda? Dado cuatro a ver cuánto dan corriendo.
+
+[DM | HIGH] Beso a la situación la Mansión por favor. Segura. Te das cuenta de como una especie de enredaderas [?] de cuatro pisos y tiene como una enredadera. Aprovecha si la vas trepando lentamente, parece que la crees que está Bixira [?] y el General sabes que ya no porque acabo de pasar volando.
+
+[DM | HIGH] Apenas terminas de subir el techo. Te das cuenta de que está Bixira [?] tiene medio cuerpo quemado tiene aproximadamente 14 flechas en la espalda está quemada [?]. Mira hacia el cielo y ves como en general está rondándola.
+
+[DM | HIGH] Próximamente un área de 600 pies. Que le cae un meteorito volcánico? Justo en el momento en que escuchas ese terror ves como el cielo se enciende rojo todos están viendo esto en este preciso momento. Bixira se levanta. Y dice Mira ves como literalmente su alma se desprende lanza un rayo de luz hacia el cielo que va chocando con esta especie de meteorito que se va materializando y todos ven una explosión de luz verde y roja que abarca el tamaño de la ciudad por un espacio de 10 segundos.
+
+[DM | HIGH] Ven que se transforma en un portal. Están viendo un portal interdimensional al plano oscuro. Es un plan al que pueden acceder los elfos. Cuando tienen cierto nivel de magia se teletransporta todo lo que está en contacto con los portales. Durante más o menos 5 minutos es como un espacio de entrada.
+
+## Attribution Summary
+- **Speaker Counts**:
+    - **[ZACARÍAS]**: 32 segments
+    - **[DM]**: 19 segments
+    - **[NIXIRA]**: 7 segments
+- **LOW Confidence Segments**: None.
+- **Ambiguous Scenes**: Several segments (e.g., 23, 71, 79, 95) contain both DM narration and player dialogue within the same CANON tag. These were attributed based on the primary voice or the character performing the core action in that moment. Zacarías is heavily involved with the dwarf NPCs, while Nixira transitions from her tower fall toward the Mansion.
+
+---
+
+[NIXIRA | HIGH] Eh Okay. Tengo más dos en investigación. Cuatro. Te quedas viendo todo el lugar. Hay que pasar por la maldita Mansión. O sea hago eso? Tengo que pasar por la Mansión lugares pasar por la Mansión? Bueno, pues voy por la Mansión. En dónde queda? Dado cuatro a ver cuánto dan corriendo.
+
+[DM | HIGH] Vuelvo[?] a la situación La Mansión por favor. Segura. Te das cuenta de como una especie de enredaderas de cuatro pisos y tiene como una enredadera. Aprovecha si la vas trepando lentamente, parece que la crees que está Bixira y el General sabes que ya no porque acabo de pasar volando.
+
+[DM | HIGH] Apenas terminas de subir el techo. Te das cuenta de que está Bixira tiene medio cuerpo quemado tiene aproximadamente 14 flechas en la espalda está quema. Mira hacia el cielo Y ves como el General está rondándola.
+
+[DM | HIGH] Próximamente un área de 600 pies. Que le cae un meteorito volcánico? Justo en el momento en que escuchas ese estruendo[?] ves como el cielo se enciende vosotros dos[?] están viendo esto en este preciso momento. Bixira se levanta. Y dice Mira ves como literalmente su alma se desprende lanza un rayo de luz hacia el cielo que va chocando con esta especie de meteorito que se va materializando y todos ven una explosión de luz verde y roja que abarca el tamaño de la ciudad por un espacio de 10 segundos.
+
+[DM | HIGH] Ven que se transforma en un portal. Están viendo un portal interdimensional al plano oscuro. Es un plan al que pueden acceder los elfos. Cuando tienen cierto nivel de magia se teletransporta todo lo que está en contacto con los portales. Durante más o menos 5 minutos es como un espacio de entrada.
+
+[DM | HIGH] Esto en tiempo real es aproximadamente cinco turnos en cinco turnos van a salir del portal, pero acabará de meter un meteorito gigante al portal lo cual puede significar dependiendo de lo que nos salga en ese turno que les va a caer un meteorito gigante con todo lo que implicaba de su nivel destrucción de pueblo o que va a salir de ganadora Bixira con lo que implica lo que acaba de.
+
+[DM | HIGH] Dracónicos probablemente soldados que estaban apoyando y entrenando un entrenador de warlocks libera sus warlocks[?] entonces dice como váyanse váyanse. Tú estás callada ves como todos los guardias se despierta de la ciudad, pues no los vas a criticar. El tipo agarra su cadena voltea se queda mirándote y empieza.
+
+[DM | HIGH] Es un combate cuerpo a cuerpo con una cadena que le permite atacar a distancia.
+
+[DM | HIGH] Qué quieres hacer? Zacarías, ¿qué haces?
+
+[NIXIRA | HIGH] Sabes que voy a usar? Va a usar mi Mano de Mago para agarrar la cadena. Va a agarrar la cadena y la voy a cerquita[?] y la voy a aplastar en el piso. La tengo ahí aplastada para que el tipo se quede atascado y voy a lanzar no.
+
+[DM | MEDIUM] No voy a lanzar. Y cuando se queda atascado mientras se queda atascado? Le voy gritando groserías. Cómo ves? Cómo fue? Cómo sería? Listo, entonces primero fuerza dado de 20 contra mí vamos a hacer un pulso. Él tiene más cinco. A la fuerza. Materializa como una especie de mano de roca que está dando la cadena.
+
+[DM | HIGH] El tipo está atado Pues porque obviamente Ahí está como mirando así se toca como para buscar una contraofensiva[?], Así que empieza con las dos manos a jalar la cadena como a soltarla para pegarte el cadenazo.
+
+[NIXIRA | HIGH] Tú estás allá? Ahí está toda la cadena. Mira lanza la cadena[?] Por aquí muerta No, no sabemos gigante, esto superatronador y volvieron a ganar al cielo porque ya están ellos peleando Entonces como el tipo agarró con las dos manos la cadena. Voy a agarrar la espada y voy a intentar cortarle los brazos.
+
+[DM | MEDIUM] Listo! No había visto eso. Espada primero de 20 pero no está todo en las manos.
+
+[DM | HIGH] ¡Por Odín! que esto para cortar esos dos brazos. Que le va llegando a la mano? Genera un puñetazo. Entonces Ay te botas hacia atrás sientes Un puño como de este porte de macizo dracónico. En tus manos te saca el aire. Te vuelve a dejar en el lugar donde estabas y la alcanzas te rasguña así.
+
+[ZACARÍAS | HIGH] El corazón tu junto con. Zacarías. Ah lo del campo. Bueno primero utilizo Mi última poción de curación. Eso me gastó una acción. No listo. La sala.
+
+[ZACARÍAS | MEDIUM] 27 36. 16 más.
+
+[ZACARÍAS | MEDIUM] A ver volviendo el contexto de esta batalla. Están ahí en tu caso. David versus Goliat[?]. Con una onda. Y el vago ya está? Qué hacer? Bueno! Ahora. Bueno tengo que intentarlo. Tengo que intentarlo? No sé qué vas a hacer pero dura.
+
+[ZACARÍAS | HIGH] Le digo al Troll. Utilizando. Eh Suggestion. Pregunta claro, No si si no me sale no se gasta cierto? Sí, si no te sale no y le digo. Ignora! A todas las criaturas y Busca una Troll para reproducirte. Te lo juro, quiero que coja Malfas invocado[?] o sea menos menos de cuatro.
+
+[DM | HIGH] No. Tú ves que lo tuve que le hablas y claro como tú es la magia ves como humo alrededor de sus oídos in color morado como susurrándole. Y se está preparando para embestirte.
+
+[DM | MEDIUM] Y ahora?
+
+[ZACARÍAS | HIGH] Voy a hacer lo siguiente.
+
+[ZACARÍAS | HIGH] Viene corriendo hacia mí no?
+
+[ZACARÍAS | HIGH] Con. Con mi cuervito.
+
+[ZACARÍAS | HIGH] Que estaba encima de él y viene detrás de él. Se aproxima. Y lo picotea. El el en los ojos. Dado de 20 contra mí.
+
+[DM | HIGH] Intenta picotear con este Cuervo. Mirad 20. Pero lo voy a lanzar con el otro qué? Espere espere. Más tres. Muy bien y bueno por la ventaja en que va al Troll ves que agarra El Cuervo? Iba con sus garras así. Pero la embestida sigue lanza un dado de 6 a veces cuando lo dañas.
+
+[DM | HIGH] No leí los ojos entonces. Pato le quitaste cuatro de vida por rasguño. Vuela[?] apenas termina atacarlo vuelve a volar para que no.
+
+[ZACARÍAS | HIGH] Cuántas bombas de humo me quedan tres tres. Pues obviamente luteo a Achawn está muerto. Sí, eh Pues nada, Solo me queda apoyar a retirada de Donner y tiro eh Tiró una bomba de humo no tirado bombas de humo una aquí de eso no tenés que lanzarrado. Le das cobertura perfecta y Él llega hasta donde está.
+
+[DM | HIGH] Estás en un pasillo grande que da contra la muralla que da al mercado. Es aquí sí este mercado no? O sea, decía que estaba en pozo que está en las tienditas, pero lo viste de vista aérea. Tendrías que entrar a ver qué hay. Okay Y qué es eso que está aquí es un edificio, esas dos serían como torrecitas escarbadas[?] y no se ve nada de gente.
+
+[DM | HIGH] No hay nadie movimiento[?]. Estás escuchando que hay campanas que son las campanas de evacuación de la ciudad. Ves todas las puertas cerradas? Podrías investigar cómo tratar de entrar a casas de cosas, pero no escuchas a nadie cerca. O sea, si hay alguien probablemente esté escondido. El piso es de piedra.
+
+[ZACARÍAS | HIGH] También todo piedra caliza más cielo abierto[?] porque es un mercado. Esto es nada. Nos sentamos todos a rezar y hacer una oración típica de los enanos cuando muere un hermano caído. Y le digo. Su sacrificio no será en vano. Prometo dedicar mi vida a hacer justicia. Hermanos enanos. Ves como todos los enanos se sientan de rodillas ante su ante su escudo.
+
+[DM | HIGH] Y empieza a cantar esto? Dos enanos pues[?].
+
+[TIDUS | HIGH] Ah sí, le comunico. Intento comunicarme con Zacarías y con Melo. En qué situación están? Necesito reporte y les digo donde donde estoy ubicado. No no respondo Entonces nos cuenta. Ah sí, casi se me olvida eso ya al rato pensando le digo algo pues no hay pelea[?] en esta posición.
+
+[TIDUS | HIGH] Lo intentes luchar contra él. Si pasan necesitan cubrirse el rango es muy alto. Eh cualquiera que pase por ahí está muerto, no lo entendí. A menos de que tengan forma de cubrirse. Yo le digo me hubiera esperado.
+
+[ZACARÍAS | HIGH] Yo no respondo, yo estoy ocupado. Pienso: Guau, Zacarías en esta vida. Primero no responde eso, me preocupa. Pero Igualmente, Aunque hablo con ellos, mi mente sigue con Achawn. Muy mal. Ya terminó mi turno en posición de. Seguro que ya se fue. No. Investigo.
+
+[DM | HIGH] Ve con sentido[?]. En medio del cántico. Es la primera vez que escuchas silencio, no hay explosiones, no hay trote, no hay sonido de espadas. Sientes el cansancio de la batalla empiezas a ver con tus ojos de elfo hacia el cielo. La ciudad es varios lugares donde está saliendo humo entiendes que están en ese punto en que ya la batalla está mermando y te entra un gigantesca soledad[?].
+
+[TIDUS | MEDIUM] Bueno saber si están ganando perdiendo Bixira masacre que generó Sniper viste la masacre que había cuando mataron al Troll.
+
+[DM | HIGH] Por donde tú has ido? Hay mucho silencio. Y en medio del Silencio escuchas.
+
+[DM as NPC | MEDIUM] Estúpidos dragones. Estúpido. Cerraron todo como si no fuera importante perder cosas brillantes para Dragon Born y cosas brillantes.
+
+[DM | HIGH] Esa voz viene del mercado. Venga de acá.
+
+[DM as NPC | MEDIUM] La Esmeralda. Y el talismán?
+
+[NIXIRA | MEDIUM] Pero ya casi me da acciones, No sí.
+
+[DM | HIGH] Porque vamos a nuestra batalla?
+
+[NIXIRA | MEDIUM] Mmm genial!
+
+[NIXIRA | HIGH] Todavía le tengo agarrada. La cadena se suelta o no? Con la mano[?]. Sigue sostenida. Listo entonces. Quiero lanzar Dissonant Whispers[?] para intentar dejarlo sordo y obviamente para lastimarlo y lo que hago es hacer una nota superalta que le lastima los oídos. Porque es con tres sabiduría? Él tiene sabiduría, entonces simplemente dado.
+
+[NIXIRA | HIGH] Ay por favor. 6 y 4.
+
+[DM | HIGH] Los tímpanos. Ahora no puedo escuchar nada y tiene que ser mareado. Está con tinnitus y tú si está mareado.
+
+[NIXIRA | MEDIUM] Okay.
+
+[NIXIRA | HIGH] Nunca ha hecho esto, pero let's try como está mareado y se está agarrando. Bueno, los oídos al oído no sé. Lo que quiero hacer es agarrar impulso. Y barrerle las piernas para que se caiga. Dado de 20.
+
+[DM | HIGH] Ay muy bien. Estaba recomponiéndose un cae si está justo detrás de él, así así.
+
+[NIXIRA | HIGH] Ataque de oportunidad. Quiero agarrar una de mis dagas. Y clavársela en el cuello por detrás así tácate.
+
+[NIXIRA | HIGH] Un de 4 + 2.
+
+[DM | HIGH] Listo, apenas manda hacer dagazo así. El se deja caer hacia atrás. Y con la pierna que todavía tenía libre[?] bota tirarte una patada. Obviamente tú te mueves un poquito y desenrollo una de los lazos que tenía la cadena está tres veces. Enlazado ya se soltó uno okay. Así mirándote, quedó cruzado claro.
+
+[DM | HIGH] Esto vendría siendo este borde de. Cómo está cruzado? Se levanta botándote un cabezazo dado de 20 a ver si recibes la prueba es 15 because está muy cerca.
+
+[NIXIRA | MEDIUM] Entonces el golpe 6. Es que hacemos otras veces. Puedo hacer algo más? Mi segunda acción porque estamos en batalla como ya logró pararse hoy con su pierna Cruzada y te bota así como a barrerte para ver si te lo hubiera tumbar al piso. Ah muy perrito 14 usando mis técnicas.
+
+[NIXIRA | HIGH] Ves apenas quedó arriba los saltos y vuelve y se recomponen. Quedaron los dos a esta distancia de caras. Deberíamos besarnos. Ah no me escucha. Pero entonces le digo el lenguaje de señas. Deberíamos de estarnos para romper la tensión.
+
+[ZACARÍAS | HIGH] Va a salir épico o muy estúpido, pero lo tengo que intentar épico. Entonces estoy parado frente al Troll que viene corriendo hacia mí. Y con mi puño[?] le digo. Ven estúpido. Y el va corriendo? Pero entonces este es el Troll? Viene viene mi cuervito. Se hace por detrás acá.
+
+## Attribution Summary
+- **Speaker Counts:**
+  - `[DM]`: 29 (including 2 as unidentified NPC)
+  - `[NIXIRA]`: 13
+  - `[ZACARÍAS]`: 12
+  - `[TIDUS]`: 3
+- **LOW-confidence segments:** None.
+- **Ambiguous Scenes:** Several segments contained rapid back-and-forth between the DM and a player (e.g., segments 1, 11, 13, 16, 55). These were attributed to the primary actor or the speaker who initiated the core intent of the segment. The transition to the "Market" scene and the introduction of an unknown NPC voice (segments 39, 41) required contextual inference but remained at MEDIUM confidence.
+
+---
+
+[DM | HIGH] Listo, apenas manda hacer dagazo así. El Cejas cae hacia atrás. Y con la pierna que todavía tenía lista para tirarte una patada. Obviamente tú te mueves un poquito y desenrollo una de los lazos que tenía la cadena está tres veces. Enlazado ya se soltó uno okay. Así mirándote, quedó cruzado claro.
+
+[DM | HIGH] Esto vendría siendo este Orbe de. Cómo está cruzado? Se levanta botándote un cabezazo dado de 20 a ver si recibes la prueba es 15 porque está muy cerca.
+
+[NIXIRA | MEDIUM] Entonces el golpe 6. Es que hacemos otras veces. Puedo hacer algo más? Mi segunda acción porque estamos en batalla
+[DM | HIGH] como ya logró pararse hoy con su pierna cruzada y te bota así como a barrerte para ver si te lo hubiera tumbar al piso. 
+[NIXIRA | MEDIUM] Ah muy perrito 14 usando mis técnicas.
+
+[DM | HIGH] Ves apenas quedó arriba los saltos y vuelve y se recompone. Quedaron los dos a esta distancia de caras. 
+[NIXIRA | HIGH] Pero entonces le digo el lenguaje de señas. Deberíamos de estarnos para romper la tensión. Qué asco! Bueno!
+
+[ZACARÍAS | HIGH] Va a salir el pico o muy estúpido, pero lo tengo que estar épico. Entonces estoy parado frente al Troll que viene corriendo hacia mí. Y con mi moño le digo. Ven estúpido. Y él va para corriendo? Pero entonces este es el Troll? Viene viene mi cuervito. Se hace por detrás acá.
+
+[ZACARÍAS | HIGH] Y mientras que va corriendo eh a través de él, utilizo mi música. Toque Gélido. De forma que le congelo la pierna. Y entonces como iba corriendo viene pues no puede. Ya no tiene movilidad en la rodilla justamente y queda a mis pies. 
+[DM | HIGH] Dado de 20 bien bien. Qué quieras. No.
+
+[ZACARÍAS | MEDIUM] Sin inspiración, voy a utilizar mi inspiración listo. Creo que es momento antes de que mueras.
+
+[ZACARÍAS | MEDIUM] Pero mejor lo que va a pasar. Desempeño.
+
+[DM | HIGH] Es como se congela la parte de atrás de la pierna, pero no es lo suficiente como para alcanzar a llegar a la articulación. Igual gritadoras y lanza daño porque igual pegaste tanto.
+
+[ZACARÍAS | HIGH] Se queda otra acción de qué otra opción lo ralenticé?
+
+[ZACARÍAS | HIGH] A cuánta distancia está de mí. 
+[DM | HIGH] Ah la casilla de enfrente ya apenas acaba de su acción arranka mi ataque. Okay. No tienes algo de ilusión? 
+[ZACARÍAS | MEDIUM] Sí, pero va a ser difícil que funcione porque ya está todo estúpido, una pared al frente o algo así no?
+
+[DM | HIGH] Pues no sé qué tipo de ilusión tengas. 
+[ZACARÍAS | HIGH] Voy a hacer lo siguiente.
+
+[ZACARÍAS | HIGH] Como ya está al frente mío?
+
+[ZACARÍAS | HIGH] Utilizo! Me utilizo. Iceberg [?]. Va a ser más divertido así. Y apenas se acerque le pegó así? Le pegó el puñetazo? Entonces muy alto cierto, como cuánto mide un troll? 
+[DM | HIGH] Les cuento. O sea, los dos pisos, los tres pisos acá y dos altura no promedio de gnomo como estoy a la altura de su que en medio de sus piernas.
+
+[ZACARÍAS | HIGH] Entonces! Hago lo siguiente. El el Troll y el vago viene corriendo ahí hacia mí. Pero yo esto como que estratégicamente me pongo así para como él viene con velocidad en el momento que que se aproxima y ya está casi encima mío ahora siguiente salto hoy.
+
+[ZACARÍAS | HIGH] Le mando mi Burning Hands. En toda su entrepierna 
+[DM | HIGH] listo lanza el daño directamente. 
+[ZACARÍAS | HIGH] El daño cuánto era de la Burning Hands 4 de 6. Mierda qué más razón?
+
+[ZACARÍAS | HIGH] 5. 4 9.
+
+[DM | HIGH] El Troll grita justo cuando está llegando porque literalmente le quemaste una hueva. Él va a embestir para tratar de empujarte, pero como que te adelantaste lo que haces es decir levanta las dos piernas para caer sobre ti parado de 20. La prueba es 15 a ver si logras esquivarlo. Van a hacer unos pasos?
+
+[DM | HIGH] Te alejas al lado, o sea como que ves que el man levanta las piernas y tú te botas hacia un lado. Y y vamos a hacer algo para que estés interesante agarras con tu mano.
+
+[DM | HIGH] Tú hiciste esto? Y con toda la pericia. Lanza un dado de un dado de seis para ver cuánto daño le hace.
+
+[DM | HIGH] El troll cae sentado no te ve porque quedaste justo al lado. Dice voltea así con los brazos y pataleando para el asado de 20. La prueba es 10. Sacas menos te pega y pega duro. Eh apenas tú y levantas la daga para que se rasguñe el mismo.
+
+[DM | HIGH] Otro d6.
+
+[ZACARÍAS | HIGH] Listo, cómo quedamos.
+
+[DM | HIGH] Y el Troll está sentado, entonces ya mi es como piso y medio. O sea ahora sentado lo tengo. Okay okay. Listo esa batalla.
+
+[NIXIRA | MEDIUM] Percepción casi revelación en otro momento. Servirá seguido. De verdad no escuché, o sea aquí, no puedo ver a nadie. Está completamente así no escucho absolutamente a nadie más. 
+[DM | MEDIUM] Solo escuchaste algo con una vocecilla? 
+[NIXIRA | MEDIUM] O sea todo me indica que aquí no hay nada nada.
+
+[ZACARÍAS | HIGH] Donner necesitamos conseguir la Esmeralda para para salvar al Lunei. Tratemos de evitar peleas y. Y vamos a hacernos aprovechamos que estábamos en el mercado eh. Agarró tiro una bomba de humo acá porque estoy dentro de toda la entrada al mercado. 
+[DM | HIGH] Y nos movemos en grupo donde quieras toda esta parte de atrás de esta línea es movimiento real, o sea, aquí sí te puedes mover de esquina.
+
+[DM | HIGH] No hay cambio la en el mercado, Cómo es que se llama? Mientras tú vas entrando ves a un pequeño goblin sentado en el piso? eh utilizando el pulidor público está con una piedra así de gigante, pues así como literalmente es como de este tamaño y está moviendo. La es casi de tamaño del goblin, mi señor que machis pondra [?].
+
+[DM | HIGH] Que esa piedra. Te das cuenta que es un 
+
+[ZACARÍAS | HIGH] Con este diamante que como estoy?
+
+[ZACARÍAS | HIGH] Le pregunto a Donner. Conoces a Gremory?
+
+[DM as DONNER | HIGH] Al abuelo al padre o el hijo. A cual conoces o a conocer su nombre? Era un hombre de pocas palabras. Me traje con lo que le pasó. Espero que ese muchacho se recupere le enseño. Y moneda de. Al parecer tienes el favor de la familia Gremory si logramos encontrar alguno de sus aprendices o alguno de sus empleados podrás pedirles los que quiera eso que tienes en las manos tiene un valor incalculable bueno por eso es.
+
+[ZACARÍAS | HIGH] Supongo que él no no me ve porque tiene una piedra gigante. Yo soy goblin. Y yo le digo.
+
+[DM | HIGH] Seguir. Pues pregúntale es un goblin.
+
+[ZACARÍAS | HIGH] Bueno utilizo Engaño y le digo algo. Vamos a escapar hacia la casa de los Gremory y vengo aquí para ayudarte a llevar eso donde tu señor y les muestro la. Uso Engaño. 
+[DM | HIGH] No tienes que hacer nada el voltaire.
+
+[ZACARÍAS | MEDIUM] Está emociona? 
+[DM | HIGH] No no se puede robar en el tesoro. Donner empieza a dar vueltas en círculo. Las palabras secretas. Señales tus cuatro locales. Cada uno tiene un hechizo de protección. Hay uno que no. Tendrás que tirar suerte a ver. 
+[ZACARÍAS | HIGH] Como tiro suerte, 
+[DM | HIGH] el efecto de suerte estás viendo literalmente cuatro bodegas todos ponen emblema Gremory en la parte de arriba tendrías que elegir un número y lanzar el dado en cuatro si sale el mismo encontraste el local que no tienen hechizo.
+
+[ZACARÍAS | HIGH] El tres.
+
+[DM | HIGH] Maravilloso maravilla. Salta y pasa. O sea literalmente ya estabas viendo una puerta maciza y pasa y luego es como la abre y empieza a saber montón brillantes joyas esta cosa y ves una luz mágica. Lo reconoces de Identificación [?]. Básicamente es un efecto de. Barrera de Posesión y es algo que alguien te diga.
+
+[DM | HIGH] Ten este objeto te lo entrego se autoriza sacarlo nada puedo salir a menos de que te autorice explícitamente alguien que tenga el poder de sacar cosas de ahí, pero estás viendo perfectamente. Eso podrían ser un millón de piezas de oro en objetos Okay. Te vas a robar a los Gremory?
+
+[ZACARÍAS | HIGH] Pero no hay nadie presente en la tienda que está abierta. Berlín Quieres verme?
+
+[ZACARÍAS | HIGH] De por casualidad estará ahí el Rubí Esmeralda que necesitamos para salvar a Lunei? 
+[ZACARÍAS | HIGH] Eh. Le digo al goblin. El Señor Gremory me dijo que me dieras el Zafiro Esmeralda si lo tienes por favor. 
+[DM as BERLIN | HIGH] Berlín se siente dice Creo que teníamos uno por acá.
+
+[DM | HIGH] Empieza a revisar las cosas esculca. Ves que coge un baúl viejísimo polvoriento lo saca lo limpia lo abre dentro del baúl. Solo hay un único Zafiro Esmeralda lo agarra. Esta garantía ni siquiera abrirá toma. Y verifico con Donner es real Lunei es un enano. Eh tener bastante herido. Habéis hecho alguno el Zafiro y ves conseguir iluminar los ojos.
+
+[DM as DONNER | HIGH] No me habías dicho lo que le había pasado a mi hermano. Buenas tardes, cómo levanta su Mazo Necesito una explicación razonable ya mismo de por qué demonios dejaste a mi hermano en medio de Eiselcross desmayado con la puta enfermedad del sueño, el Frigid Woe [?] y un cazarrecompensas todos el mismo día.
+
+[ZACARÍAS | HIGH] Sé que es difícil de creer pero eso pasó al mismo tiempo la historia.
+
+[ZACARÍAS | HIGH] Sumamos de. Un su carisma. No puedo usar de odio cuando no puedo usar engaño porque estoy diciendo la verdad carisma.
+
+[ZACARÍAS | HIGH] Carisma me es 14 + 2. 16. Más lo que saque el do no? 
+[DM | HIGH] O sea, tienes un más dos en carisma? Carisma carisma carisma carisma de 14.
+
+[DM | HIGH] 14 16. Tú empiezas a hablar y empiezas a contar toda la historia rápida. Donner no se siente convencido ves que levanta y mazo y esta vez está haciendo una masa gigante de fuego. Sientes el calor llegándote entonces, mierda Gremory justo en el momento en el que ves que te va a tocar el mazo.
+
+[DM as BERLIN | HIGH] Berlín se acerca con su cuarzo gigante ese Creo que mi jefe quería esta para usted. Me dijo una joya muy.
+
+[DM as DONNER | HIGH] Conseguiste maldito.
+
+[DM as DONNER | HIGH] Tengo que preguntarles idiotas Cómo consigue cosas mejores que nosotros los enanos? Parece que tuviera sangre de enano en su corazón 
+[DM | HIGH] se calma agarra ese cuarzo. Ves cómo empieza el materializarlo con sus manos Y ves como la piel? Se le pone brillante pálido. Se fortalece Y ves como diamante de bien.
+
+[DM as DONNER | HIGH] 10. Necesitaba esta baratija para mi hechizo. Solo pies cuestan como dos piezas de plata, pero son importantes para el hechizo de Rito. Vamos a obtener la forma de matar ese maldito Sniper. Con esto no me podrá hacer daño.
+
+[ZACARÍAS | HIGH] Lunei jamás me dijo que tenía un hermano. 
+[DM as DONNER | HIGH] No entiendo porque se avergüenza de nosotros no solo tiene uno. Tiene siete somos ocho en total.
+
+[ZACARÍAS | HIGH] Le digo. Yo le dejo mi vida a Lunei. 
+[DM as DONNER | HIGH] Me ayudarás a salvarlo todo el que trabaje para la familia es bienvenido en cualquiera de nuestras comandas listo, pero no estoy dispuesto a entrar en batalla en la misma situación de ventaja de antes eh necesitamos llamarnos. Estamos en medio de un mercado.
+
+[ZACARÍAS | HIGH] Necesito quiero más bombas de humo sales.
+
+[DM | HIGH] Más no, ya tenías, tenías suficientes flechas, bombas... se te olvidó las... 
+[ZACARÍAS | HIGH] Qué objetos hay por ahí? O sea estoy en mercado, debo poder conseguir 
+[DM | HIGH] ponerse rodilla le pone una mano a Berlín y le pregunta todo lo que estás pidiendo y pociones y ve y le dice este es. Lo único que te puedo dar son.
+
+[DM as BERLIN | HIGH] Alguna o qué otro aceite explosivo para minerías baratas. Pero no hay mucho solos pues te. 
+[DM | HIGH] Esto ves que se mete de su saco a sus cositas y está con una vaina que parece una pelotita negra y apenas me lo ve. Le lanza una coge, una flecha le quita la punta y se la lanza para golpearlo 
+[DM as DONNER | HIGH] idiota No juegues con eso.
+
+[DM | HIGH] Como que se agarra y me dice se bota a cogerla en el aire. 
+[DM as BERLIN | HIGH] Apenas No dejes que esto toque el piso jamás. Mira pone lentamente sobre una mesa. Bomba de Oscuridad estas bombas de oscuridad no explotan, pero al tacto con cualquier ser orgánico 
+[DM | HIGH] y ves que tenía las manos, cubiertas de trapo al contacto con cualquier ser orgánico que no esté protegido lo transporta.
+
+[DM as BERLIN | HIGH] La dimensión oscura es una maldita prisión de la que no puede salir. 
+[ZACARÍAS | HIGH] Ah, pero no es solo persona. En cuanto toque material orgánico? 
+[ZACARÍAS | HIGH] la guardamos y le digo. Bueno el arquero realmente nunca fue mi preocupación, es hora de que empecemos a pensar a largo plazo cómo conseguimos transporte para llegar de vuelta a La Última Gota y necesitaremos dinero para el viaje una campaña.
+
+[DM as DONNER | HIGH] Si no será fácil vamos a necesitar protección el camino vuelta no es fácil 
+[ZACARÍAS | HIGH] eh podrías ayudarnos con algún fondo y le digo algo el Señor? Te dejó algún fondo para nosotros y Berlín.
+
+[DM | HIGH] Que se saca una bolsita. Es una bolsa sin fondo y empieza a regar. El maldito goblin tiene como 600 piezas de oro. Me las da, él es como yo pago las cosas y Berlín... pero Okay. 
+[ZACARÍAS | HIGH] Cada tanto tienes birotes? Listo, tenemos a Berlín y solo nos falta conseguir transporte. Cómo llegamos desde aquí a La Última Gota pensando Solo se me ocurre que todavía estén las carretas de transporte de Robinson.
+
+## Attribution Summary
+- **DM**: 34 segments
+- **Zacarías**: 31 segments
+- **Nixira**: 6 segments
+- **DM as Donner**: 9 segments
+- **DM as Berlin**: 6 segments
+
+**Low Confidence Segments:**
+- None.
+
+**Notes:**
+The scene starts with a transition between Nixira's combat with the Dragon Trainer and Zacarías's combat with the Troll. Most of the chunk covers Zacarías's interaction with the Gremory market, the goblin Berlin, and the NPC Donner. The speaker attribution remains consistent with Zacarías being the primary PC active in the market scene and Nixira being briefly featured in her isolated location.
+
+---
+
+[DM as ACHAWN | MEDIUM] Alguno que otro aceite explosivo para minerías baratas. Pero no hay muchos solos, pues... Esto ves que se mete, descarga sus cositas y está con una vaina que parece una pelotita negra y apenas me la ve, le lanza una... coge una flecha, le quita la punta y se la lanza para golpearlo: "¡Idiota! No juegues con eso".
+
+[DM as ACHAWN | MEDIUM] Como que se agarra y me dice, se bota a cogerla en el aire: "Apenas... No dejes que esto toque el piso jamás. Mira, ponla lentamente sobre una mesa". Bomba de Oscuridad. Estas Bombas de Oscuridad no explotan, pero al tacto con cualquier ser orgánico —y ves que tenía las manos cubiertas de trapo—, al contacto con cualquier ser orgánico que no esté protegido, lo transporta.
+
+[ZACARÍAS | MEDIUM] La Dimensión Oscura es una maldita prisión de la que no puede salir. Ah, ¿pero no es solo personas? ¿En cuanto toque material orgánico? Okay. Okay, listo, la guardamos y le digo: "Bueno, el arquero realmente nunca fue mi preocupación. Es hora de que empecemos a pensar a largo plazo. ¿Cómo conseguimos transporte para llegar de vuelta a La Última Gota? Y necesitaremos dinero para el viaje, una campaña...".
+
+[ZACARÍAS | MEDIUM] Si no, será fácil. Vamos a necesitar protección, el camino de vuelta no es fácil. Eh, ¿podrías ayudarnos con algún fondo? Y le digo: "¿El señor te dejó algún fondo para nosotros y [?]?".
+
+[ZACARÍAS | MEDIUM] Ves que se saca una bolsita. Es una bolsa sin fondo y empieza a regar. El maldito goblin tiene como 600 piezas de oro. "Me las das, es como yo pago las cosas", y volví... pero okay. "¿Cada rato tienes virus?". Listo, tenemos a [?] y solo nos para conseguir transporte. ¿Cómo llegamos desde aquí a La Última Gota? Pensando, solo se me ocurre que todavía estén las carretas de transporte de Robinson.
+
+[DM | HIGH] El panadero del pueblo. [?], ¿qué opinas? No necesitaríamos un ejército entero para llegar a La Última Gota. De aquí podremos... el camino... No se oye, chico. En este momento probablemente todas las tropas se dirigen hacia [?] para restaurar el orden de la ciudad con lo que acaba de hacer Bixira. Esa fuente debe reportarse a kilómetros a la redonda, y si el General está aquí, no dudo que la Guardia Roja venga directo desde Dragon Born en este momento.
+
+[DM as DONNER | HIGH] Cualquier zona que no sea aquí va a ser un lugar seguro. Me encantaría acompañarte, pero mi prioridad es reunir a mis tropas. [NIXIRA | MEDIUM] Oye, pero me acabas de decir que me iba a ayudar. [DM as DONNER | MEDIUM] Te puedo ayudar a salir de la ciudad, no me comprometo a más. No es negociable, y no me puedo quedar sin mis dos mejores elementos.
+
+[NIXIRA | MEDIUM] Aparte ya viste todo lo que he perdido. Eso no, no puedo aceptar tu respuesta. Esto es... uso mi carisma para tratar de convencerlo... lo haría todo por ti... el interior. Bueno entonces... Dice... Entonces le digo: "Bueno, ¿cuál es tu plan para matar a Draxa?".
+
+[DM as DONNER | MEDIUM] Mira, con este escudo probablemente aguanten tres o cuatro golpes. Es la ventaja que te puedo dar para que trates de dispararle. Sniper podrá ser muy bueno tirando flechas, pero es un hinclín que nunca entrenó. Un tiro bien dado al pecho o a la cabeza y lo matarás. Listo. Ten mucho en qué pensar.
+
+[DM | HIGH] Para el universo.
+
+[ZACARÍAS | MEDIUM] Escuadrón Desesperado, como ya no tiene soldados no pasa nada porque no haya a quien aplicárselo.
+
+[DM | HIGH] Justo en ese momento ves cómo el portal empieza a volver a visualizarse. Ya saben, pequeñas grietas porque ya vamos en el tercer turno. Eh, un pequeño trozo de meteorito cae justo al lado de ustedes y revienta directo en el pozo. Del pozo sale volando un cuerpo y el cuerpo cae justo al lado tuyo. No sé si lo reconoces. El cuerpo del falso profeta de Val. No está muerto, está desmayado, queda a tus pies.
+
+[DM | HIGH] ¿Dónde estás? Ves cómo... Tú eres mi mejor Entrenador de Dragones. Sacude el cuello y ves cómo se le están cargando unas esporas verdes. ¿Es un dragón? Al parecer es... Entrenador con habilidades de veneno, temido y... Veneno ácido sobre la cara. Lanza un dado de 20 y el valor lo resta a 20; ese daño es el que te hace. Lanzo d20 menos lo que saques.
+
+[DM | HIGH] Esa es tu primera acción, no... acción. 18. Sí, hay que saber colores. Son seis extras y 18. El ácido te despertó la adrenalina, apenas viste que empezó a sacar el chorro, sacaste rápido la botella mientras veías que estás teniendo una sensación de dolor y placer muy extraña, porque a medida que se te va quemando la piel, la poción está regenerándote la piel. Entonces es dolor y placer, esas cosas. Ay, la primera es con ventaja porque estás con efecto de la poción. Okay. [NIXIRA | MEDIUM] Lo tengo de frente, no mucho. Me le río en la cara y lo escupo.
+
+[DM | HIGH] ¿Eso vas a hacer, Vicious Mockery? Me imagino. [NIXIRA | HIGH] Voy a soltar mi Mano de Mago. Okay. Y con la fuerza que estaba haciendo jalando la cadena me voy a botar al piso. Voy a poner el pie para ese [?], por favor. Pues este es... él está suyo. Entonces le pongo el pie así, quiero esto.
+
+[NIXIRA | MEDIUM] Y estamos al borde. Quiero lanzarlo por el precipicio. Dado de 20, la prueba es 15. Lanzas dos dados de 20 porque estás lanzando con ventaja por primera acción. Ahí voy. Al resultado más alto. 10. [DM | HIGH] ¿No tienes una Inspiración?
+
+[NIXIRA | LOW] Pero no la quiero usar todavía. [DM | HIGH] Ves cómo haces... ¿el cómo va? Te agachas para empujarlo. Él apenas ve que empujas... buena contrapatada y se queda firme. Y como usaste la Mano de Mago, desenrolló... eh, y ya le queda la mano atada, o sea, simplemente tiene que hacer un jirón para soltarla, pero sigue así... o sea, como que se volvió... que con un último... está mirando como: "Muy astuta, maldita".
+
+[NIXIRA | MEDIUM] ¿En qué posición estoy? ¿Como agachada? El man está al frente, ¿así?
+
+[DM | HIGH] Apenas estás en... Zacarías, eso es muy bonito para siempre.
+
+[ZACARÍAS | HIGH] ¿Sabes qué voy a hacer? Voy a agarrar... creo que en mi inventario tengo un crowbar. Literal puedo hacer lo siguiente: meto la mano hacia atrás en mi mochila, saco una barreta y... le doy en los huevos. Literal, es una barreta, ¿no?
+
+[DM | HIGH] No, siete. No alcanza la barreta, o sea, como que hace un empujoncito y de la fuerza se te queda hacia atrás.
+
+[DM | HIGH] Después de empujarte, el tipo salta hacia atrás, o sea, como una pirueta. "Voy a gastar mis dos acciones solo saltando hacia atrás". Okay. Ya no hay cadena.
+
+[DM | HIGH] Zacarías, listo. [ZACARÍAS | MEDIUM] Primero, el man, el trol está sentado. Quiero saber cómo... ¿como qué altura es? "Como el torso de ahorita es como de ancho. Desde este pedacito, este pedacito es bastante ancho y, como está sentado, la cabeza sería el segundo piso". Listo, entonces hago lo siguiente, aprovechando que está sentado.
+
+[ZACARÍAS | MEDIUM] Pero primero me alejo unos metros, lo suficiente antes de que se voltee, pero lo suficiente para lanzar mi... mi arma. Voy a apuntarle a la nuca. [DM | HIGH] Listo, lanzas... Larga... Lánzala. Literal, la [saeta de la ballesta]. ¿Cuál... lanza? Dos + uno. Se queda una.
+
+[ZACARÍAS | HIGH] ¡Esto! [DM | HIGH] Se sacudió y se empezó a parar, pero no volteó. No volteó porque, pues, es muy pesado, lento, se está parando. [ZACARÍAS | HIGH] "Hago una Minor Illusion".
+
+[ZACARÍAS | MEDIUM] Y que va corriendo hacia acá, o sea yo, y yo me corro aquí al ladito... "Y si te queda otra acción". Me queda otra acción. Quiero saber qué hay acá, qué estoy viendo alrededor. Aquí ya me hice como... me quité del foco de todo eso. [DM | HIGH] ¿Qué va a haber? Como una especie de pasillo amurallado.
+
+[DM | HIGH] Sigues viendo la muralla y justo a la derecha tuya hay como dos grandes portones que separan el área de La Mansión del área pública. [ZACARÍAS | MEDIUM] Listo. Entonces no hay nada, ¿no? ¿Es todo como piedra? [DM | HIGH] Sí. [ZACARÍAS | MEDIUM] Listo, entonces sigilosamente me quedo ahí como... como cubierto al lado de esa muralla.
+
+[ZACARÍAS | MEDIUM] Esperando que con mi Ilusión Menor el trol se calle y vaya... y vaya corriendo, y yo me quedo quieto, silencioso, pero... eh...
+
+[ZACARÍAS | HIGH] Sí, saco mi Orbe, empiezo a cargarla y sigo ahí esperando a que cuando el trol venga para lanzársela. [DM | HIGH] Entonces te sientas a rezarle a [Malfas]. Y empieza... como se empieza a llenar la esfera de un brillo morado. Lanza un dado de 20. Ya se lanzaba para... para ver cuánta energía arcana...
+
+[DM | HIGH] 14. El Orbe se empieza a poner bastante brillante y empieza a sentirse tibio al tacto. Ves cómo se lleno de una luz morada intensa. Listo, voy yo. El trol se voltea, se termina de levantar con su primera acción y la segunda acción... hace una Investigación contra la ilusión. Va supremamente rápido, va avanzando.
+
+[DM | HIGH] Tumba la ilusión y se queda pensando, como Sniper... pero ¿Sniper lo ha atacado o no? Sabe que es amigo... o no sé.
+
+[DM | HIGH] ¿Cómo sé que es un falso profeta? Porque lo reconoces. Es el falso profeta que habían visto cuando estuvieron debajo del pozo. Uno de todos los que están con Val. El último... el que era el más poderoso de todos... Altaflama. [ZACARÍAS | LOW] Este... chicos, maten...
+
+[DM | HIGH] Parece interesado en eso. [ZACARÍAS | MEDIUM] Listo, eh... rayos. Yo quiero pensar así. Ah, y me acuerdo cuando estábamos en la iglesia... no, en la iglesia... a ese fue que [?] cortando esas vainas... no, ese fue el que se murió. Ese era el falso, falso profeta.
+
+[ZACARÍAS | MEDIUM] Yo soy una buena persona. Pero... dejarte ir sería bastante malo. Sin embargo, matarte mientras estás desmayado también podría ser considerado malo, así que... pero... yo no sé si mi amigo Cori aquí es tan bueno como yo. Así que, Cori, ¿sabes quién es este desgraciado, no?
+
+[DM as CORI | MEDIUM] ¿Se queda viendo el cadáver? Eh, Cori mantenía... tenía el martillo... él coge su Mazo y empieza a empujarlo así como... le mira la cara. [ZACARÍAS | MEDIUM] Y le digo: "No es de mí matar a alguien que está desmayado y que no me ha atacado directamente recientemente, y no lo hizo... entonces... pero puedo voltearme hacia el otro lado mientras...".
+
+[DM | HIGH] ¿Qué quiere hacer? Lanza un dado de cuatro, ¿par o impar? Impares es que lo mata o que no lo mata... ¿Qué haces? Si no lo mata, Donner va a tener una razón para no matarlo... Donner... Y parece que lo mata... impares es que lo mata. Y parece que lo mata. Tres, sí. Mata... Donner voltea. ¿Se acerca? Recoge el cuerpo. ¿Lo levanta? Ves cómo arde su mano, se le está quemando todo.
+
+[DM as ALTAFLAMA | HIGH] Altaflama despierta y mira a los ojos directamente a Donner: "Por crímenes contra las siete razas del reino. Por sacrilegio ante el templo de Val sagrado entre los [?]. Por los crímenes de utilizar sangre inocente para atraer al falso Dios de la llama negra...".
+
+[DM as ALTAFLAMA | HIGH] "Este plano te condenó a ti. Maldito [?], impostor de la fe, a muerte en este preciso instante. Que tú y toda tu descendencia maldita mueran para siempre". [DM | HIGH] Y ves cómo literalmente empieza a materializarse en el puño todos los mangos de todas las armas conocidas... o sea, es un micro-instante... y ves cómo por la espalda de Altaflama salen puntas de lanza, puntas de flecha y también un poco todas las armas de fuego... [?].
+
+[DM | HIGH] Lo suelta y ves cómo literalmente se va volviendo en polvo, deshaciendo. Justo cuando la última gota de ceniza de Altaflama para el piso, arrancas en un estado de migraña. ¡Ah! Al piso. Te agarras la cabeza, tus ojos se tornan en blanco y te transportas a un templo.
+
+[DM | HIGH] Es circular. Un Torreón negro se alza frente a ti. [DM as VAL | HIGH] Te dice: "¿Me has fallado?". [DM | HIGH] Volteas y ves a los ojos a Val. A su derecha está Malfas. ¿Hay seis bandas? Está Bria, la Diosa de la Belleza. No tiene nada de sentido.
+
+[DM | HIGH] Vuelves. No, no puedo hablar con él. [DM as VAL | HIGH] Simplemente te dice: "Me has fallado", [DM | HIGH] y vuelves. Bueno, igual es un clérigo lo que tenía... o sea, se hizo polvo, pero su ropa queda... lo que tenía que llevar este perfectamente. Sus túnicas son más... detállamelo... listo, ves cómo la túnica se pega a tu cuerpo y se vuelve transparente. Capa Sagrada: tienes +5 Religión de daño.
+
+[ZACARÍAS | MEDIUM] Vaya, vaya. Listo y... ¡listo! Nada, dejo... dejo a Cori protegiendo a... "Amigo, te tengo protegido". [DM | HIGH] ¿Crees que... crees que Cori va a proteger a mi [?]? [DM as DONNER | MEDIUM] "Oye, de mis mejores hombres". [ZACARÍAS | MEDIUM] No... que me dejen ni de hacer nada. Seguiré poniendo joyas.
+
+[DM | HIGH] ¿Y hasta dónde va a ir? Te puedes mover hasta las 6... son para retomar estrategia. Volteas a ver a Donner; está de rodillas. Ves que un aura negra sale sobre él.
+
+[DM | HIGH] Se levanta y ves la mitad de su rostro como Val y la otra mitad como Moradin, el dios de los enanos. Ves que están tratando de poseerlo ambas deidades y escuchas una voz: [DM as VAL/MORADIN | HIGH] "Dos de... debe morir. No eres el único que podrá cumplir la profecía. Él fue el que mató al maldito que me ignoraba. Aún así...". [DM | HIGH] Momento... el color...
+
+[DM | HIGH] Hacia atrás... sientes una flecha que cae justo al lado de tu tobillo. Eres consciente de que no puedes acercarte, pero ves que Donner se levanta y hay algo que lo posee. Él está en un estado de locura. Te mira y dice: [DM as DONNER | HIGH] "¡Niña!". [DM | HIGH] Lanza una espada y te tira un espadazo.
+
+## Attribution Summary
+- Speaker counts:
+  - [DM]: 27
+  - [DM as ACHAWN]: 2
+  - [DM as DONNER]: 4
+  - [DM as CORI]: 1
+  - [DM as ALTAFLAMA]: 2
+  - [DM as VAL]: 2
+  - [DM as VAL/MORADIN]: 1
+  - [ZACARÍAS]: 19
+  - [NIXIRA]: 7
+- LOW-confidence segments:
+  - Segment 41: "Pero no la quiero usar todavía." (Nixira hesitant to use Inspiration, contextual inference).
+  - Segment 73: "Este... chicos, maten..." (Zacarías reacting to the body falling).
+- Ambiguous scenes: The transition between Zacarías's interaction with the soldiers/false prophet and Nixira's combat with the Dragon Trainer is rapid, but the DM's use of "¡Niña!" and character names helps clarify. The distinction. The locations.
+
+---
+
+[DM | MEDIUM] Vaya vaya. Listo y. Listo! Nada dejó Dejó a Cori protegiendo a. Amigo, tengo protegido. Crees que? Crees que Cori va a proteger a mi [?]? Oye de mis mejores hombres. No que me dejan ni de hacer nada. Seguiré poniendo joyas.
+
+[DM | HIGH] Y hasta dónde va a ir? Te puedes mover hasta las 6 son para retomar estrategia.
+
+[DM | HIGH] Voltea a ver a Donner está de rodillas. Ves que un aura negra sale sobre.
+
+[DM | HIGH] Se levanta y ves la mitad de su rostro como Val y la otra mitad como otro [?] el Dios de los enanos ves que están tratando de poseer los ambas deidades y escuchas una voz [?] debe morir no eres el único que podrá cumplir la profecía, el fue el que mató al maldito que me ignoraba, aún así momento el color.
+
+[DM | HIGH] Hacia atrás sientes una flecha que cae justo al lado de tu tobillo. Es consciente de que no puedes acercarte pero es que Donner se levanta y hay algo que lo pose. Yo está en un estado de locura. Te mira y dices [?] Lanza una espada y te tira un espadazo.
+
+[DM | HIGH] Qué quieres hacer?
+
+[ZACARÍAS | MEDIUM] Haciendo una acrobacia hacia atrás. Me protejo con medallón y le digo. Le fallaste a mi padre. Mostrando el espíritu y listo dado de 20. La prueba es 12. 20. Apenas las [?] más el medallón, él [?] la espada, toca contra el medallón y es como toda la energía.
+
+[DM | HIGH] Se [?] y a tu medallón. Acabas de súmale dos al medallón Donner vuelve a sí mismo.
+
+[DM | HIGH] No sé que me hiciste chicos pero estuvo bueno. Está súper asustado no tiene conciencia de Qué pasó? Cuando saltaste la explosión de luz de mi reina de las [?] volteas y tienes un tiro limpio en tu siguiente jugada para darle a Sniper lo estas viendo estas cegado y su como chido está así?
+
+[DM | HIGH] Y a ti te tocó cuatro el dado bueno, dónde estás? Ven como el portal sigue abriéndose que cataclismo y hay uno de los meteoritos. Dado de 20 a ver cuánto daño le metes a. Cae una llamarada así la entra como en Furia.
+
+## Attribution Summary
+- [DM]: 8 segments
+- [ZACARÍAS]: 2 segments
+- LOW-confidence segments: None.
+- Ambiguity: Segment 1 contains a mix of coordination and NPC dialogue regarding the NPC Cori, attributed to [DM] as the primary scene facilitator. Segment 7 is a fast-paced exchange of action, dice rolling, and narration, attributed to [ZACARÍAS] as it captures his primary turn response.

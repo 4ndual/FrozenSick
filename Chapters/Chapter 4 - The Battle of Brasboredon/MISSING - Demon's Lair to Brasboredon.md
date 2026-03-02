@@ -1,10 +1,10 @@
 # Missing Recording
 
-There is a gap in the transcripts between **Chapter 3 — The Flying Turtle** (file 05) and **Chapter 4 — The Battle of Dragon Born** (file 06).
+There is a gap in the transcripts between **Chapter 3 — The Flying Turtle** (file 05) and **Chapter 4 — The Battle of Brasboredon** (file 06).
 
 ## What we know should be covered:
 
-- How the party got from the **demon's volcanic lair** (where Victus died) to **Dragon Born city**
+- How the party got from the **demon's volcanic lair** (where Victus died) to **Brasboredon**
 - How Zacarías was saved from **0 HP / dying** — he's walking and fighting at the start of Chapter 4
 - How the party arrived at the city walls and entered during the revolution
 - Where Señor Nadie, Fuercitas, and any other allies ended up
@@ -22,7 +22,7 @@ There is a gap in the transcripts between **Chapter 3 — The Flying Turtle** (f
 
 ## First known state (start of Chapter 4):
 
-- The party has arrived at the gates of **Robinson Bridge** in Dragon Born city
+- The party has arrived at the gates of **Robinson Bridge** in Brasboredon
 - A **revolution/siege** is already underway — the city is in chaos
 - All three PCs are alive and fighting (Zacarías recovered from 0 HP somehow)
 - They have **communication stones** for cross-party coordination

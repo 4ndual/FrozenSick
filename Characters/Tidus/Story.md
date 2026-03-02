@@ -14,7 +14,7 @@
 
 **Secret:** Killed Prince Roto (Ala Rota), the legitimate heir to the Dragonborn throne. His half-brother Dranlek "El Oscuro" (La Iguana) then seized power.
 
-**Secret-Keeper:** **Red** held Tidus's secret. Red's current status is **uncertain** — DM planning notes suggest he is dead, but session transcripts show him escaping the tavern alive. If dead, Tidus's secret may have died with him or been passed on before death. If alive, Red can expose Tidus at any moment — especially dangerous given the party is currently in Dragon Born.
+**Secret-Keeper:** **Red** held Tidus's secret. Red's current status is **uncertain** — DM planning notes suggest he is dead, but session transcripts show him escaping the tavern alive. If dead, Tidus's secret may have died with him or been passed on before death. If alive, Red can expose Tidus at any moment — especially dangerous given the party is currently in Brasboredon.
 
 ---
 
@@ -34,7 +34,7 @@ Paralyzed during capture but remained aware through a slipped blindfold — saw 
 
 In the demon's lair, attempted to negotiate with Victus/Raku, asking "Do you know Rubén?" Trapped by the demon's Air Prison. Used crossbow in combat. Took zero damage across the entire dungeon.
 
-## Chapter 4 — The Battle of Dragon Born
+## Chapter 4 — The Battle of Brasboredon
 
 Arrived at Robinson Bridge during the revolution. Confronted **Borax** — a former DragonForce apprentice from Tidus's castle days, once a pathetic servant who couldn't produce a spark, now wielding green eldritch fire from a demonic pact. Flashback: Borax served Tidus breakfast on the morning he killed Prince Roto; Tidus showed him compassion and told him to leave the castle.
 
@@ -46,6 +46,24 @@ Surveyed the city from the tower. Got hit by a crossbow bolt (6 damage). Communi
 
 Climbed a rooftop using a grappling rope. Found a chest on a trapdoor. Pushed it aside, heard someone calling for help below. The trapdoor is rigged with a bomb mechanism — session ends with Tidus's dagger an inch from the fuse.
 
+## Chapter 5 — The Escape from Brasboredon
+
+Led the escort group — **Donner IcePeak**, Messi, Achawn, Cory, and Sid — through Sniper's kill zone. Devised a plan called **"Encarámese"** using smoke bombs and shield formations. Coordinated movement across four lanes of open street carpeted with sixty headshot corpses. Witnessed three dwarf children dead in their father's arms — crushed by fleeing civilians, not arrows.
+
+**Sid** was the first to fall: Sniper's explosive arrow split his shield, and a precision shot struck between his eyes. **Achawn** died next during the **Lluvia de Flechas** — Sniper's arrow-rain ability. Cory and Messi survived the crossing.
+
+Found the **Gremory market** in the evacuation zone. Heard a goblin — **Berlin** — complaining about lost jewels. Deceived Berlin into believing he was sent by Gremory to retrieve the **Zafiro Esmeralda** — the gem needed to cure Lunei of Frigid Woe. Berlin handed it over without suspicion.
+
+Asked Donner about Gremory. Learned **Donner IcePeak is Lunei's brother** — one of eight. Lunei never mentioned his family. Donner was furious upon learning Lunei was left incapacitated with Frigid Woe in Eiselcross.
+
+Berlin also provided a **Bomba de Oscuridad** (transports unprotected organic matter to the Dark Dimension — inescapable) and **600 gold pieces**.
+
+When Altaflama — the most powerful false prophet — was found unconscious, Tidus looked away while **Cory** executed him with his maul. Altaflama woke from the impact and delivered a divine condemnation targeting Donner, triggering simultaneous possession by **Val** and **Moradin**. Donner turned on the group, hurling a sword at Nixira. Tidus stepped forward, raised his medallion, and said: *"Le fallaste a mi padre."* The medallion absorbed the divine energy, broke the possession, and gained **+2 potency**.
+
+Donner recovered with no memory of the possession. Gave Tidus an **IcePeak favor coin** — valid with any of his seven brothers. Departed to rejoin his forces, offering one final advantage: his Rito shield can absorb three or four of Sniper's shots.
+
+**Cory** survived the crossing and the Troll battle but died in the final battle. Messi survived.
+
 ---
 
 ## Current Status
@@ -53,7 +71,7 @@ Climbed a rooftop using a grappling rope. Found a chest on a trapdoor. Pushed it
 | Field | Value |
 |-------|-------|
 | **Level** | 3 |
-| **HP** | Injured (~24 HP, crossbow bolt wound) |
-| **Location** | Dragon Born — Rivera district rooftop, alone |
-| **Conditions** | Trapped behind defense walls, defusing a bomb trap (cliffhanger) |
-| **Key Items** | Scimitar, light crossbow (looted), shortbow, daggers, **Val medallion (1/20 counter)** |
+| **HP** | Injured (~22 HP, scratch from arrow rain) |
+| **Location** | Brasboredon — market district |
+| **Conditions** | Val medallion active (counter advancing), IcePeak favor coin |
+| **Key Items** | Scimitar, light crossbow, shortbow, daggers, **Val medallion (+2 potency)**, **Zafiro Esmeralda**, **Bomba de Oscuridad**, 600 gp, IcePeak favor coin, communication stone |

@@ -75,10 +75,11 @@ const NAV = [
         sub: [{ title: 'Missing: Branig', href: '/chapters/chapter-3-the-flying-turtle/missing-branig-and-the-mysterious-woman' }]
       },
       {
-        title: 'Ch 4 — Battle of Dragon Born',
-        href: '/chapters/chapter-4-the-battle-of-dragon-born/summary',
-        sub: [{ title: "Missing: Demon's Lair", href: '/chapters/chapter-4-the-battle-of-dragon-born/missing-demons-lair-to-dragon-born' }]
+        title: 'Ch 4 — Battle of Brasboredon',
+        href: '/chapters/chapter-4-the-battle-of-brasboredon/summary',
+        sub: [{ title: "Missing: Demon's Lair", href: '/chapters/chapter-4-the-battle-of-brasboredon/missing-demons-lair-to-brasboredon' }]
       },
+      { title: 'Ch 5 — Escape from Brasboredon', href: '/chapters/chapter-5-the-escape-from-brasboredon/summary' },
     ]
   },
   {
@@ -140,12 +141,13 @@ function buildLandingPage() {
   <div class="landing-grid">
     <div class="card">
       <h2>The Story So Far</h2>
-      <p>Four chapters of chaos, from a humble tavern job gone wrong to a full-scale revolution.</p>
+      <p>Five chapters of chaos, from a humble tavern job gone wrong to a full-scale revolution.</p>
       <ul>
         <li><a href="/chapters/chapter-1-the-tavern/summary">Chapter 1 &mdash; The Tavern</a></li>
         <li><a href="/chapters/chapter-2-the-plateau/summary">Chapter 2 &mdash; The Plateau</a></li>
         <li><a href="/chapters/chapter-3-the-flying-turtle/summary">Chapter 3 &mdash; The Flying Turtle</a></li>
-        <li><a href="/chapters/chapter-4-the-battle-of-dragon-born/summary">Chapter 4 &mdash; The Battle of Dragon Born</a></li>
+        <li><a href="/chapters/chapter-4-the-battle-of-brasboredon/summary">Chapter 4 &mdash; The Battle of Brasboredon</a></li>
+        <li><a href="/chapters/chapter-5-the-escape-from-brasboredon/summary">Chapter 5 &mdash; The Escape from Brasboredon</a></li>
       </ul>
     </div>
 
@@ -163,7 +165,7 @@ function buildLandingPage() {
       <ul>
         <li><a href="/world/lore">Lore</a> &mdash; Prophecies, artifacts, and ancient powers</li>
         <li><a href="/world/organizations">Organizations</a> &mdash; Factions pulling the strings</li>
-        <li><a href="/world/places">Places</a> &mdash; From La &Uacute;ltima Gota to Dragon Born</li>
+        <li><a href="/world/places">Places</a> &mdash; From La &Uacute;ltima Gota to Brasboredon</li>
       </ul>
     </div>
 

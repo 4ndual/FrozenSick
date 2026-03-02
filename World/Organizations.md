@@ -179,4 +179,4 @@ The DM noted that the party will interact more closely with Los Limpiadores at h
 
 | Person | Connection | Status |
 |--------|------------|--------|
-| *(No named members yet)* | — | Active in Dragon Born during the revolution |
+| *(No named members yet)* | — | Active in Brasboredon during the revolution |

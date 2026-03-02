@@ -1,6 +1,6 @@
 # Plot Tracker — Frozen Sick
 
-*Last updated after Chapter 4*
+*Last updated after Chapter 5*
 
 ---
 
@@ -10,7 +10,7 @@
 - **Objective:** Find a ground emerald, grind it, feed it to Lunei to cure his Ghost Essence coma.
 - **Deadline:** Two quarter-moons from the tavern incident.
 - **Leads:** River settlement or the Elven Mining Camps in the mountains.
-- **Status:** Not started — the party has been captured, imprisoned, and forced to fight a demon since receiving this quest. The clock is ticking.
+- **Status:** **Major progress.** Tidus acquired the **Zafiro Esmeralda** (Emerald Sapphire) from Berlin the goblin at the Gremory market in Brasboredon (Ch.5). Still needs to safely transport it back to Lunei and administer the cure.
 - **Stakes:** If Lunei dies, the party loses their employer, protector, and the only person who knows all the tavern's secrets.
 
 ### 2. Destroy the Golden Crown (Corona Dorada)
@@ -20,10 +20,11 @@
 - **Status:** No progress. Dracus's fate after Farquad's ambush is uncertain.
 - **Stakes:** Malacor can compel obedience from anyone with a single command. As long as the Crown exists, no one is safe.
 
-### 3. Survive the Battle of Dragon Born
-- **Objective:** Regroup and reach the Mansion where Bixira is fighting. Escape or win the revolution.
-- **Status:** The party arrived at Dragon Born during a full-scale revolution and is now **separated across the city**. Tidus is trapped in the Rivera district behind defense walls, defusing a bomb. Zacarías is fighting a stone invoker near the inner gate, down to ~9 HP with one hand. Nixira is fighting wyverns near the Mansion.
-- **Stakes:** The city is sealing off district by district. Gelatina barriers and iron gates are closing. If the party can't regroup, they'll be picked off individually. Bixira is fighting three wyverns alone and can't hold out much longer.
+### 3. Escape from Brasboredon
+- **Objective:** Escape the city alive with the Zafiro Esmeralda. The revolution is winding down — evacuation bells are ringing.
+- **Status:** Significant progress but not resolved. **Sniper is dead** (killed by Donner). The Troll blocking the inner gate was defeated by Zacarías and the dwarf escort. Bixira opened an **interdimensional portal to the Plano Oscuro** (closing — ~2 turns left). Robinson is presumed dead. The General (level 32 warlord) is still active. Tidus has the Zafiro Esmeralda, Bomba de Oscuridad, and 600 gp. Zacarías has the Capa Sagrada. Nixira is fighting the Dragon Trainer on the Mansion roof.
+- **Casualties:** Sid (Sniper headshot), Achawn (Lluvia de Flechas), Cory (final battle). Messi survived.
+- **Stakes:** The General is still in play. The portal is closing. The party needs transport back to La Última Gota — Robinson's supply carts may not exist anymore.
 
 ---
 
@@ -56,6 +57,16 @@
 - **What:** His patron Malfas answers calls with contempt and escalating costs. The blood-web shield cost all ritual casting. The raven has been destroyed twice.
 - **Status:** Ongoing tension. The pact relationship is volatile.
 
+### Zacarías — Death and Return / False Prophet Mission
+- **What:** Zacarías died in Ch.4 and was brought back. In the Escritorio — a timeless void before the deities — Malfas intervened to prevent Val from keeping his soul. His mission: **find and destroy the false prophets**. His patron connection is now critically weakened; a second death may be permanent.
+- **Status:** One false prophet (Altaflama) has been destroyed. Unknown how many remain.
+- **Questions:** How many false prophets exist? Can Zacarías restore his patron connection through this mission? What happens if he dies again?
+
+### Tidus — IcePeak Connection
+- **What:** Tidus formed a bond with Donner IcePeak during the Sniper crossing and market. Saved Donner from divine possession. Received an **IcePeak favor coin** valid with any of Donner's seven brothers.
+- **Status:** Active. Donner departed to rejoin his forces but offered a final advantage against Sniper.
+- **Questions:** Will the IcePeak family become a lasting alliance? How will they react when Lunei is cured? Does the favor coin have limits?
+
 ### Nixira — The Veil's Hunt
 - **What:** Nixira's identity as Kenitzira is now public. The Veil of the Seven Songs is hunting her. Keylan framed her.
 - **Status:** Identity exposed since Chapter 1. No Veil agents have appeared yet, but it's a matter of time.
@@ -77,10 +88,10 @@
 - **What:** Tidus asked the demon Victus this question during negotiation. Significance unknown.
 - **Status:** Unresolved. Rubén's identity is a mystery.
 
-### Tidus — Val Medallion Counter (1/20)
-- **What:** After killing Borax by mercy, Tidus's Val (god of death) medallion activated. A rune appeared — 1 of 20. Val accepts noble assassinations (mercy kills) as tributes.
-- **Status:** Counter at 1/20. What happens at 20 is unknown.
-- **Questions:** Does each mercy kill increment the counter? Is this a blessing or a curse? What is Val's endgame?
+### Tidus — Val Medallion Counter (advancing)
+- **What:** After killing Borax by mercy (Ch.4), Tidus's Val medallion activated at 1/20. In Ch.5, the medallion absorbed the divine clash between Val and Moradin during Donner's possession — gaining **+2 potency**. The counter is advancing.
+- **Status:** Counter advancing. Medallion growing stronger from divine energy absorption.
+- **Questions:** Does each mercy kill increment the counter? Is this a blessing or a curse? What is Val's endgame? Does absorbing divine energy count toward the 20?
 
 ### Nixira — The Dwarf Curse ("Asesina de Niños")
 - **What:** A dwarf mother cursed Nixira with a facial rune after the fire ballista killed dwarven children. The curse is permanent — every dwarf who sees the rune will despise Nixira.
@@ -109,7 +120,7 @@
 ### Who Knows Tidus Killed Prince Roto?
 - **What:** If this secret is discovered in DragonLand, Tidus becomes the most wanted person in the kingdom. Borax was in the castle on the morning of the assassination — he served Tidus breakfast. Could anyone else have witnessed or deduced it?
 - **Questions:** Did Borax tell anyone before dying? Does Farquad know? Does Dragonforce have records? Does Zacarías know his companion's secret?
-- **Risk:** Extreme. They are IN Dragon Born right now.
+- **Risk:** Extreme. They are IN Brasboredon right now.
 
 ### The Beautiful Elf Woman — Tidus's Past
 - **What:** Tidus once traveled the caves with a beautiful elf woman he taught the "survival dance." Mentioned with romantic fondness. Never named. Never explained.
@@ -132,12 +143,12 @@
 - **Questions:** Why was a compass significant enough to be trapped alongside treasure? Where did it go? What does it point to?
 
 ### Where Are Señor Nadie and Fuercitas?
-- **What:** Allied with the party at end of Ch.3 (escaped the demon's lair together). Completely absent from Ch.4. No mention of them arriving at Dragon Born or separating from the party.
-- **Questions:** Did they travel with the party? Were they separated during the MISSING gap? Are they still alive? Are they in Dragon Born?
+- **What:** Allied with the party at end of Ch.3 (escaped the demon's lair together). Completely absent from Ch.4. No mention of them arriving at Brasboredon or separating from the party.
+- **Questions:** Did they travel with the party? Were they separated during the MISSING gap? Are they still alive? Are they in Brasboredon?
 
 ### The 23 Rescued Refugees
 - **What:** Tidus directed the rescue of 23 trapped people in the caves (Ch.2) before Farquad's ambush.
-- **Questions:** Where are they now? Were they captured by Farquad? Did they escape? Could they be allies in Dragon Born?
+- **Questions:** Where are they now? Were they captured by Farquad? Did they escape? Could they be allies in Brasboredon?
 
 ### What Did the La Blanca Sentinel Report?
 - **What:** A sentinel from La Blanca with a dragon-hand mark on his forehead fled through the caves carrying intelligence to DragonLand.
@@ -225,16 +236,37 @@
 - **Questions:** Have any conditions already been met? Is Dranlek "El Oscuro" (La Iguana) "the lying tongue"? Who is "the true dragon"?
 
 ### Val's Counter — What Happens at 20?
-- **What:** Tidus's Val medallion now tracks mercy kills (1/20). The god of death is watching.
+- **What:** Tidus's Val medallion tracks mercy kills and divine energy. Started at 1/20 (Ch.4) and gained +2 potency from absorbing the Val/Moradin clash (Ch.5). The god of death is watching — and the medallion is growing.
 - **Questions:** What triggers at 20? Is it a transformation, a summon, a weapon, or a curse? Can it be stopped?
 
 ### The Revolution — Who Started It?
-- **What:** A full-scale revolution is underway in Dragon Born. Rebel forces fight Dragonforce loyalists. Bixira commands a rebel communication channel. But who organized this?
+- **What:** A full-scale revolution is underway in Brasboredon. Rebel forces fight Dragonforce loyalists. Bixira commands a rebel communication channel. But who organized this?
 - **Questions:** Is this connected to the party's arrival? Is there a rebel leader beyond Bixira? Is this Dracus's work? La Blanca's?
 
 ### The Bomb Trap and the Voice Below
-- **What:** Tidus found a trapdoor on a rooftop in the Rivera district. Someone is trapped below, calling for help. The trapdoor is rigged with a bomb mechanism.
-- **Questions:** Who is trapped? Is it an ally, a civilian, or a trap? Can Tidus defuse it?
+- **What:** Tidus found a trapdoor on a rooftop in the Rivera district (Ch.4 cliffhanger). Someone is trapped below, calling for help. The trapdoor is rigged with a bomb mechanism.
+- **Status:** Outcome occurred during Ch.5 but details unclear from the transcript.
+- **Questions:** Who was trapped? Was it resolved? Did this connect to the Sniper crossing?
+
+### Bixira's Portal (Plano Oscuro)
+- **What:** The collision of Bixira's soul-light and the General's volcanic meteorite opened an **interdimensional portal** to the Dark Plane. Stable for approximately five turns. Whatever passes through — or comes through — is unknown.
+- **Status:** Closing — approximately 2 turns remaining at session's end.
+- **Questions:** Will the party use it? What comes through from the other side? Is this an escape route or a threat? What did it cost Bixira?
+
+### The General — Level 32 Warlord
+- **What:** The supreme military commander of Brasboredon's garrison. Mounted on a colossal dragon. Can summon volcanic meteorites. Circled the Mansion during the revolution.
+- **Status:** Alive and active. The party cannot fight him directly.
+- **Questions:** Will he pursue them? Is the portal his doing or Bixira's counter?
+
+### The Bomba de Oscuridad
+- **What:** A non-explosive weapon acquired by Tidus from Berlin. Transports any unprotected organic creature it touches into the **Dark Dimension** — an inescapable prison plane.
+- **Status:** In Tidus's possession. Unused.
+- **Questions:** Will it be used against the General? Against Sniper (now dead)? Is the Dark Dimension the same as the Plano Oscuro?
+
+### Robinson — Presumed Dead
+- **What:** Robinson's explosive plan at the gatehouse failed and collapsed the surrounding buildings. He was beyond the city walls when the blast occurred.
+- **Status:** Presumed dead. No body recovered.
+- **Questions:** Is he truly dead? Could he have survived the blast?
 
 ---
 
@@ -250,3 +282,7 @@
 | **Kill Borax** | Tidus destroyed his talisman with a crossbow bolt. Body melted into charred stone. Fire elemental spawned and destroyed. | Ch.4 |
 | **Hold the Gate** | The orc hero held the gate mechanism with his body, sacrificing himself so the party and civilians could pass. | Ch.4 |
 | **Tower Assault** | Nixira took the watchtower, killed guards and a green dragon, fired the ballistae. | Ch.4 |
+| **Kill Sniper** | Donner climbed Sniper's tower with Rito shield protection and killed him. Sniper had held the crossing zone with sixty headshot kills. | Ch.5 |
+| **Destroy Altaflama** | The most powerful false prophet was executed by Cory while Tidus looked away. His death triggered divine possession of Donner (Val + Moradin), broken by Tidus's medallion. His robe became the Capa Sagrada on Zacarías. | Ch.5 |
+| **Defeat the Troll** | Zacarías and Bixira's dwarf escort defeated the Troll blocking the inner gate using Onda Grupal, Fireball, Command, and Minor Illusion. Ten dwarves died in the fight. | Ch.5 |
+| **Acquire the Zafiro Esmeralda** | Tidus deceived Berlin the goblin into handing over the gem needed to cure Lunei. | Ch.5 |

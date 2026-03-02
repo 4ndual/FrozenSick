@@ -107,11 +107,9 @@ The **Dragon Scar** is unclaimed no-man's-land between the house domains — als
 ### Dragon Born (Island)
 
 **Type:** Small island off the eastern coast of DragonLand
-**Current Status:** The party is HERE (latest session)
+**Current Status:** The party is NOT here — they are in Brasboredon
 
 A separate island to the east of the DragonLand mainland, connected to the Brastabro coastal area. This is the seat of Dragonborn power — the fortress-capital with castles, military barracks, a military river district, generals' mansions, an execution plaza, and military supply ships. The population speaks primarily Draconic.
-
-The Prison Tortuga was heading here. The party arrived after escaping the turtle and defeating the demon Victus, and has been here for approximately 3 days as of the latest session.
 
 **Known Infrastructure:**
 - Castle with towers (Tidus's flashback: training Dragonforce companions from a castle tower)

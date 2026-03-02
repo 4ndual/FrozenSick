@@ -1,0 +1,25 @@
+[DM | MEDIUM] Vaya vaya. Listo y. Listo! Nada dejó Dejó a Cori protegiendo a. Amigo, tengo protegido. Crees que? Crees que Cori va a proteger a mi [?]? Oye de mis mejores hombres. No que me dejan ni de hacer nada. Seguiré poniendo joyas.
+
+[DM | HIGH] Y hasta dónde va a ir? Te puedes mover hasta las 6 son para retomar estrategia.
+
+[DM | HIGH] Voltea a ver a Donner está de rodillas. Ves que un aura negra sale sobre.
+
+[DM | HIGH] Se levanta y ves la mitad de su rostro como Val y la otra mitad como otro [?] el Dios de los enanos ves que están tratando de poseer los ambas deidades y escuchas una voz [?] debe morir no eres el único que podrá cumplir la profecía, el fue el que mató al maldito que me ignoraba, aún así momento el color.
+
+[DM | HIGH] Hacia atrás sientes una flecha que cae justo al lado de tu tobillo. Es consciente de que no puedes acercarte pero es que Donner se levanta y hay algo que lo pose. Yo está en un estado de locura. Te mira y dices [?] Lanza una espada y te tira un espadazo.
+
+[DM | HIGH] Qué quieres hacer?
+
+[ZACARÍAS | MEDIUM] Haciendo una acrobacia hacia atrás. Me protejo con medallón y le digo. Le fallaste a mi padre. Mostrando el espíritu y listo dado de 20. La prueba es 12. 20. Apenas las [?] más el medallón, él [?] la espada, toca contra el medallón y es como toda la energía.
+
+[DM | HIGH] Se [?] y a tu medallón. Acabas de súmale dos al medallón Donner vuelve a sí mismo.
+
+[DM | HIGH] No sé que me hiciste chicos pero estuvo bueno. Está súper asustado no tiene conciencia de Qué pasó? Cuando saltaste la explosión de luz de mi reina de las [?] volteas y tienes un tiro limpio en tu siguiente jugada para darle a Sniper lo estas viendo estas cegado y su como chido está así?
+
+[DM | HIGH] Y a ti te tocó cuatro el dado bueno, dónde estás? Ven como el portal sigue abriéndose que cataclismo y hay uno de los meteoritos. Dado de 20 a ver cuánto daño le metes a. Cae una llamarada así la entra como en Furia.
+
+## Attribution Summary
+- [DM]: 8 segments
+- [ZACARÍAS]: 2 segments
+- LOW-confidence segments: None.
+- Ambiguity: Segment 1 contains a mix of coordination and NPC dialogue regarding the NPC Cori, attributed to [DM] as the primary scene facilitator. Segment 7 is a fast-paced exchange of action, dice rolling, and narration, attributed to [ZACARÍAS] as it captures his primary turn response.
