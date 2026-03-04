@@ -3,7 +3,7 @@
   import { SvelteFlow, Background, Controls, MiniMap, type Node, type Edge } from '@xyflow/svelte';
   import '@xyflow/svelte/dist/style.css';
   import { campaign } from '../../store/campaign.svelte.ts';
-  import { EVENT_TYPE_COLORS, EVENT_TYPE_LABELS, RELATION_TYPE_LABELS } from '../../types/schema.ts';
+  import { RELATION_TYPE_LABELS } from '../../types/schema.ts';
   import { formatDate } from '../../utils/calendar.ts';
   import type { CampaignEvent, CalendarConfig } from '../../types/schema.ts';
   import EventNode from './EventNode.svelte';
@@ -33,10 +33,16 @@
     return filtered.filter((ev) => connected.has(ev.id));
   }
 
+  function typeInfo(typeId: string) {
+    const et = campaign.eventTypes.find((e) => e.id === typeId);
+    return { color: et?.color ?? '#888', label: et?.label ?? typeId };
+  }
+
   function layoutNodes(events: CampaignEvent[], cal: CalendarConfig, selId: string | null): Node[] {
     const cols = Math.max(1, Math.ceil(Math.sqrt(events.length)));
     return events.map((ev, i) => {
-      const color = ev.color ?? EVENT_TYPE_COLORS[ev.type] ?? '#888';
+      const info = typeInfo(ev.type);
+      const color = ev.color ?? info.color;
       return {
         id: ev.id,
         type: 'eventNode',
@@ -46,7 +52,7 @@
         },
         data: {
           title: ev.title,
-          typeLabel: EVENT_TYPE_LABELS[ev.type],
+          typeLabel: info.label,
           typeColor: color,
           dateStr: formatDate(ev.date, cal),
           secret: ev.secret ?? false,
@@ -149,7 +155,7 @@
       <MiniMap
         nodeColor={(n) => {
           const ev = campaign.data.events.find((e) => e.id === n.id);
-          return ev ? (ev.color ?? EVENT_TYPE_COLORS[ev.type] ?? '#888') : '#888';
+          return ev ? (ev.color ?? typeInfo(ev.type).color) : '#888';
         }}
         style="background:var(--surface-2);border:1px solid var(--border)"
       />

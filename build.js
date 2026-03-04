@@ -4,7 +4,7 @@ const { marked } = require('marked');
 
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
-const EXCLUDE = new Set(['.cursor', 'node_modules', 'Assets', 'dist', '.git']);
+const EXCLUDE = new Set(['.cursor', 'node_modules', 'Assets', 'dist', '.git', 'timeline']);
 const EXCLUDE_FILES = new Set(['README.md']);
 
 marked.use({
@@ -103,7 +103,7 @@ const NAV = [
   },
   { title: 'Plot Tracker', href: '/plot/tracker' },
   { title: 'Relations', href: '/relations' },
-  { title: '⟳ Timeline', href: '/timeline/', external: true },
+  { title: '⟳ Timeline', href: '/timeline/' },
 ];
 
 function renderSidebar(activeHref) {
@@ -177,7 +177,7 @@ function buildLandingPage() {
         <li><a href="/plot/tracker">Plot Tracker</a> &mdash; Active quests, loose ends, mysteries</li>
         <li><a href="/relations">Relations</a> &mdash; Character &amp; faction diagrams</li>
         <li><a href="/characters/npcs">NPCs</a> &mdash; Every face the party has met</li>
-        <li><a href="/timeline/" target="_blank">⟳ Timeline</a> &mdash; Interactive campaign timeline &amp; event graph</li>
+        <li><a href="/timeline/">⟳ Timeline</a> &mdash; Interactive campaign timeline &amp; event graph</li>
       </ul>
     </div>
   </div>

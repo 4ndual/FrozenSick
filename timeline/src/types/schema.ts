@@ -1,4 +1,13 @@
 export type EventType = 'battle' | 'discovery' | 'npc' | 'quest' | 'lore' | 'travel' | 'rest';
+
+/** User-defined or built-in event type (id is the key used on events) */
+export interface CustomEventType {
+  id: string;
+  label: string;
+  color: string;
+  icon: string;
+}
+
 export type RelationType = 'caused' | 'leads_to' | 'concurrent' | 'related' | 'contradicts';
 
 export interface FantasyDate {
@@ -43,7 +52,8 @@ export interface CampaignEvent {
   date: FantasyDate;
   endDate: FantasyDate | null;
   timelineId: string;
-  type: EventType;
+  /** Event type id (built-in or custom from campaign.eventTypes) */
+  type: string;
   relations: EventRelation[];
   tags: string[];
   color: string | null;
@@ -63,12 +73,14 @@ export interface CampaignData {
   meta: CampaignMeta;
   calendar: CalendarConfig;
   timelines: CampaignTimeline[];
+  eventTypes?: CustomEventType[];
+  suggestedTags?: string[];
   events: CampaignEvent[];
 }
 
 export interface FilterState {
   search: string;
-  types: EventType[];
+  types: string[];
   tags: string[];
   characters: string[];
   timelineIds: string[];
@@ -112,3 +124,14 @@ export const EVENT_TYPE_ICONS: Record<EventType, string> = {
   travel: 'map-pin',
   rest: 'moon',
 };
+
+/** Default event types used when campaign has no eventTypes (migration) */
+export const DEFAULT_EVENT_TYPES: CustomEventType[] = [
+  { id: 'battle', label: 'Battle', color: '#cc2222', icon: 'swords' },
+  { id: 'discovery', label: 'Discovery', color: '#4a9a4a', icon: 'search' },
+  { id: 'npc', label: 'NPC Encounter', color: '#9a5a2a', icon: 'user' },
+  { id: 'quest', label: 'Quest', color: '#8a4a9a', icon: 'scroll-text' },
+  { id: 'lore', label: 'Lore', color: '#4a6a9a', icon: 'book-open' },
+  { id: 'travel', label: 'Travel', color: '#7a6a3a', icon: 'map-pin' },
+  { id: 'rest', label: 'Rest', color: '#3a5a3a', icon: 'moon' },
+];

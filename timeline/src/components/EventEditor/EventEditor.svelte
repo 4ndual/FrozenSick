@@ -1,13 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { campaign } from '../../store/campaign.svelte.ts';
-  import {
-    EVENT_TYPE_LABELS,
-    EVENT_TYPE_COLORS,
-    EVENT_TYPE_ICONS,
-    RELATION_TYPE_LABELS,
-  } from '../../types/schema.ts';
-  import type { CampaignEvent, EventType, EventRelation, FantasyDate } from '../../types/schema.ts';
+  import { RELATION_TYPE_LABELS } from '../../types/schema.ts';
+  import type { CampaignEvent, EventRelation, FantasyDate } from '../../types/schema.ts';
   import { formatDate, clampDay } from '../../utils/calendar.ts';
   import { generateId } from '../../utils/storage.ts';
 
@@ -19,6 +14,7 @@
   }
 
   function makeBlank(): CampaignEvent {
+    const first = campaign.eventTypes[0];
     return {
       id: generateId(),
       title: '',
@@ -26,11 +22,11 @@
       date: blankDate(),
       endDate: null,
       timelineId: campaign.data.timelines[0]?.id ?? '',
-      type: 'quest',
+      type: first?.id ?? 'quest',
       relations: [],
       tags: [],
       color: null,
-      icon: EVENT_TYPE_ICONS.quest,
+      icon: first?.icon ?? 'scroll-text',
       secret: false,
       linkedChapter: '',
       linkedCharacters: [],
@@ -73,8 +69,13 @@
   }
 
   function onTypeChange() {
-    draft.icon = EVENT_TYPE_ICONS[draft.type] ?? 'scroll-text';
+    const et = campaign.eventTypes.find((e) => e.id === draft.type);
+    draft.icon = et?.icon ?? 'scroll-text';
     draft.color = null;
+  }
+
+  function typeColor(typeId: string) {
+    return campaign.eventTypes.find((e) => e.id === typeId)?.color ?? '#888';
   }
 
   function toggleEndDate() {
@@ -166,8 +167,8 @@
         <div class="field">
           <label for="ev-type">Type</label>
           <select id="ev-type" bind:value={draft.type} onchange={onTypeChange}>
-            {#each Object.entries(EVENT_TYPE_LABELS) as [val, label]}
-              <option value={val}>{label}</option>
+            {#each campaign.eventTypes as et}
+              <option value={et.id}>{et.label}</option>
             {/each}
           </select>
         </div>
@@ -221,12 +222,12 @@
             <input
               type="number"
               bind:value={draft.endDate.day}
-              onchange={() => clampDateDay(draft.endDate!)}
+              onchange={() => draft.endDate && clampDateDay(draft.endDate)}
               min="1"
               max={cal.months[(draft.endDate?.month ?? 1) - 1]?.days ?? 30}
               placeholder="Day"
             />
-            <select bind:value={draft.endDate.month} onchange={() => clampDateDay(draft.endDate!)}>
+            <select bind:value={draft.endDate.month} onchange={() => draft.endDate && clampDateDay(draft.endDate)}>
               {#each cal.months as m, i}
                 <option value={i + 1}>{m.name}</option>
               {/each}
@@ -258,7 +259,7 @@
             <input
               id="ev-color"
               type="color"
-              value={draft.color ?? EVENT_TYPE_COLORS[draft.type]}
+              value={draft.color ?? typeColor(draft.type)}
               oninput={(e) => { draft.color = (e.target as HTMLInputElement).value; }}
             />
             {#if draft.color}

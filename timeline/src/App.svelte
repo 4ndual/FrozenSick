@@ -7,6 +7,7 @@
   import Sidebar from './components/Sidebar/Sidebar.svelte';
   import CalendarConfig from './components/CalendarConfig/CalendarConfig.svelte';
   import TimelineManager from './components/TimelineManager/TimelineManager.svelte';
+  import EventTypesAndTagsConfig from './components/EventTypesAndTagsConfig/EventTypesAndTagsConfig.svelte';
   import { exportCampaign, importCampaign } from './utils/storage.ts';
 
   async function handleImport() {
@@ -125,6 +126,7 @@
           <div class="settings-nav">
             <span class="settings-nav-title">Settings</span>
             <a href="#timelines" class="settings-nav-item">Timeline Tracks</a>
+            <a href="#event-types" class="settings-nav-item">Event Types & Tags</a>
             <a href="#calendar" class="settings-nav-item">Calendar</a>
             <a href="#campaign" class="settings-nav-item">Campaign Info</a>
             <a href="#data" class="settings-nav-item">Data</a>
@@ -132,6 +134,10 @@
           <div class="settings-content">
             <section id="timelines">
               <TimelineManager />
+            </section>
+            <div class="section-divider"></div>
+            <section id="event-types">
+              <EventTypesAndTagsConfig />
             </section>
             <div class="section-divider"></div>
             <section id="calendar">

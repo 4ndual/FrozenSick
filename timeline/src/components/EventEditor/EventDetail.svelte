@@ -1,10 +1,18 @@
 <script lang="ts">
   import { campaign } from '../../store/campaign.svelte.ts';
-  import { EVENT_TYPE_LABELS, EVENT_TYPE_COLORS, RELATION_TYPE_LABELS } from '../../types/schema.ts';
+  import { RELATION_TYPE_LABELS } from '../../types/schema.ts';
   import { formatDate } from '../../utils/calendar.ts';
 
   const ev = $derived(campaign.detailEvent);
   const cal = $derived(campaign.data.calendar);
+
+  function getTypeLabel(typeId: string) {
+    return campaign.eventTypes.find((e) => e.id === typeId)?.label ?? typeId;
+  }
+
+  function getTypeColor(typeId: string) {
+    return campaign.eventTypes.find((e) => e.id === typeId)?.color ?? '#888';
+  }
 
   function getRelatedEvent(id: string) {
     return campaign.data.events.find((e) => e.id === id);
@@ -22,8 +30,8 @@
 {#if ev}
   <div class="detail-panel">
     <div class="detail-header">
-      <div class="detail-type" style="color: {EVENT_TYPE_COLORS[ev.type]}">
-        {EVENT_TYPE_LABELS[ev.type]}
+      <div class="detail-type" style="color: {getTypeColor(ev.type)}">
+        {getTypeLabel(ev.type)}
       </div>
       <div class="detail-actions">
         <button class="action-btn" onclick={() => campaign.openEditor(ev!)} title="Edit">

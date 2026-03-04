@@ -1,9 +1,5 @@
 <script lang="ts">
   import { campaign } from '../../store/campaign.svelte.ts';
-  import { EVENT_TYPE_LABELS, EVENT_TYPE_COLORS } from '../../types/schema.ts';
-  import type { EventType } from '../../types/schema.ts';
-
-  const EVENT_TYPES = Object.keys(EVENT_TYPE_LABELS) as EventType[];
 
   const hasFilters = $derived(
     campaign.filter.search !== '' ||
@@ -51,15 +47,15 @@
   <div class="sidebar-group">
     <div class="group-label">Event Type</div>
     <div class="type-grid">
-      {#each EVENT_TYPES as type}
-        {@const active = campaign.filter.types.includes(type)}
+      {#each campaign.eventTypes as et}
+        {@const active = campaign.filter.types.includes(et.id)}
         <button
           class="type-chip"
           class:active
-          style="--chip-color: {EVENT_TYPE_COLORS[type]}"
-          onclick={() => campaign.toggleFilterType(type)}
+          style="--chip-color: {et.color}"
+          onclick={() => campaign.toggleFilterType(et.id)}
         >
-          {EVENT_TYPE_LABELS[type]}
+          {et.label}
         </button>
       {/each}
     </div>

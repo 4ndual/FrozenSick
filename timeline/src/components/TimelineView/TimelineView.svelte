@@ -4,7 +4,6 @@
   import 'vis-timeline/styles/vis-timeline-graph2d.min.css';
   import { campaign } from '../../store/campaign.svelte.ts';
   import { daysPerYear, formatDate, dateToDay } from '../../utils/calendar.ts';
-  import { EVENT_TYPE_COLORS, EVENT_TYPE_ICONS } from '../../types/schema.ts';
   import type { CampaignEvent, CalendarConfig, FantasyDate } from '../../types/schema.ts';
 
   // ── Date mapping ──────────────────────────────────────────────────────────
@@ -31,10 +30,21 @@
     'shield': '🛡', 'skull': '💀', 'flame': '🔥', 'star': '⭐', 'crown': '👑',
   };
 
+  function typeIcon(typeId: string): string {
+    const et = campaign.eventTypes.find((e) => e.id === typeId);
+    return et?.icon ?? 'scroll-text';
+  }
+
+  function typeColor(typeId: string): string {
+    const et = campaign.eventTypes.find((e) => e.id === typeId);
+    return et?.color ?? '#888';
+  }
+
   // Build item content as plain HTML string — no style attributes (sanitizer strips them).
-  // Per-event coloring is done via className (type-{eventType}) and a CSS class map in app.css.
+  // Per-event coloring is done via style.borderLeftColor and className type-{eventType}.
   function buildItemContent(ev: CampaignEvent): string {
-    const emoji = TYPE_EMOJI[ev.icon ?? EVENT_TYPE_ICONS[ev.type] ?? 'scroll-text'] ?? '•';
+    const icon = ev.icon ?? typeIcon(ev.type);
+    const emoji = TYPE_EMOJI[icon] ?? '•';
     return `<span class="tl-icon-em">${emoji}</span><span class="tl-title">${ev.title}</span>${ev.secret ? '<span class="tl-secret"> 🔒</span>' : ''}`;
   }
 
@@ -48,17 +58,21 @@
   function buildItems() {
     const cal = $state.snapshot(campaign.data.calendar);
     const events = $state.snapshot(campaign.filteredEvents);
-    return events.map((ev: any) => ({
-      id: ev.id,
-      group: ev.timelineId,
-      content: buildItemContent(ev),
-      className: `type-${ev.type}`,
-      start: toJSDate(ev.date, cal),
-      ...(ev.endDate ? { end: toJSDate(ev.endDate, cal), type: 'range' } : { type: 'point' }),
-      title: buildTooltipText(ev),
-      editable: false,
-      selectable: true,
-    }));
+    return events.map((ev: any) => {
+      const color = ev.color ?? typeColor(ev.type);
+      return {
+        id: ev.id,
+        group: ev.timelineId,
+        content: buildItemContent(ev),
+        className: `type-${ev.type}`,
+        style: { borderLeftColor: color },
+        start: toJSDate(ev.date, cal),
+        ...(ev.endDate ? { end: toJSDate(ev.endDate, cal), type: 'range' } : { type: 'point' }),
+        title: buildTooltipText(ev),
+        editable: false,
+        selectable: true,
+      };
+    });
   }
 
   function buildGroups() {
@@ -107,7 +121,7 @@
       min: new Date(minTs - pad * 5),
       max: new Date(maxTs + pad * 5),
       zoomMin: 86400 * 1000,
-      zoomMax: 86400 * 1000 * 365 * 10,
+      zoomMax: 86400 * 1000 * 365 * 200,
       orientation: { axis: 'top' },
       stack: true,
       showMajorLabels: true,
@@ -145,6 +159,7 @@
   $effect(() => {
     campaign.filteredEvents;
     campaign.data.calendar;
+    campaign.eventTypes;
     untrack(() => {
       if (!itemsDs) return;
       itemsDs.clear();

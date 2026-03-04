@@ -1,6 +1,54 @@
 import type { CampaignData, CalendarConfig } from '../types/schema.ts';
+import type { CampaignEvent } from '../types/schema.ts';
+import { DEFAULT_EVENT_TYPES } from '../types/schema.ts';
 
 const STORAGE_KEY = 'frozen-sick-timeline-v1';
+const UI_STORAGE_KEY = 'frozen-sick-timeline-ui-v1';
+
+export type ActiveTab = 'timeline' | 'graph' | 'settings';
+
+export interface TimelineUIState {
+  activeTab: ActiveTab;
+}
+
+const DEFAULT_UI_STATE: TimelineUIState = { activeTab: 'timeline' };
+
+export function loadUIState(): TimelineUIState {
+  try {
+    const raw = localStorage.getItem(UI_STORAGE_KEY);
+    if (!raw) return { ...DEFAULT_UI_STATE };
+    const parsed = JSON.parse(raw) as Partial<TimelineUIState>;
+    const tab = parsed.activeTab;
+    if (tab === 'timeline' || tab === 'graph' || tab === 'settings') {
+      return { activeTab: tab };
+    }
+    return { ...DEFAULT_UI_STATE };
+  } catch {
+    return { ...DEFAULT_UI_STATE };
+  }
+}
+
+export function saveUIState(ui: TimelineUIState): void {
+  localStorage.setItem(UI_STORAGE_KEY, JSON.stringify(ui));
+}
+
+/** Test event 100 years before campaign start — added so zoom-out can show long ranges. */
+const TEST_EVENT_100Y: CampaignEvent = {
+  id: 'test-100y-before',
+  title: 'Ancient Founding (test)',
+  description: 'Test event 100 years before campaign start — use zoom out to see it.',
+  date: { year: 1389, month: 1, day: 1 },
+  endDate: null,
+  timelineId: 'main-story',
+  type: 'lore',
+  relations: [],
+  tags: ['test', 'lore'],
+  color: null,
+  icon: 'book-open',
+  secret: false,
+  linkedChapter: '',
+  linkedCharacters: [],
+};
 
 export const DEFAULT_CALENDAR: CalendarConfig = {
   name: 'Calendar of Harptos',
@@ -31,6 +79,8 @@ export const DEFAULT_CAMPAIGN: CampaignData = {
     version: 1,
   },
   calendar: DEFAULT_CALENDAR,
+  eventTypes: [...DEFAULT_EVENT_TYPES],
+  suggestedTags: [],
   timelines: [
     {
       id: 'main-story',
@@ -62,6 +112,7 @@ export const DEFAULT_CAMPAIGN: CampaignData = {
     },
   ],
   events: [
+    TEST_EVENT_100Y,
     {
       id: 'ch1-tavern',
       title: 'The Tavern Job',
@@ -179,7 +230,17 @@ export function loadCampaign(): CampaignData {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return structuredClone(DEFAULT_CAMPAIGN);
-    return JSON.parse(raw) as CampaignData;
+    const data = JSON.parse(raw) as CampaignData;
+    if (!Array.isArray(data.eventTypes) || data.eventTypes.length === 0) {
+      data.eventTypes = [...DEFAULT_EVENT_TYPES];
+    }
+    if (!Array.isArray(data.suggestedTags)) {
+      data.suggestedTags = [];
+    }
+    if (!data.events.some((e) => e.id === 'test-100y-before')) {
+      data.events = [structuredClone(TEST_EVENT_100Y), ...data.events];
+    }
+    return data;
   } catch {
     return structuredClone(DEFAULT_CAMPAIGN);
   }

@@ -3,14 +3,25 @@ import type {
   CampaignEvent,
   CampaignTimeline,
   CalendarConfig,
+  CustomEventType,
   FilterState,
 } from '../types/schema.ts';
-import { loadCampaign, saveCampaign, exportCampaign, importCampaign } from '../utils/storage.ts';
+import { DEFAULT_EVENT_TYPES } from '../types/schema.ts';
+import {
+  loadCampaign,
+  saveCampaign,
+  exportCampaign,
+  importCampaign,
+  loadUIState,
+  saveUIState,
+} from '../utils/storage.ts';
+import type { ActiveTab } from '../utils/storage.ts';
 
-export type ActiveTab = 'timeline' | 'graph' | 'settings';
+export type { ActiveTab };
 
 function createCampaignStore() {
   let data = $state<CampaignData>(loadCampaign());
+  const initialUI = loadUIState();
 
   let filter = $state<FilterState>({
     search: '',
@@ -22,7 +33,7 @@ function createCampaignStore() {
   });
 
   let selectedEventId = $state<string | null>(null);
-  let activeTab = $state<ActiveTab>('timeline');
+  let activeTab = $state<ActiveTab>(initialUI.activeTab);
   let editorOpen = $state(false);
   let editingEvent = $state<CampaignEvent | null>(null);
   let editorOpenCallback: ((ev: CampaignEvent | null) => void) | null = null;
@@ -66,6 +77,12 @@ function createCampaignStore() {
     detailEventId ? data.events.find((e) => e.id === detailEventId) ?? null : null,
   );
 
+  let eventTypes = $derived(
+    (data.eventTypes?.length ? data.eventTypes : DEFAULT_EVENT_TYPES) as CustomEventType[],
+  );
+
+  let suggestedTags = $derived((data.suggestedTags ?? []).slice().sort());
+
   function persist() {
     saveCampaign(data);
   }
@@ -83,9 +100,12 @@ function createCampaignStore() {
     get sidebarOpen() { return sidebarOpen; },
     get detailEventId() { return detailEventId; },
     get detailEvent() { return detailEvent; },
+    get eventTypes() { return eventTypes; },
+    get suggestedTags() { return suggestedTags; },
 
     setActiveTab(tab: ActiveTab) {
       activeTab = tab;
+      saveUIState({ activeTab });
     },
 
     setSelectedEvent(id: string | null) {
@@ -165,6 +185,58 @@ function createCampaignStore() {
 
     updateCalendar(cal: CalendarConfig) {
       data.calendar = cal;
+      persist();
+    },
+
+    // ── Event types & suggested tags ─────────────────────────────────────────
+
+    addEventType(et: CustomEventType) {
+      if (!data.eventTypes) data.eventTypes = [...DEFAULT_EVENT_TYPES];
+      if (data.eventTypes.some((e) => e.id === et.id)) return;
+      data.eventTypes.push(et);
+      persist();
+    },
+
+    updateEventType(id: string, updates: Partial<CustomEventType>) {
+      const list = data.eventTypes ?? DEFAULT_EVENT_TYPES;
+      const idx = list.findIndex((e) => e.id === id);
+      if (idx < 0) return;
+      if (!data.eventTypes || data.eventTypes === DEFAULT_EVENT_TYPES) {
+        data.eventTypes = [...(data.eventTypes ?? DEFAULT_EVENT_TYPES)];
+      }
+      const target = data.eventTypes[idx];
+      const next = { ...target, ...updates };
+      if (updates.id !== undefined && updates.id !== id) {
+        data.events.forEach((e) => { if (e.type === id) e.type = updates.id!; });
+      }
+      data.eventTypes[idx] = next;
+      persist();
+    },
+
+    deleteEventType(id: string) {
+      const used = data.events.some((e) => e.type === id);
+      if (used) return false;
+      if (!data.eventTypes) return true;
+      if (data.eventTypes === DEFAULT_EVENT_TYPES) data.eventTypes = [...DEFAULT_EVENT_TYPES];
+      data.eventTypes = data.eventTypes.filter((e) => e.id !== id);
+      if (data.eventTypes.length === 0) data.eventTypes = [...DEFAULT_EVENT_TYPES];
+      persist();
+      return true;
+    },
+
+    addSuggestedTag(tag: string) {
+      const t = tag.trim();
+      if (!t) return;
+      if (!data.suggestedTags) data.suggestedTags = [];
+      if (data.suggestedTags.includes(t)) return;
+      data.suggestedTags.push(t);
+      data.suggestedTags.sort();
+      persist();
+    },
+
+    removeSuggestedTag(tag: string) {
+      if (!data.suggestedTags) return;
+      data.suggestedTags = data.suggestedTags.filter((t) => t !== tag);
       persist();
     },
 

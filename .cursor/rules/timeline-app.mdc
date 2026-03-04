@@ -1,0 +1,141 @@
+---
+description: Timeline sub-app context, architecture, and lessons learned
+globs:
+  - timeline/**
+  - vercel.json
+---
+
+# Timeline App — Frozen Sick Campaign Timeline
+
+## What This App Is
+
+A client-side web app for visually creating and organizing D&D campaign timelines,
+integrated into the existing "Frozen Sick" wiki. Inspired by Age of Empires tech-tree
+timelines. Served at `/timeline/` as a sub-app within the wiki.
+
+**Core features:**
+- Multi-track horizontal timeline (vis-timeline) with zoom, pan, and custom event cards
+- Relationship graph (Svelte Flow) showing connections between events with animated edges
+- Fully customizable fantasy calendar (user-defined months, days, epochs, year suffixes)
+- Event editor with types, tags, characters, relations, secret flags, wiki links
+- Sidebar with search/filter by type, timeline, tag, character
+- Client-side only: localStorage persistence + JSON import/export (no server)
+
+## Tech Stack
+
+- **Framework**: Svelte 5 (runes: `$state`, `$derived`, `$effect`)
+- **Build**: Vite + Bun
+- **Styling**: Tailwind CSS v4 + custom dark fantasy theme
+- **Timeline**: `vis-timeline` v8 (vanilla JS, imperative API)
+- **Graph**: `@xyflow/svelte` v1 (Svelte Flow, uses `$state.raw` for nodes/edges)
+- **Deployment**: Vercel (static site, output in `dist/timeline/`)
+- **Persistence**: `localStorage` key `frozen-sick-timeline-v1`
+
+## File Structure
+
+```
+timeline/src/
+  App.svelte                  — Main layout, tab nav, header, settings page
+  main.ts                     — Entry point, mounts App
+  app.css                     — Global styles, CSS vars, vis-timeline overrides
+
+  store/
+    campaign.svelte.ts        — Central store ($state + $derived), CRUD, filters, persistence
+
+  types/
+    schema.ts                 — CampaignData, CampaignEvent, CalendarConfig, EventType, etc.
+
+  utils/
+    calendar.ts               — Fantasy date math: formatting, conversion, comparison
+    storage.ts                — localStorage load/save, JSON import/export, defaults
+
+  components/
+    TimelineView/
+      TimelineView.svelte     — vis-timeline widget, imperative sync via $effect + untrack
+    RelationshipGraph/
+      RelationshipGraph.svelte — Svelte Flow graph, $state.raw nodes/edges + $effect.pre
+      EventNode.svelte         — Custom node component for the graph
+    EventEditor/
+      EventEditor.svelte       — Slide-over drawer for creating/editing events
+      EventDetail.svelte       — Read-only event detail panel
+    Sidebar/
+      Sidebar.svelte           — Search and filter panel
+    CalendarConfig/
+      CalendarConfig.svelte    — Custom calendar definition UI
+    TimelineManager/
+      TimelineManager.svelte   — Manage timeline tracks (name, color, order)
+```
+
+## Build & Deploy
+
+The wiki (vanilla JS) and the timeline (Svelte) are built separately.
+`vercel.json` runs: `node build.js && cd timeline && bun install && bun run build`
+
+**Critical**: `build.js` deletes `dist/` before rebuilding the wiki. The timeline must
+build AFTER `build.js` so `dist/timeline/` is not wiped. Never reverse this order.
+
+The Vite config sets `base: '/timeline/'` and outputs to `../dist/timeline/`.
+
+## Lessons Learned — Bugs We Hit and How We Fixed Them
+
+### 1. `effect_update_depth_exceeded` (infinite loop)
+
+**Cause**: Passed `$derived` nodes/edges to `@xyflow/svelte`. SvelteFlow internally
+writes back to nodes (positions, dimensions, measured). `$derived` recomputes on write,
+creating a new array reference, SvelteFlow sees "new" data, writes again — infinite loop.
+
+**Rule**: Never pass `$derived` to libraries that mutate data. Use `$state.raw()` +
+`bind:` instead. See `.cursor/rules/svelte5-reactivity.mdc` for details.
+
+### 2. `DataCloneError: #<Object> could not be cloned`
+
+**Cause**: Svelte 5's `$state()` creates deep Proxy objects. When external libraries
+(vis-timeline DataSet, @xyflow/svelte internals) call `structuredClone`, Proxy objects
+cannot be cloned.
+
+**Rule**: Use `$state.snapshot()` to strip proxies before passing to external APIs.
+Never call `structuredClone()` directly on reactive state — use `$state.snapshot()`.
+
+### 3. `TypeError: date.getTime is not a function`
+
+**Cause**: vis-timeline's standalone bundle uses moment.js objects (not native Date) in
+format callbacks. Code assumed native Date, called `.getTime()` on moment objects.
+
+**Rule**: Use duck-typed accessors for vis-timeline format callbacks:
+```typescript
+function dy(d: any): number { return typeof d.year === 'function' ? d.year() : d.getFullYear(); }
+function dm(d: any): number { return typeof d.month === 'function' ? d.month() : d.getMonth(); }
+function dd(d: any): number { return typeof d.date === 'function' ? d.date() : d.getDate(); }
+```
+
+### 4. vis-timeline event cards not visible
+
+**Cause**: Custom CSS for `.vis-item` had low contrast against the dark theme background.
+
+**Rule**: Always test vis-timeline CSS overrides with explicit `background`, `border`,
+`color`, and `box-shadow` values. The dark theme needs `!important` overrides.
+
+### 5. Svelte Flow nodes rendering HTML as plain text
+
+**Cause**: Default SvelteFlow node type renders `data.label` as text, not HTML.
+
+**Rule**: Use custom Svelte components as node types (registered via `nodeTypes` prop)
+instead of passing HTML strings to `data.label`.
+
+### 6. Tab switching leaving stale components
+
+**Cause**: @xyflow/svelte didn't clean up properly when unmounted via `{#if}` blocks.
+
+**Rule**: Use simple `{#if}` conditional rendering for tabs. Each view mounts/unmounts
+cleanly. Don't try "always mount + CSS hide" — it causes DataCloneError from both
+libraries initializing simultaneously.
+
+## External Library Integration Pattern
+
+For imperative libraries (vis-timeline, D3, etc.) in Svelte 5:
+
+1. Initialize in `onMount()` with `bind:this` for the container
+2. Sync reactive data via `$effect` with **explicit deps + `untrack()`**
+3. Use `$state.snapshot()` inside `untrack()` to get plain data
+4. Clean up in `onDestroy()`
+5. Never pass Svelte proxy objects directly to external APIs
