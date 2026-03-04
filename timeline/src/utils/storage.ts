@@ -32,6 +32,31 @@ export function saveUIState(ui: TimelineUIState): void {
   localStorage.setItem(UI_STORAGE_KEY, JSON.stringify(ui));
 }
 
+const GRAPH_LAYOUT_KEY = 'frozen-sick-timeline-graph-layout-v1';
+
+export type GraphLayoutPositions = Record<string, { x: number; y: number }>;
+
+export function loadGraphLayout(): GraphLayoutPositions {
+  try {
+    const raw = localStorage.getItem(GRAPH_LAYOUT_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
+    const out: GraphLayoutPositions = {};
+    for (const [id, val] of Object.entries(parsed)) {
+      if (val && typeof val === 'object' && 'x' in val && 'y' in val && typeof (val as { x: unknown }).x === 'number' && typeof (val as { y: unknown }).y === 'number') {
+        out[id] = { x: (val as { x: number }).x, y: (val as { y: number }).y };
+      }
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+export function saveGraphLayout(positions: GraphLayoutPositions): void {
+  localStorage.setItem(GRAPH_LAYOUT_KEY, JSON.stringify(positions));
+}
+
 /** Test event 100 years before campaign start — added so zoom-out can show long ranges. */
 const TEST_EVENT_100Y: CampaignEvent = {
   id: 'test-100y-before',

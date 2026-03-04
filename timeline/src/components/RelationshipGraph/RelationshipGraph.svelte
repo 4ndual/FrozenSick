@@ -5,7 +5,9 @@
   import { campaign } from '../../store/campaign.svelte.ts';
   import { RELATION_TYPE_LABELS } from '../../types/schema.ts';
   import { formatDate } from '../../utils/calendar.ts';
+  import { loadGraphLayout, saveGraphLayout } from '../../utils/storage.ts';
   import type { CampaignEvent, CalendarConfig } from '../../types/schema.ts';
+  import type { GraphLayoutPositions } from '../../utils/storage.ts';
   import EventNode from './EventNode.svelte';
 
   const nodeTypes = { eventNode: EventNode };
@@ -38,18 +40,24 @@
     return { color: et?.color ?? '#888', label: et?.label ?? typeId };
   }
 
-  function layoutNodes(events: CampaignEvent[], cal: CalendarConfig, selId: string | null): Node[] {
+  function layoutNodes(
+    events: CampaignEvent[],
+    cal: CalendarConfig,
+    selId: string | null,
+    savedPositions: GraphLayoutPositions,
+  ): Node[] {
     const cols = Math.max(1, Math.ceil(Math.sqrt(events.length)));
     return events.map((ev, i) => {
       const info = typeInfo(ev.type);
       const color = ev.color ?? info.color;
+      const saved = savedPositions[ev.id];
+      const position = saved
+        ? { x: saved.x, y: saved.y }
+        : { x: (i % cols) * 240 + 40, y: Math.floor(i / cols) * 180 + 40 };
       return {
         id: ev.id,
         type: 'eventNode',
-        position: {
-          x: (i % cols) * 240 + 40,
-          y: Math.floor(i / cols) * 180 + 40,
-        },
+        position,
         data: {
           title: ev.title,
           typeLabel: info.label,
@@ -93,9 +101,10 @@
   // $state.raw: writable by SvelteFlow (positions, dimensions, drag state)
   let nodes = $state.raw<Node[]>([]);
   let edges = $state.raw<Edge[]>([]);
+  let savedPositions = $state.raw<GraphLayoutPositions>(loadGraphLayout());
 
   // Sync campaign data -> nodes/edges when dependencies change.
-  // Explicit deps at top; untrack() prevents deep tracking from helper calls.
+  // Before recomputing, persist current node positions so drags and reloads are preserved.
   $effect.pre(() => {
     campaign.filteredEvents;
     campaign.data.events;
@@ -105,12 +114,21 @@
     focusId;
 
     untrack(() => {
+      if (nodes.length > 0) {
+        for (const n of nodes) {
+          if (n.id && n.position) {
+            savedPositions[n.id] = { x: n.position.x, y: n.position.y };
+          }
+        }
+        saveGraphLayout(savedPositions);
+      }
+
       const snap = $state.snapshot(campaign.filteredEvents) as CampaignEvent[];
       const allSnap = $state.snapshot(campaign.data.events) as CampaignEvent[];
       const cal = $state.snapshot(campaign.data.calendar) as CalendarConfig;
       const selId = campaign.selectedEventId;
       const visible = getVisibleEvents(snap, allSnap);
-      nodes = layoutNodes(visible, cal, selId);
+      nodes = layoutNodes(visible, cal, selId, savedPositions);
       edges = computeEdges(visible);
     });
   });
@@ -143,11 +161,16 @@
       nodesDraggable
       nodesConnectable={false}
       elementsSelectable
-      on:nodeclick={(e) => {
-        const id = e.detail.node.id;
-        campaign.setSelectedEvent(id);
-        campaign.openDetail(id);
-        focusId = id;
+      onnodeclick={({ node }) => {
+        campaign.setSelectedEvent(node.id);
+        campaign.openDetail(node.id);
+        focusId = node.id;
+      }}
+      onnodedragstop={({ nodes: updatedNodes }) => {
+        for (const n of updatedNodes) {
+          if (n.id && n.position) savedPositions[n.id] = { x: n.position.x, y: n.position.y };
+        }
+        saveGraphLayout(savedPositions);
       }}
     >
       <Background gap={24} size={1} color="var(--border)" />
