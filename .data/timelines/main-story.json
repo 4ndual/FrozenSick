@@ -1,0 +1,7 @@
+{
+  "id": "main-story",
+  "name": "Main Story",
+  "color": "#d4af37",
+  "description": "The primary campaign arc",
+  "order": 0
+}

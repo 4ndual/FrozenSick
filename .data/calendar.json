@@ -1,0 +1,69 @@
+{
+  "name": "Calendar of Harptos",
+  "yearSuffix": "DR",
+  "epoch": 1300,
+  "months": [
+    {
+      "id": "hammer",
+      "name": "Hammer",
+      "days": 30
+    },
+    {
+      "id": "alturiak",
+      "name": "Alturiak",
+      "days": 30
+    },
+    {
+      "id": "ches",
+      "name": "Ches",
+      "days": 30
+    },
+    {
+      "id": "tarsakh",
+      "name": "Tarsakh",
+      "days": 30
+    },
+    {
+      "id": "mirtul",
+      "name": "Mirtul",
+      "days": 30
+    },
+    {
+      "id": "kythorn",
+      "name": "Kythorn",
+      "days": 30
+    },
+    {
+      "id": "flamerule",
+      "name": "Flamerule",
+      "days": 30
+    },
+    {
+      "id": "eleasis",
+      "name": "Eleasis",
+      "days": 30
+    },
+    {
+      "id": "eleint",
+      "name": "Eleint",
+      "days": 30
+    },
+    {
+      "id": "marpenoth",
+      "name": "Marpenoth",
+      "days": 30
+    },
+    {
+      "id": "uktar",
+      "name": "Uktar",
+      "days": 30
+    },
+    {
+      "id": "nightal",
+      "name": "Nightal",
+      "days": 30
+    }
+  ],
+  "weekLength": 10,
+  "weekName": "Tenday"
+}
