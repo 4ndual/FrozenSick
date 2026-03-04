@@ -4,6 +4,7 @@ import { DEFAULT_EVENT_TYPES } from '../types/schema.ts';
 
 const STORAGE_KEY = 'frozen-sick-timeline-v1';
 const UI_STORAGE_KEY = 'frozen-sick-timeline-ui-v1';
+const GH_SYNC_KEY = 'frozen-sick-gh-sync';
 
 export type ActiveTab = 'timeline' | 'graph' | 'settings';
 
@@ -311,4 +312,43 @@ export function importCampaign(): Promise<CampaignData> {
 
 export function generateId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+}
+
+// ── GitHub Sync State ────────────────────────────────────────────────────────
+
+export interface GitHubSyncState {
+  headSha: string;
+  treeSha: string;
+  fileShas: Record<string, string>;
+  lastSyncedFiles: Record<string, string>;
+}
+
+export function saveGitHubSyncState(state: GitHubSyncState): void {
+  localStorage.setItem(GH_SYNC_KEY, JSON.stringify(state));
+}
+
+export function loadGitHubSyncState(): GitHubSyncState | null {
+  try {
+    const raw = localStorage.getItem(GH_SYNC_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as GitHubSyncState;
+  } catch {
+    return null;
+  }
+}
+
+export function clearGitHubSyncState(): void {
+  localStorage.removeItem(GH_SYNC_KEY);
+}
+
+// ── Static File Loader ───────────────────────────────────────────────────────
+
+export async function loadFromStaticBundle(): Promise<CampaignData | null> {
+  try {
+    const res = await fetch('/.data/bundle.json');
+    if (!res.ok) return null;
+    return (await res.json()) as CampaignData;
+  } catch {
+    return null;
+  }
 }

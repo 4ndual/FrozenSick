@@ -240,4 +240,57 @@ for (const file of fs.readdirSync(assetsDir)) {
   }
 }
 
+// ── Copy .data/ to dist and create bundle ────────────
+
+function bundleDataFiles() {
+  const dataDir = path.join(ROOT, '.data');
+  if (!fs.existsSync(dataDir)) {
+    console.log('  .data/ not found, skipping');
+    return;
+  }
+
+  const distData = path.join(DIST, '.data');
+
+  function copyDir(src, dest) {
+    fs.mkdirSync(dest, { recursive: true });
+    for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+      const srcPath = path.join(src, entry.name);
+      const destPath = path.join(dest, entry.name);
+      if (entry.isDirectory()) copyDir(srcPath, destPath);
+      else fs.copyFileSync(srcPath, destPath);
+    }
+  }
+
+  copyDir(dataDir, distData);
+
+  const readJson = (file) => {
+    const p = path.join(dataDir, file);
+    return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null;
+  };
+
+  const readDir = (subdir) => {
+    const dir = path.join(dataDir, subdir);
+    if (!fs.existsSync(dir)) return [];
+    return fs.readdirSync(dir)
+      .filter((f) => f.endsWith('.json'))
+      .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+  };
+
+  const timelines = readDir('timelines').sort((a, b) => a.order - b.order);
+  const events = readDir('events');
+
+  const bundle = {
+    meta: readJson('meta.json') || { campaignId: 'frozen-sick', campaignName: 'Frozen Sick', version: 1 },
+    calendar: readJson('calendar.json'),
+    timelines,
+    events,
+    eventTypes: readJson('event-types.json') || [],
+    suggestedTags: readJson('suggested-tags.json') || [],
+  };
+
+  fs.writeFileSync(path.join(distData, 'bundle.json'), JSON.stringify(bundle));
+  console.log(`  .data/ -> dist/.data/ (${timelines.length} timelines, ${events.length} events, bundle.json)`);
+}
+
+bundleDataFiles();
 console.log(`\nDone! ${mdFiles.length + 1} pages built in dist/`);

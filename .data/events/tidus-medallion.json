@@ -1,0 +1,18 @@
+{
+  "id": "tidus-medallion",
+  "title": "Val Medallion Discovered",
+  "description": "Tidus discovers the Val medallion and its strange powers.",
+  "date": { "year": 1489, "month": 1, "day": 20 },
+  "endDate": null,
+  "timelineId": "tidus",
+  "type": "discovery",
+  "relations": [
+    { "targetId": "ch4-battle", "type": "related", "label": "ties into" }
+  ],
+  "tags": ["tidus", "medallion", "artifact"],
+  "color": null,
+  "icon": "search",
+  "secret": false,
+  "linkedChapter": "Chapter 2 - The Plateau",
+  "linkedCharacters": ["Tidus"]
+}

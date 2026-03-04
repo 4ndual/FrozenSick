@@ -1,0 +1,18 @@
+{
+  "id": "ch5-escape",
+  "title": "Escape from Brasboredon",
+  "description": "The party flees the burning city under pursuit.",
+  "date": { "year": 1489, "month": 3, "day": 4 },
+  "endDate": null,
+  "timelineId": "main-story",
+  "type": "travel",
+  "relations": [
+    { "targetId": "ch4-battle", "type": "caused", "label": "caused by" }
+  ],
+  "tags": ["chapter-5", "escape"],
+  "color": null,
+  "icon": "map-pin",
+  "secret": false,
+  "linkedChapter": "Chapter 5 - The Escape from Brasboredon",
+  "linkedCharacters": ["Tidus", "Nixira", "Zacarías"]
+}

@@ -14,10 +14,35 @@ import {
   importCampaign,
   loadUIState,
   saveUIState,
+  saveGitHubSyncState,
+  loadGitHubSyncState,
+  clearGitHubSyncState,
+  loadFromStaticBundle,
 } from '../utils/storage.ts';
-import type { ActiveTab } from '../utils/storage.ts';
+import type { ActiveTab, GitHubSyncState } from '../utils/storage.ts';
+import {
+  extractTokenFromHash,
+  getToken,
+  saveToken,
+  clearToken,
+  fetchGitHubUser,
+  saveUser,
+  getCachedUser,
+  loginUrl,
+} from '../utils/auth.ts';
+import type { GitHubUser } from '../utils/auth.ts';
+import {
+  loadFromGitHub,
+  saveToGitHub,
+  shardCampaignData,
+  diffFiles,
+  buildCommitMessage,
+  getRepoConfig,
+  checkRemoteHead,
+} from '../utils/github.ts';
 
 export type { ActiveTab };
+export type SyncStatus = 'idle' | 'synced' | 'dirty' | 'saving' | 'loading' | 'error';
 
 function createCampaignStore() {
   let data = $state<CampaignData>(loadCampaign());
@@ -39,6 +64,23 @@ function createCampaignStore() {
   let editorOpenCallback: ((ev: CampaignEvent | null) => void) | null = null;
   let sidebarOpen = $state(true);
   let detailEventId = $state<string | null>(null);
+
+  // ── Auth state ──────────────────────────────────────────────────────────
+  let ghUser = $state<GitHubUser | null>(getCachedUser());
+  let ghToken = $state<string | null>(getToken());
+  let authLoading = $state(false);
+
+  // ── Sync state ──────────────────────────────────────────────────────────
+  let syncStatus = $state<SyncStatus>('idle');
+  let syncError = $state<string | null>(null);
+  let lastSyncedFiles = $state<Record<string, string> | null>(
+    loadGitHubSyncState()?.lastSyncedFiles ?? null,
+  );
+  let headSha = $state<string | null>(loadGitHubSyncState()?.headSha ?? null);
+  let treeSha = $state<string | null>(loadGitHubSyncState()?.treeSha ?? null);
+  let fileShas = $state<Record<string, string>>(loadGitHubSyncState()?.fileShas ?? {});
+
+  let isAuthenticated = $derived(!!ghToken && !!ghUser);
 
   let filteredEvents = $derived(
     data.events.filter((ev) => {
@@ -85,6 +127,27 @@ function createCampaignStore() {
 
   function persist() {
     saveCampaign(data);
+    if (isAuthenticated && syncStatus !== 'saving' && syncStatus !== 'loading') {
+      syncStatus = 'dirty';
+    }
+  }
+
+  function updateSyncCache(
+    newHeadSha: string,
+    newTreeSha: string,
+    newFileShas: Record<string, string>,
+    files: Record<string, string>,
+  ) {
+    headSha = newHeadSha;
+    treeSha = newTreeSha;
+    fileShas = newFileShas;
+    lastSyncedFiles = files;
+    saveGitHubSyncState({
+      headSha: newHeadSha,
+      treeSha: newTreeSha,
+      fileShas: newFileShas,
+      lastSyncedFiles: files,
+    });
   }
 
   return {
@@ -102,6 +165,16 @@ function createCampaignStore() {
     get detailEvent() { return detailEvent; },
     get eventTypes() { return eventTypes; },
     get suggestedTags() { return suggestedTags; },
+
+    // ── Auth getters ────────────────────────────────────────────────────────
+    get ghUser() { return ghUser; },
+    get ghToken() { return ghToken; },
+    get isAuthenticated() { return isAuthenticated; },
+    get authLoading() { return authLoading; },
+
+    // ── Sync getters ────────────────────────────────────────────────────────
+    get syncStatus() { return syncStatus; },
+    get syncError() { return syncError; },
 
     setActiveTab(tab: ActiveTab) {
       activeTab = tab;
@@ -138,6 +211,120 @@ function createCampaignStore() {
     closeEditor() {
       editorOpen = false;
       editingEvent = null;
+    },
+
+    // ── Auth actions ────────────────────────────────────────────────────────
+
+    login() {
+      window.location.href = loginUrl();
+    },
+
+    logout() {
+      clearToken();
+      clearGitHubSyncState();
+      ghUser = null;
+      ghToken = null;
+      syncStatus = 'idle';
+      syncError = null;
+      lastSyncedFiles = null;
+      headSha = null;
+      treeSha = null;
+      fileShas = {};
+    },
+
+    async initAuth() {
+      const hashToken = extractTokenFromHash();
+      if (hashToken) {
+        saveToken(hashToken);
+        ghToken = hashToken;
+      }
+
+      // Validate token if present
+      const token = ghToken;
+      if (token) {
+        authLoading = true;
+        try {
+          const user = await fetchGitHubUser(token);
+          saveUser(user);
+          ghUser = user;
+        } catch {
+          clearToken();
+          ghToken = null;
+          ghUser = null;
+        }
+        authLoading = false;
+      }
+
+      // Load latest data from static bundle (works for everyone, no auth needed)
+      try {
+        const staticData = await loadFromStaticBundle();
+        if (staticData) {
+          data = staticData;
+          saveCampaign(data);
+          if (isAuthenticated) {
+            const files = shardCampaignData(staticData);
+            lastSyncedFiles = files;
+            syncStatus = 'synced';
+          }
+        }
+      } catch {
+        // Static fetch failed — localStorage is the fallback (already loaded)
+      }
+    },
+
+    // ── GitHub sync actions ─────────────────────────────────────────────────
+
+    async pushToGitHub() {
+      const token = ghToken;
+      if (!token) throw new Error('Not authenticated');
+
+      syncStatus = 'saving';
+      syncError = null;
+
+      try {
+        const cfg = getRepoConfig();
+
+        // Fetch current ref from GitHub if we don't have sync state yet
+        if (!headSha || !treeSha) {
+          const snapshot = await loadFromGitHub(cfg, token);
+          headSha = snapshot.headSha;
+          treeSha = snapshot.treeSha;
+          fileShas = snapshot.fileShas;
+          lastSyncedFiles = shardCampaignData(snapshot.data);
+        }
+
+        const currentFiles = shardCampaignData(data);
+        const baseFiles = lastSyncedFiles ?? {};
+        const changes = diffFiles(currentFiles, baseFiles);
+
+        if (changes.length === 0) {
+          syncStatus = 'synced';
+          return;
+        }
+
+        // Check nobody else pushed while we were editing
+        const remoteHead = await checkRemoteHead(cfg, token);
+        if (remoteHead !== headSha) {
+          throw new Error(
+            'CONFLICT: Someone else saved changes. Refresh the page to get the latest data, then try saving again.',
+          );
+        }
+
+        const message = buildCommitMessage(changes);
+        const result = await saveToGitHub(cfg, token, changes, message, headSha!, treeSha!, );
+
+        const mergedShas = { ...fileShas, ...result.newFileShas };
+        for (const ch of changes) {
+          if (ch.content === null) delete mergedShas[ch.path];
+        }
+
+        updateSyncCache(result.commitSha, result.treeSha, mergedShas, currentFiles);
+        syncStatus = 'synced';
+      } catch (err) {
+        syncStatus = 'error';
+        syncError = err instanceof Error ? err.message : String(err);
+        throw err;
+      }
     },
 
     // ── Events ──────────────────────────────────────────────────────────────

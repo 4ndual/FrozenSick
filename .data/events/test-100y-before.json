@@ -1,0 +1,16 @@
+{
+  "id": "test-100y-before",
+  "title": "Ancient Founding (test)",
+  "description": "Test event 100 years before campaign start — use zoom out to see it.",
+  "date": { "year": 1389, "month": 1, "day": 1 },
+  "endDate": null,
+  "timelineId": "main-story",
+  "type": "lore",
+  "relations": [],
+  "tags": ["test", "lore"],
+  "color": null,
+  "icon": "book-open",
+  "secret": false,
+  "linkedChapter": "",
+  "linkedCharacters": []
+}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { campaign } from './store/campaign.svelte.ts';
   import TimelineView from './components/TimelineView/TimelineView.svelte';
   import RelationshipGraph from './components/RelationshipGraph/RelationshipGraph.svelte';
@@ -10,6 +11,10 @@
   import EventTypesAndTagsConfig from './components/EventTypesAndTagsConfig/EventTypesAndTagsConfig.svelte';
   import { exportCampaign, importCampaign } from './utils/storage.ts';
 
+  onMount(() => {
+    campaign.initAuth();
+  });
+
   async function handleImport() {
     try {
       await campaign.importData();
@@ -17,6 +22,15 @@
       alert((e as Error).message);
     }
   }
+
+  async function handlePush() {
+    try {
+      await campaign.pushToGitHub();
+    } catch (e) {
+      alert((e as Error).message);
+    }
+  }
+
 </script>
 
 <div class="app">
@@ -77,6 +91,41 @@
     </nav>
 
     <div class="header-actions">
+      {#if campaign.isAuthenticated}
+        <div class="sync-group">
+          <span class="sync-indicator sync-{campaign.syncStatus}" title="Sync status: {campaign.syncStatus}">
+            {#if campaign.syncStatus === 'saving' || campaign.syncStatus === 'loading'}
+              <svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+              </svg>
+            {:else}
+              <span class="sync-dot"></span>
+            {/if}
+            {#if campaign.syncStatus === 'dirty'}Unsaved
+            {:else if campaign.syncStatus === 'saving'}Saving…
+            {:else if campaign.syncStatus === 'loading'}Pulling…
+            {:else if campaign.syncStatus === 'synced'}Synced
+            {:else if campaign.syncStatus === 'error'}Error
+            {:else}—
+            {/if}
+          </span>
+
+          <button
+            class="action-btn action-btn-gold"
+            onclick={handlePush}
+            disabled={campaign.syncStatus === 'saving' || campaign.syncStatus === 'loading' || campaign.syncStatus === 'synced'}
+            title="Save changes to GitHub"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+              <path d="M17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4z"></path>
+              <path d="M8 3v4h8V3"></path>
+              <circle cx="12" cy="14" r="2"></circle>
+            </svg>
+            Save
+          </button>
+        </div>
+      {/if}
+
       <button class="action-btn" onclick={() => campaign.toggleSidebar()} title="Toggle sidebar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -91,7 +140,7 @@
         </svg>
         Import
       </button>
-      <button class="action-btn action-btn-gold" onclick={() => campaign.exportData()} title="Export campaign JSON">
+      <button class="action-btn" onclick={() => campaign.exportData()} title="Export campaign JSON">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>
@@ -99,6 +148,26 @@
         </svg>
         Export
       </button>
+
+      <!-- GitHub Auth -->
+      {#if campaign.authLoading}
+        <span class="gh-loading">
+          <svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+          </svg>
+        </span>
+      {:else if campaign.isAuthenticated && campaign.ghUser}
+        <button class="gh-avatar-btn" onclick={() => campaign.logout()} title="Logged in as {campaign.ghUser.login} — click to logout">
+          <img src={campaign.ghUser.avatar_url} alt={campaign.ghUser.login} class="gh-avatar" width="28" height="28" />
+        </button>
+      {:else}
+        <button class="action-btn gh-login-btn" onclick={() => campaign.login()} title="Sign in with GitHub to sync data">
+          <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+          Login
+        </button>
+      {/if}
     </div>
   </header>
 
@@ -165,8 +234,51 @@
               <div class="settings-section">
                 <div class="section-header">
                   <h3>Data Management</h3>
-                  <p class="section-desc">All data is stored locally in your browser. Export regularly to back up your campaign.</p>
+                  <p class="section-desc">Data is stored locally and synced to GitHub when signed in.</p>
                 </div>
+
+                <!-- GitHub sync panel -->
+                <div class="gh-sync-panel">
+                  <div class="gh-sync-header">
+                    <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16" style="color:var(--text-muted)">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    <span>GitHub Sync</span>
+                    <span class="sync-indicator sync-{campaign.syncStatus}" style="margin-left:auto">
+                      <span class="sync-dot"></span>
+                      {campaign.syncStatus}
+                    </span>
+                  </div>
+
+                  {#if campaign.isAuthenticated && campaign.ghUser}
+                    <p class="data-note" style="margin:0 0 10px">
+                      Signed in as <strong>{campaign.ghUser.login}</strong>
+                    </p>
+                    {#if campaign.syncError}
+                      <p class="sync-error">{campaign.syncError}</p>
+                    {/if}
+                    <div class="data-actions">
+                      <button
+                        class="btn-primary"
+                        onclick={handlePush}
+                        disabled={campaign.syncStatus === 'saving' || campaign.syncStatus === 'loading' || campaign.syncStatus === 'synced'}
+                      >Save to GitHub</button>
+                      <button class="btn-secondary" onclick={() => campaign.logout()}>Logout</button>
+                    </div>
+                  {:else}
+                    <p class="data-note" style="margin:0 0 10px">
+                      Sign in to sync your campaign data across devices and share with your group.
+                    </p>
+                    <button class="btn-primary" onclick={() => campaign.login()}>
+                      <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                      </svg>
+                      Sign in with GitHub
+                    </button>
+                  {/if}
+                </div>
+
+                <div style="margin-top:20px"></div>
                 <div class="data-actions">
                   <button class="btn-secondary" onclick={handleImport}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
@@ -176,7 +288,7 @@
                     </svg>
                     Import JSON
                   </button>
-                  <button class="btn-primary" onclick={() => campaign.exportData()}>
+                  <button class="btn-secondary" onclick={() => campaign.exportData()}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                       <polyline points="7 10 12 15 17 10"></polyline>
@@ -186,7 +298,7 @@
                   </button>
                 </div>
                 <p class="data-note">
-                  Stored in localStorage key: <code>frozen-sick-timeline-v1</code><br/>
+                  Local storage key: <code>frozen-sick-timeline-v1</code><br/>
                   Total events: {campaign.data.events.length} · Timelines: {campaign.data.timelines.length}
                 </p>
               </div>
@@ -486,4 +598,105 @@
     letter-spacing: 0.03em;
   }
   .btn-primary:hover { background: var(--gold); color: #0d0d1a; }
+  .btn-primary:disabled, .btn-secondary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* GitHub sync */
+  .sync-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-right: 1px solid var(--border);
+    padding-right: 8px;
+    margin-right: 2px;
+  }
+
+  .sync-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.03em;
+    color: var(--text-dim);
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+
+  .sync-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .sync-idle .sync-dot { background: var(--text-dim); }
+  .sync-synced .sync-dot { background: #4a9a4a; }
+  .sync-dirty .sync-dot { background: #d4af37; }
+  .sync-saving .sync-dot { background: #4a9a9a; }
+  .sync-loading .sync-dot { background: #4a9a9a; }
+  .sync-error .sync-dot { background: #cc2222; }
+
+  .sync-error {
+    font-size: 12px;
+    color: #cc4444;
+    margin: 0 0 10px;
+    padding: 6px 10px;
+    background: rgba(204, 34, 34, 0.1);
+    border: 1px solid rgba(204, 34, 34, 0.25);
+    border-radius: 4px;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .spin { animation: spin 0.8s linear infinite; }
+
+  /* GitHub auth */
+  .gh-avatar-btn {
+    background: none;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    line-height: 0;
+  }
+  .gh-avatar-btn:hover { border-color: var(--gold-dim); }
+
+  .gh-avatar {
+    border-radius: 50%;
+    display: block;
+  }
+
+  .gh-login-btn {
+    border-color: var(--border-bright);
+  }
+
+  .gh-loading {
+    display: flex;
+    align-items: center;
+    color: var(--text-dim);
+  }
+
+  .gh-sync-panel {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+
+  .gh-sync-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
 </style>
