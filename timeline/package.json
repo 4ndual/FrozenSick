@@ -1,0 +1,24 @@
+{
+  "name": "frozen-sick-timeline",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@xyflow/svelte": "^1.5.1",
+    "lucide-svelte": "^0.577.0",
+    "vis-timeline": "^8.5.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@tailwindcss/vite": "^4.2.1",
+    "svelte": "^5.53.7",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.8.0",
+    "vite": "^7.3.1"
+  }
+}

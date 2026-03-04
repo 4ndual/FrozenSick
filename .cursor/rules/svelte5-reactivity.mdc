@@ -1,0 +1,78 @@
+---
+description: Svelte 5 reactivity guardrails for the timeline sub-app
+globs:
+  - timeline/src/**/*.svelte
+  - timeline/src/**/*.svelte.ts
+---
+
+# Svelte 5 Reactivity Rules
+
+## Never pass `$derived` to external libraries that mutate data
+
+If an external library (e.g. @xyflow/svelte, vis-timeline) needs to **write back** to the
+data you pass it (positions, dimensions, selection, measured state), you **must** use
+`$state.raw()` with `bind:`, never `$derived`.
+
+`$derived` is read-only. When a library writes to it, Svelte recomputes the derived value,
+which returns a new object reference (because `.map()` always creates a new array), the
+library sees "new" data, processes it, writes again — infinite loop. Svelte throws
+`effect_update_depth_exceeded`.
+
+```svelte
+// BAD: $derived creates read-only data; SvelteFlow writes back -> infinite loop
+let nodes = $derived(computeNodes());
+<SvelteFlow {nodes} />
+
+// GOOD: $state.raw is writable; SvelteFlow can mutate positions/dimensions
+let nodes = $state.raw<Node[]>([]);
+$effect.pre(() => {
+  someDependency;
+  untrack(() => { nodes = computeNodes(); });
+});
+<SvelteFlow bind:nodes />
+```
+
+## Use `$state.raw()` for data passed to external libraries
+
+Deep proxies from `$state()` cause `DataCloneError` when external libraries call
+`structuredClone` internally. Use `$state.raw()` instead — it stores the value as-is
+without deep proxy wrapping.
+
+When you need to read reactive state and pass it to an external API, use
+`$state.snapshot()` to strip proxies first.
+
+## Always use `untrack()` inside `$effect` for helper calls
+
+When an `$effect` calls functions that read reactive state internally (like
+`$state.snapshot()` or store getters), wrap the body in `untrack()` and list explicit
+dependencies at the top of the effect. This prevents over-broad dependency tracking.
+
+```svelte
+import { untrack } from 'svelte';
+
+// BAD: $state.snapshot() deeply reads hundreds of reactive properties as deps
+$effect(() => {
+  if (!dataSet) return;
+  dataSet.clear();
+  dataSet.add(buildItems()); // buildItems calls $state.snapshot internally
+});
+
+// GOOD: explicit deps + untrack prevents deep implicit tracking
+$effect(() => {
+  campaign.filteredEvents;   // explicit dep
+  campaign.data.calendar;    // explicit dep
+  untrack(() => {
+    if (!dataSet) return;
+    dataSet.clear();
+    dataSet.add(buildItems());
+  });
+});
+```
+
+## Minimize `$effect` usage
+
+- **`$derived`** for pure computations (display values, filtered lists, counts)
+- **Event handlers** (`onclick`, `oninput`) for user actions
+- **Store callbacks** for cross-component communication (e.g. `onEditorOpen`)
+- **`$effect`** only when you must sync reactive state to an imperative external library
+  (vis-timeline, D3, etc.) — and always with `untrack()` + explicit deps

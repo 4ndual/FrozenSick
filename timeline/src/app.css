@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #0d0d1a;
+    --surface: #141428;
+    --surface-2: #1c1c38;
+    --surface-3: #222244;
+    --border: #2a2a4a;
+    --border-bright: #3a3a6a;
+    --gold: #d4af37;
+    --gold-dim: #8a6d1a;
+    --gold-glow: rgba(212, 175, 55, 0.15);
+    --text: #e8e0d0;
+    --text-muted: #8a8a9a;
+    --text-dim: #5a5a7a;
+    --battle: #cc2222;
+    --discovery: #4a9a4a;
+    --npc: #9a5a2a;
+    --quest: #8a4a9a;
+    --lore: #4a6a9a;
+    --travel: #9a8a3a;
+    --rest: #3a5a3a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Text', Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  #app {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cinzel', 'Palatino Linotype', serif;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+  input, textarea, select {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--gold-dim);
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--text-dim);
+  }
+  select option {
+    background: var(--surface-2);
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+}
+
+/* ── vis-timeline overrides ───────────────────────────────────────────────── */
+.vis-timeline {
+  border: 1px solid var(--border) !important;
+  background: var(--surface) !important;
+  font-family: 'Crimson Text', serif !important;
+}
+.vis-panel.vis-center,
+.vis-panel.vis-left,
+.vis-panel.vis-right,
+.vis-panel.vis-top,
+.vis-panel.vis-bottom {
+  border-color: var(--border) !important;
+}
+.vis-time-axis .vis-text {
+  color: var(--text-muted) !important;
+  font-size: 11px !important;
+}
+.vis-time-axis .vis-grid.vis-minor { border-color: var(--border) !important; }
+.vis-time-axis .vis-grid.vis-major { border-color: var(--border-bright) !important; }
+
+.vis-label {
+  color: var(--text) !important;
+  background: var(--surface-2) !important;
+  border-right: 1px solid var(--border) !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 12px !important;
+  font-weight: 600;
+  padding: 0 10px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.vis-foreground .vis-group {
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* Item base styling */
+.vis-item {
+  background: #1e1e3a !important;
+  border-radius: 5px !important;
+  border: 2px solid #3a3a6a !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+  font-family: 'Crimson Text', serif !important;
+  color: #e8e0d0 !important;
+  padding: 0 !important;
+}
+.vis-item.vis-box, .vis-item.vis-range { padding: 0 !important; }
+.vis-item.vis-point .vis-item-dot { background: currentColor !important; width: 8px !important; height: 8px !important; }
+.vis-item.vis-line { border-left-width: 2px !important; }
+.vis-item.vis-selected { box-shadow: 0 0 0 2px var(--gold), 0 0 12px rgba(212,175,55,0.25) !important; }
+.vis-item .vis-item-overflow { overflow: visible !important; }
+.vis-current-time { background: var(--gold-dim) !important; opacity: 0.4; }
+
+/* Per-type color via className added by vis-timeline to .vis-item */
+.vis-item.type-battle  { border-color: #cc4444 !important; }
+.vis-item.type-discovery { border-color: #4a9a4a !important; }
+.vis-item.type-npc     { border-color: #4a7a9a !important; }
+.vis-item.type-quest   { border-color: #8a4a9a !important; }
+.vis-item.type-lore    { border-color: #d4af37 !important; }
+.vis-item.type-travel  { border-color: #7a7a3a !important; }
+.vis-item.type-rest    { border-color: #3a5a7a !important; }
+
+/* ── Timeline event card (inside vis-item content) ────────────────────────── */
+.vis-item .vis-item-content {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vis-item .tl-icon-em {
+  flex-shrink: 0;
+  font-size: 11px;
+  line-height: 1;
+  opacity: 0.9;
+}
+.vis-item .tl-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Crimson Text', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e8e0d0;
+}
+.vis-item .tl-secret {
+  margin-left: 2px;
+  opacity: 0.6;
+  font-size: 10px;
+}
+
+/* ── Svelte Flow overrides ────────────────────────────────────────────────── */
+.svelte-flow {
+  background: var(--surface) !important;
+}
+.svelte-flow .svelte-flow__background {
+  background: var(--surface) !important;
+}

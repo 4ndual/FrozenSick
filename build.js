@@ -103,6 +103,7 @@ const NAV = [
   },
   { title: 'Plot Tracker', href: '/plot/tracker' },
   { title: 'Relations', href: '/relations' },
+  { title: '⟳ Timeline', href: '/timeline/', external: true },
 ];
 
 function renderSidebar(activeHref) {
@@ -126,7 +127,8 @@ function renderSidebar(activeHref) {
       h += '</ul></li>\n';
     } else {
       const act = item.href === activeHref ? ' class="active"' : '';
-      h += `<li><a href="${item.href}"${act}>${item.title}</a></li>\n`;
+      const target = item.external ? ' target="_blank"' : '';
+      h += `<li><a href="${item.href}"${act}${target}>${item.title}</a></li>\n`;
     }
   }
   h += '</ul>';
@@ -175,6 +177,7 @@ function buildLandingPage() {
         <li><a href="/plot/tracker">Plot Tracker</a> &mdash; Active quests, loose ends, mysteries</li>
         <li><a href="/relations">Relations</a> &mdash; Character &amp; faction diagrams</li>
         <li><a href="/characters/npcs">NPCs</a> &mdash; Every face the party has met</li>
+        <li><a href="/timeline/" target="_blank">⟳ Timeline</a> &mdash; Interactive campaign timeline &amp; event graph</li>
       </ul>
     </div>
   </div>
