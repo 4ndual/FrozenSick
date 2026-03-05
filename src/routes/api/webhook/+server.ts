@@ -34,7 +34,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const branch = ref.replace('refs/heads/', '');
 
     if (branch) {
-      invalidateCache(branch);
+      await invalidateCache(branch);
     }
 
     return new Response(JSON.stringify({ ok: true, branch }), {
@@ -54,7 +54,7 @@ export const POST: RequestHandler = async ({ request }) => {
   const branch = ref.replace('refs/heads/', '');
 
   if (branch) {
-    invalidateCache(branch);
+    await invalidateCache(branch);
   }
 
   return new Response(JSON.stringify({ ok: true, branch }), {

@@ -1,9 +1,9 @@
 <script lang="ts">
   import ModeSwitcher from './ModeSwitcher.svelte';
   import BranchSelector from '$lib/components/BranchSelector.svelte';
+  import DraftsPanel from '$lib/components/DraftsPanel.svelte';
   import { campaign } from '$lib/store/campaign.svelte';
   import { browser } from '$app/environment';
-  import { env } from '$env/dynamic/public';
   import { onMount } from 'svelte';
   import { invalidateAll } from '$app/navigation';
 
@@ -26,8 +26,6 @@
   }: Props = $props();
 
   const TOKEN_KEY = 'frozen-sick-gh-token';
-  const owner = (env.PUBLIC_GITHUB_OWNER as string) || '4ndual';
-  const repo = (env.PUBLIC_GITHUB_REPO as string) || 'FrozenSick';
 
   let activeBranch = $derived(branch || defaultBranch);
 
@@ -43,6 +41,8 @@
   type WikiSyncStatus = 'synced' | 'draft' | 'saved';
   let wikiSyncStatus = $state<WikiSyncStatus>('synced');
   let prUrl = $state<string | null>(null);
+  let draftBranch = $state<string | null>(null);
+  let publishing = $state(false);
 
   function getStoredToken(): string | null {
     if (!browser) return null;
@@ -73,39 +73,80 @@
     token = getStoredToken();
   });
 
-  function encodeRepoPath(path: string): string {
-    return path.split('/').map(encodeURIComponent).join('/');
+  async function openEditor() {
+    if (!sourcePath) return;
+
+    try {
+      let editBranch = activeBranch;
+
+      if (activeBranch === defaultBranch) {
+        const slug = sourcePath.replace(/^content\//, '').replace(/\.md$/, '').replace(/\//g, '-').toLowerCase();
+        const res = await fetch('/api/drafts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'create', slug }),
+        });
+        const data = await res.json();
+        if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create draft');
+        editBranch = data.branch;
+        draftBranch = data.branch;
+      } else if (activeBranch.startsWith('content/')) {
+        draftBranch = activeBranch;
+      } else {
+        draftBranch = null;
+      }
+
+      const params = new URLSearchParams({ path: sourcePath, branch: editBranch });
+      const fileRes = await fetch(`/api/wiki?${params}`);
+      if (!fileRes.ok) throw new Error('Failed to load file: ' + fileRes.status);
+      const fileData: { content?: string; sha?: string } = await fileRes.json();
+
+      const localDraft = loadDraftFromLocal(sourcePath);
+      editContent = localDraft ?? fileData.content ?? '';
+      editSha = fileData.sha ?? '';
+      editPath = sourcePath!;
+      message = localDraft ? 'Restored unsaved draft from your browser.' : '';
+      messageOk = !!localDraft;
+      messageErr = false;
+      prUrl = null;
+      publishing = false;
+      wikiSyncStatus = 'draft';
+      modalOpen = true;
+    } catch (err) {
+      alert((err as Error).message || 'Failed to open editor');
+    }
   }
 
-  function openEditor() {
-    if (!sourcePath || !token) return;
-    const encodedPath = encodeRepoPath(sourcePath);
-    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodedPath}?ref=${encodeURIComponent(activeBranch)}`;
-    fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github+json',
-      },
-    })
-      .then((r) => {
-        if (!r.ok) throw new Error('Failed to load file: ' + r.status);
-        return r.json();
-      })
-      .then((data: { content?: string; sha?: string }) => {
-        const content = data.content ? atob(data.content.replace(/\n/g, '')) : '';
-        editContent = content;
-        editSha = data.sha ?? '';
-        editPath = sourcePath!;
-        message = '';
-        messageOk = false;
-        messageErr = false;
-        prUrl = null;
-        wikiSyncStatus = 'draft';
-        modalOpen = true;
-      })
-      .catch((err: Error) => {
-        alert(err.message || 'Failed to load file');
-      });
+  const DRAFT_STORAGE_PREFIX = 'frozen-sick-wiki-draft:';
+
+  function saveDraftToLocal() {
+    if (!browser || !editPath) return;
+    localStorage.setItem(
+      `${DRAFT_STORAGE_PREFIX}${editPath}`,
+      JSON.stringify({ content: editContent, timestamp: Date.now() }),
+    );
+  }
+
+  function loadDraftFromLocal(path: string): string | null {
+    if (!browser) return null;
+    try {
+      const raw = localStorage.getItem(`${DRAFT_STORAGE_PREFIX}${path}`);
+      if (!raw) return null;
+      const draft = JSON.parse(raw) as { content: string; timestamp: number };
+      const ageMs = Date.now() - draft.timestamp;
+      if (ageMs > 24 * 60 * 60 * 1000) {
+        localStorage.removeItem(`${DRAFT_STORAGE_PREFIX}${path}`);
+        return null;
+      }
+      return draft.content;
+    } catch {
+      return null;
+    }
+  }
+
+  function clearDraftFromLocal(path: string) {
+    if (!browser) return;
+    localStorage.removeItem(`${DRAFT_STORAGE_PREFIX}${path}`);
   }
 
   function closeModal() {
@@ -115,88 +156,105 @@
     }
   }
 
-  function saveEdit() {
-    if (!token || !editPath || !editSha) return;
-    message = 'Saving…';
-    messageOk = false;
-    messageErr = false;
-    const encodedPath = encodeRepoPath(editPath);
-    const putUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${encodedPath}`;
-    fetch(putUrl, {
-      method: 'PUT',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github+json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        message: `Edit: ${editPath.split('/').pop()}`,
-        content: btoa(unescape(encodeURIComponent(editContent))),
-        sha: editSha,
-        branch: activeBranch,
-      }),
-    })
-      .then((r) => {
-        if (r.status === 409) throw new Error('File was changed on GitHub. Reload and try again.');
-        if (!r.ok) return r.json().then((d: { message?: string }) => { throw new Error(d.message || 'Save failed'); });
-        return r.json();
-      })
-      .then((data: { content?: { sha?: string } }) => {
-        if (data.content?.sha) {
-          editSha = data.content.sha;
-        }
-        wikiSyncStatus = 'saved';
-        message = `Saved to branch "${activeBranch}".`;
-        messageOk = true;
-        messageErr = false;
-        invalidateAll();
-      })
-      .catch((err: Error) => {
-        message = err.message || 'Save failed';
-        messageErr = true;
-      });
+  function handleEditorInput() {
+    saveDraftToLocal();
   }
 
-  async function createPullRequest() {
-    if (!token || activeBranch === defaultBranch) return;
-    message = 'Creating pull request…';
+  async function saveEdit() {
+    if (!editPath || !editSha) return;
+    const targetBranch = draftBranch || activeBranch;
+    message = 'Saving draft…';
+    messageOk = false;
+    messageErr = false;
+
+    saveDraftToLocal();
+
+    try {
+      const res = await fetch('/api/wiki/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          path: editPath,
+          content: editContent,
+          sha: editSha,
+          branch: targetBranch,
+          message: `Edit: ${editPath.split('/').pop()}`,
+        }),
+      });
+      const data = await res.json();
+      if (res.status === 409) {
+        message = 'Someone else edited this page. Your draft is preserved locally. Reload the page to get the latest version, then re-open the editor — your changes will be restored.';
+        messageErr = true;
+        return;
+      }
+      if (!res.ok) throw new Error(data.error || 'Save failed');
+      if (data.sha) editSha = data.sha;
+      wikiSyncStatus = 'saved';
+      message = draftBranch ? 'Draft saved.' : `Saved to "${targetBranch}".`;
+      messageOk = true;
+      messageErr = false;
+      clearDraftFromLocal(editPath);
+      invalidateAll();
+    } catch (err) {
+      message = (err as Error).message || 'Save failed';
+      messageErr = true;
+    }
+  }
+
+  async function publishDraft() {
+    if (!draftBranch) return;
+    publishing = true;
+    message = 'Publishing…';
     messageOk = false;
     messageErr = false;
     try {
-      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls`, {
+      const res = await fetch('/api/drafts', {
         method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github+json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: `Wiki update from ${activeBranch}`,
-          head: activeBranch,
-          base: defaultBranch,
-          body: `Wiki content changes from branch \`${activeBranch}\`.`,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'publish', branch: draftBranch }),
       });
-      if (res.status === 422) {
-        const body = await res.json();
-        if (body.errors?.some((e: { message?: string }) => e.message?.includes('pull request already exists'))) {
-          message = 'A pull request already exists for this branch.';
-          messageOk = true;
-          return;
-        }
-        throw new Error(body.message || 'Could not create pull request');
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to publish');
+      if (data.published) {
+        message = 'Published! Your changes are now live.';
+        messageOk = true;
+        prUrl = data.prUrl;
+        clearDraftFromLocal(editPath);
+        draftBranch = null;
+        wikiSyncStatus = 'synced';
+        invalidateAll();
+      } else {
+        message = data.reason || 'Could not auto-publish.';
+        messageErr = true;
+        prUrl = data.prUrl;
       }
-      if (!res.ok) {
-        const body = await res.json();
-        throw new Error(body.message || 'Failed to create pull request');
-      }
-      const pr = await res.json();
-      prUrl = pr.html_url;
-      message = 'Pull request created!';
-      messageOk = true;
-      messageErr = false;
     } catch (err) {
-      message = (err as Error).message || 'Failed to create pull request';
+      message = (err as Error).message || 'Failed to publish';
+      messageErr = true;
+    } finally {
+      publishing = false;
+    }
+  }
+
+  async function discardDraft() {
+    if (!draftBranch) return;
+    message = 'Discarding draft…';
+    messageOk = false;
+    messageErr = false;
+    try {
+      const res = await fetch('/api/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'discard', branch: draftBranch }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to discard');
+      draftBranch = null;
+      wikiSyncStatus = 'synced';
+      modalOpen = false;
+      invalidateAll();
+    } catch (err) {
+      message = (err as Error).message || 'Failed to discard';
       messageErr = true;
     }
   }
@@ -290,6 +348,15 @@
           {/if}
         </span>
 
+        {#if campaign.availableBranches.length > 0}
+          <BranchSelector
+            branches={campaign.availableBranches}
+            currentBranch={campaign.currentBranch}
+            {defaultBranch}
+            onSelect={(b) => campaign.setBranch(b)}
+          />
+        {/if}
+
         <button
           class="action-btn action-btn-gold"
           onclick={handlePush}
@@ -355,6 +422,10 @@
           Edit
         </button>
       {/if}
+
+      {#if token}
+        <DraftsPanel />
+      {/if}
     {/if}
 
     <!-- Auth section - shows in both wiki and timeline modes -->
@@ -384,25 +455,23 @@
     <div class="wiki-edit-modal">
       <div class="wiki-edit-modal-header">
         <div class="wiki-edit-modal-title">Edit: {editPath.split('/').pop()}</div>
-        <div class="wiki-edit-branch-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
-            <line x1="6" y1="3" x2="6" y2="15"></line>
-            <circle cx="18" cy="6" r="3"></circle>
-            <circle cx="6" cy="18" r="3"></circle>
-            <path d="M18 9a9 9 0 0 1-9 9"></path>
-          </svg>
-          {activeBranch}
-        </div>
+        {#if draftBranch}
+          <span class="wiki-edit-draft-badge">Draft</span>
+        {/if}
       </div>
-      <textarea class="wiki-edit-textarea" bind:value={editContent} rows="20"></textarea>
+      <textarea class="wiki-edit-textarea" bind:value={editContent} oninput={handleEditorInput} rows="20"></textarea>
       <div class="wiki-edit-actions">
-        <button type="button" class="wiki-edit-cancel" onclick={closeModal}>Cancel</button>
+        {#if draftBranch}
+          <button type="button" class="wiki-edit-cancel" onclick={discardDraft}>Discard</button>
+        {:else}
+          <button type="button" class="wiki-edit-cancel" onclick={closeModal}>Cancel</button>
+        {/if}
         <button type="button" class="wiki-edit-save" onclick={saveEdit}>
-          Save to {activeBranch}
+          {draftBranch ? 'Save Draft' : `Save`}
         </button>
-        {#if wikiSyncStatus === 'saved' && activeBranch !== defaultBranch}
-          <button type="button" class="wiki-edit-pr" onclick={createPullRequest}>
-            Create Pull Request
+        {#if draftBranch && wikiSyncStatus === 'saved'}
+          <button type="button" class="wiki-edit-publish" onclick={publishDraft} disabled={publishing}>
+            {publishing ? 'Publishing…' : 'Publish'}
           </button>
         {/if}
       </div>
@@ -683,17 +752,6 @@
     color: var(--text);
   }
 
-  .wiki-edit-branch-badge {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 8px;
-  }
 
   .wiki-edit-textarea {
     display: block;
@@ -735,7 +793,7 @@
     color: #fff;
   }
 
-  .wiki-edit-pr {
+  .wiki-edit-publish {
     padding: 0.4rem 0.75rem;
     border-radius: 4px;
     cursor: pointer;
@@ -746,8 +804,24 @@
     margin-left: auto;
   }
 
-  .wiki-edit-pr:hover {
+  .wiki-edit-publish:hover:not(:disabled) {
     background: var(--gold, #d4af37);
+  }
+
+  .wiki-edit-publish:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .wiki-edit-draft-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--gold-dim, #8b7d2a);
+    color: var(--gold, #d4af37);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-family: 'Cinzel', serif;
   }
 
   .wiki-edit-msg {

@@ -7,7 +7,6 @@ import type {
   FilterState,
 } from '$lib/types/schema.ts';
 import { DEFAULT_EVENT_TYPES } from '$lib/types/schema.ts';
-import { validateCampaignData } from '$lib/types/validation.ts';
 import {
   loadCampaign,
   saveCampaign,
@@ -34,11 +33,12 @@ import {
 import type { GitHubUser } from '$lib/utils/auth.ts';
 import {
   loadFromGitHub,
+  saveToGitHub,
   shardCampaignData,
   diffFiles,
   buildCommitMessage,
   getRepoConfig,
-  listBranches as fetchBranchList,
+  checkRemoteHead,
 } from '$lib/utils/github.ts';
 
 export type { ActiveTab };
@@ -79,10 +79,6 @@ function createCampaignStore() {
   let headSha = $state<string | null>(loadGitHubSyncState()?.headSha ?? null);
   let treeSha = $state<string | null>(loadGitHubSyncState()?.treeSha ?? null);
   let fileShas = $state<Record<string, string>>(loadGitHubSyncState()?.fileShas ?? {});
-
-  // ── Branch state ────────────────────────────────────────────────────────
-  let currentBranch = $state(getRepoConfig().branch);
-  let availableBranches = $state<string[]>([]);
 
   let isAuthenticated = $derived(!!ghToken && !!ghUser);
 
@@ -180,10 +176,6 @@ function createCampaignStore() {
     get syncStatus() { return syncStatus; },
     get syncError() { return syncError; },
 
-    // ── Branch getters ───────────────────────────────────────────────────────
-    get currentBranch() { return currentBranch; },
-    get availableBranches() { return availableBranches; },
-
     setActiveTab(tab: ActiveTab) {
       activeTab = tab;
       saveUIState({ activeTab });
@@ -263,16 +255,6 @@ function createCampaignStore() {
         authLoading = false;
       }
 
-      // Fetch available branches if authenticated
-      if (isAuthenticated) {
-        try {
-          const cfg = getRepoConfig();
-          availableBranches = await fetchBranchList(cfg, ghToken!);
-        } catch {
-          availableBranches = [];
-        }
-      }
-
       // Load latest data from static bundle (works for everyone, no auth needed)
       try {
         const staticData = await loadFromStaticBundle();
@@ -300,9 +282,7 @@ function createCampaignStore() {
       syncError = null;
 
       try {
-        validateCampaignData(data);
-
-        const cfg = { ...getRepoConfig(), branch: currentBranch };
+        const cfg = getRepoConfig();
 
         // Fetch current ref from GitHub if we don't have sync state yet
         if (!headSha || !treeSha) {
@@ -322,25 +302,16 @@ function createCampaignStore() {
           return;
         }
 
-        const message = buildCommitMessage(changes);
-
-        const res = await fetch('/api/timeline/save', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            changes,
-            message,
-            parentSha: headSha,
-            baseTreeSha: treeSha,
-            branch: currentBranch,
-          }),
-        });
-
-        const result = await res.json();
-
-        if (!res.ok) {
-          throw new Error(result.error || 'Save failed');
+        // Check nobody else pushed while we were editing
+        const remoteHead = await checkRemoteHead(cfg, token);
+        if (remoteHead !== headSha) {
+          throw new Error(
+            'CONFLICT: Someone else saved changes. Refresh the page to get the latest data, then try saving again.',
+          );
         }
+
+        const message = buildCommitMessage(changes);
+        const result = await saveToGitHub(cfg, token, changes, message, headSha!, treeSha!, );
 
         const mergedShas = { ...fileShas, ...result.newFileShas };
         for (const ch of changes) {
@@ -348,54 +319,6 @@ function createCampaignStore() {
         }
 
         updateSyncCache(result.commitSha, result.treeSha, mergedShas, currentFiles);
-        syncStatus = 'synced';
-      } catch (err) {
-        syncStatus = 'error';
-        syncError = err instanceof Error ? err.message : String(err);
-        throw err;
-      }
-    },
-
-    // ── Branch actions ─────────────────────────────────────────────────────
-
-    async fetchBranches() {
-      const token = ghToken;
-      if (!token) return;
-      try {
-        const cfg = getRepoConfig();
-        availableBranches = await fetchBranchList(cfg, token);
-      } catch {
-        availableBranches = [];
-      }
-    },
-
-    async setBranch(branch: string) {
-      const token = ghToken;
-      if (!token) throw new Error('Not authenticated');
-      if (branch === currentBranch) return;
-
-      currentBranch = branch;
-      syncStatus = 'loading';
-      syncError = null;
-
-      // Reset sync state for the new branch
-      headSha = null;
-      treeSha = null;
-      fileShas = {};
-      lastSyncedFiles = null;
-      clearGitHubSyncState();
-
-      try {
-        const cfg = { ...getRepoConfig(), branch };
-        const snapshot = await loadFromGitHub(cfg, token);
-        data = snapshot.data;
-        saveCampaign(data);
-        updateSyncCache(
-          snapshot.headSha,
-          snapshot.treeSha,
-          snapshot.fileShas,
-          shardCampaignData(snapshot.data),
-        );
         syncStatus = 'synced';
       } catch (err) {
         syncStatus = 'error';

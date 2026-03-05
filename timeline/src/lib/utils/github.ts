@@ -89,15 +89,9 @@ async function getTree(cfg: RepoConfig, token: string, sha: string): Promise<Tre
   return data.tree as TreeEntry[];
 }
 
-function decodeBase64Utf8(b64: string): string {
-  const bin = atob(b64);
-  const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
-  return new TextDecoder().decode(bytes);
-}
-
 async function getBlob(cfg: RepoConfig, token: string, sha: string): Promise<string> {
   const data = await fetchJson(`${repoUrl(cfg)}/git/blobs/${sha}`, token);
-  return decodeBase64Utf8(data.content);
+  return atob(data.content);
 }
 
 function parseJson<T>(raw: string): T {
@@ -370,18 +364,4 @@ export async function checkRemoteHead(
 ): Promise<string> {
   const ref = await getRef(cfg, token);
   return ref.sha;
-}
-
-/**
- * List all branches for the repo.
- */
-export async function listBranches(
-  cfg: RepoConfig,
-  token: string,
-): Promise<string[]> {
-  const data = await fetchJson(
-    `${repoUrl(cfg)}/branches?per_page=100`,
-    token,
-  );
-  return (data as { name: string }[]).map((b) => b.name);
 }

@@ -6,20 +6,25 @@
     branches: string[];
     currentBranch: string;
     defaultBranch: string;
+    onSelect?: ((branch: string) => void) | null;
   }
 
-  let { branches, currentBranch, defaultBranch }: Props = $props();
+  let { branches, currentBranch, defaultBranch, onSelect = null }: Props = $props();
   let open = $state(false);
 
   function selectBranch(branch: string) {
     open = false;
-    const url = new URL($page.url);
-    if (branch === defaultBranch) {
-      url.searchParams.delete('branch');
+    if (onSelect) {
+      onSelect(branch);
     } else {
-      url.searchParams.set('branch', branch);
+      const url = new URL($page.url);
+      if (branch === defaultBranch) {
+        url.searchParams.delete('branch');
+      } else {
+        url.searchParams.set('branch', branch);
+      }
+      goto(url.toString(), { invalidateAll: true });
     }
-    goto(url.toString(), { invalidateAll: true });
   }
 </script>
 

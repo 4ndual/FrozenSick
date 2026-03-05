@@ -60,10 +60,7 @@
         return r.json();
       })
       .then((data: { content?: string; sha?: string }) => {
-        const raw = data.content ? data.content.replace(/\n/g, '') : '';
-        const bin = atob(raw);
-        const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
-        const content = new TextDecoder().decode(bytes);
+        const content = data.content ? atob(data.content.replace(/\n/g, '')) : '';
         editContent = content;
         editSha = data.sha ?? '';
         editPath = sourcePath!;
@@ -124,7 +121,7 @@
     {#if token}
       <button type="button" class="wiki-edit-btn" onclick={openEditor}>Edit</button>
     {:else}
-      <a class="wiki-edit-login" href="/api/auth/login?return_to={encodeURIComponent(returnTo)}" data-sveltekit-reload>Login with GitHub to edit</a>
+      <a class="wiki-edit-login" href="/api/auth/login?return_to={encodeURIComponent(returnTo)}">Login with GitHub to edit</a>
     {/if}
   {/if}
 </div>

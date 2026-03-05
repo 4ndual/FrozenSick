@@ -29,40 +29,18 @@ function ghHeaders(token: string) {
 
 // ── Cache ────────────────────────────────────────────────────────────────────
 
-interface CacheEntry<T> {
-  data: T;
-  expiresAt: number;
-}
-
-const cache = new Map<string, CacheEntry<unknown>>();
+import {
+  getCached,
+  setCache,
+  invalidateCache as _invalidateCache,
+} from './cache';
 
 const TREE_TTL = 5 * 60 * 1000;
 const CONTENT_TTL = 5 * 60 * 1000;
 const BRANCHES_TTL = 30 * 1000;
 
-function getCached<T>(key: string): T | null {
-  const entry = cache.get(key);
-  if (!entry || Date.now() > entry.expiresAt) {
-    cache.delete(key);
-    return null;
-  }
-  return entry.data as T;
-}
-
-function setCache<T>(key: string, data: T, ttlMs: number): void {
-  cache.set(key, { data, expiresAt: Date.now() + ttlMs });
-}
-
-export function invalidateCache(branch?: string): void {
-  if (!branch) {
-    cache.clear();
-    return;
-  }
-  for (const key of cache.keys()) {
-    if (key.includes(`@${branch}`) || key === 'branches') {
-      cache.delete(key);
-    }
-  }
+export async function invalidateCache(branch?: string): Promise<void> {
+  return _invalidateCache(branch);
 }
 
 // ── Slugify (ported from generate-wiki-manifest.cjs) ─────────────────────────
@@ -81,6 +59,12 @@ function slugifyPath(relPath: string): string {
     .split('/')
     .map(slugify)
     .join('/');
+}
+
+function decodeBase64Utf8(b64: string): string {
+  const bin = atob(b64);
+  const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
 }
 
 // ── GitHub API ───────────────────────────────────────────────────────────────
@@ -118,7 +102,7 @@ export class GitHubAuthError extends Error {
 export async function fetchTree(token: string, branch?: string): Promise<TreeEntry[]> {
   const b = branch || getDefaultBranch();
   const cacheKey = `tree@${b}`;
-  const cached = getCached<TreeEntry[]>(cacheKey);
+  const cached = await getCached<TreeEntry[]>(cacheKey);
   if (cached) return cached;
 
   const ref = await fetchJson<{ object: { sha: string } }>(
@@ -142,7 +126,7 @@ export async function fetchTree(token: string, branch?: string): Promise<TreeEnt
       !e.path.endsWith('/README.md'),
   );
 
-  setCache(cacheKey, contentEntries, TREE_TTL);
+  await setCache(cacheKey, contentEntries, TREE_TTL);
   return contentEntries;
 }
 
@@ -257,7 +241,7 @@ export async function fetchContent(
 ): Promise<{ content: string; sha: string }> {
   const b = branch || getDefaultBranch();
   const cacheKey = `content:${repoPath}@${b}`;
-  const cached = getCached<{ content: string; sha: string }>(cacheKey);
+  const cached = await getCached<{ content: string; sha: string }>(cacheKey);
   if (cached) return cached;
 
   const encodedPath = repoPath.split('/').map(encodeURIComponent).join('/');
@@ -266,10 +250,10 @@ export async function fetchContent(
     token,
   );
 
-  const decoded = data.content ? atob(data.content.replace(/\n/g, '')) : '';
+  const decoded = data.content ? decodeBase64Utf8(data.content.replace(/\n/g, '')) : '';
   const result = { content: decoded, sha: data.sha };
 
-  setCache(cacheKey, result, CONTENT_TTL);
+  await setCache(cacheKey, result, CONTENT_TTL);
   return result;
 }
 
@@ -278,7 +262,7 @@ export async function fetchContent(
  */
 export async function listBranches(token: string): Promise<string[]> {
   const cacheKey = 'branches';
-  const cached = getCached<string[]>(cacheKey);
+  const cached = await getCached<string[]>(cacheKey);
   if (cached) return cached;
 
   const data = await fetchJson<{ name: string }[]>(
@@ -287,6 +271,6 @@ export async function listBranches(token: string): Promise<string[]> {
   );
 
   const names = data.map((b) => b.name);
-  setCache(cacheKey, names, BRANCHES_TTL);
+  await setCache(cacheKey, names, BRANCHES_TTL);
   return names;
 }

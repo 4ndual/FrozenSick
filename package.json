@@ -9,13 +9,17 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "generate-manifest": "node src/scripts/generate-wiki-manifest.cjs"
+    "generate-manifest": "node src/scripts/generate-wiki-manifest.cjs",
+    "ollama-test": "bun run ollama-test.ts"
   },
   "dependencies": {
+    "@vercel/kv": "^3.0.0",
     "@xyflow/svelte": "^1.5.1",
+    "isomorphic-dompurify": "^3.0.0",
     "lucide-svelte": "^0.577.0",
     "marked": "^17.0.3",
-    "vis-timeline": "^8.5.0"
+    "vis-timeline": "^8.5.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^5.4.0",
