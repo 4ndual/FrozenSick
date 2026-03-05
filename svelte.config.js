@@ -7,7 +7,6 @@ const config = {
 	kit: {
 		adapter: adapter({
 			runtime: 'nodejs20.x',
-			// Regions are auto-detected by Vercel, no need to specify
 		}),
 		alias: {
 			$components: 'src/lib/components',
