@@ -38,7 +38,7 @@ const cache = new Map<string, CacheEntry<unknown>>();
 
 const TREE_TTL = 5 * 60 * 1000;
 const CONTENT_TTL = 5 * 60 * 1000;
-const BRANCHES_TTL = 10 * 60 * 1000;
+const BRANCHES_TTL = 30 * 1000;
 
 function getCached<T>(key: string): T | null {
   const entry = cache.get(key);
