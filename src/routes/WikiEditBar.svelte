@@ -121,7 +121,7 @@
     {#if token}
       <button type="button" class="wiki-edit-btn" onclick={openEditor}>Edit</button>
     {:else}
-      <a class="wiki-edit-login" href="/api/auth/login?return_to={encodeURIComponent(returnTo)}">Login with GitHub to edit</a>
+      <a class="wiki-edit-login" href="/api/auth/login?return_to={encodeURIComponent(returnTo)}" data-sveltekit-reload>Login with GitHub to edit</a>
     {/if}
   {/if}
 </div>
