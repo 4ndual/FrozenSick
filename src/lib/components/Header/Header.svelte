@@ -1,24 +1,35 @@
 <script lang="ts">
   import ModeSwitcher from './ModeSwitcher.svelte';
+  import BranchSelector from '$lib/components/BranchSelector.svelte';
   import { campaign } from '$lib/store/campaign.svelte';
-  import { exportCampaign, importCampaign } from '$lib/utils/storage';
   import { browser } from '$app/environment';
   import { env } from '$env/dynamic/public';
   import { onMount } from 'svelte';
+  import { invalidateAll } from '$app/navigation';
 
   interface Props {
     mode: 'wiki' | 'timeline';
     sourcePath?: string | null;
     returnTo?: string;
+    branch?: string | null;
+    defaultBranch?: string;
+    branches?: string[];
   }
 
-  let { mode, sourcePath = null, returnTo = '/' }: Props = $props();
+  let {
+    mode,
+    sourcePath = null,
+    returnTo = '/',
+    branch = null,
+    defaultBranch = 'main',
+    branches = [],
+  }: Props = $props();
 
-  // Wiki edit state
   const TOKEN_KEY = 'frozen-sick-gh-token';
-  const owner = env.PUBLIC_GITHUB_OWNER as string;
-  const repo = env.PUBLIC_GITHUB_REPO as string;
-  const branch = (env.PUBLIC_GITHUB_BRANCH as string) || 'main';
+  const owner = (env.PUBLIC_GITHUB_OWNER as string) || '4ndual';
+  const repo = (env.PUBLIC_GITHUB_REPO as string) || 'FrozenSick';
+
+  let activeBranch = $derived(branch || defaultBranch);
 
   let token = $state<string | null>(null);
   let modalOpen = $state(false);
@@ -28,6 +39,10 @@
   let message = $state('');
   let messageOk = $state(false);
   let messageErr = $state(false);
+
+  type WikiSyncStatus = 'synced' | 'draft' | 'saved';
+  let wikiSyncStatus = $state<WikiSyncStatus>('synced');
+  let prUrl = $state<string | null>(null);
 
   function getStoredToken(): string | null {
     if (!browser) return null;
@@ -58,11 +73,14 @@
     token = getStoredToken();
   });
 
+  function encodeRepoPath(path: string): string {
+    return path.split('/').map(encodeURIComponent).join('/');
+  }
+
   function openEditor() {
     if (!sourcePath || !token) return;
-    // Strip content/ prefix for GitHub API - content is a local folder, not part of repo structure
-    const githubPath = sourcePath.replace(/^content\//, '');
-    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(githubPath)}?ref=${encodeURIComponent(branch)}`;
+    const encodedPath = encodeRepoPath(sourcePath);
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodedPath}?ref=${encodeURIComponent(activeBranch)}`;
     fetch(url, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -77,11 +95,12 @@
         const content = data.content ? atob(data.content.replace(/\n/g, '')) : '';
         editContent = content;
         editSha = data.sha ?? '';
-        // Store the GitHub path (without content/ prefix) for saving
-        editPath = sourcePath!.replace(/^content\//, '');
+        editPath = sourcePath!;
         message = '';
         messageOk = false;
         messageErr = false;
+        prUrl = null;
+        wikiSyncStatus = 'draft';
         modalOpen = true;
       })
       .catch((err: Error) => {
@@ -91,6 +110,9 @@
 
   function closeModal() {
     modalOpen = false;
+    if (wikiSyncStatus === 'draft') {
+      wikiSyncStatus = 'synced';
+    }
   }
 
   function saveEdit() {
@@ -98,7 +120,8 @@
     message = 'Saving…';
     messageOk = false;
     messageErr = false;
-    const putUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(editPath)}`;
+    const encodedPath = encodeRepoPath(editPath);
+    const putUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${encodedPath}`;
     fetch(putUrl, {
       method: 'PUT',
       headers: {
@@ -107,10 +130,10 @@
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        message: 'Edit: ' + editPath,
+        message: `Edit: ${editPath.split('/').pop()}`,
         content: btoa(unescape(encodeURIComponent(editContent))),
         sha: editSha,
-        branch,
+        branch: activeBranch,
       }),
     })
       .then((r) => {
@@ -118,16 +141,64 @@
         if (!r.ok) return r.json().then((d: { message?: string }) => { throw new Error(d.message || 'Save failed'); });
         return r.json();
       })
-      .then(() => {
-        message = 'Saved. Changes will appear after the next deploy.';
+      .then((data: { content?: { sha?: string } }) => {
+        if (data.content?.sha) {
+          editSha = data.content.sha;
+        }
+        wikiSyncStatus = 'saved';
+        message = `Saved to branch "${activeBranch}".`;
         messageOk = true;
         messageErr = false;
-        setTimeout(closeModal, 2000);
+        invalidateAll();
       })
       .catch((err: Error) => {
         message = err.message || 'Save failed';
         messageErr = true;
       });
+  }
+
+  async function createPullRequest() {
+    if (!token || activeBranch === defaultBranch) return;
+    message = 'Creating pull request…';
+    messageOk = false;
+    messageErr = false;
+    try {
+      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: `Wiki update from ${activeBranch}`,
+          head: activeBranch,
+          base: defaultBranch,
+          body: `Wiki content changes from branch \`${activeBranch}\`.`,
+        }),
+      });
+      if (res.status === 422) {
+        const body = await res.json();
+        if (body.errors?.some((e: { message?: string }) => e.message?.includes('pull request already exists'))) {
+          message = 'A pull request already exists for this branch.';
+          messageOk = true;
+          return;
+        }
+        throw new Error(body.message || 'Could not create pull request');
+      }
+      if (!res.ok) {
+        const body = await res.json();
+        throw new Error(body.message || 'Failed to create pull request');
+      }
+      const pr = await res.json();
+      prUrl = pr.html_url;
+      message = 'Pull request created!';
+      messageOk = true;
+      messageErr = false;
+    } catch (err) {
+      message = (err as Error).message || 'Failed to create pull request';
+      messageErr = true;
+    }
   }
 
   // Timeline actions
@@ -259,8 +330,23 @@
         Export
       </button>
     {:else if mode === 'wiki' && browser}
-      <!-- Wiki specific buttons -->
-      {#if token}
+      <!-- Wiki sync status -->
+      {#if token && sourcePath}
+        <span class="sync-indicator sync-{wikiSyncStatus}" title="Status: {wikiSyncStatus}">
+          <span class="sync-dot"></span>
+        </span>
+      {/if}
+
+      <!-- Branch selector -->
+      {#if branches.length > 0}
+        <BranchSelector
+          {branches}
+          currentBranch={activeBranch}
+          {defaultBranch}
+        />
+      {/if}
+
+      {#if token && sourcePath}
         <button type="button" class="action-btn action-btn-gold" onclick={openEditor}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
             <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
@@ -296,14 +382,37 @@
 {#if modalOpen}
   <div class="wiki-edit-overlay" onclick={(e: MouseEvent) => e.target === e.currentTarget && closeModal()} role="presentation">
     <div class="wiki-edit-modal">
-      <div class="wiki-edit-modal-title">Edit: {editPath}</div>
+      <div class="wiki-edit-modal-header">
+        <div class="wiki-edit-modal-title">Edit: {editPath.split('/').pop()}</div>
+        <div class="wiki-edit-branch-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+            <line x1="6" y1="3" x2="6" y2="15"></line>
+            <circle cx="18" cy="6" r="3"></circle>
+            <circle cx="6" cy="18" r="3"></circle>
+            <path d="M18 9a9 9 0 0 1-9 9"></path>
+          </svg>
+          {activeBranch}
+        </div>
+      </div>
       <textarea class="wiki-edit-textarea" bind:value={editContent} rows="20"></textarea>
       <div class="wiki-edit-actions">
         <button type="button" class="wiki-edit-cancel" onclick={closeModal}>Cancel</button>
-        <button type="button" class="wiki-edit-save" onclick={saveEdit}>Save</button>
+        <button type="button" class="wiki-edit-save" onclick={saveEdit}>
+          Save to {activeBranch}
+        </button>
+        {#if wikiSyncStatus === 'saved' && activeBranch !== defaultBranch}
+          <button type="button" class="wiki-edit-pr" onclick={createPullRequest}>
+            Create Pull Request
+          </button>
+        {/if}
       </div>
       {#if message}
-        <div class="wiki-edit-msg" class:wiki-edit-msg-ok={messageOk} class:wiki-edit-msg-err={messageErr}>{message}</div>
+        <div class="wiki-edit-msg" class:wiki-edit-msg-ok={messageOk} class:wiki-edit-msg-err={messageErr}>
+          {message}
+          {#if prUrl}
+            — <a href={prUrl} target="_blank" rel="noopener noreferrer">View PR</a>
+          {/if}
+        </div>
       {/if}
     </div>
   </div>
@@ -534,6 +643,10 @@
     display: block;
   }
 
+  .sync-synced .sync-dot { background: #4a9a4a; }
+  .sync-draft .sync-dot { background: #cc4444; }
+  .sync-saved .sync-dot { background: #d4af37; }
+
   /* Wiki Edit Modal */
   .wiki-edit-overlay {
     position: fixed;
@@ -557,10 +670,29 @@
     overflow: auto;
   }
 
+  .wiki-edit-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    gap: 8px;
+  }
+
   .wiki-edit-modal-title {
     font-weight: 600;
-    margin-bottom: 0.75rem;
     color: var(--text);
+  }
+
+  .wiki-edit-branch-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
   }
 
   .wiki-edit-textarea {
@@ -603,6 +735,21 @@
     color: #fff;
   }
 
+  .wiki-edit-pr {
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background: var(--gold-dim, #8b7d2a);
+    border: 1px solid var(--gold, #d4af37);
+    color: #fff;
+    margin-left: auto;
+  }
+
+  .wiki-edit-pr:hover {
+    background: var(--gold, #d4af37);
+  }
+
   .wiki-edit-msg {
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -614,5 +761,10 @@
 
   .wiki-edit-msg-err {
     color: var(--battle);
+  }
+
+  .wiki-edit-msg a {
+    color: var(--link, #6ab0f3);
+    text-decoration: underline;
   }
 </style>

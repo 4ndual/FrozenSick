@@ -1,11 +1,18 @@
 <script lang="ts">
   import Header from '$lib/components/Header/Header.svelte';
   import WikiNav from '$lib/components/Header/WikiNav.svelte';
+
+  let { data } = $props();
 </script>
 
 <div class="wiki-layout">
-  <Header mode="wiki" />
-  <WikiNav />
+  <Header
+    mode="wiki"
+    branch={data.branch}
+    defaultBranch={data.defaultBranch}
+    branches={data.branches}
+  />
+  <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
 
   <main class="wiki-main">
     <div class="landing">

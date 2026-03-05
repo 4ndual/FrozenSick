@@ -1,59 +1,27 @@
-import { readFileSync, existsSync } from 'fs';
-import { join, resolve } from 'path';
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+import { fetchContent, getDefaultBranch, GitHubAuthError } from '$lib/server/github-content';
 
-const ROOT = process.cwd();
-
-// Try to resolve content path - in dev, content is in ../content/
-// on Vercel with includeFiles, content is bundled at content/ relative to function
-function resolveContentPath(decodedPath: string): string | null {
-  // Try direct path first (Vercel bundled)
-  const directPath = join(ROOT, decodedPath);
-  if (existsSync(directPath)) {
-    return directPath;
+export const GET: RequestHandler = async ({ url, cookies }) => {
+  const token = cookies.get('gh_token');
+  if (!token) {
+    throw error(401, 'Not authenticated');
   }
 
-  // Try parent directory (local dev)
-  const parentPath = join(ROOT, '..', decodedPath);
-  if (existsSync(parentPath)) {
-    return parentPath;
-  }
-
-  return null;
-}
-
-export const GET: RequestHandler = ({ url }) => {
   const pathParam = url.searchParams.get('path');
-
   if (!pathParam) {
     throw error(400, 'Missing path');
   }
 
-  const decoded = decodeURIComponent(pathParam);
-
-  // Security check: prevent directory traversal
-  if (decoded.includes('..') || decoded.startsWith('/')) {
-    throw error(400, 'Invalid path');
-  }
-
-  const fullPath = resolveContentPath(decoded);
-
-  if (!fullPath) {
-    throw error(404, 'Not found');
-  }
-
-  // Ensure we don't escape the repo root (check against both possible roots)
-  const directRoot = resolve(ROOT);
-  const parentRoot = resolve(ROOT, '..');
-  if (!fullPath.startsWith(directRoot) && !fullPath.startsWith(parentRoot)) {
-    throw error(400, 'Invalid path');
-  }
+  const branch = url.searchParams.get('branch') || getDefaultBranch();
 
   try {
-    const content = readFileSync(fullPath, 'utf-8');
-    return json({ content });
+    const file = await fetchContent(token, decodeURIComponent(pathParam), branch);
+    return json({ content: file.content, sha: file.sha });
   } catch (err) {
+    if (err instanceof GitHubAuthError) {
+      throw error(401, 'Token expired');
+    }
     throw error(500, 'Failed to read file');
   }
 };

@@ -1,9 +1,23 @@
 <script lang="ts">
-  import { WIKI_NAV, isSection, type NavItem, type NavSection } from '$lib/wiki-nav';
+  import { isSection, type NavEntry, type NavItem, type NavSection } from '$lib/wiki-nav';
   import { page } from '$app/stores';
+
+  interface Props {
+    nav: NavEntry[];
+    branch?: string | null;
+    defaultBranch?: string;
+  }
+
+  let { nav, branch = null, defaultBranch = 'main' }: Props = $props();
 
   let currentPath = $derived($page.url.pathname);
   let sidebarOpen = $state(false);
+
+  function branchHref(href: string): string {
+    if (!branch || branch === defaultBranch) return href;
+    const sep = href.includes('?') ? '&' : '?';
+    return `${href}${sep}branch=${encodeURIComponent(branch)}`;
+  }
 </script>
 
 <button
@@ -32,21 +46,21 @@
     <span class="sidebar-sub">Campaign Wiki</span>
   </div>
   <ul class="nav-list">
-    {#each WIKI_NAV as entry (isSection(entry) ? (entry as NavSection).section : (entry as NavItem).href)}
+    {#each nav as entry (isSection(entry) ? (entry as NavSection).section : (entry as NavItem).href)}
       {#if isSection(entry)}
         <li class="nav-section">
           <span class="section-title">{(entry as NavSection).section}</span>
           <ul class="section-children">
             {#each (entry as NavSection).children as child (child.href)}
               <li class="nav-item">
-                <a href={child.href} class:active={currentPath === child.href} class="nav-link">
+                <a href={branchHref(child.href)} class:active={currentPath === child.href} class="nav-link">
                   {child.title}
                 </a>
                 {#if child.sub}
                   <ul class="sub-list">
                     {#each child.sub as s (s.href)}
                       <li>
-                        <a href={s.href} class:active={currentPath === s.href} class="nav-link sub-link">
+                        <a href={branchHref(s.href)} class:active={currentPath === s.href} class="nav-link sub-link">
                           {s.title}
                         </a>
                       </li>
@@ -59,8 +73,8 @@
         </li>
       {:else}
         <li class="nav-item">
-          <a href={entry.href} class:active={currentPath === entry.href} class="nav-link">
-            {entry.title}
+          <a href={branchHref((entry as NavItem).href)} class:active={currentPath === (entry as NavItem).href} class="nav-link">
+            {(entry as NavItem).title}
           </a>
         </li>
       {/if}

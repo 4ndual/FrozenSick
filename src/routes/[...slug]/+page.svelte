@@ -23,8 +23,15 @@
 </script>
 
 <div class="wiki-layout">
-  <Header mode="wiki" sourcePath={data.sourcePath} returnTo={currentPath} />
-  <WikiNav />
+  <Header
+    mode="wiki"
+    sourcePath={data.sourcePath}
+    returnTo={currentPath}
+    branch={data.branch}
+    defaultBranch={data.defaultBranch}
+    branches={data.branches}
+  />
+  <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
 
   <main class="wiki-main">
     <div class="wiki-content prose" bind:this={container}>

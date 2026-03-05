@@ -42,8 +42,14 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
     });
   }
 
-  // Redirect back to the app with the token in the URL hash
-  // (token will be stored in localStorage by the frontend)
+  cookies.set('gh_token', tokenData.access_token, {
+    path: '/',
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: url.protocol === 'https:',
+    maxAge: 60 * 60 * 24 * 30,
+  });
+
   const redirectUrl = new URL(returnTo, url);
   redirectUrl.hash = `token=${encodeURIComponent(tokenData.access_token)}`;
 

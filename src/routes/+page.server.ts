@@ -1,19 +1,17 @@
-import { error, redirect } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import {
   fetchTree,
-  buildManifest,
   buildNav,
-  fetchContent,
   listBranches,
   getDefaultBranch,
   GitHubAuthError,
 } from '$lib/server/github-content';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params, url, cookies }) => {
+export const load: PageServerLoad = async ({ url, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) {
-    throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
+    throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname)}`);
   }
 
   const defaultBranch = getDefaultBranch();
@@ -25,22 +23,9 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
       listBranches(token),
     ]);
 
-    const manifest = buildManifest(tree);
     const nav = buildNav(tree);
 
-    const slug = '/' + params.slug;
-    const sourcePath = manifest[slug];
-
-    if (!sourcePath) {
-      throw error(404, 'Page not found');
-    }
-
-    const file = await fetchContent(token, sourcePath, branch);
-
     return {
-      content: file.content,
-      slug,
-      sourcePath,
       branch,
       defaultBranch,
       branches,
@@ -49,7 +34,7 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
   } catch (err) {
     if (err instanceof GitHubAuthError) {
       cookies.delete('gh_token', { path: '/' });
-      throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
+      throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname)}`);
     }
     throw err;
   }
