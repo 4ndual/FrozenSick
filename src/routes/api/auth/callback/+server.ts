@@ -1,25 +1,30 @@
-import { redirect, error } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '$env/static/private';
 
 export const GET: RequestHandler = async ({ url, cookies }) => {
   const code = url.searchParams.get('code');
   const state = url.searchParams.get('state');
-
-  if (!code || !state) {
-    throw error(400, 'Missing code or state');
-  }
-
   const storedState = cookies.get('gh_oauth_state');
-  if (storedState !== state) {
-    throw error(403, 'Invalid state — possible CSRF');
+  const returnTo = cookies.get('gh_oauth_return_to') || '/';
+
+  // Clear the cookies
+  cookies.delete('gh_oauth_state', { path: '/' });
+  cookies.delete('gh_oauth_return_to', { path: '/' });
+
+  if (!code || !state || state !== storedState) {
+    return new Response(JSON.stringify({ error: 'Invalid OAuth state' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
-  const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
+  // Exchange code for access token
+  const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
     method: 'POST',
     headers: {
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
-      Accept: 'application/json',
     },
     body: JSON.stringify({
       client_id: GITHUB_CLIENT_ID,
@@ -28,19 +33,19 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
     }),
   });
 
-  const tokenData = await tokenRes.json();
+  const tokenData = await tokenResponse.json();
 
   if (tokenData.error) {
-    throw error(400, `OAuth error: ${tokenData.error_description}`);
+    return new Response(JSON.stringify({ error: tokenData.error_description || 'OAuth failed' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
-  const returnTo = cookies.get('gh_oauth_return_to') || '';
-  const redirectPath = returnTo && returnTo.startsWith('/') && !returnTo.startsWith('//') ? returnTo : '/timeline/';
-  const location = redirectPath + '#token=' + encodeURIComponent(tokenData.access_token);
+  // Redirect back to the app with the token in the URL hash
+  // (token will be stored in localStorage by the frontend)
+  const redirectUrl = new URL(returnTo, url);
+  redirectUrl.hash = `token=${encodeURIComponent(tokenData.access_token)}`;
 
-  // Clear cookies
-  cookies.delete('gh_oauth_state', { path: '/' });
-  cookies.delete('gh_oauth_return_to', { path: '/' });
-
-  throw redirect(302, location);
+  throw redirect(302, redirectUrl.toString());
 };

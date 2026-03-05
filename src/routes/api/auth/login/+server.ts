@@ -12,7 +12,7 @@ export const GET: RequestHandler = ({ url, cookies }) => {
 
   const redirectUri = `${url.protocol}//${url.host}/api/auth/callback`;
   const state = crypto.randomUUID();
-  const returnTo = url.searchParams.get('return_to') || '';
+  const returnTo = url.searchParams.get('return_to') || '/';
 
   const authorizeUrl = new URL('https://github.com/login/oauth/authorize');
   authorizeUrl.searchParams.set('client_id', GITHUB_CLIENT_ID);
@@ -25,19 +25,17 @@ export const GET: RequestHandler = ({ url, cookies }) => {
     path: '/',
     httpOnly: true,
     sameSite: 'lax',
-    secure: true,
+    secure: url.protocol === 'https:',
     maxAge: 600,
   });
 
-  if (returnTo) {
-    cookies.set('gh_oauth_return_to', returnTo, {
-      path: '/',
-      httpOnly: true,
-      sameSite: 'lax',
-      secure: true,
-      maxAge: 600,
-    });
-  }
+  cookies.set('gh_oauth_return_to', returnTo, {
+    path: '/',
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: url.protocol === 'https:',
+    maxAge: 600,
+  });
 
   throw redirect(302, authorizeUrl.toString());
 };
