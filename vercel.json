@@ -1,9 +1,0 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "node build.js && cd timeline && bun install && bun run build",
-  "outputDirectory": "dist",
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/timeline/(.*)", "destination": "/timeline/index.html" }
-  ]
-}

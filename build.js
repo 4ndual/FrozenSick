@@ -7,6 +7,37 @@ const DIST = path.join(ROOT, 'dist');
 const EXCLUDE = new Set(['.cursor', 'node_modules', 'Assets', 'dist', '.git', 'timeline']);
 const EXCLUDE_FILES = new Set(['README.md']);
 
+function loadEnv() {
+  const env = { ...process.env };
+  try {
+    const envPath = path.join(ROOT, '.env');
+    if (fs.existsSync(envPath)) {
+      const raw = fs.readFileSync(envPath, 'utf-8');
+      for (const line of raw.split('\n')) {
+        const m = line.match(/^([^#=\s]+)\s*=\s*(.*)$/);
+        if (m) env[m[1]] = m[2].trim();
+      }
+    }
+  } catch (_) {}
+  return env;
+}
+
+function getWikiEditConfig(env) {
+  return {
+    owner: env.VITE_GITHUB_OWNER || '4ndual',
+    repo: env.VITE_GITHUB_REPO || 'FrozenSick',
+    branch: env.VITE_GITHUB_BRANCH || 'main',
+  };
+}
+
+function wikiEditScriptInline(config, sourcePath) {
+  const pathJson = sourcePath == null ? '""' : JSON.stringify(sourcePath);
+  return `<script>
+window.WIKI_EDIT_CONFIG = ${JSON.stringify(config)};
+window.WIKI_SOURCE_PATH = ${pathJson};
+</script>`;
+}
+
 marked.use({
   renderer: {
     code({ text, lang }) {
@@ -186,12 +217,19 @@ function buildLandingPage() {
 
 // ── Build ───────────────────────────────────────────
 
+const env = loadEnv();
+const wikiEditConfig = getWikiEditConfig(env);
 const template = fs.readFileSync(path.join(ROOT, 'template.html'), 'utf-8');
 
 if (fs.existsSync(DIST)) {
   fs.rmSync(DIST, { recursive: true });
 }
 fs.mkdirSync(DIST, { recursive: true });
+
+const wikiEditScriptPlaceholder = '{{WIKI_EDIT_SCRIPT}}';
+if (!template.includes(wikiEditScriptPlaceholder)) {
+  throw new Error('template.html must contain {{WIKI_EDIT_SCRIPT}}');
+}
 
 console.log('Building Frozen Sick wiki...');
 console.log(`Found ${mdFiles.length} markdown files\n`);
@@ -211,7 +249,8 @@ for (const relPath of mdFiles) {
   const html = template
     .replace(/\{\{TITLE\}\}/g, title)
     .replace('{{SIDEBAR}}', renderSidebar(href))
-    .replace('{{CONTENT}}', content);
+    .replace('{{CONTENT}}', content)
+    .replace(wikiEditScriptPlaceholder, wikiEditScriptInline(wikiEditConfig, relPath));
 
   fs.writeFileSync(outFile, html);
   console.log(`  ${relPath} -> ${slug}`);
@@ -220,13 +259,26 @@ for (const relPath of mdFiles) {
 const indexHtml = template
   .replace(/\{\{TITLE\}\}/g, 'Home')
   .replace('{{SIDEBAR}}', renderSidebar('/'))
-  .replace('{{CONTENT}}', buildLandingPage());
+  .replace('{{CONTENT}}', buildLandingPage())
+  .replace(wikiEditScriptPlaceholder, wikiEditScriptInline(wikiEditConfig, ''));
 
 fs.writeFileSync(path.join(DIST, 'index.html'), indexHtml);
 console.log('\n  index.html (landing page)');
 
 fs.copyFileSync(path.join(ROOT, 'style.css'), path.join(DIST, 'style.css'));
 console.log('  style.css');
+
+const faviconSrc = path.join(ROOT, 'timeline', 'public', 'favicon.png');
+if (fs.existsSync(faviconSrc)) {
+  fs.copyFileSync(faviconSrc, path.join(DIST, 'favicon.png'));
+  console.log('  favicon.png');
+}
+
+const wikiEditJs = path.join(ROOT, 'scripts', 'wiki-edit.js');
+if (fs.existsSync(wikiEditJs)) {
+  fs.copyFileSync(wikiEditJs, path.join(DIST, 'wiki-edit.js'));
+  console.log('  wiki-edit.js');
+}
 
 const assetsDir = path.join(ROOT, 'Assets');
 const distAssets = path.join(DIST, 'assets');
