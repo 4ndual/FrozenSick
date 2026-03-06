@@ -39,3 +39,46 @@ The test PAT is stored in `.env` as `GITHUB_TEST_PAT`. Read it from there — ne
 ## 4. The Edit button only appears on content pages
 
 Don't navigate to `/` and expect to see the Edit button. The home page has no `sourcePath`. Navigate to a wiki content page like `/chapters/...` to test editing.
+
+## 5. Element missing from accessibility snapshot — diagnostic flowchart
+
+When you add `role`, `aria-label`, or `data-testid` to an element and it still doesn't appear in `browser_snapshot`, follow these steps **in order**. Do NOT guess — each step is one `javascript:void(...)` call.
+
+**Step 1 — Does the element exist in the DOM?**
+
+```
+javascript:void(document.title = document.querySelectorAll('.my-selector').length + ' found')
+```
+
+- **0 found** → The library isn't rendering your content. Check the library's API docs for `template`, `content`, or `render` options.
+- **N found** → Go to step 2.
+
+**Step 2 — Are your custom attributes present?**
+
+```
+javascript:void(document.title = document.querySelector('.my-selector')?.getAttribute('role') + '|' + document.querySelector('.my-selector')?.getAttribute('aria-label'))
+```
+
+- **null|null** → The library has a **sanitizer stripping attributes**. Search docs/issues for "xss", "sanitize", "whitelist", or "filterOptions". In this project: vis-timeline strips all non-whitelisted attributes; fix with `xss: { disabled: true }` in dev mode.
+- **Values present** → Go to step 3.
+
+**Step 3 — Is the element visually hidden?**
+
+```
+javascript:void(document.title = getComputedStyle(document.querySelector('.my-selector')).visibility + '|' + getComputedStyle(document.querySelector('.my-selector')).display)
+```
+
+- **hidden|*anything*** → `visibility: hidden` removes elements from the accessibility tree. Override with CSS `visibility: visible !important`. In this project: SvelteFlow uses `visibility: hidden` for node measurement.
+- **visible|none** → `display: none` fully hides the element. Check if a parent conditionally hides it.
+- **visible|*not none*** → Go to step 4.
+
+**Step 4 — Is an ancestor hiding the subtree?**
+
+```
+javascript:void(document.title = document.querySelector('.my-selector')?.closest('[aria-hidden="true"]')?.className || 'no aria-hidden ancestor')
+```
+
+- **Found ancestor** → A parent has `aria-hidden="true"`, which removes the entire subtree from the accessibility tree. Override it or move your element outside.
+- **No ancestor** → The issue is something else (z-index clipping, iframe boundary, or a browser_snapshot tool limitation). Take a screenshot to verify the element is visually present.
+
+**This flowchart costs 1-4 tool calls. Without it, diagnosis takes 8-15.**

@@ -137,3 +137,43 @@ If a button is inside a scrollable sidebar, `scrollIntoView` may fail because th
 ## 11. When in doubt, redesign for testability
 
 If testing a feature requires more than 3 browser operations (navigate, snapshot, click, snapshot, verify), consider whether an API endpoint or a DOM attribute could replace some of those steps. The cheapest test is the one that never opens a browser.
+
+## 12. Hard debugging? Add a rule so the next agent doesn't pay the same cost
+
+If solving a testability problem took more than 5 tool calls, it means the solution wasn't obvious. Before closing the task:
+
+1. Identify the root cause (sanitizer? CSS hiding? library quirk?)
+2. Add it to the **Known Issues** section below with: library name, symptom, cause, one-line fix
+3. If the debugging *pattern* is reusable, add a diagnostic step to `browser-testing.mdc` rule 5
+
+This rule is self-reinforcing — every hard problem makes the next one cheaper.
+
+---
+
+# Known Issues — Third-Party Library Gotchas
+
+Problems that cost 8+ tool calls to diagnose the first time. Read this section BEFORE debugging accessibility tree issues with any library.
+
+## vis-timeline (v7.4.7+)
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| `role`, `aria-label`, `data-testid`, `class` silently stripped from item content HTML | Built-in XSS sanitizer strips all non-whitelisted attributes | Add `xss: { disabled: true }` to Timeline constructor options. Guard with `import.meta.env.DEV` so production keeps protection. Must be set at instantiation — `setOptions()` won't work. |
+| Console warning: "You disabled XSS protection for vis-Timeline" | Expected when using `xss: { disabled: true }` | Harmless in dev. Do not suppress it in production. |
+| HMR doesn't reinitialize the timeline after code changes | vis-timeline creates its instance in `onMount` — HMR swaps the component but doesn't re-run `onMount` | Full page reload (`browser_reload`) after changes to Timeline options or item builders. |
+
+## SvelteFlow / XYFlow
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| Custom node components have correct `role`/`aria-label` in DOM but don't appear in `browser_snapshot` | SvelteFlow sets `visibility: hidden` on `.svelte-flow__node` wrappers during its measurement pass. `visibility: hidden` removes elements from the accessibility tree. | Add CSS: `.graph-canvas :global(.svelte-flow__node) { visibility: visible !important; }`. Safe because nodes have explicit positions from layout. |
+| Node wrappers have `role="group"` and `aria-roledescription="node"` | SvelteFlow's default ARIA. Your inner `role="button"` on the custom node component works inside this — no conflict. | No fix needed. Just know it's there so you don't waste time investigating it. |
+
+## General patterns
+
+| Symptom | Likely cause | Diagnostic |
+|---|---|---|
+| Attributes added to HTML string content disappear | Library has a sanitizer (XSS, DOMPurify, or custom) | Check rendered innerHTML: `document.querySelector('.item')?.innerHTML`. If attributes are gone, search library docs/issues for "xss", "sanitize", "whitelist". |
+| Element exists in DOM with correct attributes but missing from accessibility tree | CSS `visibility: hidden` or `display: none` on the element or an ancestor | Check: `getComputedStyle(el).visibility` and `getComputedStyle(el).display`. Also check: `el.closest('[aria-hidden="true"]')`. |
+| Element appears in snapshot but with `nth` index instead of a name | Multiple elements share the same accessible name | Add unique `aria-label` incorporating the item's identity (e.g., `"Edit {name}"` instead of just `"Edit"`). |
+| `scrollIntoView` doesn't bring element into viewport | Element is inside a nested scrollable container | Use a duplicate button in the main content area, or scroll the inner container explicitly with `browser_scroll` targeting the container ref. |
