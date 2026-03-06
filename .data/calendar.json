@@ -1,67 +1,91 @@
 {
   "name": "Calendar of Harptos",
   "yearSuffix": "DR",
-  "epoch": 1300,
+  "epoch": 1489,
   "months": [
     {
       "id": "hammer",
       "name": "Hammer",
-      "days": 30
+      "days": 30,
+      "station": "Deepwinter",
+      "color": "#6b8cae"
     },
     {
       "id": "alturiak",
       "name": "Alturiak",
-      "days": 30
+      "days": 30,
+      "station": "The Claw of Winter",
+      "color": "#7a9bb8"
     },
     {
       "id": "ches",
       "name": "Ches",
-      "days": 30
+      "days": 30,
+      "station": "The Claw of the Sunsets",
+      "color": "#7d9e7d"
     },
     {
       "id": "tarsakh",
       "name": "Tarsakh",
-      "days": 30
+      "days": 30,
+      "station": "The Claw of the Storms",
+      "color": "#5a9a5a"
     },
     {
       "id": "mirtul",
       "name": "Mirtul",
-      "days": 30
+      "days": 30,
+      "station": "The Melting",
+      "color": "#6bab6b"
     },
     {
       "id": "kythorn",
       "name": "Kythorn",
-      "days": 30
+      "days": 30,
+      "station": "The Time of Flowers",
+      "color": "#8fbc8f"
     },
     {
       "id": "flamerule",
       "name": "Flamerule",
-      "days": 30
+      "days": 30,
+      "station": "Summertide",
+      "color": "#c9a227"
     },
     {
       "id": "eleasis",
       "name": "Eleasis",
-      "days": 30
+      "days": 30,
+      "station": "Highsun",
+      "color": "#d4a84b"
     },
     {
       "id": "eleint",
       "name": "Eleint",
-      "days": 30
+      "days": 30,
+      "station": "The Fading",
+      "color": "#b8860b"
     },
     {
       "id": "marpenoth",
       "name": "Marpenoth",
-      "days": 30
+      "days": 30,
+      "station": "Leaffall",
+      "color": "#a0522d"
     },
     {
       "id": "uktar",
       "name": "Uktar",
-      "days": 30
+      "days": 30,
+      "station": "The Rotting",
+      "color": "#6b5b4f"
     },
     {
       "id": "nightal",
       "name": "Nightal",
-      "days": 30
+      "days": 30,
+      "station": "The Drawing Down",
+      "color": "#4a5568"
     }
   ],
   "weekLength": 10,
