@@ -1,9 +1,9 @@
-# Chapter 1 The Last Drop
+# Chapter 1 â The Last Drop
 
 **A night at the tavern turns deadly when old enemies come knocking and dark magic poisons the only man keeping everyone alive.**
 
 ---
-
+DFGDFGDGDFGDFGDG
 ## Setting the Scene
 
 The tavern is called *The Last Drop* â a desert outpost run by the enigmatic **Lunei Milei Maili**, a former paladin turned barkeep with a talent for harboring people who'd rather not be found. Tonight, the place is alive: tables full of rowdy patrons, a mercantile noble demanding attention, drunks arguing over dwarven property rights, and a band tuning up on the small stage. **Nixira**, a tiefling bard hiding under the alias *Mai Melody*, works the kitchen as the house cook â the one place no customer ever sees her face. **Tidus**, an elven rogue, weaves between the tables as the waiter, charming patrons and delivering orders with practiced ease. **ZacarÃ­as**, a gnome warlock with unsettling blue eyes and an even more unsettling patron, stands watch at the door. Tonight, Nixira is scheduled to take the stage for a performance she doesn't yet realize will blow her cover forever.
