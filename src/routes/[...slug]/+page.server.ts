@@ -38,8 +38,11 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
     const manifest = buildManifest(tree);
     const nav = buildNav(tree);
 
-    const rawSlug = Array.isArray(params.slug) ? params.slug.join('/') : (params.slug ?? '');
+    const rawSlug = (Array.isArray(params.slug) ? params.slug.join('/') : (params.slug ?? '')).replace(/\/+$/, '');
     const slug = '/' + slugifyPath(rawSlug);
+    if (slug === '/') {
+      throw redirect(302, '/');
+    }
     const sourcePath = manifest[slug];
 
     if (!sourcePath) {
