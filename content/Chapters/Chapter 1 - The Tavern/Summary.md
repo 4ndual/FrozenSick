@@ -281,3 +281,5 @@ The off-screen antagonist pulling strings. Former friend of ZacarÃ­as who now 
 - **What they did:** One defended dwarves' right to keep items they find; the other argued purchased goods belong to the buyer. Their argument disturbed surrounding tables until they were served "licor de menta con limÃ³n" to calm them down.
 - **End status:** **Alive.**
 xd
+
+<!-- test -->
