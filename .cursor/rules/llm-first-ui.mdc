@@ -1,0 +1,94 @@
+---
+description: LLM-first UI design — write code so agentic LLMs can test it cheaply
+alwaysApply: true
+---
+
+# LLM-First UI Design
+
+Every UI change must be written so an LLM agent can test it using the fewest tokens possible. If a design is hard for an agent to verify, redesign it rather than fight the tooling.
+
+## 1. Every interactive element needs `data-testid`
+
+Agents match elements by `data-testid`, not by visible text. Text changes with i18n, refactors, and content updates — `data-testid` survives all of them.
+
+Naming convention: `data-testid="<component>-<action>"`
+
+```svelte
+<!-- BAD: agent must match by fragile text "Save Draft" -->
+<button onclick={save}>Save Draft</button>
+
+<!-- GOOD: agent clicks [data-testid="wiki-save-draft"] — stable forever -->
+<button onclick={save} data-testid="wiki-save-draft">Save Draft</button>
+```
+
+Existing testids in this project: `wiki-edit`, `wiki-save-draft`, `wiki-publish`, `wiki-discard`, `wiki-cancel`, `wiki-edit-textarea`, `wiki-edit-modal`, `wiki-status-message`, `auth-login`, `auth-logout`, `branch-selector`, `drafts-toggle`, `drafts-dropdown`, `tab-timeline`, `tab-graph`, `tab-settings`, `timeline-save`, `timeline-import`, `timeline-export`, `toggle-sidebar`, `app-header`, `wiki-content`, `wiki-sidebar`, `wiki-main`, `timeline-main`, `timeline-app`, `settings-nav`.
+
+## 2. Icon-only buttons must have `aria-label`
+
+Agents read the accessibility tree. A button with no text and no `aria-label` is invisible to them.
+
+```svelte
+<!-- BAD: agent sees a button with no name -->
+<button onclick={logout} title="Logout"><svg>...</svg></button>
+
+<!-- GOOD: agent sees button[name="Logout"] in the snapshot -->
+<button onclick={logout} title="Logout" aria-label="Logout"><svg>...</svg></button>
+```
+
+## 3. Modals and dropdowns need ARIA roles
+
+Without `role="dialog"` an overlay is just a div — agents can't find it as a landmark.
+
+- Modals: `role="dialog"` + `aria-modal="true"` + `aria-label="..."`
+- Dropdowns: `aria-expanded` + `aria-haspopup="true"` on the toggle
+- Listbox patterns: `role="listbox"` on the dropdown, `role="option"` + `aria-selected` on items
+
+## 4. Prefer API verification over screenshots
+
+An agent taking a screenshot and parsing it costs ~10x more tokens than a `curl` call. When adding a feature that changes state, always ask: "can the agent verify this via API?"
+
+This project has:
+- `GET /api/status` — auth state, branches, draft count
+- `GET /api/status/wiki?path=...&branch=...` — file existence, sha, size
+- `GET /api/wiki/preview?path=...&branch=...` — title, headings, word count
+
+When adding new write operations, add or extend a status endpoint so agents can verify the result without opening a browser.
+
+## 5. Status feedback must be machine-readable
+
+When a save/publish/delete succeeds or fails, the UI shows a message. Make it machine-readable so agents don't have to parse human text:
+
+```svelte
+<div
+  data-testid="wiki-status-message"
+  data-status={ok ? 'success' : err ? 'error' : 'idle'}
+  role="status"
+  aria-live="polite"
+>
+  {message}
+</div>
+```
+
+The agent checks state with `browser_get_attribute(ref, "data-status")` — no text parsing needed.
+
+## 6. Use landmark containers for scoped snapshots
+
+A full page snapshot can be 200+ refs and burn thousands of tokens. Wrap page regions in containers with `data-testid` so agents can scope their snapshots:
+
+```svelte
+<!-- Agent calls browser_snapshot with selector="[data-testid='app-header']" -->
+<!-- Gets 5-10 refs instead of 200 -->
+<header data-testid="app-header">...</header>
+<nav data-testid="wiki-sidebar">...</nav>
+<main data-testid="wiki-main">
+  <div data-testid="wiki-content">...</div>
+</main>
+```
+
+## 7. Prefer `<nav>`, `<main>`, `<section>` over `<div>`
+
+Semantic HTML elements appear as landmarks in accessibility snapshots. Agents can find them by role without needing `data-testid`. Use `<div>` only when no semantic element fits.
+
+## 8. When in doubt, redesign for testability
+
+If testing a feature requires more than 3 browser operations (navigate, snapshot, click, snapshot, verify), consider whether an API endpoint or a DOM attribute could replace some of those steps. The cheapest test is the one that never opens a browser.

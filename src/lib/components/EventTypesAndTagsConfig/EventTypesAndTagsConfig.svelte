@@ -114,8 +114,8 @@
               </div>
             </div>
             <div class="type-actions">
-              <button class="btn-icon" onclick={() => startEdit(et)} title="Edit">Edit</button>
-              <button class="btn-icon btn-danger" onclick={() => deleteEventType(et.id, et.label)} title="Delete">Delete</button>
+              <button class="btn-icon" onclick={() => startEdit(et)} title="Edit" aria-label="Edit {et.label}" data-testid="eventtype-edit-{et.id}">Edit</button>
+              <button class="btn-icon btn-danger" onclick={() => deleteEventType(et.id, et.label)} title="Delete" aria-label="Delete {et.label}" data-testid="eventtype-delete-{et.id}">Delete</button>
             </div>
           </div>
         {/if}
@@ -171,7 +171,7 @@
     {#each campaign.suggestedTags as tag}
       <span class="tag-pill">
         {tag}
-        <button class="tag-remove" onclick={() => campaign.removeSuggestedTag(tag)} aria-label="Remove tag">×</button>
+        <button class="tag-remove" onclick={() => campaign.removeSuggestedTag(tag)} aria-label="Remove tag {tag}" data-testid="tag-remove-{tag}">×</button>
       </span>
     {/each}
   </div>

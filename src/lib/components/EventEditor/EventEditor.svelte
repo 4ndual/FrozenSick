@@ -143,7 +143,7 @@
   ></button>
 
   <!-- Drawer -->
-  <div class="drawer" role="dialog" aria-modal="true" aria-label="Event Editor">
+  <div class="drawer" role="dialog" aria-modal="true" aria-label="Event Editor" data-testid="event-editor">
     <div class="drawer-header">
       <h2>{isNew ? 'New Event' : 'Edit Event'}</h2>
       <button class="close-btn" aria-label="Close" onclick={() => campaign.closeEditor()}>✕</button>
@@ -351,10 +351,10 @@
     <!-- Footer -->
     <div class="drawer-footer">
       {#if !isNew}
-        <button class="btn-danger" onclick={handleDelete}>Delete</button>
+        <button class="btn-danger" onclick={handleDelete} data-testid="event-delete">Delete</button>
       {/if}
-      <button class="btn-ghost" onclick={() => campaign.closeEditor()}>Cancel</button>
-      <button class="btn-primary" onclick={save} disabled={!draft.title.trim()}>
+      <button class="btn-ghost" onclick={() => campaign.closeEditor()} data-testid="event-cancel">Cancel</button>
+      <button class="btn-primary" onclick={save} disabled={!draft.title.trim()} data-testid="event-save">
         {isNew ? 'Create Event' : 'Save Changes'}
       </button>
     </div>

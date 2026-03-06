@@ -13,11 +13,11 @@
   const totalCount = $derived(campaign.data.events.length);
 </script>
 
-<aside class="sidebar">
+<aside class="sidebar" data-testid="timeline-sidebar" aria-label="Filter and search">
   <div class="sidebar-header">
     <span class="sidebar-title">Filter & Search</span>
     {#if hasFilters}
-      <button class="clear-btn" onclick={() => campaign.resetFilter()}>Clear all</button>
+      <button class="clear-btn" onclick={() => campaign.resetFilter()} data-testid="sidebar-clear-filters">Clear all</button>
     {/if}
   </div>
 
@@ -34,6 +34,7 @@
         placeholder="Search events…"
         value={campaign.filter.search}
         oninput={(e) => campaign.setFilter({ search: (e.target as HTMLInputElement).value })}
+        data-testid="sidebar-search"
       />
     </div>
   </div>
@@ -132,7 +133,7 @@
   </div>
 
   <div class="sidebar-footer">
-    <button class="add-btn" onclick={() => campaign.openEditor()}>
+    <button class="add-btn" onclick={() => campaign.openEditor()} data-testid="sidebar-new-event">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
         <line x1="12" y1="5" x2="12" y2="19"></line>
         <line x1="5" y1="12" x2="19" y2="12"></line>
