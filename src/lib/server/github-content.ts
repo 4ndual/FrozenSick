@@ -131,6 +131,15 @@ export function buildManifest(tree: TreeEntry[]): Record<string, string> {
 }
 
 /**
+ * Extract chapter number from a group name like "Chapter 1 - The Tavern" for ordering.
+ * Returns a number for sorting; non-matching names get Infinity so they sort last.
+ */
+function chapterOrder(name: string): number {
+  const m = name.match(/^Chapter\s+(\d+)/i);
+  return m ? parseInt(m[1], 10) : Number.POSITIVE_INFINITY;
+}
+
+/**
  * Build the wiki navigation from tree entries.
  * Folder structure under `content/` defines sections and groups.
  */
@@ -170,11 +179,13 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
   for (const [sectionName, groups] of sortedSections) {
     const children: (NavItem & { sub?: NavItem[] })[] = [];
 
-    const subGroups = [...groups.entries()]
-      .filter(([k]) => k !== '__root__')
-      .sort((a, b) => a[0].localeCompare(b[0]));
+    const subGroups = [...groups.entries()].filter(([k]) => k !== '__root__');
+    const isChapters = sectionName.toLowerCase() === 'chapters';
+    const sortedSubGroups = isChapters
+      ? subGroups.sort((a, b) => chapterOrder(a[0]) - chapterOrder(b[0]))
+      : subGroups.sort((a, b) => a[0].localeCompare(b[0]));
 
-    for (const [groupName, files] of subGroups) {
+    for (const [groupName, files] of sortedSubGroups) {
       const sortedFiles = [...files].sort();
       const summaryFile = sortedFiles.find((f) =>
         f.split('/').pop()!.toLowerCase().replace(/\.md$/, '') === 'summary',
@@ -197,9 +208,12 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
       children.push(child);
     }
 
+    const existingTitles = new Set(children.map((c) => c.title));
     const rootFiles = groups.get('__root__') || [];
     for (const file of [...rootFiles].sort()) {
       const fileName = file.split('/').pop()!.replace(/\.md$/i, '');
+      if (existingTitles.has(fileName)) continue;
+      existingTitles.add(fileName);
       children.push({ title: fileName, href: '/' + slugifyPath(file) });
     }
 
