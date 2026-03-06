@@ -1,1 +1,5 @@
-{"campaignName": "Frozen Sick - external change"}
+{
+  "campaignId": "frozen-sick",
+  "campaignName": "Frozen Sick QA",
+  "version": 1
+}
