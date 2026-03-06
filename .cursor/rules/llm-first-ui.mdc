@@ -134,11 +134,27 @@ If a button is inside a scrollable sidebar, `scrollIntoView` may fail because th
 
 **Design rule:** Every critical action (Add, Save, Delete) must be accessible from the main content area, not only from a scrollable sidebar. Provide duplicate buttons in the toolbar when needed (e.g., "Add Event" in the timeline toolbar mirrors "New Event" in the sidebar).
 
-## 11. When in doubt, redesign for testability
+## 11. Auth-gated UI must derive from a single source of truth
+
+If the server uses a cookie and the client UI uses localStorage, they will desync. When they do, the server returns data correctly but the UI hides buttons (Edit, Logout, Drafts). The agent then spends tool calls re-authenticating and not understanding why.
+
+**Design rule:** Auth-gated UI elements should derive visibility from the same auth mechanism the server uses. If that's not feasible, the client should verify auth state on mount via an API call (`/api/status`) rather than relying on a secondary store that can be independently cleared.
+
+**Empirical cost:** Dual auth state cost ~10 tool calls in a single test run from repeated re-authentication.
+
+## 12. Maximize what can be verified from a single snapshot
+
+The cheapest UI verification is reading one snapshot — no clicks, no navigation, no waiting. Design state into element names and attributes so the agent can verify multiple test cases from a single `browser_snapshot` call.
+
+**Example from this project:** Settings page has tracks, event types, and calendar months. Because every Edit/Delete button has `aria-label="Edit {name}"`, an agent verified 7 test cases from one snapshot read (1 tool call). Without unique labels, it would have needed to click each button to identify it (28+ tool calls).
+
+**Design rule:** If verifying a feature requires clicking to reveal information (hover tooltips, click-to-expand, drill-down), also expose that information in the element's accessible name or a `data-*` attribute.
+
+## 13. When in doubt, redesign for testability
 
 If testing a feature requires more than 3 browser operations (navigate, snapshot, click, snapshot, verify), consider whether an API endpoint or a DOM attribute could replace some of those steps. The cheapest test is the one that never opens a browser.
 
-## 12. Hard debugging? Add a rule so the next agent doesn't pay the same cost
+## 14. Hard debugging? Add a rule so the next agent doesn't pay the same cost
 
 If solving a testability problem took more than 5 tool calls, it means the solution wasn't obvious. Before closing the task:
 

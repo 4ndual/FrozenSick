@@ -1,9 +1,21 @@
 ---
 description: Lessons learned from browser testing — real mistakes to avoid
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Browser Testing — Mistakes to Avoid
+
+## 0. FIRST THING: resize the browser to 1280x800
+
+The IDE browser panel defaults to ~500px wide. Header buttons, dropdowns, and toolbar controls overflow and become unclickable. This has cost 20+ wasted tool calls in a single test run.
+
+**Before any test, always run:**
+
+```
+browser_resize({ width: 1280, height: 800 })
+```
+
+Do this ONCE at the start. Not after the first failure — before the first action.
 
 ## 1. Clear Vite cache after installing packages
 
@@ -24,15 +36,21 @@ curl -X POST http://localhost:5173/api/webhook -H "Content-Type: application/jso
 
 Don't waste tool calls debugging "why didn't my fix work" — it's the cache.
 
-## 3. httpOnly cookies can't be set via JavaScript
+## 3. Authentication setup — do it once, don't lose it
 
-The `gh_token` cookie is `httpOnly: true`. You cannot set it with `document.cookie` or `javascript:` URLs. Use the server-side dev endpoint instead:
+The `gh_token` cookie is `httpOnly: true`. You cannot set it with `document.cookie` or `javascript:` URLs.
+
+**Full auth setup (do this ONCE at the start):**
 
 ```
-GET /api/auth/dev-token?token=<GITHUB_PAT>
+1. browser_navigate to /api/auth/dev-token?token=<PAT>     → sets httpOnly cookie
+2. browser_navigate to /#token=<PAT>                         → populates localStorage
+3. Verify: curl /api/status (check authenticated: true)
 ```
 
-Then navigate to any URL with `#token=<PAT>` and hard-reload to also populate localStorage (needed for Edit/Drafts buttons in the Header).
+**After this, NEVER navigate with `#token=...` again.** Use plain URLs (`/timeline`, `/chapters/...`). The cookie persists across navigations. localStorage persists within the same origin. Re-adding the hash triggers `onMount` logic that can interfere.
+
+**If auth looks lost** (no Logout button, no Edit button): the cookie is still set — it's just localStorage that cleared. Navigate to `/#token=<PAT>` ONE more time to restore it.
 
 The test PAT is stored in `.env` as `GITHUB_TEST_PAT`. Read it from there — never hardcode it.
 
@@ -40,7 +58,34 @@ The test PAT is stored in `.env` as `GITHUB_TEST_PAT`. Read it from there — ne
 
 Don't navigate to `/` and expect to see the Edit button. The home page has no `sourcePath`. Navigate to a wiki content page like `/chapters/...` to test editing.
 
-## 5. Element missing from accessibility snapshot — diagnostic flowchart
+## 5. `browser_fill` doesn't trigger Svelte reactivity
+
+`browser_fill` sets the DOM `.value` directly without dispatching `input` events. Svelte's `bind:value` won't see the change — reactive state stays stale, and buttons gated by that state (like "Create Event") stay disabled.
+
+**Use `browser_type` with `clear: true` instead:**
+
+```
+browser_type({ ref, text: "my value", clear: true, slowly: true })
+```
+
+`slowly: true` types one character at a time, which fires `input` events that Svelte's binding picks up. Only needed for Svelte-bound inputs where downstream state depends on the value.
+
+## 6. JavaScript `.click()` doesn't trigger Svelte 5 event handlers
+
+Svelte 5 uses event delegation — handlers are attached to a shared ancestor, not the element itself. `document.querySelector('[data-testid="..."]').click()` fires a `click` event that Svelte's delegation may not catch.
+
+**Prefer `browser_click` with the element's ref** (works if the browser is properly sized per rule 0). If you must use JavaScript:
+
+```javascript
+const el = document.querySelector('[data-testid="wiki-edit"]');
+el.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
+el.dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
+el.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+```
+
+But really — just resize the browser (rule 0) and use `browser_click`.
+
+## 7. Element missing from accessibility snapshot — diagnostic flowchart
 
 When you add `role`, `aria-label`, or `data-testid` to an element and it still doesn't appear in `browser_snapshot`, follow these steps **in order**. Do NOT guess — each step is one `javascript:void(...)` call.
 

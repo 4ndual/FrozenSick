@@ -1,6 +1,7 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
+import { invalidateCache } from '$lib/server/github-content';
 
 const API = 'https://api.github.com';
 const CONTENT_PREFIX = 'content/';
@@ -166,6 +167,7 @@ async function handleSave(
   }
 
   const data = await ghRes.json();
+  await invalidateCache(branch);
   return json({ sha: data.content?.sha, commit: data.commit?.sha });
 }
 
@@ -194,7 +196,7 @@ async function handlePublish(token: string, body: { branch?: string }) {
   let prHtmlUrl: string;
 
   if (prRes.status === 422) {
-    const prBody: { errors?: { message?: string }[] } = await prRes.json();
+    const prBody: { errors?: { message?: string }[]; message?: string } = await prRes.json();
     if (prBody.errors?.some((e) => e.message?.includes('pull request already exists'))) {
       const listRes = await fetch(
         `${repoUrl()}/pulls?head=${getOwner()}:${branch}&base=${defaultBranch}&state=open`,
@@ -205,8 +207,16 @@ async function handlePublish(token: string, body: { branch?: string }) {
       if (prs.length === 0) throw error(502, 'PR exists but could not be found');
       prNumber = prs[0].number;
       prHtmlUrl = prs[0].html_url;
+    } else if (
+      prBody.errors?.some((e) => e.message?.includes('No commits between')) ||
+      (prBody.message === 'Validation Failed' && (!prBody.errors || prBody.errors.length === 0))
+    ) {
+      return json({
+        published: false,
+        reason: 'No changes to publish. Save some changes to your draft first.',
+      });
     } else {
-      throw error(502, (prBody as { message?: string }).message || 'Failed to create PR');
+      throw error(502, prBody.message || 'Failed to create PR');
     }
   } else if (!prRes.ok) {
     const err = await prRes.json().catch(() => ({}));
@@ -254,6 +264,8 @@ async function handlePublish(token: string, body: { branch?: string }) {
   );
   void delRef;
 
+  await invalidateCache(defaultBranch);
+  await invalidateCache(branch);
   return json({ published: true, prUrl: prHtmlUrl });
 }
 

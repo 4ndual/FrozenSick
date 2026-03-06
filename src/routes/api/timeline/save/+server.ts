@@ -7,6 +7,7 @@ import {
   type RepoConfig,
 } from '$lib/utils/github';
 import { env } from '$env/dynamic/public';
+import { invalidateCache } from '$lib/server/github-content';
 
 const ALLOWED_PREFIXES = ['.data/'];
 
@@ -75,6 +76,8 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
       parentSha,
       baseTreeSha,
     );
+
+    await invalidateCache(branch);
 
     return json({
       commitSha: result.commitSha,

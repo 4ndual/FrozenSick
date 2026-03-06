@@ -129,11 +129,69 @@ function createCampaignStore() {
 
   let suggestedTags = $derived((data.suggestedTags ?? []).slice().sort());
 
+  let initializing = false;
+
   function persist() {
     saveCampaign(data);
+    if (initializing) return;
     if (isAuthenticated && syncStatus !== 'saving' && syncStatus !== 'loading') {
       syncStatus = 'dirty';
     }
+  }
+
+  async function attemptSave(token: string, isRetry: boolean): Promise<void> {
+    const cfg = { ...getRepoConfig(), branch: currentBranch };
+
+    if (!headSha || !treeSha || isRetry) {
+      const snapshot = await loadFromGitHub(cfg, token);
+      headSha = snapshot.headSha;
+      treeSha = snapshot.treeSha;
+      fileShas = snapshot.fileShas;
+      lastSyncedFiles = shardCampaignData(snapshot.data);
+    }
+
+    const currentFiles = shardCampaignData(data);
+    const baseFiles = lastSyncedFiles ?? {};
+    const changes = diffFiles(currentFiles, baseFiles);
+
+    if (changes.length === 0) {
+      syncStatus = 'synced';
+      return;
+    }
+
+    const message = buildCommitMessage(changes);
+
+    const res = await fetch('/api/timeline/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        changes,
+        message,
+        parentSha: headSha,
+        baseTreeSha: treeSha,
+        branch: currentBranch,
+      }),
+    });
+
+    const result = await res.json();
+
+    if (res.status === 409 && !isRetry) {
+      headSha = null;
+      treeSha = null;
+      clearGitHubSyncState();
+      return attemptSave(token, true);
+    }
+
+    if (!res.ok) {
+      throw new Error(result.error || 'Save failed');
+    }
+
+    const mergedShas = { ...fileShas, ...result.newFileShas };
+    for (const ch of changes) {
+      if (ch.content === null) delete mergedShas[ch.path];
+    }
+
+    updateSyncCache(result.commitSha, result.treeSha, mergedShas, currentFiles);
   }
 
   function updateSyncCache(
@@ -241,52 +299,58 @@ function createCampaignStore() {
     },
 
     async initAuth() {
-      const hashToken = extractTokenFromHash();
-      if (hashToken) {
-        saveToken(hashToken);
-        ghToken = hashToken;
-      }
-
-      // Validate token if present
-      const token = ghToken;
-      if (token) {
-        authLoading = true;
-        try {
-          const user = await fetchGitHubUser(token);
-          saveUser(user);
-          ghUser = user;
-        } catch {
-          clearToken();
-          ghToken = null;
-          ghUser = null;
-        }
-        authLoading = false;
-      }
-
-      // Fetch available branches if authenticated
-      if (isAuthenticated) {
-        try {
-          const cfg = getRepoConfig();
-          availableBranches = await fetchBranchList(cfg, ghToken!);
-        } catch {
-          availableBranches = [];
-        }
-      }
-
-      // Load latest data from static bundle (works for everyone, no auth needed)
+      initializing = true;
       try {
-        const staticData = await loadFromStaticBundle();
-        if (staticData) {
-          data = staticData;
-          saveCampaign(data);
-          if (isAuthenticated) {
-            const files = shardCampaignData(staticData);
-            lastSyncedFiles = files;
-            syncStatus = 'synced';
+        const hashToken = extractTokenFromHash();
+        if (hashToken) {
+          saveToken(hashToken);
+          ghToken = hashToken;
+        }
+
+        // Validate token if present
+        const token = ghToken;
+        if (token) {
+          authLoading = true;
+          try {
+            const user = await fetchGitHubUser(token);
+            saveUser(user);
+            ghUser = user;
+          } catch {
+            clearToken();
+            ghToken = null;
+            ghUser = null;
+          }
+          authLoading = false;
+        }
+
+        // Fetch available branches if authenticated
+        if (isAuthenticated) {
+          try {
+            const cfg = getRepoConfig();
+            availableBranches = await fetchBranchList(cfg, ghToken!);
+          } catch {
+            availableBranches = [];
           }
         }
-      } catch {
-        // Static fetch failed — localStorage is the fallback (already loaded)
+
+        // Load latest data from static bundle (works for everyone, no auth needed)
+        try {
+          const staticData = await loadFromStaticBundle();
+          if (staticData) {
+            data = staticData;
+            saveCampaign(data);
+          }
+        } catch {
+          // Static fetch failed — localStorage is the fallback (already loaded)
+        }
+
+        if (isAuthenticated) {
+          const files = shardCampaignData(data);
+          lastSyncedFiles = files;
+          syncStatus = 'synced';
+        }
+      } finally {
+        initializing = false;
       }
     },
 
@@ -301,53 +365,7 @@ function createCampaignStore() {
 
       try {
         validateCampaignData(data);
-
-        const cfg = { ...getRepoConfig(), branch: currentBranch };
-
-        // Fetch current ref from GitHub if we don't have sync state yet
-        if (!headSha || !treeSha) {
-          const snapshot = await loadFromGitHub(cfg, token);
-          headSha = snapshot.headSha;
-          treeSha = snapshot.treeSha;
-          fileShas = snapshot.fileShas;
-          lastSyncedFiles = shardCampaignData(snapshot.data);
-        }
-
-        const currentFiles = shardCampaignData(data);
-        const baseFiles = lastSyncedFiles ?? {};
-        const changes = diffFiles(currentFiles, baseFiles);
-
-        if (changes.length === 0) {
-          syncStatus = 'synced';
-          return;
-        }
-
-        const message = buildCommitMessage(changes);
-
-        const res = await fetch('/api/timeline/save', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            changes,
-            message,
-            parentSha: headSha,
-            baseTreeSha: treeSha,
-            branch: currentBranch,
-          }),
-        });
-
-        const result = await res.json();
-
-        if (!res.ok) {
-          throw new Error(result.error || 'Save failed');
-        }
-
-        const mergedShas = { ...fileShas, ...result.newFileShas };
-        for (const ch of changes) {
-          if (ch.content === null) delete mergedShas[ch.path];
-        }
-
-        updateSyncCache(result.commitSha, result.treeSha, mergedShas, currentFiles);
+        await attemptSave(token, false);
         syncStatus = 'synced';
       } catch (err) {
         syncStatus = 'error';
