@@ -1,4 +1,4 @@
-# Chapter 1 â The Last Drop
+# Chapter 1 - The Last Drop
 
 **A night at the tavern turns deadly when old enemies come knocking and dark magic poisons the only man keeping everyone alive.**
 
