@@ -40,12 +40,15 @@
     return et?.color ?? '#888';
   }
 
-  // Build item content as plain HTML string — no style attributes (sanitizer strips them).
-  // Per-event coloring is done via style.borderLeftColor and className type-{eventType}.
+  function escAttr(s: string): string {
+    return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  }
+
   function buildItemContent(ev: CampaignEvent): string {
     const icon = ev.icon ?? typeIcon(ev.type);
     const emoji = TYPE_EMOJI[icon] ?? '•';
-    return `<span class="tl-icon-em">${emoji}</span><span class="tl-title">${ev.title}</span>${ev.secret ? '<span class="tl-secret"> 🔒</span>' : ''}`;
+    const inner = `<span class="tl-icon-em">${emoji}</span><span class="tl-title">${escAttr(ev.title)}</span>${ev.secret ? '<span class="tl-secret"> 🔒</span>' : ''}`;
+    return `<div role="listitem" aria-label="${escAttr(ev.title)}" data-testid="timeline-event-${escAttr(ev.id)}">${inner}</div>`;
   }
 
   function buildTooltipText(ev: any): string {
@@ -133,6 +136,7 @@
       moveable: true,
       zoomable: true,
       format: buildFormatOpts(),
+      ...(import.meta.env.DEV ? { xss: { disabled: true } } : {}),
     });
 
     timeline.on('select', (props: { items: string[] }) => {

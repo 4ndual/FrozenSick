@@ -6,6 +6,7 @@ import {
   fetchContent,
   listBranches,
   getDefaultBranch,
+  slugifyPath,
   GitHubAuthError,
 } from '$lib/server/github-content';
 import type { PageServerLoad } from './$types';
@@ -28,7 +29,8 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
     const manifest = buildManifest(tree);
     const nav = buildNav(tree);
 
-    const slug = '/' + params.slug;
+    const rawSlug = Array.isArray(params.slug) ? params.slug.join('/') : (params.slug ?? '');
+    const slug = '/' + slugifyPath(rawSlug);
     const sourcePath = manifest[slug];
 
     if (!sourcePath) {

@@ -262,6 +262,7 @@
   }
   .graph-canvas :global(.svelte-flow__node) {
     font-family: 'Crimson Text', serif;
+    visibility: visible !important;
   }
   .graph-canvas :global(.svelte-flow__edge-label) {
     font-family: 'Crimson Text', serif;

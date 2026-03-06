@@ -1,8 +1,61 @@
 <script lang="ts">
   import Header from '$lib/components/Header/Header.svelte';
   import WikiNav from '$lib/components/Header/WikiNav.svelte';
+  import { isSection, type NavItem, type NavSection } from '$lib/wiki-nav';
 
   let { data } = $props();
+
+  /** Card title mapping: section key (from repo) → display title on home */
+  const SECTION_TITLES: Record<string, string> = {
+    chapters: 'The Story So Far',
+    characters: 'The Party',
+    world: 'The World',
+    plot: 'Campaign Tools',
+    relations: 'Campaign Tools',
+  };
+
+  /** Nav entries that are sections (have children), for landing cards. */
+  const landingSections = $derived(
+    data.nav.filter((e): e is NavSection => isSection(e))
+  );
+
+  /** Single nav links (e.g. Timeline) to show in a tools card. */
+  const standaloneLinks = $derived(
+    data.nav.filter((e): e is NavItem => !isSection(e) && e.href !== '/')
+  );
+
+  function cardTitle(entry: NavSection): string {
+    const key = entry.section.toLowerCase();
+    return SECTION_TITLES[key] ?? entry.section;
+  }
+
+  function cardLinks(entry: NavSection): { href: string; title: string }[] {
+    return entry.children.flatMap((child) => {
+      const main = { href: child.href, title: child.title };
+      const sub = (child.sub ?? []).map((s) => ({ href: s.href, title: s.title }));
+      return [main, ...sub];
+    });
+  }
+
+  /** Group sections by display title and merge links; add standalone links to "Campaign Tools". */
+  const cards = $derived.by(() => {
+    const byTitle = new Map<string, { href: string; title: string }[]>();
+    for (const entry of landingSections) {
+      const title = cardTitle(entry);
+      const links = cardLinks(entry);
+      if (links.length === 0) continue;
+      const existing = byTitle.get(title) ?? [];
+      byTitle.set(title, [...existing, ...links]);
+    }
+    if (standaloneLinks.length > 0) {
+      const existing = byTitle.get('Campaign Tools') ?? [];
+      byTitle.set('Campaign Tools', [
+        ...existing,
+        ...standaloneLinks.map((l) => ({ href: l.href, title: l.title })),
+      ]);
+    }
+    return [...byTitle.entries()].map(([title, links]) => ({ title, links }));
+  });
 </script>
 
 <div class="wiki-layout">
@@ -14,51 +67,22 @@
   />
   <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
 
-  <main class="wiki-main">
+  <main class="wiki-main" data-testid="wiki-main">
     <div class="landing">
       <h1>Frozen Sick</h1>
       <p class="tagline">A D&D chronicle of bounty hunters, cursed artifacts, and a city on fire.</p>
 
       <div class="landing-grid">
-        <div class="card">
-          <h2>The Story So Far</h2>
-          <p>Five chapters of chaos, from a humble tavern job gone wrong to a full-scale revolution.</p>
-          <ul>
-            <li><a href="/chapters/chapter-1-the-tavern/summary">Chapter 1 — The Tavern</a></li>
-            <li><a href="/chapters/chapter-2-the-plateau/summary">Chapter 2 — The Plateau</a></li>
-            <li><a href="/chapters/chapter-3-the-flying-turtle/summary">Chapter 3 — The Flying Turtle</a></li>
-            <li><a href="/chapters/chapter-4-the-battle-of-brasboredon/summary">Chapter 4 — The Battle of Brasboredon</a></li>
-            <li><a href="/chapters/chapter-5-the-escape-from-brasboredon/summary">Chapter 5 — The Escape from Brasboredon</a></li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>The Party</h2>
-          <ul>
-            <li><a href="/characters/tidus/story"><strong>Tidus</strong></a> — Rogue / Waiter. Val medallion bearer, prince-killer, bomb defuser.</li>
-            <li><a href="/characters/nixira/story"><strong>Nixira</strong></a> — Bard / Cook. Fire ballista operator, rap battle champion, dwarf-cursed.</li>
-            <li><a href="/characters/zacarias/story"><strong>Zacarías</strong></a> — Warlock / Guard. Dreamer, one-handed revolutionary.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>The World</h2>
-          <ul>
-            <li><a href="/world/lore">Lore</a> — Prophecies, artifacts, and ancient powers</li>
-            <li><a href="/world/organizations">Organizations</a> — Factions pulling the strings</li>
-            <li><a href="/world/places">Places</a> — From La Última Gota to Brasboredon</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>Campaign Tools</h2>
-          <ul>
-            <li><a href="/plot/tracker">Plot Tracker</a> — Active quests, loose ends, mysteries</li>
-            <li><a href="/relations">Relations</a> — Character & faction diagrams</li>
-            <li><a href="/characters/npcs">NPCs</a> — Every face the party has met</li>
-            <li><a href="/timeline/">⟳ Timeline</a> — Interactive campaign timeline & event graph</li>
-          </ul>
-        </div>
+        {#each cards as { title, links } (title)}
+          <div class="card">
+            <h2>{title}</h2>
+            <ul>
+              {#each links as link (link.href)}
+                <li><a href={link.href}>{link.title}</a></li>
+              {/each}
+            </ul>
+          </div>
+        {/each}
       </div>
     </div>
   </main>

@@ -104,14 +104,16 @@
             max="99"
           />
           <div class="month-order">
-            <button onclick={() => moveMonth(i, -1)} disabled={i === 0} title="Move up">▲</button>
-            <button onclick={() => moveMonth(i, 1)} disabled={i === draft.months.length - 1} title="Move down">▼</button>
+            <button onclick={() => moveMonth(i, -1)} disabled={i === 0} title="Move up" aria-label="Move {month.name} up" data-testid="month-up-{month.name}">▲</button>
+            <button onclick={() => moveMonth(i, 1)} disabled={i === draft.months.length - 1} title="Move down" aria-label="Move {month.name} down" data-testid="month-down-{month.name}">▼</button>
           </div>
           <button
             class="month-remove"
             onclick={() => removeMonth(i)}
             disabled={draft.months.length <= 1}
             title="Remove month"
+            aria-label="Remove {month.name}"
+            data-testid="month-remove-{month.name}"
           >✕</button>
         </div>
       {/each}

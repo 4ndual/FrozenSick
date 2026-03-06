@@ -14,8 +14,14 @@
 
 <Handle type="target" position={Position.Top} style="opacity:0.5;background:var(--border)" />
 
-<div class="ev-node" style:border-color={data.selected ? 'var(--gold)' : data.borderColor}
-  style:box-shadow={data.selected ? `0 0 12px ${data.borderColor}55` : '0 2px 8px rgba(0,0,0,0.4)'}>
+<div
+  class="ev-node"
+  role="button"
+  aria-label="{data.title} — {data.typeLabel}, {data.dateStr}"
+  data-testid="graph-node-{data.title.toLowerCase().replace(/\s+/g, '-')}"
+  style:border-color={data.selected ? 'var(--gold)' : data.borderColor}
+  style:box-shadow={data.selected ? `0 0 12px ${data.borderColor}55` : '0 2px 8px rgba(0,0,0,0.4)'}
+>
   <span class="ev-type" style:color={data.typeColor}>{data.typeLabel}</span>
   <span class="ev-title">{data.title}</span>
   <span class="ev-date">{data.dateStr}</span>

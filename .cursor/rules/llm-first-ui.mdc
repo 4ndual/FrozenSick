@@ -21,7 +21,7 @@ Naming convention: `data-testid="<component>-<action>"`
 <button onclick={save} data-testid="wiki-save-draft">Save Draft</button>
 ```
 
-Existing testids in this project: `wiki-edit`, `wiki-save-draft`, `wiki-publish`, `wiki-discard`, `wiki-cancel`, `wiki-edit-textarea`, `wiki-edit-modal`, `wiki-status-message`, `auth-login`, `auth-logout`, `branch-selector`, `drafts-toggle`, `drafts-dropdown`, `tab-timeline`, `tab-graph`, `tab-settings`, `timeline-save`, `timeline-import`, `timeline-export`, `toggle-sidebar`, `app-header`, `wiki-content`, `wiki-sidebar`, `wiki-main`, `timeline-main`, `timeline-app`, `settings-nav`.
+Existing testids in this project: `wiki-edit`, `wiki-save-draft`, `wiki-publish`, `wiki-discard`, `wiki-cancel`, `wiki-edit-textarea`, `wiki-edit-modal`, `wiki-status-message`, `auth-login`, `auth-logout`, `branch-selector`, `drafts-toggle`, `drafts-dropdown`, `tab-timeline`, `tab-graph`, `tab-settings`, `timeline-save`, `timeline-import`, `timeline-export`, `toggle-sidebar`, `app-header`, `wiki-content`, `wiki-sidebar`, `wiki-main`, `timeline-main`, `timeline-app`, `settings-nav`, `timeline-event-{id}`, `graph-node-{name}`, `track-edit-{id}`, `track-delete-{id}`, `track-add`, `eventtype-edit-{id}`, `eventtype-delete-{id}`, `tag-remove-{tag}`, `month-up-{name}`, `month-down-{name}`, `month-remove-{name}`, `event-editor`, `event-save`, `event-cancel`, `event-delete`, `sidebar-search`, `sidebar-new-event`, `sidebar-clear-filters`.
 
 ## 2. Icon-only buttons must have `aria-label`
 
@@ -71,13 +71,11 @@ When a save/publish/delete succeeds or fails, the UI shows a message. Make it ma
 
 The agent checks state with `browser_get_attribute(ref, "data-status")` — no text parsing needed.
 
-## 6. Use landmark containers for scoped snapshots
+## 6. Use landmark containers with `data-testid`
 
-A full page snapshot can be 200+ refs and burn thousands of tokens. Wrap page regions in containers with `data-testid` so agents can scope their snapshots:
+Wrap page regions in containers with `data-testid` for identification. This helps agents find regions by attribute even when snapshot scoping doesn't reduce token count (tested: `browser_snapshot` with `selector` still returns the full page tree in practice).
 
 ```svelte
-<!-- Agent calls browser_snapshot with selector="[data-testid='app-header']" -->
-<!-- Gets 5-10 refs instead of 200 -->
 <header data-testid="app-header">...</header>
 <nav data-testid="wiki-sidebar">...</nav>
 <main data-testid="wiki-main">
@@ -85,10 +83,57 @@ A full page snapshot can be 200+ refs and burn thousands of tokens. Wrap page re
 </main>
 ```
 
+The real token savings come from API verification (rule 4) and compact snapshots (`browser_snapshot` with `compact: true`), not from CSS selector scoping.
+
 ## 7. Prefer `<nav>`, `<main>`, `<section>` over `<div>`
 
 Semantic HTML elements appear as landmarks in accessibility snapshots. Agents can find them by role without needing `data-testid`. Use `<div>` only when no semantic element fits.
 
-## 8. When in doubt, redesign for testability
+## 8. Repeated buttons must have unique `aria-label`
+
+Settings pages often have lists of items with identical Edit/Delete buttons. In the accessibility tree these appear as `Edit (nth: 3)`, `Delete (nth: 7)` — the agent has no idea which item they belong to.
+
+```svelte
+<!-- BAD: agent sees "Edit" repeated 10 times with nth indices -->
+<button onclick={() => edit(track.id)}>Edit</button>
+
+<!-- GOOD: agent sees "Edit Main Story" — knows exactly what it controls -->
+<button onclick={() => edit(track.id)} aria-label="Edit {track.name}">Edit</button>
+```
+
+## 9. Inject semantic HTML into third-party library content
+
+Third-party libraries (vis-timeline, SvelteFlow, etc.) render custom content you provide. They control the wrapper elements — you control what goes **inside**. Inject ARIA roles and labels into the content you give them.
+
+```svelte
+<!-- vis-timeline: wrap item content in a semantic element -->
+<script>
+function buildItemContent(ev) {
+  return `<div role="listitem" aria-label="${ev.title}" data-testid="timeline-event-${ev.id}">
+    ${ev.title}
+  </div>`;
+}
+</script>
+
+<!-- SvelteFlow: add roles directly to your custom node component -->
+<div class="ev-node" role="button"
+  aria-label="{data.title} — {data.typeLabel}, {data.dateStr}"
+  data-testid="graph-node-{data.title}">
+  ...
+</div>
+```
+
+**Gotchas solved in this project:**
+
+- **vis-timeline XSS sanitizer** strips custom attributes (`role`, `aria-label`, `data-testid`). Disable it in dev mode: `xss: { disabled: true }` in Timeline options (guarded by `import.meta.env.DEV`). Production keeps XSS protection.
+- **SvelteFlow `visibility: hidden`** on node wrappers hides nodes from the accessibility tree until measurement completes. Override with CSS: `.svelte-flow__node { visibility: visible !important; }`. This is safe — nodes have explicit positions.
+
+## 10. Critical actions must not be trapped in scrollable containers
+
+If a button is inside a scrollable sidebar, `scrollIntoView` may fail because the browser scrolls the page but not the inner container. The element stays off-screen.
+
+**Design rule:** Every critical action (Add, Save, Delete) must be accessible from the main content area, not only from a scrollable sidebar. Provide duplicate buttons in the toolbar when needed (e.g., "Add Event" in the timeline toolbar mirrors "New Event" in the sidebar).
+
+## 11. When in doubt, redesign for testability
 
 If testing a feature requires more than 3 browser operations (navigate, snapshot, click, snapshot, verify), consider whether an API endpoint or a DOM attribute could replace some of those steps. The cheapest test is the one that never opens a browser.

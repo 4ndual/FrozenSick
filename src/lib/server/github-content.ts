@@ -53,7 +53,8 @@ function slugify(str: string): string {
     .replace(/^-|-$/g, '');
 }
 
-function slugifyPath(relPath: string): string {
+/** Normalize a path to the same slug form used in the manifest (lowercase, no .md, safe chars). */
+export function slugifyPath(relPath: string): string {
   return relPath
     .replace(/\.md$/i, '')
     .split('/')
