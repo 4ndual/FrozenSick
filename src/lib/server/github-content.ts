@@ -1,5 +1,6 @@
 import { env } from '$env/dynamic/public';
 import type { NavEntry, NavItem, NavSection } from '$lib/wiki-nav';
+import { slugify, slugifyPath } from '$lib/utils/slugify';
 
 const API = 'https://api.github.com';
 
@@ -43,24 +44,8 @@ export async function invalidateCache(branch?: string): Promise<void> {
   return _invalidateCache(branch);
 }
 
-// ── Slugify (ported from generate-wiki-manifest.cjs) ─────────────────────────
-
-function slugify(str: string): string {
-  return str
-    .toLowerCase()
-    .replace(/['']/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
-/** Normalize a path to the same slug form used in the manifest (lowercase, no .md, safe chars). */
-export function slugifyPath(relPath: string): string {
-  return relPath
-    .replace(/\.md$/i, '')
-    .split('/')
-    .map(slugify)
-    .join('/');
-}
+// Re-export slug utilities for consumers that import from this module
+export { slugify, slugifyPath } from '$lib/utils/slugify';
 
 function decodeBase64Utf8(b64: string): string {
   const bin = atob(b64);
@@ -274,4 +259,36 @@ export async function listBranches(token: string): Promise<string[]> {
   const names = data.map((b) => b.name);
   await setCache(cacheKey, names, BRANCHES_TTL);
   return names;
+}
+
+export interface BranchComparison {
+  aheadBy: number;
+  behindBy: number;
+}
+
+/**
+ * Compare a content branch against the default branch.
+ * Returns how many commits the content branch is ahead/behind.
+ */
+export async function compareBranches(
+  token: string,
+  contentBranch: string,
+  baseBranch?: string,
+): Promise<BranchComparison> {
+  const base = baseBranch || getDefaultBranch();
+  const cacheKey = `compare:${base}...${contentBranch}`;
+  const cached = await getCached<BranchComparison>(cacheKey);
+  if (cached) return cached;
+
+  const data = await fetchJson<{ ahead_by: number; behind_by: number }>(
+    `${repoUrl()}/compare/${encodeURIComponent(base)}...${encodeURIComponent(contentBranch)}`,
+    token,
+  );
+
+  const result: BranchComparison = {
+    aheadBy: data.ahead_by,
+    behindBy: data.behind_by,
+  };
+  await setCache(cacheKey, result, BRANCHES_TTL);
+  return result;
 }

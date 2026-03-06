@@ -6,10 +6,15 @@
     branches: string[];
     currentBranch: string;
     defaultBranch: string;
+    labels?: Record<string, string>;
     onSelect?: ((branch: string) => void) | null;
   }
 
-  let { branches, currentBranch, defaultBranch, onSelect = null }: Props = $props();
+  let { branches, currentBranch, defaultBranch, labels = {}, onSelect = null }: Props = $props();
+
+  function displayName(branch: string): string {
+    return labels[branch] || branch;
+  }
   let open = $state(false);
 
   function selectBranch(branch: string) {
@@ -44,7 +49,7 @@
       <circle cx="6" cy="18" r="3"></circle>
       <path d="M18 9a9 9 0 0 1-9 9"></path>
     </svg>
-    <span class="branch-name">{currentBranch}</span>
+    <span class="branch-name">{displayName(currentBranch)}</span>
     <svg class="chevron" class:flipped={open} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
       <polyline points="6 9 12 15 18 9"></polyline>
     </svg>
@@ -62,9 +67,9 @@
           aria-selected={branch === currentBranch}
           data-testid="branch-option-{branch}"
         >
-          {branch}
+          {displayName(branch)}
           {#if branch === defaultBranch}
-            <span class="default-badge">default</span>
+            <span class="default-badge">live</span>
           {/if}
         </button>
       {/each}
@@ -105,7 +110,7 @@
   }
 
   .branch-name {
-    max-width: 120px;
+    max-width: 180px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
