@@ -118,6 +118,25 @@
       </div>
     {/if}
 
+    {#if ev.location}
+      <div class="section">
+        <div class="section-label">Location</div>
+        <span class="location-name">{ev.location}</span>
+        <button
+          class="action-btn map-show-btn"
+          onclick={() => { campaign.setActiveTab('map'); campaign.setSelectedEvent(ev.id); }}
+          data-testid="event-show-on-map"
+          aria-label="Show {ev.title} on map"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+            <path d="M1 6v13l7-4 7 4 7-4V6l-7 4-7-4-7 4z"></path>
+            <path d="M8 2v8l7 4 7-4V2"></path>
+          </svg>
+          Show on map
+        </button>
+      </div>
+    {/if}
+
     {#if ev.relations.length > 0}
       <div class="section">
         <div class="section-label">Relations</div>
@@ -285,6 +304,17 @@
     text-decoration: none;
   }
   .chapter-link:hover { color: var(--gold); }
+
+  .location-name {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .map-show-btn {
+    margin-top: 4px;
+  }
 
   .rel-list {
     list-style: none;

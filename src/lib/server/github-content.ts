@@ -116,6 +116,41 @@ export async function fetchTree(token: string, branch?: string): Promise<TreeEnt
   return contentEntries;
 }
 
+const WORLD_MAPS_TTL = 5 * 60 * 1000;
+
+/**
+ * Fetch blob entries under content/World/ that end with .map (Azgaar FMG files).
+ */
+export async function fetchWorldMapPaths(token: string, branch?: string): Promise<TreeEntry[]> {
+  const b = branch || getDefaultBranch();
+  const cacheKey = `worldMaps@${b}`;
+  const cached = await getCached<TreeEntry[]>(cacheKey);
+  if (cached) return cached;
+
+  const ref = await fetchJson<{ object: { sha: string } }>(
+    `${repoUrl()}/git/ref/heads/${encodeURIComponent(b)}`,
+    token,
+  );
+  const commit = await fetchJson<{ tree: { sha: string } }>(
+    `${repoUrl()}/git/commits/${ref.object.sha}`,
+    token,
+  );
+  const treeData = await fetchJson<{ tree: TreeEntry[] }>(
+    `${repoUrl()}/git/trees/${commit.tree.sha}?recursive=1`,
+    token,
+  );
+
+  const mapEntries = treeData.tree.filter(
+    (e) =>
+      e.type === 'blob' &&
+      e.path.startsWith('content/World/') &&
+      e.path.endsWith('.map'),
+  );
+
+  await setCache(cacheKey, mapEntries, WORLD_MAPS_TTL);
+  return mapEntries;
+}
+
 /**
  * Build slug→repoPath manifest from tree entries.
  * Strips the `content/` prefix for slug generation but keeps it in the value.
@@ -203,6 +238,10 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
       children.push({ title: fileName, href: '/' + slugifyPath(file) });
     }
 
+    if (sectionName === 'World') {
+      children.push({ title: 'Map', href: '/timeline?tab=map' });
+    }
+
     nav.push({ section: sectionName, children } as NavSection);
   }
 
@@ -241,6 +280,39 @@ export async function fetchContent(
 
   await setCache(cacheKey, result, CONTENT_TTL);
   return result;
+}
+
+/**
+ * Fetch raw file content (for large files >1MB where Contents API returns empty content).
+ * Uses Accept: application/vnd.github.v3.raw to get the file body directly.
+ */
+export async function fetchContentRaw(
+  token: string,
+  repoPath: string,
+  branch?: string,
+): Promise<string> {
+  const b = branch || getDefaultBranch();
+  const cacheKey = `contentRaw:${repoPath}@${b}`;
+  const cached = await getCached<string>(cacheKey);
+  if (cached) return cached;
+
+  const encodedPath = repoPath.split('/').map(encodeURIComponent).join('/');
+  const url = `${repoUrl()}/contents/${encodedPath}?ref=${encodeURIComponent(b)}`;
+  const res = await fetch(url, {
+    headers: {
+      ...ghHeaders(token),
+      Accept: 'application/vnd.github.v3.raw',
+    },
+  });
+  if (res.status === 401) {
+    throw new GitHubAuthError('GitHub token expired or invalid');
+  }
+  if (!res.ok) {
+    throw new Error(`GitHub ${res.status}: ${url}`);
+  }
+  const content = await res.text();
+  await setCache(cacheKey, content, CONTENT_TTL);
+  return content;
 }
 
 /**

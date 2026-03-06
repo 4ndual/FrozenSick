@@ -280,11 +280,11 @@
     {#if mode === 'timeline'}
       <!-- Timeline tabs -->
       <nav class="tab-nav">
-        {#each ['timeline', 'graph', 'settings'] as tab}
+        {#each ['timeline', 'graph', 'map', 'settings'] as tab}
           <button
             class="tab"
             class:active={campaign.activeTab === tab}
-            onclick={() => campaign.setActiveTab(tab as 'timeline' | 'graph' | 'settings')}
+            onclick={() => campaign.setActiveTab(tab as 'timeline' | 'graph' | 'map' | 'settings')}
             data-testid="tab-{tab}"
           >
             {#if tab === 'timeline'}
@@ -304,6 +304,12 @@
                 <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
               </svg>
               <span class="btn-label">Relations</span>
+            {:else if tab === 'map'}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+                <path d="M1 6v13l7-4 7 4 7-4V6l-7 4-7-4-7 4z"></path>
+                <path d="M8 2v8l7 4 7-4V2"></path>
+              </svg>
+              <span class="btn-label">Map</span>
             {:else}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
                 <circle cx="12" cy="12" r="3"></circle>

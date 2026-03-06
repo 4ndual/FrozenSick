@@ -30,6 +30,7 @@
       secret: false,
       linkedChapter: '',
       linkedCharacters: [],
+      location: null,
     };
   }
 
@@ -301,6 +302,18 @@
           bind:value={charsInput}
           onblur={syncChars}
           placeholder="Tidus, Nixira, Zacarías…"
+        />
+      </div>
+
+      <!-- Location (for map) -->
+      <div class="field">
+        <label for="ev-location">Location <span class="hint">(place name for map)</span></label>
+        <input
+          id="ev-location"
+          value={draft.location ?? ''}
+          oninput={(e) => { draft.location = (e.target as HTMLInputElement).value.trim() || null; }}
+          placeholder="e.g. Dragon Born, La Última Gota…"
+          data-testid="event-location"
         />
       </div>
 

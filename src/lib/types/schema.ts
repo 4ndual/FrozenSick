@@ -65,6 +65,8 @@ export interface CampaignEvent {
   secret: boolean;
   linkedChapter: string;
   linkedCharacters: string[];
+  /** Optional place name or burg id for showing the event on the map */
+  location?: string | null;
 }
 
 export interface CampaignMeta {

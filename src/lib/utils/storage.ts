@@ -7,7 +7,7 @@ const STORAGE_KEY = 'frozen-sick-timeline-v1';
 const UI_STORAGE_KEY = 'frozen-sick-timeline-ui-v1';
 const GH_SYNC_KEY = 'frozen-sick-gh-sync';
 
-export type ActiveTab = 'timeline' | 'graph' | 'settings';
+export type ActiveTab = 'timeline' | 'graph' | 'settings' | 'map';
 
 export interface TimelineUIState {
   activeTab: ActiveTab;
@@ -22,7 +22,7 @@ export function loadUIState(): TimelineUIState {
     if (!raw) return { ...DEFAULT_UI_STATE };
     const parsed = JSON.parse(raw) as Partial<TimelineUIState>;
     const tab = parsed.activeTab;
-    if (tab === 'timeline' || tab === 'graph' || tab === 'settings') {
+    if (tab === 'timeline' || tab === 'graph' || tab === 'settings' || tab === 'map') {
       return { activeTab: tab };
     }
     return { ...DEFAULT_UI_STATE };

@@ -27,6 +27,7 @@ export const CampaignEventSchema = z.object({
   secret: z.boolean(),
   linkedChapter: z.string(),
   linkedCharacters: z.array(z.string()),
+  location: z.string().nullable().optional(),
 });
 
 export const CampaignTimelineSchema = z.object({
