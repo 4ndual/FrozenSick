@@ -33,8 +33,8 @@
   />
   <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
 
-  <main class="wiki-main">
-    <div class="wiki-content prose" bind:this={container}>
+  <main class="wiki-main" data-testid="wiki-main">
+    <div class="wiki-content prose" bind:this={container} data-testid="wiki-content" aria-label="Wiki content">
       {@html html}
     </div>
   </main>

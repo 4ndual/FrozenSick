@@ -1,0 +1,41 @@
+---
+description: Lessons learned from browser testing — real mistakes to avoid
+alwaysApply: false
+---
+
+# Browser Testing — Mistakes to Avoid
+
+## 1. Clear Vite cache after installing packages
+
+After `npm install` of new packages, the dev server will crash with 500 / 504 errors.
+Always do this before restarting:
+
+```bash
+rm -rf node_modules/.vite
+```
+
+## 2. Flush server cache after changing decode/render logic
+
+Content fetched from GitHub is cached in memory (or Redis). If you fix how content is decoded or rendered, the old broken result is still cached. Flush it:
+
+```bash
+curl -X POST http://localhost:5173/api/webhook -H "Content-Type: application/json" -d '{"ref":"refs/heads/github"}'
+```
+
+Don't waste tool calls debugging "why didn't my fix work" — it's the cache.
+
+## 3. httpOnly cookies can't be set via JavaScript
+
+The `gh_token` cookie is `httpOnly: true`. You cannot set it with `document.cookie` or `javascript:` URLs. Use the server-side dev endpoint instead:
+
+```
+GET /api/auth/dev-token?token=<GITHUB_PAT>
+```
+
+Then navigate to any URL with `#token=<PAT>` and hard-reload to also populate localStorage (needed for Edit/Drafts buttons in the Header).
+
+The test PAT is stored in `.env` as `GITHUB_TEST_PAT`. Read it from there — never hardcode it.
+
+## 4. The Edit button only appears on content pages
+
+Don't navigate to `/` and expect to see the Edit button. The home page has no `sourcePath`. Navigate to a wiki content page like `/chapters/...` to test editing.

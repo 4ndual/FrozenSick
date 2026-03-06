@@ -16,7 +16,7 @@
   });
 </script>
 
-<div class="app">
+<div class="app" data-testid="timeline-app">
   <Header mode="timeline" />
 
   <!-- ── Body ──────────────────────────────────────────────────────────── -->
@@ -26,7 +26,7 @@
       <Sidebar />
     {/if}
 
-    <div class="main">
+    <main class="main" data-testid="timeline-main" aria-label="Timeline">
       {#if campaign.activeTab === 'timeline'}
         <div class="view">
           <TimelineView />
@@ -40,14 +40,14 @@
       {:else}
         <div class="view view-scroll">
           <div class="settings-layout">
-          <div class="settings-nav">
+          <nav class="settings-nav" aria-label="Settings" data-testid="settings-nav">
             <span class="settings-nav-title">Settings</span>
             <a href="#timelines" class="settings-nav-item">Timeline Tracks</a>
             <a href="#event-types" class="settings-nav-item">Event Types & Tags</a>
             <a href="#calendar" class="settings-nav-item">Calendar</a>
             <a href="#campaign" class="settings-nav-item">Campaign Info</a>
             <a href="#data" class="settings-nav-item">Data</a>
-          </div>
+          </nav>
           <div class="settings-content">
             <section id="timelines">
               <TimelineManager />
@@ -81,7 +81,7 @@
         </div>
         </div>
       {/if}
-    </div>
+    </main>
   </div>
 
   <!-- ── Overlays ───────────────────────────────────────────────────────── -->

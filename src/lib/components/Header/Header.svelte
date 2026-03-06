@@ -277,7 +277,7 @@
   }
 </script>
 
-<header class="header">
+<header class="header" data-testid="app-header">
   <div class="brand">
     <a href="/" class="logo" title="Go to home">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
@@ -301,6 +301,7 @@
             class="tab"
             class:active={campaign.activeTab === tab}
             onclick={() => campaign.setActiveTab(tab as 'timeline' | 'graph' | 'settings')}
+            data-testid="tab-{tab}"
           >
             {#if tab === 'timeline'}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
@@ -362,6 +363,7 @@
           onclick={handlePush}
           disabled={campaign.syncStatus === 'saving' || campaign.syncStatus === 'loading' || campaign.syncStatus === 'synced'}
           title="Save changes to GitHub"
+          data-testid="timeline-save"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
             <path d="M17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4z"></path>
@@ -372,14 +374,14 @@
         </button>
       {/if}
 
-      <button class="action-btn" onclick={() => campaign.toggleSidebar()} title="Toggle sidebar">
+      <button class="action-btn" onclick={() => campaign.toggleSidebar()} title="Toggle sidebar" data-testid="toggle-sidebar" aria-label="Toggle sidebar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
           <line x1="9" y1="3" x2="9" y2="21"></line>
         </svg>
       </button>
 
-      <button class="action-btn" onclick={handleImport} title="Import campaign JSON">
+      <button class="action-btn" onclick={handleImport} title="Import campaign JSON" data-testid="timeline-import">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="17 8 12 3 7 8"></polyline>
@@ -388,7 +390,7 @@
         Import
       </button>
 
-      <button class="action-btn" onclick={() => campaign.exportData()} title="Export campaign JSON">
+      <button class="action-btn" onclick={() => campaign.exportData()} title="Export campaign JSON" data-testid="timeline-export">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>
@@ -414,7 +416,7 @@
       {/if}
 
       {#if token && sourcePath}
-        <button type="button" class="action-btn action-btn-gold" onclick={openEditor}>
+        <button type="button" class="action-btn action-btn-gold" onclick={openEditor} data-testid="wiki-edit" aria-label="Edit page">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
             <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
@@ -430,7 +432,7 @@
 
     <!-- Auth section - shows in both wiki and timeline modes -->
     {#if browser && !token}
-      <a class="login-link" href="/api/auth/login?return_to={encodeURIComponent(returnTo)}" data-sveltekit-reload>
+      <a class="login-link" href="/api/auth/login?return_to={encodeURIComponent(returnTo)}" data-sveltekit-reload data-testid="auth-login">
         <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14">
           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
         </svg>
@@ -438,7 +440,7 @@
       </a>
     {:else if browser && token}
       <!-- User avatar/logout -->
-      <button class="avatar-btn" onclick={() => { token = null; localStorage.removeItem(TOKEN_KEY); }} title="Logout">
+      <button class="avatar-btn" onclick={() => { token = null; localStorage.removeItem(TOKEN_KEY); }} title="Logout" data-testid="auth-logout" aria-label="Logout">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
           <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
           <polyline points="16 17 21 12 16 7"></polyline>
@@ -451,32 +453,40 @@
 
 <!-- Wiki Edit Modal -->
 {#if modalOpen}
-  <div class="wiki-edit-overlay" onclick={(e: MouseEvent) => e.target === e.currentTarget && closeModal()} role="presentation">
-    <div class="wiki-edit-modal">
+  <div class="wiki-edit-overlay" onclick={(e: MouseEvent) => e.target === e.currentTarget && closeModal()} role="presentation" data-testid="wiki-edit-overlay">
+    <div class="wiki-edit-modal" role="dialog" aria-modal="true" aria-label="Edit {editPath.split('/').pop()}" data-testid="wiki-edit-modal">
       <div class="wiki-edit-modal-header">
         <div class="wiki-edit-modal-title">Edit: {editPath.split('/').pop()}</div>
         {#if draftBranch}
           <span class="wiki-edit-draft-badge">Draft</span>
         {/if}
       </div>
-      <textarea class="wiki-edit-textarea" bind:value={editContent} oninput={handleEditorInput} rows="20"></textarea>
+      <textarea class="wiki-edit-textarea" bind:value={editContent} oninput={handleEditorInput} rows="20" data-testid="wiki-edit-textarea" aria-label="Page content"></textarea>
       <div class="wiki-edit-actions">
         {#if draftBranch}
-          <button type="button" class="wiki-edit-cancel" onclick={discardDraft}>Discard</button>
+          <button type="button" class="wiki-edit-cancel" onclick={discardDraft} data-testid="wiki-discard">Discard</button>
         {:else}
-          <button type="button" class="wiki-edit-cancel" onclick={closeModal}>Cancel</button>
+          <button type="button" class="wiki-edit-cancel" onclick={closeModal} data-testid="wiki-cancel">Cancel</button>
         {/if}
-        <button type="button" class="wiki-edit-save" onclick={saveEdit}>
+        <button type="button" class="wiki-edit-save" onclick={saveEdit} data-testid="wiki-save-draft">
           {draftBranch ? 'Save Draft' : `Save`}
         </button>
         {#if draftBranch && wikiSyncStatus === 'saved'}
-          <button type="button" class="wiki-edit-publish" onclick={publishDraft} disabled={publishing}>
+          <button type="button" class="wiki-edit-publish" onclick={publishDraft} disabled={publishing} data-testid="wiki-publish">
             {publishing ? 'Publishing…' : 'Publish'}
           </button>
         {/if}
       </div>
       {#if message}
-        <div class="wiki-edit-msg" class:wiki-edit-msg-ok={messageOk} class:wiki-edit-msg-err={messageErr}>
+        <div
+          class="wiki-edit-msg"
+          class:wiki-edit-msg-ok={messageOk}
+          class:wiki-edit-msg-err={messageErr}
+          data-testid="wiki-status-message"
+          data-status={messageOk ? 'success' : messageErr ? 'error' : 'idle'}
+          role="status"
+          aria-live="polite"
+        >
           {message}
           {#if prUrl}
             — <a href={prUrl} target="_blank" rel="noopener noreferrer">View PR</a>

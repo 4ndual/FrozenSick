@@ -40,6 +40,7 @@
   class="wiki-sidebar"
   class:open={sidebarOpen}
   aria-label="Wiki navigation"
+  data-testid="wiki-sidebar"
 >
   <div class="sidebar-header">
     <a href="/">Frozen Sick</a>

@@ -34,6 +34,9 @@
     class="branch-btn"
     onclick={() => (open = !open)}
     aria-expanded={open}
+    aria-haspopup="listbox"
+    aria-label="Select branch"
+    data-testid="branch-selector"
   >
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
       <line x1="6" y1="3" x2="6" y2="15"></line>
@@ -48,13 +51,16 @@
   </button>
 
   {#if open}
-    <div class="branch-dropdown">
+    <div class="branch-dropdown" role="listbox" aria-label="Available branches">
       {#each branches as branch (branch)}
         <button
           type="button"
           class="branch-option"
           class:active={branch === currentBranch}
           onclick={() => selectBranch(branch)}
+          role="option"
+          aria-selected={branch === currentBranch}
+          data-testid="branch-option-{branch}"
         >
           {branch}
           {#if branch === defaultBranch}

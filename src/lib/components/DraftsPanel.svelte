@@ -68,7 +68,7 @@
 </script>
 
 <div class="drafts-wrapper">
-  <button class="drafts-toggle" onclick={toggle} title="Your drafts">
+  <button class="drafts-toggle" onclick={toggle} title="Your drafts" data-testid="drafts-toggle" aria-expanded={open} aria-haspopup="true" aria-label="Your drafts">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
       <polyline points="14 2 14 8 20 8"></polyline>
@@ -82,7 +82,7 @@
   </button>
 
   {#if open}
-    <div class="drafts-dropdown">
+    <div class="drafts-dropdown" data-testid="drafts-dropdown">
       <div class="drafts-header">Your Drafts</div>
       {#if loading}
         <div class="drafts-loading">Loading…</div>
@@ -90,7 +90,7 @@
         <div class="drafts-empty">No unpublished drafts</div>
       {:else}
         {#each drafts as draft (draft.branch)}
-          <div class="drafts-item">
+          <div class="drafts-item" data-testid="draft-item-{draft.branch}">
             <span class="drafts-label">{draft.label}</span>
             <div class="drafts-actions">
               <button
@@ -98,6 +98,7 @@
                 onclick={() => publishDraft(draft.branch)}
                 disabled={discarding === draft.branch}
                 title="Publish"
+                data-testid="draft-publish-{draft.branch}"
               >
                 Publish
               </button>
@@ -106,6 +107,7 @@
                 onclick={() => discardDraft(draft.branch)}
                 disabled={discarding === draft.branch}
                 title="Discard"
+                data-testid="draft-discard-{draft.branch}"
               >
                 Discard
               </button>
