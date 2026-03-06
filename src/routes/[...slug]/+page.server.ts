@@ -102,6 +102,8 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
       cookies.delete('gh_token', { path: '/' });
       throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
     }
+    // Log so Vercel/serverless logs show the real cause (e.g. GitHub API timeout, rate limit, missing content)
+    console.error('[slug] load error', url.pathname, err);
     throw err;
   }
 };

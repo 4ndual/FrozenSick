@@ -1,5 +1,10 @@
 import { marked } from 'marked';
-import DOMPurify from 'isomorphic-dompurify';
+
+// isomorphic-dompurify is NOT imported here so it never loads on the server (Vercel Node).
+// It pulls in html-encoding-sniffer → @exodus/bytes (ESM), which causes ERR_REQUIRE_ESM.
+// Server uses renderMarkdownServer(); client uses renderMarkdownClient() via dynamic import.
+
+marked.setOptions({ gfm: true });
 
 marked.use({
   renderer: {
@@ -41,11 +46,43 @@ const ALLOWED_ATTR = [
   'open',
 ];
 
-export function renderMarkdown(md: string): string {
-  const raw = marked.parse(md) as string;
+function toRaw(parsed: string | Promise<string>): string {
+  return typeof parsed === 'string' ? parsed : String(parsed ?? '');
+}
+
+/**
+ * Server-safe render: marked + minimal strip only. No isomorphic-dompurify (avoids ESM deps on Vercel).
+ * Use for SSR. Client will run full sanitization on hydration.
+ */
+export function renderMarkdownServer(md: string): string {
+  const raw = toRaw(marked.parse(md));
+  return serverSanitize(raw);
+}
+
+function serverSanitize(html: string): string {
+  return html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, '')
+    .replace(/\s on\w+\s*=\s*["'][^"']*["']/gi, '')
+    .replace(/\s on\w+\s*=\s*[^\s>]*/gi, '')
+    .replace(/javascript:\s*/gi, '');
+}
+
+/**
+ * Client-only: full sanitization with DOMPurify. Dynamic import so server never loads it.
+ */
+export async function renderMarkdownClient(md: string): Promise<string> {
+  const raw = toRaw(marked.parse(md));
+  const DOMPurify = (await import('isomorphic-dompurify')).default;
   return DOMPurify.sanitize(raw, {
     ALLOWED_TAGS,
     ALLOWED_ATTR,
     ALLOW_DATA_ATTR: false,
   });
+}
+
+/**
+ * Sync render for components. Use on server (SSR) and as initial client value; client upgrades via renderMarkdownClient.
+ */
+export function renderMarkdown(md: string): string {
+  return renderMarkdownServer(md);
 }

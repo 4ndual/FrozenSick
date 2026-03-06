@@ -42,6 +42,7 @@ Without `role="dialog"` an overlay is just a div — agents can't find it as a l
 - Modals: `role="dialog"` + `aria-modal="true"` + `aria-label="..."`
 - Dropdowns: `aria-expanded` + `aria-haspopup="true"` on the toggle
 - Listbox patterns: `role="listbox"` on the dropdown, `role="option"` + `aria-selected` on items
+- **Sibling dropdowns must auto-close.** If two dropdowns share the same header (branch selector, DraftsPanel), opening one while the other is open creates a 6-tool-call dismissal dance. When a toggle opens, close all sibling dropdowns first.
 
 ## 4. Prefer API verification over screenshots
 
@@ -193,3 +194,6 @@ Problems that cost 8+ tool calls to diagnose the first time. Read this section B
 | Element exists in DOM with correct attributes but missing from accessibility tree | CSS `visibility: hidden` or `display: none` on the element or an ancestor | Check: `getComputedStyle(el).visibility` and `getComputedStyle(el).display`. Also check: `el.closest('[aria-hidden="true"]')`. |
 | Element appears in snapshot but with `nth` index instead of a name | Multiple elements share the same accessible name | Add unique `aria-label` incorporating the item's identity (e.g., `"Edit {name}"` instead of just `"Edit"`). |
 | `scrollIntoView` doesn't bring element into viewport | Element is inside a nested scrollable container | Use a duplicate button in the main content area, or scroll the inner container explicitly with `browser_scroll` targeting the container ref. |
+| Server sends correct prop but UI element doesn't render | Svelte `$state` initialized from prop may not hydrate correctly when combined with `{#if browser}` guards or `$effect` resets | Check `$state` initialization and any `$effect` that overrides it on mount. See `browser-testing.mdc` rule 8. |
+| HMR clears localStorage, auth UI buttons disappear | Vite HMR reloads the page, clearing `localStorage`. Cookie survives but client-side UI reads from `localStorage`. | Re-authenticate with `/#token=<PAT>` after every code change, BEFORE checking results. See `browser-testing.mdc` rule 3. |
+| Dropdown content not visible in accessibility snapshot | Dropdown renders content that lacks ARIA roles | Ensure dropdown content has `role="listbox"` or `role="menu"`, and items have `role="option"` or `role="menuitem"`. |

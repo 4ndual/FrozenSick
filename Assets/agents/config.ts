@@ -10,6 +10,10 @@ export const MODELS = {
   attribution: "gemini-3-flash",
 } as const;
 
+// Bug-fix agent (GitHub issue → code change)
+export const BUG_FIX_TIMEOUT_MS = 300_000; // 5 minutes
+export const MODELS_BUG_FIX = "auto" as const;
+
 // Phase 2 models
 export const SUMMARY_MODELS = {
   narrator: "sonnet-4.6",
@@ -34,6 +38,9 @@ export const PROMPTS = {
   metaRemoval: join(AGENTS_DIR, "meta-removal-prompt.md"),
   attribution: join(AGENTS_DIR, "attribution-prompt.md"),
 };
+
+// Bug-fix prompt (script injects issue number, title, body, url)
+export const BUG_FIX_PROMPT = join(AGENTS_DIR, "bug-fix-prompt.md");
 
 // Phase 2 prompts
 export const SUMMARY_PROMPTS = {
