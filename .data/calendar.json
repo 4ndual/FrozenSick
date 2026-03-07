@@ -1,7 +1,7 @@
 {
   "name": "Calendar of Harptos",
   "yearSuffix": "DR",
-  "epoch": 1489,
+  "epoch": 150,
   "months": [
     {
       "id": "hammer",
