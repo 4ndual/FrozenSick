@@ -2,7 +2,13 @@
   import { page } from '$app/stores';
 
   let currentPath = $derived($page.url.pathname);
-  let mode = $derived(currentPath.startsWith('/timeline') ? 'timeline' : 'wiki');
+  let mode = $derived(
+    currentPath.startsWith('/timeline')
+      ? 'timeline'
+      : currentPath.startsWith('/maps')
+        ? 'map'
+        : 'wiki',
+  );
 </script>
 
 <div class="mode-switcher">
@@ -31,6 +37,19 @@
       <circle cx="18" cy="12" r="2" fill="currentColor" stroke="none"></circle>
     </svg>
     Timeline
+  </a>
+  <a
+    href="/maps"
+    class="mode-btn"
+    class:active={mode === 'map'}
+    aria-current={mode === 'map' ? 'page' : undefined}
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+      <path d="M1 6v13l7-4 7 4 7-4V2l-7 4-7-4-7 4z"></path>
+      <path d="M8 2v13"></path>
+      <path d="M15 6v13"></path>
+    </svg>
+    Map
   </a>
 </div>
 

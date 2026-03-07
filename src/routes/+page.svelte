@@ -64,6 +64,7 @@
     branch={data.branch}
     defaultBranch={data.defaultBranch}
     branches={data.branches}
+    branchLabels={data.branchLabels}
   />
   <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
 

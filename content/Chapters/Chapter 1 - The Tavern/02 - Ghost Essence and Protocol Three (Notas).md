@@ -1,0 +1,332 @@
+
+La cama Head. Para ver si hay dos misiones que tengo que hacer enfocado en ti.
+
+Hijo de puta vida, pero qué pasó en blanco? Bueno, ya las siguientes sesiones van a ser enfocadas en desarrollar el olor de tu personaje, entonces vete pensando con su historia. Y en vista que todos los personajes secundarios están o fueron? Saca el bolsillo. Esencia esencia de fantasma y la bota así.
+
+Y ustedes ven como toda la cueva tabernas oscurece todo el mundo. Y empiezan a la escuela de empezar corriendo información. Ustedes están viendo como todas las sombras se está moviendo. Porfa saca todos los cubitos.
+
+No van a poder hacer nada contra esto. La ciencia de oscuridad se lanzaron hacia el une. Y el uno de lo único que no puede hacer es que como ya no es paladín ya no tiene producto de porción Santa y al tener tanta fuerza espiritual la esencia de fantasma fue directamente hacia él como una especie de parásito que te duerme como una especie de bella efecto bella durmiente y le dio de llenos.
+
+Ustedes ven como las ballestas se desaparecen porque pues eran y una y cada medio dormido tipo tiene demasiado pobre. Todavía está resistento.
+
+Oficialmente, estamos en combate. Entonces 1 2, 3 4. Es que pasamos directa para rtinas cuatro listo, Entonces nada ahí mueren 21. Pues Zacarías, estamos en combates párate Primero que todo y solo te caer en acción porque una acción es para. Entonces ya después?
+
+Dónde verga? Es que miraba eso. No necesitas Mochis? Yo tengo un pueblecito de invocar. Un animalito. Puede ser hechizos? Encuentra familiar habla con animales.
+
+Ah no, sí es esta tienes el servicio. Un familiar no espíritu en forma de animal. Puedes elegir un murciélago, un gato, una rana, un halcón, una lagartija, un pulpo, un búho, una rata, un Cuervo, una araña. Qué es un? No sé bueno, una especie de mascota va a ser un Cuervo de ojos azules como los míos lejos verdes, digo eso?
+
+Okay! Y lo invoco. Listo está Y lo ordeno que que de vuelta? Eres branda alrededor de ese modelo a partir de tu posición máximo 6 casillas, pero que ya estamos en combate como que entonces uno dos tres cuatro cinco seis listo. Dos acciones.
+
+Yo tengo. Ya tengo puesto. Este momento puesto tienes? Podrías votar El Faro el Facebook? Tienes tus dos dagas y lo que pueda castrear sí. No me vas a engañar como que tengo de Facebook. Pimentalmente no los tengo preparados, no los puedo lanzar.
+
+Vamos a sacar este pero siéntense. Dale!
+
+Qué pasó?
+
+Les toca? Va a lanzar? Phantom Sound. Que es un sonido instantáneo? Es original un punto donde Yo elijo. Igual sonar el trueno más doble 70 hijo de puta. En los oídos del calvo. Para dejarlo desorientado. Está intimidando la intimidación dado de 20 más? O lo estoy dejando entonces dado de 20 + 3?
+
+Mostrar. Cuándo fue? 12. El tipo tiene en Constitución. 14. Estúpida segunda acción. Ah sí, pero ahorita.
+
+Minuto un minuto por favor. Pues estamos romántica no.
+
+Para que esta relación.
+
+Cómo funciona esto? Y para eso es que funcionan reloj.
+
+No me gusta Bueno lo intentó.
+
+No. Esta escena como chispas como? Y tipos de terrier.
+
+Hoy no he visto. Cuánto me puedo mover? Y si la tienes 30 que son seis casillas me puedo mover?
+
+No es mi salida, eh a esconderme detrás esta vez esta acá. Eh me escondo detrás esa mesa y intento haciendo un esne. Una intento pegarle, pero más importante que pegarles que no Él no sepa es donde salió el ataque y aprovechó, pues que está ella. Creo que les estaba diciendo.
+
+Entonces hay gente que pasó ahí y él se rió entonces. Entonces le lanzo la haga apuntando directamente a. A su frente dado de 20 primero y tienes un lo que sumas y tengo que tirar y creo que salga No esperaba. Es que primero tenemos que ver si le das porque ni siquiera había.
+
+Pues claro.
+
+Tienes más tres en tres pero lo hacen más tres. Oye se siente lo que hace es que es tu Barrera para que te vence a ti y al multiplicar eso que les hemos saltado como eres pícaro, tienes ventaja lanzando cosas? Tienes un más cinco por solo lanzarla a dar como Estas haciendo con destreza?
+
+Tienes otro más tres? Entonces tienes un más ocho a lo que salga Tomás b120 Cuando fue? Igual nunca tipea lanzar porque tiene más cinco de base le da 8. 9. Lanzas la daga y la daga clavada en contra de la mesa. El tipo coge la da que se la guarda rápido al bolsillo.
+
+Perdonar Tengo cinco Gracias toda su frente y bueno lado en todo la vuelta.
+
+Es que un d6 tututu es un dado de cuatro, ya se lo suma. 3.
+
+La pirámide. El Man lo rojo así.
+
+Aquí sí, ya Estamos dándole ganas. En turno? Saca su ballesta ligera. Apuntar y Sira. Pensando que tú estás. Goblins. Apunta. Con mis goblins no. Disparo tengo más 50 que esa distancia y cuánto tienes en constitucional si te doy.
+
+Ya voy. 10 constitución.
+
+Y me daño es un lado de 2 + 3.
+
+Pa te dispare y te clavarela el pivote en una pierna fácil. Me dio. El dolor de desmayo.
+
+Mierda claro, soy nivel uno. Hijo de. Se me había olvidado por completo. Chicos están sus manos. Yo la vi toda. Secuestra dormir. Me estoy muriendo a ti.
+
+Bueno, recuerda que ya estoy detrás de una mesa. Sí, Cuánto tienes en armón Class?
+
+Disparo. Banda 7 de daño. Lo mismo. Te atravesó literalmente tienes un agujerito. Está tienes daño sangrante. Y de para que me va a ocupar ese?
+
+Quedó mayor también el no no. Va Zacarías ya listos acciones el que ha desmayado. O sea que yo soy único? Bueno si entendí bien Esto voy a hacer lo siguiente.
+
+En mi primera opción utilizó la dimensión de bolsillo que consiste en una acción mágica donde puedo? Despedir al Cuervo a una dimensión de bolsillo temporalmente y con la otra opción. Puedo hacerlo hacerlo? Reaparecer un espacio vacío A menos de 30 pies de ti. Es la misma acción utilizados. Entonces uno?
+
+Si son máximos profe que les estás publicando entonces desapareces. Ya voy para allá, Es que exactamente Dónde está. Yo te entiendo otra cosa, quise tu conciencia ampliada hacia otro cuerpo. Tu cuerpo puede volar? No tienes que desaparecerlo, pero lo desaparecí por algo tener sentido alrededor de los 30 pies en dónde?
+
+Porque le dijiste que en el mismo lugar le digo un dos tres cuatro cinco seis siete ocho nueve y 10 11 12. Cómo así es que como es una casilla. Hijo de puta lo sabía eso, yo pensé que era duro. Verga. Entonces me podría dar máximo? Un dos tres cuatro cinco.
+
+Cuánto sería lo máximo entonces? Normalmente. Seis no ciempiés dice. El familiar su ubicación. Bueno entonces no le. Ya lo tienes.
+
+Y me queda otra opción. Sale mi cuerpo volando. Y con sus garras agarra el goblin. Sale volando y hace así como si fuera como si fuera un avioncito lanza pavo. Y y bueno. Con la telepatía no sé si la puedo extender también al a al cuerno para lanza un dado a 20 contra.
+
+Cuánto me salió? Eh No sé cuál oír la sal, ahí está. Ocho la madre 19. Deja algo limpio. Lo único que hiciste fue regañarle. Los aombitos al pobre gole el gol.
+
+No me sale nada, no me salió ni mierda en este parte. Vete a lo básico no te enredes, no te robas.
+
+Yo soy demasiada. Tienes que lanzar Acuérdate que estás en tiras de salvación con el dadito negro para ver si es un éxito en fracaso. Ay jueputa vida. A ver si es necesario. Tiene hermana gemela. Yo no pienso volver a quedar personajes. No espera. Espera espera. Se saca el bolsillo, una poción de curación y verá empieza Bueno terminó siendo tan mal lo que dice.
+
+Sube sube 18. Vamos! Era una poción súper. Pues entonces hijo de puta Es que toman? Lágrimas de Dios tenía.
+
+Y es mentalidad literalmente los humanos el hijo de puta goblin te inyectó adrenalina. Sí, sí. Entonces tienes una suerte de escudo? O sea, está entraste como con los bárbaros stanis en estado Frenesí y tienes 10 puntos de protección de fennessy y como se hacen trenes y tienes tres acciones.
+
+La siguiente acción te queda una acción. La primera fue Rosita salió rota. Para eso eran los goonies para ayudarlos a que no los pequiniara. Mis mejores amigos.
+
+Sí, puedo poner con una ensalada.
+
+Como mi última acción? Agarró una de mis dagas y la rojo para intentar darle en las partes del cuerpo que se le ven. Qué se le ve la cabeza? Los brazos apuntando la cabeza. Ya sabes? Tienes que esperar primero con un de 20 a 14 para poder meterle daño.
+
+Por eso no hay que pelear. No. Peleen. Es que tengo miedo. Usando sigilo me muevo detrás de él. Mientras yo le lanzaba la daga.
+
+Uso mi s. Niga tag para asesinar. Okay. Cómo te acercarse de forma así los a pegar daño de lesliegue.
+
+Tenía miedo pero ya no tenía miedo, pero ya no tenía miedo, pero estaba mirando todo esto. El maestro con daño es tan grande. Cada turno van pasa a perder un dada 4 adicional a lo que suceda cuando lleguemos a tu turno. Bajando el daño entonces en este momento le quitaste otros cuatro y acuérdate que cada vez que llegamos a tus turnos del tipo vas a ir al prójimo, va perdiendo otros cuatro.
+
+Tu segundo ataque.
+
+Okay.
+
+Bueno o sea yo tengo se supone que si va estando detrás de él. Le clavé. Pues si yo tengo dos dagas. Y tengo para pelear. Con un Samsung. Y pues le lanzo. Por detrás. A terminar de apuñalarlo. Y. Y mover la toda la información ya no va a recibir el ataque sino.
+
+No tres fallas uno. La segunda.
+
+De cuatro más tres de cuatro más tres.
+
+Cuatro siete. Buenísimo! Va Zacarías.
+
+Bueno, si las voy yo sí te saltaste. Yo no le iba a decir yo. Sacando la espada.
+
+Entonces da 20 tuvo el 180 Cuánto es 13.
+
+Esta gente a ti esta fue a sacar la espada y la espada de entrastavillo y se había probabilidad. Entonces dos dados de cuatro porfa. Las dos más tres.
+
+Hijo de puta no se muere.
+
+Como el tipo se medio resbaló cuando fuiste a apuntar el cuello. Todo tan buena suerte que le termine. Este fue clavando aquí como el esternón, Entonces como aquí tenía la armadura de placas, lo que hiciste fue romperle el pecho de la armadura y rasguñarle el pecho. Entonces tipo sabe como que ya se está ahogando porque se está inflamando la sangre.
+
+El Man al verse al verse tan como atacado, lo que hizo fue voto la voz ballesta la cara o tú obviamente rápido la tuviste, pero se desvió entonces muero tres casillas en la puerta.
+
+Yo tengo algo planeado. Si sobrevive se van a cagar de la risa.
+
+Utilizo! Mi hechizo de. De cómo es que se llama de ilusión menor entonces? El calvo escucha que queda fuera está la voz de su superior de las dragonforce y le dice. Dale dale tú Dale. Oye la capa se le puede quitar? Wow. Y y le dice. Acaso eres imbécil que estás haciendo ese desorden en la en la en la taberna de mi amiga de mi amigo milady?
+
+Ahí también se utilizó mi habilidad de engaño que tengo. Creo que considerable y le dice. Eh entonces insolente disculpate suelta tu armate y arrodíllate ante ante ante estos honorables. Guerreros Qué tanta intimidación tienes o carisma, pero pues hay que tanto se la come on 2 + 5 7. El tipo se voltea y está muy asustado o sea ya.
+
+O sea se voltea? Suso la belleza que me cae en la mano obviamente cargado tiene un virus de cargador, Pues nada le disparo directo a la cabeza dado de 8 + 3 que es el daño de la valla. Esta ligera que tenía él. Cuál es el ocho? Perdón! No es de porcentaje.
+
+Perdón.
+
+Ahí puedo también utilizar mensajes de oportunidad, no? No solamente los voy a utilizar. Pero tengo mi cuervito. Y ese es como una extensión de sentidos para mí. Yo estoy viendo todos los mensajes. Y el tipo Ya entró en Frenesí porque tiene menos del 30% de la vida. Entonces tiene la flecha para abajo, pero con su cuerpo se endureció.
+
+Simplemente se quedó segundo y el Man estaba mirándote de forma ensangrentada de ahora adelante todo daño que pegue se multiplica por dos porque están Frenesí. Sí, pega daño listo entonces En qué ivamos? Pausa.
+
+Entonces! Recién drogada. Con mucha adrenalina en mi cuerpo me levanto. Veo todo lo que está pasando y veo que el Man se está empezando a poner más peligroso de lo que ya estaba. Y entonces agarró Mi banda de enanitos.
+
+Les explico mi plan bueno Mientras te vas a pasarles expliqué mi plan. Entonces! Aquí todo sombrero. Lo importante porque yo tenía el sombrero puesto. Y. Agarró mi capa y me la pongo como pañoleta. General, la pañoleta tiene el logo de la última la última porque? Entonces me quedo con mi pañoleta.
+
+Y vamos a hacer distracción? Entonces empiezas a sonar esto.
+
+Y nos vamos.
+
+Y vamos avanzando mientras cantamos y bailamos. Es que del sabor se me cayó la base. Y lo vamos a Corral en lo va a acorralando medida que vamos avanzando. Así está cercando.
+
+Entonces con taumaturce? Usa otra vez el glooming Boys y empiezo a gritar tan fuerte para que el tipo no pueda Escuchar nada más y captar 100% de su atención. La Constitución entre es 14.
+
+Más tres no nada. Entonces arranca tu turno? Lo primero Pues el tipo sigue sangrando por el daño que le dejaste sangrante. Entonces ya le apliqué los más cuatro y que quieren hacer. Yo quería esconderme pero.
+
+No te está mirando. Yo de sangrado ahí como. Para irme por detrás de él, pues en el momento que estoy haciendo moviéndome pues dejó la ballesta y todo mi sala así. Ya sabemos que dura. Bueno, estamos de pie.
+
+Y repito mi ataque dos dados de 20 para ver si los dos entro porque aquí pues sí normal. Qué tipo de frenesino?
+
+Como una payoy con la otra pipeaste, el tipo lo duro dársela, vuelta y lanzó a como atajar de las piernas. Obviamente entra yo tengo cuánto daño pega.
+
+Entonces es un de 6 + 3? Tres y tres seis de año como uno. Qué haces allá? Antes de de caer ahí.
+
+El tipo de la situación. Coger bolsillo. Y vota humo negro. Otra oscuridad Suprema en la oscuridad Suprema la verdad. Se mueve? Cuánto se mueve? 6. Más lo que tenga el meta de falta. Saliendo. 1. 2. 3. 4. 5. 6. 7 8. Porque nuestro guardia está en la cocina. Por movimiento.
+
+Naranja naranja una acción podría ser llegar por lo menos hasta la puerta. Bueno, voy a hacer algo. En la primera. Alegría Macarena que tu cuerpo corriendo.
+
+Y. Salgo acá eso no es una salida. De hablar con animales. Siempre prote. Y en el radio que tengo para utilizar ese poder. Le digo a los a los lobos que se acerquen y ataquen a el pirobo. Desde ese momento cómo va pasando en el hecho de cierto? Estamos en el desierto.
+
+En tu segunda opción va a ser.
+
+Madre mía. Verga Gómez. Bueno, me queda una acción.
+
+Y como yo no soy un combate en mi cuerpo, Yo también se puede mover el doble no? Y la distancia solamente es para. Solamente es esto así hacia allá no? Pero no para arriba. Entonces! Mi cuerpo. No toques al mismo sitio para eso, pues no sé cómo sacar. Es el de 20 no?
+
+Dicho fuera una guitarra. Ni una hora.
+
+Dejamos música. Déjame música. Mierda eso es un turno desperdiciado. Pero eso a la como el. Qué quiere decir Dios mío? Por favor.
+
+Deja mis músicos. Ay genial, ya salió cuánto tengo de movimiento? Cinco me dijiste.
+
+Okay. Okay okay. Entonces! Alejo El Cuervo.
+
+Dónde quedó mi cuerpo? Ya Todo va a estar bien llorando Las cuñaditos. Cuando los músicos que me quedan. Pero solo dos. Les digo chicos por favor cuidan de mi amigo. Es importante que se cure. Háganlo por mí por favor. Y salgo? Y antes de lanzar déjame ver una cosa.
+
+Por favor y gracias. Tú Mientras tanto el daba 20 porque esto está pasando en su también rocoso. Decoración La poción la poción la roja. Bueno espérate.
+
+Ah 120 pies Cuánto son $120? 24 Casillas. Listo, entonces estando acá en la puerta? Fútbol. 14 constitucional. Dame un dado bueno.
+
+Lanzaste el fatbull y le terminaste blusa una pierna pero sin hacerle daño y le está fallaste la otra porción de oscuridad. Entonces no sé por los lados. Zacarías esta re constituido, ya estás de pie. Estaba oscuridad. Ya no te enseñar. Cuidado con mis músicos. Nada salgo corriendo a full speaker si lo puedo.
+
+Igual llegas y de un polvo negro, pero pues tú sabes qué mal está ahí porque justo saliste cuando las. Podrías hacer una tirada de lanzar algo con desventaja? Porque realmente no hay forma que lo veas. Cómo se dice pan? No se disipa cuando se deshila. Y Qué forma tiene la oscuridad?
+
+Como cuantas de cinco piezas alrededor o sea de cuenta que hay una pared chica? Mira como encantes to disparas y se disipa no mentiras. Pues nada eh Hoy es mi día de suerte y lanzó dos Listo lanza dos dados de 20 bueno cuatro a dos de 20 no porque dice que lanzas desgadas Si esto estaba así contrados son los rojos.
+
+Por eso lo tiene el dmc cuando es más balanceados.
+
+8 12. Hizo uno juego gotaste el daño de la un dado de 4 + 3. Y acuérdate que sigue con daño sangrar Pero entonces tienen alta probabilidad de. Tenerlo 2 + 3 - 5. Vamos a ver qué pasó. Uno exacto de vida, pero está tan vuelto mierda que cada desmayaron toda la punta de la esquina del tablero.
+
+Ya le voló algo? Un tipo está ahí sangrando.
+
+Pues nada, luego te arena oscuridad y ya ya disipando y ya lo estáis botado el tipo todo sangrado, pues tu mierda mirando tengo. Agarra sin el piso eh primero lo desarmo o sea revisión y no tenga nada. Y le agarró la mano y le empiezo a hacer así porque te golpea.
+
+Por qué te golpeas? Cuando ves se te da un poquito de ganas? Simplemente es y las heridas que le echas en el cuello escuchas como.
+
+Y se murió? Sí, pues no ganamos nada. Ah, pensé que era más resistente. Bueno lo tengo acabar listo. Ah No mentira yo no me puse esa.
+
+No robar todo lo que desee me lo de valor. Le empiezas a revisar todo y tienes eh. El equipo recuperable es la cimitarra la ballesta siete piezas del plan de 14. Ya te las voy agregando en la cama ya está. Cuatro de cobres. Y está esperando que ya te estoy inventando lata.
+
+Hoy hice una moneda de oro un siete de plástico de tres cobre. Cómo se llaman las ballestas en inglés y yo perdí? No me acuerdo. Mira una semita Remo Como la de los piratas?
+
+Perdón al backpack, te lo coloco, Ya te la agregué y la cimitar que me imagino que se escribe. Están tiradas ahí al piso las flores, Pero obviamente ustedes con reconcillos. Qué putas no aparece la cimitarra, me averiguaste.
+
+Imitar.
+
+Sí, todos igual. Listo Tú ya tienes el otro porque los bloqueaste la cimitarra del Cross go hands y el dinero. Oigan y Luna. Quién sigue yo? Ahí acabamos ronda entonces. Bueno, muchachos Agarra multicines para que lo sepas. Draco y se espanta y LG. Rainbow. Lgbt.
+
+Keyla por qué? Bueno ya no tengo que hacer la historia que iba a hacer con él pero está. Con quién con el?
+
+Creo que nos tardamos mucho. No había visto lo que tú tenías aquí.
+
+Quién quiere una referencia? Yo echamos a la nevera. Quieres agua? No tenemos.
+
+Asusta Alguien sabe que sigues vivo y por todo lo que pasó en la taberna probablemente estén en este momento corriendo a contarlo. Usted puede usted ya determinó? Quién era redo yo puedo inventar Quién era tú? Puedes inventarte más dando datos y yo te voy a hacer no sabe.
+
+De que esto sea muy interactivo con ustedes, Pues porque ustedes también elijan su lo los nombres enemigos a la vuelta y en tu caso videos, pues para popa arpa diezca podrá pues ambos en dirección supuestos entonces hay dos misiones. Tienes que pensar Por quién vas primero si por el noble que es proveedor de la taberna o si vas por tracus que salgan.
+
+Listo chicos! Les dejo aquí la verdad. Bodas artistas recortan la experiencia con quien los vamos a participar en forma de situación. Quién estaría acuerdo en eso? Cierto! Si quieren salsa de tomate aquí como 8,000 salsas de tomate.
+
+Espero que les hicieron al menos uno de año recién. No me parece un ministerio justo. Más los tres que mataron con la ballesta son 20 por cada chiquitico. Este era bastante seria 80 experiencia cada uno. Ya se la salimos. Por favor y gracias. Igual le voy a escribir por si acaso.
+
+Nos parece Para qué sirve? Entonces cuánto? 300 experiencias.
+
+Asustado asustado.
+
+Que me tengo que buscar otro enemigo? O me vas a sumar más gente de? Del pelo de las siete. Mira esta sesión. Una era para ver por dónde empezaron a caminar la campaña porque no puedo desarrollar el orden de los tres a la vez, entonces pues ya ahí ustedes tienen como equipo.
+
+Retomanos justo en este punto acabaron de básicamente matar al Man y se volviera otra vez. La deja no está muerto, no tengo ni idea Quién era discutan. Qué quieren hacer? O sea están la situación ya hay yo no les puedo rolear decían como equipo. Que quieren hacer ya mismo?
+
+No literalmente el mensaje de morir. Me voy obviamente de chismosa. Sentado encima. Las armas te las vas a quedar todas?
+
+Bueno tidus. Bueno tíos, tuviste El golpe final? Me parece que eso te hace merecedor de De de ese look de las armas, pero creo que todos pusimos un gran esfuerzo aquí. Utilizando mi alta capacidad de persuasión. Vamos a ver. Carismáticos. Propongo que. Que como primera primero primero digo a usted toda la pausa.
+
+Todas las armas del ludia son Pero entonces el dinero el dinero lo repartimos entre entre yo y Mai Melody. Eso como primera oferta para luego. Como para luego ya decir bueno en últimas lo dijimos el dinero también entre los tres comiendo. De ahí se puede lanzar paso o qué?
+
+Zacarías porque está sociando. Quedé como si quería aullando en la esquina de allá.
+
+Larga historia.
+
+El viejo simplemente está un poco desmayado, pero nada que un descanso le le pueda mejorar pero. Pero entonces reportamos de una vez el dinero.
+
+Le tiró Dos monedas de Corea Zacarías Y le doy Dos monedas de plata. Amén.
+
+Tosa con el rollo de las monedas. Como estamos fuera de combate puedo utilizar los hechicitos así como fum super. Ah bueno entonces por favor mi cuerpo en un ratoncito. Y ese Ratoncito sigilosamente como tiró las monedas. Yo no voy a recoger esa monedas pero mi ratoncito. Sí que nadie se dé cuenta agarra las dos moneditas.
+
+De cobre.
+
+Y me las entrega ahí y se me sube a mi inventario. Pero yo no se dieron cuenta. Necesita que sean de petit?
+
+Pues si tú te quieres quedar aquí. Por mí no hay problema. Me preocupa que esa gente sepa cosas de ti que ni yo sé. Te veías muy preocupado. No te veía tan agresivo desde hace mucho. Me quieres contar Qué pasó?
+
+Esas personas habían que matar príncipe Robin. Al principio. De dónde? Recuerda que murió. Pues lo soy bien integrado noticias pero. Pero una canción sobre esto. Puedo No? Ya lo saben todo eso o no? Porque teníamos que matar tantos. Clientes no es bueno para negocio de deshidratación. Yo qué sé?
+
+Pero lo que vamos a construir Mario. Bueno chicos. No puede ser. Creo que creo que tío se lo tuvo que anotar de la. Y Daniel 20 alas grandes ya era un cuerpo como de 2,50 y si le puede pasar una lada. Por eso le decime por el barrio.
+
+Para que sacas un efecto mental, el príncipe roto es más grande y más grueso que Tori. Cómo no tú estás casa?
+
+Bueno empecemos amigos. Verdad! Ustedes saben que el príncipe derrotó? Era conocido como un error legendario el tipo. Perdió un ala luchando contra el elemental de cristal que es precisamente el dragón. Es el bisnieto del dragón que fusionó su sangre con la humanidad para dar nacimientos. Los Dragon Ball es el único en el linaje.
+
+Pero Dragon Ball que fue capaz de salir victorioso de esas batallas. Y fue un drama todo Dragon Ball. Yo lo la muerte. Cex perdió el artista por todos los reinos. Nunca se encontró el asesino. Eso cambio todo el juego político porque terminó tomando el trono. El. La iguana. Será un príncipe ese se la puedo expectivo que le tienen ustedes.
+
+No saben el verdadero nombre, pero hagan de cuenta. Cómo le voy a decir que en el señor de los anillos. Y ahorita en el pueblo está vuelto mierda y House. Bueno si Se volvieron Venezuela como dijo Giovanni Vázquez Ustedes tienen algo que contarme? Gracias a Dios se instauró una dictadura comunista en uno de los reinos más consecuente ha matado al principio, pero.
+
+Bueno yo agarro Y le doy un puño. Me hiciste envenenar dos muy buenos platos y nadie se los comió. A ver está en la cocina sirena. Nadie coma nada porque ya no sé cuáles son. El cerdo tiene que estar con Laura compa. Nadie se coman ningún cierto. Tú no sabías
+
+Bueno tíos. Creo que tuviste que notar. Ese cliente red nos dijimos cosas no? Me dijo cositas.
+
+Pues resulta. Que ese es un súbdito de mi viejo amiga de mi viejo amigo.
+
+Como es que se llama malacor? Mala con mi viejo amigo. Éramos. Están cercanos? En nuestra fe. Pero pasaron cositas.
+
+Baratos ordenador desde la rata blanca. Lo conoces?
+
+Termina los accidentes demasiado, se hace como está demasiado impactado. Impactad sí, O sea el saber que tuvieras en amigo de mala actor este pregunta. Tú fuiste? Quién le entregó la corona dorada? La corona dorada. Tú será entregaste. Te la entregaste. Yo nunca le entregaría la corona dorada. Malaquías malator.
+
+Seguro. Estoy completamente seguro pero sí ocurrió algo. Okay. Resulta! Qué bueno ustedes se darán cuenta? No sé si no me lo han preguntado por pena. Pero pues mira mis rasgos, hay un gnomo.
+
+Cómo es posible? Si olvides como 2 m es más alto que nosotros? No pueden decir nada con ese olor. Vamos al bebé solamente. Estoy intentando no ser una pared, no me gusta juzgar a la gente, pero sí no se lo pensaron cuando lo hubiera imaginado. Cuando cuando trate de hablar con Los Lobos no no se lo pregunté dos.
+
+Sí, sabes. Por supuesto, si soy nuevo. Pablo no me hablo no. Jajaja Tú tampoco? Ah mentira, Sí sí, estaba contando Mi historia. Bueno, creo que todos sabemos de. Nuestro pasado que hemos mantenido oculto. En ese pasado. Yo tuve mucha ambición. Tuve mucha audición a mí por ser gnomo. Me cuestionaban.
+
+Yo no te preocupes, yo te cuestionó. Para que no ser tan pequeño no es capaz de. Soportar el poder.
+
+Me estoy imaginando así como olvidándose el poder de. Rodrigo.
+
+Bueno, no sé si sus tierras alguna vez hayan escuchado de malfas no han escuchado de muertos.
+
+Malfas es una debilidad oscura. Muy Poderosa. Ah, claro que sí. El príncipe El príncipe de los cuervos. Tal vez nos habían preguntado porque hay un pueblo volando por ahí, pues. Ya Irán hilando. Mira si a veces se aparecen animales en la taberna no es como que hayan cactus y lagartijas y de la nada parecen cuerpos así que.
+
+Pero ese Cuervo que de vez en cuando. Siempre he sido yo. Ya se cansó, no la tabernatando, Recuerda que pues estaban como 48 grados. No es de noche, no estamos de noche. Acabamos de qué? Okay vamos adentro día banda le echo arena yo le echo arena encima leche harina encima Yo le echaré de tu que quieres hacer?
+
+Yo le eché arena Hey cuidado, le rompes la cola? Arenal, creo que la arena no es suficiente. Encárgate tú?
+
+Bueno llamo utilizo mi poder de hablar con los animales porque si no.
+
+Invoco invoco en nuestro el diablo, una serpiente. No cualquier serpiente. Es! Boda gigante del desierto. Y esa boba gigante del desierto le ordeno que se coma ese tipo? Pero lejos del restaurante por favor. Ese bicho se la engulleno. Para que se le vea el cuchillo de todas maneras no?
+
+Bueno, pero. Commendón. Santas rapidísimo se lo trague. Sigues mandando? Bueno un problema menos y nuestro jefe. Vamos por el. La taberna está cerrada. Le pusimos close. Dice por favor no moleste mueras en otro lugar. Qué quieres saber si mi tío se murió o no? Ahora llama mi tío. Mi Lady luna y mi tío mi tío mi ley.
+
+Bueno! Ya se acercan a Leonel. Sí, claro. Ya no son sus cosas. Sufrir muchísimo migrañas
+
+Y están como en un lugar negro o sea oscuridad total. Están en un sueño onírico Ven a leoney caminando como en una especie de charca, O sea, no hay absortante nada, pero se ven ondas como de agua negra. Dice que va mirando los hidros así como. Una cosa. Una única cosa les había pedido y no fueron capaz de hacerla.
+
+Necesito! Que antes de dos cuartasmeralda. Lo traigan lo muelan y me lo den de comer. Es el tiempo que tengo antes de morir. Es estúpido Honduras? Es difícil de conseguir, no sé, no decirles como por lo menos vayan a River. Pregunten. Quién los puede ayudar a ayudar? Si no consigan respuestas en la zona de los elpos, busquen el campamento.
+
+Ellos de sus Minas suelen tener de este material. Ay bueno ustedes a despertar? Tienen otra misión? No saben qué orden van a ser las pero marica. Obviamente tienen que hacer la función de cine campañas pasadas. He dejado morir a todo lo que me encargan y está vez quiero ser perfecto.
+
+Si Necesitan ayuda Yo lo único que necesito saber es por dónde van a arrancar digo yo solo tú lo vas a entender. Leo y así comien.
+
+Yo opino que lo dejemos morir y nos quedemos con el bar. Estás loco mientras que vayamos a salvarlo? Dejemos a los goles atendiendo. Y por si no se lo den preguntado? Nunca hago una presentación en la taberna, Por eso estoy en la cocina donde nadie me ve toda esta gente se fue después de que tocara por una hora y ahora todo el mundo va a saber que no Mai Melody sino que como se llama.
+
+Kenitzira está aquí y la gente va a empezar a llegar aquí y yo no quiero que la gente llegue aquí por eso vi de todas partes Así que yo ya no me puedo quedar en este fucking lugar. Te das cuenta que en el bolsillo. Agarras la hoja. Y recuerdas que como luna y es un comerciante que tenía muchos negocios turbios como un gerente tomaba lista de las personas que estaban.
+
+Tienes una lista de 24 personas para casar. Pues es que tú eres como una Montana. Ellos dos testigos un testigo 24 testigos.
+
+Nada chicos, Pues para mí hasta que llegó a la sesión uno no sé si quedan avanzar ya la estación de preparada o para. Yo soy como bien emocionado como para seguir si quieren. No le estoy ni fira. Le está preguntando a ti Dios.
+
+Es un viejo puto? O sea sí, pero nos mantuvo por dos años. Yo salvarlo solo hoy de camino por una Esmeralda porque quiero ver cómo se ven. Okay, sí, de acuerdo. Tal vez de camino podamos Localizar a estos 24 personas. Vamos por la Esmeralda. No, ahora sí me preguntó.
+
+Sería arrancamos una de sesión dos o para abajo que quieren hacer también Mientras tanto.

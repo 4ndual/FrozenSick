@@ -1,0 +1,499 @@
+{
+  "rawMapUrl": "https://raw.githubusercontent.com/4ndual/FrozenSick/github/content/World/Dragonland%202026-02-13-10-49.map",
+  "counts": {
+    "targets": 81,
+    "matched": 40,
+    "unresolved": 41
+  },
+  "matches": [
+    {
+      "place": "Aille",
+      "source": "burg",
+      "name": "Aille",
+      "id": 469,
+      "x": 1430.2,
+      "y": 431.5,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=469&scale=9"
+    },
+    {
+      "place": "Allulneth",
+      "source": "burg",
+      "name": "Allulneth",
+      "id": 450,
+      "x": 1541.06,
+      "y": 436.76,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=450&scale=9"
+    },
+    {
+      "place": "Axbrid",
+      "source": "burg",
+      "name": "Axbrid",
+      "id": 233,
+      "x": 1308.28,
+      "y": 331.09,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=233&scale=9"
+    },
+    {
+      "place": "Betford",
+      "source": "burg",
+      "name": "Betford",
+      "id": 18,
+      "x": 1377.57,
+      "y": 330.43,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=18&scale=9"
+    },
+    {
+      "place": "Blandford",
+      "source": "burg",
+      "name": "Blandford",
+      "id": 22,
+      "x": 1339.07,
+      "y": 339.62,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=22&scale=9"
+    },
+    {
+      "place": "Bosbokeroe",
+      "source": "burg",
+      "name": "Bosbokeroe",
+      "id": 274,
+      "x": 1356.13,
+      "y": 256.94,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=274&scale=9"
+    },
+    {
+      "place": "Brasboredon",
+      "source": "burg",
+      "name": "Brasboredon",
+      "id": 291,
+      "x": 1396.12,
+      "y": 256.26,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=291&scale=9"
+    },
+    {
+      "place": "Brastabro",
+      "source": "burg",
+      "name": "Brastabro",
+      "id": 117,
+      "x": 1418.66,
+      "y": 287.62,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=117&scale=9"
+    },
+    {
+      "place": "Bromermouth",
+      "source": "burg",
+      "name": "Bromermouth",
+      "id": 42,
+      "x": 1296.8,
+      "y": 520.4,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=42&scale=9"
+    },
+    {
+      "place": "Calbobury",
+      "source": "burg",
+      "name": "Calbobury",
+      "id": 55,
+      "x": 1389.58,
+      "y": 231.91,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=55&scale=9"
+    },
+    {
+      "place": "Chargissoy",
+      "source": "burg",
+      "name": "Chargissoy",
+      "id": 272,
+      "x": 1748.1,
+      "y": 303.9,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=272&scale=9"
+    },
+    {
+      "place": "Dragon Born",
+      "source": "burg",
+      "name": "Dragon Born",
+      "id": 430,
+      "x": 1440.7,
+      "y": 282.03,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=430&scale=9"
+    },
+    {
+      "place": "DragonLand",
+      "source": "state",
+      "name": "DragonLand",
+      "id": 8,
+      "x": 1372,
+      "y": 297,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1372&y=297&scale=9"
+    },
+    {
+      "place": "Folerington",
+      "source": "burg",
+      "name": "Folerington",
+      "id": 68,
+      "x": 1348.51,
+      "y": 333.65,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=68&scale=9"
+    },
+    {
+      "place": "La Ultima Gota",
+      "source": "marker",
+      "name": "The Last Drop",
+      "id": 83,
+      "x": 1384.49,
+      "y": 287.56,
+      "icon": "🍺",
+      "via": "the last drop",
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1384.49&y=287.56&scale=9"
+    },
+    {
+      "place": "La Última Gota",
+      "source": "marker",
+      "name": "The Last Drop",
+      "id": 83,
+      "x": 1384.49,
+      "y": 287.56,
+      "icon": "🍺",
+      "via": "the last drop",
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1384.49&y=287.56&scale=9"
+    },
+    {
+      "place": "Leighbrid",
+      "source": "burg",
+      "name": "Leighbrid",
+      "id": 189,
+      "x": 1420.23,
+      "y": 310.7,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=189&scale=9"
+    },
+    {
+      "place": "Malceston",
+      "source": "burg",
+      "name": "Malceston",
+      "id": 61,
+      "x": 1411.55,
+      "y": 337.77,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=61&scale=9"
+    },
+    {
+      "place": "Malistoles",
+      "source": "burg",
+      "name": "Malistoles",
+      "id": 67,
+      "x": 1400.47,
+      "y": 311.34,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=67&scale=9"
+    },
+    {
+      "place": "Matonceton",
+      "source": "burg",
+      "name": "Matonceton",
+      "id": 25,
+      "x": 1347.84,
+      "y": 522.11,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=25&scale=9"
+    },
+    {
+      "place": "Patise",
+      "source": "burg",
+      "name": "Patise",
+      "id": 14,
+      "x": 1736.87,
+      "y": 322.38,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=14&scale=9"
+    },
+    {
+      "place": "Pilmondford",
+      "source": "burg",
+      "name": "Pilmondford",
+      "id": 60,
+      "x": 1359.4,
+      "y": 251.6,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=60&scale=9"
+    },
+    {
+      "place": "Qhenchod",
+      "source": "burg",
+      "name": "Qhenchod",
+      "id": 429,
+      "x": 1583.99,
+      "y": 406.16,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=429&scale=9"
+    },
+    {
+      "place": "Rernithi",
+      "source": "burg",
+      "name": "Rernithi",
+      "id": 129,
+      "x": 1546.71,
+      "y": 438.79,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=129&scale=9"
+    },
+    {
+      "place": "Romberby",
+      "source": "burg",
+      "name": "Romberby",
+      "id": 473,
+      "x": 1330.54,
+      "y": 309.74,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=473&scale=9"
+    },
+    {
+      "place": "Romberden",
+      "source": "burg",
+      "name": "Romberden",
+      "id": 220,
+      "x": 1359.22,
+      "y": 342.54,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=220&scale=9"
+    },
+    {
+      "place": "Salboneroe",
+      "source": "burg",
+      "name": "Salboneroe",
+      "id": 90,
+      "x": 1325.27,
+      "y": 334.05,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=90&scale=9"
+    },
+    {
+      "place": "Sasingscast",
+      "source": "burg",
+      "name": "Sasingscast",
+      "id": 23,
+      "x": 1423.92,
+      "y": 308.7,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=23&scale=9"
+    },
+    {
+      "place": "Seaton",
+      "source": "burg",
+      "name": "Seaton",
+      "id": 456,
+      "x": 1379.49,
+      "y": 301.33,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=456&scale=9"
+    },
+    {
+      "place": "Siazi",
+      "source": "burg",
+      "name": "Siazi",
+      "id": 155,
+      "x": 1353.51,
+      "y": 285.56,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=155&scale=9"
+    },
+    {
+      "place": "Sidmouth",
+      "source": "burg",
+      "name": "Sidmouth",
+      "id": 167,
+      "x": 1081.07,
+      "y": 324.2,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=167&scale=9"
+    },
+    {
+      "place": "Southes",
+      "source": "burg",
+      "name": "Southes",
+      "id": 247,
+      "x": 1348.97,
+      "y": 243.83,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=247&scale=9"
+    },
+    {
+      "place": "Stansham",
+      "source": "burg",
+      "name": "Stansham",
+      "id": 188,
+      "x": 1322.89,
+      "y": 296.64,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=188&scale=9"
+    },
+    {
+      "place": "Stanstover",
+      "source": "burg",
+      "name": "Stanstover",
+      "id": 478,
+      "x": 1335.99,
+      "y": 317.14,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=478&scale=9"
+    },
+    {
+      "place": "Szek'qos",
+      "source": "burg",
+      "name": "Szek'qos",
+      "id": 269,
+      "x": 1561.44,
+      "y": 418.48,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=269&scale=9"
+    },
+    {
+      "place": "Thorn",
+      "source": "burg",
+      "name": "Thorn",
+      "id": 8,
+      "x": 1424.3,
+      "y": 253.45,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=8&scale=9"
+    },
+    {
+      "place": "Uxbridling",
+      "source": "burg",
+      "name": "Uxbridling",
+      "id": 336,
+      "x": 1267.34,
+      "y": 556.03,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=336&scale=9"
+    },
+    {
+      "place": "Watesterlis",
+      "source": "burg",
+      "name": "Watesterlis",
+      "id": 353,
+      "x": 1345.7,
+      "y": 257.6,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=353&scale=9"
+    },
+    {
+      "place": "Whitneston",
+      "source": "burg",
+      "name": "Whitneston",
+      "id": 250,
+      "x": 1380.16,
+      "y": 551.33,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=250&scale=9"
+    },
+    {
+      "place": "Wisin",
+      "source": "burg",
+      "name": "Wisin",
+      "id": 452,
+      "x": 1401.29,
+      "y": 347.66,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=452&scale=9"
+    }
+  ],
+  "unresolved": [
+    "Aerthalon",
+    "Berwick",
+    "Bridbury Landgrave",
+    "Chavantesia Colony",
+    "Chiscom",
+    "Dragon Scar",
+    "Drakmor",
+    "Dunsterwick",
+    "Escres",
+    "Fineton",
+    "Frampton",
+    "Giviers",
+    "Goc Island",
+    "Hitchestab",
+    "Kharvok",
+    "Knutsted",
+    "Knutsted Territory",
+    "Las Tierras Lándicas",
+    "Meaux",
+    "Mystralyn",
+    "New Romberden Colony",
+    "Noctyra",
+    "Nostowland Islands",
+    "Notable Settlements",
+    "Province",
+    "Rauthmir",
+    "Retford",
+    "River / The River Settlement",
+    "Rothbrid",
+    "Sanvily Islands",
+    "Settlement",
+    "Solleauchatay",
+    "The Demon's Lair",
+    "The Elven Mining Camps",
+    "The Mountain Pass Caves",
+    "The Mountain Pass Guard Post",
+    "The Prison Tortuga",
+    "Thinay",
+    "Totford",
+    "Valdrenor",
+    "Vrigry County"
+  ],
+  "markerHints": [
+    {
+      "id": 4,
+      "icon": "🍻",
+      "type": "inns",
+      "x": 549.69,
+      "y": 389.6,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=549.69&y=389.6&scale=11"
+    },
+    {
+      "id": 5,
+      "icon": "🍻",
+      "type": "inns",
+      "x": 462.62,
+      "y": 627.93,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=462.62&y=627.93&scale=11"
+    },
+    {
+      "id": 6,
+      "icon": "🍻",
+      "type": "inns",
+      "x": 677.3,
+      "y": 760.8,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=677.3&y=760.8&scale=11"
+    },
+    {
+      "id": 36,
+      "icon": "🏴‍☠️",
+      "type": "pirates",
+      "x": 771.44,
+      "y": 356.32,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=771.44&y=356.32&scale=11"
+    },
+    {
+      "id": 37,
+      "icon": "🏴‍☠️",
+      "type": "pirates",
+      "x": 1809.96,
+      "y": 454.66,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1809.96&y=454.66&scale=11"
+    },
+    {
+      "id": 38,
+      "icon": "🏴‍☠️",
+      "type": "pirates",
+      "x": 1019.66,
+      "y": 457.89,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1019.66&y=457.89&scale=11"
+    },
+    {
+      "id": 39,
+      "icon": "🏴‍☠️",
+      "type": "pirates",
+      "x": 899.92,
+      "y": 728.16,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=899.92&y=728.16&scale=11"
+    },
+    {
+      "id": 40,
+      "icon": "🏴‍☠️",
+      "type": "pirates",
+      "x": 1311.5,
+      "y": 337.8,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1311.5&y=337.8&scale=11"
+    },
+    {
+      "id": 41,
+      "icon": "🏴‍☠️",
+      "type": "pirates",
+      "x": 568.89,
+      "y": 800.23,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=568.89&y=800.23&scale=11"
+    },
+    {
+      "id": 83,
+      "icon": "🍺",
+      "type": "The Last Drop",
+      "x": 1384.49,
+      "y": 287.56,
+      "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1384.49&y=287.56&scale=11"
+    }
+  ]
+}

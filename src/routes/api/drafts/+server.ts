@@ -4,8 +4,7 @@ import { env } from '$env/dynamic/public';
 import { invalidateCache } from '$lib/server/github-content';
 
 const API = 'https://api.github.com';
-const CONTENT_PREFIX = 'content/';
-const DRAFT_BRANCH_PREFIX = 'content/';
+const CONTENT_BRANCH_PREFIX = 'content/';
 
 function getOwner() {
   return env.PUBLIC_GITHUB_OWNER || '4ndual';
@@ -28,7 +27,7 @@ function ghHeaders(token: string) {
 }
 
 /**
- * GET /api/drafts - list content branches (the user's drafts)
+ * GET /api/drafts - list content branches
  */
 export const GET: RequestHandler = async ({ cookies }) => {
   const token = cookies.get('gh_token');
@@ -41,30 +40,30 @@ export const GET: RequestHandler = async ({ cookies }) => {
 
   const branches: { name: string }[] = await res.json();
   const drafts = branches
-    .filter((b) => b.name.startsWith(DRAFT_BRANCH_PREFIX))
+    .filter((b) => b.name.startsWith(CONTENT_BRANCH_PREFIX))
     .map((b) => ({
       branch: b.name,
-      label: b.name.slice(DRAFT_BRANCH_PREFIX.length),
+      label: b.name.slice(CONTENT_BRANCH_PREFIX.length),
     }));
 
   return json({ drafts });
 };
 
 /**
- * POST /api/drafts - create a draft branch, save a draft, publish, or discard
+ * POST /api/drafts - manage content branches
  *
  * Actions:
  *   { action: "create", slug: string }
- *     -> creates content/{slug} branch from default branch
+ *     -> creates content/{slug} branch from default branch HEAD
  *
- *   { action: "save", branch: string, path: string, content: string, sha: string }
- *     -> commits a file change to the draft branch
+ *   { action: "ensure-pr", branch: string }
+ *     -> ensures an open PR exists from content branch to default (creates if needed)
  *
- *   { action: "publish", branch: string }
- *     -> creates a PR from draft branch to default branch, then merges it
+ *   { action: "pull", branch: string }
+ *     -> merges default branch INTO the content branch (update from published)
  *
  *   { action: "discard", branch: string }
- *     -> deletes the draft branch (and closes any open PR)
+ *     -> closes any open PR and deletes the content branch
  */
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
@@ -76,10 +75,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   switch (action) {
     case 'create':
       return handleCreate(token, body);
-    case 'save':
-      return handleSave(token, body);
-    case 'publish':
-      return handlePublish(token, body);
+    case 'ensure-pr':
+      return handleEnsurePr(token, body);
+    case 'pull':
+      return handlePull(token, body);
     case 'discard':
       return handleDiscard(token, body);
     default:
@@ -94,7 +93,7 @@ async function handleCreate(
   const slug = body.slug?.trim();
   if (!slug) throw error(400, 'Missing slug');
 
-  const branchName = `${DRAFT_BRANCH_PREFIX}${slug}`;
+  const branchName = `${CONTENT_BRANCH_PREFIX}${slug}`;
   const defaultBranch = getDefaultBranch();
 
   const refRes = await fetch(
@@ -124,160 +123,104 @@ async function handleCreate(
   return json({ branch: branchName });
 }
 
-async function handleSave(
-  token: string,
-  body: { branch?: string; path?: string; content?: string; sha?: string; message?: string },
-) {
-  const { branch, path, content, sha, message } = body;
-  if (!branch || !path || content === undefined || !sha) {
-    throw error(400, 'Missing required fields: branch, path, content, sha');
-  }
-
-  if (!branch.startsWith(DRAFT_BRANCH_PREFIX)) {
-    throw error(403, 'Can only save to content/ branches');
-  }
-  if (!path.startsWith(CONTENT_PREFIX) && !path.startsWith('.data/')) {
-    throw error(403, 'Path must be under content/ or .data/');
-  }
-
-  const encodedPath = path.split('/').map(encodeURIComponent).join('/');
-  const ghRes = await fetch(`${repoUrl()}/contents/${encodedPath}`, {
-    method: 'PUT',
-    headers: ghHeaders(token),
-    body: JSON.stringify({
-      message: message || `Edit: ${path.split('/').pop()}`,
-      content: btoa(unescape(encodeURIComponent(content))),
-      sha,
-      branch,
-    }),
-  });
-
-  if (ghRes.status === 409) {
-    return json(
-      { error: 'File was changed. Please reload and try again.' },
-      { status: 409 },
-    );
-  }
-  if (!ghRes.ok) {
-    const err = await ghRes.json().catch(() => ({}));
-    return json(
-      { error: (err as { message?: string }).message || 'Save failed' },
-      { status: ghRes.status },
-    );
-  }
-
-  const data = await ghRes.json();
-  await invalidateCache(branch);
-  return json({ sha: data.content?.sha, commit: data.commit?.sha });
-}
-
-async function handlePublish(token: string, body: { branch?: string }) {
+async function handleEnsurePr(token: string, body: { branch?: string }) {
   const branch = body.branch;
   if (!branch) throw error(400, 'Missing branch');
-  if (!branch.startsWith(DRAFT_BRANCH_PREFIX)) {
-    throw error(403, 'Can only publish content/ branches');
+  if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
+    throw error(403, 'Can only create PRs for content/ branches');
   }
 
   const defaultBranch = getDefaultBranch();
-  const label = branch.slice(DRAFT_BRANCH_PREFIX.length);
+  const label = branch.slice(CONTENT_BRANCH_PREFIX.length).replace(/-/g, ' ');
+
+  const listRes = await fetch(
+    `${repoUrl()}/pulls?head=${getOwner()}:${branch}&base=${defaultBranch}&state=open`,
+    { headers: ghHeaders(token) },
+  );
+  if (listRes.ok) {
+    const prs: { html_url: string }[] = await listRes.json();
+    if (prs.length > 0) {
+      return json({ prUrl: prs[0].html_url, existing: true });
+    }
+  }
 
   const prRes = await fetch(`${repoUrl()}/pulls`, {
     method: 'POST',
     headers: ghHeaders(token),
     body: JSON.stringify({
-      title: `Publish: ${label}`,
+      title: `Edit: ${label}`,
       head: branch,
       base: defaultBranch,
-      body: `Content update from draft "${label}".`,
+      body: `Content changes for "${label}".`,
     }),
   });
-
-  let prNumber: number;
-  let prHtmlUrl: string;
 
   if (prRes.status === 422) {
     const prBody: { errors?: { message?: string }[]; message?: string } = await prRes.json();
-    if (prBody.errors?.some((e) => e.message?.includes('pull request already exists'))) {
-      const listRes = await fetch(
-        `${repoUrl()}/pulls?head=${getOwner()}:${branch}&base=${defaultBranch}&state=open`,
-        { headers: ghHeaders(token) },
-      );
-      if (!listRes.ok) throw error(502, 'Failed to find existing PR');
-      const prs: { number: number; html_url: string }[] = await listRes.json();
-      if (prs.length === 0) throw error(502, 'PR exists but could not be found');
-      prNumber = prs[0].number;
-      prHtmlUrl = prs[0].html_url;
-    } else if (
+    if (
       prBody.errors?.some((e) => e.message?.includes('No commits between')) ||
       (prBody.message === 'Validation Failed' && (!prBody.errors || prBody.errors.length === 0))
     ) {
-      return json({
-        published: false,
-        reason: 'No changes to publish. Save some changes to your draft first.',
-      });
-    } else {
-      throw error(502, prBody.message || 'Failed to create PR');
+      return json({ prUrl: null, reason: 'No changes to review yet.' });
     }
-  } else if (!prRes.ok) {
+    throw error(502, prBody.message || 'Failed to create PR');
+  }
+  if (!prRes.ok) {
     const err = await prRes.json().catch(() => ({}));
     throw error(502, (err as { message?: string }).message || 'Failed to create PR');
-  } else {
-    const pr: { number: number; html_url: string } = await prRes.json();
-    prNumber = pr.number;
-    prHtmlUrl = pr.html_url;
   }
 
-  const mergeRes = await fetch(`${repoUrl()}/pulls/${prNumber}/merge`, {
-    method: 'PUT',
+  const pr: { html_url: string } = await prRes.json();
+  return json({ prUrl: pr.html_url });
+}
+
+async function handlePull(token: string, body: { branch?: string }) {
+  const branch = body.branch;
+  if (!branch) throw error(400, 'Missing branch');
+  if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
+    throw error(403, 'Can only pull into content/ branches');
+  }
+
+  const defaultBranch = getDefaultBranch();
+
+  const mergeRes = await fetch(`${repoUrl()}/merges`, {
+    method: 'POST',
     headers: ghHeaders(token),
     body: JSON.stringify({
-      merge_method: 'squash',
-      commit_title: `Publish: ${label}`,
+      base: branch,
+      head: defaultBranch,
+      commit_message: 'Update from published',
     }),
   });
 
-  if (mergeRes.status === 405) {
-    return json({
-      published: false,
-      prUrl: prHtmlUrl,
-      reason: 'This draft has conflicts with the published content. Please resolve them first.',
-    });
+  if (mergeRes.status === 204) {
+    return json({ updated: true, reason: 'Already up to date.' });
   }
   if (mergeRes.status === 409) {
     return json({
-      published: false,
-      prUrl: prHtmlUrl,
-      reason: 'The HEAD has changed since the PR was created. Try again.',
+      updated: false,
+      reason: 'Conflicts detected. Your changes conflict with the published version.',
     });
   }
   if (!mergeRes.ok) {
-    return json({
-      published: false,
-      prUrl: prHtmlUrl,
-      reason: 'Could not auto-publish. The pull request has been created for manual review.',
-    });
+    const err = await mergeRes.json().catch(() => ({}));
+    throw error(502, (err as { message?: string }).message || 'Failed to merge');
   }
 
-  const delRef = await fetch(
-    `${repoUrl()}/git/refs/heads/${encodeURIComponent(branch)}`,
-    { method: 'DELETE', headers: ghHeaders(token) },
-  );
-  void delRef;
-
-  await invalidateCache(defaultBranch);
   await invalidateCache(branch);
-  return json({ published: true, prUrl: prHtmlUrl });
+  return json({ updated: true });
 }
 
 async function handleDiscard(token: string, body: { branch?: string }) {
   const branch = body.branch;
   if (!branch) throw error(400, 'Missing branch');
-  if (!branch.startsWith(DRAFT_BRANCH_PREFIX)) {
+  if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
     throw error(403, 'Can only discard content/ branches');
   }
 
+  const defaultBranch = getDefaultBranch();
   const listRes = await fetch(
-    `${repoUrl()}/pulls?head=${getOwner()}:${branch}&state=open`,
+    `${repoUrl()}/pulls?head=${getOwner()}:${branch}&base=${defaultBranch}&state=open`,
     { headers: ghHeaders(token) },
   );
   if (listRes.ok) {
@@ -300,5 +243,6 @@ async function handleDiscard(token: string, body: { branch?: string }) {
     throw error(502, 'Failed to delete branch');
   }
 
+  await invalidateCache(branch);
   return json({ discarded: true });
 }

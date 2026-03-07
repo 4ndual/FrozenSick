@@ -1,5 +1,6 @@
 import { env } from '$env/dynamic/public';
 import type { NavEntry, NavItem, NavSection } from '$lib/wiki-nav';
+import { slugify, slugifyPath } from '$lib/utils/slugify';
 
 const API = 'https://api.github.com';
 
@@ -43,24 +44,8 @@ export async function invalidateCache(branch?: string): Promise<void> {
   return _invalidateCache(branch);
 }
 
-// ── Slugify (ported from generate-wiki-manifest.cjs) ─────────────────────────
-
-function slugify(str: string): string {
-  return str
-    .toLowerCase()
-    .replace(/['']/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
-/** Normalize a path to the same slug form used in the manifest (lowercase, no .md, safe chars). */
-export function slugifyPath(relPath: string): string {
-  return relPath
-    .replace(/\.md$/i, '')
-    .split('/')
-    .map(slugify)
-    .join('/');
-}
+// Re-export slug utilities for consumers that import from this module
+export { slugify, slugifyPath } from '$lib/utils/slugify';
 
 function decodeBase64Utf8(b64: string): string {
   const bin = atob(b64);
@@ -129,6 +114,41 @@ export async function fetchTree(token: string, branch?: string): Promise<TreeEnt
 
   await setCache(cacheKey, contentEntries, TREE_TTL);
   return contentEntries;
+}
+
+const WORLD_MAPS_TTL = 5 * 60 * 1000;
+
+/**
+ * Fetch blob entries under content/World/ that end with .map (Azgaar FMG files).
+ */
+export async function fetchWorldMapPaths(token: string, branch?: string): Promise<TreeEntry[]> {
+  const b = branch || getDefaultBranch();
+  const cacheKey = `worldMaps@${b}`;
+  const cached = await getCached<TreeEntry[]>(cacheKey);
+  if (cached) return cached;
+
+  const ref = await fetchJson<{ object: { sha: string } }>(
+    `${repoUrl()}/git/ref/heads/${encodeURIComponent(b)}`,
+    token,
+  );
+  const commit = await fetchJson<{ tree: { sha: string } }>(
+    `${repoUrl()}/git/commits/${ref.object.sha}`,
+    token,
+  );
+  const treeData = await fetchJson<{ tree: TreeEntry[] }>(
+    `${repoUrl()}/git/trees/${commit.tree.sha}?recursive=1`,
+    token,
+  );
+
+  const mapEntries = treeData.tree.filter(
+    (e) =>
+      e.type === 'blob' &&
+      e.path.startsWith('content/World/') &&
+      e.path.endsWith('.map'),
+  );
+
+  await setCache(cacheKey, mapEntries, WORLD_MAPS_TTL);
+  return mapEntries;
 }
 
 /**
@@ -218,6 +238,10 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
       children.push({ title: fileName, href: '/' + slugifyPath(file) });
     }
 
+    if (sectionName === 'World') {
+      children.push({ title: 'Map', href: '/maps' });
+    }
+
     nav.push({ section: sectionName, children } as NavSection);
   }
 
@@ -259,6 +283,39 @@ export async function fetchContent(
 }
 
 /**
+ * Fetch raw file content (for large files >1MB where Contents API returns empty content).
+ * Uses Accept: application/vnd.github.v3.raw to get the file body directly.
+ */
+export async function fetchContentRaw(
+  token: string,
+  repoPath: string,
+  branch?: string,
+): Promise<string> {
+  const b = branch || getDefaultBranch();
+  const cacheKey = `contentRaw:${repoPath}@${b}`;
+  const cached = await getCached<string>(cacheKey);
+  if (cached) return cached;
+
+  const encodedPath = repoPath.split('/').map(encodeURIComponent).join('/');
+  const url = `${repoUrl()}/contents/${encodedPath}?ref=${encodeURIComponent(b)}`;
+  const res = await fetch(url, {
+    headers: {
+      ...ghHeaders(token),
+      Accept: 'application/vnd.github.v3.raw',
+    },
+  });
+  if (res.status === 401) {
+    throw new GitHubAuthError('GitHub token expired or invalid');
+  }
+  if (!res.ok) {
+    throw new Error(`GitHub ${res.status}: ${url}`);
+  }
+  const content = await res.text();
+  await setCache(cacheKey, content, CONTENT_TTL);
+  return content;
+}
+
+/**
  * List all branches for the repo.
  */
 export async function listBranches(token: string): Promise<string[]> {
@@ -274,4 +331,36 @@ export async function listBranches(token: string): Promise<string[]> {
   const names = data.map((b) => b.name);
   await setCache(cacheKey, names, BRANCHES_TTL);
   return names;
+}
+
+export interface BranchComparison {
+  aheadBy: number;
+  behindBy: number;
+}
+
+/**
+ * Compare a content branch against the default branch.
+ * Returns how many commits the content branch is ahead/behind.
+ */
+export async function compareBranches(
+  token: string,
+  contentBranch: string,
+  baseBranch?: string,
+): Promise<BranchComparison> {
+  const base = baseBranch || getDefaultBranch();
+  const cacheKey = `compare:${base}...${contentBranch}`;
+  const cached = await getCached<BranchComparison>(cacheKey);
+  if (cached) return cached;
+
+  const data = await fetchJson<{ ahead_by: number; behind_by: number }>(
+    `${repoUrl()}/compare/${encodeURIComponent(base)}...${encodeURIComponent(contentBranch)}`,
+    token,
+  );
+
+  const result: BranchComparison = {
+    aheadBy: data.ahead_by,
+    behindBy: data.behind_by,
+  };
+  await setCache(cacheKey, result, BRANCHES_TTL);
+  return result;
 }

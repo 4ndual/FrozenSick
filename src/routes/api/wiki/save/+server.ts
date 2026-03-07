@@ -1,6 +1,7 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
+import { invalidateCache } from '$lib/server/github-content';
 
 const API = 'https://api.github.com';
 
@@ -73,6 +74,7 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   }
 
   const data = await ghRes.json();
+  await invalidateCache(branch);
   return json({
     sha: data.content?.sha,
     commit: data.commit?.sha,

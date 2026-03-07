@@ -6,10 +6,21 @@ import {
   fetchContent,
   listBranches,
   getDefaultBranch,
-  slugifyPath,
+  compareBranches,
   GitHubAuthError,
 } from '$lib/server/github-content';
+import { fetchPlaceMapLinks } from '$lib/server/place-map-links';
+import { extractMapFileNameFromRawUrl } from '$lib/place-map-links';
+import {
+  slugifyPath,
+  slugifyForBranch,
+  formatPathAsTitle,
+} from '$lib/utils/slugify';
 import type { PageServerLoad } from './$types';
+
+const CONTENT_BRANCH_PREFIX = 'content/';
+
+type SyncStatus = 'viewing' | 'saved' | 'synced' | 'behind';
 
 export const load: PageServerLoad = async ({ params, url, cookies }) => {
   const token = cookies.get('gh_token');
@@ -21,9 +32,10 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
   const branch = url.searchParams.get('branch') || defaultBranch;
 
   try {
-    const [tree, branches] = await Promise.all([
+    const [tree, allBranches, placeMapLinks] = await Promise.all([
       fetchTree(token, branch),
       listBranches(token),
+      fetchPlaceMapLinks(token, branch, defaultBranch),
     ]);
 
     const manifest = buildManifest(tree);
@@ -39,20 +51,64 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
 
     const file = await fetchContent(token, sourcePath, branch);
 
+    const filteredBranches = allBranches.filter(
+      (b) => b === defaultBranch || b.startsWith(CONTENT_BRANCH_PREFIX),
+    );
+
+    const branchLabels: Record<string, string> = {};
+    branchLabels[defaultBranch] = 'Published';
+    for (const b of filteredBranches) {
+      if (b.startsWith(CONTENT_BRANCH_PREFIX)) {
+        const branchSlug = b.slice(CONTENT_BRANCH_PREFIX.length);
+        const matchingSource = Object.values(manifest).find(
+          (src) => slugifyForBranch(src) === branchSlug,
+        );
+        branchLabels[b] = matchingSource
+          ? formatPathAsTitle(matchingSource)
+          : branchSlug.replace(/-/g, ' ');
+      }
+    }
+
+    const pageContentBranch = CONTENT_BRANCH_PREFIX + slugifyForBranch(sourcePath);
+    let initialSyncStatus: SyncStatus = 'viewing';
+
+    if (filteredBranches.includes(pageContentBranch)) {
+      try {
+        const comparison = await compareBranches(token, pageContentBranch, defaultBranch);
+        if (comparison.aheadBy === 0 && comparison.behindBy === 0) {
+          initialSyncStatus = 'synced';
+        } else if (comparison.aheadBy > 0 && comparison.behindBy > 0) {
+          initialSyncStatus = 'behind';
+        } else if (comparison.aheadBy > 0) {
+          initialSyncStatus = 'saved';
+        } else {
+          initialSyncStatus = 'behind';
+        }
+      } catch {
+        initialSyncStatus = 'viewing';
+      }
+    }
+
     return {
       content: file.content,
       slug,
       sourcePath,
       branch,
       defaultBranch,
-      branches,
+      branches: filteredBranches,
+      branchLabels,
+      initialSyncStatus,
       nav,
+      placeMapMatches: placeMapLinks?.matches ?? [],
+      placeMapFile: extractMapFileNameFromRawUrl(placeMapLinks?.rawMapUrl) ?? '',
     };
   } catch (err) {
     if (err instanceof GitHubAuthError) {
       cookies.delete('gh_token', { path: '/' });
       throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
     }
+    // Log so Vercel/serverless logs show the real cause (e.g. GitHub API timeout, rate limit, missing content)
+    console.error('[slug] load error', url.pathname, err);
     throw err;
   }
 };

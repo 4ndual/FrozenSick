@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
+const CONTENT_DIR = path.resolve(ROOT, 'content');
 const EXCLUDE = new Set(['.cursor', 'node_modules', 'Assets', 'dist', '.git', 'timeline']);
 const EXCLUDE_FILES = new Set(['README.md']);
 
@@ -28,14 +29,20 @@ function walkMd(dir, base) {
   return results;
 }
 
-const mdFiles = walkMd(ROOT, ROOT);
+const mdFiles = walkMd(CONTENT_DIR, CONTENT_DIR);
 const slugToPath = {};
 for (const rel of mdFiles) {
   const slug = '/' + slugifyPath(rel);
-  slugToPath[slug] = rel;
+  slugToPath[slug] = 'content/' + rel;
 }
 
-const outPath = path.join(ROOT, 'timeline', 'src', 'lib', 'wiki-manifest.json');
-fs.mkdirSync(path.dirname(outPath), { recursive: true });
-fs.writeFileSync(outPath, JSON.stringify(slugToPath, null, 2), 'utf-8');
-console.log('Wrote wiki-manifest.json with', Object.keys(slugToPath).length, 'entries');
+const outPaths = [
+  path.join(ROOT, 'timeline', 'src', 'lib', 'wiki-manifest.json'),
+  path.join(ROOT, 'src', 'lib', 'wiki-manifest.json')
+];
+
+for (const outPath of outPaths) {
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, JSON.stringify(slugToPath, null, 2), 'utf-8');
+}
+console.log('Wrote wiki-manifest.json to', outPaths.length, 'locations with', Object.keys(slugToPath).length, 'entries');

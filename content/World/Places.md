@@ -1,6 +1,6 @@
 # Places — Frozen Sick
 
-*See the DragonLand map for visual reference.*
+*See the [DragonLand map](/maps) for visual reference.*
 
 ---
 

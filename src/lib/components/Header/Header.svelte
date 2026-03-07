@@ -6,14 +6,19 @@
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import { invalidateAll } from '$app/navigation';
+  import { slugifyForBranch } from '$lib/utils/slugify';
+
+  type WikiSyncStatus = 'viewing' | 'draft' | 'saved' | 'synced' | 'behind';
 
   interface Props {
-    mode: 'wiki' | 'timeline';
+    mode: 'wiki' | 'timeline' | 'map';
     sourcePath?: string | null;
     returnTo?: string;
     branch?: string | null;
     defaultBranch?: string;
     branches?: string[];
+    branchLabels?: Record<string, string>;
+    initialSyncStatus?: WikiSyncStatus;
   }
 
   let {
@@ -23,6 +28,8 @@
     branch = null,
     defaultBranch = 'main',
     branches = [],
+    branchLabels = {},
+    initialSyncStatus = 'viewing',
   }: Props = $props();
 
   const TOKEN_KEY = 'frozen-sick-gh-token';
@@ -38,11 +45,14 @@
   let messageOk = $state(false);
   let messageErr = $state(false);
 
-  type WikiSyncStatus = 'synced' | 'draft' | 'saved';
-  let wikiSyncStatus = $state<WikiSyncStatus>('synced');
+  let wikiSyncStatus = $state<WikiSyncStatus>(initialSyncStatus);
   let prUrl = $state<string | null>(null);
-  let draftBranch = $state<string | null>(null);
-  let publishing = $state(false);
+  let contentBranch = $state<string | null>(null);
+  let pulling = $state(false);
+
+  $effect(() => {
+    wikiSyncStatus = initialSyncStatus;
+  });
 
   function getStoredToken(): string | null {
     if (!browser) return null;
@@ -77,24 +87,17 @@
     if (!sourcePath) return;
 
     try {
-      let editBranch = activeBranch;
+      const slug = slugifyForBranch(sourcePath);
 
-      if (activeBranch === defaultBranch) {
-        const slug = sourcePath.replace(/^content\//, '').replace(/\.md$/, '').replace(/\//g, '-').toLowerCase();
-        const res = await fetch('/api/drafts', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ action: 'create', slug }),
-        });
-        const data = await res.json();
-        if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create draft');
-        editBranch = data.branch;
-        draftBranch = data.branch;
-      } else if (activeBranch.startsWith('content/')) {
-        draftBranch = activeBranch;
-      } else {
-        draftBranch = null;
-      }
+      const res = await fetch('/api/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'create', slug }),
+      });
+      const data = await res.json();
+      if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create editing branch');
+      const editBranch = data.branch;
+      contentBranch = editBranch;
 
       const params = new URLSearchParams({ path: sourcePath, branch: editBranch });
       const fileRes = await fetch(`/api/wiki?${params}`);
@@ -109,7 +112,6 @@
       messageOk = !!localDraft;
       messageErr = false;
       prUrl = null;
-      publishing = false;
       wikiSyncStatus = 'draft';
       modalOpen = true;
     } catch (err) {
@@ -151,8 +153,9 @@
 
   function closeModal() {
     modalOpen = false;
+    clearDraftFromLocal(editPath);
     if (wikiSyncStatus === 'draft') {
-      wikiSyncStatus = 'synced';
+      wikiSyncStatus = contentBranch ? 'saved' : 'viewing';
     }
   }
 
@@ -161,9 +164,8 @@
   }
 
   async function saveEdit() {
-    if (!editPath || !editSha) return;
-    const targetBranch = draftBranch || activeBranch;
-    message = 'Saving draft…';
+    if (!editPath || !editSha || !contentBranch) return;
+    message = 'Saving…';
     messageOk = false;
     messageErr = false;
 
@@ -177,7 +179,7 @@
           path: editPath,
           content: editContent,
           sha: editSha,
-          branch: targetBranch,
+          branch: contentBranch,
           message: `Edit: ${editPath.split('/').pop()}`,
         }),
       });
@@ -189,8 +191,17 @@
       }
       if (!res.ok) throw new Error(data.error || 'Save failed');
       if (data.sha) editSha = data.sha;
+
+      const prRes = await fetch('/api/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'ensure-pr', branch: contentBranch }),
+      });
+      const prData = await prRes.json();
+
       wikiSyncStatus = 'saved';
-      message = draftBranch ? 'Draft saved.' : `Saved to "${targetBranch}".`;
+      message = 'Saved. Pending review.';
+      prUrl = prData.prUrl || null;
       messageOk = true;
       messageErr = false;
       clearDraftFromLocal(editPath);
@@ -201,61 +212,34 @@
     }
   }
 
-  async function publishDraft() {
-    if (!draftBranch) return;
-    publishing = true;
-    message = 'Publishing…';
+  async function pullLatest() {
+    if (!contentBranch) return;
+    pulling = true;
+    message = 'Updating from published…';
     messageOk = false;
     messageErr = false;
     try {
       const res = await fetch('/api/drafts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'publish', branch: draftBranch }),
+        body: JSON.stringify({ action: 'pull', branch: contentBranch }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to publish');
-      if (data.published) {
-        message = 'Published! Your changes are now live.';
+      if (!res.ok) throw new Error(data.error || 'Failed to update');
+      if (data.updated) {
+        message = 'Updated with latest published changes.';
         messageOk = true;
-        prUrl = data.prUrl;
-        clearDraftFromLocal(editPath);
-        draftBranch = null;
         wikiSyncStatus = 'synced';
         invalidateAll();
       } else {
-        message = data.reason || 'Could not auto-publish.';
+        message = data.reason || 'Could not update.';
         messageErr = true;
-        prUrl = data.prUrl;
       }
     } catch (err) {
-      message = (err as Error).message || 'Failed to publish';
+      message = (err as Error).message || 'Failed to update';
       messageErr = true;
     } finally {
-      publishing = false;
-    }
-  }
-
-  async function discardDraft() {
-    if (!draftBranch) return;
-    message = 'Discarding draft…';
-    messageOk = false;
-    messageErr = false;
-    try {
-      const res = await fetch('/api/drafts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'discard', branch: draftBranch }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to discard');
-      draftBranch = null;
-      wikiSyncStatus = 'synced';
-      modalOpen = false;
-      invalidateAll();
-    } catch (err) {
-      message = (err as Error).message || 'Failed to discard';
-      messageErr = true;
+      pulling = false;
     }
   }
 
@@ -287,7 +271,9 @@
       </svg>
       <div class="brand-text">
         <span class="brand-name">Frozen Sick</span>
-        <span class="brand-sub">{mode === 'wiki' ? 'Campaign Wiki' : 'Campaign Timeline'}</span>
+        <span class="brand-sub">
+          {mode === 'wiki' ? 'Campaign Wiki' : mode === 'timeline' ? 'Campaign Timeline' : 'Campaign Map'}
+        </span>
       </div>
     </a>
   </div>
@@ -400,19 +386,30 @@
       </button>
     {:else if mode === 'wiki' && browser}
       <!-- Wiki sync status -->
-      {#if token && sourcePath}
-        <span class="sync-indicator sync-{wikiSyncStatus}" title="Status: {wikiSyncStatus}">
+      {#if token && sourcePath && wikiSyncStatus !== 'viewing'}
+        <span class="sync-indicator sync-{wikiSyncStatus}" title="Status: {wikiSyncStatus}" data-testid="wiki-sync-status" data-status={wikiSyncStatus}>
           <span class="sync-dot"></span>
         </span>
       {/if}
 
-      <!-- Branch selector -->
+      <!-- Branch selector (filtered: default + content/ only) -->
       {#if branches.length > 0}
         <BranchSelector
           {branches}
           currentBranch={activeBranch}
           {defaultBranch}
+          labels={branchLabels}
         />
+      {/if}
+
+      {#if token && wikiSyncStatus === 'behind'}
+        <button type="button" class="action-btn action-btn-warning" onclick={pullLatest} disabled={pulling} title="Update from published" data-testid="wiki-pull-latest" aria-label="Update from published">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          <span class="btn-label">{pulling ? 'Updating…' : 'Update'}</span>
+        </button>
       {/if}
 
       {#if token && sourcePath}
@@ -426,7 +423,16 @@
       {/if}
 
       {#if token}
-        <DraftsPanel />
+        <DraftsPanel {branchLabels} />
+      {/if}
+    {:else if mode === 'map'}
+      {#if branches.length > 0}
+        <BranchSelector
+          {branches}
+          currentBranch={activeBranch}
+          {defaultBranch}
+          labels={branchLabels}
+        />
       {/if}
     {/if}
 
@@ -457,25 +463,16 @@
     <div class="wiki-edit-modal" role="dialog" aria-modal="true" aria-label="Edit {editPath.split('/').pop()}" data-testid="wiki-edit-modal">
       <div class="wiki-edit-modal-header">
         <div class="wiki-edit-modal-title">Edit: {editPath.split('/').pop()}</div>
-        {#if draftBranch}
-          <span class="wiki-edit-draft-badge">Draft</span>
+        {#if wikiSyncStatus === 'draft'}
+          <span class="wiki-edit-draft-badge">Unsaved</span>
+        {:else if wikiSyncStatus === 'saved'}
+          <span class="wiki-edit-saved-badge">Saved</span>
         {/if}
       </div>
       <textarea class="wiki-edit-textarea" bind:value={editContent} oninput={handleEditorInput} rows="20" data-testid="wiki-edit-textarea" aria-label="Page content"></textarea>
       <div class="wiki-edit-actions">
-        {#if draftBranch}
-          <button type="button" class="wiki-edit-cancel" onclick={discardDraft} data-testid="wiki-discard">Discard</button>
-        {:else}
-          <button type="button" class="wiki-edit-cancel" onclick={closeModal} data-testid="wiki-cancel">Cancel</button>
-        {/if}
-        <button type="button" class="wiki-edit-save" onclick={saveEdit} data-testid="wiki-save-draft">
-          {draftBranch ? 'Save Draft' : `Save`}
-        </button>
-        {#if draftBranch && wikiSyncStatus === 'saved'}
-          <button type="button" class="wiki-edit-publish" onclick={publishDraft} disabled={publishing} data-testid="wiki-publish">
-            {publishing ? 'Publishing…' : 'Publish'}
-          </button>
-        {/if}
+        <button type="button" class="wiki-edit-cancel" onclick={closeModal} data-testid="wiki-cancel">Cancel</button>
+        <button type="button" class="wiki-edit-save" onclick={saveEdit} data-testid="wiki-save">Save</button>
       </div>
       {#if message}
         <div
@@ -627,7 +624,11 @@
   }
 
   .sync-idle .sync-dot { background: var(--text-dim); }
+  .sync-viewing .sync-dot { background: var(--text-dim); }
+  .sync-draft .sync-dot { background: #d4af37; }
+  .sync-saved .sync-dot { background: #4a9a9a; }
   .sync-synced .sync-dot { background: #4a9a4a; }
+  .sync-behind .sync-dot { background: #cc8844; }
   .sync-dirty .sync-dot { background: #d4af37; }
   .sync-saving .sync-dot { background: #4a9a9a; }
   .sync-loading .sync-dot { background: #4a9a9a; }
@@ -725,9 +726,16 @@
     display: block;
   }
 
-  .sync-synced .sync-dot { background: #4a9a4a; }
-  .sync-draft .sync-dot { background: #cc4444; }
-  .sync-saved .sync-dot { background: #d4af37; }
+  .action-btn-warning {
+    border-color: #cc8844;
+    color: #cc8844;
+  }
+
+  .action-btn-warning:hover {
+    background: rgba(204, 136, 68, 0.15);
+    color: #e8a050;
+    border-color: #e8a050;
+  }
 
   /* Wiki Edit Modal */
   .wiki-edit-overlay {
@@ -806,32 +814,23 @@
     color: #fff;
   }
 
-  .wiki-edit-publish {
-    padding: 0.4rem 0.75rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    background: var(--gold-dim, #8b7d2a);
-    border: 1px solid var(--gold, #d4af37);
-    color: #fff;
-    margin-left: auto;
-  }
-
-  .wiki-edit-publish:hover:not(:disabled) {
-    background: var(--gold, #d4af37);
-  }
-
-  .wiki-edit-publish:disabled {
-    opacity: 0.6;
-    cursor: default;
-  }
-
   .wiki-edit-draft-badge {
     font-size: 10px;
     padding: 2px 8px;
     border-radius: 3px;
-    background: var(--gold-dim, #8b7d2a);
-    color: var(--gold, #d4af37);
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-family: 'Cinzel', serif;
+  }
+
+  .wiki-edit-saved-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: rgba(74, 154, 154, 0.2);
+    color: #4a9a9a;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-family: 'Cinzel', serif;

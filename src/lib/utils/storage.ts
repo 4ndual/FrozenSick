@@ -372,6 +372,9 @@ export function clearGitHubSyncState(): void {
 // ── Static File Loader ───────────────────────────────────────────────────────
 
 export async function loadFromStaticBundle(): Promise<CampaignData | null> {
+  if (typeof import.meta !== 'undefined' && import.meta.env && !import.meta.env.PROD) {
+    return null;
+  }
   try {
     const res = await fetch('/.data/bundle.json');
     if (!res.ok) return null;

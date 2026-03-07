@@ -1,13 +1,35 @@
 <script lang="ts">
   import { renderMarkdown } from '$lib/wiki-markdown';
+  import { linkifyPlacesInHtml, type PlaceMapMatch } from '$lib/place-map-links';
   import Header from '$lib/components/Header/Header.svelte';
   import WikiNav from '$lib/components/Header/WikiNav.svelte';
+  import type { NavEntry } from '$lib/wiki-nav';
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
 
-  let { data } = $props();
+  interface PageData {
+    content: string;
+    sourcePath: string;
+    branch: string;
+    defaultBranch: string;
+    branches: string[];
+    branchLabels: Record<string, string>;
+    initialSyncStatus: 'viewing' | 'saved' | 'synced' | 'behind';
+    nav: NavEntry[];
+    placeMapMatches: PlaceMapMatch[];
+    placeMapFile: string;
+  }
 
-  let html = $derived(renderMarkdown(data.content));
+  let { data } = $props<{ data: PageData }>();
+
+  let html = $derived.by(() =>
+    linkifyPlacesInHtml(renderMarkdown(data.content), {
+      matches: data.placeMapMatches ?? [],
+      branch: data.branch,
+      defaultBranch: data.defaultBranch,
+      mapFile: data.placeMapFile ?? null,
+    }),
+  );
   let container = $state<HTMLDivElement | undefined>(undefined);
   let currentPath = $derived($page.url.pathname);
 
@@ -30,6 +52,8 @@
     branch={data.branch}
     defaultBranch={data.defaultBranch}
     branches={data.branches}
+    branchLabels={data.branchLabels}
+    initialSyncStatus={data.initialSyncStatus}
   />
   <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
 
@@ -95,6 +119,29 @@
     color: var(--text-muted);
   }
 
+  .wiki-content :global(.mermaid-wrapper) {
+    background: var(--bg-card);
+    padding: 1.5rem 1rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border);
+    overflow-x: auto;
+    text-align: center;
+  }
+
+  .wiki-content :global(.mermaid) {
+    display: inline-block;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .wiki-content :global(.mermaid svg) {
+    max-width: none !important;
+    height: auto !important;
+  }
+
   .wiki-content :global(pre) {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -102,6 +149,48 @@
     padding: 1rem;
     overflow-x: auto;
     margin: 1rem 0;
+  }
+
+  .wiki-content :global(.wiki-table-wrapper) {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .wiki-content :global(table) {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  .wiki-content :global(thead) {
+    display: table-header-group;
+  }
+
+  .wiki-content :global(tbody) {
+    display: table-row-group;
+  }
+
+  .wiki-content :global(tr) {
+    display: table-row;
+  }
+
+  .wiki-content :global(th),
+  .wiki-content :global(td) {
+    display: table-cell;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+
+  .wiki-content :global(th) {
+    background: var(--bg-card);
+    font-weight: 600;
+    color: #e4e4ec;
+  }
+
+  .wiki-content :global(tr:nth-child(even)) {
+    background: rgba(22, 22, 42, 0.5);
   }
 
   .wiki-content :global(code) {
