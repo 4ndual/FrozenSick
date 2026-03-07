@@ -1,0 +1,35 @@
+{
+  "id": "mmgk40lj-grbvy",
+  "title": "Prueba 2",
+  "description": "sd nfasdngdrnmdrft ",
+  "date": {
+    "year": 700,
+    "month": 1,
+    "day": 1
+  },
+  "endDate": {
+    "year": 800,
+    "month": 5,
+    "day": 30
+  },
+  "timelineId": "nixira",
+  "type": "quest",
+  "relations": [
+    {
+      "targetId": "mmgjy2cy-4qzjk",
+      "type": "contradicts",
+      "label": "Contradicts"
+    }
+  ],
+  "tags": [
+    "Borrar"
+  ],
+  "color": "#b43cd3",
+  "icon": "moon",
+  "secret": true,
+  "linkedChapter": "Chapter 5 - The Escape from Brasboredon",
+  "linkedCharacters": [
+    "tidus"
+  ],
+  "location": "Dragsgs"
+}
