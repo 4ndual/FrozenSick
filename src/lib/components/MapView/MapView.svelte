@@ -109,6 +109,7 @@
 <div
   class="map-view"
   data-testid="map-view"
+  data-map-loaded={svg ? 'true' : undefined}
   role="application"
   aria-label="Campaign map — zoom with wheel, drag to pan"
   onwheel={handleWheel}
@@ -132,7 +133,7 @@
         class="map-svg-wrap"
         style="transform: translate({translateX}px, {translateY}px) scale({scale})"
       >
-        {@html svg}
+        {@html svg.replace(/<svg/, '<svg preserveAspectRatio="xMidYMid meet"')}
       </div>
       <div class="map-overlay" aria-hidden="true"></div>
     </div>
@@ -217,6 +218,7 @@
 
   .map-pan-zoom {
     flex: 1;
+    min-height: 200px;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -226,15 +228,19 @@
 
   .map-svg-wrap {
     transform-origin: center center;
-    display: inline-block;
-    min-width: 0;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: auto;
   }
 
   .map-svg-wrap :global(svg) {
     display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
   }
 
   .map-overlay {

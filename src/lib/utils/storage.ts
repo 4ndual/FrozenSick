@@ -7,7 +7,7 @@ const STORAGE_KEY = 'frozen-sick-timeline-v1';
 const UI_STORAGE_KEY = 'frozen-sick-timeline-ui-v1';
 const GH_SYNC_KEY = 'frozen-sick-gh-sync';
 
-export type ActiveTab = 'timeline' | 'graph' | 'settings' | 'map';
+export type ActiveTab = 'timeline' | 'graph' | 'settings';
 
 export interface TimelineUIState {
   activeTab: ActiveTab;
@@ -22,7 +22,7 @@ export function loadUIState(): TimelineUIState {
     if (!raw) return { ...DEFAULT_UI_STATE };
     const parsed = JSON.parse(raw) as Partial<TimelineUIState>;
     const tab = parsed.activeTab;
-    if (tab === 'timeline' || tab === 'graph' || tab === 'settings' || tab === 'map') {
+    if (tab === 'timeline' || tab === 'graph' || tab === 'settings') {
       return { activeTab: tab };
     }
     return { ...DEFAULT_UI_STATE };
@@ -372,6 +372,9 @@ export function clearGitHubSyncState(): void {
 // ── Static File Loader ───────────────────────────────────────────────────────
 
 export async function loadFromStaticBundle(): Promise<CampaignData | null> {
+  if (typeof import.meta !== 'undefined' && import.meta.env && !import.meta.env.PROD) {
+    return null;
+  }
   try {
     const res = await fetch('/.data/bundle.json');
     if (!res.ok) return null;

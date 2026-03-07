@@ -1,22 +1,15 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
   import { campaign } from '$lib/store/campaign.svelte';
   import Header from '$lib/components/Header/Header.svelte';
   import TimelineView from '$lib/components/TimelineView/TimelineView.svelte';
   import RelationshipGraph from '$lib/components/RelationshipGraph/RelationshipGraph.svelte';
-  import MapView from '$lib/components/MapView/MapView.svelte';
   import EventEditor from '$lib/components/EventEditor/EventEditor.svelte';
   import EventDetail from '$lib/components/EventEditor/EventDetail.svelte';
   import Sidebar from '$lib/components/Sidebar/Sidebar.svelte';
   import CalendarConfig from '$lib/components/CalendarConfig/CalendarConfig.svelte';
   import TimelineManager from '$lib/components/TimelineManager/TimelineManager.svelte';
   import EventTypesAndTagsConfig from '$lib/components/EventTypesAndTagsConfig/EventTypesAndTagsConfig.svelte';
-
-  $effect(() => {
-    const tab = $page.url?.searchParams?.get('tab');
-    if (tab === 'map') campaign.setActiveTab('map');
-  });
 
   onMount(() => {
     campaign.initAuth();
@@ -42,11 +35,6 @@
       {:else if campaign.activeTab === 'graph'}
         <div class="view">
           <RelationshipGraph />
-          <EventDetail />
-        </div>
-      {:else if campaign.activeTab === 'map'}
-        <div class="view">
-          <MapView />
           <EventDetail />
         </div>
       {:else}

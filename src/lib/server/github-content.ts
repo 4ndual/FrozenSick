@@ -239,7 +239,7 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
     }
 
     if (sectionName === 'World') {
-      children.push({ title: 'Map', href: '/timeline?tab=map' });
+      children.push({ title: 'Map', href: '/maps' });
     }
 
     nav.push({ section: sectionName, children } as NavSection);

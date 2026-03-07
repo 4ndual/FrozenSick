@@ -11,7 +11,7 @@
   type WikiSyncStatus = 'viewing' | 'draft' | 'saved' | 'synced' | 'behind';
 
   interface Props {
-    mode: 'wiki' | 'timeline';
+    mode: 'wiki' | 'timeline' | 'map';
     sourcePath?: string | null;
     returnTo?: string;
     branch?: string | null;
@@ -271,7 +271,9 @@
       </svg>
       <div class="brand-text">
         <span class="brand-name">Frozen Sick</span>
-        <span class="brand-sub">{mode === 'wiki' ? 'Campaign Wiki' : 'Campaign Timeline'}</span>
+        <span class="brand-sub">
+          {mode === 'wiki' ? 'Campaign Wiki' : mode === 'timeline' ? 'Campaign Timeline' : 'Campaign Map'}
+        </span>
       </div>
     </a>
   </div>
@@ -280,11 +282,11 @@
     {#if mode === 'timeline'}
       <!-- Timeline tabs -->
       <nav class="tab-nav">
-        {#each ['timeline', 'graph', 'map', 'settings'] as tab}
+        {#each ['timeline', 'graph', 'settings'] as tab}
           <button
             class="tab"
             class:active={campaign.activeTab === tab}
-            onclick={() => campaign.setActiveTab(tab as 'timeline' | 'graph' | 'map' | 'settings')}
+            onclick={() => campaign.setActiveTab(tab as 'timeline' | 'graph' | 'settings')}
             data-testid="tab-{tab}"
           >
             {#if tab === 'timeline'}
@@ -304,12 +306,6 @@
                 <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
               </svg>
               <span class="btn-label">Relations</span>
-            {:else if tab === 'map'}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
-                <path d="M1 6v13l7-4 7 4 7-4V6l-7 4-7-4-7 4z"></path>
-                <path d="M8 2v8l7 4 7-4V2"></path>
-              </svg>
-              <span class="btn-label">Map</span>
             {:else}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
                 <circle cx="12" cy="12" r="3"></circle>
@@ -428,6 +424,15 @@
 
       {#if token}
         <DraftsPanel {branchLabels} />
+      {/if}
+    {:else if mode === 'map'}
+      {#if branches.length > 0}
+        <BranchSelector
+          {branches}
+          currentBranch={activeBranch}
+          {defaultBranch}
+          labels={branchLabels}
+        />
       {/if}
     {/if}
 

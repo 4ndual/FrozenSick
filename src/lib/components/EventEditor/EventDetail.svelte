@@ -122,9 +122,9 @@
       <div class="section">
         <div class="section-label">Location</div>
         <span class="location-name">{ev.location}</span>
-        <button
+        <a
           class="action-btn map-show-btn"
-          onclick={() => { campaign.setActiveTab('map'); campaign.setSelectedEvent(ev.id); }}
+          href={'/maps?event=' + encodeURIComponent(ev.id) + '&location=' + encodeURIComponent(ev.location)}
           data-testid="event-show-on-map"
           aria-label="Show {ev.title} on map"
         >
@@ -133,7 +133,7 @@
             <path d="M8 2v8l7 4 7-4V2"></path>
           </svg>
           Show on map
-        </button>
+        </a>
       </div>
     {/if}
 
@@ -209,6 +209,7 @@
     padding: 3px 8px;
     font-size: 12px;
     font-family: 'Cinzel', serif;
+    text-decoration: none;
   }
   .action-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
 
