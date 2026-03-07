@@ -12,6 +12,14 @@
     path: string;
   }
 
+  interface PlaceTarget {
+    place: string;
+    source: string;
+    id: number | null;
+    x: number | null;
+    y: number | null;
+  }
+
   interface PageData {
     branch: string;
     defaultBranch: string;
@@ -20,6 +28,9 @@
     nav: NavEntry[];
     maps: MapOption[];
     selectedFile: string;
+    placeQuery: string;
+    placeMapFile: string;
+    placeTarget: PlaceTarget | null;
   }
 
   let { data } = $props<{ data: PageData }>();
@@ -30,9 +41,11 @@
   let currentPath = $derived($page.url.pathname + $page.url.search);
   let maps = $derived.by<MapOption[]>(() => data.maps ?? []);
   let selectedFile = $state('');
+  let placeTarget = $state<PlaceTarget | null>(null);
 
   $effect(() => {
     selectedFile = data.selectedFile ?? '';
+    placeTarget = data.placeTarget ?? null;
   });
 
   function encodePath(path: string): string {
@@ -49,10 +62,33 @@
   const selectedMap = $derived.by<MapOption | null>(
     () => maps.find((m: MapOption) => m.file === selectedFile) ?? null,
   );
+
+  const canApplyPlaceTarget = $derived.by<boolean>(() => {
+    if (!placeTarget) return false;
+    if (!data.placeMapFile) return true;
+    return selectedFile === data.placeMapFile;
+  });
+
+  const placeFocusParams = $derived.by<string>(() => {
+    if (!canApplyPlaceTarget || !placeTarget) return '';
+
+    const params = new URLSearchParams();
+    if (placeTarget.source === 'burg' && placeTarget.id !== null) {
+      params.set('burg', String(placeTarget.id));
+    } else if (placeTarget.x !== null && placeTarget.y !== null) {
+      params.set('x', String(placeTarget.x));
+      params.set('y', String(placeTarget.y));
+    } else {
+      return '';
+    }
+    params.set('scale', '9');
+    return params.toString();
+  });
+
   const rawMapUrl = $derived(selectedMap ? buildRawMapUrl(selectedMap.path) : '');
   const fmgUrl = $derived(
     rawMapUrl
-      ? `https://azgaar.github.io/Fantasy-Map-Generator/?maplink=${encodeURIComponent(rawMapUrl)}`
+      ? `https://azgaar.github.io/Fantasy-Map-Generator/?maplink=${encodeURIComponent(rawMapUrl)}${placeFocusParams ? `&${placeFocusParams}` : ''}`
       : '',
   );
 
@@ -61,6 +97,7 @@
     const url = new URL($page.url);
     if (file) url.searchParams.set('file', file);
     else url.searchParams.delete('file');
+    url.searchParams.delete('place');
     goto(url.toString(), { replaceState: true, keepFocus: true, noScroll: true });
   }
 
@@ -97,6 +134,15 @@
             <option value={map.file}>{map.name}</option>
           {/each}
         </select>
+        {#if data.placeQuery}
+          <span class="maps-focus" data-testid="maps-focus-place">
+            {#if placeTarget}
+              Focused place: {placeTarget.place}
+            {:else}
+              Place not found: {data.placeQuery}
+            {/if}
+          </span>
+        {/if}
       </div>
 
       <div class="maps-meta" data-testid="maps-meta">
@@ -155,6 +201,11 @@
   .maps-control {
     display: grid;
     gap: 4px;
+    font-size: 12px;
+  }
+
+  .maps-focus {
+    color: var(--text-muted);
     font-size: 12px;
   }
 

@@ -1,13 +1,35 @@
 <script lang="ts">
   import { renderMarkdown } from '$lib/wiki-markdown';
+  import { linkifyPlacesInHtml, type PlaceMapMatch } from '$lib/place-map-links';
   import Header from '$lib/components/Header/Header.svelte';
   import WikiNav from '$lib/components/Header/WikiNav.svelte';
+  import type { NavEntry } from '$lib/wiki-nav';
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
 
-  let { data } = $props();
+  interface PageData {
+    content: string;
+    sourcePath: string;
+    branch: string;
+    defaultBranch: string;
+    branches: string[];
+    branchLabels: Record<string, string>;
+    initialSyncStatus: 'viewing' | 'saved' | 'synced' | 'behind';
+    nav: NavEntry[];
+    placeMapMatches: PlaceMapMatch[];
+    placeMapFile: string;
+  }
 
-  let html = $derived(renderMarkdown(data.content));
+  let { data } = $props<{ data: PageData }>();
+
+  let html = $derived.by(() =>
+    linkifyPlacesInHtml(renderMarkdown(data.content), {
+      matches: data.placeMapMatches ?? [],
+      branch: data.branch,
+      defaultBranch: data.defaultBranch,
+      mapFile: data.placeMapFile ?? null,
+    }),
+  );
   let container = $state<HTMLDivElement | undefined>(undefined);
   let currentPath = $derived($page.url.pathname);
 

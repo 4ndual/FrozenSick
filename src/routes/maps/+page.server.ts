@@ -8,6 +8,11 @@ import {
   getDefaultBranch,
   GitHubAuthError,
 } from '$lib/server/github-content';
+import { fetchPlaceMapLinks } from '$lib/server/place-map-links';
+import {
+  extractMapFileNameFromRawUrl,
+  findPlaceMatch,
+} from '$lib/place-map-links';
 import { formatPathAsTitle, slugifyForBranch } from '$lib/utils/slugify';
 import type { PageServerLoad } from './$types';
 
@@ -22,12 +27,14 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
   const defaultBranch = getDefaultBranch();
   const branch = url.searchParams.get('branch') || defaultBranch;
   const requestedFile = url.searchParams.get('file');
+  const requestedPlace = url.searchParams.get('place');
 
   try {
-    const [tree, allBranches, worldMaps] = await Promise.all([
+    const [tree, allBranches, worldMaps, placeMapLinks] = await Promise.all([
       fetchTree(token, branch),
       listBranches(token),
       fetchWorldMapPaths(token, branch),
+      fetchPlaceMapLinks(token, branch, defaultBranch),
     ]);
 
     const manifest = buildManifest(tree);
@@ -62,9 +69,15 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
       })
       .sort((a, b) => a.file.localeCompare(b.file));
 
+    const matchedPlace = findPlaceMatch(placeMapLinks?.matches ?? [], requestedPlace);
+    const mappedFile = extractMapFileNameFromRawUrl(placeMapLinks?.rawMapUrl);
+    const mappedFileExists = Boolean(mappedFile && maps.some((m) => m.file === mappedFile));
+
     const selectedFile =
       requestedFile && maps.some((m) => m.file === requestedFile)
         ? requestedFile
+        : matchedPlace && mappedFileExists
+          ? (mappedFile as string)
         : (maps[0]?.file ?? '');
 
     return {
@@ -75,6 +88,17 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
       nav,
       maps,
       selectedFile,
+      placeQuery: requestedPlace ?? '',
+      placeMapFile: mappedFileExists ? mappedFile : '',
+      placeTarget: matchedPlace
+        ? {
+            place: matchedPlace.place,
+            source: matchedPlace.source ?? '',
+            id: matchedPlace.id ?? null,
+            x: matchedPlace.x ?? null,
+            y: matchedPlace.y ?? null,
+          }
+        : null,
     };
   } catch (err) {
     if (err instanceof GitHubAuthError) {
