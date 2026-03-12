@@ -268,7 +268,8 @@
   .wiki-main {
     margin-left: 270px;
     padding: 2.5rem 3rem 4rem;
-    max-width: 920px;
+    width: calc(100vw - 270px - 6rem);
+    max-width: 1400px;
     padding-top: calc(56px + 2.5rem);
   }
 
@@ -319,12 +320,13 @@
     border-radius: 6px;
     margin: 1.5rem 0;
     border: 1px solid var(--border);
-    overflow-x: auto;
+    overflow-x: visible;
     text-align: center;
   }
 
   .wiki-content :global(.mermaid) {
-    display: inline-block;
+    display: block;
+    width: 100%;
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -333,8 +335,11 @@
   }
 
   .wiki-content :global(.mermaid svg) {
-    max-width: none !important;
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
+    margin: 0 auto;
   }
 
   .wiki-content :global(pre) {
