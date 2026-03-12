@@ -488,6 +488,15 @@ function createCampaignStore() {
       syncError = null;
 
       try {
+        if (currentBranch === defaultBranch) {
+          const timelineBranch = await ensureTimelineDraftBranch();
+          currentBranch = timelineBranch;
+          syncBranchQuery(currentBranch);
+          if (!availableBranches.includes(timelineBranch)) {
+            availableBranches = filterTimelineBranches([...availableBranches, timelineBranch]);
+          }
+        }
+
         validateCampaignData(data);
         await attemptSave(token, false);
         if (currentBranch.startsWith(TIMELINE_BRANCH_PREFIX)) {
