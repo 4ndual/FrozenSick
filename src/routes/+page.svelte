@@ -76,6 +76,7 @@
   <main class="wiki-main" data-testid="wiki-main">
     <div class="landing">
       <h1>Frozen Sick</h1>
+      <p class="hello-world">Hello World PR test.</p>
       <p class="tagline">A D&D chronicle of bounty hunters, cursed artifacts, and a city on fire.</p>
 
       <div class="landing-grid">
@@ -116,6 +117,15 @@
     font-size: 1.1rem;
     color: var(--text-muted);
     margin-bottom: 2rem;
+  }
+
+  .hello-world {
+    margin: 0.35rem 0 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-light);
   }
 
   .landing-grid {
