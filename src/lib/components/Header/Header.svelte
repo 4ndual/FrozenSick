@@ -5,8 +5,8 @@
   import { campaign } from '$lib/store/campaign.svelte';
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
-  import { invalidateAll } from '$app/navigation';
-  import { slugifyForBranch } from '$lib/utils/slugify';
+  import { goto, invalidateAll } from '$app/navigation';
+  import { slugify, slugifyPath } from '$lib/utils/slugify';
 
   type WikiSyncStatus = 'viewing' | 'draft' | 'saved' | 'synced' | 'behind';
 
@@ -44,8 +44,19 @@
   let message = $state('');
   let messageOk = $state(false);
   let messageErr = $state(false);
+  let createModalOpen = $state(false);
+  let createType = $state<'md' | 'json'>('md');
+  let createFolder = $state('content/Chapters');
+  let createTitle = $state('');
+  let createFilename = $state('');
+  let createContent = $state('');
+  let createMessage = $state('');
+  let createMessageOk = $state(false);
+  let createMessageErr = $state(false);
+  let createPrUrl = $state<string | null>(null);
+  let createDirty = $state(false);
 
-  let wikiSyncStatus = $state<WikiSyncStatus>(initialSyncStatus);
+  let wikiSyncStatus = $state<WikiSyncStatus>('viewing');
   let prUrl = $state<string | null>(null);
   let contentBranch = $state<string | null>(null);
   let pulling = $state(false);
@@ -83,16 +94,82 @@
     token = getStoredToken();
   });
 
+  function announceHeaderOverlayOpen(source: string) {
+    if (!browser) return;
+    window.dispatchEvent(
+      new CustomEvent('header-overlay-open', {
+        detail: { source },
+      }),
+    );
+  }
+
+  function defaultMarkdownFolder(): string {
+    if (!sourcePath) return 'content/Chapters';
+    const parts = sourcePath.split('/');
+    parts.pop();
+    return parts.join('/') || 'content';
+  }
+
+  function resetCreateState() {
+    createType = 'md';
+    createFolder = defaultMarkdownFolder();
+    createTitle = '';
+    createFilename = '';
+    createContent = '# New Page\n\n';
+    createMessage = '';
+    createMessageOk = false;
+    createMessageErr = false;
+    createPrUrl = null;
+    createDirty = false;
+  }
+
+  function openCreateModal() {
+    resetCreateState();
+    announceHeaderOverlayOpen('wiki-create-modal');
+    createModalOpen = true;
+  }
+
+  function closeCreateModal() {
+    createModalOpen = false;
+  }
+
+  function buildCreatePath(): string {
+    if (createType === 'json') {
+      const fileName = createFilename.trim() || slugify(createTitle);
+      if (!fileName) throw new Error('Provide a chapter JSON file name or title.');
+      return `content/Chapters/${fileName}.json`;
+    }
+
+    const folder = createFolder.trim().replace(/\/+$/g, '') || 'content';
+    const titleSlug = slugify(createTitle);
+    if (!titleSlug) throw new Error('Provide a title for the new markdown page.');
+    return `${folder}/${titleSlug}.md`;
+  }
+
+  async function handleWikiBranchSelect(nextBranch: string) {
+    if (createModalOpen && createDirty) {
+      const confirmed = confirm('Discard the current create form and switch branch?');
+      if (!confirmed) return;
+      closeCreateModal();
+    }
+
+    const url = new URL(window.location.href);
+    if (nextBranch === defaultBranch) {
+      url.searchParams.delete('branch');
+    } else {
+      url.searchParams.set('branch', nextBranch);
+    }
+    await goto(url.toString(), { invalidateAll: true });
+  }
+
   async function openEditor() {
     if (!sourcePath) return;
 
     try {
-      const slug = slugifyForBranch(sourcePath);
-
       const res = await fetch('/api/drafts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'create', slug }),
+        body: JSON.stringify({ action: 'create', sourcePath }),
       });
       const data = await res.json();
       if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create editing branch');
@@ -113,6 +190,7 @@
       messageErr = false;
       prUrl = null;
       wikiSyncStatus = 'draft';
+      announceHeaderOverlayOpen('wiki-edit-modal');
       modalOpen = true;
     } catch (err) {
       alert((err as Error).message || 'Failed to open editor');
@@ -240,6 +318,77 @@
       messageErr = true;
     } finally {
       pulling = false;
+    }
+  }
+
+  async function createEntry() {
+    createMessage = 'Creating…';
+    createMessageOk = false;
+    createMessageErr = false;
+    createPrUrl = null;
+
+    try {
+      const entryPath = buildCreatePath();
+      const content =
+        createType === 'json'
+          ? (createContent.trim() || '{\n  "segments": []\n}\n')
+          : (createContent || '# New Page\n\n');
+
+      if (!content.trim()) {
+        throw new Error('Content cannot be empty.');
+      }
+
+      const createDraftRes = await fetch('/api/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'create', sourcePath: entryPath }),
+      });
+      const draftData = await createDraftRes.json();
+      if (!createDraftRes.ok && !draftData.alreadyExists) {
+        throw new Error(draftData.error || 'Failed to create draft branch');
+      }
+      const entryBranch = draftData.branch as string;
+      contentBranch = entryBranch;
+
+      const createRes = await fetch('/api/wiki/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          path: entryPath,
+          content,
+          branch: entryBranch,
+          format: createType,
+          message: `Create: ${entryPath.split('/').pop()}`,
+        }),
+      });
+      const createData = await createRes.json();
+      if (!createRes.ok) throw new Error(createData.error || 'Failed to create entry');
+
+      const prRes = await fetch('/api/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'ensure-pr', branch: entryBranch }),
+      });
+      const prData = await prRes.json();
+
+      createMessage = 'Created. Pending review.';
+      createMessageOk = true;
+      createMessageErr = false;
+      createPrUrl = prData.prUrl || null;
+      wikiSyncStatus = 'saved';
+      createDirty = false;
+      await invalidateAll();
+
+      if (createType === 'md') {
+        const relativePath = entryPath.replace(/^content\//, '');
+        const nextSlug = '/' + slugifyPath(relativePath);
+        const url = new URL(window.location.origin + nextSlug);
+        url.searchParams.set('branch', entryBranch);
+        await goto(url.toString(), { invalidateAll: true });
+      }
+    } catch (err) {
+      createMessage = (err as Error).message || 'Create failed';
+      createMessageErr = true;
     }
   }
 
@@ -399,6 +548,7 @@
           currentBranch={activeBranch}
           {defaultBranch}
           labels={branchLabels}
+          onSelect={handleWikiBranchSelect}
         />
       {/if}
 
@@ -419,6 +569,16 @@
             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
           </svg>
           <span class="btn-label">Edit</span>
+        </button>
+      {/if}
+
+      {#if token}
+        <button type="button" class="action-btn" onclick={openCreateModal} data-testid="wiki-create" aria-label="Create entry">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span class="btn-label">Create</span>
         </button>
       {/if}
 
@@ -487,6 +647,105 @@
           {message}
           {#if prUrl}
             — <a href={prUrl} target="_blank" rel="noopener noreferrer">View PR</a>
+          {/if}
+        </div>
+      {/if}
+    </div>
+  </div>
+{/if}
+
+{#if createModalOpen}
+  <div class="wiki-edit-overlay" onclick={(e: MouseEvent) => e.target === e.currentTarget && closeCreateModal()} role="presentation" data-testid="wiki-create-overlay">
+    <div class="wiki-edit-modal" role="dialog" aria-modal="true" aria-label="Create new entry" data-testid="wiki-create-modal">
+      <div class="wiki-edit-modal-header">
+        <div class="wiki-edit-modal-title">Create New Entry</div>
+      </div>
+      <div class="wiki-create-grid">
+        <label for="create-type">Entry type</label>
+        <select
+          id="create-type"
+          bind:value={createType}
+          onchange={() => {
+            createDirty = true;
+            if (createType === 'json') {
+              createFolder = 'content/Chapters';
+              createContent = '{\n  "segments": []\n}\n';
+            } else {
+              createContent = '# New Page\n\n';
+            }
+          }}
+          data-testid="wiki-create-type"
+        >
+          <option value="md">Markdown Page</option>
+          <option value="json">Chapter JSON</option>
+        </select>
+
+        {#if createType === 'md'}
+          <label for="create-folder">Folder path</label>
+          <input
+            id="create-folder"
+            bind:value={createFolder}
+            oninput={() => (createDirty = true)}
+            placeholder="content/Chapters/Chapter 6 - Example"
+            data-testid="wiki-create-folder"
+          />
+
+          <label for="create-title">Title</label>
+          <input
+            id="create-title"
+            bind:value={createTitle}
+            oninput={() => (createDirty = true)}
+            placeholder="My New Session"
+            data-testid="wiki-create-title"
+          />
+        {:else}
+          <label for="create-filename">File name</label>
+          <input
+            id="create-filename"
+            bind:value={createFilename}
+            oninput={() => (createDirty = true)}
+            placeholder="chapter-6-session"
+            data-testid="wiki-create-filename"
+          />
+
+          <label for="create-title">Optional title seed</label>
+          <input
+            id="create-title"
+            bind:value={createTitle}
+            oninput={() => (createDirty = true)}
+            placeholder="Used if file name is empty"
+            data-testid="wiki-create-title"
+          />
+        {/if}
+
+        <label for="create-content">Initial content</label>
+        <textarea
+          id="create-content"
+          class="wiki-edit-textarea"
+          bind:value={createContent}
+          oninput={() => (createDirty = true)}
+          rows="12"
+          data-testid="wiki-create-content"
+        ></textarea>
+      </div>
+
+      <div class="wiki-edit-actions">
+        <button type="button" class="wiki-edit-cancel" onclick={closeCreateModal} data-testid="wiki-create-cancel">Cancel</button>
+        <button type="button" class="wiki-edit-save" onclick={createEntry} data-testid="wiki-create-save">Create</button>
+      </div>
+      {#if createMessage}
+        <div
+          class="wiki-edit-msg"
+          class:wiki-edit-msg-ok={createMessageOk}
+          class:wiki-edit-msg-err={createMessageErr}
+          data-testid="wiki-create-status-message"
+          data-status={createMessageOk ? 'success' : createMessageErr ? 'error' : 'idle'}
+          role="status"
+          aria-live="polite"
+        >
+          {createMessage}
+          {#if createPrUrl}
+            — <a href={createPrUrl} target="_blank" rel="noopener noreferrer">View PR</a>
           {/if}
         </div>
       {/if}
@@ -600,7 +859,7 @@
     align-items: center;
     gap: 8px;
     flex-shrink: 1;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     min-width: 0;
   }
@@ -786,6 +1045,30 @@
     font-family: inherit;
     font-size: 0.9rem;
     resize: vertical;
+  }
+
+  .wiki-create-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .wiki-create-grid label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .wiki-create-grid input,
+  .wiki-create-grid select {
+    display: block;
+    width: 100%;
+    padding: 0.45rem 0.55rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 4px;
+    font-size: 0.88rem;
   }
 
   .wiki-edit-actions {

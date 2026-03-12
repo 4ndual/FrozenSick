@@ -2,6 +2,7 @@ import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
 import { invalidateCache } from '$lib/server/github-content';
+import { resolveEntryPath, assertBranchMatchesPath } from '$lib/server/wiki-entry';
 
 const API = 'https://api.github.com';
 
@@ -11,8 +12,6 @@ function getOwner() {
 function getRepo() {
   return env.PUBLIC_GITHUB_REPO || 'FrozenSick';
 }
-
-const ALLOWED_PREFIXES = ['content/'];
 
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
@@ -30,12 +29,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   if (!path || !sha || !branch) {
     throw error(400, 'Missing required fields: path, sha, branch');
   }
+  const resolved = resolveEntryPath(path, 'md');
+  assertBranchMatchesPath(branch, resolved.path);
 
-  if (!ALLOWED_PREFIXES.some((p) => path.startsWith(p))) {
-    throw error(403, `Write denied: path must start with ${ALLOWED_PREFIXES.join(' or ')}`);
-  }
-
-  const encodedPath = path
+  const encodedPath = resolved.path
     .split('/')
     .map(encodeURIComponent)
     .join('/');
@@ -50,7 +47,7 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        message: message || `Edit: ${path.split('/').pop()}`,
+        message: message || `Edit: ${resolved.path.split('/').pop()}`,
         content: btoa(unescape(encodeURIComponent(content))),
         sha,
         branch,

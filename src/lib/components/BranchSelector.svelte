@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
+  import { onMount } from 'svelte';
 
   interface Props {
     branches: string[];
@@ -17,6 +18,15 @@
   }
   let open = $state(false);
 
+  function announceOpenState(nextOpen: boolean) {
+    if (!nextOpen || typeof window === 'undefined') return;
+    window.dispatchEvent(
+      new CustomEvent('header-overlay-open', {
+        detail: { source: 'branch-selector' },
+      }),
+    );
+  }
+
   function selectBranch(branch: string) {
     open = false;
     if (onSelect) {
@@ -31,13 +41,27 @@
       goto(url.toString(), { invalidateAll: true });
     }
   }
+
+  onMount(() => {
+    const onOverlayOpen = (event: Event) => {
+      const source = (event as CustomEvent<{ source?: string }>).detail?.source;
+      if (source && source !== 'branch-selector') {
+        open = false;
+      }
+    };
+    window.addEventListener('header-overlay-open', onOverlayOpen as EventListener);
+    return () => window.removeEventListener('header-overlay-open', onOverlayOpen as EventListener);
+  });
 </script>
 
 <div class="branch-selector">
   <button
     type="button"
     class="branch-btn"
-    onclick={() => (open = !open)}
+    onclick={() => {
+      open = !open;
+      announceOpenState(open);
+    }}
     aria-expanded={open}
     aria-haspopup="listbox"
     aria-label="Select branch"

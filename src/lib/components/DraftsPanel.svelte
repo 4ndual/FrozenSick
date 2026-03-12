@@ -1,5 +1,6 @@
 <script lang="ts">
   import { invalidateAll } from '$app/navigation';
+  import { onMount } from 'svelte';
 
   interface Props {
     branchLabels?: Record<string, string>;
@@ -16,6 +17,15 @@
   let drafts = $state<Draft[]>([]);
   let loading = $state(false);
   let discarding = $state<string | null>(null);
+
+  function announceOpenState(nextOpen: boolean) {
+    if (!nextOpen || typeof window === 'undefined') return;
+    window.dispatchEvent(
+      new CustomEvent('header-overlay-open', {
+        detail: { source: 'drafts-panel' },
+      }),
+    );
+  }
 
   function readableLabel(draft: Draft): string {
     return branchLabels[draft.branch] || draft.label.replace(/-/g, ' ');
@@ -36,6 +46,7 @@
 
   function toggle() {
     open = !open;
+    announceOpenState(open);
     if (open) loadDrafts();
   }
 
@@ -55,6 +66,17 @@
       discarding = null;
     }
   }
+
+  onMount(() => {
+    const onOverlayOpen = (event: Event) => {
+      const source = (event as CustomEvent<{ source?: string }>).detail?.source;
+      if (source && source !== 'drafts-panel') {
+        open = false;
+      }
+    };
+    window.addEventListener('header-overlay-open', onOverlayOpen as EventListener);
+    return () => window.removeEventListener('header-overlay-open', onOverlayOpen as EventListener);
+  });
 </script>
 
 <div class="drafts-wrapper">

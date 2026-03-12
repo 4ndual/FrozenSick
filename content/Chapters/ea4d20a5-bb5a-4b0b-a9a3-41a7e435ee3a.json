@@ -1,0 +1,600 @@
+{
+  "segments": [
+    {
+      "speaker": "SPEAKER_00",
+      "start": 0.1,
+      "end": 5.62,
+      "text": "Dos ya."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 6.42,
+      "end": 7.36,
+      "text": "Cosas importantes."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 8.96,
+      "end": 14.41,
+      "text": "Voy a usar taumaturgia para que mi voz resuene en absolutamente todas partes."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 15.69,
+      "end": 19.55,
+      "text": "La guitarra que tengo la agarré del staff pero la prendí en candela."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 21.49,
+      "end": 24.75,
+      "text": "Mis ojos están brillando rojo y en mis cuernos sale el fuego."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 26.37,
+      "end": 28.31,
+      "text": "Y esto también está pasando, ¿ok?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 30.59,
+      "end": 32.1,
+      "text": "Muy producido."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 32.16,
+      "end": 32.9,
+      "text": "Si se ve, no se ve."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 36.54,
+      "end": 37.78,
+      "text": "No se ve, toca así."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 40.6,
+      "end": 47.35,
+      "text": "Esta es la guitarra, obviamente... ¿Tendría que ser público?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 47.39,
+      "end": 48.89,
+      "text": "Está tocando mientras le está..."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 59.05,
+      "end": 64.14,
+      "text": "Ven como la gente empezó a salir de las tiendas, todo el mundo llegó, enanos, humanos, gnomos..."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 64.16,
+      "end": 67.16,
+      "text": "Los que están grabando siguen grabando."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 67.24,
+      "end": 70.03,
+      "text": "Bueno, sonó todo Raining Blood."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 86.59,
+      "end": 110.06,
+      "text": "Y se desvanece suavemente la canción Y se desvanece suavemente la canción Y ahora ponme Vermilion Listo, de hecho son diez minutos y entonces con esta acabarías ¿Parte uno o parte dos?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 110.98,
+      "end": 111.16,
+      "text": "Uno"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 112.69,
+      "end": 116.0,
+      "text": "¿Cuál es la versión medieval de la muleta que siempre aparece en el concierto?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 116.42,
+      "end": 116.72,
+      "text": "¡Ay, sí!"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 116.78,
+      "end": 117.26,
+      "text": "¿Una muleta?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 117.94,
+      "end": 121.44,
+      "text": "No... Sí, es un palo con una escalera, o una pata de palo."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 121.82,
+      "end": 122.92,
+      "text": "Una pata de palo me gusta."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 122.98,
+      "end": 123.98,
+      "text": "Una pata de palo."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 124.04,
+      "end": 129.69,
+      "text": "Bueno, entonces... ¿Siempre aprendes que con muletas hay una muleta por ahí?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 129.71,
+      "end": 129.91,
+      "text": "Sí."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 130.51,
+      "end": 131.29,
+      "text": "¿Y alguien ve todas?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 131.71,
+      "end": 135.43,
+      "text": "No, ponme la 2 porque esa me acordé que la 2 es la triste."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 135.47,
+      "end": 135.93,
+      "text": "Bueno, baja así."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 145.85,
+      "end": 150.57,
+      "text": "Todos los elfos que tienen Minor Illusion conectan una luz en la punta de sus dedos."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 150.59,
+      "end": 152.25,
+      "text": "¿Los elfos también tienen Minor Illusion?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 152.43,
+      "end": 152.61,
+      "text": "Sí."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 152.89,
+      "end": 154.03,
+      "text": "¿Yo también tengo Minor Illusion?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 154.21,
+      "end": 157.15,
+      "text": "Sí, todos están."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 157.19,
+      "end": 161.53,
+      "text": "Los enanos usan sus yesqueros, cortan parte de sus barbas y ponen las torchas blancas."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 162.59,
+      "end": 166.09,
+      "text": "Los quemamos con sus linternas."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 167.37,
+      "end": 174.31,
+      "text": "Mientras voy cantando, señalo a Tidus y a Vermillion y hago como si le estuviera cantando a ella."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 174.38,
+      "end": 174.53,
+      "text": "¡Uf!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 177.4,
+      "end": 178.82,
+      "text": "Por favor."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 178.87,
+      "end": 179.88,
+      "text": "Evento canónico."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 179.99,
+      "end": 180.91,
+      "text": "En voz de Mixira."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 182.17,
+      "end": 185.71,
+      "text": "Esta canción la estoy tocando para una fan muy especial."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 186.39,
+      "end": 188.37,
+      "text": "A solicitud de uno de mis mejores amigos."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 188.91,
+      "end": 189.39,
+      "text": "Dedos."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 190.75,
+      "end": 192.97,
+      "text": "En la vida y en el amor no te rindas."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 193.41,
+      "end": 194.13,
+      "text": "Con ustedes."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 194.23,
+      "end": 195.67,
+      "text": "Vermillion."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 197.76,
+      "end": 200.2,
+      "text": "¿Vuelve a la tabla?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 200.22,
+      "end": 200.64,
+      "text": "No, no."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 200.78,
+      "end": 202.36,
+      "text": "No, ¿por qué?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 202.7,
+      "end": 204.1,
+      "text": "El público se separó."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 204.12,
+      "end": 205.2,
+      "text": "Están justo en la baranda."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 206.0,
+      "end": 206.94,
+      "text": "Al fondo a la derecha."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 207.88,
+      "end": 209.62,
+      "text": "Vermilion, mirando a Tidus."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 210.14,
+      "end": 211.56,
+      "text": "La agarré."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 212.4,
+      "end": 213.54,
+      "text": "Sí, la sube en los hombros."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 213.96,
+      "end": 218.54,
+      "text": "Sí, muy bien."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 220.5,
+      "end": 221.88,
+      "text": "¿Y no está ahí la camarera?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 221.9,
+      "end": 222.28,
+      "text": "No."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 222.3,
+      "end": 232.58,
+      "text": "Ya le había preguntado a ella."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 232.62,
+      "end": 233.66,
+      "text": "Listo."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 234.62,
+      "end": 235.3,
+      "text": "Y para acabar..."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 237.09,
+      "end": 247.19,
+      "text": "Ponme Toxicirio."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 247.25,
+      "end": 248.33,
+      "text": "Estoy toda jorobadita."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 248.43,
+      "end": 249.97,
+      "text": "¡Es el culo!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 256.48,
+      "end": 259.84,
+      "text": "Y ya no estoy tocando guitarra, ahora apareció una batería de fuego."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 261.58,
+      "end": 262.02,
+      "text": "Una batería."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 274.25,
+      "end": 277.73,
+      "text": "Empiezan a lanzar un minuto de ilusión de flores y rosas al escenario"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 302.63,
+      "end": 305.54,
+      "text": "Listo, si quieres prende la luz para ir jugando y vamos escuchando."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 305.83,
+      "end": 307.96,
+      "text": "Pongan la luz."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 308.02,
+      "end": 310.58,
+      "text": "Cosas que fueron pasando mientras sucedía el concierto."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 311.58,
+      "end": 312.46,
+      "text": "¿Sacarías?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 312.48,
+      "end": 316.0,
+      "text": "Estás en un pomo libre con puta mientras estaban dando las tres canciones."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 316.02,
+      "end": 318.52,
+      "text": "Didus."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 319.2,
+      "end": 323.38,
+      "text": "Lanzó un dado al cuadro."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 323.44,
+      "end": 326.17,
+      "text": "Tienes uno por daño en asfixia."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 326.39,
+      "end": 328.75,
+      "text": "Con la emoción te estaba aplastando con sus mundos."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 328.79,
+      "end": 328.91,
+      "text": "Uf."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 330.44,
+      "end": 331.05,
+      "text": "¡Muy bien!"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 331.11,
+      "end": 331.75,
+      "text": "¡Felicidades!"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 331.83,
+      "end": 334.29,
+      "text": "¡Eso es un mega golazo!"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 335.33,
+      "end": 337.77,
+      "text": "Era algo bueno, era algo bueno."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 338.07,
+      "end": 346.4,
+      "text": "La vas y ves que tiene la cara llena de lágrimas, está súper contenta, se le cobró todo el maquillaje, te abraza y en medio de esto te besa."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 346.5,
+      "end": 351.8,
+      "text": "En medio del desorden lo besa."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 353.34,
+      "end": 357.98,
+      "text": "O sea, literal, ustedes están besando y hay un pueblo alrededor de ustedes."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 358.02,
+      "end": 365.65,
+      "text": "Ustedes no hacen nada negado."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 365.67,
+      "end": 366.07,
+      "text": "¡No, Lupe!"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 366.13,
+      "end": 367.35,
+      "text": "No, no pongas a mí, Lupe."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 367.41,
+      "end": 368.09,
+      "text": "Por favor, no."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 368.11,
+      "end": 368.97,
+      "text": "Cómprate la tuya, maldito."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 375.92,
+      "end": 381.3,
+      "text": "¿Es lo que decían que el club se votaba sexualmente?"
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 381.32,
+      "end": 381.36,
+      "text": "Sí."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 381.72,
+      "end": 389.36,
+      "text": "Bueno, claramente su puntaje es perfecto."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 389.4,
+      "end": 393.56,
+      "text": "Ya tuvieron su participación, hay que esperar la vibración de los jueces."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 393.58,
+      "end": 397.69,
+      "text": "A medianoche tienen que volver para que revelen al ganador."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 398.35,
+      "end": 398.51,
+      "text": "Wow."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 402.67,
+      "end": 408.0,
+      "text": "Ustedes ambos tienen que votar en el 30, pero falta la votación del público, que es una votación mágica."
+    },
+    {
+      "speaker": "SPEAKER_00",
+      "start": 408.8,
+      "end": 410.56,
+      "text": "¿Me deja cuando lo pause?"
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 410.58,
+      "end": 411.19,
+      "text": "Sí, sí, por favor."
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "start": 411.21,
+      "end": 412.41,
+      "text": "Ya, ya, vamos a comer."
+    }
+  ],
+  "speakers_count": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "language": "es",
+  "duration": 415.85,
+  "model": "large-v3"
+}

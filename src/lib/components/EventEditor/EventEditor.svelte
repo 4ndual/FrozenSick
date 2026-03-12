@@ -3,11 +3,18 @@
   import { campaign } from '$lib/store/campaign.svelte';
   import { RELATION_TYPE_LABELS } from '$lib/types/schema';
   import type { CampaignEvent, EventRelation, FantasyDate } from '$lib/types/schema';
-  import { formatDate, clampDay } from '$lib/utils/calendar';
+import { clampDay } from '$lib/utils/calendar';
   import { generateId } from '$lib/utils/storage';
 
   const isNew = $derived(!campaign.editingEvent);
   const cal = $derived(campaign.data.calendar);
+  const FALLBACK_CHAPTERS = [
+    'Chapter 1 - The Tavern',
+    'Chapter 2 - The Plateau',
+    'Chapter 3 - The Flying Turtle',
+    'Chapter 4 - The Battle of Brasboredon',
+    'Chapter 5 - The Escape from Brasboredon',
+  ];
 
   function blankDate(): FantasyDate {
     return { year: cal.epoch, month: 1, day: 1 };
@@ -41,6 +48,8 @@
   let newRelTargetId = $state('');
   let newRelType = $state<EventRelation['type']>('related');
   let newRelLabel = $state('');
+  let chapterOptions = $state<string[]>(FALLBACK_CHAPTERS);
+  let chapterJsonEntries = $state<{ id: string; path: string }[]>([]);
 
   onMount(() => {
     return campaign.onEditorOpen((ev) => {
@@ -59,6 +68,31 @@
       newRelType = 'related';
       newRelLabel = '';
     });
+  });
+
+  async function loadChapterOptions(branch: string) {
+    try {
+      const params = new URLSearchParams({ branch });
+      const res = await fetch(`/api/wiki/chapters?${params}`);
+      if (!res.ok) return;
+      const data: {
+        chapters?: string[];
+        chapterJson?: { id: string; path: string }[];
+      } = await res.json();
+      chapterOptions = data.chapters?.length ? data.chapters : FALLBACK_CHAPTERS;
+      chapterJsonEntries = data.chapterJson ?? [];
+    } catch {
+      // Keep editor usable if chapter list cannot be loaded.
+      chapterOptions = FALLBACK_CHAPTERS;
+      chapterJsonEntries = [];
+    }
+  }
+
+  $effect(() => {
+    const branch = campaign.currentBranch;
+    if (branch) {
+      void loadChapterOptions(branch);
+    }
   });
 
   function syncTags() {
@@ -286,11 +320,16 @@
         <label for="ev-chapter">Linked Chapter</label>
         <select id="ev-chapter" bind:value={draft.linkedChapter}>
           <option value="">— none —</option>
-          <option value="Chapter 1 - The Tavern">Ch 1 — The Tavern</option>
-          <option value="Chapter 2 - The Plateau">Ch 2 — The Plateau</option>
-          <option value="Chapter 3 - The Flying Turtle">Ch 3 — The Flying Turtle</option>
-          <option value="Chapter 4 - The Battle of Brasboredon">Ch 4 — Battle of Brasboredon</option>
-          <option value="Chapter 5 - The Escape from Brasboredon">Ch 5 — Escape from Brasboredon</option>
+          {#each chapterOptions as chapter}
+            <option value={chapter}>{chapter}</option>
+          {/each}
+          {#if chapterJsonEntries.length > 0}
+            <optgroup label="Chapter JSON entries">
+              {#each chapterJsonEntries as jsonEntry}
+                <option value={jsonEntry.id}>[JSON] {jsonEntry.id}</option>
+              {/each}
+            </optgroup>
+          {/if}
         </select>
       </div>
 

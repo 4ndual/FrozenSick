@@ -117,6 +117,7 @@ export async function fetchTree(token: string, branch?: string): Promise<TreeEnt
 }
 
 const WORLD_MAPS_TTL = 5 * 60 * 1000;
+const CHAPTER_JSON_TTL = 5 * 60 * 1000;
 
 /**
  * Fetch blob entries under content/World/ that end with .map (Azgaar FMG files).
@@ -149,6 +150,39 @@ export async function fetchWorldMapPaths(token: string, branch?: string): Promis
 
   await setCache(cacheKey, mapEntries, WORLD_MAPS_TTL);
   return mapEntries;
+}
+
+/**
+ * Fetch blob entries under content/Chapters/ that end with .json.
+ */
+export async function fetchChapterJsonPaths(token: string, branch?: string): Promise<TreeEntry[]> {
+  const b = branch || getDefaultBranch();
+  const cacheKey = `chapterJson@${b}`;
+  const cached = await getCached<TreeEntry[]>(cacheKey);
+  if (cached) return cached;
+
+  const ref = await fetchJson<{ object: { sha: string } }>(
+    `${repoUrl()}/git/ref/heads/${encodeURIComponent(b)}`,
+    token,
+  );
+  const commit = await fetchJson<{ tree: { sha: string } }>(
+    `${repoUrl()}/git/commits/${ref.object.sha}`,
+    token,
+  );
+  const treeData = await fetchJson<{ tree: TreeEntry[] }>(
+    `${repoUrl()}/git/trees/${commit.tree.sha}?recursive=1`,
+    token,
+  );
+
+  const chapterEntries = treeData.tree.filter(
+    (e) =>
+      e.type === 'blob' &&
+      e.path.startsWith('content/Chapters/') &&
+      e.path.endsWith('.json'),
+  );
+
+  await setCache(cacheKey, chapterEntries, CHAPTER_JSON_TTL);
+  return chapterEntries;
 }
 
 /**

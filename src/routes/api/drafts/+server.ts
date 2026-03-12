@@ -1,7 +1,13 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
-import { invalidateCache } from '$lib/server/github-content';
+import {
+  invalidateCache,
+  fetchTree,
+  fetchChapterJsonPaths,
+} from '$lib/server/github-content';
+import { slugifyForBranch } from '$lib/utils/slugify';
+import { resolveEntryPath } from '$lib/server/wiki-entry';
 
 const API = 'https://api.github.com';
 const CONTENT_BRANCH_PREFIX = 'content/';
@@ -53,8 +59,9 @@ export const GET: RequestHandler = async ({ cookies }) => {
  * POST /api/drafts - manage content branches
  *
  * Actions:
- *   { action: "create", slug: string }
- *     -> creates content/{slug} branch from default branch HEAD
+ *   { action: "create", sourcePath?: string, slug?: string }
+ *     -> creates content/{slug} branch from default branch HEAD.
+ *        sourcePath is preferred and derives the slug server-side.
  *
  *   { action: "ensure-pr", branch: string }
  *     -> ensures an open PR exists from content branch to default (creates if needed)
@@ -88,13 +95,39 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 
 async function handleCreate(
   token: string,
-  body: { slug?: string },
+  body: { slug?: string; sourcePath?: string },
 ) {
-  const slug = body.slug?.trim();
+  const sourcePath = body.sourcePath?.trim();
+  const slug = sourcePath
+    ? slugifyForBranch(resolveEntryPath(sourcePath).path)
+    : body.slug?.trim();
   if (!slug) throw error(400, 'Missing slug');
 
   const branchName = `${CONTENT_BRANCH_PREFIX}${slug}`;
   const defaultBranch = getDefaultBranch();
+
+  if (sourcePath) {
+    const normalizedSourcePath = resolveEntryPath(sourcePath).path;
+    const [markdownTree, chapterJsonTree] = await Promise.all([
+      fetchTree(token, defaultBranch),
+      fetchChapterJsonPaths(token, defaultBranch),
+    ]);
+    const allKnownPaths = [...markdownTree.map((e) => e.path), ...chapterJsonTree.map((e) => e.path)];
+    const collision = allKnownPaths.find(
+      (candidate) =>
+        candidate !== normalizedSourcePath && slugifyForBranch(candidate) === slug,
+    );
+    if (collision) {
+      return json(
+        {
+          error:
+            'The requested path collides with another existing entry slug. Choose a different file name.',
+          collisionPath: collision,
+        },
+        { status: 409 },
+      );
+    }
+  }
 
   const refRes = await fetch(
     `${repoUrl()}/git/ref/heads/${encodeURIComponent(defaultBranch)}`,
