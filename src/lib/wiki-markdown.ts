@@ -9,7 +9,8 @@ marked.setOptions({ gfm: true });
 marked.use({
   renderer: {
     code({ text, lang }) {
-      if (lang === 'mermaid') {
+      const codeLang = (lang ?? '').trim().toLowerCase();
+      if (codeLang === 'mermaid') {
         return `<pre class="mermaid">${escapeHtml(text)}</pre>\n`;
       }
       return false;
