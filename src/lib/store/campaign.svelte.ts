@@ -6,6 +6,7 @@ import type {
   CustomEventType,
   FilterState,
 } from '$lib/types/schema.ts';
+import { replaceState } from '$app/navigation';
 import { DEFAULT_EVENT_TYPES } from '$lib/types/schema.ts';
 import { validateCampaignData } from '$lib/types/validation.ts';
 import {
@@ -43,6 +44,8 @@ import {
 
 export type { ActiveTab };
 export type SyncStatus = 'idle' | 'synced' | 'dirty' | 'saving' | 'loading' | 'error';
+const CONTENT_BRANCH_PREFIX = 'content/';
+const TIMELINE_BRANCH_PREFIX = `${CONTENT_BRANCH_PREFIX}timeline-`;
 
 function createCampaignStore() {
   let data = $state<CampaignData>(loadCampaign());
@@ -251,7 +254,30 @@ function createCampaignStore() {
     } else {
       url.searchParams.set('branch', branch);
     }
-    window.history.replaceState(window.history.state, '', url.toString());
+    replaceState(url, window.history.state);
+  }
+
+  function isAllowedTimelineBranch(branch: string): boolean {
+    return branch === defaultBranch || branch.startsWith(CONTENT_BRANCH_PREFIX);
+  }
+
+  function filterTimelineBranches(branches: string[]): string[] {
+    const filtered = branches.filter((b) => isAllowedTimelineBranch(b));
+    const withDefault = filtered.includes(defaultBranch) ? filtered : [defaultBranch, ...filtered];
+    return [...new Set(withDefault)];
+  }
+
+  async function ensureTimelineDraftBranch(): Promise<string> {
+    const res = await fetch('/api/drafts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'create-timeline' }),
+    });
+    const data = (await res.json()) as { branch?: string; error?: string };
+    if (!res.ok || !data.branch) {
+      throw new Error(data.error || 'Failed to ensure timeline branch');
+    }
+    return data.branch;
   }
 
   return {
@@ -346,6 +372,7 @@ function createCampaignStore() {
       fileShas = {};
       aheadPublished = false;
       behindPublished = false;
+      currentBranch = defaultBranch;
     },
 
     async initAuth() {
@@ -377,9 +404,22 @@ function createCampaignStore() {
         if (isAuthenticated) {
           try {
             const cfg = getRepoConfig();
-            availableBranches = await fetchBranchList(cfg, ghToken!);
+            const allBranches = await fetchBranchList(cfg, ghToken!);
+            availableBranches = filterTimelineBranches(allBranches);
           } catch {
-            availableBranches = [];
+            availableBranches = [defaultBranch];
+          }
+
+          try {
+            const ensuredBranch = await ensureTimelineDraftBranch();
+            currentBranch = ensuredBranch;
+            syncBranchQuery(currentBranch);
+            if (!availableBranches.includes(ensuredBranch)) {
+              availableBranches = filterTimelineBranches([...availableBranches, ensuredBranch]);
+            }
+          } catch {
+            currentBranch = defaultBranch;
+            syncBranchQuery(currentBranch);
           }
         }
 
@@ -395,9 +435,24 @@ function createCampaignStore() {
         }
 
         if (isAuthenticated) {
-          const files = shardCampaignData(data);
-          lastSyncedFiles = files;
-          syncStatus = 'synced';
+          try {
+            const cfg = { ...getRepoConfig(), branch: currentBranch };
+            const snapshot = await loadFromGitHub(cfg, ghToken!);
+            data = snapshot.data;
+            saveCampaign(data);
+            updateSyncCache(
+              snapshot.headSha,
+              snapshot.treeSha,
+              snapshot.fileShas,
+              shardCampaignData(snapshot.data),
+            );
+            syncStatus = 'synced';
+          } catch {
+            // Fall back to static/local data when branch load fails.
+            const files = shardCampaignData(data);
+            lastSyncedFiles = files;
+            syncStatus = 'synced';
+          }
           await refreshBranchStatus();
         }
       } finally {
@@ -417,6 +472,17 @@ function createCampaignStore() {
       try {
         validateCampaignData(data);
         await attemptSave(token, false);
+        if (currentBranch.startsWith(TIMELINE_BRANCH_PREFIX)) {
+          const prRes = await fetch('/api/drafts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'ensure-pr', branch: currentBranch }),
+          });
+          if (!prRes.ok) {
+            const prData = (await prRes.json().catch(() => ({}))) as { error?: string };
+            throw new Error(prData.error || 'Saved, but failed to ensure timeline PR');
+          }
+        }
         await refreshBranchStatus();
         syncStatus = 'synced';
       } catch (err) {
@@ -433,10 +499,11 @@ function createCampaignStore() {
       if (!token) return;
       try {
         const cfg = getRepoConfig();
-        availableBranches = await fetchBranchList(cfg, token);
+        const allBranches = await fetchBranchList(cfg, token);
+        availableBranches = filterTimelineBranches(allBranches);
         await refreshBranchStatus();
       } catch {
-        availableBranches = [];
+        availableBranches = [defaultBranch];
       }
     },
 
@@ -444,6 +511,9 @@ function createCampaignStore() {
       const token = ghToken;
       if (!token) throw new Error('Not authenticated');
       if (branch === currentBranch) return;
+      if (!isAllowedTimelineBranch(branch)) {
+        throw new Error('Only Published and content branches are available in Timeline.');
+      }
 
       currentBranch = branch;
       syncBranchQuery(branch);
