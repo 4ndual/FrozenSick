@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { invalidateAll } from '$app/navigation';
+  import { goto, invalidateAll } from '$app/navigation';
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
   import { isSection, type NavEntry, type NavItem, type NavSection } from '$lib/wiki-nav';
@@ -177,6 +177,7 @@
         ok?: boolean;
         message?: string;
         prUrl?: string | null;
+        branch?: string;
       };
 
       if (!res.ok || !data.ok) {
@@ -189,7 +190,18 @@
       statusMessage = data.message || 'Navigation updated.';
       statusPrUrl = data.prUrl || null;
       activeMenuKey = null;
-      await invalidateAll();
+      const mutationBranch = data.branch;
+      if (
+        mutationBranch &&
+        (!branch || branch === defaultBranch) &&
+        mutationBranch !== defaultBranch
+      ) {
+        const nextUrl = new URL($page.url);
+        nextUrl.searchParams.set('branch', mutationBranch);
+        await goto(nextUrl.toString(), { invalidateAll: true });
+      } else {
+        await invalidateAll();
+      }
     } catch {
       statusState = 'error';
       statusMessage = 'Navigation action failed due to a network error.';
@@ -812,8 +824,11 @@
 
   .menu-backdrop {
     position: fixed;
-    inset: 56px 0 0 0;
-    z-index: 160;
+    top: 56px;
+    right: 0;
+    bottom: 0;
+    left: 270px;
+    z-index: 45;
   }
 
   .delete-overlay {
@@ -891,6 +906,11 @@
       position: fixed;
       inset: 56px 0 0 0;
       background: rgba(0, 0, 0, 0.35);
+      z-index: 90;
+    }
+
+    .menu-backdrop {
+      left: 0;
       z-index: 90;
     }
   }
