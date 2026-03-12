@@ -2,6 +2,7 @@
   import ModeSwitcher from './ModeSwitcher.svelte';
   import BranchSelector from '$lib/components/BranchSelector.svelte';
   import DraftsPanel from '$lib/components/DraftsPanel.svelte';
+  import ApprovalsPanel from '$lib/components/ApprovalsPanel.svelte';
   import { campaign } from '$lib/store/campaign.svelte';
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
@@ -41,6 +42,9 @@
   const CONTENT_BRANCH_PREFIX = 'content/';
 
   let serverAuthenticated = $state(false);
+  let isAdmin = $state(false);
+  let canApprove = $state(false);
+  let allowDirectDefaultBranchEdits = $state(false);
   let modalOpen = $state(false);
   let editContent = $state('');
   let editSha = $state('');
@@ -100,8 +104,20 @@
     try {
       const res = await fetch('/api/status');
       if (!res.ok) return;
-      const data = (await res.json()) as { authenticated?: boolean };
+      const data = (await res.json()) as {
+        authenticated?: boolean;
+        isAdmin?: boolean;
+        canApprove?: boolean;
+        allowDirectDefaultBranchEdits?: boolean;
+      };
       serverAuthenticated = !!data.authenticated;
+      isAdmin = !!data.isAdmin;
+      canApprove = !!data.canApprove;
+      allowDirectDefaultBranchEdits = !!data.allowDirectDefaultBranchEdits;
+      campaign.setWorkflowCapabilities({
+        isAdmin: !!data.isAdmin,
+        allowDirectDefaultBranchEdits: !!data.allowDirectDefaultBranchEdits,
+      });
     } catch {
       // Ignore transient network/auth status fetch failures.
     }
@@ -110,6 +126,20 @@
   onMount(() => {
     handleHashToken();
     void refreshServerAuth();
+    const onWorkflowSettingsUpdated = (event: Event) => {
+      const detail = (event as CustomEvent<{ allowDirectDefaultBranchEdits?: boolean }>).detail;
+      allowDirectDefaultBranchEdits = detail?.allowDirectDefaultBranchEdits === true;
+      campaign.setWorkflowCapabilities({
+        isAdmin,
+        allowDirectDefaultBranchEdits,
+      });
+    };
+    window.addEventListener('workflow-settings-updated', onWorkflowSettingsUpdated as EventListener);
+    return () =>
+      window.removeEventListener(
+        'workflow-settings-updated',
+        onWorkflowSettingsUpdated as EventListener,
+      );
   });
 
   $effect(() => {
@@ -148,6 +178,7 @@
   }
 
   let isUiAuthenticated = $derived(serverAuthenticated || campaign.isAuthenticated);
+  let canDirectPublish = $derived(isAdmin && allowDirectDefaultBranchEdits);
 
   function announceHeaderOverlayOpen(source: string) {
     if (!browser) return;
@@ -221,14 +252,18 @@
     if (!sourcePath) return;
 
     try {
-      const res = await fetch('/api/drafts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'create', sourcePath }),
-      });
-      const data = await res.json();
-      if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create editing branch');
-      const editBranch = data.branch;
+      const shouldUseDirectPublish = canDirectPublish && activeBranch === defaultBranch;
+      let editBranch = activeBranch;
+      if (!shouldUseDirectPublish) {
+        const res = await fetch('/api/drafts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'create', sourcePath }),
+        });
+        const data = await res.json();
+        if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create editing branch');
+        editBranch = data.branch;
+      }
       contentBranch = editBranch;
 
       if (activeBranch !== editBranch) {
@@ -335,15 +370,18 @@
       if (!res.ok) throw new Error(data.error || 'Save failed');
       if (data.sha) editSha = data.sha;
 
-      const prRes = await fetch('/api/drafts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'ensure-pr', branch: contentBranch }),
-      });
-      const prData = await prRes.json();
+      let prData: { prUrl?: string } = {};
+      if (contentBranch.startsWith(CONTENT_BRANCH_PREFIX)) {
+        const prRes = await fetch('/api/drafts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'ensure-pr', branch: contentBranch }),
+        });
+        prData = await prRes.json();
+      }
 
-      wikiSyncStatus = 'saved';
-      message = 'Saved. Pending review.';
+      wikiSyncStatus = contentBranch === defaultBranch ? 'synced' : 'saved';
+      message = contentBranch === defaultBranch ? 'Saved directly to Published.' : 'Saved. Pending review.';
       prUrl = prData.prUrl || null;
       messageOk = true;
       messageErr = false;
@@ -403,16 +441,19 @@
         throw new Error('Content cannot be empty.');
       }
 
-      const createDraftRes = await fetch('/api/drafts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'create', sourcePath: entryPath }),
-      });
-      const draftData = await createDraftRes.json();
-      if (!createDraftRes.ok && !draftData.alreadyExists) {
-        throw new Error(draftData.error || 'Failed to create draft branch');
+      let entryBranch = defaultBranch;
+      if (!(canDirectPublish && activeBranch === defaultBranch)) {
+        const createDraftRes = await fetch('/api/drafts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'create', sourcePath: entryPath }),
+        });
+        const draftData = await createDraftRes.json();
+        if (!createDraftRes.ok && !draftData.alreadyExists) {
+          throw new Error(draftData.error || 'Failed to create draft branch');
+        }
+        entryBranch = draftData.branch as string;
       }
-      const entryBranch = draftData.branch as string;
       contentBranch = entryBranch;
 
       const createRes = await fetch('/api/wiki/create', {
@@ -429,18 +470,21 @@
       const createData = await createRes.json();
       if (!createRes.ok) throw new Error(createData.error || 'Failed to create entry');
 
-      const prRes = await fetch('/api/drafts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'ensure-pr', branch: entryBranch }),
-      });
-      const prData = await prRes.json();
+      let prData: { prUrl?: string } = {};
+      if (entryBranch.startsWith(CONTENT_BRANCH_PREFIX)) {
+        const prRes = await fetch('/api/drafts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'ensure-pr', branch: entryBranch }),
+        });
+        prData = await prRes.json();
+      }
 
-      createMessage = 'Created. Pending review.';
+      createMessage = entryBranch === defaultBranch ? 'Created directly on Published.' : 'Created. Pending review.';
       createMessageOk = true;
       createMessageErr = false;
       createPrUrl = prData.prUrl || null;
-      wikiSyncStatus = 'saved';
+      wikiSyncStatus = entryBranch === defaultBranch ? 'synced' : 'saved';
       createDirty = false;
       await invalidateAll();
 
@@ -697,6 +741,8 @@
       {#if serverAuthenticated}
         <DraftsPanel {branchLabels} />
       {/if}
+
+      <ApprovalsPanel visible={canApprove} />
     {:else if mode === 'map'}
       {#if branches.length > 0}
         <BranchSelector
@@ -877,8 +923,9 @@
     border-bottom: 1px solid var(--border-bright);
     flex-shrink: 0;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-    position: relative;
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 500;
   }
 
   .brand {

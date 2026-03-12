@@ -22,6 +22,7 @@ import {
   loadFromStaticBundle,
 } from '$lib/utils/storage.ts';
 import type { ActiveTab } from '$lib/utils/storage.ts';
+import { dateToDay } from '$lib/utils/calendar.ts';
 import {
   extractTokenFromHash,
   getToken,
@@ -59,6 +60,9 @@ function createCampaignStore() {
     characters: [],
     timelineIds: [],
     showSecrets: false,
+    dateRangeStartDay: null,
+    dateRangeEndDay: null,
+    dateRangePreset: null,
   });
 
   let selectedEventId = $state<string | null>(null);
@@ -91,6 +95,8 @@ function createCampaignStore() {
   let availableBranches = $state<string[]>([]);
   let aheadPublished = $state(false);
   let behindPublished = $state(false);
+  let isAdmin = $state(false);
+  let allowDirectDefaultBranchEdits = $state(false);
 
   let branchLabels = $derived.by<Record<string, string>>(() => {
     const labels: Record<string, string> = {};
@@ -125,6 +131,12 @@ function createCampaignStore() {
         !filter.timelineIds.includes(ev.timelineId)
       )
         return false;
+      if (filter.dateRangeStartDay !== null || filter.dateRangeEndDay !== null) {
+        const eventStartDay = dateToDay(ev.date, data.calendar);
+        const eventEndDay = ev.endDate ? dateToDay(ev.endDate, data.calendar) : eventStartDay;
+        if (filter.dateRangeStartDay !== null && eventEndDay < filter.dateRangeStartDay) return false;
+        if (filter.dateRangeEndDay !== null && eventStartDay > filter.dateRangeEndDay) return false;
+      }
       return true;
     }),
   );
@@ -277,6 +289,10 @@ function createCampaignStore() {
     return branch === defaultBranch || branch.startsWith(CONTENT_BRANCH_PREFIX);
   }
 
+  function canDirectPublishToDefault(): boolean {
+    return isAdmin && allowDirectDefaultBranchEdits;
+  }
+
   function filterTimelineBranches(branches: string[]): string[] {
     const filtered = branches.filter((b) => isAllowedTimelineBranch(b));
     const withDefault = filtered.includes(defaultBranch) ? filtered : [defaultBranch, ...filtered];
@@ -331,6 +347,16 @@ function createCampaignStore() {
     get branchLabels() { return branchLabels; },
     get aheadPublished() { return aheadPublished; },
     get behindPublished() { return behindPublished; },
+    get isAdmin() { return isAdmin; },
+    get allowDirectDefaultBranchEdits() { return allowDirectDefaultBranchEdits; },
+    setWorkflowCapabilities(next: {
+      isAdmin?: boolean;
+      allowDirectDefaultBranchEdits?: boolean;
+    }) {
+      isAdmin = next.isAdmin === true;
+      allowDirectDefaultBranchEdits = next.allowDirectDefaultBranchEdits === true;
+    },
+
 
     setActiveTab(tab: ActiveTab) {
       activeTab = tab;
@@ -488,7 +514,7 @@ function createCampaignStore() {
       syncError = null;
 
       try {
-        if (currentBranch === defaultBranch) {
+        if (currentBranch === defaultBranch && !canDirectPublishToDefault()) {
           const timelineBranch = await ensureTimelineDraftBranch();
           currentBranch = timelineBranch;
           syncBranchQuery(currentBranch);
@@ -764,6 +790,9 @@ function createCampaignStore() {
       filter.characters = [];
       filter.timelineIds = [];
       filter.showSecrets = false;
+      filter.dateRangeStartDay = null;
+      filter.dateRangeEndDay = null;
+      filter.dateRangePreset = null;
     },
 
     // ── Import / Export ─────────────────────────────────────────────────────

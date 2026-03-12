@@ -7,6 +7,8 @@ import {
   assertBranchMatchesPath,
   type WikiEntryFormat,
 } from '$lib/server/wiki-entry';
+import { resolveAuthzContext, assertCanWriteBranch } from '$lib/server/authz';
+import { getWorkflowSettings } from '$lib/server/workflow-settings';
 
 const API = 'https://api.github.com';
 
@@ -17,10 +19,15 @@ function getOwner() {
 function getRepo() {
   return env.PUBLIC_GITHUB_REPO || 'FrozenSick';
 }
+function getDefaultBranch() {
+  return env.PUBLIC_GITHUB_BRANCH || 'main';
+}
 
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
+  const workflow = await getWorkflowSettings(token);
 
   const body = await request.json();
   const {
@@ -42,7 +49,15 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   }
 
   const { path, format: resolvedFormat } = resolveEntryPath(rawPath, format);
-  assertBranchMatchesPath(branch, path);
+  assertCanWriteBranch(
+    context,
+    branch,
+    getDefaultBranch(),
+    workflow.allowDirectDefaultBranchEdits,
+  );
+  if (branch !== getDefaultBranch()) {
+    assertBranchMatchesPath(branch, path);
+  }
 
   if (resolvedFormat === 'json') {
     try {

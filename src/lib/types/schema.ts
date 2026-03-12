@@ -92,7 +92,21 @@ export interface FilterState {
   characters: string[];
   timelineIds: string[];
   showSecrets: boolean;
+  dateRangeStartDay: number | null;
+  dateRangeEndDay: number | null;
+  dateRangePreset: TimelineRangePreset | null;
 }
+
+export type TimelineRangePreset =
+  | 'day'
+  | 'decana'
+  | 'month'
+  | 'year'
+  | '5y'
+  | '20y'
+  | '100y'
+  | '500y'
+  | 'custom';
 
 export const EVENT_TYPE_LABELS: Record<EventType, string> = {
   battle: 'Battle',

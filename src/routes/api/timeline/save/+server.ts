@@ -8,9 +8,13 @@ import {
 } from '$lib/utils/github';
 import { env } from '$env/dynamic/public';
 import { invalidateCache } from '$lib/server/github-content';
+import { assertCanWriteBranch, resolveAuthzContext } from '$lib/server/authz';
+import { getWorkflowSettings } from '$lib/server/workflow-settings';
 
 const ALLOWED_PREFIXES = ['.data/'];
-const CONTENT_BRANCH_PREFIX = 'content/';
+function getDefaultBranch(): string {
+  return env.PUBLIC_GITHUB_BRANCH || 'main';
+}
 
 function getRepoConfig(branch: string): RepoConfig {
   return {
@@ -23,6 +27,8 @@ function getRepoConfig(branch: string): RepoConfig {
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
+  const workflow = await getWorkflowSettings(token);
 
   const body = await request.json();
   const { changes, message, parentSha, baseTreeSha, branch } = body as {
@@ -37,9 +43,12 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
     throw error(400, 'Missing required fields');
   }
 
-  if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
-    throw error(403, 'Timeline saves are only allowed on content branches.');
-  }
+  assertCanWriteBranch(
+    context,
+    branch,
+    getDefaultBranch(),
+    workflow.allowDirectDefaultBranchEdits,
+  );
 
   for (const change of changes) {
     if (!ALLOWED_PREFIXES.some((p) => change.path.startsWith(p))) {

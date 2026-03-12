@@ -12,8 +12,10 @@ import { resolveEntryPath } from '$lib/server/wiki-entry';
 import {
   CONTENT_BRANCH_PREFIX,
   buildUserContentBranch,
+  parseContentBranch,
   slugifyLogin,
 } from '$lib/server/content-branches';
+import { assertCanManageContentBranch, resolveAuthzContext, type AuthzContext } from '$lib/server/authz';
 
 const API = 'https://api.github.com';
 function getOwner() {
@@ -42,10 +44,17 @@ function ghHeaders(token: string) {
 export const GET: RequestHandler = async ({ cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
 
   const branches = await listBranches(token);
   const drafts = branches
     .filter((name) => name.startsWith(CONTENT_BRANCH_PREFIX))
+    .filter((name) => {
+      if (context.isAdmin) return true;
+      if (name === `${CONTENT_BRANCH_PREFIX}timeline-${context.loginSlug}`) return true;
+      const parsed = parseContentBranch(name);
+      return parsed?.owner === context.loginSlug;
+    })
     .map((b) => ({
       branch: b,
       label: b.slice(CONTENT_BRANCH_PREFIX.length),
@@ -78,21 +87,22 @@ export const GET: RequestHandler = async ({ cookies }) => {
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
 
   const body = await request.json();
   const action = body.action as string;
 
   switch (action) {
     case 'create':
-      return handleCreate(token, body);
+      return handleCreate(token, context, body);
     case 'create-timeline':
-      return handleCreateTimeline(token);
+      return handleCreateTimeline(token, context);
     case 'ensure-pr':
-      return handleEnsurePr(token, body);
+      return handleEnsurePr(token, context, body);
     case 'pull':
-      return handlePull(token, body);
+      return handlePull(token, context, body);
     case 'discard':
-      return handleDiscard(token, body);
+      return handleDiscard(token, context, body);
     default:
       throw error(400, `Unknown action: ${action}`);
   }
@@ -100,6 +110,7 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 
 async function handleCreate(
   token: string,
+  context: AuthzContext,
   body: { slug?: string; sourcePath?: string },
 ) {
   const sourcePath = body.sourcePath?.trim();
@@ -109,7 +120,7 @@ async function handleCreate(
     : body.slug?.trim();
   if (!slug) throw error(400, 'Missing slug');
 
-  const login = await fetchViewerLogin(token);
+  const login = context.login;
   const branchName = resolvedPath
     ? buildUserContentBranch(resolvedPath, login)
     : `${CONTENT_BRANCH_PREFIX}${slugifyLogin(login)}/${slug}`;
@@ -142,7 +153,11 @@ async function handleCreate(
   if (existingBranches.includes(branchName)) {
     return json({ branch: branchName, alreadyExists: true });
   }
-  if (legacyBranchName !== branchName && existingBranches.includes(legacyBranchName)) {
+  if (
+    context.isAdmin &&
+    legacyBranchName !== branchName &&
+    existingBranches.includes(legacyBranchName)
+  ) {
     // Keep using legacy per-page branches so users continue editing existing pending work.
     return json({ branch: legacyBranchName, alreadyExists: true, legacyBranch: true });
   }
@@ -155,36 +170,17 @@ async function handleCreate(
   return json({ branch: branchName });
 }
 
-async function handleCreateTimeline(token: string) {
-  const login = await fetchViewerLogin(token);
-  const timelineSlug = slugifyLogin(login);
+async function handleCreateTimeline(token: string, context: AuthzContext) {
+  const timelineSlug = slugifyLogin(context.login);
   const branchName = `${CONTENT_BRANCH_PREFIX}timeline-${timelineSlug}`;
   const defaultBranch = getDefaultBranch();
 
   const branchResult = await createBranchFromDefault(token, branchName, defaultBranch);
   return json({
     branch: branchName,
-    login,
+    login: context.login,
     alreadyExists: branchResult === 'exists',
   });
-}
-
-async function fetchViewerLogin(token: string): Promise<string> {
-  const userRes = await fetch('https://api.github.com/user', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-    },
-  });
-  if (!userRes.ok) {
-    throw error(502, 'Failed to resolve authenticated GitHub user');
-  }
-  const userData = (await userRes.json()) as { login?: string };
-  const login = userData.login?.trim();
-  if (!login) {
-    throw error(502, 'Authenticated GitHub user has no login');
-  }
-  return login;
 }
 
 async function createBranchFromDefault(
@@ -218,12 +214,17 @@ async function createBranchFromDefault(
   return 'created';
 }
 
-async function handleEnsurePr(token: string, body: { branch?: string }) {
+async function handleEnsurePr(
+  token: string,
+  context: AuthzContext,
+  body: { branch?: string },
+) {
   const branch = body.branch;
   if (!branch) throw error(400, 'Missing branch');
   if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
     throw error(403, 'Can only create PRs for content/ branches');
   }
+  assertCanManageContentBranch(context, branch);
 
   const defaultBranch = getDefaultBranch();
   const label = branch.slice(CONTENT_BRANCH_PREFIX.length).replace(/-/g, ' ');
@@ -269,12 +270,17 @@ async function handleEnsurePr(token: string, body: { branch?: string }) {
   return json({ prUrl: pr.html_url });
 }
 
-async function handlePull(token: string, body: { branch?: string }) {
+async function handlePull(
+  token: string,
+  context: AuthzContext,
+  body: { branch?: string },
+) {
   const branch = body.branch;
   if (!branch) throw error(400, 'Missing branch');
   if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
     throw error(403, 'Can only pull into content/ branches');
   }
+  assertCanManageContentBranch(context, branch);
 
   const defaultBranch = getDefaultBranch();
 
@@ -306,12 +312,17 @@ async function handlePull(token: string, body: { branch?: string }) {
   return json({ updated: true });
 }
 
-async function handleDiscard(token: string, body: { branch?: string }) {
+async function handleDiscard(
+  token: string,
+  context: AuthzContext,
+  body: { branch?: string },
+) {
   const branch = body.branch;
   if (!branch) throw error(400, 'Missing branch');
   if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
     throw error(403, 'Can only discard content/ branches');
   }
+  assertCanManageContentBranch(context, branch);
 
   const defaultBranch = getDefaultBranch();
   const listRes = await fetch(

@@ -9,6 +9,8 @@ import {
 } from '$lib/server/github-content';
 import { resolveEntryPath } from '$lib/server/wiki-entry';
 import { buildUserContentBranch } from '$lib/server/content-branches';
+import { assertCanWriteBranch, resolveAuthzContext } from '$lib/server/authz';
+import { getWorkflowSettings } from '$lib/server/workflow-settings';
 
 const API = 'https://api.github.com';
 const CONTENT_PREFIX = 'content/';
@@ -293,27 +295,11 @@ async function fetchBranchTree(token: string, branch: string): Promise<GitTreeEn
   return tree.tree;
 }
 
-async function fetchViewerLogin(token: string): Promise<string> {
-  const userRes = await fetch('https://api.github.com/user', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-    },
-  });
-  if (!userRes.ok) {
-    throw error(502, 'Failed to resolve authenticated GitHub user');
-  }
-  const userData = (await userRes.json()) as { login?: string };
-  const login = userData.login?.trim();
-  if (!login) {
-    throw error(502, 'Authenticated GitHub user has no login');
-  }
-  return login;
-}
-
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
+  const workflow = await getWorkflowSettings(token);
 
   const body = (await request.json()) as NavMutationBody;
   const action = body.action;
@@ -330,12 +316,13 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   }
 
   const targetPath = normalizeTargetPath(targetKind, targetPathRaw);
-  const branch = body.branch?.trim() || buildUserContentBranch(targetPath, await fetchViewerLogin(token));
-  if (!branch.startsWith(CONTENT_PREFIX)) {
-    throw error(403, 'Only content/* branches are supported');
-  }
+  const branch = body.branch?.trim() || buildUserContentBranch(targetPath, context.login);
+  const defaultBranch = getDefaultBranch();
+  assertCanWriteBranch(context, branch, defaultBranch, workflow.allowDirectDefaultBranchEdits);
 
-  await createBranchFromDefault(token, branch, getDefaultBranch());
+  if (branch !== defaultBranch) {
+    await createBranchFromDefault(token, branch, defaultBranch);
+  }
 
   const targetKey = navTargetKey(targetKind, targetPath);
   let deletedCount = 0;
@@ -404,7 +391,8 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   await invalidateCache(branch);
 
   const shouldEnsurePr = body.ensurePr ?? true;
-  const pr = shouldEnsurePr ? await ensurePullRequest(token, branch) : { prUrl: null };
+  const shouldCreatePr = shouldEnsurePr && branch.startsWith(CONTENT_PREFIX);
+  const pr = shouldCreatePr ? await ensurePullRequest(token, branch) : { prUrl: null };
 
   return json({
     ok: true,

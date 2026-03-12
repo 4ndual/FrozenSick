@@ -2,6 +2,7 @@ import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
 import { getDefaultBranch, invalidateCache } from '$lib/server/github-content';
+import { assertCanManageContentBranch, resolveAuthzContext } from '$lib/server/authz';
 
 const API = 'https://api.github.com';
 
@@ -28,6 +29,7 @@ function ghHeaders(token: string) {
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
 
   const body = await request.json();
   const branch = body.branch as string | undefined;
@@ -40,6 +42,11 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
       reason: 'Published branch is already up to date.',
     });
   }
+  assertCanManageContentBranch(
+    context,
+    branch,
+    'You can only update your own content timeline branch.',
+  );
 
   const mergeRes = await fetch(`${repoUrl()}/merges`, {
     method: 'POST',

@@ -1,14 +1,24 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+import { env } from '$env/dynamic/private';
 import { listBranches, getDefaultBranch } from '$lib/server/github-content';
+import { resolveAppRole } from '$lib/server/roles';
+import { getWorkflowSettings } from '$lib/server/workflow-settings';
 
 export const GET: RequestHandler = async ({ cookies }) => {
 	const token = cookies.get('gh_token');
+  const workflow = await getWorkflowSettings(token);
 
 	if (!token) {
+		const role = resolveAppRole(false, null);
 		return json({
 			authenticated: false,
 			user: null,
+			role,
+			isAdmin: false,
+			canApprove: false,
+			canDirectPublish: false,
+      allowDirectDefaultBranchEdits: workflow.allowDirectDefaultBranchEdits,
 			branch: getDefaultBranch(),
 			defaultBranch: getDefaultBranch(),
 			draftCount: 0,
@@ -39,9 +49,17 @@ export const GET: RequestHandler = async ({ cookies }) => {
 		// branches stays empty
 	}
 
+	const role = resolveAppRole(true, user);
+	const isAdmin = role === 'admin';
+
 	return json({
 		authenticated: true,
 		user,
+		role,
+		isAdmin,
+		canApprove: isAdmin,
+		canDirectPublish: isAdmin && workflow.allowDirectDefaultBranchEdits,
+    allowDirectDefaultBranchEdits: workflow.allowDirectDefaultBranchEdits,
 		branch: getDefaultBranch(),
 		defaultBranch: getDefaultBranch(),
 		draftCount,
@@ -52,7 +70,7 @@ export const GET: RequestHandler = async ({ cookies }) => {
 
 function getCacheBackend(): 'redis' | 'memory' {
 	try {
-		if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+		if (env.KV_REST_API_URL && env.KV_REST_API_TOKEN) {
 			return 'redis';
 		}
 	} catch {

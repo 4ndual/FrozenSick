@@ -1,6 +1,7 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
+import { assertCanManageContentBranch, resolveAuthzContext } from '$lib/server/authz';
 
 const API = 'https://api.github.com';
 
@@ -14,6 +15,7 @@ function getRepo() {
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
 
   const body = await request.json();
   const { title, head, base, prBody } = body as {
@@ -26,6 +28,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   if (!title || !head || !base) {
     throw error(400, 'Missing required fields: title, head, base');
   }
+  if (!head.startsWith('content/')) {
+    throw error(403, 'Only content branches can be opened for review.');
+  }
+  assertCanManageContentBranch(context, head);
 
   const ghRes = await fetch(
     `${API}/repos/${getOwner()}/${getRepo()}/pulls`,

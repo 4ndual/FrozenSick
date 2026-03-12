@@ -3,6 +3,8 @@ import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
 import { invalidateCache } from '$lib/server/github-content';
 import { resolveEntryPath, assertBranchMatchesPath } from '$lib/server/wiki-entry';
+import { resolveAuthzContext, assertCanWriteBranch } from '$lib/server/authz';
+import { getWorkflowSettings } from '$lib/server/workflow-settings';
 
 const API = 'https://api.github.com';
 
@@ -12,10 +14,15 @@ function getOwner() {
 function getRepo() {
   return env.PUBLIC_GITHUB_REPO || 'FrozenSick';
 }
+function getDefaultBranch() {
+  return env.PUBLIC_GITHUB_BRANCH || 'main';
+}
 
 export const POST: RequestHandler = async ({ request, cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
+  const context = await resolveAuthzContext(token);
+  const workflow = await getWorkflowSettings(token);
 
   const body = await request.json();
   const { path, content, sha, branch, message } = body as {
@@ -30,7 +37,15 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
     throw error(400, 'Missing required fields: path, sha, branch');
   }
   const resolved = resolveEntryPath(path, 'md');
-  assertBranchMatchesPath(branch, resolved.path);
+  assertCanWriteBranch(
+    context,
+    branch,
+    getDefaultBranch(),
+    workflow.allowDirectDefaultBranchEdits,
+  );
+  if (branch !== getDefaultBranch()) {
+    assertBranchMatchesPath(branch, resolved.path);
+  }
 
   const encodedPath = resolved.path
     .split('/')
