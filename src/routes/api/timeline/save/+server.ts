@@ -10,6 +10,7 @@ import { env } from '$env/dynamic/public';
 import { invalidateCache } from '$lib/server/github-content';
 
 const ALLOWED_PREFIXES = ['.data/'];
+const CONTENT_BRANCH_PREFIX = 'content/';
 
 function getRepoConfig(branch: string): RepoConfig {
   return {
@@ -34,6 +35,10 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 
   if (!changes || !message || !parentSha || !baseTreeSha || !branch) {
     throw error(400, 'Missing required fields');
+  }
+
+  if (!branch.startsWith(CONTENT_BRANCH_PREFIX)) {
+    throw error(403, 'Timeline saves are only allowed on content branches.');
   }
 
   for (const change of changes) {

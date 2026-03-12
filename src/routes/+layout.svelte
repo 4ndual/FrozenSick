@@ -1,14 +1,16 @@
 <script lang="ts">
   import '../app.css';
   import { browser } from '$app/environment';
+  import { ensureMermaid } from '$lib/mermaid-client';
 
   let { children } = $props();
 
-  // Initialize mermaid on client side
   $effect(() => {
-    if (browser && typeof (window as unknown as { mermaid?: { initialize: (opts: { theme: string }) => void } }).mermaid?.initialize === 'function') {
-      (window as unknown as { mermaid?: { initialize: (opts: { theme: string }) => void } }).mermaid?.initialize({ theme: 'dark' });
-    }
+    if (!browser) return;
+
+    void ensureMermaid().catch((error) => {
+      console.error('Failed to initialize Mermaid runtime', error);
+    });
   });
 </script>
 

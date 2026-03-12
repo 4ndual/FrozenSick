@@ -1,11 +1,21 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/public';
-import { invalidateCache } from '$lib/server/github-content';
+import {
+  invalidateCache,
+  fetchTree,
+  fetchChapterJsonPaths,
+  listBranches,
+} from '$lib/server/github-content';
+import { slugifyForBranch } from '$lib/utils/slugify';
+import { resolveEntryPath } from '$lib/server/wiki-entry';
+import {
+  CONTENT_BRANCH_PREFIX,
+  buildUserContentBranch,
+  slugifyLogin,
+} from '$lib/server/content-branches';
 
 const API = 'https://api.github.com';
-const CONTENT_BRANCH_PREFIX = 'content/';
-
 function getOwner() {
   return env.PUBLIC_GITHUB_OWNER || '4ndual';
 }
@@ -33,17 +43,12 @@ export const GET: RequestHandler = async ({ cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
 
-  const res = await fetch(`${repoUrl()}/branches?per_page=100`, {
-    headers: ghHeaders(token),
-  });
-  if (!res.ok) throw error(502, 'Failed to list branches');
-
-  const branches: { name: string }[] = await res.json();
+  const branches = await listBranches(token);
   const drafts = branches
-    .filter((b) => b.name.startsWith(CONTENT_BRANCH_PREFIX))
+    .filter((name) => name.startsWith(CONTENT_BRANCH_PREFIX))
     .map((b) => ({
-      branch: b.name,
-      label: b.name.slice(CONTENT_BRANCH_PREFIX.length),
+      branch: b,
+      label: b.slice(CONTENT_BRANCH_PREFIX.length),
     }));
 
   return json({ drafts });
@@ -53,8 +58,13 @@ export const GET: RequestHandler = async ({ cookies }) => {
  * POST /api/drafts - manage content branches
  *
  * Actions:
- *   { action: "create", slug: string }
- *     -> creates content/{slug} branch from default branch HEAD
+ *   { action: "create", sourcePath?: string, slug?: string }
+ *     -> creates content/{github-login-slug}/{entry-slug} branch from default HEAD.
+ *        Falls back to existing legacy content/{entry-slug} branch when present.
+ *        sourcePath is preferred and derives the entry slug server-side.
+ *
+ *   { action: "create-timeline" }
+ *     -> creates/ensures content/timeline-<github-login> branch from default HEAD.
  *
  *   { action: "ensure-pr", branch: string }
  *     -> ensures an open PR exists from content branch to default (creates if needed)
@@ -75,6 +85,8 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   switch (action) {
     case 'create':
       return handleCreate(token, body);
+    case 'create-timeline':
+      return handleCreateTimeline(token);
     case 'ensure-pr':
       return handleEnsurePr(token, body);
     case 'pull':
@@ -88,14 +100,98 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 
 async function handleCreate(
   token: string,
-  body: { slug?: string },
+  body: { slug?: string; sourcePath?: string },
 ) {
-  const slug = body.slug?.trim();
+  const sourcePath = body.sourcePath?.trim();
+  const resolvedPath = sourcePath ? resolveEntryPath(sourcePath).path : null;
+  const slug = resolvedPath
+    ? slugifyForBranch(resolvedPath)
+    : body.slug?.trim();
   if (!slug) throw error(400, 'Missing slug');
 
-  const branchName = `${CONTENT_BRANCH_PREFIX}${slug}`;
+  const login = await fetchViewerLogin(token);
+  const branchName = resolvedPath
+    ? buildUserContentBranch(resolvedPath, login)
+    : `${CONTENT_BRANCH_PREFIX}${slugifyLogin(login)}/${slug}`;
+  const legacyBranchName = `${CONTENT_BRANCH_PREFIX}${slug}`;
   const defaultBranch = getDefaultBranch();
 
+  if (resolvedPath) {
+    const [markdownTree, chapterJsonTree] = await Promise.all([
+      fetchTree(token, defaultBranch),
+      fetchChapterJsonPaths(token, defaultBranch),
+    ]);
+    const allKnownPaths = [...markdownTree.map((e) => e.path), ...chapterJsonTree.map((e) => e.path)];
+    const collision = allKnownPaths.find(
+      (candidate) =>
+        candidate !== resolvedPath && slugifyForBranch(candidate) === slug,
+    );
+    if (collision) {
+      return json(
+        {
+          error:
+            'The requested path collides with another existing entry slug. Choose a different file name.',
+          collisionPath: collision,
+        },
+        { status: 409 },
+      );
+    }
+  }
+
+  const existingBranches = await listBranches(token);
+  if (existingBranches.includes(branchName)) {
+    return json({ branch: branchName, alreadyExists: true });
+  }
+  if (legacyBranchName !== branchName && existingBranches.includes(legacyBranchName)) {
+    // Keep using legacy per-page branches so users continue editing existing pending work.
+    return json({ branch: legacyBranchName, alreadyExists: true, legacyBranch: true });
+  }
+
+  const branchResult = await createBranchFromDefault(token, branchName, defaultBranch);
+  if (branchResult === 'exists') {
+    return json({ branch: branchName, alreadyExists: true });
+  }
+
+  return json({ branch: branchName });
+}
+
+async function handleCreateTimeline(token: string) {
+  const login = await fetchViewerLogin(token);
+  const timelineSlug = slugifyLogin(login);
+  const branchName = `${CONTENT_BRANCH_PREFIX}timeline-${timelineSlug}`;
+  const defaultBranch = getDefaultBranch();
+
+  const branchResult = await createBranchFromDefault(token, branchName, defaultBranch);
+  return json({
+    branch: branchName,
+    login,
+    alreadyExists: branchResult === 'exists',
+  });
+}
+
+async function fetchViewerLogin(token: string): Promise<string> {
+  const userRes = await fetch('https://api.github.com/user', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+    },
+  });
+  if (!userRes.ok) {
+    throw error(502, 'Failed to resolve authenticated GitHub user');
+  }
+  const userData = (await userRes.json()) as { login?: string };
+  const login = userData.login?.trim();
+  if (!login) {
+    throw error(502, 'Authenticated GitHub user has no login');
+  }
+  return login;
+}
+
+async function createBranchFromDefault(
+  token: string,
+  branchName: string,
+  defaultBranch: string,
+): Promise<'created' | 'exists'> {
   const refRes = await fetch(
     `${repoUrl()}/git/ref/heads/${encodeURIComponent(defaultBranch)}`,
     { headers: ghHeaders(token) },
@@ -113,14 +209,13 @@ async function handleCreate(
   });
 
   if (createRes.status === 422) {
-    return json({ branch: branchName, alreadyExists: true });
+    return 'exists';
   }
   if (!createRes.ok) {
     const err = await createRes.json().catch(() => ({}));
     throw error(502, (err as { message?: string }).message || 'Failed to create branch');
   }
-
-  return json({ branch: branchName });
+  return 'created';
 }
 
 async function handleEnsurePr(token: string, body: { branch?: string }) {

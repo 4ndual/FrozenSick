@@ -27,7 +27,7 @@ export function slugifyPath(relPath: string): string {
 export function slugifyForBranch(sourcePath: string): string {
   return sourcePath
     .replace(/^content\//, '')
-    .replace(/\.md$/i, '')
+    .replace(/\.(md|json)$/i, '')
     .split('/')
     .map(slugify)
     .join('-');

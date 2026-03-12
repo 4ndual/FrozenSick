@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
+  import { onMount } from 'svelte';
 
   interface Props {
     branches: string[];
@@ -16,6 +17,16 @@
     return labels[branch] || branch;
   }
   let open = $state(false);
+  const dropdownId = 'branch-selector-dropdown';
+
+  function announceOpenState(nextOpen: boolean) {
+    if (!nextOpen || typeof window === 'undefined') return;
+    window.dispatchEvent(
+      new CustomEvent('header-overlay-open', {
+        detail: { source: 'branch-selector' },
+      }),
+    );
+  }
 
   function selectBranch(branch: string) {
     open = false;
@@ -31,15 +42,30 @@
       goto(url.toString(), { invalidateAll: true });
     }
   }
+
+  onMount(() => {
+    const onOverlayOpen = (event: Event) => {
+      const source = (event as CustomEvent<{ source?: string }>).detail?.source;
+      if (source && source !== 'branch-selector') {
+        open = false;
+      }
+    };
+    window.addEventListener('header-overlay-open', onOverlayOpen as EventListener);
+    return () => window.removeEventListener('header-overlay-open', onOverlayOpen as EventListener);
+  });
 </script>
 
 <div class="branch-selector">
   <button
     type="button"
     class="branch-btn"
-    onclick={() => (open = !open)}
+    onclick={() => {
+      open = !open;
+      announceOpenState(open);
+    }}
     aria-expanded={open}
     aria-haspopup="listbox"
+    aria-controls={dropdownId}
     aria-label="Select branch"
     data-testid="branch-selector"
   >
@@ -56,7 +82,7 @@
   </button>
 
   {#if open}
-    <div class="branch-dropdown" role="listbox" aria-label="Available branches">
+    <div id={dropdownId} class="branch-dropdown" role="listbox" aria-label="Available branches" data-testid="branch-dropdown">
       {#each branches as branch (branch)}
         <button
           type="button"
@@ -68,8 +94,8 @@
           data-testid="branch-option-{branch}"
         >
           {displayName(branch)}
-          {#if branch === defaultBranch}
-            <span class="default-badge">live</span>
+          {#if branch === defaultBranch && displayName(branch).toLowerCase() !== 'published'}
+            <span class="default-badge">published</span>
           {/if}
         </button>
       {/each}
@@ -80,7 +106,7 @@
 {#if open}
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <!-- svelte-ignore a11y_click_events_have_key_events -->
-  <div class="branch-backdrop" onclick={() => (open = false)}></div>
+  <div class="branch-backdrop" onclick={() => (open = false)} data-testid="branch-backdrop"></div>
 {/if}
 
 <style>
@@ -179,7 +205,7 @@
 
   .branch-backdrop {
     position: fixed;
-    inset: 0;
+    inset: 56px 0 0 0;
     z-index: 150;
   }
 </style>

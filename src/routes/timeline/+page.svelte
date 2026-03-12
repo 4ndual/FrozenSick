@@ -42,11 +42,11 @@
           <div class="settings-layout">
           <nav class="settings-nav" aria-label="Settings" data-testid="settings-nav">
             <span class="settings-nav-title">Settings</span>
-            <a href="#timelines" class="settings-nav-item">Timeline Tracks</a>
-            <a href="#event-types" class="settings-nav-item">Event Types & Tags</a>
-            <a href="#calendar" class="settings-nav-item">Calendar</a>
-            <a href="#campaign" class="settings-nav-item">Campaign Info</a>
-            <a href="#data" class="settings-nav-item">Data</a>
+            <a href="#timelines" class="settings-nav-item" data-testid="settings-nav-timelines">Timeline Tracks</a>
+            <a href="#event-types" class="settings-nav-item" data-testid="settings-nav-event-types">Event Types & Tags</a>
+            <a href="#calendar" class="settings-nav-item" data-testid="settings-nav-calendar">Calendar</a>
+            <a href="#campaign" class="settings-nav-item" data-testid="settings-nav-campaign">Campaign Info</a>
+            <a href="#data" class="settings-nav-item" data-testid="settings-nav-data">Data</a>
           </nav>
           <div class="settings-content">
             <section id="timelines">
@@ -202,5 +202,39 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-muted);
+  }
+
+  @media (max-width: 980px) {
+    .settings-layout {
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .settings-nav {
+      width: 100%;
+      min-width: 0;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .settings-nav-title {
+      width: 100%;
+      padding: 0;
+    }
+
+    .settings-nav-item {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 10px;
+      background: var(--surface-2);
+    }
+
+    .settings-content {
+      padding: 16px;
+    }
   }
 </style>

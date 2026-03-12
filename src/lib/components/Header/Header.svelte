@@ -5,10 +5,13 @@
   import { campaign } from '$lib/store/campaign.svelte';
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
-  import { invalidateAll } from '$app/navigation';
-  import { slugifyForBranch } from '$lib/utils/slugify';
-
-  type WikiSyncStatus = 'viewing' | 'draft' | 'saved' | 'synced' | 'behind';
+  import { goto, invalidateAll } from '$app/navigation';
+  import { slugify, slugifyPath } from '$lib/utils/slugify';
+  import {
+    timelineSyncToHeader,
+    wikiSyncToHeader,
+    type WikiSyncStatus,
+  } from '$lib/utils/sync-view';
 
   interface Props {
     mode: 'wiki' | 'timeline' | 'map';
@@ -35,8 +38,9 @@
   const TOKEN_KEY = 'frozen-sick-gh-token';
 
   let activeBranch = $derived(branch || defaultBranch);
+  const CONTENT_BRANCH_PREFIX = 'content/';
 
-  let token = $state<string | null>(null);
+  let serverAuthenticated = $state(false);
   let modalOpen = $state(false);
   let editContent = $state('');
   let editSha = $state('');
@@ -44,26 +48,39 @@
   let message = $state('');
   let messageOk = $state(false);
   let messageErr = $state(false);
+  let createModalOpen = $state(false);
+  let createType = $state<'md' | 'json'>('md');
+  let createFolder = $state('content/Chapters');
+  let createTitle = $state('');
+  let createFilename = $state('');
+  let createContent = $state('');
+  let createMessage = $state('');
+  let createMessageOk = $state(false);
+  let createMessageErr = $state(false);
+  let createPrUrl = $state<string | null>(null);
+  let createDirty = $state(false);
 
-  let wikiSyncStatus = $state<WikiSyncStatus>(initialSyncStatus);
+  let wikiSyncStatus = $state<WikiSyncStatus>('viewing');
   let prUrl = $state<string | null>(null);
   let contentBranch = $state<string | null>(null);
   let pulling = $state(false);
+  let attemptedTimelineAuthSync = $state(false);
+  let timelineSyncView = $derived(timelineSyncToHeader(campaign.syncStatus, campaign.behindPublished));
+  let wikiSyncView = $derived(wikiSyncToHeader(wikiSyncStatus));
+  let attemptedTimelineBranchLoad = $state(false);
+  let timelineBranches = $derived.by<string[]>(() => {
+    if (campaign.availableBranches.length > 0) return campaign.availableBranches;
+    return [campaign.currentBranch || campaign.defaultBranch];
+  });
 
   $effect(() => {
     wikiSyncStatus = initialSyncStatus;
   });
 
-  function getStoredToken(): string | null {
-    if (!browser) return null;
-    return localStorage.getItem(TOKEN_KEY);
-  }
-
-  function setStoredToken(t: string) {
-    if (!browser) return;
-    localStorage.setItem(TOKEN_KEY, t);
-    token = t;
-  }
+  $effect(() => {
+    if (mode !== 'wiki') return;
+    contentBranch = activeBranch.startsWith(CONTENT_BRANCH_PREFIX) ? activeBranch : null;
+  });
 
   function handleHashToken() {
     if (!browser) return false;
@@ -71,33 +88,158 @@
     if (hash.indexOf('#token=') !== 0) return false;
     const t = hash.slice(7);
     if (t) {
-      setStoredToken(t);
+      localStorage.setItem(TOKEN_KEY, t);
       window.history.replaceState(null, '', window.location.pathname + window.location.search);
       return true;
     }
     return false;
   }
 
+  async function refreshServerAuth() {
+    if (!browser) return;
+    try {
+      const res = await fetch('/api/status');
+      if (!res.ok) return;
+      const data = (await res.json()) as { authenticated?: boolean };
+      serverAuthenticated = !!data.authenticated;
+    } catch {
+      // Ignore transient network/auth status fetch failures.
+    }
+  }
+
   onMount(() => {
-    if (handleHashToken()) return;
-    token = getStoredToken();
+    handleHashToken();
+    void refreshServerAuth();
   });
+
+  $effect(() => {
+    if (mode !== 'timeline') return;
+    if (!serverAuthenticated || campaign.isAuthenticated) {
+      attemptedTimelineAuthSync = false;
+      return;
+    }
+    if (campaign.authLoading) return;
+    if (attemptedTimelineAuthSync) return;
+    attemptedTimelineAuthSync = true;
+    void campaign.initAuth();
+  });
+
+  $effect(() => {
+    if (mode !== 'timeline') return;
+    if (!campaign.isAuthenticated) {
+      attemptedTimelineBranchLoad = false;
+      return;
+    }
+    if (campaign.availableBranches.length > 0) return;
+    if (attemptedTimelineBranchLoad) return;
+    attemptedTimelineBranchLoad = true;
+    void campaign.fetchBranches();
+  });
+
+  async function handleTimelineBranchSelect(nextBranch: string) {
+    if (!campaign.isAuthenticated) {
+      await campaign.initAuth();
+      if (!campaign.isAuthenticated) {
+        alert('Authentication is still initializing. Please wait a moment and try again.');
+        return;
+      }
+    }
+    await campaign.setBranch(nextBranch);
+  }
+
+  let isUiAuthenticated = $derived(serverAuthenticated || campaign.isAuthenticated);
+
+  function announceHeaderOverlayOpen(source: string) {
+    if (!browser) return;
+    window.dispatchEvent(
+      new CustomEvent('header-overlay-open', {
+        detail: { source },
+      }),
+    );
+  }
+
+  function defaultMarkdownFolder(): string {
+    if (!sourcePath) return 'content/Chapters';
+    const parts = sourcePath.split('/');
+    parts.pop();
+    return parts.join('/') || 'content';
+  }
+
+  function resetCreateState() {
+    createType = 'md';
+    createFolder = defaultMarkdownFolder();
+    createTitle = '';
+    createFilename = '';
+    createContent = '# New Page\n\n';
+    createMessage = '';
+    createMessageOk = false;
+    createMessageErr = false;
+    createPrUrl = null;
+    createDirty = false;
+  }
+
+  function openCreateModal() {
+    resetCreateState();
+    announceHeaderOverlayOpen('wiki-create-modal');
+    createModalOpen = true;
+  }
+
+  function closeCreateModal() {
+    createModalOpen = false;
+  }
+
+  function buildCreatePath(): string {
+    if (createType === 'json') {
+      const fileName = createFilename.trim() || slugify(createTitle);
+      if (!fileName) throw new Error('Provide a chapter JSON file name or title.');
+      return `content/Chapters/${fileName}.json`;
+    }
+
+    const folder = createFolder.trim().replace(/\/+$/g, '') || 'content';
+    const titleSlug = slugify(createTitle);
+    if (!titleSlug) throw new Error('Provide a title for the new markdown page.');
+    return `${folder}/${titleSlug}.md`;
+  }
+
+  async function handleWikiBranchSelect(nextBranch: string) {
+    if (createModalOpen && createDirty) {
+      const confirmed = confirm('Discard the current create form and switch branch?');
+      if (!confirmed) return;
+      closeCreateModal();
+    }
+
+    const url = new URL(window.location.href);
+    if (nextBranch === defaultBranch) {
+      url.searchParams.delete('branch');
+    } else {
+      url.searchParams.set('branch', nextBranch);
+    }
+    await goto(url.toString(), { invalidateAll: true });
+  }
 
   async function openEditor() {
     if (!sourcePath) return;
 
     try {
-      const slug = slugifyForBranch(sourcePath);
-
       const res = await fetch('/api/drafts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'create', slug }),
+        body: JSON.stringify({ action: 'create', sourcePath }),
       });
       const data = await res.json();
       if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create editing branch');
       const editBranch = data.branch;
       contentBranch = editBranch;
+
+      if (activeBranch !== editBranch) {
+        const nextUrl = new URL(window.location.href);
+        if (editBranch === defaultBranch) {
+          nextUrl.searchParams.delete('branch');
+        } else {
+          nextUrl.searchParams.set('branch', editBranch);
+        }
+        await goto(nextUrl.toString(), { invalidateAll: true });
+      }
 
       const params = new URLSearchParams({ path: sourcePath, branch: editBranch });
       const fileRes = await fetch(`/api/wiki?${params}`);
@@ -113,6 +255,7 @@
       messageErr = false;
       prUrl = null;
       wikiSyncStatus = 'draft';
+      announceHeaderOverlayOpen('wiki-edit-modal');
       modalOpen = true;
     } catch (err) {
       alert((err as Error).message || 'Failed to open editor');
@@ -243,6 +386,77 @@
     }
   }
 
+  async function createEntry() {
+    createMessage = 'Creating…';
+    createMessageOk = false;
+    createMessageErr = false;
+    createPrUrl = null;
+
+    try {
+      const entryPath = buildCreatePath();
+      const content =
+        createType === 'json'
+          ? (createContent.trim() || '{\n  "segments": []\n}\n')
+          : (createContent || '# New Page\n\n');
+
+      if (!content.trim()) {
+        throw new Error('Content cannot be empty.');
+      }
+
+      const createDraftRes = await fetch('/api/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'create', sourcePath: entryPath }),
+      });
+      const draftData = await createDraftRes.json();
+      if (!createDraftRes.ok && !draftData.alreadyExists) {
+        throw new Error(draftData.error || 'Failed to create draft branch');
+      }
+      const entryBranch = draftData.branch as string;
+      contentBranch = entryBranch;
+
+      const createRes = await fetch('/api/wiki/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          path: entryPath,
+          content,
+          branch: entryBranch,
+          format: createType,
+          message: `Create: ${entryPath.split('/').pop()}`,
+        }),
+      });
+      const createData = await createRes.json();
+      if (!createRes.ok) throw new Error(createData.error || 'Failed to create entry');
+
+      const prRes = await fetch('/api/drafts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'ensure-pr', branch: entryBranch }),
+      });
+      const prData = await prRes.json();
+
+      createMessage = 'Created. Pending review.';
+      createMessageOk = true;
+      createMessageErr = false;
+      createPrUrl = prData.prUrl || null;
+      wikiSyncStatus = 'saved';
+      createDirty = false;
+      await invalidateAll();
+
+      if (createType === 'md') {
+        const relativePath = entryPath.replace(/^content\//, '');
+        const nextSlug = '/' + slugifyPath(relativePath);
+        const url = new URL(window.location.origin + nextSlug);
+        url.searchParams.set('branch', entryBranch);
+        await goto(url.toString(), { invalidateAll: true });
+      }
+    } catch (err) {
+      createMessage = (err as Error).message || 'Create failed';
+      createMessageErr = true;
+    }
+  }
+
   // Timeline actions
   async function handleImport() {
     try {
@@ -259,9 +473,31 @@
       alert((e as Error).message);
     }
   }
+
+  async function handleTimelineUpdate() {
+    try {
+      await campaign.updateFromPublished();
+    } catch (e) {
+      alert((e as Error).message);
+    }
+  }
+
+  async function handleLogout() {
+    if (browser) {
+      localStorage.removeItem(TOKEN_KEY);
+    }
+    campaign.logout();
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' });
+    } catch {
+      // Logout should still clear client state even if request fails.
+    }
+    serverAuthenticated = false;
+    await invalidateAll();
+  }
 </script>
 
-<header class="header" data-testid="app-header">
+<header class="header" class:timeline-mode={mode === 'timeline'} data-testid="app-header">
   <div class="brand">
     <a href="/" class="logo" title="Go to home">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
@@ -281,13 +517,16 @@
   <div class="center">
     {#if mode === 'timeline'}
       <!-- Timeline tabs -->
-      <nav class="tab-nav">
+      <div class="tab-nav" role="tablist" aria-label="Timeline views">
         {#each ['timeline', 'graph', 'settings'] as tab}
           <button
             class="tab"
             class:active={campaign.activeTab === tab}
             onclick={() => campaign.setActiveTab(tab as 'timeline' | 'graph' | 'settings')}
             data-testid="tab-{tab}"
+            role="tab"
+            aria-selected={campaign.activeTab === tab}
+            aria-label={tab === 'timeline' ? 'Timeline' : tab === 'graph' ? 'Relations' : 'Settings'}
           >
             {#if tab === 'timeline'}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
@@ -315,7 +554,7 @@
             {/if}
           </button>
         {/each}
-      </nav>
+      </div>
     {:else}
       <ModeSwitcher />
     {/if}
@@ -324,9 +563,14 @@
   <div class="actions">
     {#if mode === 'timeline' && browser}
       <!-- Timeline specific buttons -->
-      {#if campaign.isAuthenticated}
-        <span class="sync-indicator sync-{campaign.syncStatus}" title="Sync status: {campaign.syncStatus}">
-          {#if campaign.syncStatus === 'saving' || campaign.syncStatus === 'loading'}
+      {#if isUiAuthenticated}
+        <span
+          class="sync-indicator sync-{timelineSyncView.state}"
+          title="Status: {timelineSyncView.label}"
+          data-testid="timeline-sync-status"
+          data-status={timelineSyncView.state}
+        >
+          {#if timelineSyncView.busy}
             <svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
               <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
             </svg>
@@ -335,21 +579,38 @@
           {/if}
         </span>
 
-        {#if campaign.availableBranches.length > 0}
-          <BranchSelector
-            branches={campaign.availableBranches}
-            currentBranch={campaign.currentBranch}
-            {defaultBranch}
-            onSelect={(b) => campaign.setBranch(b)}
-          />
+        <BranchSelector
+          branches={timelineBranches}
+          currentBranch={campaign.currentBranch}
+          defaultBranch={campaign.defaultBranch}
+          labels={campaign.branchLabels}
+          onSelect={handleTimelineBranchSelect}
+        />
+
+        {#if campaign.isAuthenticated && campaign.behindPublished}
+          <button
+            class="action-btn action-btn-warning"
+            onclick={handleTimelineUpdate}
+            disabled={timelineSyncView.busy}
+            title="Update from published"
+            data-testid="timeline-update"
+            aria-label="Update from published"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+            <span class="btn-label">Update</span>
+          </button>
         {/if}
 
         <button
           class="action-btn action-btn-gold"
           onclick={handlePush}
-          disabled={campaign.syncStatus === 'saving' || campaign.syncStatus === 'loading' || campaign.syncStatus === 'synced'}
+          disabled={!campaign.isAuthenticated || timelineSyncView.busy || campaign.syncStatus === 'synced'}
           title="Save changes to GitHub"
           data-testid="timeline-save"
+          aria-label="Save timeline changes"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
             <path d="M17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4z"></path>
@@ -367,7 +628,7 @@
         </svg>
       </button>
 
-      <button class="action-btn" onclick={handleImport} title="Import campaign JSON" data-testid="timeline-import">
+      <button class="action-btn" onclick={handleImport} title="Import campaign JSON" data-testid="timeline-import" aria-label="Import campaign JSON">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="17 8 12 3 7 8"></polyline>
@@ -376,7 +637,7 @@
         <span class="btn-label">Import</span>
       </button>
 
-      <button class="action-btn" onclick={() => campaign.exportData()} title="Export campaign JSON" data-testid="timeline-export">
+      <button class="action-btn" onclick={() => campaign.exportData()} title="Export campaign JSON" data-testid="timeline-export" aria-label="Export campaign JSON">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>
@@ -386,8 +647,8 @@
       </button>
     {:else if mode === 'wiki' && browser}
       <!-- Wiki sync status -->
-      {#if token && sourcePath && wikiSyncStatus !== 'viewing'}
-        <span class="sync-indicator sync-{wikiSyncStatus}" title="Status: {wikiSyncStatus}" data-testid="wiki-sync-status" data-status={wikiSyncStatus}>
+      {#if serverAuthenticated && sourcePath && wikiSyncStatus !== 'viewing'}
+        <span class="sync-indicator sync-{wikiSyncView.state}" title="Status: {wikiSyncView.label}" data-testid="wiki-sync-status" data-status={wikiSyncView.state}>
           <span class="sync-dot"></span>
         </span>
       {/if}
@@ -399,10 +660,11 @@
           currentBranch={activeBranch}
           {defaultBranch}
           labels={branchLabels}
+          onSelect={handleWikiBranchSelect}
         />
       {/if}
 
-      {#if token && wikiSyncStatus === 'behind'}
+      {#if serverAuthenticated && wikiSyncStatus === 'behind'}
         <button type="button" class="action-btn action-btn-warning" onclick={pullLatest} disabled={pulling} title="Update from published" data-testid="wiki-pull-latest" aria-label="Update from published">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
             <polyline points="1 4 1 10 7 10"></polyline>
@@ -412,7 +674,7 @@
         </button>
       {/if}
 
-      {#if token && sourcePath}
+      {#if serverAuthenticated && sourcePath}
         <button type="button" class="action-btn action-btn-gold" onclick={openEditor} data-testid="wiki-edit" aria-label="Edit page">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
             <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
@@ -422,7 +684,17 @@
         </button>
       {/if}
 
-      {#if token}
+      {#if serverAuthenticated}
+        <button type="button" class="action-btn" onclick={openCreateModal} data-testid="wiki-create" aria-label="Create entry">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span class="btn-label">Create</span>
+        </button>
+      {/if}
+
+      {#if serverAuthenticated}
         <DraftsPanel {branchLabels} />
       {/if}
     {:else if mode === 'map'}
@@ -437,16 +709,16 @@
     {/if}
 
     <!-- Auth section - shows in both wiki and timeline modes -->
-    {#if browser && !token}
+    {#if browser && !isUiAuthenticated}
       <a class="login-link" href="/api/auth/login?return_to={encodeURIComponent(returnTo)}" data-sveltekit-reload data-testid="auth-login">
         <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14">
           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
         </svg>
         <span class="btn-label">Login to Edit</span>
       </a>
-    {:else if browser && token}
+    {:else if browser && isUiAuthenticated}
       <!-- User avatar/logout -->
-      <button class="avatar-btn" onclick={() => { token = null; localStorage.removeItem(TOKEN_KEY); }} title="Logout" data-testid="auth-logout" aria-label="Logout">
+      <button class="avatar-btn" onclick={handleLogout} title="Logout" data-testid="auth-logout" aria-label="Logout">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
           <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
           <polyline points="16 17 21 12 16 7"></polyline>
@@ -487,6 +759,105 @@
           {message}
           {#if prUrl}
             — <a href={prUrl} target="_blank" rel="noopener noreferrer">View PR</a>
+          {/if}
+        </div>
+      {/if}
+    </div>
+  </div>
+{/if}
+
+{#if createModalOpen}
+  <div class="wiki-edit-overlay" onclick={(e: MouseEvent) => e.target === e.currentTarget && closeCreateModal()} role="presentation" data-testid="wiki-create-overlay">
+    <div class="wiki-edit-modal" role="dialog" aria-modal="true" aria-label="Create new entry" data-testid="wiki-create-modal">
+      <div class="wiki-edit-modal-header">
+        <div class="wiki-edit-modal-title">Create New Entry</div>
+      </div>
+      <div class="wiki-create-grid">
+        <label for="create-type">Entry type</label>
+        <select
+          id="create-type"
+          bind:value={createType}
+          onchange={() => {
+            createDirty = true;
+            if (createType === 'json') {
+              createFolder = 'content/Chapters';
+              createContent = '{\n  "segments": []\n}\n';
+            } else {
+              createContent = '# New Page\n\n';
+            }
+          }}
+          data-testid="wiki-create-type"
+        >
+          <option value="md">Markdown Page</option>
+          <option value="json">Chapter JSON</option>
+        </select>
+
+        {#if createType === 'md'}
+          <label for="create-folder">Folder path</label>
+          <input
+            id="create-folder"
+            bind:value={createFolder}
+            oninput={() => (createDirty = true)}
+            placeholder="content/Chapters/Chapter 6 - Example"
+            data-testid="wiki-create-folder"
+          />
+
+          <label for="create-title">Title</label>
+          <input
+            id="create-title"
+            bind:value={createTitle}
+            oninput={() => (createDirty = true)}
+            placeholder="My New Session"
+            data-testid="wiki-create-title"
+          />
+        {:else}
+          <label for="create-filename">File name</label>
+          <input
+            id="create-filename"
+            bind:value={createFilename}
+            oninput={() => (createDirty = true)}
+            placeholder="chapter-6-session"
+            data-testid="wiki-create-filename"
+          />
+
+          <label for="create-title">Optional title seed</label>
+          <input
+            id="create-title"
+            bind:value={createTitle}
+            oninput={() => (createDirty = true)}
+            placeholder="Used if file name is empty"
+            data-testid="wiki-create-title"
+          />
+        {/if}
+
+        <label for="create-content">Initial content</label>
+        <textarea
+          id="create-content"
+          class="wiki-edit-textarea"
+          bind:value={createContent}
+          oninput={() => (createDirty = true)}
+          rows="12"
+          data-testid="wiki-create-content"
+        ></textarea>
+      </div>
+
+      <div class="wiki-edit-actions">
+        <button type="button" class="wiki-edit-cancel" onclick={closeCreateModal} data-testid="wiki-create-cancel">Cancel</button>
+        <button type="button" class="wiki-edit-save" onclick={createEntry} data-testid="wiki-create-save">Create</button>
+      </div>
+      {#if createMessage}
+        <div
+          class="wiki-edit-msg"
+          class:wiki-edit-msg-ok={createMessageOk}
+          class:wiki-edit-msg-err={createMessageErr}
+          data-testid="wiki-create-status-message"
+          data-status={createMessageOk ? 'success' : createMessageErr ? 'error' : 'idle'}
+          role="status"
+          aria-live="polite"
+        >
+          {createMessage}
+          {#if createPrUrl}
+            — <a href={createPrUrl} target="_blank" rel="noopener noreferrer">View PR</a>
           {/if}
         </div>
       {/if}
@@ -600,7 +971,7 @@
     align-items: center;
     gap: 8px;
     flex-shrink: 1;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     min-width: 0;
   }
@@ -788,6 +1159,30 @@
     resize: vertical;
   }
 
+  .wiki-create-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .wiki-create-grid label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .wiki-create-grid input,
+  .wiki-create-grid select {
+    display: block;
+    width: 100%;
+    padding: 0.45rem 0.55rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 4px;
+    font-size: 0.88rem;
+  }
+
   .wiki-edit-actions {
     display: flex;
     gap: 0.5rem;
@@ -854,18 +1249,30 @@
     text-decoration: underline;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 760px) {
     .header {
-      padding: 0 8px;
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+      padding: 6px 8px;
       gap: 6px;
+      align-items: center;
     }
 
     .brand-text {
       display: none;
     }
 
+    .brand {
+      order: 1;
+    }
+
     .actions {
+      order: 2;
+      margin-left: auto;
       gap: 4px;
+      position: relative;
+      z-index: 2;
     }
 
     .action-btn {
@@ -883,13 +1290,21 @@
     }
 
     .center {
+      order: 3;
+      flex: 1 0 100%;
+      justify-content: flex-start;
       min-width: 0;
-      overflow: hidden;
+      overflow-x: auto;
+      width: 100%;
+      padding-bottom: 2px;
+      position: relative;
+      z-index: 3;
     }
 
     .login-link {
       font-size: 11px;
       padding: 4px 8px;
     }
+
   }
 </style>

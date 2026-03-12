@@ -1,8 +1,9 @@
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import {
   fetchTree,
   buildManifest,
   buildNav,
+  fetchMenuCustomization,
   fetchContent,
   listBranches,
   getDefaultBranch,
@@ -13,33 +14,30 @@ import { fetchPlaceMapLinks } from '$lib/server/place-map-links';
 import { extractMapFileNameFromRawUrl } from '$lib/place-map-links';
 import {
   slugifyPath,
-  slugifyForBranch,
-  formatPathAsTitle,
 } from '$lib/utils/slugify';
+import {
+  CONTENT_BRANCH_PREFIX,
+  formatContentBranchLabel,
+} from '$lib/server/content-branches';
 import type { PageServerLoad } from './$types';
-
-const CONTENT_BRANCH_PREFIX = 'content/';
 
 type SyncStatus = 'viewing' | 'saved' | 'synced' | 'behind';
 
 export const load: PageServerLoad = async ({ params, url, cookies }) => {
-  const token = cookies.get('gh_token');
-  if (!token) {
-    throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
-  }
-
+  const authToken = cookies.get('gh_token') ?? '';
   const defaultBranch = getDefaultBranch();
   const branch = url.searchParams.get('branch') || defaultBranch;
 
-  try {
+  const loadData = async (token: string) => {
     const [tree, allBranches, placeMapLinks] = await Promise.all([
       fetchTree(token, branch),
       listBranches(token),
       fetchPlaceMapLinks(token, branch, defaultBranch),
     ]);
+    const menuCustomization = await fetchMenuCustomization(token, branch);
 
     const manifest = buildManifest(tree);
-    const nav = buildNav(tree);
+    const nav = buildNav(tree, menuCustomization);
 
     const rawSlug = Array.isArray(params.slug) ? params.slug.join('/') : (params.slug ?? '');
     const slug = '/' + slugifyPath(rawSlug);
@@ -57,24 +55,22 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
 
     const branchLabels: Record<string, string> = {};
     branchLabels[defaultBranch] = 'Published';
+    const manifestPaths = Object.values(manifest);
     for (const b of filteredBranches) {
       if (b.startsWith(CONTENT_BRANCH_PREFIX)) {
-        const branchSlug = b.slice(CONTENT_BRANCH_PREFIX.length);
-        const matchingSource = Object.values(manifest).find(
-          (src) => slugifyForBranch(src) === branchSlug,
-        );
-        branchLabels[b] = matchingSource
-          ? formatPathAsTitle(matchingSource)
-          : branchSlug.replace(/-/g, ' ');
+        branchLabels[b] = formatContentBranchLabel(b, manifestPaths);
       }
     }
 
-    const pageContentBranch = CONTENT_BRANCH_PREFIX + slugifyForBranch(sourcePath);
     let initialSyncStatus: SyncStatus = 'viewing';
 
-    if (filteredBranches.includes(pageContentBranch)) {
+    if (
+      branch !== defaultBranch &&
+      branch.startsWith(CONTENT_BRANCH_PREFIX) &&
+      filteredBranches.includes(branch)
+    ) {
       try {
-        const comparison = await compareBranches(token, pageContentBranch, defaultBranch);
+        const comparison = await compareBranches(token, branch, defaultBranch);
         if (comparison.aheadBy === 0 && comparison.behindBy === 0) {
           initialSyncStatus = 'synced';
         } else if (comparison.aheadBy > 0 && comparison.behindBy > 0) {
@@ -102,10 +98,14 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
       placeMapMatches: placeMapLinks?.matches ?? [],
       placeMapFile: extractMapFileNameFromRawUrl(placeMapLinks?.rawMapUrl) ?? '',
     };
+  };
+
+  try {
+    return await loadData(authToken);
   } catch (err) {
-    if (err instanceof GitHubAuthError) {
+    if (err instanceof GitHubAuthError && authToken) {
       cookies.delete('gh_token', { path: '/' });
-      throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
+      return loadData('');
     }
     // Log so Vercel/serverless logs show the real cause (e.g. GitHub API timeout, rate limit, missing content)
     console.error('[slug] load error', url.pathname, err);

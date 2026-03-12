@@ -66,7 +66,12 @@
     branches={data.branches}
     branchLabels={data.branchLabels}
   />
-  <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
+  <WikiNav
+    nav={data.nav}
+    branch={data.branch}
+    defaultBranch={data.defaultBranch}
+    authenticated={Boolean(data.authenticated)}
+  />
 
   <main class="wiki-main" data-testid="wiki-main">
     <div class="landing">
