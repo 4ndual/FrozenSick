@@ -18,6 +18,7 @@
     nav: NavEntry[];
     placeMapMatches: PlaceMapMatch[];
     placeMapFile: string;
+    authenticated?: boolean;
   }
 
   let { data } = $props<{ data: PageData }>();
@@ -55,7 +56,12 @@
     branchLabels={data.branchLabels}
     initialSyncStatus={data.initialSyncStatus}
   />
-  <WikiNav nav={data.nav} branch={data.branch} defaultBranch={data.defaultBranch} />
+  <WikiNav
+    nav={data.nav}
+    branch={data.branch}
+    defaultBranch={data.defaultBranch}
+    authenticated={Boolean(data.authenticated)}
+  />
 
   <main class="wiki-main" data-testid="wiki-main">
     <div class="wiki-content prose" bind:this={container} data-testid="wiki-content" aria-label="Wiki content">

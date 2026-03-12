@@ -3,6 +3,7 @@ import {
   fetchTree,
   buildManifest,
   buildNav,
+  fetchMenuCustomization,
   fetchContent,
   listBranches,
   getDefaultBranch,
@@ -33,9 +34,10 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
       listBranches(token),
       fetchPlaceMapLinks(token, branch, defaultBranch),
     ]);
+    const menuCustomization = await fetchMenuCustomization(token, branch);
 
     const manifest = buildManifest(tree);
-    const nav = buildNav(tree);
+    const nav = buildNav(tree, menuCustomization);
 
     const rawSlug = Array.isArray(params.slug) ? params.slug.join('/') : (params.slug ?? '');
     const slug = '/' + slugifyPath(rawSlug);

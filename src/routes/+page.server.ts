@@ -2,6 +2,7 @@ import {
   fetchTree,
   buildManifest,
   buildNav,
+  fetchMenuCustomization,
   listBranches,
   getDefaultBranch,
   GitHubAuthError,
@@ -18,9 +19,10 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
 
   const loadData = async (token: string) => {
     const [tree, allBranches] = await Promise.all([fetchTree(token, branch), listBranches(token)]);
+    const menuCustomization = await fetchMenuCustomization(token, branch);
 
     const manifest = buildManifest(tree);
-    const nav = buildNav(tree);
+    const nav = buildNav(tree, menuCustomization);
 
     const filteredBranches = allBranches.filter(
       (b) => b === defaultBranch || b.startsWith(CONTENT_BRANCH_PREFIX),

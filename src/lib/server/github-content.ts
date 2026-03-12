@@ -119,6 +119,82 @@ export async function fetchTree(token: string, branch?: string): Promise<TreeEnt
 
 const WORLD_MAPS_TTL = 5 * 60 * 1000;
 const CHAPTER_JSON_TTL = 5 * 60 * 1000;
+const MENU_CONFIG_TTL = 60 * 1000;
+export const MENU_CONFIG_PATH = 'content/Menu/navigation.json';
+
+export interface MenuCustomization {
+  hidden: string[];
+}
+
+const EMPTY_MENU_CUSTOMIZATION: MenuCustomization = {
+  hidden: [],
+};
+
+function isObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function normalizeStringList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter((entry): entry is string => typeof entry === 'string')
+    .map((entry) => entry.trim())
+    .filter((entry) => entry.length > 0);
+}
+
+function normalizeMenuCustomization(raw: unknown): MenuCustomization {
+  if (!isObject(raw)) {
+    return { ...EMPTY_MENU_CUSTOMIZATION };
+  }
+  return {
+    hidden: normalizeStringList(raw.hidden),
+  };
+}
+
+export function navTargetKey(kind: 'file' | 'folder', sourcePath: string): string {
+  return `${kind}:${sourcePath}`;
+}
+
+export async function fetchMenuCustomization(
+  token: string,
+  branch?: string,
+): Promise<MenuCustomization> {
+  const b = branch || getDefaultBranch();
+  const cacheKey = `menuCustomization@${b}`;
+  const cached = await getCached<MenuCustomization>(cacheKey);
+  if (cached) return cached;
+
+  const encodedPath = MENU_CONFIG_PATH.split('/').map(encodeURIComponent).join('/');
+  const url = `${repoUrl()}/contents/${encodedPath}?ref=${encodeURIComponent(b)}`;
+  const res = await fetch(url, { headers: ghHeaders(token) });
+
+  if (res.status === 404) {
+    const fallback = { ...EMPTY_MENU_CUSTOMIZATION };
+    await setCache(cacheKey, fallback, MENU_CONFIG_TTL);
+    return fallback;
+  }
+  if (res.status === 401) {
+    throw new GitHubAuthError('GitHub token expired or invalid');
+  }
+  if (!res.ok) {
+    throw new Error(`GitHub ${res.status}: ${url}`);
+  }
+
+  const data = (await res.json()) as { content?: string };
+  let parsed: unknown = {};
+  if (data.content) {
+    const decoded = decodeBase64Utf8(data.content.replace(/\n/g, ''));
+    try {
+      parsed = JSON.parse(decoded);
+    } catch {
+      parsed = {};
+    }
+  }
+
+  const normalized = normalizeMenuCustomization(parsed);
+  await setCache(cacheKey, normalized, MENU_CONFIG_TTL);
+  return normalized;
+}
 
 /**
  * Fetch blob entries under content/World/ that end with .map (Azgaar FMG files).
@@ -204,7 +280,12 @@ export function buildManifest(tree: TreeEntry[]): Record<string, string> {
  * Build the wiki navigation from tree entries.
  * Folder structure under `content/` defines sections and groups.
  */
-export function buildNav(tree: TreeEntry[]): NavEntry[] {
+export function buildNav(tree: TreeEntry[], customization?: MenuCustomization): NavEntry[] {
+  const hidden = new Set((customization?.hidden ?? []).map((entry) => entry.trim()).filter(Boolean));
+  const isHiddenFile = (path: string) => hidden.has(navTargetKey('file', path));
+  const isHiddenFolder = (path: string) =>
+    hidden.has(navTargetKey('folder', path)) ||
+    hidden.has(navTargetKey('folder', path.replace(/\/+$/, '')));
   const relativePaths = tree.map((e) => e.path.replace(/^content\//, ''));
 
   const sections = new Map<string, Map<string, string[]>>();
@@ -231,7 +312,7 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
     }
   }
 
-  const nav: NavEntry[] = [{ title: 'Home', href: '/' }];
+  const nav: NavEntry[] = [{ title: 'Home', href: '/', kind: 'special' }];
 
   const sortedSections = [...sections.entries()].sort((a, b) =>
     a[0].localeCompare(b[0]),
@@ -245,22 +326,37 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
       .sort((a, b) => a[0].localeCompare(b[0]));
 
     for (const [groupName, files] of subGroups) {
-      const sortedFiles = [...files].sort();
+      const groupSourcePath = `content/${sectionName}/${groupName}`;
+      if (isHiddenFolder(groupSourcePath)) continue;
+      const sortedFiles = [...files]
+        .map((path) => `content/${path}`)
+        .filter((path) => !isHiddenFile(path))
+        .map((path) => path.replace(/^content\//, ''))
+        .sort();
+      if (sortedFiles.length === 0) continue;
       const summaryFile = sortedFiles.find((f) =>
         f.split('/').pop()!.toLowerCase().replace(/\.md$/, '') === 'summary',
       );
       const mainFile = summaryFile || sortedFiles[0];
       const otherFiles = sortedFiles.filter((f) => f !== mainFile);
 
-      const child: NavItem & { sub?: NavItem[] } = {
+      const child: NavItem = {
         title: groupName,
         href: '/' + slugifyPath(mainFile),
+        sourcePath: groupSourcePath,
+        kind: 'folder',
       };
 
       if (otherFiles.length > 0) {
         child.sub = otherFiles.map((f) => {
+          const sourcePath = `content/${f}`;
           const fileName = f.split('/').pop()!.replace(/\.md$/i, '');
-          return { title: fileName, href: '/' + slugifyPath(f) };
+          return {
+            title: fileName,
+            href: '/' + slugifyPath(f),
+            sourcePath,
+            kind: 'file',
+          };
         });
       }
 
@@ -268,24 +364,48 @@ export function buildNav(tree: TreeEntry[]): NavEntry[] {
     }
 
     const rootFiles = groups.get('__root__') || [];
-    for (const file of [...rootFiles].sort()) {
+    for (const file of [...rootFiles]
+      .map((path) => `content/${path}`)
+      .filter((path) => !isHiddenFile(path))
+      .map((path) => path.replace(/^content\//, ''))
+      .sort()) {
       const fileName = file.split('/').pop()!.replace(/\.md$/i, '');
-      children.push({ title: fileName, href: '/' + slugifyPath(file) });
+      children.push({
+        title: fileName,
+        href: '/' + slugifyPath(file),
+        sourcePath: `content/${file}`,
+        kind: 'file',
+      });
     }
 
     if (sectionName === 'World') {
-      children.push({ title: 'Map', href: '/maps' });
+      children.push({ title: 'Map', href: '/maps', kind: 'special' });
     }
 
-    nav.push({ section: sectionName, children } as NavSection);
+    if (children.length > 0) {
+      nav.push({
+        section: sectionName,
+        sourcePath: `content/${sectionName}`,
+        children,
+      } as NavSection);
+    }
   }
 
-  for (const file of [...topLevel].sort()) {
+  for (const file of [...topLevel]
+    .map((path) => `content/${path}`)
+    .filter((path) => !isHiddenFile(path))
+    .map((path) => path.replace(/^content\//, ''))
+    .sort()) {
     const name = file.replace(/\.md$/i, '');
-    nav.push({ title: name, href: '/' + slugify(name) });
+    nav.push({
+      title: name,
+      href: '/' + slugify(name),
+      sourcePath: `content/${file}`,
+      kind: 'file',
+    });
   }
 
-  nav.push({ title: 'Timeline', href: '/timeline/' });
+  nav.push({ title: 'Timeline', href: '/timeline/', kind: 'special' });
 
   return nav;
 }
