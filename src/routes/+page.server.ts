@@ -1,4 +1,3 @@
-import { redirect } from '@sveltejs/kit';
 import {
   fetchTree,
   buildManifest,
@@ -13,19 +12,12 @@ import type { PageServerLoad } from './$types';
 const CONTENT_BRANCH_PREFIX = 'content/';
 
 export const load: PageServerLoad = async ({ url, cookies }) => {
-  const token = cookies.get('gh_token');
-  if (!token) {
-    throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname)}`);
-  }
-
+  const authToken = cookies.get('gh_token') ?? '';
   const defaultBranch = getDefaultBranch();
   const branch = url.searchParams.get('branch') || defaultBranch;
 
-  try {
-    const [tree, allBranches] = await Promise.all([
-      fetchTree(token, branch),
-      listBranches(token),
-    ]);
+  const loadData = async (token: string) => {
+    const [tree, allBranches] = await Promise.all([fetchTree(token, branch), listBranches(token)]);
 
     const manifest = buildManifest(tree);
     const nav = buildNav(tree);
@@ -48,17 +40,15 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
       }
     }
 
-    return {
-      branch,
-      defaultBranch,
-      branches: filteredBranches,
-      branchLabels,
-      nav,
-    };
+    return { branch, defaultBranch, branches: filteredBranches, branchLabels, nav };
+  };
+
+  try {
+    return await loadData(authToken);
   } catch (err) {
-    if (err instanceof GitHubAuthError) {
+    if (err instanceof GitHubAuthError && authToken) {
       cookies.delete('gh_token', { path: '/' });
-      throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname)}`);
+      return loadData('');
     }
     throw err;
   }

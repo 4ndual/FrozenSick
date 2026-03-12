@@ -1,4 +1,3 @@
-import { redirect } from '@sveltejs/kit';
 import {
   fetchTree,
   fetchWorldMapPaths,
@@ -19,17 +18,13 @@ import type { PageServerLoad } from './$types';
 const CONTENT_BRANCH_PREFIX = 'content/';
 
 export const load: PageServerLoad = async ({ url, cookies }) => {
-  const token = cookies.get('gh_token');
-  if (!token) {
-    throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
-  }
-
+  const authToken = cookies.get('gh_token') ?? '';
   const defaultBranch = getDefaultBranch();
   const branch = url.searchParams.get('branch') || defaultBranch;
   const requestedFile = url.searchParams.get('file');
   const requestedPlace = url.searchParams.get('place');
 
-  try {
+  const loadData = async (token: string) => {
     const [tree, allBranches, worldMaps, placeMapLinks] = await Promise.all([
       fetchTree(token, branch),
       listBranches(token),
@@ -100,10 +95,14 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
           }
         : null,
     };
+  };
+
+  try {
+    return await loadData(authToken);
   } catch (err) {
-    if (err instanceof GitHubAuthError) {
+    if (err instanceof GitHubAuthError && authToken) {
       cookies.delete('gh_token', { path: '/' });
-      throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
+      return loadData('');
     }
     throw err;
   }

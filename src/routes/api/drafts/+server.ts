@@ -5,6 +5,7 @@ import {
   invalidateCache,
   fetchTree,
   fetchChapterJsonPaths,
+  listBranches,
 } from '$lib/server/github-content';
 import { slugifyForBranch } from '$lib/utils/slugify';
 import { resolveEntryPath } from '$lib/server/wiki-entry';
@@ -39,17 +40,12 @@ export const GET: RequestHandler = async ({ cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
 
-  const res = await fetch(`${repoUrl()}/branches?per_page=100`, {
-    headers: ghHeaders(token),
-  });
-  if (!res.ok) throw error(502, 'Failed to list branches');
-
-  const branches: { name: string }[] = await res.json();
+  const branches = await listBranches(token);
   const drafts = branches
-    .filter((b) => b.name.startsWith(CONTENT_BRANCH_PREFIX))
+    .filter((name) => name.startsWith(CONTENT_BRANCH_PREFIX))
     .map((b) => ({
-      branch: b.name,
-      label: b.name.slice(CONTENT_BRANCH_PREFIX.length),
+      branch: b,
+      label: b.slice(CONTENT_BRANCH_PREFIX.length),
     }));
 
   return json({ drafts });

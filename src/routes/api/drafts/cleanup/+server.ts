@@ -27,8 +27,10 @@ function ghHeaders(token: string) {
 /**
  * POST /api/drafts/cleanup
  * Deletes content/ branches with no commits in the last STALE_DAYS days.
- * Can be called by a cron job or manually. Requires a valid gh_token cookie
- * or the GITHUB_WEBHOOK_SECRET as a Bearer token for server-to-server calls.
+ * Can be called by a cron job or manually.
+ * Auth options:
+ * - gh_token cookie
+ * - Bearer <GitHub token> for server-to-server calls
  */
 export const POST: RequestHandler = async ({ request, cookies }) => {
   let token = cookies.get('gh_token');
@@ -36,20 +38,16 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   if (!token) {
     const authHeader = request.headers.get('authorization');
     const webhookSecret = privateEnv.GITHUB_WEBHOOK_SECRET;
-    if (authHeader && webhookSecret && authHeader === `Bearer ${webhookSecret}`) {
-      token = cookies.get('gh_token');
-      if (!token) throw error(401, 'No GitHub token available for cleanup');
-    } else {
-      throw error(401, 'Not authenticated');
+    const bearer = authHeader?.startsWith('Bearer ') ? authHeader.slice('Bearer '.length).trim() : '';
+
+    if (bearer && webhookSecret && bearer === webhookSecret) {
+      throw error(401, 'Cleanup secret provided, but no GitHub token cookie is available');
     }
+    if (bearer) token = bearer;
+    else throw error(401, 'Not authenticated');
   }
 
-  const branchesRes = await fetch(`${repoUrl()}/branches?per_page=100`, {
-    headers: ghHeaders(token),
-  });
-  if (!branchesRes.ok) throw error(502, 'Failed to list branches');
-
-  const branches: { name: string; commit: { sha: string } }[] = await branchesRes.json();
+  const branches = await fetchAllBranches(token);
   const contentBranches = branches.filter((b) => b.name.startsWith(DRAFT_BRANCH_PREFIX));
 
   const cutoff = Date.now() - STALE_DAYS * 24 * 60 * 60 * 1000;
@@ -92,3 +90,21 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 
   return json({ cleaned, total: contentBranches.length });
 };
+
+async function fetchAllBranches(token: string): Promise<{ name: string; commit: { sha: string } }[]> {
+  const branches: { name: string; commit: { sha: string } }[] = [];
+  let page = 1;
+
+  while (true) {
+    const res = await fetch(`${repoUrl()}/branches?per_page=100&page=${page}`, {
+      headers: ghHeaders(token),
+    });
+    if (!res.ok) throw error(502, 'Failed to list branches');
+    const pageBranches: { name: string; commit: { sha: string } }[] = await res.json();
+    branches.push(...pageBranches);
+    if (pageBranches.length < 100) break;
+    page += 1;
+  }
+
+  return branches;
+}

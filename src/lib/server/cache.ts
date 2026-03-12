@@ -76,9 +76,10 @@ export async function invalidateCache(branch?: string): Promise<void> {
       const keys = await redis.keys(`${KEY_PREFIX}*`);
       if (keys.length > 0) await redis.del(...keys);
     } else {
-      const keys = await redis.keys(`${KEY_PREFIX}*@${branch}*`);
+      const keysByAtBranch = await redis.keys(`${KEY_PREFIX}*@${branch}*`);
+      const keysByBranchMention = await redis.keys(`${KEY_PREFIX}*${branch}*`);
       const branchKeys = await redis.keys(`${KEY_PREFIX}branches`);
-      const allKeys = [...keys, ...branchKeys];
+      const allKeys = [...keysByAtBranch, ...keysByBranchMention, ...branchKeys];
       if (allKeys.length > 0) await redis.del(...allKeys);
     }
     return;
@@ -89,7 +90,7 @@ export async function invalidateCache(branch?: string): Promise<void> {
     return;
   }
   for (const key of memCache.keys()) {
-    if (key.includes(`@${branch}`) || key === 'branches') {
+    if (key.includes(`@${branch}`) || key.includes(branch) || key === 'branches') {
       memCache.delete(key);
     }
   }

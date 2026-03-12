@@ -1,4 +1,4 @@
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import {
   fetchTree,
   buildManifest,
@@ -23,15 +23,11 @@ const CONTENT_BRANCH_PREFIX = 'content/';
 type SyncStatus = 'viewing' | 'saved' | 'synced' | 'behind';
 
 export const load: PageServerLoad = async ({ params, url, cookies }) => {
-  const token = cookies.get('gh_token');
-  if (!token) {
-    throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
-  }
-
+  const authToken = cookies.get('gh_token') ?? '';
   const defaultBranch = getDefaultBranch();
   const branch = url.searchParams.get('branch') || defaultBranch;
 
-  try {
+  const loadData = async (token: string) => {
     const [tree, allBranches, placeMapLinks] = await Promise.all([
       fetchTree(token, branch),
       listBranches(token),
@@ -102,10 +98,14 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
       placeMapMatches: placeMapLinks?.matches ?? [],
       placeMapFile: extractMapFileNameFromRawUrl(placeMapLinks?.rawMapUrl) ?? '',
     };
+  };
+
+  try {
+    return await loadData(authToken);
   } catch (err) {
-    if (err instanceof GitHubAuthError) {
+    if (err instanceof GitHubAuthError && authToken) {
       cookies.delete('gh_token', { path: '/' });
-      throw redirect(302, `/api/auth/login?return_to=${encodeURIComponent(url.pathname + url.search)}`);
+      return loadData('');
     }
     // Log so Vercel/serverless logs show the real cause (e.g. GitHub API timeout, rate limit, missing content)
     console.error('[slug] load error', url.pathname, err);
