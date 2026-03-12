@@ -12,11 +12,23 @@
 
   let currentPath = $derived($page.url.pathname);
   let sidebarOpen = $state(false);
+  const MOBILE_BREAKPOINT = 768;
 
   function branchHref(href: string): string {
     if (!branch || branch === defaultBranch) return href;
     const sep = href.includes('?') ? '&' : '?';
     return `${href}${sep}branch=${encodeURIComponent(branch)}`;
+  }
+
+  function linkTestId(href: string): string {
+    const normalized = href === '/' ? 'home' : href.replace(/^\//, '').replace(/[^a-zA-Z0-9]+/g, '-');
+    return `wiki-nav-link-${normalized}`;
+  }
+
+  function closeSidebarOnMobile() {
+    if (typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT) {
+      sidebarOpen = false;
+    }
   }
 </script>
 
@@ -25,6 +37,7 @@
   class="sidebar-toggle"
   aria-label="Toggle sidebar"
   aria-expanded={sidebarOpen}
+  data-testid="wiki-sidebar-toggle"
   onclick={() => (sidebarOpen = !sidebarOpen)}
 >
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
@@ -54,14 +67,28 @@
           <ul class="section-children">
             {#each (entry as NavSection).children as child (child.href)}
               <li class="nav-item">
-                <a href={branchHref(child.href)} class:active={currentPath === child.href} class="nav-link">
+                <a
+                  href={branchHref(child.href)}
+                  class:active={currentPath === child.href}
+                  class="nav-link"
+                  data-testid={linkTestId(child.href)}
+                  aria-label={child.title}
+                  onclick={closeSidebarOnMobile}
+                >
                   {child.title}
                 </a>
                 {#if child.sub}
                   <ul class="sub-list">
                     {#each child.sub as s (s.href)}
                       <li>
-                        <a href={branchHref(s.href)} class:active={currentPath === s.href} class="nav-link sub-link">
+                        <a
+                          href={branchHref(s.href)}
+                          class:active={currentPath === s.href}
+                          class="nav-link sub-link"
+                          data-testid={linkTestId(s.href)}
+                          aria-label={s.title}
+                          onclick={closeSidebarOnMobile}
+                        >
                           {s.title}
                         </a>
                       </li>
@@ -74,7 +101,14 @@
         </li>
       {:else}
         <li class="nav-item">
-          <a href={branchHref((entry as NavItem).href)} class:active={currentPath === (entry as NavItem).href} class="nav-link">
+          <a
+            href={branchHref((entry as NavItem).href)}
+            class:active={currentPath === (entry as NavItem).href}
+            class="nav-link"
+            data-testid={linkTestId((entry as NavItem).href)}
+            aria-label={(entry as NavItem).title}
+            onclick={closeSidebarOnMobile}
+          >
             {(entry as NavItem).title}
           </a>
         </li>
@@ -82,6 +116,12 @@
     {/each}
   </ul>
 </nav>
+
+{#if sidebarOpen}
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <div class="sidebar-backdrop" onclick={() => (sidebarOpen = false)} data-testid="wiki-sidebar-backdrop"></div>
+{/if}
 
 <style>
   .sidebar-toggle {
@@ -210,6 +250,10 @@
     color: var(--text);
   }
 
+  .sidebar-backdrop {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     .sidebar-toggle {
       display: block;
@@ -223,6 +267,14 @@
 
     .wiki-sidebar.open {
       transform: translateX(0);
+    }
+
+    .sidebar-backdrop {
+      display: block;
+      position: fixed;
+      inset: 56px 0 0 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 40;
     }
   }
 </style>

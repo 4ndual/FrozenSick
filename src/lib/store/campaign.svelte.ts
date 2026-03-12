@@ -6,6 +6,7 @@ import type {
   CustomEventType,
   FilterState,
 } from '$lib/types/schema.ts';
+import { replaceState } from '$app/navigation';
 import { DEFAULT_EVENT_TYPES } from '$lib/types/schema.ts';
 import { validateCampaignData } from '$lib/types/validation.ts';
 import {
@@ -20,7 +21,7 @@ import {
   clearGitHubSyncState,
   loadFromStaticBundle,
 } from '$lib/utils/storage.ts';
-import type { ActiveTab, GitHubSyncState } from '$lib/utils/storage.ts';
+import type { ActiveTab } from '$lib/utils/storage.ts';
 import {
   extractTokenFromHash,
   getToken,
@@ -43,6 +44,8 @@ import {
 
 export type { ActiveTab };
 export type SyncStatus = 'idle' | 'synced' | 'dirty' | 'saving' | 'loading' | 'error';
+const CONTENT_BRANCH_PREFIX = 'content/';
+const TIMELINE_BRANCH_PREFIX = `${CONTENT_BRANCH_PREFIX}timeline-`;
 
 function createCampaignStore() {
   let data = $state<CampaignData>(loadCampaign());
@@ -81,8 +84,21 @@ function createCampaignStore() {
   let fileShas = $state<Record<string, string>>(loadGitHubSyncState()?.fileShas ?? {});
 
   // ── Branch state ────────────────────────────────────────────────────────
-  let currentBranch = $state(getRepoConfig().branch);
+  const repoConfig = getRepoConfig();
+  const defaultBranch = repoConfig.branch;
+  let currentBranch = $state(defaultBranch);
   let availableBranches = $state<string[]>([]);
+  let aheadPublished = $state(false);
+  let behindPublished = $state(false);
+
+  let branchLabels = $derived.by<Record<string, string>>(() => {
+    const labels: Record<string, string> = {};
+    labels[defaultBranch] = 'Published';
+    for (const b of availableBranches) {
+      if (!labels[b]) labels[b] = b;
+    }
+    return labels;
+  });
 
   let isAuthenticated = $derived(!!ghToken && !!ghUser);
 
@@ -212,6 +228,58 @@ function createCampaignStore() {
     });
   }
 
+  async function refreshBranchStatus(): Promise<void> {
+    try {
+      const params = new URLSearchParams({ branch: currentBranch });
+      const res = await fetch(`/api/timeline/status?${params}`);
+      if (!res.ok) {
+        aheadPublished = false;
+        behindPublished = false;
+        return;
+      }
+      const data = (await res.json()) as { aheadPublished?: boolean; behindPublished?: boolean };
+      aheadPublished = !!data.aheadPublished;
+      behindPublished = !!data.behindPublished;
+    } catch {
+      aheadPublished = false;
+      behindPublished = false;
+    }
+  }
+
+  function syncBranchQuery(branch: string): void {
+    if (typeof window === 'undefined') return;
+    const url = new URL(window.location.href);
+    if (branch === defaultBranch) {
+      url.searchParams.delete('branch');
+    } else {
+      url.searchParams.set('branch', branch);
+    }
+    replaceState(url, window.history.state);
+  }
+
+  function isAllowedTimelineBranch(branch: string): boolean {
+    return branch === defaultBranch || branch.startsWith(CONTENT_BRANCH_PREFIX);
+  }
+
+  function filterTimelineBranches(branches: string[]): string[] {
+    const filtered = branches.filter((b) => isAllowedTimelineBranch(b));
+    const withDefault = filtered.includes(defaultBranch) ? filtered : [defaultBranch, ...filtered];
+    return [...new Set(withDefault)];
+  }
+
+  async function ensureTimelineDraftBranch(): Promise<string> {
+    const res = await fetch('/api/drafts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'create-timeline' }),
+    });
+    const data = (await res.json()) as { branch?: string; error?: string };
+    if (!res.ok || !data.branch) {
+      throw new Error(data.error || 'Failed to ensure timeline branch');
+    }
+    return data.branch;
+  }
+
   return {
     get data() { return data; },
     get filter() { return filter; },
@@ -239,8 +307,12 @@ function createCampaignStore() {
     get syncError() { return syncError; },
 
     // ── Branch getters ───────────────────────────────────────────────────────
+    get defaultBranch() { return defaultBranch; },
     get currentBranch() { return currentBranch; },
     get availableBranches() { return availableBranches; },
+    get branchLabels() { return branchLabels; },
+    get aheadPublished() { return aheadPublished; },
+    get behindPublished() { return behindPublished; },
 
     setActiveTab(tab: ActiveTab) {
       activeTab = tab;
@@ -288,6 +360,8 @@ function createCampaignStore() {
     logout() {
       clearToken();
       clearGitHubSyncState();
+      // Keep server cookie/session aligned with client logout.
+      void fetch('/api/auth/logout', { method: 'POST' }).catch(() => {});
       ghUser = null;
       ghToken = null;
       syncStatus = 'idle';
@@ -296,6 +370,9 @@ function createCampaignStore() {
       headSha = null;
       treeSha = null;
       fileShas = {};
+      aheadPublished = false;
+      behindPublished = false;
+      currentBranch = defaultBranch;
     },
 
     async initAuth() {
@@ -327,9 +404,22 @@ function createCampaignStore() {
         if (isAuthenticated) {
           try {
             const cfg = getRepoConfig();
-            availableBranches = await fetchBranchList(cfg, ghToken!);
+            const allBranches = await fetchBranchList(cfg, ghToken!);
+            availableBranches = filterTimelineBranches(allBranches);
           } catch {
-            availableBranches = [];
+            availableBranches = [defaultBranch];
+          }
+
+          try {
+            const ensuredBranch = await ensureTimelineDraftBranch();
+            currentBranch = ensuredBranch;
+            syncBranchQuery(currentBranch);
+            if (!availableBranches.includes(ensuredBranch)) {
+              availableBranches = filterTimelineBranches([...availableBranches, ensuredBranch]);
+            }
+          } catch {
+            currentBranch = defaultBranch;
+            syncBranchQuery(currentBranch);
           }
         }
 
@@ -345,9 +435,25 @@ function createCampaignStore() {
         }
 
         if (isAuthenticated) {
-          const files = shardCampaignData(data);
-          lastSyncedFiles = files;
-          syncStatus = 'synced';
+          try {
+            const cfg = { ...getRepoConfig(), branch: currentBranch };
+            const snapshot = await loadFromGitHub(cfg, ghToken!);
+            data = snapshot.data;
+            saveCampaign(data);
+            updateSyncCache(
+              snapshot.headSha,
+              snapshot.treeSha,
+              snapshot.fileShas,
+              shardCampaignData(snapshot.data),
+            );
+            syncStatus = 'synced';
+          } catch {
+            // Fall back to static/local data when branch load fails.
+            const files = shardCampaignData(data);
+            lastSyncedFiles = files;
+            syncStatus = 'synced';
+          }
+          await refreshBranchStatus();
         }
       } finally {
         initializing = false;
@@ -366,6 +472,18 @@ function createCampaignStore() {
       try {
         validateCampaignData(data);
         await attemptSave(token, false);
+        if (currentBranch.startsWith(TIMELINE_BRANCH_PREFIX)) {
+          const prRes = await fetch('/api/drafts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'ensure-pr', branch: currentBranch }),
+          });
+          if (!prRes.ok) {
+            const prData = (await prRes.json().catch(() => ({}))) as { error?: string };
+            throw new Error(prData.error || 'Saved, but failed to ensure timeline PR');
+          }
+        }
+        await refreshBranchStatus();
         syncStatus = 'synced';
       } catch (err) {
         syncStatus = 'error';
@@ -381,9 +499,11 @@ function createCampaignStore() {
       if (!token) return;
       try {
         const cfg = getRepoConfig();
-        availableBranches = await fetchBranchList(cfg, token);
+        const allBranches = await fetchBranchList(cfg, token);
+        availableBranches = filterTimelineBranches(allBranches);
+        await refreshBranchStatus();
       } catch {
-        availableBranches = [];
+        availableBranches = [defaultBranch];
       }
     },
 
@@ -391,8 +511,12 @@ function createCampaignStore() {
       const token = ghToken;
       if (!token) throw new Error('Not authenticated');
       if (branch === currentBranch) return;
+      if (!isAllowedTimelineBranch(branch)) {
+        throw new Error('Only Published and content branches are available in Timeline.');
+      }
 
       currentBranch = branch;
+      syncBranchQuery(branch);
       syncStatus = 'loading';
       syncError = null;
 
@@ -414,6 +538,46 @@ function createCampaignStore() {
           snapshot.fileShas,
           shardCampaignData(snapshot.data),
         );
+        await refreshBranchStatus();
+        syncStatus = 'synced';
+      } catch (err) {
+        syncStatus = 'error';
+        syncError = err instanceof Error ? err.message : String(err);
+        throw err;
+      }
+    },
+
+    async updateFromPublished() {
+      const token = ghToken;
+      if (!token) throw new Error('Not authenticated');
+      syncStatus = 'loading';
+      syncError = null;
+
+      try {
+        const updateRes = await fetch('/api/timeline/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ branch: currentBranch }),
+        });
+        const updateData = (await updateRes.json()) as { updated?: boolean; reason?: string; error?: string };
+        if (!updateRes.ok) {
+          throw new Error(updateData.error || 'Failed to update from published');
+        }
+        if (updateData.updated === false && updateData.reason) {
+          throw new Error(updateData.reason);
+        }
+
+        const cfg = { ...getRepoConfig(), branch: currentBranch };
+        const snapshot = await loadFromGitHub(cfg, token);
+        data = snapshot.data;
+        saveCampaign(data);
+        updateSyncCache(
+          snapshot.headSha,
+          snapshot.treeSha,
+          snapshot.fileShas,
+          shardCampaignData(snapshot.data),
+        );
+        await refreshBranchStatus();
         syncStatus = 'synced';
       } catch (err) {
         syncStatus = 'error';

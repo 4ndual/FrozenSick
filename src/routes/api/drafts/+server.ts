@@ -5,6 +5,7 @@ import {
   invalidateCache,
   fetchTree,
   fetchChapterJsonPaths,
+  listBranches,
 } from '$lib/server/github-content';
 import { slugifyForBranch } from '$lib/utils/slugify';
 import { resolveEntryPath } from '$lib/server/wiki-entry';
@@ -39,17 +40,12 @@ export const GET: RequestHandler = async ({ cookies }) => {
   const token = cookies.get('gh_token');
   if (!token) throw error(401, 'Not authenticated');
 
-  const res = await fetch(`${repoUrl()}/branches?per_page=100`, {
-    headers: ghHeaders(token),
-  });
-  if (!res.ok) throw error(502, 'Failed to list branches');
-
-  const branches: { name: string }[] = await res.json();
+  const branches = await listBranches(token);
   const drafts = branches
-    .filter((b) => b.name.startsWith(CONTENT_BRANCH_PREFIX))
+    .filter((name) => name.startsWith(CONTENT_BRANCH_PREFIX))
     .map((b) => ({
-      branch: b.name,
-      label: b.name.slice(CONTENT_BRANCH_PREFIX.length),
+      branch: b,
+      label: b.slice(CONTENT_BRANCH_PREFIX.length),
     }));
 
   return json({ drafts });
@@ -62,6 +58,9 @@ export const GET: RequestHandler = async ({ cookies }) => {
  *   { action: "create", sourcePath?: string, slug?: string }
  *     -> creates content/{slug} branch from default branch HEAD.
  *        sourcePath is preferred and derives the slug server-side.
+ *
+ *   { action: "create-timeline" }
+ *     -> creates/ensures content/timeline-<github-login> branch from default HEAD.
  *
  *   { action: "ensure-pr", branch: string }
  *     -> ensures an open PR exists from content branch to default (creates if needed)
@@ -82,6 +81,8 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
   switch (action) {
     case 'create':
       return handleCreate(token, body);
+    case 'create-timeline':
+      return handleCreateTimeline(token);
     case 'ensure-pr':
       return handleEnsurePr(token, body);
     case 'pull':
@@ -129,6 +130,56 @@ async function handleCreate(
     }
   }
 
+  const branchResult = await createBranchFromDefault(token, branchName, defaultBranch);
+  if (branchResult === 'exists') {
+    return json({ branch: branchName, alreadyExists: true });
+  }
+
+  return json({ branch: branchName });
+}
+
+async function handleCreateTimeline(token: string) {
+  const login = await fetchViewerLogin(token);
+  const timelineSlug = slugifyLogin(login);
+  const branchName = `${CONTENT_BRANCH_PREFIX}timeline-${timelineSlug}`;
+  const defaultBranch = getDefaultBranch();
+
+  const branchResult = await createBranchFromDefault(token, branchName, defaultBranch);
+  return json({
+    branch: branchName,
+    login,
+    alreadyExists: branchResult === 'exists',
+  });
+}
+
+function slugifyLogin(login: string): string {
+  const normalized = login.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
+  return normalized || 'user';
+}
+
+async function fetchViewerLogin(token: string): Promise<string> {
+  const userRes = await fetch('https://api.github.com/user', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+    },
+  });
+  if (!userRes.ok) {
+    throw error(502, 'Failed to resolve authenticated GitHub user');
+  }
+  const userData = (await userRes.json()) as { login?: string };
+  const login = userData.login?.trim();
+  if (!login) {
+    throw error(502, 'Authenticated GitHub user has no login');
+  }
+  return login;
+}
+
+async function createBranchFromDefault(
+  token: string,
+  branchName: string,
+  defaultBranch: string,
+): Promise<'created' | 'exists'> {
   const refRes = await fetch(
     `${repoUrl()}/git/ref/heads/${encodeURIComponent(defaultBranch)}`,
     { headers: ghHeaders(token) },
@@ -146,14 +197,13 @@ async function handleCreate(
   });
 
   if (createRes.status === 422) {
-    return json({ branch: branchName, alreadyExists: true });
+    return 'exists';
   }
   if (!createRes.ok) {
     const err = await createRes.json().catch(() => ({}));
     throw error(502, (err as { message?: string }).message || 'Failed to create branch');
   }
-
-  return json({ branch: branchName });
+  return 'created';
 }
 
 async function handleEnsurePr(token: string, body: { branch?: string }) {

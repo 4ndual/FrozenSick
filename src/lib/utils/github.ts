@@ -379,9 +379,19 @@ export async function listBranches(
   cfg: RepoConfig,
   token: string,
 ): Promise<string[]> {
-  const data = await fetchJson(
-    `${repoUrl(cfg)}/branches?per_page=100`,
-    token,
-  );
-  return (data as { name: string }[]).map((b) => b.name);
+  const names: string[] = [];
+  let page = 1;
+
+  while (true) {
+    const data = await fetchJson(
+      `${repoUrl(cfg)}/branches?per_page=100&page=${page}`,
+      token,
+    );
+    const pageNames = (data as { name: string }[]).map((b) => b.name);
+    names.push(...pageNames);
+    if (pageNames.length < 100) break;
+    page += 1;
+  }
+
+  return names;
 }

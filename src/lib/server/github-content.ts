@@ -21,11 +21,12 @@ function repoUrl(): string {
 }
 
 function ghHeaders(token: string) {
-  return {
-    Authorization: `Bearer ${token}`,
+  const headers: Record<string, string> = {
     Accept: 'application/vnd.github+json',
     'X-GitHub-Api-Version': '2022-11-28',
   };
+  if (token) headers.Authorization = `Bearer ${token}`;
+  return headers;
 }
 
 // ── Cache ────────────────────────────────────────────────────────────────────
@@ -357,12 +358,19 @@ export async function listBranches(token: string): Promise<string[]> {
   const cached = await getCached<string[]>(cacheKey);
   if (cached) return cached;
 
-  const data = await fetchJson<{ name: string }[]>(
-    `${repoUrl()}/branches?per_page=100`,
-    token,
-  );
+  const names: string[] = [];
+  let page = 1;
 
-  const names = data.map((b) => b.name);
+  while (true) {
+    const data = await fetchJson<{ name: string }[]>(
+      `${repoUrl()}/branches?per_page=100&page=${page}`,
+      token,
+    );
+    names.push(...data.map((b) => b.name));
+    if (data.length < 100) break;
+    page += 1;
+  }
+
   await setCache(cacheKey, names, BRANCHES_TTL);
   return names;
 }

@@ -17,6 +17,7 @@
   let drafts = $state<Draft[]>([]);
   let loading = $state(false);
   let discarding = $state<string | null>(null);
+  const dropdownId = 'drafts-dropdown-menu';
 
   function announceOpenState(nextOpen: boolean) {
     if (!nextOpen || typeof window === 'undefined') return;
@@ -80,7 +81,16 @@
 </script>
 
 <div class="drafts-wrapper">
-  <button class="drafts-toggle" onclick={toggle} title="Content branches" data-testid="drafts-toggle" aria-expanded={open} aria-haspopup="true" aria-label="Content branches">
+  <button
+    class="drafts-toggle"
+    onclick={toggle}
+    title="Content branches"
+    data-testid="drafts-toggle"
+    aria-expanded={open}
+    aria-haspopup="listbox"
+    aria-controls={dropdownId}
+    aria-label="Content branches"
+  >
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
       <polyline points="14 2 14 8 20 8"></polyline>
@@ -94,7 +104,7 @@
   </button>
 
   {#if open}
-    <div class="drafts-dropdown" data-testid="drafts-dropdown">
+    <div id={dropdownId} class="drafts-dropdown" data-testid="drafts-dropdown" role="listbox" aria-label="Content branches">
       <div class="drafts-header">Content Branches</div>
       {#if loading}
         <div class="drafts-loading">Loading…</div>
@@ -102,7 +112,7 @@
         <div class="drafts-empty">No content branches yet</div>
       {:else}
         {#each drafts as draft (draft.branch)}
-          <div class="drafts-item" data-testid="draft-item-{draft.branch}">
+          <div class="drafts-item" data-testid="draft-item-{draft.branch}" role="option" aria-selected={false}>
             <span class="drafts-label" title={draft.branch}>{readableLabel(draft)}</span>
             <div class="drafts-actions">
               <button
@@ -111,6 +121,7 @@
                 disabled={discarding === draft.branch}
                 title="Remove branch"
                 data-testid="draft-discard-{draft.branch}"
+                aria-label="Remove {readableLabel(draft)} branch"
               >
                 Remove
               </button>
@@ -121,6 +132,12 @@
     </div>
   {/if}
 </div>
+
+{#if open}
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <div class="drafts-backdrop" onclick={() => (open = false)} data-testid="drafts-backdrop"></div>
+{/if}
 
 <style>
   .drafts-wrapper {
@@ -169,6 +186,12 @@
     overflow-y: auto;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     z-index: 200;
+  }
+
+  .drafts-backdrop {
+    position: fixed;
+    inset: 56px 0 0 0;
+    z-index: 150;
   }
 
   .drafts-header {
