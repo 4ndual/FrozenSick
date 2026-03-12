@@ -38,6 +38,7 @@
   const TOKEN_KEY = 'frozen-sick-gh-token';
 
   let activeBranch = $derived(branch || defaultBranch);
+  const CONTENT_BRANCH_PREFIX = 'content/';
 
   let serverAuthenticated = $state(false);
   let modalOpen = $state(false);
@@ -74,6 +75,11 @@
 
   $effect(() => {
     wikiSyncStatus = initialSyncStatus;
+  });
+
+  $effect(() => {
+    if (mode !== 'wiki') return;
+    contentBranch = activeBranch.startsWith(CONTENT_BRANCH_PREFIX) ? activeBranch : null;
   });
 
   function handleHashToken() {
@@ -224,6 +230,16 @@
       if (!res.ok && !data.alreadyExists) throw new Error(data.error || 'Failed to create editing branch');
       const editBranch = data.branch;
       contentBranch = editBranch;
+
+      if (activeBranch !== editBranch) {
+        const nextUrl = new URL(window.location.href);
+        if (editBranch === defaultBranch) {
+          nextUrl.searchParams.delete('branch');
+        } else {
+          nextUrl.searchParams.set('branch', editBranch);
+        }
+        await goto(nextUrl.toString(), { invalidateAll: true });
+      }
 
       const params = new URLSearchParams({ path: sourcePath, branch: editBranch });
       const fileRes = await fetch(`/api/wiki?${params}`);

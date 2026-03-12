@@ -14,12 +14,12 @@ import { fetchPlaceMapLinks } from '$lib/server/place-map-links';
 import { extractMapFileNameFromRawUrl } from '$lib/place-map-links';
 import {
   slugifyPath,
-  slugifyForBranch,
-  formatPathAsTitle,
 } from '$lib/utils/slugify';
+import {
+  CONTENT_BRANCH_PREFIX,
+  formatContentBranchLabel,
+} from '$lib/server/content-branches';
 import type { PageServerLoad } from './$types';
-
-const CONTENT_BRANCH_PREFIX = 'content/';
 
 type SyncStatus = 'viewing' | 'saved' | 'synced' | 'behind';
 
@@ -55,24 +55,22 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
 
     const branchLabels: Record<string, string> = {};
     branchLabels[defaultBranch] = 'Published';
+    const manifestPaths = Object.values(manifest);
     for (const b of filteredBranches) {
       if (b.startsWith(CONTENT_BRANCH_PREFIX)) {
-        const branchSlug = b.slice(CONTENT_BRANCH_PREFIX.length);
-        const matchingSource = Object.values(manifest).find(
-          (src) => slugifyForBranch(src) === branchSlug,
-        );
-        branchLabels[b] = matchingSource
-          ? formatPathAsTitle(matchingSource)
-          : branchSlug.replace(/-/g, ' ');
+        branchLabels[b] = formatContentBranchLabel(b, manifestPaths);
       }
     }
 
-    const pageContentBranch = CONTENT_BRANCH_PREFIX + slugifyForBranch(sourcePath);
     let initialSyncStatus: SyncStatus = 'viewing';
 
-    if (filteredBranches.includes(pageContentBranch)) {
+    if (
+      branch !== defaultBranch &&
+      branch.startsWith(CONTENT_BRANCH_PREFIX) &&
+      filteredBranches.includes(branch)
+    ) {
       try {
-        const comparison = await compareBranches(token, pageContentBranch, defaultBranch);
+        const comparison = await compareBranches(token, branch, defaultBranch);
         if (comparison.aheadBy === 0 && comparison.behindBy === 0) {
           initialSyncStatus = 'synced';
         } else if (comparison.aheadBy > 0 && comparison.behindBy > 0) {

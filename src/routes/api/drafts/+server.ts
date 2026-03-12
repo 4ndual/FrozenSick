@@ -9,10 +9,13 @@ import {
 } from '$lib/server/github-content';
 import { slugifyForBranch } from '$lib/utils/slugify';
 import { resolveEntryPath } from '$lib/server/wiki-entry';
+import {
+  CONTENT_BRANCH_PREFIX,
+  buildUserContentBranch,
+  slugifyLogin,
+} from '$lib/server/content-branches';
 
 const API = 'https://api.github.com';
-const CONTENT_BRANCH_PREFIX = 'content/';
-
 function getOwner() {
   return env.PUBLIC_GITHUB_OWNER || '4ndual';
 }
@@ -56,8 +59,9 @@ export const GET: RequestHandler = async ({ cookies }) => {
  *
  * Actions:
  *   { action: "create", sourcePath?: string, slug?: string }
- *     -> creates content/{slug} branch from default branch HEAD.
- *        sourcePath is preferred and derives the slug server-side.
+ *     -> creates content/{github-login-slug}/{entry-slug} branch from default HEAD.
+ *        Falls back to existing legacy content/{entry-slug} branch when present.
+ *        sourcePath is preferred and derives the entry slug server-side.
  *
  *   { action: "create-timeline" }
  *     -> creates/ensures content/timeline-<github-login> branch from default HEAD.
@@ -99,16 +103,20 @@ async function handleCreate(
   body: { slug?: string; sourcePath?: string },
 ) {
   const sourcePath = body.sourcePath?.trim();
-  const slug = sourcePath
-    ? slugifyForBranch(resolveEntryPath(sourcePath).path)
+  const resolvedPath = sourcePath ? resolveEntryPath(sourcePath).path : null;
+  const slug = resolvedPath
+    ? slugifyForBranch(resolvedPath)
     : body.slug?.trim();
   if (!slug) throw error(400, 'Missing slug');
 
-  const branchName = `${CONTENT_BRANCH_PREFIX}${slug}`;
+  const login = await fetchViewerLogin(token);
+  const branchName = resolvedPath
+    ? buildUserContentBranch(resolvedPath, login)
+    : `${CONTENT_BRANCH_PREFIX}${slugifyLogin(login)}/${slug}`;
+  const legacyBranchName = `${CONTENT_BRANCH_PREFIX}${slug}`;
   const defaultBranch = getDefaultBranch();
 
-  if (sourcePath) {
-    const normalizedSourcePath = resolveEntryPath(sourcePath).path;
+  if (resolvedPath) {
     const [markdownTree, chapterJsonTree] = await Promise.all([
       fetchTree(token, defaultBranch),
       fetchChapterJsonPaths(token, defaultBranch),
@@ -116,7 +124,7 @@ async function handleCreate(
     const allKnownPaths = [...markdownTree.map((e) => e.path), ...chapterJsonTree.map((e) => e.path)];
     const collision = allKnownPaths.find(
       (candidate) =>
-        candidate !== normalizedSourcePath && slugifyForBranch(candidate) === slug,
+        candidate !== resolvedPath && slugifyForBranch(candidate) === slug,
     );
     if (collision) {
       return json(
@@ -128,6 +136,15 @@ async function handleCreate(
         { status: 409 },
       );
     }
+  }
+
+  const existingBranches = await listBranches(token);
+  if (existingBranches.includes(branchName)) {
+    return json({ branch: branchName, alreadyExists: true });
+  }
+  if (legacyBranchName !== branchName && existingBranches.includes(legacyBranchName)) {
+    // Keep using legacy per-page branches so users continue editing existing pending work.
+    return json({ branch: legacyBranchName, alreadyExists: true, legacyBranch: true });
   }
 
   const branchResult = await createBranchFromDefault(token, branchName, defaultBranch);
@@ -150,11 +167,6 @@ async function handleCreateTimeline(token: string) {
     login,
     alreadyExists: branchResult === 'exists',
   });
-}
-
-function slugifyLogin(login: string): string {
-  const normalized = login.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
-  return normalized || 'user';
 }
 
 async function fetchViewerLogin(token: string): Promise<string> {

@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import { slugifyForBranch } from '$lib/utils/slugify';
+import { parseContentBranch } from '$lib/server/content-branches';
 
 export type WikiEntryFormat = 'md' | 'json';
 
@@ -65,8 +66,15 @@ export function branchForPath(path: string): string {
 }
 
 export function assertBranchMatchesPath(branch: string, path: string): void {
-  const expected = branchForPath(path);
-  if (branch !== expected) {
-    throw error(400, `Branch "${branch}" does not match path-derived branch "${expected}"`);
-  }
+  const expectedSlug = slugifyForBranch(path);
+  const legacyBranch = branchForPath(path);
+  if (branch === legacyBranch) return;
+
+  const parsed = parseContentBranch(branch);
+  if (parsed?.slug === expectedSlug) return;
+
+  throw error(
+    400,
+    `Branch "${branch}" does not match path-derived branch slug "${expectedSlug}"`,
+  );
 }

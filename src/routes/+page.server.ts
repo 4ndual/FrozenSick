@@ -7,10 +7,11 @@ import {
   getDefaultBranch,
   GitHubAuthError,
 } from '$lib/server/github-content';
-import { formatPathAsTitle, slugifyForBranch } from '$lib/utils/slugify';
+import {
+  CONTENT_BRANCH_PREFIX,
+  formatContentBranchLabel,
+} from '$lib/server/content-branches';
 import type { PageServerLoad } from './$types';
-
-const CONTENT_BRANCH_PREFIX = 'content/';
 
 export const load: PageServerLoad = async ({ url, cookies }) => {
   const authToken = cookies.get('gh_token') ?? '';
@@ -30,15 +31,10 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
 
     const branchLabels: Record<string, string> = {};
     branchLabels[defaultBranch] = 'Published';
+    const manifestPaths = Object.values(manifest);
     for (const b of filteredBranches) {
       if (b.startsWith(CONTENT_BRANCH_PREFIX)) {
-        const branchSlug = b.slice(CONTENT_BRANCH_PREFIX.length);
-        const matchingSource = Object.values(manifest).find(
-          (src) => slugifyForBranch(src) === branchSlug,
-        );
-        branchLabels[b] = matchingSource
-          ? formatPathAsTitle(matchingSource)
-          : branchSlug.replace(/-/g, ' ');
+        branchLabels[b] = formatContentBranchLabel(b, manifestPaths);
       }
     }
 
