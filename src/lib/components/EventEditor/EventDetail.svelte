@@ -124,7 +124,7 @@
         <span class="location-name">{ev.location}</span>
         <a
           class="action-btn map-show-btn"
-          href={'/maps?event=' + encodeURIComponent(ev.id) + '&location=' + encodeURIComponent(ev.location)}
+          href={'/maps?event=' + encodeURIComponent(ev.id) + '&place=' + encodeURIComponent(ev.location)}
           data-testid="event-show-on-map"
           aria-label="Show {ev.title} on map"
         >

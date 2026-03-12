@@ -1,8 +1,10 @@
 <script lang="ts">
   import { campaign } from '$lib/store/campaign.svelte';
+  import EntityDropdown from '$lib/components/common/EntityDropdown.svelte';
 
   const hasFilters = $derived(
     campaign.filter.search !== '' ||
+    campaign.filter.eventIds.length > 0 ||
     campaign.filter.types.length > 0 ||
     campaign.filter.tags.length > 0 ||
     campaign.filter.characters.length > 0 ||
@@ -11,6 +13,18 @@
 
   const filteredCount = $derived(campaign.filteredEvents.length);
   const totalCount = $derived(campaign.data.events.length);
+
+  const characterOptions = $derived(
+    campaign.allCharacters.map((char) => ({ value: char, label: char })),
+  );
+
+  function onEventFilterChange(nextValues: string[]) {
+    campaign.setFilter({ eventIds: nextValues });
+  }
+
+  function onCharacterFilterChange(nextValues: string[]) {
+    campaign.setFilter({ characters: nextValues });
+  }
 </script>
 
 <aside class="sidebar" data-testid="timeline-sidebar" aria-label="Filter and search">
@@ -42,6 +56,22 @@
   <!-- Event count -->
   <div class="event-count">
     Showing <strong>{filteredCount}</strong> of <strong>{totalCount}</strong> events
+  </div>
+
+  <!-- Events -->
+  <div class="sidebar-group">
+    <div class="group-label">Events</div>
+    <EntityDropdown
+      label="Filter by events"
+      options={campaign.allEventOptions}
+      selectedValues={campaign.filter.eventIds}
+      onChange={onEventFilterChange}
+      testIdBase="sidebar-events"
+      placeholder="All events"
+      searchPlaceholder="Search events…"
+      multi={true}
+      compact={true}
+    />
   </div>
 
   <!-- Event Types -->
@@ -85,19 +115,17 @@
   {#if campaign.allCharacters.length > 0}
     <div class="sidebar-group">
       <div class="group-label">Characters</div>
-      <div class="check-list">
-        {#each campaign.allCharacters as char}
-          {@const active = campaign.filter.characters.includes(char)}
-          <label class="check-item">
-            <input
-              type="checkbox"
-              checked={active}
-              onchange={() => campaign.toggleFilterCharacter(char)}
-            />
-            {char}
-          </label>
-        {/each}
-      </div>
+      <EntityDropdown
+        label="Filter by characters"
+        options={characterOptions}
+        selectedValues={campaign.filter.characters}
+        onChange={onCharacterFilterChange}
+        testIdBase="sidebar-characters"
+        placeholder="All characters"
+        searchPlaceholder="Search characters…"
+        multi={true}
+        compact={true}
+      />
     </div>
   {/if}
 

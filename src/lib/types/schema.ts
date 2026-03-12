@@ -86,6 +86,7 @@ export interface CampaignData {
 
 export interface FilterState {
   search: string;
+  eventIds: string[];
   types: string[];
   tags: string[];
   characters: string[];

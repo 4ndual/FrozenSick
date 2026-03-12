@@ -53,6 +53,7 @@ function createCampaignStore() {
 
   let filter = $state<FilterState>({
     search: '',
+    eventIds: [],
     types: [],
     tags: [],
     characters: [],
@@ -111,6 +112,7 @@ function createCampaignStore() {
         !ev.description.toLowerCase().includes(filter.search.toLowerCase())
       )
         return false;
+      if (filter.eventIds.length > 0 && !filter.eventIds.includes(ev.id)) return false;
       if (filter.types.length > 0 && !filter.types.includes(ev.type)) return false;
       if (filter.tags.length > 0 && !filter.tags.some((t) => ev.tags.includes(t))) return false;
       if (
@@ -133,6 +135,20 @@ function createCampaignStore() {
 
   let allCharacters = $derived(
     [...new Set(data.events.flatMap((ev) => ev.linkedCharacters))].sort(),
+  );
+
+  let allPlaces = $derived(
+    [...new Set(
+      data.events
+        .map((ev) => ev.location?.trim() ?? '')
+        .filter(Boolean),
+    )].sort(),
+  );
+
+  let allEventOptions = $derived(
+    data.events
+      .map((ev) => ({ value: ev.id, label: ev.title.trim() || ev.id }))
+      .sort((a, b) => a.label.localeCompare(b.label)),
   );
 
   let detailEvent = $derived(
@@ -286,6 +302,8 @@ function createCampaignStore() {
     get filteredEvents() { return filteredEvents; },
     get allTags() { return allTags; },
     get allCharacters() { return allCharacters; },
+    get allPlaces() { return allPlaces; },
+    get allEventOptions() { return allEventOptions; },
     get selectedEventId() { return selectedEventId; },
     get activeTab() { return activeTab; },
     get editorOpen() { return editorOpen; },
@@ -705,6 +723,12 @@ function createCampaignStore() {
       else filter.types.push(type);
     },
 
+    toggleFilterEvent(eventId: string) {
+      const idx = filter.eventIds.indexOf(eventId);
+      if (idx >= 0) filter.eventIds.splice(idx, 1);
+      else filter.eventIds.push(eventId);
+    },
+
     toggleFilterTag(tag: string) {
       const idx = filter.tags.indexOf(tag);
       if (idx >= 0) filter.tags.splice(idx, 1);
@@ -725,6 +749,7 @@ function createCampaignStore() {
 
     resetFilter() {
       filter.search = '';
+      filter.eventIds = [];
       filter.types = [];
       filter.tags = [];
       filter.characters = [];

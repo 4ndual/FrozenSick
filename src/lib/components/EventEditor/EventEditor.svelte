@@ -3,8 +3,9 @@
   import { campaign } from '$lib/store/campaign.svelte';
   import { RELATION_TYPE_LABELS } from '$lib/types/schema';
   import type { CampaignEvent, EventRelation, FantasyDate } from '$lib/types/schema';
-import { clampDay } from '$lib/utils/calendar';
+  import { clampDay } from '$lib/utils/calendar';
   import { generateId } from '$lib/utils/storage';
+  import EntityDropdown from '$lib/components/common/EntityDropdown.svelte';
 
   const isNew = $derived(!campaign.editingEvent);
   const cal = $derived(campaign.data.calendar);
@@ -43,25 +44,43 @@ import { clampDay } from '$lib/utils/calendar';
 
   let draft = $state<CampaignEvent>(makeBlank());
   let tagsInput = $state('');
-  let charsInput = $state('');
   let hasEndDate = $state(false);
   let newRelTargetId = $state('');
   let newRelType = $state<EventRelation['type']>('related');
   let newRelLabel = $state('');
   let chapterOptions = $state<string[]>(FALLBACK_CHAPTERS);
   let chapterJsonEntries = $state<{ id: string; path: string }[]>([]);
+  let wikiPlaces = $state<string[]>([]);
+
+  const characterOptions = $derived(
+    campaign.allCharacters.map((char) => ({ value: char, label: char })),
+  );
+  const placeOptions = $derived.by(() => {
+    const merged = [...campaign.allPlaces, ...wikiPlaces];
+    const deduped = new Map<string, string>();
+    for (const place of merged) {
+      const trimmed = place.trim();
+      if (!trimmed) continue;
+      const key = trimmed.toLowerCase();
+      if (!deduped.has(key)) deduped.set(key, trimmed);
+    }
+    return [...deduped.values()]
+      .sort((a, b) => a.localeCompare(b))
+      .map((place) => ({ value: place, label: place }));
+  });
+  const relationTargetOptions = $derived(
+    campaign.allEventOptions.filter((ev) => ev.value !== draft.id),
+  );
 
   onMount(() => {
     return campaign.onEditorOpen((ev) => {
       if (ev) {
         draft = $state.snapshot(ev) as CampaignEvent;
         tagsInput = draft.tags.join(', ');
-        charsInput = draft.linkedCharacters.join(', ');
         hasEndDate = draft.endDate !== null;
       } else {
         draft = makeBlank();
         tagsInput = '';
-        charsInput = '';
         hasEndDate = false;
       }
       newRelTargetId = '';
@@ -88,10 +107,24 @@ import { clampDay } from '$lib/utils/calendar';
     }
   }
 
+  async function loadWikiPlaces(branch: string) {
+    try {
+      const params = new URLSearchParams({ branch });
+      const res = await fetch(`/api/world/places?${params}`);
+      if (!res.ok) return;
+      const data: { places?: string[] } = await res.json();
+      wikiPlaces = Array.isArray(data.places) ? data.places : [];
+    } catch {
+      // Keep location dropdown usable if place list cannot be loaded.
+      wikiPlaces = [];
+    }
+  }
+
   $effect(() => {
     const branch = campaign.currentBranch;
     if (branch) {
       void loadChapterOptions(branch);
+      void loadWikiPlaces(branch);
     }
   });
 
@@ -99,8 +132,17 @@ import { clampDay } from '$lib/utils/calendar';
     draft.tags = tagsInput.split(',').map((t) => t.trim()).filter(Boolean);
   }
 
-  function syncChars() {
-    draft.linkedCharacters = charsInput.split(',').map((c) => c.trim()).filter(Boolean);
+  function onCharactersChange(nextValues: string[]) {
+    draft.linkedCharacters = [...new Set(nextValues.map((value) => value.trim()).filter(Boolean))];
+  }
+
+  function onLocationChange(nextValues: string[]) {
+    const location = nextValues[0]?.trim() ?? '';
+    draft.location = location || null;
+  }
+
+  function onRelationTargetChange(nextValues: string[]) {
+    newRelTargetId = nextValues[0] ?? '';
   }
 
   function onTypeChange() {
@@ -141,7 +183,6 @@ import { clampDay } from '$lib/utils/calendar';
 
   function save() {
     syncTags();
-    syncChars();
     if (!draft.title.trim()) return;
     if (isNew) {
       campaign.addEvent(draft);
@@ -335,24 +376,32 @@ import { clampDay } from '$lib/utils/calendar';
 
       <!-- Linked characters -->
       <div class="field">
-        <label for="ev-chars">Linked Characters <span class="hint">(comma-separated)</span></label>
-        <input
-          id="ev-chars"
-          bind:value={charsInput}
-          onblur={syncChars}
-          placeholder="Tidus, Nixira, Zacarías…"
+        <span class="field-heading">Linked Characters <span class="hint">(select or create)</span></span>
+        <EntityDropdown
+          label="Linked characters"
+          options={characterOptions}
+          selectedValues={draft.linkedCharacters}
+          onChange={onCharactersChange}
+          testIdBase="event-characters"
+          placeholder="Select or type characters…"
+          searchPlaceholder="Search or create character…"
+          multi={true}
+          allowCreate={true}
         />
       </div>
 
       <!-- Location (for map) -->
       <div class="field">
-        <label for="ev-location">Location <span class="hint">(place name for map)</span></label>
-        <input
-          id="ev-location"
-          value={draft.location ?? ''}
-          oninput={(e) => { draft.location = (e.target as HTMLInputElement).value.trim() || null; }}
-          placeholder="e.g. Dragon Born, La Última Gota…"
-          data-testid="event-location"
+        <span class="field-heading">Location <span class="hint">(place name for map)</span></span>
+        <EntityDropdown
+          label="Location"
+          options={placeOptions}
+          selectedValues={draft.location ? [draft.location] : []}
+          onChange={onLocationChange}
+          testIdBase="event-location"
+          placeholder="Select or type a place…"
+          searchPlaceholder="Search or create place…"
+          allowCreate={true}
         />
       </div>
 
@@ -388,12 +437,17 @@ import { clampDay } from '$lib/utils/calendar';
               <option value={val}>{label}</option>
             {/each}
           </select>
-          <select bind:value={newRelTargetId} style="flex:1">
-            <option value="">— pick event —</option>
-            {#each campaign.data.events.filter(e => e.id !== draft.id) as ev}
-              <option value={ev.id}>{ev.title}</option>
-            {/each}
-          </select>
+          <div class="rel-target">
+            <EntityDropdown
+              label="Relation target event"
+              options={relationTargetOptions}
+              selectedValues={newRelTargetId ? [newRelTargetId] : []}
+              onChange={onRelationTargetChange}
+              testIdBase="event-relations-event"
+              placeholder="Pick event…"
+              searchPlaceholder="Search events…"
+            />
+          </div>
           <input bind:value={newRelLabel} placeholder="label (opt)" style="width:110px" />
           <button class="rel-add-btn" onclick={addRelation} disabled={!newRelTargetId}>Add</button>
         </div>
@@ -599,7 +653,10 @@ import { clampDay } from '$lib/utils/calendar';
   .rel-add-row {
     display: flex;
     gap: 6px;
-    align-items: center;
+    align-items: flex-start;
+  }
+  .rel-target {
+    flex: 1;
   }
   .rel-add-btn {
     padding: 6px 12px;
