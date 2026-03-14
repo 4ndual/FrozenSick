@@ -1,4 +1,4 @@
-# Chapter 4: The Battle of Brasboredon — Session 06
+# Chapter 4: The Battle of Bastabro — Session 06
 ## *"The city burned from both sides, and the only currency left was blood."*
 
 ---
