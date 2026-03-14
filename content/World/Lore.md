@@ -37,7 +37,7 @@ The IcePeak dynasty is led by **Marco Claus** and **Lady Claus** (a Santa Claus 
 
 | Name | Title |
 |------|-------|
-| **Rudolph (Lunei) IcePeak** | Lord of Commerce (Señor del Comercio) |
+| ** Luney (Rudolph) IcePeak** | Lord of Commerce (Señor del Comercio) |
 | **Blitzen IcePeak** | Supreme Lord of IcePeak (Señor Supremo) |
 | **Donner IcePeak** | Lord of War (Señor de la Guerra) |
 | **Prancer IcePeak** | Lord of Seas (Señor de los Mares) |
