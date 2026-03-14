@@ -76,6 +76,7 @@
   <main class="wiki-main" data-testid="wiki-main">
     <div class="landing">
       <h1>Frozen Sick</h1>
+      <h2>Hello World - PR Test!</h2>
       <p class="tagline">A D&D chronicle of bounty hunters, cursed artifacts, and a city on fire.</p>
 
       <div class="landing-grid">
