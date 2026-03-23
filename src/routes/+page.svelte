@@ -77,6 +77,7 @@
     <div class="landing">
       <h1>Frozen Sick</h1>
       <p class="tagline">A D&D chronicle of bounty hunters, cursed artifacts, and a city on fire.</p>
+      <p class="vibe-coder-hello">🚀 Hello World from Vibe Coder! 🚀</p>
 
       <div class="landing-grid">
         {#each cards as { title, links } (title)}
@@ -115,7 +116,21 @@
   .tagline {
     font-size: 1.1rem;
     color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .vibe-coder-hello {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffd700;
     margin-bottom: 2rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
   }
 
   .landing-grid {
