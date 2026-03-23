@@ -11,11 +11,11 @@
 | **Experience**     | 1,870              |
 | **Gender**         | Masculino          |
 | **Age**            | 40                 |
-| **Size**           | Small              |
+| **Size**           | Medium             |
 | **Height**         | 172                |
 | **Weight**         | 140                |
-| **Faith**          | La Hermandad de Moreno |
-| **Hair**           | Churco             |
+| **Faith**          | Malphas, el Príncipe de los Cuervos |
+| **Hair**           | Calvo              |
 | **Skin**           | —                  |
 | **Eyes**           | Verdes             |
 
@@ -117,6 +117,13 @@ Attack, Magic, Dash, Disengage, Dodge, Help, Hide, Ready, Search, Utilize, Oppor
 
 ---
 
+## Heridas y Condiciones Permanentes
+
+- **Mutilación Máxima:** Te falta la mano derecha. Fue arrancada en combate.
+- **La Marca de Val (Juramento de Sangre):** Tienes grabada en tu antebrazo una runa inquebrantable. Estás divina y moralmente obligado a proteger a cualquier enano que te encuentres.
+
+---
+
 ## Features & Traits
 
 ### Warlock Features
@@ -135,7 +142,7 @@ Attack, Magic, Dash, Disengage, Dodge, Help, Hide, Ready, Search, Utilize, Oppor
 ### Gnome Species Traits
 
 - **Creature Type** (PHB-2024 191) — You are a Humanoid.
-- **Size** (PHB-2024 191) — You are Small.
+- **Size** (PHB-2024 191) — You are Medium.
 - **Speed** (PHB-2024 191) — Your Speed is 30 ft.
 - **Darkvision** (PHB-2024 191) — You have Darkvision with a range of 60 ft.
 - **Gnomish Cunning** (PHB-2024 191) — You have Advantage on Intelligence, Wisdom, and Charisma saving throws.
@@ -221,7 +228,7 @@ Attack, Magic, Dash, Disengage, Dodge, Help, Hide, Ready, Search, Utilize, Oppor
 
 ## Allies & Organizations
 
-- **Organizations:** La Orden de la Piedra Sangrante
+- **Organizations:** La Orden de la Piedra Sangrante (Desprestigiado), Hermandad de la Garra de Malphas
 
 ---
 
