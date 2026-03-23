@@ -15,7 +15,7 @@
 | **Height**         | 172                |
 | **Weight**         | 140                |
 | **Faith**          | La Hermandad de Moreno |
-| **Hair**           | Churco             |
+| **Hair**           | Calvo              |
 | **Skin**           | —                  |
 | **Eyes**           | Verdes             |
 
