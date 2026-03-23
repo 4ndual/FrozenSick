@@ -1,11 +1,11 @@
-# Chapter 3: The Flying Turtle — Sessions 04 & 05
+# Chapter 3 - The Flying Turtle
 ## *"They woke up in chains on the back of a living prison — and escaping was only the beginning."*
 
 ---
 
 ### Setting the Scene
 
-The party awakens in darkness, shackled and separated. The floor pulses beneath them — not stone, but scale. They are prisoners aboard a **Prison Tortoise**: a massive, fire-elemental beast trained to carry captives across kingdoms, its very body a labyrinth of traps. The corridors are the grooves between its colossal scales, roofed with immovable marble vaulting. Acid bleeds from its glands in rhythmic pulses. Darts fire from its shell. Pressure plates trigger crushing pillars. And the whole thing is *running* — barreling toward Dragon Ball, a fortress where capture means interrogation, torture, and the end of everything.
+The party awakens in darkness, shackled and separated. The floor pulses beneath them — not stone, but scale. They are prisoners aboard a **Prison Tortoise**: a massive, fire-elemental beast trained to carry captives across kingdoms, its very body a labyrinth of traps. The corridors are the grooves between its colossal scales, roofed with immovable marble vaulting. Acid bleeds from its glands in rhythmic pulses. Darts fire from its shell. Pressure plates trigger crushing pillars. And the whole thing is *running* — barreling toward DragonLand, a fortress where capture means interrogation, torture, and the end of everything.
 
 Tidus knows what this is. He's seen Prison Tortugas before. He knows the stakes: if they don't escape before arrival, the torture will be so severe that every one of them will break, revealing everything — his location, their mission, all of it. The clock is ticking. Twelve rounds.
 
@@ -45,7 +45,7 @@ Nixira reaches the main gate first — and there stands **Branig "the Double-Bla
 
 The party is deep underground, in a volcanic chamber built around a lake of condemned souls. On a raised platform above the magma-glow stands a demon: **Victus**, also called **Raku** — a creature of terrible power and barely contained rage.
 
-Nixira climbs the stairs to negotiate, trying to pass herself off as a valuable asset rather than a prisoner. Victus sees through her immediately. With a casual flick of his wrist, he makes her feel the phantom weight of invisible chains — a demonstration of raw psychic force. Negotiations collapse when he senses she works for someone connected to **Lunei Milei Maili**. The word alone sends him into cold fury. *"With someone who works for Lunei, negotiations are not possible."*
+Nixira climbs the stairs to negotiate, trying to pass herself off as a valuable asset rather than a prisoner. Victus sees through her immediately. With a casual flick of his wrist, he makes her feel the phantom weight of invisible chains — a demonstration of raw psychic force. Negotiations collapse when he senses she works for someone connected to **Luney IcePeak**. The word alone sends him into cold fury. *"With someone who works for Luney, negotiations are not possible."*
 
 The room seals. Victus's platform descends. His human disguise burns away to reveal his true form: a hulking, armored paladin-turned-fiend. His wings have been severed — the stumps scarred and cauterized. His white cape ignites into plate armor. Hooves crack against stone. Horns spiral upward. This was once a holy warrior. Now he is something far worse.
 
@@ -67,7 +67,7 @@ Nixira sees her friend fall and something breaks inside her. She nocks an arrow.
 
 ### Key Revelations
 
-- **Lunei Milei Maili is far more dangerous than anyone realized.** The party's tavern-owner boss once cut the wings off a demon as punishment for theft. The casual brutality of this act — and the fear it inspires in Victus — reframes everything the party knows about their employer.
+- **Luney IcePeak is far more dangerous than anyone realized.** The party's tavern-owner boss once cut the wings off a demon as punishment for theft. The casual brutality of this act — and the fear it inspires in Victus — reframes everything the party knows about their employer.
 - **Victus was a Fallen Paladin**, not merely a demon. He was commanded by his god to destroy "the Fallen Prince" and failed. His damnation was his punishment. His death was a mercy.
 - **Señor Nadie and the Nameless Order** are monks who erase their identities to achieve mastery. Their master is an elf. One of three pupils (Rodrigo, the healer) is now dead. Two remain: the monk of Invisibility and the monk of Brute Force ("Fuercitas").
 - **Malfas, Prince of Ravens**, will answer Zacarías's calls — but grudgingly, at a cost, and with open contempt. The patron-warlock relationship is transactional and volatile.
@@ -77,7 +77,7 @@ Nixira sees her friend fall and something breaks inside her. She nocks an arrow.
 
 ### Consequences
 
-The party has escaped the Prison Tortoise (through unknown means during the missing scene) and slain a demon that even their boss once found dangerous enough to maim rather than kill. But the cost is steep. Zacarías lies dying. The Nameless Monk lost a pupil. And the revelation about Lunei — that their jovial, cocktail-mixing tavern owner is capable of mutilating demons — hangs over everything like smoke.
+The party has escaped the Prison Tortoise (through unknown means during the missing scene) and slain a demon that even their boss once found dangerous enough to maim rather than kill. But the cost is steep. Zacarías lies dying. The Nameless Monk lost a pupil. And the revelation about Luney — that their jovial, cocktail-mixing tavern owner is capable of mutilating demons — hangs over everything like smoke.
 
 Whatever Farquad's guards were trying to accomplish by capturing them, the party is now loose, leveled up, and asking dangerous questions about the people they work for.
 
@@ -94,3 +94,4 @@ Whatever Farquad's guards were trying to accomplish by capturing them, the party
 | **Fuercitas** | Allied NPC (Monk of Brute Force). Alive, lightly damaged. Still following Señor Nadie. |
 
 *All party members earned 3,000 XP. Zacarías has reached Level 3. Next session must open with saving his life — or burying him.*
+

@@ -20,13 +20,13 @@
 
 ## Chapter 1 — The Tavern
 
-Delivered poisoned "special orders" (prepared by Nixira) to targets including Khael Varos "El Heraldo" (Caelvaros). Recognized gunpowder trails from Dragonforce's arson method — the exact playbook he once followed. Tackled and knocked out Dracus when he drew a dagger, but was spotted by Farquad, triggering a chase by Dracus's 5 allies.
+Delivered poisoned "special orders" (prepared by Nixira) to targets including **Kahel Varos "El Heraldo"**. Recognized gunpowder trails from Dragonforce's arson method — the exact playbook he once followed. Tackled and knocked out Dracus when he drew a dagger, but was spotted by Farquad, triggering a chase by Dracus's 5 allies.
 
 In the dark combat aftermath, got the killing blow on the bald enemy (broke his neck while the enemy bled out). Looted a scimitar, light crossbow, gold, and silver. Nearly killed by a crossbow shot before using a super healing potion.
 
 ## Chapter 2 — The Plateau
 
-Remembered the cave from a past journey. **Tamed a baby rock dragon (wyrmling) named Line** by approaching silently, touching its nose, and feeding it a dead serpent. Rode Line through the cave. Directed rescue of 23 trapped people. **Captured** at the cave exit by Farquad's ambush.
+Remembered the cave from a past journey. **Tamed a baby rock dragon (wyrmling) named Chimuelo** by approaching silently, touching its nose, and feeding it a dead serpent. Rode Chimuelo through the cave. Directed rescue of 23 trapped people. **Captured** at the cave exit by Farquad's ambush.
 
 ## Chapter 3 — The Flying Turtle
 
@@ -34,7 +34,7 @@ Paralyzed during capture but remained aware through a slipped blindfold — saw 
 
 In the demon's lair, attempted to negotiate with Victus/Raku, asking "Do you know Rubén?" Trapped by the demon's Air Prison. Used crossbow in combat. Took zero damage across the entire dungeon.
 
-## Chapter 4 — The Battle of Brasboredon
+## Chapter 5 - The Battle of Brasboredon
 
 Arrived at Robinson Bridge during the revolution. Confronted **Borax** — a former DragonForce apprentice from Tidus's castle days, once a pathetic servant who couldn't produce a spark, now wielding green eldritch fire from a demonic pact. Flashback: Borax served Tidus breakfast on the morning he killed Prince Roto; Tidus showed him compassion and told him to leave the castle.
 
@@ -46,15 +46,15 @@ Surveyed the city from the tower. Got hit by a crossbow bolt (6 damage). Communi
 
 Climbed a rooftop using a grappling rope. Found a chest on a trapdoor. Pushed it aside, heard someone calling for help below. The trapdoor is rigged with a bomb mechanism — session ends with Tidus's dagger an inch from the fuse.
 
-## Chapter 5 — The Escape from Brasboredon
+## Chapter 6 - The Escape from Brasboredon
 
 Led the escort group — **Donner IcePeak**, Messi, Achawn, Cory, and Sid — through Sniper's kill zone. Devised a plan called **"Encarámese"** using smoke bombs and shield formations. Coordinated movement across four lanes of open street carpeted with sixty headshot corpses. Witnessed three dwarf children dead in their father's arms — crushed by fleeing civilians, not arrows.
 
 **Sid** was the first to fall: Sniper's explosive arrow split his shield, and a precision shot struck between his eyes. **Achawn** died next during the **Lluvia de Flechas** — Sniper's arrow-rain ability. Cory and Messi survived the crossing.
 
-Found the **Gremory market** in the evacuation zone. Heard a goblin — **Berlin** — complaining about lost jewels. Deceived Berlin into believing he was sent by Gremory to retrieve the **Zafiro Esmeralda** — the gem needed to cure Lunei of Frigid Woe. Berlin handed it over without suspicion.
+Found the **Gremory market** in the evacuation zone. Heard a goblin — **Berlin** — complaining about lost jewels. Deceived Berlin into believing he was sent by Gremory to retrieve the **Zafiro Esmeralda** — the gem needed to cure Luney of Frigid Woe. Berlin handed it over without suspicion.
 
-Asked Donner about Gremory. Learned **Donner IcePeak is Lunei's brother** — one of eight. Lunei never mentioned his family. Donner was furious upon learning Lunei was left incapacitated with Frigid Woe in Eiselcross.
+Asked Donner about Gremory. Learned **Donner IcePeak is Luney's brother** — one of eight. Luney never mentioned his family. Donner was furious upon learning Luney was left incapacitated with Frigid Woe in Eiselcross.
 
 Berlin also provided a **Bomba de Oscuridad** (transports unprotected organic matter to the Dark Dimension — inescapable) and **600 gold pieces**.
 
@@ -64,7 +64,7 @@ Donner recovered with no memory of the possession. Gave Tidus an **IcePeak favor
 
 **Cory** survived the crossing and the Troll battle but died in the final battle. Messi survived.
 
-In the **final battle at the gate**, fought alongside Nixira and Zacarías against **Draxa** — a bard of the Veil of the Seven Songs — and her clone. Fired Sneak Attack arrows, drawing blood from the semi-incorporeal witch. Directed Messi's fire (natural 20, 16 damage). Kept shooting through the chaos as Draxa exposed Nixira's curse and killed Cory with venom. Participated in the combined final strike — 411 total damage — that broke Draxa's defenses and forced her retreat through a portal that revealed **Calium** alive on a silver throne.
+In the **final battle at the gate**, fought alongside Nixira and Zacarías against **Draxa** — a bard of the El Velo de las Siete Canciones — and her clone. Fired Sneak Attack arrows, drawing blood from the semi-incorporeal witch. Directed Messi's fire (natural 20, 16 damage). Kept shooting through the chaos as Draxa exposed Nixira's curse and killed Cory with venom. Participated in the combined final strike — 411 total damage — that broke Draxa's defenses and forced her retreat through a portal that revealed **Calium** alive on a silver throne.
 
 Walked out of Brasboredon with Nixira, Zacarías, and Berlin.
 

@@ -4,7 +4,7 @@
 
 ## World
 
-**DragonLand** is a large island continent — the Dragonborn homeland and primary setting. The tavern (La Última Gota) sits at its geographic center, a crossroads for all traffic across the continent. Forests cover much of the land, with arid plains in the interior and mountains dividing north from south. A network of trade routes connects dozens of settlements.
+**DragonLand** is a large island continent — the Dragonborn homeland and primary setting. The tavern (La ultima Gota) sits at its geographic center, a crossroads for all traffic across the continent. Forests cover much of the land, with arid plains in the interior and mountains dividing north from south. A network of trade routes connects dozens of settlements.
 
 **Dragon Born** is a smaller island off DragonLand's eastern coast — the fortress-capital of Dragonborn power. It houses the throne, the military headquarters (Dragonforce), castles, barracks, and an execution plaza. The population speaks Draconic.
 
@@ -29,15 +29,15 @@ DragonLand is governed by a feudal system of five noble houses, each associated 
 | **Casa DeepWater** | Sea/Rivers | Draknor | Lords of Draknor and Other Lands |
 | **Casa Draksky** | Air/Wind | — | Union of minor lords, regional rulers |
 
-Between the house domains lies the **Dragon Scar** — a no-man's-land also known as "Tierras de Lunei," where La Última Gota tavern is located.
+Between the house domains lies the **Dragon Scar** — a no-man's-land anchored by **The Last Drop**, where the party's tavern outpost is located.
 
 ### The WinterSpeak Dynasty (Casa IcePeak)
 
-The IcePeak dynasty is led by **Marco Claus** and **Lady Claus** (a Santa Claus parody — all members are named after Santa's reindeer). **Lunei Milei Maili** is in fact **Rudolph IcePeak**, Lord of Commerce — one of nine IcePeak siblings:
+The IcePeak dynasty is led by **Marco Claus** and **Lady Claus** (a Santa Claus parody — all members are named after Santa's reindeer). **Luney IcePeak** is the canonical IcePeak operative tied to The Last Drop — a dwarven paladin and commerce-minded fixer tied to the wider family network:
 
 | Name | Title |
 |------|-------|
-| **Rudolph (Lunei) IcePeak** | Lord of Commerce (Señor del Comercio) |
+| **Luney IcePeak** | Dwarven paladin, tavern operator, and IcePeak representative |
 | **Blitzen IcePeak** | Supreme Lord of IcePeak (Señor Supremo) |
 | **Donner IcePeak** | Lord of War (Señor de la Guerra) |
 | **Prancer IcePeak** | Lord of Seas (Señor de los Mares) |
@@ -62,10 +62,10 @@ The elves treat this as an ancient bedtime story — "like Santa Claus for elves
 
 **Possible Connections:**
 - "The death of the hybrid prince" → Prince Robin (Ala Rota)'s assassination
-- "The rise of the lying tongue" → Dranlek "El Oscuro" (La Iguana) seizing the throne? Or the Veil of the Seven Songs placing agents on every throne?
+- "The rise of the lying tongue" → Dranlek "El Oscuro" (La Iguana) seizing the throne? Or the El Velo de las Siete Canciones placing agents on every throne?
 - "The true dragon" → Unknown
 - "The Tree of Life" → Unknown location/artifact
-- "The sleeping dragon" → Unknown — a cataclysmic entity
+- "The sleeping dragon" â†’ Unknown — a cataclysmic entity
 
 ---
 
@@ -94,7 +94,7 @@ Tidus's people were destroyed — not by force, but by betrayal. Allies failed t
 **When:** More than 5 years before the campaign
 **Significance:** Turned a benevolent order into a political weapon
 
-Someone close to Keylan twisted the Veil of the Seven Songs from palliative care (easing suffering through music) into a weapon of political infiltration. The Veil now has agents on every throne. Nixira fled, was framed by Keylan, and has been in hiding for ~5 years.
+Someone close to Keylan twisted the El Velo de las Siete Canciones from palliative care (easing suffering through music) into a weapon of political infiltration. The Veil now has agents on every throne. Nixira fled, was framed by Keylan, and has been in hiding for ~5 years.
 
 ---
 
@@ -112,7 +112,7 @@ A single command compels absolute obedience. Malacor is using it to control peop
 **Type:** Cursed substance
 **Effect:** Seeks the strongest spiritual presence and drags them into a deathly sleep
 
-Used by the Bald Enemy at the tavern. Targeted Lunei Milei Maili because he had the strongest spiritual presence. Without his former paladin's holy ward, he had no defense. The cure requires a **ground emerald** — a rare mineral found at the river settlement or elven mining camps.
+Used by the Bald Enemy at the tavern. Targeted Luney IcePeak because he had the strongest spiritual presence. Without his former paladin's holy ward, he had no defense. The cure requires a **ground emerald** — a rare mineral found at the river settlement or elven mining camps.
 
 ### The Arcane Library
 
@@ -146,7 +146,7 @@ A book about connecting the "chi-astral" — forbidden knowledge within the Name
 ### List of 24 People
 
 **Holder:** Nixira / Party
-**Source:** Found in Lunei Milei Maili's pocket
+**Source:** Found in Luney IcePeak's pocket
 
 Purpose unknown — possibly a hit list, debt list, witness list, or quest targets. Found during the chaos at the tavern. Significance not yet revealed.
 
@@ -155,7 +155,7 @@ Purpose unknown — possibly a hit list, debt list, witness list, or quest targe
 **Holder:** Farquad's dragon trainers
 **Effect:** Can summon/control trained dragons
 
-May be able to control Line, the baby rock dragon tamed by Tidus.
+May be able to control Chimuelo, the baby rock dragon tamed by Tidus.
 
 ---
 
@@ -166,7 +166,7 @@ May be able to control Line, the baby rock dragon tamed by Tidus.
 | **Picón** | Tidus, Zacarías | An elven cipher — shared secret language used for coordination |
 | **Pársel** | Zacarías | Serpentine language — allows communication with snakes |
 | **Thieves' Cant** | Tidus | Rogue language for covert communication |
-| **Las Cuerdas Rotas code** | The Bounty Hunter, Lunei | Secret verbal identification code |
+| **Las Cuerdas Rotas code** | The Bounty Hunter, Luney | Secret verbal identification code |
 
 ---
 
@@ -178,7 +178,7 @@ A cursed substance that manifests as living shadow/ink. Seeks the strongest spir
 
 ### The "Don" (Musical Mind Manipulation)
 
-The gift possessed by members of the Veil of the Seven Songs. Allows mental manipulation through music. Originally used for palliative care. Nixira possesses it but claims never to have used it on her companions. The extent of its power is unclear.
+The gift possessed by members of the El Velo de las Siete Canciones. Allows mental manipulation through music. Originally used for palliative care. Nixira possesses it but claims never to have used it on her companions. The extent of its power is unclear.
 
 ### Malfas's Patronage
 
@@ -187,3 +187,6 @@ Zacarías's warlock pact with Malfas, the Prince of Ravens. Grants a raven famil
 ### Condemned Spirits
 
 Spirits trapped in the volcanic lake beneath the demon's lair. Awakened by Nixira's Thaumaturgy, they spoke to Victus — and through them, his god's voice reached him. Their nature and why they are condemned is unknown.
+
+
+

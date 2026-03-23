@@ -1,30 +1,30 @@
 # Plot Tracker — Frozen Sick
 
-*Last updated after Chapter 5*
+*Last updated after Chapter 6*
 
 ---
 
 ## Active Quests
 
-### 1. Save Lunei Milei Maili
-- **Objective:** Find a ground emerald, grind it, feed it to Lunei to cure his Ghost Essence coma.
+### 1. Save Luney IcePeak
+- **Objective:** Find a ground emerald, grind it, feed it to Luney to cure his Ghost Essence coma.
 - **Deadline:** Two quarter-moons from the tavern incident.
 - **Leads:** River settlement or the Elven Mining Camps in the mountains.
-- **Status:** **Major progress.** Tidus acquired the **Zafiro Esmeralda** (Emerald Sapphire) from Berlin the goblin at the Gremory market in Brasboredon (Ch.5). Still needs to safely transport it back to Lunei and administer the cure.
-- **Stakes:** If Lunei dies, the party loses their employer, protector, and the only person who knows all the tavern's secrets.
+- **Status:** **Major progress.** Tidus acquired the **Zafiro Esmeralda** (Emerald Sapphire) from Berlin the goblin at the Gremory market in Brasboredon (Ch.6). Still needs to safely transport it back to Luney and administer the cure.
+- **Stakes:** If Luney dies, the party loses their employer, protector, and the only person who knows all the tavern's secrets.
 
 ### 2. Destroy the Golden Crown (Corona Dorada)
 - **Objective:** Find and destroy the mind-control artifact wielded by Malacor.
 - **Alliance:** Dracus has agreed to help — shared enemy.
-- **Lead:** Lunei told Dracus about a path to the Crown's destruction (details unknown).
+- **Lead:** Luney told Dracus about a path to the Crown's destruction (details unknown).
 - **Status:** No progress. Dracus's fate after Farquad's ambush is uncertain.
 - **Stakes:** Malacor can compel obedience from anyone with a single command. As long as the Crown exists, no one is safe.
 
 ### 3. Escape from Brasboredon — COMPLETED
 - **Objective:** Escape the city alive with the Zafiro Esmeralda.
-- **Status:** **Resolved.** The party escaped Brasboredon. Bixira killed the General (dagger to the heart) and died — soul consumed. Donner killed Sniper. Zacarías defeated the Troll. The party fought Draxa (Veil of the Seven Songs) at the outer gate, dealt 411 damage, and forced her retreat through a portal. Through the portal, they saw **Calium alive on a silver throne**, commanding the Veil. The party walked out with Tidus, Nixira, Zacarías, and Berlin.
+- **Status:** **Resolved.** The party escaped Brasboredon. Bixira killed the General (dagger to the heart) and died — soul consumed. Donner killed Sniper. Zacarías defeated the Troll. The party fought Draxa (El Velo de las Siete Canciones) at the outer gate, dealt 411 damage, and forced her retreat through a portal. Through the portal, they saw **Calium alive on a silver throne**, commanding the Veil. The party walked out with Tidus, Nixira, Zacarías, and Berlin.
 - **Casualties:** Sid (Sniper headshot), Achawn (Lluvia de Flechas), Cory (Draxa's venom), Bixira (soul consumed), The General (killed by Bixira). Robinson presumed dead. Messi survived — departed with dwarven forces.
-- **New threats from the escape:** The Veil of the Seven Songs now knows Nixira's location. Calium is alive. Draxa survived.
+- **New threats from the escape:** The El Velo de las Siete Canciones now knows Nixira's location. Calium is alive. Draxa survived.
 
 ---
 
@@ -58,22 +58,22 @@
 - **Status:** Ongoing tension. The pact relationship is volatile.
 
 ### Zacarías — Death and Return / False Prophet Mission
-- **What:** Zacarías died in Ch.4 and was brought back. In the Escritorio — a timeless void before the deities — Malfas intervened to prevent Val from keeping his soul. His mission: **find and destroy the false prophets**. His patron connection is now critically weakened; a second death may be permanent.
+- **What:** Zacarías died in Ch.6 and was brought back. In the Escritorio — a timeless void before the deities — Malfas intervened to prevent Val from keeping his soul. His mission: **find and destroy the false prophets**. His patron connection is now critically weakened; a second death may be permanent.
 - **Status:** One false prophet (Altaflama) has been destroyed. Unknown how many remain.
 - **Questions:** How many false prophets exist? Can Zacarías restore his patron connection through this mission? What happens if he dies again?
 
 ### Tidus — IcePeak Connection
 - **What:** Tidus formed a bond with Donner IcePeak during the Sniper crossing and market. Saved Donner from divine possession. Received an **IcePeak favor coin** valid with any of Donner's seven brothers.
 - **Status:** Active. Donner departed to rejoin his forces but offered a final advantage against Sniper.
-- **Questions:** Will the IcePeak family become a lasting alliance? How will they react when Lunei is cured? Does the favor coin have limits?
+- **Questions:** Will the IcePeak family become a lasting alliance? How will they react when Luney is cured? Does the favor coin have limits?
 
 ### Nixira — The Veil's Hunt (ESCALATED)
-- **What:** Nixira's identity as Kenitzira is now public. The Veil of the Seven Songs is hunting her. Keylan framed her. **Draxa — a Veil bard — confronted Nixira directly at the Brasboredon gate (Ch.5).** Draxa's final words: *"La canción de los siete velos ahora sabe que estás acá."* Calium was seen alive through the portal, commanding the Veil from a silver throne.
+- **What:** Nixira Silversong's identity is now public. The El Velo de las Siete Canciones is hunting her. Keylan framed her. **Draxa — a Veil bard — confronted Nixira directly at the Brasboredon gate (Ch.6).** Draxa's final words: *"La canción de los siete velos ahora sabe que estás acá."* Calium was seen alive through the portal, commanding El Velo de las Siete Canciones from a silver throne.
 - **Status:** **Critical.** The Veil has confirmed Nixira's location and involvement. Draxa survived with ~589 HP remaining. Calium — believed dead for two years — is alive and directing operations. The hunt is no longer hypothetical.
 - **Questions:** Will Draxa return? Is Calium coming personally? Does Nixira's Bixira medallion offer any protection? What is the Veil's full strength?
 
 ### Zacarías — Blood Oath to Val
-- **What:** After the Troll battle (Ch.5), Zacarías prayed over the dwarven dead, cut his own arm, and swore a blood oath to Val. The **mark of Val** sealed onto his forearm — he is now **obligated to protect any dwarf he encounters**. This creates a direct tension with Nixira's "asesina de niños" curse.
+- **What:** After the Troll battle (Ch.6), Zacarías prayed over the dwarven dead, cut his own arm, and swore a blood oath to Val. The **mark of Val** sealed onto his forearm — he is now **obligated to protect any dwarf he encounters**. This creates a direct tension with Nixira's "asesina de niños" curse.
 - **Status:** Active. Irrevocable oath. The DM noted the irony: *"Un asesino de enanos y un protector de enanos."*
 - **Questions:** What happens when Zacarías learns the full truth of Nixira's curse? Does the oath have combat implications? Can Val enforce it through punishment?
 
@@ -83,23 +83,23 @@
 
 ### Tidus — Dragonforce Recognition
 - **What:** Tidus recognizes Dragonforce methods and was a former member. If his identity reaches the wrong people, he becomes a target.
-- **Status:** The La Blanca sentinel fled to DragonLand carrying intelligence. If Tidus's identity was among that intel, Dragonforce knows where he is.
+- **Status:** The Centinelas de la Era Blanca sentinel fled to DragonLand carrying intelligence. If Tidus's identity was among that intel, Dragonforce knows where he is.
 
-### Tidus — Line the Wyrmling
+### Tidus — Chimuelo the Wyrmling
 - **What:** Tamed a baby rock dragon in the caves. Farquad's trainers have whistles that may override Tidus's bond.
-- **Status:** Line is in the cave near the exit, afraid of sunlight. Separated from Tidus since the ambush.
+- **Status:** Chimuelo is in the cave near the exit, afraid of sunlight. Separated from Tidus since the ambush.
 
 ### Tidus — "Do you know Rubén?"
 - **What:** Tidus asked the demon Victus this question during negotiation. Significance unknown.
 - **Status:** Unresolved. Rubén's identity is a mystery.
 
 ### Tidus — Val Medallion Counter (advancing)
-- **What:** After killing Borax by mercy (Ch.4), Tidus's Val medallion activated at 1/20. In Ch.5, the medallion absorbed the divine clash between Val and Moradin during Donner's possession — gaining **+2 potency**. The counter is advancing.
+- **What:** After killing Borax by mercy (Ch.6), Tidus's Val medallion activated at 1/20. In Ch.6, the medallion absorbed the divine clash between Val and Moradin during Donner's possession — gaining **+2 potency**. The counter is advancing.
 - **Status:** Counter advancing. Medallion growing stronger from divine energy absorption.
 - **Questions:** Does each mercy kill increment the counter? Is this a blessing or a curse? What is Val's endgame? Does absorbing divine energy count toward the 20?
 
 ### Nixira — The Dwarf Curse ("Asesina de Niños") — EXPOSED
-- **What:** A dwarf mother cursed Nixira with a facial rune after the fire ballista killed dwarven children. The curse is permanent — every dwarf who sees the rune will despise Nixira. **In Ch.5, Draxa ripped the covering from Nixira's face, exposing the curse to Cory and Messi.** Cory nearly attacked Nixira but stood down after a Deception check (21). His final warning: *"Arreglaremos esto después. Esa marca no se puede fingir."* Cory is now dead (Draxa's venom), but Messi survived and departed with knowledge of the curse.
+- **What:** A dwarf mother cursed Nixira with a facial rune after the fire ballista killed dwarven children. The curse is permanent — every dwarf who sees the rune will despise Nixira. **In Ch.6, Draxa ripped the covering from Nixira's face, exposing the curse to Cory and Messi.** Cory nearly attacked Nixira but stood down after a Deception check (21). His final warning: *"Arreglaremos esto después. Esa marca no se puede fingir."* Cory is now dead (Draxa's venom), but Messi survived and departed with knowledge of the curse.
 - **Status:** Active and exposed. Messi knows. Donner may or may not know. The surviving dwarven forces could learn.
 - **Questions:** Will Messi tell other dwarves? Does this affect the IcePeak alliance? How does this interact with Zacarías's blood oath to protect dwarves?
 
@@ -135,10 +135,6 @@
 - **What:** Dracus mentioned someone named Drogo who is "currently on a mission to mount a red dragon." A named NPC on a specific quest implies future relevance.
 - **Status:** Off-screen. Could arrive as reinforcement, enemy, or plot twist.
 
-### Who is Lili?
-- **What:** Nixira remembered Lili with pain and tenderness after the rap battle in Ch.4. Described as a wife or love. The songs they used to share together.
-- **Questions:** Is Lili alive? Was she a member of the Veil? Did the Veil hurt her? Is she the reason Nixira fled?
-
 ### Nixira's Twin Sister
 - **What:** Mentioned once in backstory: "Possibly has a twin sister." Never explored.
 - **Questions:** Does the twin exist? Is she in the Veil? Could she be used against Nixira?
@@ -148,37 +144,37 @@
 - **Questions:** Why was a compass significant enough to be trapped alongside treasure? Where did it go? What does it point to?
 
 ### Where Are Señor Nadie and Fuercitas?
-- **What:** Allied with the party at end of Ch.3 (escaped the demon's lair together). Completely absent from Ch.4. No mention of them arriving at Brasboredon or separating from the party.
+- **What:** Allied with the party at end of Ch.3 (escaped the demon's lair together). Completely absent from Ch.6. No mention of them arriving at Brasboredon or separating from the party.
 - **Questions:** Did they travel with the party? Were they separated during the MISSING gap? Are they still alive? Are they in Brasboredon?
 
 ### The 23 Rescued Refugees
 - **What:** Tidus directed the rescue of 23 trapped people in the caves (Ch.2) before Farquad's ambush.
 - **Questions:** Where are they now? Were they captured by Farquad? Did they escape? Could they be allies in Brasboredon?
 
-### What Did the La Blanca Sentinel Report?
-- **What:** A sentinel from La Blanca with a dragon-hand mark on his forehead fled through the caves carrying intelligence to DragonLand.
+### What Did the Centinelas de la Era Blanca Sentinel Report?
+- **What:** A sentinel from Centinelas de la Era Blanca with a dragon-hand mark on his forehead fled through the caves carrying intelligence to DragonBorn.
 - **Questions:** Did the intel include Tidus's identity? Has it reached Dragonforce? Is this why they're being hunted?
 
 ### Val vs Bhaal — Which Deity Does Tidus Follow?
-- **What:** Tidus's character sheet says "Faith: Bhaal." But in Ch.4, the Val medallion activates — Val is described as "the god of death" who accepts mercy kills. Are these the same entity?
+- **What:** Tidus's character sheet says "Faith: Bhaal." But in Ch.6, the Val medallion activates — Val is described as "the god of death" who accepts mercy kills. Are these the same entity?
 - **Questions:** Is Val an aspect of Bhaal? Did Tidus switch faiths? What does Bhaal/Val actually want from him?
 
 ### Why Do Tidus and Zacarías Share "Picón"?
 - **What:** They speak a shared secret language — an elven cipher used for covert coordination. They've worked at the tavern for ~2 years, but Picón implies a deeper shared history or a deliberate effort to create a private channel.
-- **Questions:** Did they know each other before the tavern? Did Lunei teach them? Is this a Dragonforce cipher?
+- **Questions:** Did they know each other before the tavern? Did Luney teach them? Is this a Dragonforce cipher?
 
-### Lunei's Endgame
-- **What:** Lunei runs a tavern that is actually a front for covert poison operations, hidden weapons, and intelligence gathering. He's powerful enough to mutilate demons. He maintains a 24-person list. He trades with elven suppliers for rare herbs.
-- **Questions:** What is Lunei actually working toward? Who does he serve? Is the tavern part of a larger network? Why was he the Ghost Essence target — was he specifically neutralized by an enemy?
+### Luney's Endgame
+- **What:** Luney runs a tavern that is actually a front for covert poison operations, hidden weapons, and intelligence gathering. He's powerful enough to mutilate demons. He maintains a 24-person list. He trades with elven suppliers for rare herbs.
+- **Questions:** What is Luney actually working toward? Who does he serve? Is the tavern part of a larger network? Why was he the Ghost Essence target — was he specifically neutralized by an enemy?
 
 ### The 24-Person List
-- **What:** Found in Lunei's pocket. 24 names — possibly witnesses, targets, debts, or quest hooks.
+- **What:** Found in Luney's pocket. 24 names — possibly witnesses, targets, debts, or quest hooks.
 - **Status:** Not examined in detail. Held by Nixira/party.
 
-### Khael Varos "El Heraldo" (Caelvaros) — Did He Drink the Poison?
-- **What:** Top-priority poison target (circled in red by Lunei). A **La Blanca (Centinela Era Blanca) operative**. Received the poisoned drink from Tidus. Unclear whether he consumed it. Now thinks the PCs tried to assassinate him.
+### Kahel Varos "El Heraldo" — Did He Drink the Poison?
+- **What:** Top-priority poison target (circled in red by Luney). A **Centinelas de la Era Blanca operative**. Received the poisoned drink from Tidus. Unclear whether he consumed it. Now thinks the PCs tried to assassinate him.
 - **Status:** Last seen hiding under a table at the tavern.
-- **Risk:** If alive and suspicious, he could become an enemy or informant against the party. As a La Blanca operative, his intelligence network could make him especially dangerous.
+- **Risk:** If alive and suspicious, he could become an enemy or informant against the party. As a Centinelas de la Era Blanca operative, his intelligence network could make him especially dangerous.
 
 ### Rainbow — Nixira's Rival and Secret-Keeper
 - **What:** Erupted in fury when Nixira's name was announced. A poisoned dish was prepared for him. The nature of their feud is unknown. **Rainbow held Nixira's secret** — a critical piece of leverage.
@@ -228,9 +224,9 @@
 - **What:** *"Read me, for there lies your power."* Consumed Zacarías's raven familiar.
 - **Questions:** What entity speaks? What power does it offer? Is it connected to Malfas or something else entirely?
 
-### Lunei's True Nature
-- **What:** The party's tavern-owner boss once **cut the wings off a demon** (Victus) as punishment for theft. The casual brutality of this reframes everything. Victus — a demon powerful enough to nearly kill the entire party — was *terrified* of Lunei.
-- **Questions:** How powerful is Lunei really? What are his three classes? What else has he done?
+### Luney's True Nature
+- **What:** The party's tavern-owner boss once **cut the wings off a demon** (Victus) as punishment for theft. The casual brutality of this reframes everything. Victus — a demon powerful enough to nearly kill the entire party — was *terrified* of Luney.
+- **Questions:** How powerful is Luney really? What are his three classes? What else has he done?
 
 ### Tidus's Deity Response
 - **What:** When Tidus called upon his deity in the Prison Tortuga, he heard: *"Do you know how to awaken the darkness?"*
@@ -241,16 +237,16 @@
 - **Questions:** Have any conditions already been met? Is Dranlek "El Oscuro" (La Iguana) "the lying tongue"? Who is "the true dragon"?
 
 ### Val's Counter — What Happens at 20?
-- **What:** Tidus's Val medallion tracks mercy kills and divine energy. Started at 1/20 (Ch.4) and gained +2 potency from absorbing the Val/Moradin clash (Ch.5). The god of death is watching — and the medallion is growing.
+- **What:** Tidus's Val medallion tracks mercy kills and divine energy. Started at 1/20 (Ch.6) and gained +2 potency from absorbing the Val/Moradin clash (Ch.6). The god of death is watching — and the medallion is growing.
 - **Questions:** What triggers at 20? Is it a transformation, a summon, a weapon, or a curse? Can it be stopped?
 
 ### The Revolution — Who Started It?
 - **What:** A full-scale revolution is underway in Brasboredon. Rebel forces fight Dragonforce loyalists. Bixira commands a rebel communication channel. But who organized this?
-- **Questions:** Is this connected to the party's arrival? Is there a rebel leader beyond Bixira? Is this Dracus's work? La Blanca's?
+- **Questions:** Is this connected to the party's arrival? Is there a rebel leader beyond Bixira? Is this Dracus's work? the Centinelas de la Era Blanca?
 
 ### The Bomb Trap and the Voice Below
-- **What:** Tidus found a trapdoor on a rooftop in the Rivera district (Ch.4 cliffhanger). Someone is trapped below, calling for help. The trapdoor is rigged with a bomb mechanism.
-- **Status:** Outcome occurred during Ch.5 but details unclear from the transcript.
+- **What:** Tidus found a trapdoor on a rooftop in the Rivera district (Ch.6 cliffhanger). Someone is trapped below, calling for help. The trapdoor is rigged with a bomb mechanism.
+- **Status:** Outcome occurred during Ch.6 but details unclear from the transcript.
 - **Questions:** Who was trapped? Was it resolved? Did this connect to the Sniper crossing?
 
 ### Bixira's Portal (Plano Oscuro)
@@ -273,24 +269,24 @@
 - **Questions:** Is he truly dead? Could he have survived the blast?
 
 ### Calium (Keylan) — Alive and Commanding the Veil
-- **What:** Believed dead for two years. Seen through Draxa's escape portal (Ch.5) seated on a **silver throne** with pine-scented cushions, directing the Veil of the Seven Songs. Launched a fireball through the portal before it closed.
+- **What:** Believed dead for two years. Seen through Draxa's escape portal (Ch.6) seated on a **silver throne** with pine-scented cushions, directing the El Velo de las Siete Canciones. Launched a fireball through the portal before it closed.
 - **Status:** Alive. Active threat. Location unknown (wherever the portal leads).
 - **Questions:** Why was his death faked? What is the Veil's full agenda? Will he come for Nixira personally? What is his relationship to Draxa?
 
 ### Draxa — Wounded Veil Operative
-- **What:** Bard of the Veil of the Seven Songs. Confronted the party at the Brasboredon gate. Used Absolutum on Nixira, exposed her curse, killed Cory with venom. Took 411 damage in the combined attack (estimated ~589 HP remaining) and escaped through a portal.
+- **What:** Bard of the El Velo de las Siete Canciones. Confronted the party at the Brasboredon gate. Used Absolutum on Nixira, exposed her curse, killed Cory with venom. Took 411 damage in the combined attack (estimated ~589 HP remaining) and escaped through a portal.
 - **Status:** Alive but wounded. Will likely return.
 - **Questions:** Is she Calium's second-in-command? What is her full power set? Does her clone technique have a weakness?
 
 ### Zacarías — Magical Dystrophy
-- **What:** During the Draxa battle (Ch.5), Zacarías's Eldritch Blast began failing repeatedly. The DM introduced **magical dystrophy** — random spell failure and physical weakness. His legs gave out mid-sprint.
+- **What:** During the Draxa battle (Ch.6), Zacarías's Eldritch Blast began failing repeatedly. The DM introduced **magical dystrophy** — random spell failure and physical weakness. His legs gave out mid-sprint.
 - **Status:** Active debuff. May worsen.
 - **Questions:** Is this permanent? Connected to his weakened patron bond? Can it be cured by completing the false prophet mission?
 
 ### Bixira's Last Words — "El Señor de la Centinela Era Blanca"
 - **What:** Bixira's dying words to Nixira: *"No dejes que el señor de la Centinela Era Blanca tome el trono."* A warning about a specific figure trying to seize power.
 - **Status:** Unresolved. Identity of this "lord" unknown.
-- **Questions:** Is this Calium? Someone else? Is this connected to the Khael Varos / La Blanca thread?
+- **Questions:** Is this Calium? Someone else? Is this connected to the Kahel Varos / Centinelas de la Era Blanca thread?
 
 ---
 
@@ -303,13 +299,16 @@
 | **Defeat the Demon Victus** | Killed by Nixira's crossbow bolt through the skull. Last word: "Gracias." | Ch.3 |
 | **Escape the Prison Tortuga** | Escaped (details lost in missing recording). | Ch.3 |
 | **Rescue the 23 Trapped People** | Rescue initiated in the caves before Farquad's ambush interrupted. | Ch.2 |
-| **Kill Borax** | Tidus destroyed his talisman with a crossbow bolt. Body melted into charred stone. Fire elemental spawned and destroyed. | Ch.4 |
-| **Hold the Gate** | The orc hero held the gate mechanism with his body, sacrificing himself so the party and civilians could pass. | Ch.4 |
-| **Tower Assault** | Nixira took the watchtower, killed guards and a green dragon, fired the ballistae. | Ch.4 |
-| **Kill Sniper** | Donner climbed Sniper's tower with Rito shield protection and killed him. Sniper had held the crossing zone with sixty headshot kills. | Ch.5 |
-| **Destroy Altaflama** | The most powerful false prophet was executed by Cory while Tidus looked away. His death triggered divine possession of Donner (Val + Moradin), broken by Tidus's medallion. His robe became the Capa Sagrada on Zacarías. | Ch.5 |
-| **Defeat the Troll** | Zacarías and Bixira's dwarf escort defeated the Troll blocking the inner gate using Onda Grupal, Fireball, Command, and Minor Illusion. Ten dwarves died in the fight. | Ch.5 |
-| **Acquire the Zafiro Esmeralda** | Tidus deceived Berlin the goblin into handing over the gem needed to cure Lunei. | Ch.5 |
-| **Kill the General** | Bixira faked unconsciousness, drove a dagger into his heart. Both fell. His death ended the volcanic magic. | Ch.5 |
-| **Escape Brasboredon** | The party fought through Sniper's crossing, the Troll, and Draxa's gate blockade. Walked out alive with Tidus, Nixira, Zacarías, and Berlin. | Ch.5 |
-| **Bixira's Sacrifice** | Used her soul to deflect the meteorite. Killed the General. Died in Nixira's arms. Left a warlord medallion and a warning. | Ch.5 |
+| **Kill Borax** | Tidus destroyed his talisman with a crossbow bolt. Body melted into charred stone. Fire elemental spawned and destroyed. | Ch.6 |
+| **Hold the Gate** | The orc hero held the gate mechanism with his body, sacrificing himself so the party and civilians could pass. | Ch.6 |
+| **Tower Assault** | Nixira took the watchtower, killed guards and a green dragon, fired the ballistae. | Ch.6 |
+| **Kill Sniper** | Donner climbed Sniper's tower with Rito shield protection and killed him. Sniper had held the crossing zone with sixty headshot kills. | Ch.6 |
+| **Destroy Altaflama** | The most powerful false prophet was executed by Cory while Tidus looked away. His death triggered divine possession of Donner (Val + Moradin), broken by Tidus's medallion. His robe became the Capa Sagrada on Zacarías. | Ch.6 |
+| **Defeat the Troll** | Zacarías and Bixira's dwarf escort defeated the Troll blocking the inner gate using Onda Grupal, Fireball, Command, and Minor Illusion. Ten dwarves died in the fight. | Ch.6 |
+| **Acquire the Zafiro Esmeralda** | Tidus deceived Berlin the goblin into handing over the gem needed to cure Luney. | Ch.6 |
+| **Kill the General** | Bixira faked unconsciousness, drove a dagger into his heart. Both fell. His death ended the volcanic magic. | Ch.6 |
+| **Escape Brasboredon** | The party fought through Sniper's crossing, the Troll, and Draxa's gate blockade. Walked out alive with Tidus, Nixira, Zacarías, and Berlin. | Ch.6 |
+| **Bixira's Sacrifice** | Used her soul to deflect the meteorite. Killed the General. Died in Nixira's arms. Left a warlord medallion and a warning. | Ch.6 |
+
+
+

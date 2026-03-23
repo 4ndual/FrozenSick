@@ -51,7 +51,7 @@ Eh que se va moviendo muy rápidamente. Eh da como una sensación de que vuela d
 
 Están en una de las famosas prisiones tortuga que se van moviendo entre reinos llevando prisioneros, pues para ser entregados a los diferentes reinos viste una tortuga roja. Eh con escamas bastante fuerte, o sea entiendes que es casi imposible salir escalando. Cualquier intento similar de tratar de romper sus escamas y por las heridas viste que es claramente una tortuga que está entrenada para prisioneros de.
 
-Entonces rápido antes de que lleguen? A dónde verdad? Los van a encerrar? Entonces digamos que es una prisión temporal, Tú sabes que es una tortuga, ellos no tienen ni idea. Tú sabes que se están desplazando y que tienen que salir rápido, porque si no se apuran en salir, pues probablemente terminen en dragonlance o en Dragon Ball que pues para ti sería pésimo para ellos dos horrible porque a efectos sociales sería como si cayeran en las minas de mordor y no importa que los van a torturar Y tú tienes el claro.
+Entonces rápido antes de que lleguen? A dónde verdad? Los van a encerrar? Entonces digamos que es una prisión temporal, Tú sabes que es una tortuga, ellos no tienen ni idea. Tú sabes que se están desplazando y que tienen que salir rápido, porque si no se apuran en salir, pues probablemente terminen en dragonlance o en DragonLand que pues para ti sería pésimo para ellos dos horrible porque a efectos sociales sería como si cayeran en las minas de mordor y no importa que los van a torturar Y tú tienes el claro.
 
 Eso tienen que liberarse antes de porque sabes que incluso ellos que te queda serio no te ayuden los quieras salvar o no. La tortura va a ser tanta que sí o sí van a revelar todo lo que puedan de ti. Imposiblemente tu ubicación.
 
@@ -327,7 +327,7 @@ Es realmente no han dominado la astucia que caracteriza los años. Que hacemos q
 
 Estos dedos. Este es de 12 también de puta tener dos uno de 22. Entonces fue 10. Cuatro y nueve diez, cuatro y nueve. 10 4 9 justo helado te pasa tu desconfío? Vale, Pásame la trifuerza que tengo hambre. Ah, ya Entonces el tipo de abrir la cerradura. Ves como?
 
-Parpadea, si no lo viste vuelves a parpadear y lo ves y el tipo está como que esforzándose mucho y está logra abrir. Tú también te robaste un libro. Pero se estaba tratando de convencerlo de que no era buena idea. Robar lo que lo hubiera pedido el maestro. Algunos sabe dónde estamos que nos trajeron en esas estúpidas prisiones tortuga eh según lo que dijo mi maestro esta ruta los llevaba Dragon Ball.
+Parpadea, si no lo viste vuelves a parpadear y lo ves y el tipo está como que esforzándose mucho y está logra abrir. Tú también te robaste un libro. Pero se estaba tratando de convencerlo de que no era buena idea. Robar lo que lo hubiera pedido el maestro. Algunos sabe dónde estamos que nos trajeron en esas estúpidas prisiones tortuga eh según lo que dijo mi maestro esta ruta los llevaba DragonLand.
 
 Hijo de puta. Apenas estamos allá para salir adentro. Tienen unos set guardia secundarios que suelen ser minis Busca. Cualquier cuento extraño. Aquí está este ahí. Bueno, debe ser el cajón que está en este cerca. Lo que antes era un cofre y ahora es una silla. Acabo de guardar como una lengüita que se le convirtió en una pata.
 
@@ -479,11 +479,11 @@ Vamos a ver qué pasó.
 
 Chicos. Ya oficialmente. Volvemos al turno de nixira que fuera última matar. A mí. Ustedes han venido desplazándose, pero han venido moviéndose lento porque van pasando por la zona de bosque. Ya nos vamos en donde estamos, Solo que ya salimos del Bosque. Empezar a correr lo sienten porque empezó a vibrar la prisión.
 
-Eso significa peligro para todos porque ya lo que podía retrasar a la tortuga no hay todos. Tienen la conciencia que esto va a un lugar. Tú que eres muy consciente ese donde va a ir tú que ya estás cansada de Dragon Ball? Saben que les quedan como unos. Dos horas a que llegue al lugar porque ya se siente que empezó a correr.
+Eso significa peligro para todos porque ya lo que podía retrasar a la tortuga no hay todos. Tienen la conciencia que esto va a un lugar. Tú que eres muy consciente ese donde va a ir tú que ya estás cansada de DragonLand? Saben que les quedan como unos. Dos horas a que llegue al lugar porque ya se siente que empezó a correr.
 
-Ya no va a caminando con cuidado para no dañar, pues este dado de 12 representa lazo rondas en 12 rondas tienen que o número uno a ver logrado derrotar a los guardias para que la tortuga sienta que perdió a sus Amos y se detenga como a pensar que hace es lo que podría retrasar el avance hasta llegar a Dragon Ball número 2.
+Ya no va a caminando con cuidado para no dañar, pues este dado de 12 representa lazo rondas en 12 rondas tienen que o número uno a ver logrado derrotar a los guardias para que la tortuga sienta que perdió a sus Amos y se detenga como a pensar que hace es lo que podría retrasar el avance hasta llegar a DragonLand número 2.
 
-O número tres si no se logra ninguno de esos dos primeros objetivos que es o hacer pensar a tortuga de que los guardias están muertos. O matarlos? Llegan a Dragon Ball con lo que eso llega a implicar.
+O número tres si no se logra ninguno de esos dos primeros objetivos que es o hacer pensar a tortuga de que los guardias están muertos. O matarlos? Llegan a DragonLand con lo que eso llega a implicar.
 
 Ronda 12. Cuando vamos al turno de cero vamos bajando este contado. Okay Entonces! Se activa la cuatro? Okay. Perdón, se quedó a la ocho, se activó la tres? Se activó? 14 7. Hijo de puta. Ah! Sale empezó a sangrarte. Afortunadamente te pegó con el esternón, no te alcancéan nada pero está sangrando Entonces no dañó nada vital, pero pues obviamente te sangró ahí y te pusiste la mano caliente con tu Facebook para editar daño sangrando Y finalmente la 10.
 
@@ -513,7 +513,7 @@ Frente a una pared.
 
 He leído viejo sientes a meditar. Es hora de meditar. Todo en la vida se resuelve con medicación y nos sentamos a aumentar. Estoy muy de acuerdo con tu filosofía. Me recuerdas a mi maestro se sientan?
 
-Si se muere me mato. Turnos para llegar a Dragon Ball. Tres Ah bueno tres divididos uno paso por la primera por la 10. Dado 209. 24. Y pasó al rado. Y. Cinco no el tipo se acerca la puerta ese creo que puedo abrirla porque nos han generado la llave, La garra y justo cuando la agarra para jalar voltea a ver hacia arriba y ves como esta especie.
+Si se muere me mato. Turnos para llegar a DragonLand. Tres Ah bueno tres divididos uno paso por la primera por la 10. Dado 209. 24. Y pasó al rado. Y. Cinco no el tipo se acerca la puerta ese creo que puedo abrirla porque nos han generado la llave, La garra y justo cuando la agarra para jalar voltea a ver hacia arriba y ves como esta especie.
 
 Yo solo atraviesa empieza como tiembla tipo efecto Matrix volviéndose invisible no este es mira.
 
@@ -541,7 +541,7 @@ Nogles. Cámbiala te contesto traumático Quién usa escapar de las presiones de
 
 Un personaje a nivel 1, más o menos de tu mismo nivel un poco más de vida, Pues porque es un no muerto. Eh dos espadas tipo sable altamente oxidadas en lanza de dominar pero no se puede lutear para que tenga claro a nivel combate eh. Armadura de cuero sencilla se podría dañar con otra cosa, probablemente esa inmune algunos tipos de elementos por la neuroancia tu siguiente turno es combate.
 
-Se llama. Branig el doble filo. Branik. 10 turnos para llegar. A Dragon Ball. Eh mientras que sigo con el pasadiz miro alrededor si en las cadenas que rompieron y quedó como una partecita fosa. No quedó nada, no quedó nada. No normal redondeados entonces agarro es fuertemente hasta que me sale sangre y le digo el Face.
+Se llama. Branig el doble filo. Branik. 10 turnos para llegar. A DragonLand. Eh mientras que sigo con el pasadiz miro alrededor si en las cadenas que rompieron y quedó como una partecita fosa. No quedó nada, no quedó nada. No normal redondeados entonces agarro es fuertemente hasta que me sale sangre y le digo el Face.
 
 Te doy mi sangre en sacrificios y hoy te llamo por venganza. Se quedó cuidar mi Cuervo pero esta maldita tortuga lo acabo. Y ahora quiero que la cegues por todos los cuervos. Respeta tu steaming Sousa molestar con estas estupideces te ayudaré con mi protección Porque no quiero que mueras a un.
 
@@ -567,7 +567,7 @@ Esta mujer hermosa divina se nota que es una humana, pero que tiene algún tipo 
 
 Sí, ahí termina.
 
-Espera porque ahora no sé cuál es el tuyo haga. Nueve turnos para llegar a Dragon Ball. Comes. Qué quieres hacer? Claramente arrancas con combate aquí. Sí ya contigo no hay reloj, sino dos acciones. Pues vamos a intentar hacerlo chévere o si no a los putazos.
+Espera porque ahora no sé cuál es el tuyo haga. Nueve turnos para llegar a DragonLand. Comes. Qué quieres hacer? Claramente arrancas con combate aquí. Sí ya contigo no hay reloj, sino dos acciones. Pues vamos a intentar hacerlo chévere o si no a los putazos.
 
 Lo miro me doy cuenta que es uno muerto. Y le digo. Y me puso así sobre la puerta. Veo que eres un no muerto cuando estuviste muerto viste más como yo y quiero lanzar eh. Güey güey. Te paso tu celu y conecto el portátil que se apaga.
 

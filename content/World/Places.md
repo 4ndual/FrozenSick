@@ -25,7 +25,7 @@ After Prince Robin (Ala Rota)'s assassination, his half-brother **Dranlek "El Os
 | **Casa DeepWater** | Sea/Rivers | Draknor (possibly Drakmor on map) |
 | **Casa Draksky** | Air/Wind | *(Union of minor lords — no single domain)* |
 
-The **Dragon Scar** is unclaimed no-man's-land between the house domains — also known as "Tierras de Lunei." This is where La Última Gota tavern is located.
+The **Dragon Scar** is unclaimed no-man's-land between the house domains. This is where The Last Drop tavern is located.
 
 **Provinces of DragonLand:**
 
@@ -39,7 +39,7 @@ The **Dragon Scar** is unclaimed no-man's-land between the house domains — als
 | **Aerthalon** | Core | Matonceton, Bromermouth, Dunsterwick |
 | **Mystralyn** | Core | Uxbridling, Fineton |
 | **Bridbury Landgrave** | Core | Leighbrid, Salboneroe |
-| **Dragon Scar** | No-man's-land ("Tierras de Lunei") | Malistoles, Rothbrid, Seaton — **La Última Gota tavern is here** |
+| **Dragon Scar** | No-man's-land | Malistoles, Rothbrid, Seaton — **The Last Drop tavern is here** |
 | **Sanvily Islands** | Islands | Patise, Chargissoy, Giviers |
 | **Goc Island** | Island | Bosbokeroe |
 | **Knutsted Territory** | Territory | Stansham area |
@@ -97,7 +97,7 @@ The **Dragon Scar** is unclaimed no-man's-land between the house domains — als
 | **Wisin** | ~2,300 | Town | port | Central-east |
 
 **Map Icons (known):**
-- **Red tavern pin (center):** La Última Gota — the party's home base
+- **Red tavern pin (center):** La ultima Gota — the party's home base
 - **Blue owl icon (west, near Siazi):** Unknown — possibly elven territory or a magical site
 - **Yellow mug icon (east, near Sasingscast):** Unknown — possibly another tavern or trade hub
 - **Black flag icon (southwest, near Salboneroe):** Unknown — possibly pirates, outlaws, or a faction base
@@ -144,11 +144,11 @@ A separate island to the east of the DragonLand mainland, connected to the Brast
 
 ## Key Locations
 
-### La Última Gota (The Last Drop)
+### La ultima Gota (The Last Drop)
 
 **Type:** Tavern / covert operations base
-**Location:** Dragon Scar (no-man's-land, "Tierras de Lunei") — geographic center of DragonLand (red tavern pin on map)
-**Owner:** Lunei Milei Maili (a.k.a. Rudolph IcePeak, Casa IcePeak)
+**Location:** Dragon Scar (no-man's-land) — geographic center of DragonLand (red tavern pin on map)
+**Owner:** Luney IcePeak (Casa IcePeak)
 **Chapter(s):** 1
 
 A tavern at the heart of DragonLand that serves as a front for covert operations. Positioned centrally on the continent, making it a crossroads for travelers, merchants, and fugitives from all directions. Features hidden weapons (Protocol Three crossbows), coded service diagrams, centipede essence poison, and a famous enchanted cocktail. The party's home base and employer. Currently closed — a sign reads: *"Please don't bother. Die somewhere else."*
@@ -170,7 +170,7 @@ A tavern at the heart of DragonLand that serves as a front for covert operations
 A vast cave system expanded and fortified by the forest elves. Water seeps from a cascading waterfall overhead. Torches line damp corridors. Infested with serpents. Contains:
 
 - **Blood sacrifice lock** — a stone door mechanism requiring a rattlesnake's vibration to open
-- **Dragon nursery** — a constructed facility for training wyrmlings, where Line was kept
+- **Dragon nursery** — a constructed facility for training wyrmlings, where Chimuelo was kept
 - **Arcane library** — a hidden chamber full of books; a disembodied voice said "Read me, for there lies your power" and absorbed Zacarías's raven
 - **Crystalline water pool** with a golden key guarded by a serpent
 - **Trap gauntlet** — pressure plates, fire cannons, arrow storms, rising spikes, swinging blades
@@ -229,7 +229,7 @@ A mystical elven realm where no one ages and existence drifts like an endless dr
 **Location:** Unknown (somewhere on DragonLand)
 **Chapter(s):** Referenced in Ch.1
 
-One of two locations Lunei directed the PCs toward to find a ground emerald for his cure. Not yet visited.
+One of two locations Luney directed the PCs toward to find a ground emerald for his cure. Not yet visited.
 
 ---
 
@@ -239,7 +239,7 @@ One of two locations Lunei directed the PCs toward to find a ground emerald for 
 **Location:** Mountain region of DragonLand
 **Chapter(s):** Referenced in Ch.1
 
-The second location Lunei mentioned as a source for the rare ground emerald. Not yet visited.
+The second location Luney mentioned as a source for the rare ground emerald. Not yet visited.
 
 ---
 
@@ -396,3 +396,4 @@ An elven guard post where the party received food, rest, and warnings about the 
 ## Map Notes
 
 - **12th (Thaxningia) Regiment:** Formed during the Wiscomney Crusade (3rd Framping Era). Stationed in Thaxningia Margrave.
+

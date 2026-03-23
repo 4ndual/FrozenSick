@@ -7,8 +7,8 @@ import {
 } from '$lib/server/github-content';
 
 export const GET: RequestHandler = async ({ url, cookies }) => {
-  const token = cookies.get('gh_token');
-  if (!token) throw error(401, 'Not authenticated');
+  const token = cookies.get('gh_token') ?? '';
+  if (!token && process.env.NODE_ENV === 'production') throw error(401, 'Not authenticated');
 
   const branch = url.searchParams.get('branch') || getDefaultBranch();
 

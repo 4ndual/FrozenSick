@@ -110,7 +110,7 @@ No me parece justo Pero está bien. Lo respeto porque ustedes la ley. El tipo si
 
 Zacarías qué quieres hacer? Con ese con z Zacarías.
 
-Empieza a caminar por la taberna. Me acerco a. Cómo es que te llamas? Lili Lili Qué día tan pesado está haciendo hoy? Están muy entrometidos a esta gente.
+Empieza a caminar por la taberna. Me acerco. Qué día tan pesado está haciendo hoy? Están muy entrometidos esta gente.
 
 O sea yo yo me estoy muriendo Zacarías belmonte como los belmo. Dios mío, ven güey obviamente. Se me volvió el nombre siempre Luna, dice que estoy trabajando pero dame un trago. El mansaka cerveza de Malta te pone una jarra y me dice alarma. Son las 8. Ahí te dice todos.
 
@@ -158,7 +158,7 @@ Si esos dos pasillos son bloqueantes. Bueno entonces.
 
 Dónde hay? Necesito aire? Voy a salir cinco Hacia delante puro licores. La gente está tranquila. Salgo a la puerta. Mientras sigas pasando por la puerta justo al lado de la orquesta. Dónde está la orquesta aquí o allá hasta el medio? Te parece justo la de la orquesta? Y cael se volvió el grito?
 
-Nixira silverson Escalofrío te paso por todo el cuerpo.
+Nixira Silversong. Escalofrío te pasó por todo el cuerpo.
 
 La cornetista de la balada. Hace más de 5 años que no te escucho brunei siempre me sorprendes. No sabía que la habías traído a tocar. Puta madre. En cuanto grita tu nombre? Este rainbo voltea. Se queda viendo la mitad del escenario. Ves en su cara ira. Ves como se levanta y sus dos compañeros lo agarran del hombro y alcanzas a escuchar un claro.
 
@@ -192,7 +192,7 @@ La canción es parte de la tradición y es nuestra forma rara nuestro artista. Y
 
 Tú estás a full con esta canción. Arranco esta parte empezaron las percusiones. Todo el mundo está emocionado. Este Man es tu fan porque te reconoció o sea de verdad está muy impactado. Dado de 20 contra este dato güey todavía no lo tires. Sí estás tocando suficientemente bien o sea que tiras por arriba de este.
 
-La música fue tan ensordecedora que no lo escuchó y se lo toma de una vez. Sí lanzas por debajo solo estás tocando bien y fue lo suficientemente tranquila la música como para que el martes escuchará le hiciera caso Ahora como tú pasas de justo por detrás y este Man está super timbrado contigo y te voy hablando con lunei.
+La música fue tan ensordecedora que no lo escuchó y se lo toma de una vez. Sí lanzas por debajo solo estás tocando bien y fue lo suficientemente tranquila la música como para que el martes escuchara e hiciera caso. Ahora, como tú pasas justo por detrás y este man está súper timbrado contigo, te voy hablando con Luney.
 
 Está pasando Entonces tienes contra este dado que tirar si sacas por arriba de eso fuiste lo suficientemente rápido para que lo que ellos van a hacer no surte afecto, Pero si tiras por debajo de este lado, ellos van a tomar una acción que puede pedir que él se tome en trago y dependiendo de su sexo combinación de éxitos fallos van a haber diferentes consecuencias dados por favor tuvo entre 13 tuvo entre 12 acciones que están pasando en simultáneo.
 
@@ -314,7 +314,7 @@ Bueno Steve, no sé. Cómo hago que suene acá? Tenías que haberlo escuchar en 
 
 Ya listo, estoy Eh yo creo en el piso no sacaría, se agarró por alguna razón vino corriendo de velocidad super velocidad increíble llegó hasta la cocinero, un pote de agua, un picote agua inmenso y por ahí una razón. Se montó en el mesonería y intento llenar de agua. Toda la todo el piso y falló y se cayó y se le cayó el agua encima, Pero ni siquiera salí de la cocina.
 
-Ah, antes de eso yo les pegué una moneda para decirles que estamos en contacto con los tres estamos. Espérenme tengo muchas cosas que hacer compañeritos. Ojo porque los gouldings no se pueden exponer tampoco. No vas a usar?
+Ah, antes de eso yo les pegué una moneda para decirles que estamos en contacto con los tres. Espérenme, tengo muchas cosas que hacer, compañeritos. No vas a usar?
 
 Para que ahorita o sea es las ballestas. Mis hechizos están hechizos no que.
 

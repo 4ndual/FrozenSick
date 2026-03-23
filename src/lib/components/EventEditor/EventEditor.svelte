@@ -13,8 +13,9 @@
     'Chapter 1 - The Tavern',
     'Chapter 2 - The Plateau',
     'Chapter 3 - The Flying Turtle',
-    'Chapter 4 - The Battle of Brasboredon',
-    'Chapter 5 - The Escape from Brasboredon',
+    'Chapter 4 - Llegada a Brastabro',
+    'Chapter 5 - The Battle of Brasboredon',
+    'Chapter 6 - The Escape from Brasboredon',
   ];
 
   function blankDate(): FantasyDate {

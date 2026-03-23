@@ -295,7 +295,7 @@ Listo! Y con la palabra que con mi otro turno vuelvo a usar para abrir diente y 
 
 Y cayó? Queda uno. Ve pásame perdón. Hola! Entonces como que freestyle? Con tanto.
 
-Qué significa? Y entonces cuando pasa eso? Pasa eso recuerdo como. Ay como se llama mi esposa no tenía nombre Ay Ay Lili. Ah y recuerdo cómo contaba tus canciones con Lástima que lo permites. Descansa el paso ahora.
+Qué significa? Y entonces cuando pasa eso? Pasa eso recuerdo como. Ay, cómo se llama mi esposa, no tenía nombre. Ah, y recuerdo cómo contaba tus canciones. Lástima que lo permites. Descansa el paso ahora.
 
 Dragón con. No no el otro el negro Es que es que terminó la cabeza loco. Ah ya que acaba la batalla no? Hay que ayudar a lo mejor. Yo te digo Robinson hay que ayudar a loco. Vamos a ver cómo está. Yo lo sigo. Sí todos vamos.
 
@@ -331,7 +331,7 @@ Percibición. Míralo ya se retaremos del fondo. 12 12 de la Rivera comercial de
 
 Medievales que tenían ríos que las atravesaban y le llaman para el ejército en donde llegaban las bancadas con suministros militares estás como una especie de minifuelto, entonces veo agua. Veo barcos y puros enemigos no solamente, pero no puedo pasar por ahí. No yo. Yo utilizo mi Minion. Para para hacer un dragón hijo.
 
-Sí, me quitó temporalmente. La banda y se la pueden pasar y espera ya cuánto tiempo llevamos aquí en Dragon Ball como 3 días pero días en los que he estado rodeado de puro idioma dragónico. Ya entiendo el grito, ya te tenía que intentarlo pero hay que intentarlo. Eh bueno.
+Sí, me quitó temporalmente. La banda y se la pueden pasar y espera ya cuánto tiempo llevamos aquí en DragonLand como 3 días pero días en los que he estado rodeado de puro idioma dragónico. Ya entiendo el grito, ya te tenía que intentarlo pero hay que intentarlo. Eh bueno.
 
 No Desde las 4 en donas. 1 2. Y aquí Qué es la el río? Otra vez algo así? Donde sobre las cuentas de que hay una balsa con remos, está preparada para cruzar remix, pero justo cuando empieza a correr para agarrar la balsa sale debajo del puente. Con un tacón y se queda mirándote.
 
