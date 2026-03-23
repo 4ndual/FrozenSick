@@ -7,7 +7,7 @@ Ya comieron ya se alimentan el guardia principal les dice.
 
 Entonces les agradezco que se encuentran gente en el camino de la mina. Eh los ayudan a llegar al otro lado sobre toda ti y se quedan viendo a tidios Pues porque se fue y si es como hermano de raza Y eso Por seguridad les tengo que cerrar porque hace poco pasó una persona que nos dijo que hubo.
 
-Hubo muertos? Bueno un Drama Total no quiso hablar mucho iba corriendo. Nos estaba diciendo que le ayudáramos a pasar rápido porque tenía que llevar una información a Dragon Ball. Cómo Lucía ese tipo? La verdad no me presté atención hermano pasan cientos de personas todos los días por ese camino.
+Hubo muertos? Bueno un Drama Total no quiso hablar mucho iba corriendo. Nos estaba diciendo que le ayudáramos a pasar rápido porque tenía que llevar una información a DragonLand. Cómo Lucía ese tipo? La verdad no me presté atención hermano pasan cientos de personas todos los días por ese camino.
 
 Eh el asunto es que si lo encuentro lado.
 
@@ -151,7 +151,7 @@ Ignoró lo que está diciendo. Ya regresar. Me puse mierda.
 
 Nada le preguntás o qué a lo Cómo están las cosas en las tierras landi que hacía algún nuevo acontecimiento? Empieza que empiezan contar que se vinieron de las tierras landys porque empezaron a tener el sueño gris. El sueño gris es una profecía en la que muy poco es el post de como astrología para elfos de que tras la caída de.
 
-El reinado incompleto y el la profecía tras la caída de la caída del príncipe híbrido y el levantamiento de la mentira. Aparecerá en el reino, el verdadero dragón y. Dentro de Las profecías del sueño gris dicen que si el verdadero dragón logra hacerse con el trono de Dragon Ball.
+El reinado incompleto y el la profecía tras la caída de la caída del príncipe híbrido y el levantamiento de la mentira. Aparecerá en el reino, el verdadero dragón y. Dentro de Las profecías del sueño gris dicen que si el verdadero dragón logra hacerse con el trono de DragonLand.
 
 Lo primero que van a hacer es ir a destruir El árbol de la vida porque el árbol de la Biblia es lo que encontré. La podofesidad dice así que tras la muerte de un príncipe herido y el levantamiento de la lengua mentirosa. Llegará al trono el verdadero dragón. Dentro del sueño gris dice que si el verdadero dragón se hace con el poder irá en busca de la destrucción del árbol de la vida, ya que es el árbol de la vida cae el dragón durmiente después.
 
@@ -501,7 +501,7 @@ Me acuerdo que decía hop. Contigo si necesitas.
 
 Así que me devuelvo aquí. Leído activos no quiero pelear.
 
-Su conoces la canción de La leyenda de los Dragon Ball Z.
+Su conoces la canción de La leyenda de los DragonLand Z.
 
 Todas las partidas van a hacer música. Bueno recuerda lo que te dije, la última vez que estuve aquí estuvimos bailando y nada. Pasó okay. Entonces, Bueno qué pasa ahora? De quién es el turno? Su secundaria. Pero yo no he hecho ninguna acción. Ella llegó a hablar conmigo. Luego irse.
 
@@ -671,7 +671,7 @@ Y la verdad es que así aparte. Hacia parte del velo de las siete canciones. Del
 
 No tdius, no Dios mío. Cómo se llama a keylan? Perdón Hasta que me traicionó. Y me inculpo. Y ese no se murió. Pero. La orden están todas partes y si dejo que estas personas espartan el rumor de que en la taberna. Están sida? Tendré que huir de ahí. También puedo permitir que salgan de aquí y le cuenten a todo el mundo.
 
-Bueno es eso necesito que mueran. Entonces dos están asqueados. De haber escuchado que iniciar hizo parte del velo de las siete canciones en verde. Las siete canciones es una sociedad secreta que salió a la luz en el momento de la caída de Dragon Ball porque eran inicialmente eran como una especie de brujas musicales brujas artísticas que tenían una un objetivo muy bello y era para ver el dolor de las enfermedades mágicas que no tienen ningún tipo de cura a través de la manipulación mental.
+Bueno es eso necesito que mueran. Entonces dos están asqueados. De haber escuchado que iniciar hizo parte del velo de las siete canciones en verde. Las siete canciones es una sociedad secreta que salió a la luz en el momento de la caída de DragonLand porque eran inicialmente eran como una especie de brujas musicales brujas artísticas que tenían una un objetivo muy bello y era para ver el dolor de las enfermedades mágicas que no tienen ningún tipo de cura a través de la manipulación mental.
 
 Desarrollaron también esto para que las personas pudieran tener como cuidados paliativos hasta llegar al punto de su muerte, Pero alguien dentro de su organización alguien muy allegado a keylan. Eh empezó a utilizar estos poderes para influir en la política de todos los reinos y esto era como su contracata.
 

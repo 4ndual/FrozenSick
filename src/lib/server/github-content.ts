@@ -1,8 +1,15 @@
 import { env } from '$env/dynamic/public';
 import type { NavEntry, NavItem, NavSection } from '$lib/wiki-nav';
 import { slugify, slugifyPath } from '$lib/utils/slugify';
+import { readdir, readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
 
 const API = 'https://api.github.com';
+const LOCAL_DEV_CONTENT = process.env.NODE_ENV !== 'production';
+const LOCAL_REPO_ROOT = process.cwd();
+const LOCAL_CONTENT_ROOT = path.join(LOCAL_REPO_ROOT, 'content');
 
 function getOwner(): string {
   return (env.PUBLIC_GITHUB_OWNER as string) || '4ndual';
@@ -27,6 +34,61 @@ function ghHeaders(token: string) {
   };
   if (token) headers.Authorization = `Bearer ${token}`;
   return headers;
+}
+
+async function walkLocalContent(dir: string): Promise<TreeEntry[]> {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const result: TreeEntry[] = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      result.push(...(await walkLocalContent(fullPath)));
+      continue;
+    }
+    if (!entry.isFile()) continue;
+    if (!entry.name.endsWith('.md')) continue;
+    if (entry.name === 'README.md') continue;
+
+    const relative = path.relative(LOCAL_REPO_ROOT, fullPath).split(path.sep).join('/');
+    result.push({
+      path: relative,
+      mode: '100644',
+      type: 'blob',
+      sha: 'local',
+    });
+  }
+
+  return result;
+}
+
+async function walkLocalFiles(dir: string, extension: string): Promise<TreeEntry[]> {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const result: TreeEntry[] = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      result.push(...(await walkLocalFiles(fullPath, extension)));
+      continue;
+    }
+    if (!entry.isFile()) continue;
+    if (!entry.name.endsWith(extension)) continue;
+
+    const relative = path.relative(LOCAL_REPO_ROOT, fullPath).split(path.sep).join('/');
+    result.push({
+      path: relative,
+      mode: '100644',
+      type: 'blob',
+      sha: 'local',
+    });
+  }
+
+  return result;
+}
+
+function canUseLocalContent(): boolean {
+  return LOCAL_DEV_CONTENT && existsSync(LOCAL_CONTENT_ROOT);
 }
 
 // ── Cache ────────────────────────────────────────────────────────────────────
@@ -87,6 +149,10 @@ export class GitHubAuthError extends Error {
  * Returns only blob entries under `content/` that end with `.md`.
  */
 export async function fetchTree(token: string, branch?: string): Promise<TreeEntry[]> {
+  if (canUseLocalContent()) {
+    return walkLocalContent(LOCAL_CONTENT_ROOT);
+  }
+
   const b = branch || getDefaultBranch();
   const cacheKey = `tree@${b}`;
   const cached = await getCached<TreeEntry[]>(cacheKey);
@@ -121,6 +187,7 @@ const WORLD_MAPS_TTL = 5 * 60 * 1000;
 const CHAPTER_JSON_TTL = 5 * 60 * 1000;
 const MENU_CONFIG_TTL = 60 * 1000;
 export const MENU_CONFIG_PATH = 'content/Menu/navigation.json';
+const LOCAL_MENU_CONFIG = path.join(LOCAL_REPO_ROOT, MENU_CONFIG_PATH);
 
 export interface MenuCustomization {
   hidden: string[];
@@ -159,6 +226,19 @@ export async function fetchMenuCustomization(
   token: string,
   branch?: string,
 ): Promise<MenuCustomization> {
+  if (canUseLocalContent()) {
+    if (!existsSync(LOCAL_MENU_CONFIG)) {
+      return { ...EMPTY_MENU_CUSTOMIZATION };
+    }
+
+    try {
+      const decoded = await readFile(LOCAL_MENU_CONFIG, 'utf8');
+      return normalizeMenuCustomization(JSON.parse(decoded));
+    } catch {
+      return { ...EMPTY_MENU_CUSTOMIZATION };
+    }
+  }
+
   const b = branch || getDefaultBranch();
   const cacheKey = `menuCustomization@${b}`;
   const cached = await getCached<MenuCustomization>(cacheKey);
@@ -200,6 +280,11 @@ export async function fetchMenuCustomization(
  * Fetch blob entries under content/World/ that end with .map (Azgaar FMG files).
  */
 export async function fetchWorldMapPaths(token: string, branch?: string): Promise<TreeEntry[]> {
+  if (canUseLocalContent()) {
+    const worldRoot = path.join(LOCAL_CONTENT_ROOT, 'World');
+    return existsSync(worldRoot) ? walkLocalFiles(worldRoot, '.map') : [];
+  }
+
   const b = branch || getDefaultBranch();
   const cacheKey = `worldMaps@${b}`;
   const cached = await getCached<TreeEntry[]>(cacheKey);
@@ -233,6 +318,11 @@ export async function fetchWorldMapPaths(token: string, branch?: string): Promis
  * Fetch blob entries under content/Chapters/ that end with .json.
  */
 export async function fetchChapterJsonPaths(token: string, branch?: string): Promise<TreeEntry[]> {
+  if (canUseLocalContent()) {
+    const chaptersRoot = path.join(LOCAL_CONTENT_ROOT, 'Chapters');
+    return existsSync(chaptersRoot) ? walkLocalFiles(chaptersRoot, '.json') : [];
+  }
+
   const b = branch || getDefaultBranch();
   const cacheKey = `chapterJson@${b}`;
   const cached = await getCached<TreeEntry[]>(cacheKey);
@@ -272,6 +362,15 @@ export function buildManifest(tree: TreeEntry[]): Record<string, string> {
     const relativePath = entry.path.replace(/^content\//, '');
     const slug = '/' + slugifyPath(relativePath);
     manifest[slug] = entry.path;
+
+    const parts = relativePath.split('/');
+    const fileName = parts[parts.length - 1]?.replace(/\.md$/i, '').toLowerCase();
+    const isSectionLanding = fileName === 'summary' || fileName === 'index';
+
+    if (isSectionLanding && parts.length > 1) {
+      const parentSlug = '/' + slugifyPath(parts.slice(0, -1).join('/'));
+      manifest[parentSlug] = entry.path;
+    }
   }
   return manifest;
 }
@@ -419,6 +518,12 @@ export async function fetchContent(
   repoPath: string,
   branch?: string,
 ): Promise<{ content: string; sha: string }> {
+  if (canUseLocalContent()) {
+    const fullPath = path.join(LOCAL_REPO_ROOT, repoPath);
+    const content = await readFile(fullPath, 'utf8');
+    return { content, sha: 'local' };
+  }
+
   const b = branch || getDefaultBranch();
   const cacheKey = `content:${repoPath}@${b}`;
   const cached = await getCached<{ content: string; sha: string }>(cacheKey);
@@ -446,6 +551,11 @@ export async function fetchContentRaw(
   repoPath: string,
   branch?: string,
 ): Promise<string> {
+  if (canUseLocalContent()) {
+    const fullPath = path.join(LOCAL_REPO_ROOT, repoPath);
+    return readFile(fullPath, 'utf8');
+  }
+
   const b = branch || getDefaultBranch();
   const cacheKey = `contentRaw:${repoPath}@${b}`;
   const cached = await getCached<string>(cacheKey);
@@ -474,6 +584,23 @@ export async function fetchContentRaw(
  * List all branches for the repo.
  */
 export async function listBranches(token: string): Promise<string[]> {
+  if (LOCAL_DEV_CONTENT) {
+    try {
+      const output = execSync('git branch --format=\"%(refname:short)\"', {
+        cwd: LOCAL_REPO_ROOT,
+        stdio: ['ignore', 'pipe', 'ignore'],
+        encoding: 'utf8',
+      });
+      const branches = output
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean);
+      return branches.length > 0 ? branches : [getDefaultBranch()];
+    } catch {
+      return [getDefaultBranch()];
+    }
+  }
+
   const cacheKey = 'branches';
   const cached = await getCached<string[]>(cacheKey);
   if (cached) return cached;
@@ -509,6 +636,10 @@ export async function compareBranches(
   contentBranch: string,
   baseBranch?: string,
 ): Promise<BranchComparison> {
+  if (LOCAL_DEV_CONTENT) {
+    return { aheadBy: 0, behindBy: 0 };
+  }
+
   const base = baseBranch || getDefaultBranch();
   const cacheKey = `compare:${base}...${contentBranch}`;
   const cached = await getCached<BranchComparison>(cacheKey);

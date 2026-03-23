@@ -1,4 +1,4 @@
-# Chapter 3: The Flying Turtle — Sessions 04 & 05
+# Chapter 3 - The Flying Turtle
 ## *"They woke up in chains on the back of a living prison — and escaping was only the beginning."*
 
 ---
@@ -45,7 +45,7 @@ Nixira reaches the main gate first — and there stands **Branig "the Double-Bla
 
 The party is deep underground, in a volcanic chamber built around a lake of condemned souls. On a raised platform above the magma-glow stands a demon: **Victus**, also called **Raku** — a creature of terrible power and barely contained rage.
 
-Nixira climbs the stairs to negotiate, trying to pass herself off as a valuable asset rather than a prisoner. Victus sees through her immediately. With a casual flick of his wrist, he makes her feel the phantom weight of invisible chains — a demonstration of raw psychic force. Negotiations collapse when he senses she works for someone connected to **Lunei Milei Maili**. The word alone sends him into cold fury. *"With someone who works for Lunei, negotiations are not possible."*
+Nixira climbs the stairs to negotiate, trying to pass herself off as a valuable asset rather than a prisoner. Victus sees through her immediately. With a casual flick of his wrist, he makes her feel the phantom weight of invisible chains — a demonstration of raw psychic force. Negotiations collapse when he senses she works for someone connected to **Luney IcePeak**. The word alone sends him into cold fury. *"With someone who works for Luney, negotiations are not possible."*
 
 The room seals. Victus's platform descends. His human disguise burns away to reveal his true form: a hulking, armored paladin-turned-fiend. His wings have been severed — the stumps scarred and cauterized. His white cape ignites into plate armor. Hooves crack against stone. Horns spiral upward. This was once a holy warrior. Now he is something far worse.
 
@@ -67,7 +67,7 @@ Nixira sees her friend fall and something breaks inside her. She nocks an arrow.
 
 ### Key Revelations
 
-- **Lunei Milei Maili is far more dangerous than anyone realized.** The party's tavern-owner boss once cut the wings off a demon as punishment for theft. The casual brutality of this act — and the fear it inspires in Victus — reframes everything the party knows about their employer.
+- **Luney IcePeak is far more dangerous than anyone realized.** The party's tavern-owner boss once cut the wings off a demon as punishment for theft. The casual brutality of this act — and the fear it inspires in Victus — reframes everything the party knows about their employer.
 - **Victus was a Fallen Paladin**, not merely a demon. He was commanded by his god to destroy "the Fallen Prince" and failed. His damnation was his punishment. His death was a mercy.
 - **Señor Nadie (Faorus Rain) and the Orden del Silencio (Order of Silence)** are monks who erase their identities to achieve mastery. Their master is an elf. One of three pupils (Rodrigo, the healer) is now dead. Two remain: the monk of Invisibility (Fresitas) and the monk of Brute Force (Fuercitas).
 - **Malfas, Prince of Ravens**, will answer Zacarías's calls — but grudgingly, at a cost, and with open contempt. The patron-warlock relationship is transactional and volatile.
@@ -77,7 +77,7 @@ Nixira sees her friend fall and something breaks inside her. She nocks an arrow.
 
 ### Consequences
 
-The party has escaped the Prison Tortoise (through unknown means during the missing scene) and slain a demon that even their boss once found dangerous enough to maim rather than kill. But the cost is steep. Zacarías lies dying. The Nameless Monk lost a pupil. And the revelation about Lunei — that their jovial, cocktail-mixing tavern owner is capable of mutilating demons — hangs over everything like smoke.
+The party has escaped the Prison Tortoise (through unknown means during the missing scene) and slain a demon that even their boss once found dangerous enough to maim rather than kill. But the cost is steep. Zacarías lies dying. The Nameless Monk lost a pupil. And the revelation about Luney — that their jovial, cocktail-mixing tavern owner is capable of mutilating demons — hangs over everything like smoke.
 
 Whatever Farquad's guards were trying to accomplish by capturing them, the party is now loose, leveled up, and asking dangerous questions about the people they work for.
 
@@ -99,8 +99,8 @@ Whatever Farquad's guards were trying to accomplish by capturing them, the party
 
 ### Organizations Present
 
-#### La Última Gota / El Unei
-The PCs are still operating as tavern employees, but the revelation about Lunei cutting off a demon's wings reframes the organization. Their "jovial tavern boss" is far more dangerous than they knew.
+#### La ultima Gota
+The PCs are still operating as tavern employees, but the revelation about Luney cutting off a demon's wings reframes the organization. Their "jovial tavern boss" is far more dangerous than they knew.
 
 | Member | Role in Chapter | Status |
 |--------|----------------|--------|
@@ -175,11 +175,11 @@ Zacarías called upon Malfas after losing his raven. Malfas granted the blood-we
 ---
 
 #### Victus / Raku — The Fallen Paladin Demon
-- **Who:** Demon (originally a humanoid paladin). In demon form: hooves, tall horns, wing stumps (wings cut off by Lunei as punishment for theft), red-skinned, heavy armor forming from his white cape. Salivates in berserker mode. Level 2 demon, worth 3,000 XP.
-- **Backstory:** Once a paladin sworn to a deity. Tasked by his god with "destroying the Fallen Prince" but failed. Lunei Milei Maili cut off his wings as punishment. Reduced to guarding a volcanic lair — an assignment he considered beneath him. Broke his seal of chastity. Became a "sacred demon."
-- **What he did:** Cast Air Prison on Tidus. Refused to negotiate with anyone connected to Lunei: *"With someone who works for Lunei, negotiations are not possible."* Performed a meteor-like fire charge. Clawed Zacarías's scalp off. Stabbed Zacarías with his own burning dagger, dropping him to 0 HP.
+- **Who:** Demon (originally a humanoid paladin). In demon form: hooves, tall horns, wing stumps (wings cut off by Luney as punishment for theft), red-skinned, heavy armor forming from his white cape. Salivates in berserker mode. Level 2 demon, worth 3,000 XP.
+- **Backstory:** Once a paladin sworn to a deity. Tasked by his god with "destroying the Fallen Prince" but failed. Luney IcePeak cut off his wings as punishment. Reduced to guarding a volcanic lair — an assignment he considered beneath him. Broke his seal of chastity. Became a "sacred demon."
+- **What he did:** Cast Air Prison on Tidus. Refused to negotiate with anyone connected to Luney: *"With someone who works for Luney, negotiations are not possible."* Performed a meteor-like fire charge. Clawed Zacarías's scalp off. Stabbed Zacarías with his own burning dagger, dropping him to 0 HP.
 - **What happened to him:** Nixira's Thaumaturgy awakened condemned spirits in the lake, who spoke to him. Through them, his god's voice reached him: *"My son, what are you doing being a simple guard when I told you to destroy the Fallen Prince?"* He fell to his knees: *"Forgive me, I couldn't do it."* Then went berserk. **Killed by Nixira** — crossbow bolt through the skull. Last word: **"Gracias."** Crumbled to dust. His wing-shaped doors unlocked upon death.
-- **Related to:** Lunei (his punisher — cut off his wings), his unnamed god (disappointed in him), "the Fallen Prince" (his failed target)
+- **Related to:** Luney (his punisher — cut off his wings), his unnamed god (disappointed in him), "the Fallen Prince" (his failed target)
 - **End status:** **Dead.** Died grateful. His lair doors (wing-shaped) opened with his death.
 
 ---
@@ -188,3 +188,4 @@ Zacarías called upon Malfas after losing his raven. Malfas granted the blood-we
 - **Who:** Powerful dark entity. Zacarías's warlock patron. Contemptuous, transactional, volatile.
 - **What he did:** Answered Zacarías's call for vengeance after the raven familiar was destroyed. Responded with: *"Don't bother me with these stupidities."* But granted the blood-web shield (17 charges) — a lattice of black webbing woven from Zacarías's blood. Cost: no more ritual casting.
 - **End status:** **Active.** Patron relationship intact but strained.
+

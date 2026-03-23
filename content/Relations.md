@@ -1,6 +1,6 @@
 # Relations — Frozen Sick
 
-*Last updated after Chapter 4*
+*Last updated after Chapter 6*
 
 ---
 
@@ -64,11 +64,11 @@ graph TD
     end
 
     subgraph allies [Allies]
-        Lunei["Lunei Milei Maili (Boss DYING)"]
+        Luney["Luney IcePeak (Boss DYING)"]
         Dracus["Dracus (El Manco)"]
         Nadie["Señor Nadie (Master Monk)"]
         Hook["Hook (Twin Elf)"]
-        Line["Line (Rock Wyrmling)"]
+        Chimuelo["Chimuelo (Rock Wyrmling)"]
         Robinson["Robinson (Companion)"]
         Bixira["Bixira (Rebel Commander)"]
     end
@@ -76,7 +76,7 @@ graph TD
     subgraph enemies [Enemies]
         Malacor["Malacor"]
         Farquad["Farquad Drasky (Casa Draksky)"]
-        Veil["Veil of the Seven Songs"]
+        Velo["El Velo de las Siete Canciones"]
         Keylan["Keylan"]
         Borax2["Borax DEAD"]
         StoneInv["Stone Invoker"]
@@ -91,23 +91,23 @@ graph TD
         Red2["Red — STATUS UNCERTAIN"]
     end
 
-    Tidus -->|"employer"| Lunei
+    Tidus -->|"employer"| Luney
     Tidus -->|"secret held by (uncertain status)"| Red2
     Tidus -->|"old companion"| Dracus
-    Tidus -->|"tamed"| Line
+    Tidus -->|"tamed"| Chimuelo
     Tidus -->|"former member"| Dragonforce2["Dragonforce"]
     Tidus -->|"killed (mercy)"| Borax2
     Tidus -->|"Val medallion (1/20)"| Val["Val (God of Death)"]
 
-    Zacarias -->|"employer"| Lunei
+    Zacarias -->|"employer"| Luney
     Zacarias -->|"secret held by"| Farquad
     Zacarias -->|"patron pact"| Malfas["Malfas (Prince of Ravens)"]
     Zacarias -->|"former friend / now enemy"| Malacor
     Zacarias -->|"ally"| Nadie
     Zacarias -->|"lost right hand to"| StoneInv
 
-    Nixira -->|"employer"| Lunei
-    Nixira -->|"former member"| Veil
+    Nixira -->|"employer"| Luney
+    Nixira -->|"former member"| Velo
     Nixira -->|"betrayed by"| Keylan
     Nixira -->|"bitter rival; he held her secret"| Rainbow
     Nixira -->|"song for"| Rodrigo2["Rodrigo DEAD"]
@@ -115,7 +115,7 @@ graph TD
     Nixira -->|"cursed by (asesina de niños)"| DwarfMother
     Nixira -->|"fighting alongside"| Bixira
 
-    Lunei -->|"cut wings off"| Victus2["Victus DEAD"]
+    Luney -->|"cut wings off"| Victus2["Victus DEAD"]
     Dracus -->|"entangled with"| Malacor
 ```
 
@@ -127,8 +127,8 @@ graph TD
 graph TD
     Unei["La Última Gota (The Tavern)"]
     DF["Dragonforce (Military of DragonLand)"]
-    Veil["Veil of the Seven Songs"]
-    Blanca["La Blanca (Sentinels)"]
+    Velo["El Velo de las Siete Canciones"]
+    Blanca["Centinelas de la Era Blanca"]
     Cuerdas["Las Cuerdas Rotas (Broken Strings)"]
     Piedra["La Piedra Sangrante (Bleeding Stone)"]
     MalNet["Malacor's Network"]
@@ -145,7 +145,7 @@ graph TD
         Draksky["Casa Draksky (Air/Wind)"]
     end
 
-    Unei -->|"Lunei = Rudolph IcePeak"| IcePeak
+    Unei -->|"run by Luney IcePeak"| IcePeak
     FarForces -->|"Farquad Drasky"| Draksky
     MalNet -->|"uses methods of"| DF
     MalNet -->|"disrupting operations of"| Blanca
@@ -155,7 +155,7 @@ graph TD
     Rebels -->|"fighting against"| DF
     Limpiadores ---|"neutral / respected by all"| DF
     Limpiadores ---|"neutral / respected by all"| Rebels
-    Blanca -->|"Khael Varos is operative"| KV["Khael Varos 'El Heraldo'"]
+    Blanca -->|"Kahel Varos is operative"| KV["Kahel Varos 'El Heraldo'"]
 
     BH["Bounty Hunter"]
     BH -->|"affiliated"| Cuerdas
@@ -176,19 +176,19 @@ graph TD
 | Years ago | Borax serves as castle apprentice under Tidus | Tidus ↔ Borax (superior/subordinate, envy) |
 | Years ago | Zacarías & Malacor are close friends | Zacarías ↔ Malacor (brothers in faith) |
 | Years ago | Zacarías loses paladin powers, pacts with Malfas | Zacarías ↔ Malfas (patron) |
-| >5 years ago | Nixira flees the Veil of the Seven Songs | Nixira vs. Keylan, Nixira vs. Veil |
-| ~2 years ago | All three PCs join the tavern | PCs ↔ Lunei (employer) |
+| >5 years ago | Nixira flees the El Velo de las Siete Canciones | Nixira vs. Keylan, Nixira vs. Veil |
+| ~2 years ago | All three PCs join the tavern | PCs ↔ Luney (employer) |
 | Ch.1 | Bounty hunter arrives, chaos erupts | Red vs. PCs, Bald Enemy vs. PCs |
 | Ch.1 | Nixira's identity exposed | Nixira exposed to Veil hunters |
 | Ch.1 | Zacarías reveals Malacor connection | Zacarías vs. Malacor (personal vendetta) |
 | Ch.2 | Dracus proposes alliance against Malacor | PCs ↔ Dracus (reluctant allies) |
-| Ch.2 | Tidus tames Line | Tidus ↔ Line (dragon rider bond) |
+| Ch.2 | Tidus tames Chimuelo | Tidus ↔ Chimuelo (dragon rider bond) |
 | Ch.2 | Farquad captures the party | PCs vs. Farquad |
 | Ch.3 | Zacarías allies with Señor Nadie | Zacarías ↔ Nadie (mutual respect) |
 | Ch.3 | Nixira kills Victus | Nixira → Victus (mercy killing) |
 | Ch.3 | Nixira dedicates kill to Zacarías | Nixira ↔ Zacarías (deepened bond) |
-| Ch.4 | Tidus kills Borax (mercy kill) | Tidus → Borax (resolved rivalry), Tidus ↔ Val (god of death) |
-| Ch.4 | Nixira cursed by dwarf mother | Nixira vs. Dwarves (racial stigma) |
-| Ch.4 | Zacarías loses right hand to stone invoker | Zacarías vs. Stone Invoker |
-| Ch.4 | Nixira allies with Robinson and Bixira | Nixira ↔ Robinson (companion), Nixira ↔ Bixira (rebel alliance) |
-| Ch.4 | Party separated across Brasboredon | All PCs isolated — bonds tested by distance |
+| Ch.6 | Tidus kills Borax (mercy kill) | Tidus → Borax (resolved rivalry), Tidus ↔ Val (god of death) |
+| Ch.6 | Nixira cursed by dwarf mother | Nixira vs. Dwarves (racial stigma) |
+| Ch.6 | Zacarías loses right hand to stone invoker | Zacarías vs. Stone Invoker |
+| Ch.6 | Nixira allies with Robinson and Bixira | Nixira ↔ Robinson (companion), Nixira ↔ Bixira (rebel alliance) |
+| Ch.6 | Party separated across Brasboredon | All PCs isolated — bonds tested by distance |

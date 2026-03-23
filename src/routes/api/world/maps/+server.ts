@@ -7,8 +7,8 @@ import {
 } from '$lib/server/github-content';
 
 export const GET: RequestHandler = async ({ url, cookies }) => {
-  const token = cookies.get('gh_token');
-  if (!token) {
+  const token = cookies.get('gh_token') ?? '';
+  if (!token && process.env.NODE_ENV === 'production') {
     throw error(401, 'Not authenticated');
   }
 

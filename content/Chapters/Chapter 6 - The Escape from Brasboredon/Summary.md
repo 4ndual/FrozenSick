@@ -1,4 +1,4 @@
-# Chapter 5: The Escape from Brasboredon — Session 07
+# Chapter 6 - The Escape from Brasboredon
 ## *"The city lets you in. Getting out is a different kind of war."*
 
 ---
@@ -201,7 +201,7 @@ Tidus approaches the goblin and engages **Deception**: he has been sent by Gremo
 
 The goblin leads him to a dusty, iron-banded chest in the back of the shop, blows the grime off the lid, and lifts it. Inside, resting in black velvet, is a single **Zafiro Esmeralda**. The gem catches the dim light and seems to illuminate from within, as if it already knows it has been found.
 
-Tidus turns to Donner and says, more quietly: *"Donner, este zafiro es para salvar a Lunei."*
+Tidus turns to Donner and says, more quietly: *"Donner, este zafiro es para salvar a Luney."*
 
 Donner goes very still. Then his maul begins to glow.
 
@@ -217,7 +217,7 @@ Donner catches it. His maul extinguishes. The quartz presses into his palm and h
 
 *"¿Cómo consigue cosas mejores que nosotros los enanos? Parece que tuviera sangre de enano en su corazón."*
 
-And then Donner says something Tidus didn't expect: *"Lunei jamás me dijo que tenía un hermano."* Donner has seven brothers. Lunei was ashamed. Tidus doesn't push it. He simply says: *"Yo le debo mi vida a Lunei."*
+And then Donner says something Tidus didn't expect: *"Luney jamás me dijo que tenía un hermano."* Donner has seven brothers. Luney was ashamed. Tidus doesn't push it. He simply says: *"Yo le debo mi vida a Luney."*
 
 Donner nods once. *"Cualquier que trabaje para la familia es bienvenido en cualquiera de nuestras comandas."*
 
@@ -279,7 +279,7 @@ He slapped Tidus. *"Niño estúpido. Solo hiciste la mitad del trabajo. Creías 
 
 Tidus answered: *"Esa era la idea. Tiene que haber un símbolo. No puede ser una persona. Si es una persona se pierde la esperanza."*
 
-Donner broke. He wept for his dead, listening to the radio confirm name after name. Then he composed himself: *"No dejes que muera la esperanza. Si necesitas ayuda estaremos tratando despejar del camino en las puertas. La esperanza es Lunei y no soy yo."*
+Donner broke. He wept for his dead, listening to the radio confirm name after name. Then he composed himself: *"No dejes que muera la esperanza. Si necesitas ayuda estaremos tratando despejar del camino en las puertas. La esperanza es Luney y no soy yo."*
 
 He tossed an **IcePeak favor coin** in the air. *"Obtuviste la joya para despertar a mi hermano. Si te encuentras alguno de mis hermanos, dale eso."*
 
@@ -347,7 +347,7 @@ Nixira sat on the ground. Exhausted. Bleeding. Heartbroken. She reached for the 
 
 The dwarves turned to listen. For one moment, the rage in Cory's eyes softened.
 
-That was all Draxa needed. The witch struck — a needle from her hand, driven into Cory's neck. His skin turned completely black. It was one of the most potent and mysterious venoms of the **Veil of the Seven Songs**.
+That was all Draxa needed. The witch struck — a needle from her hand, driven into Cory's neck. His skin turned completely black. It was one of the most potent and mysterious venoms of the **El Velo de las Siete Canciones**.
 
 Cory fell backward. Dead.
 
@@ -389,7 +389,7 @@ Draxa's remaining soldiers retreated into a mine-shaft portal. *"No más guerra 
 
 Messi approached Zacarías. *"Cuenta conmigo si nos volvemos a encontrar."* He produced a **golden arrow** — decorative, a keepsake from his final tournament. He handed it over and walked into the portal with the remaining dwarven forces.
 
-The four of them — Tidus, Nixira, Zacarías, and Berlin — walked out of Brasboredon together. Battered. One-handed. Cursed. Marked by gods. Carrying a gem that could save their boss and the knowledge that the Veil of the Seven Songs knows exactly where Nixira is.
+The four of them — Tidus, Nixira, Zacarías, and Berlin — walked out of Brasboredon together. Battered. One-handed. Cursed. Marked by gods. Carrying a gem that could save their boss and the knowledge that the El Velo de las Siete Canciones knows exactly where Nixira is.
 
 Behind them, the city burned.
 
@@ -400,17 +400,17 @@ Behind them, the city burned.
 - **Zacarías's death and return:** After dying last session, Zacarías passed before Val, Malfas, and three other deities — including the **Llama Negra** bearing the Altaflama insignia. Malfas intervened to prevent Val from keeping his soul. His connection to his patron is now severely weakened; a second death may be permanent unless he performs an epic feat to restore Malfas's favor.
 - **Altaflama identified and destroyed:** The most powerful of the false prophets was found unconscious in the market after being ejected from the dimensional collision above the Mansion. Cory executed him while Tidus looked away. Before dying, Altaflama condemned Donner with a divine indictment — triggering simultaneous possession attempts by **Val** and **Moradin**. Tidus's medallion broke the possession.
 - **Capa Sagrada acquired:** Altaflama's robe attached itself to Zacarías upon his death. Effect: **+5 Religión damage**.
-- **Donner IcePeak is Lunei's brother** — one of eight. Lunei never mentioned his family. Tidus's interactions with Donner earn access to the IcePeak family network.
-- **Zafiro Esmeralda acquired:** The gemstone needed to cure Lunei of Frigid Woe has been retrieved from a Gremory warehouse, obtained through a Deception check on Berlin the goblin.
+- **Donner IcePeak is Luney's brother** — one of eight. Luney never mentioned his family. Tidus's interactions with Donner earn access to the IcePeak family network.
+- **Zafiro Esmeralda acquired:** The gemstone needed to cure Luney of Frigid Woe has been retrieved from a Gremory warehouse, obtained through a Deception check on Berlin the goblin.
 - **Bomba de Oscuridad acquired:** A non-explosive weapon that transports any unprotected organic creature it touches into the Dark Dimension — an inescapable prison plane.
 - **600 gold pieces acquired** from Berlin's bag.
 - **Bixira's sacrifice and death:** Bixira faked unconsciousness, let the General grab her, and drove her dagger into his heart. She used her soul for the dark blessing — no revival possible. She died in Nixira's arms and left her a **warlord medallion** and a mark on her neck. Her last words: *"No dejes que el señor de la Centinela Era Blanca tome el trono."*
 - **Bixira's portal:** The collision of Bixira's soul-light and the General's volcanic meteorite opened an interdimensional portal to the Plano Oscuro. It is stable for five turns total. Whatever passes through — or comes through — remains unknown.
 - **Zacarías's blood oath to Val:** After the Troll battle, Zacarías prayed over the dwarven dead and cut his own arm. The mark of Val sealed itself onto his skin — an irrevocable oath to protect any dwarf he encounters.
 - **Sniper's capability:** He uses explosive arrowheads in addition to standard rounds. He possesses the **Lluvia de Flechas** ability (Rain of Arrows), which summons a storm cloud and converts rainfall into arrows over a wide area. He functions alone, using only a single high-precision weapon system.
-- **Draxa identified:** A bard of the **Veil of the Seven Songs** (Canción de los Siete Velos). Always maintains a clone of herself due to childhood trauma. Uses **Absolutum** — a compulsion requiring truthful answers. Her venom killed Cory instantly.
+- **Draxa identified:** A bard of the **El Velo de las Siete Canciones** (Canción de los Siete Velos). Always maintains a clone of herself due to childhood trauma. Uses **Absolutum** — a compulsion requiring truthful answers. Her venom killed Cory instantly.
 - **Nixira's curse exposed:** Draxa ripped the covering from Nixira's face, revealing the dwarven curse to Cory and Messi. Cory spared Nixira only because of Donner's favor — but the threat remains.
-- **Calium (Keylan) is alive:** Seen through Draxa's portal, seated on a silver throne, commanding the Veil of the Seven Songs. He launched a fireball through the portal before it closed.
+- **Calium (Keylan) is alive:** Seen through Draxa's portal, seated on a silver throne, commanding the El Velo de las Siete Canciones. He launched a fireball through the portal before it closed.
 - **The Veil knows Nixira's location:** Draxa's final words — *"La canción de los siete velos ahora sabe que estás acá"* — mean the brotherhood is now hunting Nixira specifically.
 - **Golden arrow (Messi's keepsake):** A decorative arrow given to Zacarías by Messi as a token of alliance before the dwarf forces withdrew.
 - **IcePeak favor coin acquired** by Tidus from Donner — usable with any IcePeak heir.
@@ -419,13 +419,13 @@ Behind them, the city burned.
 
 ### Consequences
 
-Sid is dead. Achawn is dead. Cory is dead — killed by Draxa's venom at the gate. Bixira is dead — her soul consumed to destroy the General. Berlin lost an eye to Draxa's magical strings. Zacarías carries the mark of Val and is sworn to protect every dwarf. Nixira carries the warlord medallion and the knowledge that the Veil of the Seven Songs has marked her. Tidus carries the Zafiro Esmeralda and an IcePeak coin that opens doors across a dynasty.
+Sid is dead. Achawn is dead. Cory is dead — killed by Draxa's venom at the gate. Bixira is dead — her soul consumed to destroy the General. Berlin lost an eye to Draxa's magical strings. Zacarías carries the mark of Val and is sworn to protect every dwarf. Nixira carries the warlord medallion and the knowledge that the El Velo de las Siete Canciones has marked her. Tidus carries the Zafiro Esmeralda and an IcePeak coin that opens doors across a dynasty.
 
 The party escaped Brasboredon. Draxa survived — badly wounded, 411 of her estimated 1000 HP taken — and retreated through a portal that revealed the most dangerous truth of all: Calium sits on a silver throne, alive, directing the Veil. He saw them. He attacked. He will come again.
 
 Donner departed to rally what remains of the dwarf rebellion. Messi left with the retreating forces, leaving Zacarías a golden arrow and a promise. The four who walk out — Tidus, Nixira, Zacarías, Berlin — carry more power and more enemies than when they entered.
 
-Behind them, Brasboredon burns. Ahead: the road to cure Lunei, with the Veil of the Seven Songs now hunting them.
+Behind them, Brasboredon burns. Ahead: the road to cure Luney, with the El Velo de las Siete Canciones now hunting them.
 
 The city lets you in. Getting out is a different kind of war.
 
@@ -438,7 +438,7 @@ The city lets you in. Getting out is a different kind of war.
 | **Tidus** | Alive. Led the escort group through the Sniper crossing. Witnessed Sid's death. Acquired Zafiro Esmeralda, Bomba de Oscuridad, 600 gp from Berlin. Saved Donner from divine possession with his medallion. |
 | **Nixira** | Alive. Exhausted. Engaged in rooftop combat with Dragon Trainer. Dagger in hand, acid burns healing from potion. Portal visible overhead. |
 | **Zacarías** | Alive. Fought the Troll with Bixira's dwarf escort. Equipped: Capa Sagrada (+5 Religión). Patron connection critically weakened. |
-| **Donner IcePeak** | Alive. Briefly possessed by Val and Moradin. Recovered. Rito shield active. Planning to rejoin his own forces after extracting the party. Lunei's older brother. |
+| **Donner IcePeak** | Alive. Briefly possessed by Val and Moradin. Recovered. Rito shield active. Planning to rejoin his own forces after extracting the party. Luney's older brother. |
 | **Messi** | Alive. Survived the crossing. Quiver depleted. Still mobile. |
 | **Sid** | **Dead.** Shot through the eyes by Sniper mid-crossing while his shield was split by an explosive arrow. |
 | **Achawn** | **Dead.** Killed during Sniper's Lluvia de Flechas. |
@@ -479,7 +479,7 @@ A merchant dynasty with warehouses throughout Brasboredon. Their market stalls i
 | Element | Role | Status |
 |---------|------|--------|
 | **Berlin** | Goblin shop-keeper, Gremory employee | Alive |
-| **Lunei Gremory (referenced)** | Afflicted with Frigid Woe in Eiselcross | Alive — incapacitated, awaiting the Zafiro Esmeralda |
+| **Luney IcePeak (referenced)** | Afflicted with Frigid Woe in Eiselcross | Alive — incapacitated, awaiting the Zafiro Esmeralda |
 
 #### The False Prophets (Val's Servants)
 A group of corrupted religious leaders operating under the false god known as Altaflama (the Black Flame). Three of their members have now been confirmed destroyed.
@@ -490,13 +490,13 @@ A group of corrupted religious leaders operating under the false god known as Al
 
 ---
 
-### NPC Tracker — Chapter 5
+### NPC Tracker — Chapter 6
 
 #### Donner IcePeak
 - **Who:** Renowned dwarven warrior, recognized across every continent with an education system. Uses an esgrima needle that transforms into a greatsword — suggests a martial-magical hybrid class (Eldritch Knight or similar). Carries a Rito enchantment ability. One of eight IcePeak brothers.
 - **What he did:** Accompanied Tidus through the Sniper crossing and the market. Coordinated the escort, absorbed a divine possession attempt from both Val and Moradin simultaneously, was saved by Tidus's medallion.
-- **What happened to him:** Briefly possessed by two deities following Altaflama's death curse. Recovered. Acquired a quartz fragment from Berlin that activated a Rito shield. Confirmed as Lunei's older brother.
-- **Related to:** Lunei (brother), the IcePeak family network, House Gremory (by reputation), Tidus (primary ally this chapter).
+- **What happened to him:** Briefly possessed by two deities following Altaflama's death curse. Recovered. Acquired a quartz fragment from Berlin that activated a Rito shield. Confirmed as Luney's older brother.
+- **Related to:** Luney (brother), the IcePeak family network, House Gremory (by reputation), Tidus (primary ally this chapter).
 - **End status:** **Alive** — planning to regroup with his forces, offering the party one final advantage against Sniper.
 
 ---
@@ -548,7 +548,7 @@ A group of corrupted religious leaders operating under the false god known as Al
 #### Berlin
 - **Who:** A goblin employed by House Gremory to maintain the market shops during the evacuation. Small, fastidious, extremely devoted to his employer. Carries a Bomba de Oscuridad and a bottomless coin pouch.
 - **What he did:** Provided the Zafiro Esmeralda (believed to be under Gremory family authorization), the Bomba de Oscuridad, and 600 gold pieces to Tidus.
-- **Related to:** House Gremory, Lunei (beneficiary of the gem), Donner (by employer relationship), Tidus (deceived by him).
+- **Related to:** House Gremory, Luney (beneficiary of the gem), Donner (by employer relationship), Tidus (deceived by him).
 - **End status:** **Alive** — remains in the market.
 
 ---

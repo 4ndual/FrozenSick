@@ -79,7 +79,7 @@ DM question: *"Hook to go to Costa Espada?"* — The DM is considering sending t
 - Do the players see the golden plaque on the wyrm? Will they adopt the Golden Fury "Wyrm Dorado"?
 - What if the players kill Verly Gremmory (the planned NPC guide)?
 - Should the recurring guards Koh and Khol be used in Brastabro?
-- What are the names of Capitán e Hijo? How do they connect to Lunei?
+- What are the names of Capitán e Hijo? How do they connect to Luney?
 - Name for the Sexy Tiefling? Connect her to Bahl or Malfas?
 - Hook to go to Costa Espada (Sword Coast)?
 - At level 5, mission to IcePeak?

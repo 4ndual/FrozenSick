@@ -267,9 +267,9 @@ Pero lo que vamos a construir Mario. Bueno chicos. No puede ser. Creo que creo q
 
 Para que sacas un efecto mental, el príncipe roto es más grande y más grueso que Tori. Cómo no tú estás casa?
 
-Bueno empecemos amigos. Verdad! Ustedes saben que el príncipe derrotó? Era conocido como un error legendario el tipo. Perdió un ala luchando contra el elemental de cristal que es precisamente el dragón. Es el bisnieto del dragón que fusionó su sangre con la humanidad para dar nacimientos. Los Dragon Ball es el único en el linaje.
+Bueno empecemos amigos. Verdad! Ustedes saben que el príncipe derrotó? Era conocido como un error legendario el tipo. Perdió un ala luchando contra el elemental de cristal que es precisamente el dragón. Es el bisnieto del dragón que fusionó su sangre con la humanidad para dar nacimientos. Los DragonLand es el único en el linaje.
 
-Pero Dragon Ball que fue capaz de salir victorioso de esas batallas. Y fue un drama todo Dragon Ball. Yo lo la muerte. Cex perdió el artista por todos los reinos. Nunca se encontró el asesino. Eso cambio todo el juego político porque terminó tomando el trono. El. La iguana. Será un príncipe ese se la puedo expectivo que le tienen ustedes.
+Pero DragonLand que fue capaz de salir victorioso de esas batallas. Y fue un drama todo DragonLand. Yo lo la muerte. Cex perdió el artista por todos los reinos. Nunca se encontró el asesino. Eso cambio todo el juego político porque terminó tomando el trono. El. La iguana. Será un príncipe ese se la puedo expectivo que le tienen ustedes.
 
 No saben el verdadero nombre, pero hagan de cuenta. Cómo le voy a decir que en el señor de los anillos. Y ahorita en el pueblo está vuelto mierda y House. Bueno si Se volvieron Venezuela como dijo Giovanni Vázquez Ustedes tienen algo que contarme? Gracias a Dios se instauró una dictadura comunista en uno de los reinos más consecuente ha matado al principio, pero.
 
@@ -321,7 +321,7 @@ Si Necesitan ayuda Yo lo único que necesito saber es por dónde van a arrancar 
 
 Yo opino que lo dejemos morir y nos quedemos con el bar. Estás loco mientras que vayamos a salvarlo? Dejemos a los goles atendiendo. Y por si no se lo den preguntado? Nunca hago una presentación en la taberna, Por eso estoy en la cocina donde nadie me ve toda esta gente se fue después de que tocara por una hora y ahora todo el mundo va a saber que no Mai Melody sino que como se llama.
 
-Kenitzira está aquí y la gente va a empezar a llegar aquí y yo no quiero que la gente llegue aquí por eso vi de todas partes Así que yo ya no me puedo quedar en este fucking lugar. Te das cuenta que en el bolsillo. Agarras la hoja. Y recuerdas que como luna y es un comerciante que tenía muchos negocios turbios como un gerente tomaba lista de las personas que estaban.
+Nixira Silversong está aquí y la gente va a empezar a llegar aquí y yo no quiero que la gente llegue aquí por eso vi de todas partes. Así que yo ya no me puedo quedar en este fucking lugar. Te das cuenta de que en el bolsillo agarras la hoja, y recuerdas que Luney es un comerciante que tenía muchos negocios turbios, como un gerente que tomaba lista de las personas que estaban.
 
 Tienes una lista de 24 personas para casar. Pues es que tú eres como una Montana. Ellos dos testigos un testigo 24 testigos.
 

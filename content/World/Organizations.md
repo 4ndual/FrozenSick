@@ -2,80 +2,64 @@
 
 ---
 
-## La Última Gota / El Unei
+## La ultima Gota
 
-**Type:** Front for covert operations
-**Leader:** Lunei Milei Maili
-**Base:** The Last Drop tavern (desert outpost)
+**Type:** Tavern front / covert refuge  
+**Leader:** Luney IcePeak  
+**Base:** The Last Drop, in the Dragon Scar
 
-A tavern that serves as a cover for shady dealings, harboring fugitives, and covert poison operations. Equipped with hidden weapons (Protocol Three: four concealed crossbows behind the bar), centipede essence poison, and coded "service diagrams" for targeting specific patrons. Known for the cocktail "Espíritus del Bosque" — enchanted water that draws out sad memories to make customers drink more.
+The Last Drop is more than a tavern. It is a shelter, intelligence node, poison kitchen, and emergency redoubt built around Luney IcePeak's discipline and paranoia. Protocol Three, coded service diagrams, and hidden weapons all confirm that Luney expected betrayal long before Chapter 1 began.
 
 | Member | Role | Status |
 |--------|------|--------|
-| **Lunei Milei Maili** | Owner, operator, strategist | Dying — magical coma from Ghost Essence |
-| **Tidus** | Waiter (former Dragonforce) | Active |
-| **Nixira** | Cook & band leader (former Veil of the Seven Songs) | Active — identity blown |
-| **Zacarías** | Guard / Doorman (Warlock, patron Malfas) | Critical — 0 HP |
-| **Lili** | Server / Bartender | Active |
-| **Billy** | Staff (unclear role) | Active — partially briefed |
-| **The Mute Dwarf** | Band member | Active |
+| **Luney IcePeak** | Owner, operator, strategist | Dying — magical coma from Ghost Essence |
+| **Tidus** | Waiter | Active |
+| **Nixira Silversong** | Cook and band leader | Active — identity exposed |
+| **Zacarías** | Guard / Doorman | Active |
+| **Billy** | Tavern associate | Active |
 
 ---
 
 ## The Five Great Houses of DragonLand
 
-**Type:** Feudal nobility — the political backbone of DragonLand
-
-Five great houses rule the domains of DragonLand, each associated with an element. A sixth zone — the **Dragon Scar** — is unclaimed no-man's-land where La Última Gota tavern sits.
-
-| House | Element | Domain | Title | Known Members |
-|-------|---------|--------|-------|--------------|
-| **Casa Gremmory** | Fire | Noctyra | Lords of Noctyra | XXXX Gremmory "El Sabio Zafiro" (criminal leader of Brastabro), Verly Gremmory, Torin Gremmory "El Paladín Sangriento" |
-| **Casa IcePeak** | Ice | Valdrenor | Lords of Valdrenor | Lunei (Rudolph) IcePeak, Blitzen IcePeak (Supreme Lord), + 7 siblings (WinterSpeak dynasty) |
-| **DragonHeart** | Arcana | Kharvok | Lords of Kharvok | *(No named members yet)* |
-| **Casa DeepWater** | Sea/Rivers | Draknor | Lords of Draknor and Other Lands | *(No named members yet)* |
-| **Casa Draksky** | Air/Wind | — | Union of minor lords | Farquad Drasky (military commander), Ginger Drasky |
+| House | Element | Domain | Notes |
+|-------|---------|--------|-------|
+| **Casa Gremmory** | Fire | Noctyra | Powerful merchant and criminal influence |
+| **Casa IcePeak** | Ice | Valdrenor | Luney and Donner's house |
+| **DragonHeart** | Arcana | Kharvok | Arcane nobility |
+| **Casa DeepWater** | Sea/Rivers | Draknor | Maritime influence |
+| **Casa Draksky** | Air/Wind | Regional union | Farquad's political home |
 
 ---
 
 ## Dragonforce
 
-**Type:** Military / special forces of DragonLand (not a criminal organization)
-**Known For:** Assassination-by-arson tactics (gunpowder trails + fire)
-**Symbol:** Logo appears on the bounty hunter's left pauldron
-
-The military and special forces of DragonLand — not a criminal organization per se, though individual operatives may act on behalf of criminal interests. Tidus was a former member (special agent for dragonborn royalty, akin to a "Dragonborn Delta Force") and instantly recognized their arson method when Red's crew deployed it at the tavern. The Bald Enemy's Dragonforce superior was impersonated by Zacarías using Minor Illusion, confirming a chain of command exists within the organization. Red's crew uses Dragonforce methods — possibly on Malacor's behalf — but it is **unconfirmed** whether Malacor formally leads or belongs to Dragonforce.
+Military force of DragonLand. In practice, their methods, discipline, and arson tactics make them terrifying even before politics enters the picture.
 
 | Person | Connection | Status |
 |--------|------------|--------|
-| **Tidus** | Former member / special agent | Left before campaign |
-| **The Bounty Hunter** | Wears Dragonforce logo prominently | Alive |
-| **The Bald Enemy** | Active soldier, subordinate of Malacor | **Dead** |
-| **Red / Reto** | Uses Dragonforce arson playbook; holds Tidus's secret | **Uncertain** — DM notes suggest dead; transcripts show escape |
+| **Tidus** | Former member | Left before campaign |
+| **The Bounty Hunter** | Wears their insignia | Alive |
+| **The Bald Enemy** | Active enforcer tied to Malacor | Dead |
+| **Red / Reto** | Uses Dragonforce-style arson methods | Uncertain |
 
 ---
 
-## El Velo de las Siete Canciones (Veil of the Seven Songs)
+## El Velo de las Siete Canciones
 
-**Type:** Secret society of musical witches
-**Original Purpose:** Palliative care — easing suffering of the magically ill through mental manipulation via music
-**Current Purpose:** Political manipulation network with agents on every throne in the known world
-
-Originally benevolent — members used their gift (the "don") to ease the pain of incurably ill people through musical mind manipulation. Someone close to **Keylan** corrupted the Veil, weaponizing their abilities to place puppet agents in the courts of every kingdom. Nixira was a member who fled when she discovered the corruption. Keylan betrayed and framed her, and the Veil is actively hunting her.
+Originally a musical order built around easing suffering. Now a political and occult network that weaponizes music, control, and access.
 
 | Person | Connection | Status |
 |--------|------------|--------|
-| **Nixira** | Former member — possesses the "don" | Fled, identity now exposed |
-| **Keylan** | Connected to the corruption; betrayed Nixira | Unknown — presumably still with the Veil |
+| **Nixira Silversong** | Former member | Hunted |
+| **Keylan / Calium** | Corruption and betrayal axis | Active |
+| **Draxa** | Field operative | Alive |
 
 ---
 
-## Las Cuerdas Rotas (The Broken Strings)
+## Las Cuerdas Rotas
 
-**Type:** Unknown — possibly law enforcement or bounty hunter guild
-**Identification:** Secret code recognized by Lunei
-
-The bounty hunter's primary affiliation. Identified by a secret verbal code that Lunei immediately recognized. No other information available.
+An organization recognized by a code phrase that Luney knew immediately. At minimum, it is tied to bounty work and formal enforcement structures.
 
 | Person | Connection | Status |
 |--------|------------|--------|
@@ -83,11 +67,9 @@ The bounty hunter's primary affiliation. Identified by a secret verbal code that
 
 ---
 
-## La Piedra Sangrante (The Bleeding Stone)
+## La Piedra Sangrante
 
-**Type:** Unknown — an order or company
-**Evidence:** Insignia appears on the bounty hunter's armor
-**Confidence:** Low — mentioned only once in garbled voice-to-text. May be Farquad's company, but textual evidence is insufficient to confirm.
+Insignia-bearing order associated with the bounty hunter. The organization remains underdefined, but its iconography is clearly relevant.
 
 | Person | Connection | Status |
 |--------|------------|--------|
@@ -95,88 +77,59 @@ The bounty hunter's primary affiliation. Identified by a secret verbal code that
 
 ---
 
-## Los Centinelas de Era la Blanca (La Blanca / White Era Sentinels)
+## Centinelas de la Era Blanca
 
-**Type:** Espionage and intelligence network
-**Known Operations:** Has sentinels and operatives; a sentinel with a dragon-hand mark on his forehead fled through the mountain caves carrying intelligence to DragonLand.
-
-An organization with operatives in the field. Their insignia appears on the bounty hunter's armor alongside Dragonforce and La Piedra Sangrante. Malacor's interference is disrupting La Blanca's operations, according to Dracus. **Khael Varos "El Heraldo"** (garbled in transcripts as "Caelvaros") is a confirmed operative of this organization.
+Espionage and intelligence network with field operatives and long memory.
 
 | Person | Connection | Status |
 |--------|------------|--------|
-| **Khael Varos "El Heraldo"** | Operative (top-priority poison target at tavern) | Alive — hiding, suspicious |
+| **Kahel Varos "El Heraldo"** | Confirmed operative | Alive |
+| **The Sentinel** | Messenger / scout | Presumed active |
 | **The Bounty Hunter** | Wears their insignia | Alive |
-| **The Sentinel** | Operative; fled to DragonLand with intel | Presumably reached destination |
 
 ---
 
-## Los Gouldings
+## Orden del Silencio
 
-**Type:** Unknown — possibly allied faction or the PCs' cover identity
-**Evidence:** Mentioned as a group that "cannot be exposed."
+Monastic order centered on discipline, anonymity, and specialized mastery.
 
-No members identified. No further details available.
-
----
-
-## Orden del Silencio (Order of Silence)
-
-**Type:** Monastic order (formerly referred to as "Caste of the Dead Without Names" / Nameless Order)
-**Philosophy:** Monks sacrifice their identities to achieve mastery over body and spirit
-**Master's Master:** A forest elf
-
-An order of monks who erase their names and histories to pursue three disciplines: Healing (orange flame), Invisibility (black flame), and Brute Force (red flame). Their true name is the **Orden del Silencio** (Order of Silence). The master known as **Señor Nadie** is in fact **Faorus Rain "The Silent Monk"**, holding the rank of "Lower Master" (Maestro Inferior).
-
-| Person | True Name | Discipline | Status |
-|--------|-----------|-----------|--------|
-| **Señor Nadie** | **Faorus Rain** "The Silent Monk" | Master — all three disciplines | Alive, allied |
-| **Rodrigo** | "The Healing Silent Monk" | Chi of Healing (orange) | **Dead** — darts through the neck |
-| **Fuercitas** | "The Strong Silent Monk" | Brute Force (red) | Alive, traveling with Nadie |
-| **Fresitas** | "The Invisible Silent Monk" | Invisibility (black) | Missing — still imprisoned? |
+| Person | Role | Status |
+|--------|------|--------|
+| **Señor Nadie / Faorus Rain** | Master | Alive |
+| **Rodrigo** | Pupil | Dead |
+| **Fuercitas** | Pupil | Alive |
+| **Fresitas** | Pupil | Missing |
 
 ---
 
 ## Farquad's Forces
 
-**Type:** Military / paramilitary
-**Commander:** Farquad Drasky (Casa Draksky — House of Air/Wind)
-
-A military force with soldiers, dragon trainers equipped with dragon whistles, and at least one Level 15 elven tactician. Used a Prison Tortuga to transport captured enemies to DragonLand. Connected to the Golden Crown through Farquad. Farquad is from **Casa Draksky**, the union of minor lords associated with the element of Air/Wind.
+Military / paramilitary apparatus under Farquad Drasky's command.
 
 | Person | Role | Status |
 |--------|------|--------|
-| **Farquad Drasky** | Commander (Casa Draksky) | Active |
-| **The Elven Tactician** | Elite operative (~Level 15) | Active |
-| **Dragon Trainers** | Carry dragon whistles | Active |
+| **Farquad Drasky** | Commander | Active |
+| **Elven Tactician** | Elite operative | Active |
+| **Dragon Trainers** | Support and control units | Active |
 
 ---
 
 ## Malacor's Network
 
-**Type:** Criminal network (structure unclear)
-**Leader:** Malacor / Malaquías
-**Weapon:** The Golden Crown (Corona Dorada) — mind-control artifact
-
-Malacor's operatives use Dragonforce methods, but whether Malacor formally leads Dragonforce is unconfirmed. He commands enforcers (the Bald Enemy), operatives (Red), and is disrupting La Blanca's operations. Former friend of Zacarías — their falling out is personal.
+Criminal and political disruption network centered on Malacor and his use of proxies.
 
 | Person | Role | Status |
 |--------|------|--------|
 | **Malacor** | Leader | At large |
-| **The Bald Enemy** | Enforcer | **Dead** |
-| **Red / Reto** | Operative using Dragonforce methods; holds Tidus's secret | **Uncertain** — DM notes suggest dead; transcripts show escape |
+| **The Bald Enemy** | Enforcer | Dead |
+| **Red / Reto** | Operative | Uncertain |
+| **Dracus** | Entangled asset | Uncertain |
 
 ---
 
-## Los Limpiadores (The Cleaners)
+## Canon Cleanup Notes
 
-**Type:** Neutral battlefield cleanup force
-**Alignment:** Strictly neutral — serves no faction
-**Minimum Level:** 10–12
-
-A cross-racial corps that operates in the aftermath of every battle across the known world. Their sole purpose is to clear the dead, tend to the wounded, and restore order. Composed of all races. Nobody attacks them — not rebels, not Dragonforce, not criminals. Their neutrality is absolute and universally respected.
-
-The DM noted that the party will interact more closely with Los Limpiadores at higher levels (~Level 10). For now, they appear as background figures clearing corpses and treating the injured after combat subsides.
-
-| Person | Connection | Status |
-|--------|------------|--------|
-| *(No named members yet)* | — | Active in Brasboredon during the revolution |
+- Unsupported stray roster entries were removed from canon.
+- Invalid roster entries were removed from canonical organization lists.
+- **Kahel Varos** is the only canonical form of that operative's name.
+- **Nixira Silversong** is the canonical name used across the project.

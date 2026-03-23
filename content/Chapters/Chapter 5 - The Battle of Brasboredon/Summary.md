@@ -1,11 +1,11 @@
-# Chapter 4: The Battle of Brasboredon — Session 06
+# Chapter 5 - The Battle of Brasboredon
 ## *"The city burned from both sides, and the only currency left was blood."*
 
 ---
 
 ### Setting the Scene
 
-The party has arrived at **Brasboredon**, a fortified town in the north-central region of DragonLand. Three days inside enemy territory. The city is tearing itself apart — a full-scale revolution rages through the streets. Rebel factions fight Dragonforce loyalists. Towers burn. Gates close. Gelatina barriers (living slime walls) seal off entire districts. Wyverns circle the skies above the Mansion. And somewhere in the chaos, three former tavern employees are trying to reach the heart of the city alive.
+This chapter begins when **Bixira frees the party from the orca** and throws them back into the war around **Brasboredon**. What happened between the escape from the Prison Tortuga and that moment belongs to the still-missing Chapter 4, but from here the narrative is clear: the party is already inside enemy territory, already scattered by the city, and already being forced to survive a revolution in motion. Brasboredon is tearing itself apart - Dragonforce loyalists, rebel fighters, sealed districts, burning towers, and wyverns over the Mansion. And somewhere in that chaos, three former tavern employees are trying to reach the heart of the city alive.
 
 They carry communication stones — small magical pebbles that let them speak across distances. They'll need them. By the end of this day, they won't be in the same part of the city anymore.
 
@@ -129,7 +129,7 @@ They improvise. A **Vicious Mockery freestyle rap battle**, Nixira spitting insu
 
 The psychic damage is lethal. One draconid clutches his throat, bleeding from the neck — Nixira's magic shredding his will to live. The second staggers, disoriented by the cascading insults. The third falls. Robinson scores a shield-strip that leaves them defenseless.
 
-In the quiet after, Nixira remembers **Lili**. The songs they used to share. The memory hurts more than the rune on her face.
+In the quiet after, Nixira remembers the songs she left behind with her old life and with the Veil. The memory hurts more than the rune on her face.
 
 ---
 
@@ -155,7 +155,7 @@ Zacarías is cornered. Behind him: gelatina. Ahead: a **stone invoker** — a dr
 
 He throws a stone as a distraction. The invoker turns — then feels the deception and pulls Nixira (who had been sneaking up from behind) toward him with the ground itself. She lands an 11-damage strike to his back.
 
-Zacarías reveals himself. Tries to speak draconic — three days of immersion should count for something. The invoker doesn't understand. Zacarías switches to magic: *"Aléjate!"* The Command spell bounces off harmlessly. A mark glows on the draconid's forehead — **psychic immunity**. Mind control doesn't work on this one.
+Zacarías reveals himself. Tries to speak draconic — three days of immersion should count for something. The invoker doesn't understand. Zacarías switches to magic: *"¡Aléjate!"* The Command spell bounces off harmlessly. A mark glows on the draconid's forehead — **psychic immunity**. Mind control doesn't work on this one.
 
 The fight goes badly. Zacarías attacks with Burning Hands — the draconid catches his **right hand** and rips it off.
 
@@ -227,7 +227,7 @@ Neutral cleanup force that operates after combat. All races. Minimum level 10-12
 
 ---
 
-### NPC Tracker — Chapter 4
+### NPC Tracker — Chapter 5
 
 #### Borax — The Envious Apprentice
 - **Who:** Black dragonborn. Former DragonForce apprentice and servant at the castle. Thin, pathetic, unable to produce even a spark during training. Everyone mocked him. Made a **demonic/otherworldly pact** for power — traded his soul through a talisman that filled incrementally (was at 5/6 when destroyed).
@@ -271,3 +271,4 @@ Neutral cleanup force that operates after combat. All races. Minimum level 10-12
 - **Who:** Rebel commander operating from near the Mansion. Controls the rebel communication channel.
 - **What she did:** Issued orders via communication stone. Told Tidus to get to the Mansion at any cost. Mounted a **Wyvern** — stabbing daggers into its eyes to steer it — and used it to fight two other wyverns in aerial combat above the Mansion.
 - **End status:** **Alive.** Engaged in aerial combat. Cannot assist the party.
+

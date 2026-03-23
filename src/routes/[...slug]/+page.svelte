@@ -278,19 +278,25 @@
   .wiki-content :global(h3),
   .wiki-content :global(h4),
   .wiki-content :global(h5) {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+    line-height: 1.15;
+    text-transform: uppercase;
     color: #eee;
     margin: 1.75rem 0 0.6rem;
   }
 
   .wiki-content :global(h1) {
-    font-size: 1.9rem;
+    font-size: clamp(2rem, 3vw, 2.55rem);
+    font-weight: 700;
     border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.5rem;
     margin-top: 0;
   }
 
   .wiki-content :global(h2) {
-    font-size: 1.4rem;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    font-weight: 600;
     border-bottom: 1px solid var(--border);
     padding-bottom: 0.3rem;
   }

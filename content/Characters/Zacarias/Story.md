@@ -29,7 +29,7 @@
 
 ## Chapter 1 — The Tavern
 
-Received a secret warning note from Lunei hidden under a drink. Attempted to haul water to neutralize the gunpowder but slipped and fell spectacularly in the kitchen. Part of the Protocol Three activation (hidden crossbows).
+Received a secret warning note from Luney hidden under a drink. Attempted to haul water to neutralize the gunpowder but slipped and fell spectacularly in the kitchen. Part of the Protocol Three activation (hidden crossbows).
 
 In the combat aftermath, revealed his gnome identity and connection to Malfas. Summoned a giant desert boa to dispose of the bald enemy's corpse. Stole coins using his raven-turned-mouse. Confessed his past connection to Malacor.
 
@@ -43,7 +43,7 @@ Broke out of his cell using bed-frame rods. Summoned raven to scout (it was diss
 
 In the demon's lair, poisoned his daggers with corrosive venom from the demon's cauldron. Delivered a devastating critical backstab on the demon. Got grabbed, stabbed with his own burning dagger, and knocked to **0 HP**. Scalp ripped off by the demon. Making death saving throws as the session ends.
 
-## Chapter 4 — The Battle of Brasboredon
+## Chapter 5 - The Battle of Brasboredon
 
 Entered Brasboredon through the main gate during the revolution. Summoned raven familiar to scout from above — witnessed the massacre: twenty children of all races dead in the streets, dwarven mothers wailing over charred bones. Initially called for "guerra muerte contra los dragones" over the communication stone.
 
@@ -55,7 +55,7 @@ After the party was separated by gates and gelatina barriers, ended up **trapped
 
 Meanwhile, Tidus found a trapped chest on a rooftop. Opened it with lockpicks, found stones inside. Pushed it off a trapdoor and heard someone calling for help — the session ended with Tidus attempting to disarm the bomb mechanism.
 
-## Chapter 5 — The Escape from Brasboredon
+## Chapter 6 - The Escape from Brasboredon
 
 Returned from death. After dying last session, Zacarías passed before Val, Malfas, and three other deities — including the **Llama Negra** bearing the Altaflama insignia — in the **Escritorio**, a timeless void where millennia pass in seconds. Malfas intervened to prevent Val from keeping his soul and gave him his mission: **find the false prophets**. His connection to his patron is now severely weakened; a second death may be permanent.
 
@@ -73,11 +73,11 @@ Received the **Capa Sagrada** — Altaflama's robe materialized on his shoulders
 
 **Donner's farewell:** Confronted by Donner, who slapped him and called him a fool for only killing the leader without dismantling the power structure behind him. Donner revealed the revolution wasn't supposed to happen today — Bixira forced it to rescue Zacarías. Zacarías defended his choice: *"No puede ser una persona. Si es una persona se pierde la esperanza."* Donner departed with the remaining forces, leaving the **IcePeak favor coin** with Tidus and the words: *"No dejes que muera la esperanza."*
 
-**Draxa confrontation:** Identified the witch at the gate as **Draxa** — a bard of the Veil of the Seven Songs. Recognized her clone technique (trauma from her twin's childhood murder) and relayed intelligence via communication stone: she had 500 HP when he last knew her, everything from her mouth is dangerous, and they needed to identify the real body.
+**Draxa confrontation:** Identified the witch at the gate as **Draxa** — a bard of the El Velo de las Siete Canciones. Recognized her clone technique (trauma from her twin's childhood murder) and relayed intelligence via communication stone: she had 500 HP when he last knew her, everything from her mouth is dangerous, and they needed to identify the real body.
 
 **Final battle:** Launched **Eldritch Blast** through his raven — first missed, second hit Draxa's face. His magic began failing (**magical dystrophy**) — legs gave out mid-sprint. Threw himself in front of Berlin to shield him from Draxa's string attacks — Berlin lost an eye. When the mark of Val burned on his arm, Zacarías rose and charged Draxa. Leapt into a pirouette, drove both daggers into her eyes while Messi's three arrows passed him mid-air. Combined party damage: **411 points**.
 
-Through Draxa's escape portal, saw **Calium** (Keylan) alive on a silver throne, directing the Veil of the Seven Songs. Calium launched a fireball through the portal before it closed.
+Through Draxa's escape portal, saw **Calium** (Keylan) alive on a silver throne, directing the El Velo de las Siete Canciones. Calium launched a fireball through the portal before it closed.
 
 **Messi's goodbye:** The dwarf archer approached Zacarías before leaving with the retreating forces. *"Cuenta conmigo si nos volvemos a encontrar."* Gave him a **golden arrow** — a decorative keepsake from his final tournament.
 
