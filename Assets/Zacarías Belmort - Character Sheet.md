@@ -14,7 +14,7 @@
 | **Size**           | Medium             |
 | **Height**         | 172                |
 | **Weight**         | 140                |
-| **Faith**          | La Hermandad de Moreno |
+| **Faith**          | Malphas, el Príncipe de los Cuervos |
 | **Hair**           | Calvo              |
 | **Skin**           | —                  |
 | **Eyes**           | Verdes             |
@@ -114,6 +114,13 @@ Attack, Magic, Dash, Disengage, Dodge, Help, Hide, Ready, Search, Utilize, Oppor
 ### Special
 
 - **Dark One's Blessing** — When you reduce an enemy to 0 HP, you gain 6 Temp HP. You also gain this benefit if someone else reduces an enemy within 10 ft. of you to 0 HP.
+
+---
+
+## Heridas y Condiciones Permanentes
+
+- **Mutilación Máxima:** Te falta la mano derecha. Fue arrancada en combate.
+- **La Marca de Val (Juramento de Sangre):** Tienes grabada en tu antebrazo una runa inquebrantable. Estás divina y moralmente obligado a proteger a cualquier enano que te encuentres.
 
 ---
 
@@ -221,7 +228,7 @@ Attack, Magic, Dash, Disengage, Dodge, Help, Hide, Ready, Search, Utilize, Oppor
 
 ## Allies & Organizations
 
-- **Organizations:** La Orden de la Piedra Sangrante
+- **Organizations:** La Orden de la Piedra Sangrante (Desprestigiado), Hermandad de la Garra de Malphas
 
 ---
 
