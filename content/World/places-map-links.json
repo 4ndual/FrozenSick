@@ -106,9 +106,9 @@
       "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=272&scale=9"
     },
     {
-      "place": "Dragon Born",
+      "place": "DragonBorn",
       "source": "burg",
-      "name": "Dragon Born",
+      "name": "DragonBorn",
       "id": 430,
       "x": 1440.7,
       "y": 282.03,
@@ -133,7 +133,7 @@
       "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&burg=68&scale=9"
     },
     {
-      "place": "La Ultima Gota",
+      "place": "La ultima Gota",
       "source": "marker",
       "name": "The Last Drop",
       "id": 83,
@@ -144,7 +144,7 @@
       "url": "https://azgaar.github.io/Fantasy-Map-Generator/?maplink=https%3A%2F%2Fraw.githubusercontent.com%2F4ndual%2FFrozenSick%2Fgithub%2Fcontent%2FWorld%2FDragonland%25202026-02-13-10-49.map&x=1384.49&y=287.56&scale=9"
     },
     {
-      "place": "La Última Gota",
+      "place": "La ultima Gota",
       "source": "marker",
       "name": "The Last Drop",
       "id": 83,

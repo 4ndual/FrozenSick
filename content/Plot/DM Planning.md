@@ -21,8 +21,8 @@
 |-----|------------------|-------|
 | **Falso Bahl** | — | Connected to the "Arco del Silencio" (Silence Arc). Possibly ties to Orden del Silencio. |
 | **Ginger Drasky** | Casa Draksky | Connected to "Viaje a RauthMir" — a journey to the Rauthmir province. |
-| **XXXX Gremmory "El Sabio Zafiro"** | Casa Gremmory | Criminal leaders of Brastabro. |
-| **Verly Gremmory** | Casa Gremmory | DM question: "NPC guide — what if they kill him?" |
+| **Tywin Gremmory** | Casa Gremmory | Current house leader shaping the Brastabro criminal side of the family. |
+| **Vermy Gremmory** | Casa Gremmory | Goblin guide / helper attached to the Gremmory thread. |
 | **Gemelos: Koh y Khol** | — | Recurring guards. DM question: "Use in Brastabro?" |
 | **Capitán e Hijo** | — | DM questions: "Names? How do they connect to Luney?" |
 
@@ -30,7 +30,7 @@
 
 - **Arco del Silencio** — Falso Bahl, connecting to the Orden del Silencio storyline.
 - **Viaje a RauthMir** — Ginger Drasky leads or connects to travel to the Rauthmir province (southwest DragonLand).
-- **Brastabro** — Criminal hub run by Gremmory house members. May involve Verly Gremmory as NPC guide.
+- **Brastabro** — Criminal hub run by Gremmory house members. May involve Vermy Gremmory as the practical local guide under Tywin's authority.
 
 ---
 
@@ -77,7 +77,7 @@ DM question: *"Hook to go to Costa Espada?"* — The DM is considering sending t
 ## Open DM Questions (Yellow Notes)
 
 - Do the players see the golden plaque on the wyrm? Will they adopt the Golden Fury "Wyrm Dorado"?
-- What if the players kill Verly Gremmory (the planned NPC guide)?
+- What if the players kill Vermy Gremmory (the planned NPC guide)?
 - Should the recurring guards Koh and Khol be used in Brastabro?
 - What are the names of Capitán e Hijo? How do they connect to Luney?
 - Name for the Sexy Tiefling? Connect her to Bahl or Malfas?

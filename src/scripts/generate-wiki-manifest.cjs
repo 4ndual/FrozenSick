@@ -11,29 +11,35 @@ function slugify(str) {
 }
 
 function slugifyPath(relPath) {
-  return relPath.replace(/\.md$/i, '').split(path.sep).map(slugify).join('/');
+  return relPath.replace(/\.(md|txt)$/i, '').split(path.sep).map(slugify).join('/');
 }
 
-function walkMd(dir, base) {
+function walkContent(dir, base) {
   const results = [];
   if (!fs.existsSync(dir)) return results;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (EXCLUDE.has(entry.name)) continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      results.push(...walkMd(full, base));
-    } else if (entry.name.endsWith('.md') && !EXCLUDE_FILES.has(entry.name)) {
+      results.push(...walkContent(full, base));
+    } else if (entry.name.match(/\.(md|txt)$/i) && !EXCLUDE_FILES.has(entry.name)) {
       results.push(path.relative(base, full));
     }
   }
   return results;
 }
 
-const mdFiles = walkMd(CONTENT_DIR, CONTENT_DIR);
+const contentFiles = walkContent(CONTENT_DIR, CONTENT_DIR);
 const slugToPath = {};
-for (const rel of mdFiles) {
+for (const rel of contentFiles) {
   const slug = '/' + slugifyPath(rel);
   slugToPath[slug] = 'content/' + rel;
+  const parts = rel.split(path.sep);
+  const fileName = parts[parts.length - 1].replace(/\.(md|txt)$/i, '').toLowerCase();
+  if ((fileName === 'summary' || fileName === 'index') && parts.length > 1) {
+    const parentSlug = '/' + slugifyPath(parts.slice(0, -1).join(path.sep));
+    slugToPath[parentSlug] = 'content/' + rel;
+  }
 }
 
 const outPaths = [

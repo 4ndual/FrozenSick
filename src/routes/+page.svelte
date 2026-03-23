@@ -28,7 +28,7 @@
     relations: 'Campaign Tools',
   };
 
-  const expandedItems = $state<Record<string, boolean>>({});
+  let expandedItems = $state<Record<string, boolean>>({});
   let storyPage = $state(0);
 
   /** Nav entries that are sections (have children), for landing cards. */
@@ -48,11 +48,30 @@
     return {
       title: item.title,
       href: item.href,
-      sub: item.sub?.map((subItem) => ({
-        title: subItem.title,
-        href: subItem.href,
-      })),
+      sub: dedupeHomeItems(
+        item.sub?.map((subItem) => ({
+          title: subItem.title,
+          href: subItem.href,
+        })) ?? [],
+      ),
     };
+  }
+
+  function dedupeHomeItems(items: HomeItem[]): HomeItem[] {
+    const seen = new Set<string>();
+    const normalized: HomeItem[] = [];
+
+    for (const item of items) {
+      const key = `${item.href}::${item.title}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      normalized.push({
+        ...item,
+        sub: item.sub ? dedupeHomeItems(item.sub) : undefined,
+      });
+    }
+
+    return normalized;
   }
 
   /** Group sections by display title and merge items; add standalone links to "Campaign Tools". */
@@ -61,18 +80,21 @@
 
     for (const entry of landingSections) {
       const title = cardTitle(entry);
-      const items = entry.children.map(toHomeItem);
+      const items = dedupeHomeItems(entry.children.map(toHomeItem));
       if (items.length === 0) continue;
       const existing = byTitle.get(title) ?? [];
-      byTitle.set(title, [...existing, ...items]);
+      byTitle.set(title, dedupeHomeItems([...existing, ...items]));
     }
 
     if (standaloneLinks.length > 0) {
       const existing = byTitle.get('Campaign Tools') ?? [];
-      byTitle.set('Campaign Tools', [
-        ...existing,
-        ...standaloneLinks.map((link) => ({ title: link.title, href: link.href })),
-      ]);
+      byTitle.set(
+        'Campaign Tools',
+        dedupeHomeItems([
+          ...existing,
+          ...standaloneLinks.map((link) => ({ title: link.title, href: link.href })),
+        ]),
+      );
     }
 
     return [...byTitle.entries()].map(([title, items]) => ({ title, items }));
@@ -100,6 +122,10 @@
 
   function itemKey(cardTitle: string, item: HomeItem): string {
     return `${cardTitle}:${item.href}:${item.title}`;
+  }
+
+  function subItemKey(cardTitle: string, item: HomeItem, subItem: HomeItem): string {
+    return `${itemKey(cardTitle, item)}:${subItem.href}:${subItem.title}`;
   }
 
   function isExpanded(cardTitle: string, item: HomeItem): boolean {
@@ -219,7 +245,7 @@
 
                     {#if isExpanded(card.title, item)}
                       <ul class="sub-list">
-                        {#each item.sub as subItem (subItem.href)}
+                        {#each item.sub as subItem (subItemKey(card.title, item, subItem))}
                           <li>
                             <a href={subItem.href} class="sub-link">{subItem.title}</a>
                           </li>

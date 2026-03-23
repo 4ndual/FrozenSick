@@ -7,6 +7,10 @@
   import { runMermaidIn } from '$lib/mermaid-client';
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
+  import type { WikiBreadcrumb, WikiEntryMeta } from '$lib/wiki-entry';
+  import WorldOrganizations from '$lib/components/world/WorldOrganizations.svelte';
+  import TrackerSubplots from '$lib/components/plot/TrackerSubplots.svelte';
+  import { worldOrganizationGroups } from '$lib/world-organizations';
 
   interface PageData {
     content: string;
@@ -19,6 +23,8 @@
     nav: NavEntry[];
     placeMapMatches: PlaceMapMatch[];
     placeMapFile: string;
+    entryMeta: WikiEntryMeta;
+    breadcrumbs: WikiBreadcrumb[];
     authenticated?: boolean;
   }
 
@@ -34,6 +40,7 @@
   );
   let container = $state<HTMLDivElement | undefined>(undefined);
   let currentPath = $derived($page.url.pathname);
+  let focusQuery = $derived($page.url.searchParams.get('focus') ?? '');
   let mermaidModalOpen = $state(false);
   let mermaidModalMarkup = $state('');
   let mermaidZoom = $state(1);
@@ -46,6 +53,7 @@
   let shouldFitModalGraph = $state(false);
   const MIN_ZOOM = 0.4;
   const MAX_ZOOM = 6;
+  const REFERENCE_SELECTOR = 'h1, h2, h3, h4, h5, h6, p, li, blockquote, td, th, summary, pre';
 
   $effect(() => {
     if (!browser || !html || !container) return;
@@ -56,6 +64,19 @@
         console.error('Failed to render Mermaid diagrams', error);
       });
     }, 50);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  });
+
+  $effect(() => {
+    if (!browser || !container) return;
+
+    const target = container;
+    const timer = window.setTimeout(() => {
+      highlightReferenceTarget(target, focusQuery, $page.url.hash.replace(/^#/, ''));
+    }, 120);
 
     return () => {
       window.clearTimeout(timer);
@@ -84,6 +105,53 @@
 
   function clamp(value: number, min: number, max: number): number {
     return Math.min(max, Math.max(min, value));
+  }
+
+  function normalizeText(value: string): string {
+    return value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function clearReferenceHighlights(target: ParentNode): void {
+    target.querySelectorAll('.reference-hit').forEach((node) => node.classList.remove('reference-hit'));
+  }
+
+  function highlightReferenceTarget(target: ParentNode, focus: string, anchor: string): void {
+    clearReferenceHighlights(target);
+
+    const normalizedFocus = normalizeText(focus);
+    const tokens = normalizedFocus.split(/\s+/).filter(Boolean);
+    let nodes = Array.from(target.querySelectorAll<HTMLElement>(REFERENCE_SELECTOR));
+
+    if (anchor) {
+      const anchorNode = target.querySelector<HTMLElement>(`#${CSS.escape(anchor)}`);
+      if (anchorNode) {
+        const anchorIndex = nodes.indexOf(anchorNode);
+        if (anchorIndex >= 0) {
+          nodes = nodes.slice(anchorIndex);
+        }
+      }
+    }
+
+    if (!normalizedFocus || tokens.length === 0) {
+      return;
+    }
+
+    const match =
+      nodes.find((node) => normalizeText(node.textContent || '').includes(normalizedFocus)) ??
+      nodes.find((node) => {
+        const text = normalizeText(node.textContent || '');
+        return tokens.every((token) => text.includes(token));
+      });
+
+    if (!match) return;
+
+    match.classList.add('reference-hit');
+    match.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   function resetMermaidView(): void {
@@ -199,8 +267,37 @@
   />
 
   <main class="wiki-main" data-testid="wiki-main">
-    <div class="wiki-content prose" bind:this={container} data-testid="wiki-content" aria-label="Wiki content">
+    <div class="wiki-shell">
+      <div class="wiki-meta-card">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          {#each data.breadcrumbs as crumb, index (crumb.href + crumb.label)}
+            {#if crumb.href}
+              <a href={crumb.href}>{crumb.label}</a>
+            {:else}
+              <span>{crumb.label}</span>
+            {/if}
+            {#if index < data.breadcrumbs.length - 1}
+              <span aria-hidden="true">/</span>
+            {/if}
+          {/each}
+        </nav>
+        <div class="entry-meta">
+          <span class="entry-badge entry-badge-{data.entryMeta.kind}">{data.entryMeta.badge}</span>
+          <span class="entry-description">{data.entryMeta.description}</span>
+        </div>
+      </div>
+
+      {#if data.sourcePath === 'content/World/Organizations.md'}
+        <WorldOrganizations groups={worldOrganizationGroups} />
+      {/if}
+
+      {#if data.sourcePath === 'content/Plot/Tracker/Subplots (Character-Specific).md'}
+        <TrackerSubplots />
+      {/if}
+
+      <div class="wiki-content prose" bind:this={container} data-testid="wiki-content" aria-label="Wiki content">
       {@html html}
+      </div>
     </div>
   </main>
 </div>
@@ -273,6 +370,91 @@
     padding-top: calc(56px + 2.5rem);
   }
 
+  .wiki-shell {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .wiki-meta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 88%, transparent), var(--bg-card));
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent-light);
+  }
+
+  .entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .entry-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.8rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+  }
+
+  .entry-badge-canon {
+    color: var(--gold);
+    border-color: rgba(212, 175, 55, 0.35);
+    background: rgba(212, 175, 55, 0.08);
+  }
+
+  .entry-badge-notes {
+    color: #e7c97d;
+    border-color: rgba(231, 201, 125, 0.28);
+    background: rgba(231, 201, 125, 0.08);
+  }
+
+  .entry-badge-transcript {
+    color: #98bfdc;
+    border-color: rgba(152, 191, 220, 0.28);
+    background: rgba(152, 191, 220, 0.08);
+  }
+
+  .entry-badge-reference {
+    color: #c7cce5;
+    border-color: rgba(199, 204, 229, 0.22);
+    background: rgba(199, 204, 229, 0.08);
+  }
+
+  .entry-description {
+    color: var(--text-muted);
+    font-size: 0.84rem;
+  }
+
   .wiki-content :global(h1),
   .wiki-content :global(h2),
   .wiki-content :global(h3),
@@ -284,6 +466,7 @@
     text-transform: uppercase;
     color: #eee;
     margin: 1.75rem 0 0.6rem;
+    scroll-margin-top: 92px;
   }
 
   .wiki-content :global(h1) {
@@ -303,6 +486,7 @@
 
   .wiki-content :global(p) {
     margin: 0.6rem 0;
+    overflow-wrap: anywhere;
   }
 
   .wiki-content :global(a) {
@@ -315,9 +499,11 @@
 
   .wiki-content :global(blockquote) {
     border-left: 4px solid var(--accent);
-    padding-left: 1rem;
+    padding: 0.85rem 1rem;
     margin: 1rem 0;
     color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.025);
+    border-radius: 0 10px 10px 0;
   }
 
   .wiki-content :global(.mermaid-wrapper) {
@@ -351,7 +537,7 @@
   .wiki-content :global(pre) {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 1rem;
     overflow-x: auto;
     margin: 1rem 0;
@@ -360,6 +546,8 @@
   .wiki-content :global(.wiki-table-wrapper) {
     overflow-x: auto;
     margin: 1rem 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
   }
 
   .wiki-content :global(table) {
@@ -387,6 +575,7 @@
     padding: 0.55rem 0.75rem;
     border: 1px solid var(--border);
     text-align: left;
+    vertical-align: top;
   }
 
   .wiki-content :global(th) {
@@ -402,6 +591,15 @@
   .wiki-content :global(code) {
     font-family: ui-monospace, monospace;
     font-size: 0.9em;
+    word-break: break-word;
+  }
+
+  .wiki-content :global(.reference-hit) {
+    outline: 2px solid rgba(212, 175, 55, 0.85);
+    box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.12);
+    border-radius: 10px;
+    background: rgba(212, 175, 55, 0.08);
+    transition: box-shadow 0.2s ease, background 0.2s ease;
   }
 
   .wiki-content :global(ul),
@@ -486,6 +684,30 @@
       margin-left: 0;
       padding: 2rem 1.25rem;
       padding-top: calc(56px + 4rem);
+      width: auto;
+      max-width: none;
+    }
+
+    .wiki-meta-card {
+      padding: 0.85rem 0.9rem;
+      border-radius: 12px;
+    }
+
+    .wiki-content :global(h1) {
+      font-size: clamp(1.55rem, 7vw, 2rem);
+    }
+
+    .wiki-content :global(h2) {
+      font-size: clamp(1.1rem, 5vw, 1.4rem);
+    }
+
+    .wiki-content :global(table) {
+      min-width: 680px;
+      font-size: 0.86rem;
+    }
+
+    .wiki-content :global(blockquote) {
+      padding: 0.75rem 0.85rem;
     }
 
     .mermaid-modal {

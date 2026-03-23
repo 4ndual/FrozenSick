@@ -267,4 +267,4 @@ I've learned to live between cultures, between laws, and between wars—doing wh
 
 ### Additional Notes
 
-Mato al príncipe roto, el heredero al trono de DragonBorne.
+Mato al príncipe roto, el heredero al trono de DragonBorn.

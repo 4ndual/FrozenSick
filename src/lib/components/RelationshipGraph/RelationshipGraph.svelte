@@ -90,7 +90,6 @@
           animated: rel.type === 'concurrent',
           style: `stroke: ${EDGE_COLORS[rel.type] ?? '#6a6a9a'}; stroke-width: 2`,
           labelStyle: 'font-size: 11px; font-family: Crimson Text; fill: var(--text-muted)',
-          labelBgStyle: 'fill: var(--surface-2); opacity: 0.9',
           markerEnd: { type: 'arrowclosed', color: EDGE_COLORS[rel.type] ?? '#6a6a9a' },
         });
       }
@@ -173,7 +172,7 @@
         saveGraphLayout(savedPositions);
       }}
     >
-      <Background gap={24} size={1} color="var(--border)" />
+      <Background gap={24} size={1} />
       <Controls style="background:var(--surface-2);border:1px solid var(--border);border-radius:6px" />
       <MiniMap
         nodeColor={(n) => {

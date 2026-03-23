@@ -18,6 +18,17 @@ marked.use({
   },
 });
 
+function slugifyHeading(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/&[^;]+;/g, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, '&amp;')
@@ -51,13 +62,25 @@ function toRaw(parsed: string | Promise<string>): string {
   return typeof parsed === 'string' ? parsed : String(parsed ?? '');
 }
 
+function addHeadingIds(html: string): string {
+  const seen = new Map<string, number>();
+
+  return html.replace(/<h([1-6])>([\s\S]*?)<\/h\1>/g, (_match, level: string, inner: string) => {
+    const base = slugifyHeading(inner) || `section-${seen.size + 1}`;
+    const count = seen.get(base) ?? 0;
+    seen.set(base, count + 1);
+    const id = count === 0 ? base : `${base}-${count + 1}`;
+    return `<h${level} id="${id}" data-heading-anchor="${id}">${inner}</h${level}>`;
+  });
+}
+
 /**
  * Server-safe render: marked + minimal strip only. No isomorphic-dompurify (avoids ESM deps on Vercel).
  * Use for SSR. Client will run full sanitization on hydration.
  */
 export function renderMarkdownServer(md: string): string {
   const raw = toRaw(marked.parse(md));
-  return serverSanitize(raw);
+  return addHeadingIds(serverSanitize(raw));
 }
 
 function serverSanitize(html: string): string {
@@ -74,11 +97,11 @@ function serverSanitize(html: string): string {
 export async function renderMarkdownClient(md: string): Promise<string> {
   const raw = toRaw(marked.parse(md));
   const DOMPurify = (await import('isomorphic-dompurify')).default;
-  return DOMPurify.sanitize(raw, {
+  return addHeadingIds(DOMPurify.sanitize(raw, {
     ALLOWED_TAGS,
     ALLOWED_ATTR,
     ALLOW_DATA_ATTR: false,
-  });
+  }));
 }
 
 /**

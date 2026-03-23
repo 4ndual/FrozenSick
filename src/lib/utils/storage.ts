@@ -163,7 +163,7 @@ export const DEFAULT_CAMPAIGN: CampaignData = {
     {
       id: 'ch1-tavern',
       title: 'The Tavern Job',
-      description: 'The party meets at La Última Gota and takes their first contract together.',
+      description: 'The party meets at La ultima Gota and takes their first contract together.',
       date: { year: 1489, month: 1, day: 1 },
       endDate: null,
       timelineId: 'main-story',
