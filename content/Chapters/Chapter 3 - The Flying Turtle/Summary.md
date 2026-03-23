@@ -118,8 +118,8 @@ A monastic order (formerly called "Caste of the Dead Without Names") encountered
 | **Fuercitas** | Brute Force (red flame) | Freed from prison. The youngest pupil — stole the forbidden chi-astral book that got them all imprisoned. | Alive, with Nadie |
 | **Fresitas** | Invisibility (black flame) | Not found in the Prison Tortuga. | **Missing** — still imprisoned? |
 
-#### Farquad's Forces / DragonLand Military
-The Prison Tortuga is a Farquad/DragonLand military asset. Guards and security systems maintained by this force.
+#### Farquad's Command / DragonLand Military
+The Prison Tortuga is a Farquad and DragonLand military asset. Guards and security systems are maintained by the command currently loyal to him.
 
 | Element | Role | Status |
 |---------|------|--------|

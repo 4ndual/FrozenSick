@@ -10,6 +10,8 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "generate-manifest": "node src/scripts/generate-wiki-manifest.cjs",
+    "wiki:normalize": "node scripts/wiki-normalize.mjs",
+    "wiki:audit": "node scripts/wiki-audit.mjs",
     "ollama-test": "bun run ollama-test.ts"
   },
   "dependencies": {
@@ -27,6 +29,7 @@
     "@sveltejs/kit": "^2.10.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@tailwindcss/vite": "^4.2.1",
+    "@types/node": "^25.5.0",
     "svelte": "^5.53.7",
     "svelte-check": "^4.1.0",
     "tailwindcss": "^4.2.1",

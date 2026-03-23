@@ -1,135 +1,97 @@
-# Organizations — Frozen Sick
+# Organizations - Frozen Sick
 
 ---
 
-## La ultima Gota
+This page now treats each organization as its own entity and separates the Five Great Houses into a nested political structure instead of a single mega-organization.
+
+## Major Orders and Factions
+
+### La ultima Gota
 
 **Type:** Tavern front / covert refuge  
 **Leader:** Luney IcePeak  
-**Base:** The Last Drop, in the Dragon Scar
+**Base:** The Dragon Scar
 
-The Last Drop is more than a tavern. It is a shelter, intelligence node, poison kitchen, and emergency redoubt built around Luney IcePeak's discipline and paranoia. Protocol Three, coded service diagrams, and hidden weapons all confirm that Luney expected betrayal long before Chapter 1 began.
+La ultima Gota is the party's safest known refuge and one of the clearest operational hubs in the setting. It is both sanctuary and trap-ready stronghold.
 
-| Member | Role | Status |
-|--------|------|--------|
-| **Luney IcePeak** | Owner, operator, strategist | Dying — magical coma from Ghost Essence |
-| **Tidus** | Waiter | Active |
-| **Nixira Silversong** | Cook and band leader | Active — identity exposed |
-| **Zacarías** | Guard / Doorman | Active |
-| **Billy** | Tavern associate | Active |
+### Dragonforce
 
----
+**Type:** Military machine of DragonLand  
+**Command center:** DragonBorn
+
+Dragonforce enforces crown power and increasingly reflects Dranlek's brutality.
+
+### El Velo de las Siete Canciones
+
+**Type:** Musical order turned covert network  
+**Legacy alias:** Las Cuerdas Rotas
+
+These names refer to the same organization. The canonical name across the project is **El Velo de las Siete Canciones**. It began as a healing order and became a political instrument with agents, handlers, and compromised loyalties.
+
+### La Piedra Sangrante
+
+**Type:** Heraldic order  
+**Status:** Underdefined but symbolically important
+
+Its insignia appears on **Kahel Varos "El Heraldo"**, which keeps it politically relevant even if its hierarchy remains obscure.
+
+### Centinelas de la Era Blanca
+
+**Type:** Intelligence and sentinel network  
+**Known operative:** Kahel Varos "El Heraldo"
+
+The organization moves information quickly and appears wherever older loyalties and field intelligence still matter.
+
+### Orden del Silencio
+
+**Type:** Monastic order  
+**Known figures:** Senor Nadie, Fuercitas, Fresitas, Rodrigo
+
+A discipline-driven order with a major impact on Chapter 3 onward.
 
 ## The Five Great Houses of DragonLand
 
-| House | Element | Domain | Notes |
-|-------|---------|--------|-------|
-| **Casa Gremmory** | Fire | Noctyra | Powerful merchant and criminal influence |
-| **Casa IcePeak** | Ice | Valdrenor | Luney and Donner's house |
-| **DragonHeart** | Arcana | Kharvok | Arcane nobility |
-| **Casa DeepWater** | Sea/Rivers | Draknor | Maritime influence |
-| **Casa Draksky** | Air/Wind | Regional union | Farquad's political home |
+This is a political family bloc, not a single organization. Each house below stands alone.
 
----
+### Casa Gremmory
 
-## Dragonforce
+**Element:** Fire  
+**Domain:** Noctyra
 
-Military force of DragonLand. In practice, their methods, discipline, and arson tactics make them terrifying even before politics enters the picture.
+Commercial, political, and coercive influence concentrated in the fire-aligned regions.
 
-| Person | Connection | Status |
-|--------|------------|--------|
-| **Tidus** | Former member | Left before campaign |
-| **The Bounty Hunter** | Wears their insignia | Alive |
-| **The Bald Enemy** | Active enforcer tied to Malacor | Dead |
-| **Red / Reto** | Uses Dragonforce-style arson methods | Uncertain |
+**Known figures:** Tywin Gremmory, Torin Gremmory, Vermy Gremmory
 
----
+### Casa IcePeak
 
-## El Velo de las Siete Canciones
+**Element:** Ice  
+**Domain:** Valdrenor
 
-Originally a musical order built around easing suffering. Now a political and occult network that weaponizes music, control, and access.
+The house most tied to the party through Luney, Donner, and the wider WinterSpeak line.
 
-| Person | Connection | Status |
-|--------|------------|--------|
-| **Nixira Silversong** | Former member | Hunted |
-| **Keylan / Calium** | Corruption and betrayal axis | Active |
-| **Draxa** | Field operative | Alive |
+### DragonHeart
 
----
+**Element:** Arcana  
+**Domain:** Kharvok
 
-## Las Cuerdas Rotas
+Arcane nobility aligned with the kingdom's central power structure.
 
-An organization recognized by a code phrase that Luney knew immediately. At minimum, it is tied to bounty work and formal enforcement structures.
+### Casa DeepWater
 
-| Person | Connection | Status |
-|--------|------------|--------|
-| **The Bounty Hunter** | Active representative | Alive |
+**Element:** Sea / Rivers  
+**Domain:** Draknor
 
----
+River and maritime influence with logistical relevance across the island.
 
-## La Piedra Sangrante
+### Casa Draksky
 
-Insignia-bearing order associated with the bounty hunter. The organization remains underdefined, but its iconography is clearly relevant.
+**Element:** Air / Wind  
+**Domain:** Confederated territories
 
-| Person | Connection | Status |
-|--------|------------|--------|
-| **The Bounty Hunter** | Wears their insignia | Alive |
+A looser union of minor lords. Farquad belongs to this house, but his personal troops are not treated here as a separate formal organization.
 
----
+## Canon Decisions Applied
 
-## Centinelas de la Era Blanca
-
-Espionage and intelligence network with field operatives and long memory.
-
-| Person | Connection | Status |
-|--------|------------|--------|
-| **Kahel Varos "El Heraldo"** | Confirmed operative | Alive |
-| **The Sentinel** | Messenger / scout | Presumed active |
-| **The Bounty Hunter** | Wears their insignia | Alive |
-
----
-
-## Orden del Silencio
-
-Monastic order centered on discipline, anonymity, and specialized mastery.
-
-| Person | Role | Status |
-|--------|------|--------|
-| **Señor Nadie / Faorus Rain** | Master | Alive |
-| **Rodrigo** | Pupil | Dead |
-| **Fuercitas** | Pupil | Alive |
-| **Fresitas** | Pupil | Missing |
-
----
-
-## Farquad's Forces
-
-Military / paramilitary apparatus under Farquad Drasky's command.
-
-| Person | Role | Status |
-|--------|------|--------|
-| **Farquad Drasky** | Commander | Active |
-| **Elven Tactician** | Elite operative | Active |
-| **Dragon Trainers** | Support and control units | Active |
-
----
-
-## Malacor's Network
-
-Criminal and political disruption network centered on Malacor and his use of proxies.
-
-| Person | Role | Status |
-|--------|------|--------|
-| **Malacor** | Leader | At large |
-| **The Bald Enemy** | Enforcer | Dead |
-| **Red / Reto** | Operative | Uncertain |
-| **Dracus** | Entangled asset | Uncertain |
-
----
-
-## Canon Cleanup Notes
-
-- Unsupported stray roster entries were removed from canon.
-- Invalid roster entries were removed from canonical organization lists.
-- **Kahel Varos** is the only canonical form of that operative's name.
-- **Nixira Silversong** is the canonical name used across the project.
+- **El Velo de las Siete Canciones** is the canonical name. `Las Cuerdas Rotas` survives only as a legacy alias.
+- **Farquad's Forces** was removed as a formal organization. It remains valid only as a descriptive phrase for troops loyal to Farquad.
+- **Malacor's Network** was removed as a formal organization. References now treat it as Malacor's operatives, circle, or influence rather than an institution.

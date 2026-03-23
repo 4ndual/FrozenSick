@@ -46,9 +46,9 @@ Major off-screen antagonist. Commands operatives, manipulates events through pro
 
 ---
 
-### The Bounty Hunter
+### Kahel Varos "El Heraldo"
 
-The pressure source at the tavern in Chapter 1. Covered in insignias, carrying legal authority and intimidation in equal measure. Survived the incident.
+The pressure source at the tavern in Chapter 1. Covered in insignias, carrying legal authority and intimidation in equal measure. He did not survive the wider Chapter 1 fallout, but his arrival reshaped the entire arc.
 
 ---
 
@@ -88,9 +88,9 @@ Powerful dwarven combatant from House IcePeak. Formed a bond with Tidus during t
 | Name | Details | Last Chapter | Status |
 |------|---------|--------------|--------|
 | **Rainbow / Don Rainbow** | Bitter rival of Nixira Silversong. Holds history over her and reacted violently when she was exposed. | Ch.1 | Uncertain |
-| **Kahel Varos "El Heraldo"** | Centinelas de la Era Blanca operative and top-priority poison target in Chapter 1. This is the correct unified form of the name. | Ch.1 | Alive |
+| **Kahel Varos "El Heraldo"** | Centinelas de la Era Blanca operative tied to the Chapter 1 tavern pressure arc. | Ch.1 | Dead |
 | **Prince Robin / Ala Rota** | Assassinated legitimate heir to the Dragonborn throne. | Pre-campaign | Dead |
-| **Keylan / Calium** | Figure tied to the Veil's corruption and Nixira's betrayal. | Ch.6 | Alive |
+| **Kaelan Thorne "La Cuerda Rota"** | Figure tied to the Veil's corruption and Nixira's betrayal. | Ch.6 | Alive |
 | **Robinson** | Companion traveling with Nixira through the rebellion arc. | Ch.6 | Presumed dead |
 | **Bixira** | Rebel commander who died after sacrificing herself in Brasboredon. | Ch.6 | Dead |
 | **Sniper** | Elite archer who dominated the crossing until Donner killed him. | Ch.6 | Dead |
@@ -103,11 +103,9 @@ Powerful dwarven combatant from House IcePeak. Formed a bond with Tidus during t
 
 | Name | Details | Status |
 |------|---------|--------|
-| **Billy** | Tavern associate partially briefed by Luney before chaos erupted. | Alive |
 | **Rogelio Ardiente** | Tavern customer called out by name. | Alive |
 | **Drogo** | Mentioned by Dracus as someone on a red-dragon mission. | Off-screen |
 | **The Elven Tactician** | High-level operative working with Farquad. | Active |
-| **The Sentinel / Centinela** | Centinelas de la Era Blanca scout who carried intelligence toward DragonLand. | Presumed active |
 | **The Fat Merchant** | Loud patron tied to Dracus. | Alive |
 | **Buster** | Innocent patron killed by a stray Protocol Three bolt. | Dead |
 | **The Dwarf Mother** | Branded Nixira with the "asesina de niños" curse. | Alive |
@@ -122,5 +120,6 @@ Powerful dwarven combatant from House IcePeak. Formed a bond with Tidus during t
 
 - **Luney IcePeak** is the canonical name used across the project.
 - **Kahel Varos** is the canonical form used across the project.
+- **Kaelan Thorne "La Cuerda Rota"** is the canonical form used for the Veil traitor across the project.
 - **Nixira Silversong** is the canonical form used across the project.
 - Invalid stray entities were removed from canonical reference because they do not belong to the story.

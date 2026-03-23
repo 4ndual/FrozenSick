@@ -12,6 +12,7 @@ import {
 } from '$lib/server/github-content';
 import { fetchPlaceMapLinks } from '$lib/server/place-map-links';
 import { extractMapFileNameFromRawUrl } from '$lib/place-map-links';
+import { buildBreadcrumbs, classifyWikiEntry } from '$lib/wiki-entry';
 import {
   slugifyPath,
 } from '$lib/utils/slugify';
@@ -89,6 +90,8 @@ export const load: PageServerLoad = async ({ params, url, cookies }) => {
       content: file.content,
       slug,
       sourcePath,
+      entryMeta: classifyWikiEntry(sourcePath),
+      breadcrumbs: buildBreadcrumbs(sourcePath),
       branch,
       defaultBranch,
       branches: filteredBranches,

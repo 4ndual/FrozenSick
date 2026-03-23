@@ -1,6 +1,5 @@
 <script lang="ts">
   import { campaign } from '$lib/store/campaign.svelte';
-  import { exportCampaign, importCampaign } from '$lib/utils/storage';
   import { browser } from '$app/environment';
 
   async function handleImport() {

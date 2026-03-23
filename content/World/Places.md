@@ -9,7 +9,7 @@
 ### DragonLand (Continent / Island)
 
 **Type:** Major landmass — the Dragonborn kingdom
-**Capital:** Dragon Born (island off the eastern coast)
+**Capital:** DragonBorn (island off the eastern coast)
 
 DragonLand is a large island continent and the primary setting of the campaign. It is the homeland of the Dragonborn and the seat of their political power. The landscape is varied: dense forests (green regions), arid plains and deserts (tan interior), mountains, and coastal settlements. A network of roads and trade routes (dashed red lines on the map) connects the major towns.
 
@@ -31,7 +31,7 @@ The **Dragon Scar** is unclaimed no-man's-land between the house domains. This i
 
 | Province | Type | Notable Settlements |
 |----------|------|---------------------|
-| **Kharvok** | Core | Dragon Born (capital), Sasingscast, Knutsted, Hitchestab, Meaux, Escres |
+| **Kharvok** | Core | DragonBorn (capital), Sasingscast, Knutsted, Hitchestab, Meaux, Escres |
 | **Noctyra** | Core | Thorn, Pilmondford, Romberby, Malceston |
 | **Valdrenor** | Core | Betford, Blandford, Folerington |
 | **Drakmor** | Core | Axbrid, Stansham, Romberden |
@@ -52,7 +52,7 @@ The **Dragon Scar** is unclaimed no-man's-land between the house domains. This i
 
 | Settlement | Pop. | Class | Features | Map Position |
 |-----------|------|-------|----------|-------------|
-| **Dragon Born** | ~19,300 | Capital | port, citadel, plaza, walls, temple, shanty | East (island) |
+| **DragonBorn** | ~19,300 | Capital | port, citadel, plaza, walls, temple, shanty | East (island) |
 | **Whitneston** | ~20,400 | Town | — | South-central |
 | **Qhenchod** | ~20,300 | City | port, plaza, walls | Far southeast |
 | **Axbrid** | ~17,800 | Village | port | West |
@@ -104,7 +104,7 @@ The **Dragon Scar** is unclaimed no-man's-land between the house domains. This i
 
 ---
 
-### Dragon Born (Island)
+### DragonBorn (Island)
 
 **Type:** Small island off the eastern coast of DragonLand
 **Current Status:** The party is NOT here — they are in Brasboredon
@@ -121,7 +121,7 @@ A separate island to the east of the DragonLand mainland, connected to the Brast
 - Bridge connecting districts
 - Security towers with zipline-like transport systems
 
-**City Districts (revealed in Chapter 4):**
+**City Districts (revealed in Chapter 5):**
 
 | District | Description |
 |----------|-------------|
@@ -183,10 +183,10 @@ A vast cave system expanded and fortified by the forest elves. Water seeps from 
 ### The Prison Tortuga (Giant Fire Turtle)
 
 **Type:** Mobile prison / living dungeon
-**Route:** From the mountain caves eastward toward Dragon Born island
+**Route:** From the mountain caves eastward toward DragonBorn island
 **Chapter(s):** 3
 
-A massive fire-elemental turtle trained to carry prisoners. The prison is built into the grooves between its colossal scales, roofed with immovable marble vaulting. Corridors feature acid glands, dart traps, pressure-plate crushing pillars, and spike-like scales. Was running at full speed toward Dragon Born.
+A massive fire-elemental turtle trained to carry prisoners. The prison is built into the grooves between its colossal scales, roofed with immovable marble vaulting. Corridors feature acid glands, dart traps, pressure-plate crushing pillars, and spike-like scales. Was running at full speed toward DragonBorn.
 
 **Notable Features:**
 - Individual cells with rusted bars and padlocks
@@ -200,7 +200,7 @@ A massive fire-elemental turtle trained to carry prisoners. The prison is built 
 ### The Demon's Lair (Volcanic Chamber)
 
 **Type:** Volcanic dungeon
-**Location:** Underground, along the Prison Tortuga's route toward Dragon Born
+**Location:** Underground, along the Prison Tortuga's route toward DragonBorn
 **Chapter(s):** 3
 
 A volcanic chamber built around a lake of condemned souls. A raised platform above the magma-glow served as Victus's domain. The doors are shaped like his wings — they unlocked when he died.

@@ -13,6 +13,17 @@
 
   type NavAction = 'hide' | 'delete';
   type StatusState = 'idle' | 'working' | 'success' | 'error';
+  type SearchResult = {
+    title: string;
+    href: string;
+    sourcePath: string;
+    badge: string;
+    kind: string;
+    snippet: string;
+    section: string;
+    focusText: string;
+    anchor: string;
+  };
 
   let { nav, branch = null, defaultBranch = 'main', authenticated = false }: Props = $props();
 
@@ -26,6 +37,13 @@
   let statusPrUrl = $state<string | null>(null);
   let actionBusy = $state(false);
   let confirmDelete = $state<{ open: boolean; item: NavItem | null }>({ open: false, item: null });
+  let searchQuery = $state('');
+  let searchResults = $state<SearchResult[]>([]);
+  let searchLoading = $state(false);
+  let searchOpen = $state(false);
+  let searchError = $state('');
+  let searchDebounce: ReturnType<typeof setTimeout> | null = null;
+  let searchAbort: AbortController | null = null;
 
   const MOBILE_BREAKPOINT = 768;
   const sectionStorageKey = 'wiki-nav-sections-open-v1';
@@ -66,6 +84,19 @@
     if (typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT) {
       sidebarOpen = false;
     }
+  }
+
+  function isActiveHref(href: string): boolean {
+    return currentPath === href;
+  }
+
+  function folderHasActiveChild(item: NavItem): boolean {
+    if (!item.sub || item.sub.length === 0) return false;
+    return item.sub.some((subItem) => isActiveHref(subItem.href));
+  }
+
+  function sectionHasActiveChild(section: NavSection): boolean {
+    return section.children.some((child) => isActiveHref(child.href) || folderHasActiveChild(child));
   }
 
   function announceOverlayOpen(source: string) {
@@ -219,16 +250,89 @@
     confirmDelete = { open: false, item: null };
   }
 
+  async function runSearch(query: string) {
+    if (searchAbort) searchAbort.abort();
+    if (query.trim().length < 2) {
+      searchResults = [];
+      searchLoading = false;
+      searchError = '';
+      return;
+    }
+
+    searchAbort = new AbortController();
+    searchLoading = true;
+    searchError = '';
+
+    try {
+      const params = new URLSearchParams({ q: query.trim() });
+      if (branch && branch !== defaultBranch) {
+        params.set('branch', branch);
+      }
+      const res = await fetch(`/api/wiki/search?${params.toString()}`, {
+        signal: searchAbort.signal,
+      });
+      if (!res.ok) {
+        throw new Error('Search request failed.');
+      }
+      const data = (await res.json()) as { results?: SearchResult[] };
+      searchResults = data.results ?? [];
+      searchOpen = true;
+    } catch (error) {
+      if ((error as Error).name === 'AbortError') return;
+      searchResults = [];
+      searchError = 'Search is temporarily unavailable.';
+      searchOpen = true;
+    } finally {
+      searchLoading = false;
+    }
+  }
+
+  function handleSearchInput(value: string) {
+    searchQuery = value;
+    searchOpen = true;
+    if (searchDebounce) clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(() => {
+      void runSearch(value);
+    }, 160);
+  }
+
+  function clearSearch() {
+    searchQuery = '';
+    searchResults = [];
+    searchError = '';
+    searchOpen = false;
+  }
+
+  async function openSearchResult(result: SearchResult) {
+    clearSearch();
+    const targetUrl = new URL(branchHref(result.href), $page.url.origin);
+    if (result.focusText) {
+      targetUrl.searchParams.set('focus', result.focusText);
+    }
+    if (result.anchor) {
+      targetUrl.hash = result.anchor;
+    }
+    await goto(targetUrl.toString(), { invalidateAll: true });
+    closeSidebarOnMobile();
+  }
+
   onMount(() => {
     initializeOpenStates();
     const onOverlayOpen = (event: Event) => {
       const source = (event as CustomEvent<{ source?: string }>).detail?.source;
       if (source && source !== 'wiki-nav-actions' && source !== 'wiki-nav-delete-confirm') {
         activeMenuKey = null;
+        if (source !== 'wiki-nav-search') {
+          searchOpen = false;
+        }
       }
     };
     window.addEventListener('header-overlay-open', onOverlayOpen as EventListener);
-    return () => window.removeEventListener('header-overlay-open', onOverlayOpen as EventListener);
+    return () => {
+      window.removeEventListener('header-overlay-open', onOverlayOpen as EventListener);
+      if (searchDebounce) clearTimeout(searchDebounce);
+      if (searchAbort) searchAbort.abort();
+    };
   });
 </script>
 
@@ -260,6 +364,63 @@
     <span class="sidebar-sub">Campaign Wiki</span>
   </div>
 
+  <div class="sidebar-search">
+    <div class="search-shell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        type="search"
+        class="search-input"
+        placeholder="Search wiki…"
+        value={searchQuery}
+        onfocus={() => {
+          searchOpen = true;
+          announceOverlayOpen('wiki-nav-search');
+        }}
+        oninput={(event) => handleSearchInput((event.currentTarget as HTMLInputElement).value)}
+        data-testid="wiki-nav-search-input"
+        aria-label="Search the campaign wiki"
+      />
+      {#if searchQuery}
+        <button type="button" class="search-clear" onclick={clearSearch} aria-label="Clear search">
+          ×
+        </button>
+      {/if}
+    </div>
+
+    {#if searchOpen && (searchQuery.length >= 2 || searchLoading || searchError)}
+      <div class="search-results" data-testid="wiki-nav-search-results">
+        {#if searchLoading}
+          <div class="search-empty">Searching…</div>
+        {:else if searchError}
+          <div class="search-empty">{searchError}</div>
+        {:else if searchResults.length === 0}
+          <div class="search-empty">No results for “{searchQuery}”.</div>
+        {:else}
+          {#each searchResults as result (result.sourcePath)}
+            <button
+              type="button"
+              class="search-result"
+              onclick={() => openSearchResult(result)}
+              data-testid="wiki-nav-search-result"
+            >
+              <div class="search-result-top">
+                <span class="search-result-title">{result.title}</span>
+                <span class="search-result-badge">{result.badge}</span>
+              </div>
+              <div class="search-result-meta">{result.section}</div>
+              {#if result.snippet}
+                <div class="search-result-snippet">{result.snippet}</div>
+              {/if}
+            </button>
+          {/each}
+        {/if}
+      </div>
+    {/if}
+  </div>
+
   <div
     class="menu-status"
     data-testid="wiki-nav-status-message"
@@ -281,7 +442,7 @@
     {#each nav as entry (isSection(entry) ? sectionKey(entry as NavSection) : (entry as NavItem).href)}
       {#if isSection(entry)}
         {@const section = entry as NavSection}
-        <li class="nav-section">
+        <li class="nav-section" class:section-active={sectionHasActiveChild(section)}>
           <button
             type="button"
             class="section-toggle"
@@ -303,7 +464,8 @@
                   <div class="nav-row">
                     <a
                       href={branchHref(child.href)}
-                      class:active={currentPath === child.href}
+                      class:active={isActiveHref(child.href)}
+                      class:parent-active={folderHasActiveChild(child)}
                       class="nav-link"
                       data-testid={linkTestId(child.href)}
                       aria-label={child.title}
@@ -389,7 +551,7 @@
                           <div class="nav-row">
                             <a
                               href={branchHref(subItem.href)}
-                              class:active={currentPath === subItem.href}
+                              class:active={isActiveHref(subItem.href)}
                               class="nav-link sub-link"
                               data-testid={linkTestId(subItem.href)}
                               aria-label={subItem.title}
@@ -465,7 +627,7 @@
           <div class="nav-row">
             <a
               href={branchHref(item.href)}
-              class:active={currentPath === item.href}
+              class:active={isActiveHref(item.href)}
               class="nav-link"
               data-testid={linkTestId(item.href)}
               aria-label={item.title}
@@ -544,6 +706,12 @@
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <div class="menu-backdrop" onclick={() => (activeMenuKey = null)} data-testid="wiki-nav-actions-backdrop"></div>
+{/if}
+
+{#if searchOpen && searchQuery.length >= 2}
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <div class="menu-backdrop" onclick={() => (searchOpen = false)} data-testid="wiki-nav-search-backdrop"></div>
 {/if}
 
 {#if confirmDelete.open && confirmDelete.item}
@@ -650,6 +818,119 @@
     letter-spacing: 0.08em;
   }
 
+  .sidebar-search {
+    padding: 0 0.85rem 0.8rem;
+    position: relative;
+    z-index: 200;
+  }
+
+  .search-shell {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.55rem 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .search-shell:focus-within {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.18);
+  }
+
+  .search-input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-size: 0.88rem;
+  }
+
+  .search-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .search-clear {
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .search-results {
+    position: absolute;
+    top: calc(100% - 0.2rem);
+    left: 0.85rem;
+    right: 0.85rem;
+    background: var(--surface, #16162a);
+    border: 1px solid var(--border-bright);
+    border-radius: 12px;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+    max-height: min(60vh, 540px);
+    overflow-y: auto;
+    padding: 0.35rem;
+  }
+
+  .search-result {
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0.65rem 0.7rem;
+    cursor: pointer;
+  }
+
+  .search-result:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .search-result-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .search-result-title {
+    font-weight: 600;
+  }
+
+  .search-result-badge {
+    flex-shrink: 0;
+    font-size: 0.67rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+
+  .search-result-meta,
+  .search-result-snippet,
+  .search-empty {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .search-result-meta {
+    margin-top: 0.16rem;
+  }
+
+  .search-result-snippet {
+    margin-top: 0.3rem;
+    line-height: 1.45;
+  }
+
+  .search-empty {
+    padding: 0.8rem;
+  }
+
   .menu-status {
     margin: 0 0.8rem 0.6rem;
     min-height: 1.2rem;
@@ -686,6 +967,10 @@
 
   .nav-section {
     margin-bottom: 0.35rem;
+  }
+
+  .nav-section.section-active .section-title {
+    color: var(--gold);
   }
 
   .section-toggle {
@@ -754,6 +1039,12 @@
     color: var(--gold);
     border-left-color: var(--gold);
     background: rgba(212, 175, 55, 0.08);
+  }
+
+  .nav-link.parent-active:not(.active) {
+    color: #f2e6b6;
+    border-left-color: rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.04);
   }
 
   .sub-link {
@@ -912,6 +1203,12 @@
     .menu-backdrop {
       left: 0;
       z-index: 90;
+    }
+
+    .search-results {
+      position: static;
+      margin-top: 0.55rem;
+      max-height: 42vh;
     }
   }
 </style>

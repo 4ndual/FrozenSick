@@ -1,6 +1,6 @@
 import { env } from '$env/dynamic/public';
 import type { NavEntry, NavItem, NavSection } from '$lib/wiki-nav';
-import { slugify, slugifyPath } from '$lib/utils/slugify';
+import { classifyWikiEntry, formatNavTitle, slugify, slugifyPath } from '$lib/wiki-entry';
 import { readdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
@@ -47,7 +47,7 @@ async function walkLocalContent(dir: string): Promise<TreeEntry[]> {
       continue;
     }
     if (!entry.isFile()) continue;
-    if (!entry.name.endsWith('.md')) continue;
+    if (!entry.name.match(/\.(md|txt)$/i)) continue;
     if (entry.name === 'README.md') continue;
 
     const relative = path.relative(LOCAL_REPO_ROOT, fullPath).split(path.sep).join('/');
@@ -108,7 +108,7 @@ export async function invalidateCache(branch?: string): Promise<void> {
 }
 
 // Re-export slug utilities for consumers that import from this module
-export { slugify, slugifyPath } from '$lib/utils/slugify';
+export { slugify, slugifyPath } from '$lib/wiki-entry';
 
 function decodeBase64Utf8(b64: string): string {
   const bin = atob(b64);
@@ -145,8 +145,8 @@ export class GitHubAuthError extends Error {
 }
 
 /**
- * Fetch the full file tree for a branch. Uses ref→commit→tree chain.
- * Returns only blob entries under `content/` that end with `.md`.
+ * Fetch the full file tree for a branch. Uses ref -> commit -> tree chain.
+ * Returns only blob entries under `content/` that end with `.md` or `.txt`.
  */
 export async function fetchTree(token: string, branch?: string): Promise<TreeEntry[]> {
   if (canUseLocalContent()) {
@@ -175,7 +175,7 @@ export async function fetchTree(token: string, branch?: string): Promise<TreeEnt
     (e) =>
       e.type === 'blob' &&
       e.path.startsWith('content/') &&
-      e.path.endsWith('.md') &&
+      /\.(md|txt)$/i.test(e.path) &&
       !e.path.endsWith('/README.md'),
   );
 
@@ -196,6 +196,9 @@ export interface MenuCustomization {
 const EMPTY_MENU_CUSTOMIZATION: MenuCustomization = {
   hidden: [],
 };
+
+const TRACKER_SOURCE_PATH = 'content/Plot/Tracker';
+const DM_PLANNING_SOURCE_PATH = 'content/Plot/DM Planning.md';
 
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -353,7 +356,7 @@ export async function fetchChapterJsonPaths(token: string, branch?: string): Pro
 }
 
 /**
- * Build slug→repoPath manifest from tree entries.
+ * Build slug -> repoPath manifest from tree entries.
  * Strips the `content/` prefix for slug generation but keeps it in the value.
  */
 export function buildManifest(tree: TreeEntry[]): Record<string, string> {
@@ -364,8 +367,7 @@ export function buildManifest(tree: TreeEntry[]): Record<string, string> {
     manifest[slug] = entry.path;
 
     const parts = relativePath.split('/');
-    const fileName = parts[parts.length - 1]?.replace(/\.md$/i, '').toLowerCase();
-    const isSectionLanding = fileName === 'summary' || fileName === 'index';
+    const isSectionLanding = classifyWikiEntry(entry.path).isSectionLanding;
 
     if (isSectionLanding && parts.length > 1) {
       const parentSlug = '/' + slugifyPath(parts.slice(0, -1).join('/'));
@@ -449,9 +451,9 @@ export function buildNav(tree: TreeEntry[], customization?: MenuCustomization): 
       if (otherFiles.length > 0) {
         child.sub = otherFiles.map((f) => {
           const sourcePath = `content/${f}`;
-          const fileName = f.split('/').pop()!.replace(/\.md$/i, '');
+          const fileName = f.split('/').pop()!.replace(/\.(md|txt)$/i, '');
           return {
-            title: fileName,
+            title: formatNavTitle(sourcePath, fileName),
             href: '/' + slugifyPath(f),
             sourcePath,
             kind: 'file',
@@ -468,13 +470,39 @@ export function buildNav(tree: TreeEntry[], customization?: MenuCustomization): 
       .filter((path) => !isHiddenFile(path))
       .map((path) => path.replace(/^content\//, ''))
       .sort()) {
-      const fileName = file.split('/').pop()!.replace(/\.md$/i, '');
+      const fileName = file.split('/').pop()!.replace(/\.(md|txt)$/i, '');
+      const sourcePath = `content/${file}`;
+      if (sourcePath === DM_PLANNING_SOURCE_PATH) continue;
       children.push({
-        title: fileName,
+        title: formatNavTitle(sourcePath, fileName),
         href: '/' + slugifyPath(file),
-        sourcePath: `content/${file}`,
+        sourcePath,
         kind: 'file',
       });
+    }
+
+    if (sectionName === 'Plot') {
+      const tracker = children.find((child) => child.sourcePath === TRACKER_SOURCE_PATH);
+      if (tracker) {
+        const trackerChildren: NavItem[] = [];
+        if (tracker.href) {
+          trackerChildren.push({
+            title: 'Overview',
+            href: tracker.href,
+            sourcePath: `${TRACKER_SOURCE_PATH}/Summary.md`,
+            kind: 'file',
+          });
+        }
+        if (tracker.sub?.length) {
+          trackerChildren.push(...tracker.sub);
+        }
+        nav.push({
+          section: 'Tracker',
+          sourcePath: TRACKER_SOURCE_PATH,
+          children: trackerChildren,
+        } as NavSection);
+      }
+      continue;
     }
 
     if (sectionName === 'World') {
@@ -495,16 +523,15 @@ export function buildNav(tree: TreeEntry[], customization?: MenuCustomization): 
     .filter((path) => !isHiddenFile(path))
     .map((path) => path.replace(/^content\//, ''))
     .sort()) {
-    const name = file.replace(/\.md$/i, '');
+    const name = file.replace(/\.(md|txt)$/i, '');
+    const sourcePath = `content/${file}`;
     nav.push({
-      title: name,
+      title: formatNavTitle(sourcePath, name),
       href: '/' + slugify(name),
-      sourcePath: `content/${file}`,
+      sourcePath,
       kind: 'file',
     });
   }
-
-  nav.push({ title: 'Timeline', href: '/timeline/', kind: 'special' });
 
   return nav;
 }
@@ -593,7 +620,7 @@ export async function listBranches(token: string): Promise<string[]> {
       });
       const branches = output
         .split(/\r?\n/)
-        .map((line) => line.trim())
+        .map((line: string) => line.trim())
         .filter(Boolean);
       return branches.length > 0 ? branches : [getDefaultBranch()];
     } catch {
