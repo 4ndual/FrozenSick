@@ -97,6 +97,7 @@ function createCampaignStore() {
   let behindPublished = $state(false);
   let isAdmin = $state(false);
   let allowDirectDefaultBranchEdits = $state(false);
+  let characterDirectory = $state<string[]>([]);
 
   let branchLabels = $derived.by<Record<string, string>>(() => {
     const labels: Record<string, string> = {};
@@ -146,7 +147,7 @@ function createCampaignStore() {
   );
 
   let allCharacters = $derived(
-    [...new Set(data.events.flatMap((ev) => ev.linkedCharacters))].sort(),
+    [...new Set([...characterDirectory, ...data.events.flatMap((ev) => ev.linkedCharacters)])].sort(),
   );
 
   let allPlaces = $derived(
@@ -174,6 +175,21 @@ function createCampaignStore() {
   let suggestedTags = $derived((data.suggestedTags ?? []).slice().sort());
 
   let initializing = false;
+
+  async function loadCharacterDirectory(branch: string): Promise<void> {
+    try {
+      const params = new URLSearchParams({ branch });
+      const res = await fetch(`/api/wiki/characters?${params}`);
+      if (!res.ok) {
+        characterDirectory = [];
+        return;
+      }
+      const payload = (await res.json()) as { characters?: string[] };
+      characterDirectory = Array.isArray(payload.characters) ? payload.characters : [];
+    } catch {
+      characterDirectory = [];
+    }
+  }
 
   function persist() {
     saveCampaign(data);
@@ -499,6 +515,7 @@ function createCampaignStore() {
           }
           await refreshBranchStatus();
         }
+        await loadCharacterDirectory(currentBranch);
       } finally {
         initializing = false;
       }
@@ -591,6 +608,7 @@ function createCampaignStore() {
           snapshot.fileShas,
           shardCampaignData(snapshot.data),
         );
+        await loadCharacterDirectory(branch);
         await refreshBranchStatus();
         syncStatus = 'synced';
       } catch (err) {
