@@ -6,6 +6,8 @@
   import { clampDay } from '$lib/utils/calendar';
   import { generateId } from '$lib/utils/storage';
   import EntityDropdown from '$lib/components/common/EntityDropdown.svelte';
+  import { YEAR_MAX, YEAR_MIN } from '$lib/types/date-policy';
+  import { validateCampaignEventWithCalendar } from '$lib/types/validation';
 
   const isNew = $derived(!campaign.editingEvent);
   const cal = $derived(campaign.data.calendar);
@@ -52,6 +54,7 @@
   let chapterOptions = $state<string[]>(FALLBACK_CHAPTERS);
   let chapterJsonEntries = $state<{ id: string; path: string }[]>([]);
   let wikiPlaces = $state<string[]>([]);
+  let formError = $state<string | null>(null);
 
   const characterOptions = $derived(
     campaign.allCharacters.map((char) => ({ value: char, label: char })),
@@ -84,6 +87,7 @@
         tagsInput = '';
         hasEndDate = false;
       }
+      formError = null;
       newRelTargetId = '';
       newRelType = 'related';
       newRelLabel = '';
@@ -184,7 +188,18 @@
 
   function save() {
     syncTags();
-    if (!draft.title.trim()) return;
+    if (!draft.title.trim()) {
+      formError = 'Title is required.';
+      return;
+    }
+
+    const validationErrors = validateCampaignEventWithCalendar(draft, cal);
+    if (validationErrors.length > 0) {
+      formError = validationErrors[0];
+      return;
+    }
+
+    formError = null;
     if (isNew) {
       campaign.addEvent(draft);
     } else {
@@ -261,11 +276,12 @@
 
       <!-- Date -->
       <div class="field-row">
-        <div class="field date-field">
-          <span class="field-heading">Start Date</span>
-          <div class="date-row">
-            <input
-              type="number"
+      <div class="field date-field">
+        <span class="field-heading">Start Date</span>
+        <span class="hint">Year range: {YEAR_MIN} to {YEAR_MAX}</span>
+        <div class="date-row">
+          <input
+            type="number"
               bind:value={draft.date.day}
               onchange={() => clampDateDay(draft.date)}
               min="1"
@@ -282,6 +298,9 @@
               bind:value={draft.date.year}
               placeholder="Year"
               style="width:70px"
+              min={YEAR_MIN}
+              max={YEAR_MAX}
+              step="1"
             />
             <span class="year-suffix">{cal.yearSuffix}</span>
           </div>
@@ -314,6 +333,9 @@
               bind:value={draft.endDate.year}
               placeholder="Year"
               style="width:70px"
+              min={YEAR_MIN}
+              max={YEAR_MAX}
+              step="1"
             />
             <span class="year-suffix">{cal.yearSuffix}</span>
           </div>
@@ -457,6 +479,9 @@
 
     <!-- Footer -->
     <div class="drawer-footer">
+      {#if formError}
+        <div class="form-error" role="alert" data-testid="event-editor-error">{formError}</div>
+      {/if}
       {#if !isNew}
         <button class="btn-danger" onclick={handleDelete} data-testid="event-delete">Delete</button>
       {/if}
@@ -674,10 +699,18 @@
   .drawer-footer {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
     padding: 14px 20px;
     border-top: 1px solid var(--border);
     flex-shrink: 0;
+  }
+
+  .form-error {
+    width: 100%;
+    color: #ffb3b3;
+    font-size: 12px;
+    line-height: 1.4;
   }
 
   .btn-danger {

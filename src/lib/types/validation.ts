@@ -1,9 +1,20 @@
 import { z } from 'zod';
+import { compareDate, isValidDate } from '$lib/utils/calendar';
+import { ALLOW_YEAR_ZERO, YEAR_MAX, YEAR_MIN } from '$lib/types/date-policy';
+import type { CalendarConfig, CampaignData, CampaignEvent, FantasyDate } from '$lib/types/schema';
 
 export const FantasyDateSchema = z.object({
-  year: z.number(),
-  month: z.number(),
-  day: z.number(),
+  year: z.number().int().min(YEAR_MIN).max(YEAR_MAX),
+  month: z.number().int().positive(),
+  day: z.number().int().positive(),
+}).superRefine((date, ctx) => {
+  if (!ALLOW_YEAR_ZERO && date.year === 0) {
+    ctx.addIssue({
+      code: 'custom',
+      message: 'Year 0 is not allowed.',
+      path: ['year'],
+    });
+  }
 });
 
 export const EventRelationSchema = z.object({
@@ -91,4 +102,54 @@ export function validateCampaignData(data: unknown): z.infer<typeof CampaignData
     throw new Error(`Invalid campaign data: ${issues}`);
   }
   return result.data;
+}
+
+export function validateFantasyDateWithCalendar(
+  date: FantasyDate,
+  calendar: CalendarConfig,
+): string[] {
+  const errors: string[] = [];
+
+  if (date.year < YEAR_MIN || date.year > YEAR_MAX) {
+    errors.push(`Year must be between ${YEAR_MIN} and ${YEAR_MAX}.`);
+  }
+
+  if (!ALLOW_YEAR_ZERO && date.year === 0) {
+    errors.push('Year 0 is not allowed.');
+  }
+
+  if (!isValidDate(date, calendar)) {
+    errors.push('Date is invalid for the current calendar.');
+  }
+
+  return errors;
+}
+
+export function validateCampaignEventWithCalendar(
+  event: CampaignEvent,
+  calendar: CalendarConfig,
+): string[] {
+  const errors = validateFantasyDateWithCalendar(event.date, calendar);
+
+  if (event.endDate) {
+    errors.push(...validateFantasyDateWithCalendar(event.endDate, calendar));
+    if (compareDate(event.endDate, event.date) < 0) {
+      errors.push('End date must be on or after start date.');
+    }
+  }
+
+  return errors;
+}
+
+export function validateCampaignDataWithCalendar(data: CampaignData): string[] {
+  const errors: string[] = [];
+
+  for (const event of data.events) {
+    const eventErrors = validateCampaignEventWithCalendar(event, data.calendar);
+    if (eventErrors.length > 0) {
+      errors.push(`${event.id}: ${eventErrors.join(' ')}`);
+    }
+  }
+
+  return errors;
 }
