@@ -8,8 +8,10 @@
   import type { CampaignEvent, CalendarConfig, FantasyDate, TimelineRangePreset } from '$lib/types/schema';
 
   const DAY_MS = 86400 * 1000;
+  const SUPPORTED_YEAR_MIN = -5000;
+  const SUPPORTED_YEAR_MAX = 5000;
   const RANGE_PRESETS: Array<{ id: TimelineRangePreset; label: string }> = [
-    { id: 'day', label: 'Dia' },
+    { id: 'day', label: 'Día' },
     { id: 'decana', label: 'Decana' },
     { id: 'month', label: 'Mes' },
     { id: 'year', label: 'Año' },
@@ -19,28 +21,57 @@
     { id: '500y', label: '500 Años' },
   ];
 
-  // ── Date mapping ──────────────────────────────────────────────────────────
+  function createUTCDate(year: number, monthIndex: number, day: number): Date {
+    const date = new Date(Date.UTC(0, monthIndex, day, 12, 0, 0, 0));
+    date.setUTCFullYear(year);
+    return date;
+  }
+
   function toJSDate(date: FantasyDate, cal: CalendarConfig): Date {
-    if (cal.months.length === 12) return new Date(date.year, date.month - 1, date.day);
+    if (cal.months.length === 12) return createUTCDate(date.year, date.month - 1, date.day);
     const dayNum = dateToDay(date, cal);
     const yearLen = daysPerYear(cal);
     const yearFrac = ((dayNum % yearLen) + yearLen) % yearLen / yearLen;
     const yr = cal.epoch + Math.floor(dayNum / yearLen);
     const jsMonth = Math.floor(yearFrac * 12);
     const jsDay = Math.max(1, Math.floor((yearFrac * 12 - jsMonth) * 30));
-    return new Date(yr, jsMonth, jsDay);
+    return createUTCDate(yr, jsMonth, jsDay);
   }
 
-  // vis-timeline standalone passes moment objects to format callbacks
-  function dy(d: any): number { return typeof d.year === 'function' ? d.year() : d.getFullYear(); }
-  function dm(d: any): number { return typeof d.month === 'function' ? d.month() : d.getMonth(); }
-  function dd(d: any): number { return typeof d.date === 'function' ? d.date() : d.getDate(); }
+  function toNativeDate(input: any): Date {
+    if (input instanceof Date) return input;
+    if (typeof input?.toDate === 'function') return input.toDate();
+    return new Date(input);
+  }
 
-  // Type emoji icons — safe text, no SVG needed
+  function dy(d: any): number {
+    if (typeof d?.year === 'function') return d.year();
+    return toNativeDate(d).getUTCFullYear();
+  }
+
+  function dm(d: any): number {
+    if (typeof d?.month === 'function') return d.month();
+    return toNativeDate(d).getUTCMonth();
+  }
+
+  function dd(d: any): number {
+    if (typeof d?.date === 'function') return d.date();
+    return toNativeDate(d).getUTCDate();
+  }
+
   const TYPE_EMOJI: Record<string, string> = {
-    'swords': '⚔', 'search': '🔍', 'user': '👤',
-    'scroll-text': '📜', 'book-open': '📖', 'map-pin': '📍', 'moon': '🌙',
-    'shield': '🛡', 'skull': '💀', 'flame': '🔥', 'star': '⭐', 'crown': '👑',
+    swords: '⚔',
+    search: '🔍',
+    user: '👤',
+    'scroll-text': '📜',
+    'book-open': '📖',
+    'map-pin': '📍',
+    moon: '🌙',
+    shield: '🛡',
+    skull: '💀',
+    flame: '🔥',
+    star: '⭐',
+    crown: '👑',
   };
 
   function typeIcon(typeId: string): string {
@@ -64,7 +95,7 @@
     return `<div role="listitem" aria-label="${escAttr(ev.title)}" data-testid="timeline-event-${escAttr(ev.id)}">${inner}</div>`;
   }
 
-  function buildTooltipText(ev: any): string {
+  function buildTooltipText(ev: CampaignEvent): string {
     const cal = $state.snapshot(campaign.data.calendar);
     const dateStr = formatDate(ev.date, cal);
     const desc = ev.description ? ' — ' + ev.description.slice(0, 100) + (ev.description.length > 100 ? '…' : '') : '';
@@ -74,7 +105,7 @@
   function buildItems() {
     const cal = $state.snapshot(campaign.data.calendar);
     const events = $state.snapshot(campaign.filteredEvents);
-    return events.map((ev: any) => {
+    return events.map((ev: CampaignEvent) => {
       const color = ev.color ?? typeColor(ev.type);
       return {
         id: ev.id,
@@ -94,8 +125,9 @@
   function buildGroups() {
     const timelines = $state.snapshot(campaign.data.timelines);
     return timelines
-      .slice().sort((a: any, b: any) => a.order - b.order)
-      .map((t: any) => ({ id: t.id, content: t.name, title: t.description ?? '' }));
+      .slice()
+      .sort((a, b) => a.order - b.order)
+      .map((t) => ({ id: t.id, content: t.name, title: t.description ?? '' }));
   }
 
   function buildFormatOpts() {
@@ -146,15 +178,16 @@
   function jsDateToFantasyDay(date: Date, cal: CalendarConfig): number {
     if (cal.months.length === 12) {
       return dateToDay(
-        { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() },
+        { year: date.getUTCFullYear(), month: date.getUTCMonth() + 1, day: date.getUTCDate() },
         cal,
       );
     }
-    const yearDays = daysPerYear(cal);
-    const year = date.getFullYear();
-    const fracOfYear = (date.getMonth() + (Math.max(1, date.getDate()) - 1) / 30) / 12;
-    const dayInYear = Math.max(0, Math.min(yearDays - 1, Math.floor(fracOfYear * yearDays)));
-    return (year - cal.epoch) * yearDays + dayInYear;
+
+    const yearLen = daysPerYear(cal);
+    const year = date.getUTCFullYear();
+    const fracOfYear = (date.getUTCMonth() + (Math.max(1, date.getUTCDate()) - 1) / 30) / 12;
+    const dayInYear = Math.max(0, Math.min(yearLen - 1, Math.floor(fracOfYear * yearLen)));
+    return (year - cal.epoch) * yearLen + dayInYear;
   }
 
   function dayToJSDate(day: number, cal: CalendarConfig): Date {
@@ -191,9 +224,12 @@
   }
 
   function parseDateInput(input: string, cal: CalendarConfig): FantasyDate | null {
-    const parts = input.trim().split('-').map((p) => Number.parseInt(p, 10));
-    if (parts.length !== 3 || parts.some((v) => Number.isNaN(v))) return null;
-    const [year, month, day] = parts;
+    const match = input.trim().match(/^(-?\d+)-(\d{1,2})-(\d{1,2})$/);
+    if (!match) return null;
+    const [, yearRaw, monthRaw, dayRaw] = match;
+    const year = Number.parseInt(yearRaw, 10);
+    const month = Number.parseInt(monthRaw, 10);
+    const day = Number.parseInt(dayRaw, 10);
     const parsed = { year, month, day };
     if (!isValidDate(parsed, cal)) return null;
     return parsed;
@@ -218,15 +254,66 @@
   }
 
   function fitCurrentFilteredEvents() {
-    timeline?.fit();
+    if (!timeline) return;
+
+    const cal = $state.snapshot(campaign.data.calendar);
+    const visibleEvents = $state.snapshot(campaign.filteredEvents);
+    if (visibleEvents.length === 0) return;
+
+    let minDay = Number.POSITIVE_INFINITY;
+    let maxDay = Number.NEGATIVE_INFINITY;
+    let minYear = Number.POSITIVE_INFINITY;
+    let maxYear = Number.NEGATIVE_INFINITY;
+
+    for (const event of visibleEvents) {
+      const startDay = dateToDay(event.date, cal);
+      const endDay = event.endDate ? dateToDay(event.endDate, cal) : startDay;
+      const startYear = event.date.year;
+      const endYear = event.endDate?.year ?? startYear;
+
+      minDay = Math.min(minDay, startDay);
+      maxDay = Math.max(maxDay, endDay);
+      minYear = Math.min(minYear, startYear, endYear);
+      maxYear = Math.max(maxYear, startYear, endYear);
+    }
+
+    const viewportWidth = Math.max(container?.clientWidth ?? 0, 320);
+    const yearSpan = Math.max(1, maxYear - minYear);
+    const daySpan = Math.max(1, maxDay - minDay + 1);
+    const paddingRatio = Math.min(0.1, Math.max(0.05, 48 / viewportWidth));
+    const minimumSpanDays = visibleEvents.length === 1
+      ? daysPerYear(cal)
+      : Math.max(Math.ceil(daysPerYear(cal) * 0.1), daySpan);
+    const targetSpanDays = Math.max(daySpan, minimumSpanDays, Math.ceil(yearSpan * daysPerYear(cal)));
+    const paddingDays = Math.max(1, Math.ceil(targetSpanDays * paddingRatio));
+    const centerDay = (minDay + maxDay) / 2;
+    const halfSpan = targetSpanDays / 2;
+    const windowStartDay = Math.floor(centerDay - halfSpan - paddingDays);
+    const windowEndDay = Math.ceil(centerDay + halfSpan + paddingDays);
+
+    timeline.setWindow(
+      dayToJSDate(windowStartDay, cal),
+      dayToJSDate(windowEndDay + 1, cal),
+      { animation: true },
+    );
   }
 
   onMount(() => {
     const cal = $state.snapshot(campaign.data.calendar);
-    const allTs = $state.snapshot(campaign.data.events).map((ev: any) => toJSDate(ev.date, cal).getTime());
-    const minTs = allTs.length ? Math.min(...allTs) : new Date(cal.epoch, 0, 1).getTime();
-    const maxTs = allTs.length ? Math.max(...allTs) : new Date(cal.epoch, 11, 30).getTime();
-    const pad = Math.max((maxTs - minTs) * 0.15, 86400 * 1000 * 14);
+    const allTs = $state.snapshot(campaign.data.events).map((ev) => toJSDate(ev.date, cal).getTime());
+    const fallbackStart = toJSDate({ year: cal.epoch, month: 1, day: 1 }, cal).getTime();
+    const fallbackEnd = toJSDate(
+      { year: cal.epoch, month: cal.months.length, day: cal.months[cal.months.length - 1]?.days ?? 30 },
+      cal,
+    ).getTime();
+    const minTs = allTs.length ? Math.min(...allTs) : fallbackStart;
+    const maxTs = allTs.length ? Math.max(...allTs) : fallbackEnd;
+    const pad = Math.max((maxTs - minTs) * 0.15, DAY_MS * 14);
+    const minAllowedDay = dateToDay({ year: SUPPORTED_YEAR_MIN, month: 1, day: 1 }, cal);
+    const maxAllowedDay = dateToDay(
+      { year: SUPPORTED_YEAR_MAX, month: cal.months.length, day: cal.months[cal.months.length - 1]?.days ?? 30 },
+      cal,
+    );
 
     itemsDs = new DataSet<any>(buildItems());
     groupsDs = new DataSet<any>(buildGroups());
@@ -234,10 +321,10 @@
     timeline = new Timeline(container, itemsDs, groupsDs, {
       start: new Date(minTs - pad),
       end: new Date(maxTs + pad),
-      min: new Date(minTs - pad * 5),
-      max: new Date(maxTs + pad * 5),
+      min: dayToJSDate(minAllowedDay, cal),
+      max: dayToJSDate(maxAllowedDay + 1, cal),
       zoomMin: DAY_MS,
-      zoomMax: DAY_MS * 365 * 600,
+      zoomMax: Math.max(DAY_MS, (maxAllowedDay - minAllowedDay + 1) * DAY_MS),
       orientation: { axis: 'top' },
       stack: true,
       showMajorLabels: true,
@@ -267,8 +354,7 @@
       }
     });
 
-    // Let layout compute, then fit
-    setTimeout(() => timeline?.fit(), 50);
+    setTimeout(() => fitCurrentFilteredEvents(), 50);
 
     const onPointerDown = (evt: PointerEvent) => {
       if (!rangeOpen || !toolbarRangeWrap) return;
@@ -305,9 +391,8 @@
     });
   });
 
-  // Selection sync
   $effect(() => {
-    const sel = campaign.selectedEventId; // track
+    const sel = campaign.selectedEventId;
     if (!timeline) return;
     timeline.setSelection(sel ? [sel] : []);
   });
