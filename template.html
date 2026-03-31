@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{TITLE}} — Frozen Sick Wiki</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -12,13 +13,16 @@
     <div class="sidebar-header">
       <a href="/">Frozen Sick</a>
       <span class="sidebar-sub">Campaign Wiki</span>
+      <div id="wiki-edit-bar"></div>
     </div>
     {{SIDEBAR}}
   </nav>
+  {{WIKI_EDIT_SCRIPT}}
   <main>
     {{CONTENT}}
   </main>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="/wiki-edit.js"></script>
   <script>
     mermaid.initialize({ startOnLoad: true, theme: 'dark' });
     document.getElementById('sidebar-toggle').addEventListener('click', function () {

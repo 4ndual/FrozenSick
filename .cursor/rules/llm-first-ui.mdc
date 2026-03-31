@@ -1,0 +1,199 @@
+---
+description: LLM-first UI design — write code so agentic LLMs can test it cheaply
+alwaysApply: true
+---
+
+# LLM-First UI Design
+
+Every UI change must be written so an LLM agent can test it using the fewest tokens possible. If a design is hard for an agent to verify, redesign it rather than fight the tooling.
+
+## 1. Every interactive element needs `data-testid`
+
+Agents match elements by `data-testid`, not by visible text. Text changes with i18n, refactors, and content updates — `data-testid` survives all of them.
+
+Naming convention: `data-testid="<component>-<action>"`
+
+```svelte
+<!-- BAD: agent must match by fragile text "Save Draft" -->
+<button onclick={save}>Save Draft</button>
+
+<!-- GOOD: agent clicks [data-testid="wiki-save-draft"] — stable forever -->
+<button onclick={save} data-testid="wiki-save-draft">Save Draft</button>
+```
+
+Existing testids in this project: `wiki-edit`, `wiki-save-draft`, `wiki-publish`, `wiki-discard`, `wiki-cancel`, `wiki-edit-textarea`, `wiki-edit-modal`, `wiki-status-message`, `auth-login`, `auth-logout`, `branch-selector`, `drafts-toggle`, `drafts-dropdown`, `tab-timeline`, `tab-graph`, `tab-settings`, `timeline-save`, `timeline-import`, `timeline-export`, `toggle-sidebar`, `app-header`, `wiki-content`, `wiki-sidebar`, `wiki-main`, `timeline-main`, `timeline-app`, `settings-nav`, `timeline-event-{id}`, `graph-node-{name}`, `track-edit-{id}`, `track-delete-{id}`, `track-add`, `eventtype-edit-{id}`, `eventtype-delete-{id}`, `tag-remove-{tag}`, `month-up-{name}`, `month-down-{name}`, `month-remove-{name}`, `event-editor`, `event-save`, `event-cancel`, `event-delete`, `sidebar-search`, `sidebar-new-event`, `sidebar-clear-filters`.
+
+## 2. Icon-only buttons must have `aria-label`
+
+Agents read the accessibility tree. A button with no text and no `aria-label` is invisible to them.
+
+```svelte
+<!-- BAD: agent sees a button with no name -->
+<button onclick={logout} title="Logout"><svg>...</svg></button>
+
+<!-- GOOD: agent sees button[name="Logout"] in the snapshot -->
+<button onclick={logout} title="Logout" aria-label="Logout"><svg>...</svg></button>
+```
+
+## 3. Modals and dropdowns need ARIA roles
+
+Without `role="dialog"` an overlay is just a div — agents can't find it as a landmark.
+
+- Modals: `role="dialog"` + `aria-modal="true"` + `aria-label="..."`
+- Dropdowns: `aria-expanded` + `aria-haspopup="true"` on the toggle
+- Listbox patterns: `role="listbox"` on the dropdown, `role="option"` + `aria-selected` on items
+- **Sibling dropdowns must auto-close.** If two dropdowns share the same header (branch selector, DraftsPanel), opening one while the other is open creates a 6-tool-call dismissal dance. When a toggle opens, close all sibling dropdowns first.
+
+## 4. Prefer API verification over screenshots
+
+An agent taking a screenshot and parsing it costs ~10x more tokens than a `curl` call. When adding a feature that changes state, always ask: "can the agent verify this via API?"
+
+This project has:
+- `GET /api/status` — auth state, branches, draft count
+- `GET /api/status/wiki?path=...&branch=...` — file existence, sha, size
+- `GET /api/wiki/preview?path=...&branch=...` — title, headings, word count
+
+When adding new write operations, add or extend a status endpoint so agents can verify the result without opening a browser.
+
+## 5. Status feedback must be machine-readable
+
+When a save/publish/delete succeeds or fails, the UI shows a message. Make it machine-readable so agents don't have to parse human text:
+
+```svelte
+<div
+  data-testid="wiki-status-message"
+  data-status={ok ? 'success' : err ? 'error' : 'idle'}
+  role="status"
+  aria-live="polite"
+>
+  {message}
+</div>
+```
+
+The agent checks state with `browser_get_attribute(ref, "data-status")` — no text parsing needed.
+
+## 6. Use landmark containers with `data-testid`
+
+Wrap page regions in containers with `data-testid` for identification. This helps agents find regions by attribute even when snapshot scoping doesn't reduce token count (tested: `browser_snapshot` with `selector` still returns the full page tree in practice).
+
+```svelte
+<header data-testid="app-header">...</header>
+<nav data-testid="wiki-sidebar">...</nav>
+<main data-testid="wiki-main">
+  <div data-testid="wiki-content">...</div>
+</main>
+```
+
+The real token savings come from API verification (rule 4) and compact snapshots (`browser_snapshot` with `compact: true`), not from CSS selector scoping.
+
+## 7. Prefer `<nav>`, `<main>`, `<section>` over `<div>`
+
+Semantic HTML elements appear as landmarks in accessibility snapshots. Agents can find them by role without needing `data-testid`. Use `<div>` only when no semantic element fits.
+
+## 8. Repeated buttons must have unique `aria-label`
+
+Settings pages often have lists of items with identical Edit/Delete buttons. In the accessibility tree these appear as `Edit (nth: 3)`, `Delete (nth: 7)` — the agent has no idea which item they belong to.
+
+```svelte
+<!-- BAD: agent sees "Edit" repeated 10 times with nth indices -->
+<button onclick={() => edit(track.id)}>Edit</button>
+
+<!-- GOOD: agent sees "Edit Main Story" — knows exactly what it controls -->
+<button onclick={() => edit(track.id)} aria-label="Edit {track.name}">Edit</button>
+```
+
+## 9. Inject semantic HTML into third-party library content
+
+Third-party libraries (vis-timeline, SvelteFlow, etc.) render custom content you provide. They control the wrapper elements — you control what goes **inside**. Inject ARIA roles and labels into the content you give them.
+
+```svelte
+<!-- vis-timeline: wrap item content in a semantic element -->
+<script>
+function buildItemContent(ev) {
+  return `<div role="listitem" aria-label="${ev.title}" data-testid="timeline-event-${ev.id}">
+    ${ev.title}
+  </div>`;
+}
+</script>
+
+<!-- SvelteFlow: add roles directly to your custom node component -->
+<div class="ev-node" role="button"
+  aria-label="{data.title} — {data.typeLabel}, {data.dateStr}"
+  data-testid="graph-node-{data.title}">
+  ...
+</div>
+```
+
+**Gotchas solved in this project:**
+
+- **vis-timeline XSS sanitizer** strips custom attributes (`role`, `aria-label`, `data-testid`). Disable it in dev mode: `xss: { disabled: true }` in Timeline options (guarded by `import.meta.env.DEV`). Production keeps XSS protection.
+- **SvelteFlow `visibility: hidden`** on node wrappers hides nodes from the accessibility tree until measurement completes. Override with CSS: `.svelte-flow__node { visibility: visible !important; }`. This is safe — nodes have explicit positions.
+
+## 10. Critical actions must not be trapped in scrollable containers
+
+If a button is inside a scrollable sidebar, `scrollIntoView` may fail because the browser scrolls the page but not the inner container. The element stays off-screen.
+
+**Design rule:** Every critical action (Add, Save, Delete) must be accessible from the main content area, not only from a scrollable sidebar. Provide duplicate buttons in the toolbar when needed (e.g., "Add Event" in the timeline toolbar mirrors "New Event" in the sidebar).
+
+## 11. Auth-gated UI must derive from a single source of truth
+
+If the server uses a cookie and the client UI uses localStorage, they will desync. When they do, the server returns data correctly but the UI hides buttons (Edit, Logout, Drafts). The agent then spends tool calls re-authenticating and not understanding why.
+
+**Design rule:** Auth-gated UI elements should derive visibility from the same auth mechanism the server uses. If that's not feasible, the client should verify auth state on mount via an API call (`/api/status`) rather than relying on a secondary store that can be independently cleared.
+
+**Empirical cost:** Dual auth state cost ~10 tool calls in a single test run from repeated re-authentication.
+
+## 12. Maximize what can be verified from a single snapshot
+
+The cheapest UI verification is reading one snapshot — no clicks, no navigation, no waiting. Design state into element names and attributes so the agent can verify multiple test cases from a single `browser_snapshot` call.
+
+**Example from this project:** Settings page has tracks, event types, and calendar months. Because every Edit/Delete button has `aria-label="Edit {name}"`, an agent verified 7 test cases from one snapshot read (1 tool call). Without unique labels, it would have needed to click each button to identify it (28+ tool calls).
+
+**Design rule:** If verifying a feature requires clicking to reveal information (hover tooltips, click-to-expand, drill-down), also expose that information in the element's accessible name or a `data-*` attribute.
+
+## 13. When in doubt, redesign for testability
+
+If testing a feature requires more than 3 browser operations (navigate, snapshot, click, snapshot, verify), consider whether an API endpoint or a DOM attribute could replace some of those steps. The cheapest test is the one that never opens a browser.
+
+## 14. Hard debugging? Add a rule so the next agent doesn't pay the same cost
+
+If solving a testability problem took more than 5 tool calls, it means the solution wasn't obvious. Before closing the task:
+
+1. Identify the root cause (sanitizer? CSS hiding? library quirk?)
+2. Add it to the **Known Issues** section below with: library name, symptom, cause, one-line fix
+3. If the debugging *pattern* is reusable, add a diagnostic step to `browser-testing.mdc` rule 5
+
+This rule is self-reinforcing — every hard problem makes the next one cheaper.
+
+---
+
+# Known Issues — Third-Party Library Gotchas
+
+Problems that cost 8+ tool calls to diagnose the first time. Read this section BEFORE debugging accessibility tree issues with any library.
+
+## vis-timeline (v7.4.7+)
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| `role`, `aria-label`, `data-testid`, `class` silently stripped from item content HTML | Built-in XSS sanitizer strips all non-whitelisted attributes | Add `xss: { disabled: true }` to Timeline constructor options. Guard with `import.meta.env.DEV` so production keeps protection. Must be set at instantiation — `setOptions()` won't work. |
+| Console warning: "You disabled XSS protection for vis-Timeline" | Expected when using `xss: { disabled: true }` | Harmless in dev. Do not suppress it in production. |
+| HMR doesn't reinitialize the timeline after code changes | vis-timeline creates its instance in `onMount` — HMR swaps the component but doesn't re-run `onMount` | Full page reload (`browser_reload`) after changes to Timeline options or item builders. |
+
+## SvelteFlow / XYFlow
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| Custom node components have correct `role`/`aria-label` in DOM but don't appear in `browser_snapshot` | SvelteFlow sets `visibility: hidden` on `.svelte-flow__node` wrappers during its measurement pass. `visibility: hidden` removes elements from the accessibility tree. | Add CSS: `.graph-canvas :global(.svelte-flow__node) { visibility: visible !important; }`. Safe because nodes have explicit positions from layout. |
+| Node wrappers have `role="group"` and `aria-roledescription="node"` | SvelteFlow's default ARIA. Your inner `role="button"` on the custom node component works inside this — no conflict. | No fix needed. Just know it's there so you don't waste time investigating it. |
+
+## General patterns
+
+| Symptom | Likely cause | Diagnostic |
+|---|---|---|
+| Attributes added to HTML string content disappear | Library has a sanitizer (XSS, DOMPurify, or custom) | Check rendered innerHTML: `document.querySelector('.item')?.innerHTML`. If attributes are gone, search library docs/issues for "xss", "sanitize", "whitelist". |
+| Element exists in DOM with correct attributes but missing from accessibility tree | CSS `visibility: hidden` or `display: none` on the element or an ancestor | Check: `getComputedStyle(el).visibility` and `getComputedStyle(el).display`. Also check: `el.closest('[aria-hidden="true"]')`. |
+| Element appears in snapshot but with `nth` index instead of a name | Multiple elements share the same accessible name | Add unique `aria-label` incorporating the item's identity (e.g., `"Edit {name}"` instead of just `"Edit"`). |
+| `scrollIntoView` doesn't bring element into viewport | Element is inside a nested scrollable container | Use a duplicate button in the main content area, or scroll the inner container explicitly with `browser_scroll` targeting the container ref. |
+| Server sends correct prop but UI element doesn't render | Svelte `$state` initialized from prop may not hydrate correctly when combined with `{#if browser}` guards or `$effect` resets | Check `$state` initialization and any `$effect` that overrides it on mount. See `browser-testing.mdc` rule 8. |
+| HMR clears localStorage, auth UI buttons disappear | Vite HMR reloads the page, clearing `localStorage`. Cookie survives but client-side UI reads from `localStorage`. | Re-authenticate with `/#token=<PAT>` after every code change, BEFORE checking results. See `browser-testing.mdc` rule 3. |
+| Dropdown content not visible in accessibility snapshot | Dropdown renders content that lacks ARIA roles | Ensure dropdown content has `role="listbox"` or `role="menu"`, and items have `role="option"` or `role="menuitem"`. |

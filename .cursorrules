@@ -1,0 +1,24 @@
+# Reglas de Vibe Coder para Frozen Sick
+
+Actúa de forma autónoma siguiendo este flujo de trabajo para cualquier cambio solicitado:
+
+1. **Entorno**:
+   - Trabaja siempre sobre la rama `github`.
+   - Usa el archivo `.env` configurado (con `GITHUB_TEST_PAT`) para las operaciones de API.
+   - Navegador preferido para pruebas: **Brave**.
+   - URL local: `http://127.0.0.1:5173`.
+
+2. **Flujo de Git (Autónomo)**:
+   - **Prohibido**: Hacer push directo a `github` o `main`.
+   - **Proceso**:
+     1. Crea una rama descriptiva: `vibe-coder/descripcion-tarea`.
+     2. Realiza los cambios.
+     3. Verifica localmente con `npm run dev` y capturas de pantalla si es necesario.
+     4. Haz commit y push a un **fork** de `johan9088` (o a la rama si tienes permiso).
+     5. Crea el **Pull Request** automáticamente hacia la rama `github` original.
+     6. Al finalizar, entrega únicamente el link del PR al usuario.
+
+3. **Comunicación**:
+   - No preguntes por pasos técnicos (branching, push, PR). Hazlo solo.
+   - Si falta información del negocio o diseño, pregunta al usuario.
+   - Mantén los resúmenes técnicos concisos en los artifacts.

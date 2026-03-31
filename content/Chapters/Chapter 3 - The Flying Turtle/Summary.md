@@ -1,0 +1,191 @@
+# Chapter 3 - The Flying Turtle
+## *"They woke up in chains on the back of a living prison — and escaping was only the beginning."*
+
+---
+
+### Setting the Scene
+
+The party awakens in darkness, shackled and separated. The floor pulses beneath them — not stone, but scale. They are prisoners aboard a **Prison Tortoise**: a massive, fire-elemental beast trained to carry captives across kingdoms, its very body a labyrinth of traps. The corridors are the grooves between its colossal scales, roofed with immovable marble vaulting. Acid bleeds from its glands in rhythmic pulses. Darts fire from its shell. Pressure plates trigger crushing pillars. And the whole thing is *running* — barreling toward DragonLand, a fortress where capture means interrogation, torture, and the end of everything.
+
+Tidus knows what this is. He's seen Prison Tortugas before. He knows the stakes: if they don't escape before arrival, the torture will be so severe that every one of them will break, revealing everything — his location, their mission, all of it. The clock is ticking. Twelve rounds.
+
+---
+
+### The Story
+
+**The Breakout**
+
+Each prisoner faces the same grim setup: a ten-by-ten cell, rusted bars, a simple padlock, and iron shackles chaining them to the floor. No weapons. No equipment. Just whatever they can scavenge from the rotting cot bolted to the wall.
+
+Zacarías, ever methodical, remembers that the guards left their confiscated equipment in a staging room rather than locking it away. He catalogues the layout from what he saw being dragged in — the exit, the control room with a massive guard, the mechanism pit. He rips the metal rods from his bed frame, snapping one, then another against the rusted padlock before finally wrenching it open on the third try. Free of his cell, he moves quickly, checking the neighboring cells. One is empty. One holds a terrified human. And one holds a chest — which wraps a viscous tongue around his throat the moment he touches it. A **Mimic**, hungry and patient. Zacarías fights the creature off, narrowly escaping strangulation, and presses on.
+
+Then he finds *him*.
+
+In the last cell sits a frail, ancient man — pale, shaking, barely able to stand. "Names are not necessary in this place," the old man says. "I've already forgotten mine." Zacarías offers to help. The old man accepts. And then, with a calm that borders on terrifying, **Señor Nadie** grips the iron bars of his cell and *tears them apart with his bare hands*, his skeletal frame erupting into corded muscle before compressing back to its withered state. He is a **Master Monk of the Orden del Silencio (Order of Silence)** — practitioners who sacrifice their identities to achieve enlightenment — and he has mastered three disciplines: the Chi of Healing, the Art of Invisibility, and the Art of Brute Force. His true name is **Faorus Rain "The Silent Monk"**. His signature: a walking staff, now locked in a trapped cell, marked by three colored flames.
+
+Meanwhile, Nixira is having a worse time of it. She smashes her way out of her shackles, catches acid from the tortoise's bleeding defense glands in the chest, and takes a micro-scale spike to the lung. She's breathing blood when one of Señor Nadie's pupils — the monk of healing, who gives his name only as **Rodrigo** — presses his hands to her back and seals the wound with chi. She can breathe again, but the pain lingers.
+
+Zacarías and Señor Nadie navigate the trap corridors together, the old monk turning invisible to scout while Zacarías uses illusions to trigger pressure plates safely. They retrieve Nadie's staff from a trapped cell (after the monk casually destroys the Mimic guarding it with a single kick), and the transformation is immediate: staff in hand, Señor Nadie stands tall, decades of false frailty falling away to reveal a warrior in his prime.
+
+But the tortoise is accelerating. The traps intensify. Rodrigo — the gentle healer who restored Nixira's lung — takes a dart through the throat. He dies in the corridor, pressing a healing potion into Zacarías's hands with his last breath. *"My name is Rodrigo,"* he says. And then he is gone.
+
+Zacarías, shaking with fury, squeezes his own blood from his palm and calls out to **Malfas, Prince of Ravens**: *"You let them kill my raven. Now I call you for vengeance."* Malfas answers with characteristic contempt — *"Don't bother me with these stupidities"* — but snaps his fingers nonetheless. Zacarías's blood lifts from his skin, weaving itself into a lattice of black webbing around his body: seventeen layers of blood-ward shielding. The price: no more rituals for the rest of the session.
+
+Nixira reaches the main gate first — and there stands **Branig "the Double-Blade"**, an undead guard recently raised by a necromancer, still carrying the boredom and sass of his former life. Two rusted sabers. Leather armor. A dead man's smirk. Nixira, unarmed and bleeding, does what she does best: she *talks*. She compliments him. She flirts. She asks him to spin around so she can get a better look. Branig, amused despite himself, proposes a wager — roll a die, and if it lands even, she gets her gear back. And just as the tension reaches its peak, a figure appears behind the alarm-strings: a breathtakingly beautiful woman, pale as snow, with **crimson eyes** and a dress the color of arterial blood, glittering with frost.
+
+---
+
+**[MISSING SCENE]**
+
+*The recording cuts here. What happened next — the resolution of Branig's wager, the identity of the crimson-eyed woman, and how the party transitioned from the Prison Tortoise to a volcanic dungeon — is lost. When the next recording picks up, the world has changed entirely.*
+
+---
+
+**The Fallen Paladin**
+
+The party is deep underground, in a volcanic chamber built around a lake of condemned souls. On a raised platform above the magma-glow stands a demon: **Victus**, also called **Raku** — a creature of terrible power and barely contained rage.
+
+Nixira climbs the stairs to negotiate, trying to pass herself off as a valuable asset rather than a prisoner. Victus sees through her immediately. With a casual flick of his wrist, he makes her feel the phantom weight of invisible chains — a demonstration of raw psychic force. Negotiations collapse when he senses she works for someone connected to **Luney IcePeak**. The word alone sends him into cold fury. *"With someone who works for Luney, negotiations are not possible."*
+
+The room seals. Victus's platform descends. His human disguise burns away to reveal his true form: a hulking, armored paladin-turned-fiend. His wings have been severed — the stumps scarred and cauterized. His white cape ignites into plate armor. Hooves crack against stone. Horns spiral upward. This was once a holy warrior. Now he is something far worse.
+
+The fight is brutal and desperate.
+
+Tidus opens with a crossbow bolt to the eye. Victus plucks it out, breaks it, and drops it at his feet without a word. Nixira switches from her harp to a war drum, channeling Thaumaturgy to invoke battle spirits — the rhythmic pounding echoes diegetically through the volcanic chamber. Zacarías, creeping behind the demon with a dagger coated in corrosive volcanic poison he scavenged from a fallen soldier's melted shield, drives the blade into Victus from behind with triple advantage. The critical hit lands. The venom doubles the damage. For one glorious moment, the party has the upper hand.
+
+Then Nixira plays her masterstroke. Using Thaumaturgy's vocal amplification, she fills the chamber with a chorus of accusing voices — *"Why did you betray us? You weren't strong enough. You are unworthy."* — and the spell cracks something open. The spirits in the lake below *awaken*. Real voices join the conjured ones. And then, from somewhere beyond the veil, a voice Victus recognizes: **his god**.
+
+*"My son — what are you doing playing guard when I commanded you to destroy the Fallen Prince?"*
+
+Victus drops to his knees. For one heartbeat, the demon is a paladin again, broken and begging. *"Forgive me — I couldn't do it."*
+
+But the moment passes. The berserker rage takes him. Victus turns on Zacarías with terrifying speed — a flaming fist, a stolen dagger driven into the gnome's back, a throw against the stone wall. **Zacarías drops.** Zero hit points. Instant kill threshold. He lies motionless on the volcanic rock, bleeding out.
+
+Nixira sees her friend fall and something breaks inside her. She nocks an arrow. *"He may be an idiot, but he's MY idiot."* Natural 20. The arrow punches through Victus's skull from front to back, spraying gore across the chamber. His body goes grey. His horns dissolve. His armor fades. For one last moment, he is human — wounded, scarred, grateful. *"Thank you,"* he whispers. And crumbles to dust.
+
+---
+
+### Key Revelations
+
+- **Luney IcePeak is far more dangerous than anyone realized.** The party's tavern-owner boss once cut the wings off a demon as punishment for theft. The casual brutality of this act — and the fear it inspires in Victus — reframes everything the party knows about their employer.
+- **Victus was a Fallen Paladin**, not merely a demon. He was commanded by his god to destroy "the Fallen Prince" and failed. His damnation was his punishment. His death was a mercy.
+- **Señor Nadie (Faorus Rain) and the Orden del Silencio (Order of Silence)** are monks who erase their identities to achieve mastery. Their master is an elf. One of three pupils (Rodrigo, the healer) is now dead. Two remain: the monk of Invisibility (Fresitas) and the monk of Brute Force (Fuercitas).
+- **Malfas, Prince of Ravens**, will answer Zacarías's calls — but grudgingly, at a cost, and with open contempt. The patron-warlock relationship is transactional and volatile.
+- **Prison Tortugas** are mobile, living prisons — elemental beasts whose bodies serve as trap-laden dungeons, ferrying captives between kingdoms.
+
+---
+
+### Consequences
+
+The party has escaped the Prison Tortoise (through unknown means during the missing scene) and slain a demon that even their boss once found dangerous enough to maim rather than kill. But the cost is steep. Zacarías lies dying. The Nameless Monk lost a pupil. And the revelation about Luney — that their jovial, cocktail-mixing tavern owner is capable of mutilating demons — hangs over everything like smoke.
+
+Whatever Farquad's guards were trying to accomplish by capturing them, the party is now loose, leveled up, and asking dangerous questions about the people they work for.
+
+---
+
+### Chapter Status
+
+| Character | Status |
+|-----------|--------|
+| **Tidus** | Unscathed. Took zero damage across both sessions. Deadly with the crossbow. Delivered the intel that saved them in the prison. |
+| **Nixira** | Battered — acid burns, scalp torn, lung damage (healed). Emotionally shaken. Landed the killing blow on Victus. |
+| **Zacarías** | **Critical.** 0 HP, dying. Needs immediate magical healing at the start of next session. Reached Level 3 from the fight. His raven familiar was destroyed by the tortoise's acid. |
+| **Señor Nadie** | Allied NPC. Staff recovered, at full power. Lost his pupil Rodrigo. Traveling with the party. |
+| **Fuercitas** | Allied NPC (Monk of Brute Force). Alive, lightly damaged. Still following Señor Nadie. |
+
+*All party members earned 3,000 XP. Zacarías has reached Level 3. Next session must open with saving his life — or burying him.*
+
+---
+
+### Organizations Present
+
+#### La ultima Gota
+The PCs are still operating as tavern employees, but the revelation about Luney cutting off a demon's wings reframes the organization. Their "jovial tavern boss" is far more dangerous than they knew.
+
+| Member | Role in Chapter | Status |
+|--------|----------------|--------|
+| **Tidus** | Intel specialist — knew the Prison Tortuga, assessed escape timeline, negotiated with Victus | Alive, unscathed |
+| **Nixira** | Combat bard — psychological warfare, killed Victus with the final shot | Alive, injured |
+| **Zacarías** | Breakout specialist — escaped cell, allied with monks, backstabbed the demon | 0 HP — dying |
+
+#### Orden del Silencio (Order of Silence)
+A monastic order (formerly called "Caste of the Dead Without Names") encountered inside the Prison Tortuga. Monks sacrifice their identities for mastery over body and spirit. The party freed them and gained powerful allies.
+
+| Person | Discipline | Role in Chapter | Status |
+|--------|-----------|----------------|--------|
+| **Señor Nadie** | Master — all three disciplines | Ripped open cell bars, healed Nixira, turned invisible to scout, navigated traps with Zacarías | Alive, at full power |
+| **Rodrigo** | Chi of Healing (orange flame) | Healed Nixira's punctured lung. Killed by darts in trap corridor. Gave healing potion with last breath. | **Dead** |
+| **Fuercitas** | Brute Force (red flame) | Freed from prison. The youngest pupil — stole the forbidden chi-astral book that got them all imprisoned. | Alive, with Nadie |
+| **Fresitas** | Invisibility (black flame) | Not found in the Prison Tortuga. | **Missing** — still imprisoned? |
+
+#### Farquad's Command / DragonLand Military
+The Prison Tortuga is a Farquad and DragonLand military asset. Guards and security systems are maintained by the command currently loyal to him.
+
+| Element | Role | Status |
+|---------|------|--------|
+| **Prison Tortuga** | Living prison transport heading to DragonLand | Party escaped (details lost in missing recording) |
+| **Branig "Double Edge"** | Undead guard at the main exit | Outcome unknown (missing recording) |
+| **Guards** | Standard security | Outcome unknown |
+
+#### Malfas's Patronage (Warlock Pact)
+Zacarías called upon Malfas after losing his raven. Malfas granted the blood-web shield (17 charges) but with open contempt and at the cost of all ritual casting.
+
+---
+
+### NPC Tracker — Chapter 3
+
+#### Señor Nadie (Faorus Rain "The Silent Monk") — Master of the Orden del Silencio
+- **Who:** Master Monk of the Orden del Silencio (Order of Silence). True name: **Faorus Rain**. Appears as a frail ~90-year-old; can transform into a muscular ~40-year-old warrior. Carries a guidance staff with three flames (healing, invisibility, brute force). His master is a forest elf.
+- **What he did:** Ripped open his cell bars with brute force. Healed Nixira's punctured lung. Turned invisible to scout the Prison Tortuga. Broke Zacarías's shackle. Killed a mimic with a kicked cell bar. Retrieved his staff from a trapped cell. Navigated trap corridors with Zacarías using combined invisibility and illusions.
+- **Related to:** Rodrigo (pupil — dead), Fuercitas (pupil — alive), Fresitas (pupil — missing), his unnamed elf master
+- **End status:** **Alive.** Staff recovered, at full power. Allied with the party. Lost one pupil.
+
+---
+
+#### Rodrigo — Monk Pupil (Discipline of Healing)
+- **Who:** Human monk pupil. Discipline of Wisdom / Chi of Healing (orange flame). Gentle, brave.
+- **What he did:** Freed from prison by the PCs. Used his chi healing to seal Nixira's punctured lung — saving her life. Pressed a strong healing potion into Zacarías's hands with his dying breath.
+- **What happened to him:** Hit by **darts through the throat** in a trap corridor. Died instantly. His last words were his name: *"My name is Rodrigo."*
+- **Related to:** Señor Nadie (master), Fuercitas and Fresitas (fellow pupils), Nixira (saved her life — she vowed to write a song for him)
+- **End status:** **Dead.** Nixira dedicated a mental song to his memory.
+
+---
+
+#### Fuercitas — Monk Pupil (Discipline of Brute Force)
+- **Who:** Human monk pupil. Discipline of Brute Force (red flame). The youngest of three pupils. Brave, obedient, eager to find his master.
+- **What he did:** Freed from prison. Followed Zacarías and Señor Nadie through the tunnels. Revealed that he was the one who stole the forbidden chi-astral book — the reason the entire monk group was captured and imprisoned.
+- **Related to:** Señor Nadie (master), Rodrigo (fellow pupil — dead), Fresitas (fellow pupil — missing)
+- **End status:** **Alive.** Traveling with Señor Nadie and the party. Has a one-use turtle-scale shield.
+
+---
+
+#### Branig "El Doble Filo" (The Double Edge)
+- **Who:** Undead human guard (~Level 1). Recently reanimated by a necromancer. Retains human sensations, boredom, and sass. Broken neck. Two rusted sabers. Simple leather armor.
+- **What he did:** Guarded the main exit door of the Prison Tortuga. Engaged in banter with Nixira — complimented, flirted with, asked to spin around. Proposed a dice wager for her belongings. Encounter interrupted by the appearance of the Mysterious Woman.
+- **Related to:** Unknown necromancer (raised him), Farquad's forces (employed as guard)
+- **End status:** **Unknown.** The recording cuts during his scene. The party got past him somehow (missing recording).
+
+---
+
+#### The Mysterious Woman (Unnamed)
+- **Who:** Human with mixed blood (possibly vampiric or dhampir). Beautiful, tall, completely pale skin, **crimson eyes**, wears a brilliant blood-red dress covered in sparkles/frost-like glitter. Sweet demeanor.
+- **What happened:** Appeared behind the alarm-wire corridor at the end of the Prison Tortuga segment. A cliffhanger reveal — the recording cuts immediately after her appearance.
+- **End status:** **Alive.** Identity, intentions, and what happened next are all unknown (missing recording).
+
+---
+
+#### Victus / Raku — The Fallen Paladin Demon
+- **Who:** Demon (originally a humanoid paladin). In demon form: hooves, tall horns, wing stumps (wings cut off by Luney as punishment for theft), red-skinned, heavy armor forming from his white cape. Salivates in berserker mode. Level 2 demon, worth 3,000 XP.
+- **Backstory:** Once a paladin sworn to a deity. Tasked by his god with "destroying the Fallen Prince" but failed. Luney IcePeak cut off his wings as punishment. Reduced to guarding a volcanic lair — an assignment he considered beneath him. Broke his seal of chastity. Became a "sacred demon."
+- **What he did:** Cast Air Prison on Tidus. Refused to negotiate with anyone connected to Luney: *"With someone who works for Luney, negotiations are not possible."* Performed a meteor-like fire charge. Clawed Zacarías's scalp off. Stabbed Zacarías with his own burning dagger, dropping him to 0 HP.
+- **What happened to him:** Nixira's Thaumaturgy awakened condemned spirits in the lake, who spoke to him. Through them, his god's voice reached him: *"My son, what are you doing being a simple guard when I told you to destroy the Fallen Prince?"* He fell to his knees: *"Forgive me, I couldn't do it."* Then went berserk. **Killed by Nixira** — crossbow bolt through the skull. Last word: **"Gracias."** Crumbled to dust. His wing-shaped doors unlocked upon death.
+- **Related to:** Luney (his punisher — cut off his wings), his unnamed god (disappointed in him), "the Fallen Prince" (his failed target)
+- **End status:** **Dead.** Died grateful. His lair doors (wing-shaped) opened with his death.
+
+---
+
+#### Malfas, Prince of Ravens (Patron Entity)
+- **Who:** Powerful dark entity. Zacarías's warlock patron. Contemptuous, transactional, volatile.
+- **What he did:** Answered Zacarías's call for vengeance after the raven familiar was destroyed. Responded with: *"Don't bother me with these stupidities."* But granted the blood-web shield (17 charges) — a lattice of black webbing woven from Zacarías's blood. Cost: no more ritual casting.
+- **End status:** **Active.** Patron relationship intact but strained.
+

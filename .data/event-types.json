@@ -1,0 +1,9 @@
+[
+  { "id": "battle", "label": "Battle", "color": "#cc2222", "icon": "swords" },
+  { "id": "discovery", "label": "Discovery", "color": "#4a9a4a", "icon": "search" },
+  { "id": "npc", "label": "NPC Encounter", "color": "#9a5a2a", "icon": "user" },
+  { "id": "quest", "label": "Quest", "color": "#8a4a9a", "icon": "scroll-text" },
+  { "id": "lore", "label": "Lore", "color": "#4a6a9a", "icon": "book-open" },
+  { "id": "travel", "label": "Travel", "color": "#7a6a3a", "icon": "map-pin" },
+  { "id": "rest", "label": "Rest", "color": "#3a5a3a", "icon": "moon" }
+]

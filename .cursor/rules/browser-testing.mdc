@@ -1,0 +1,156 @@
+---
+description: Lessons learned from browser testing — real mistakes to avoid
+alwaysApply: true
+---
+
+# Browser Testing — Mistakes to Avoid
+
+## 0. FIRST THING: resize the browser to 1280x800
+
+The IDE browser panel defaults to ~500px wide. Header buttons, dropdowns, and toolbar controls overflow and become unclickable. This has cost 20+ wasted tool calls in a single test run.
+
+**Before any test, always run:**
+
+```
+browser_resize({ width: 1280, height: 800 })
+```
+
+Do this ONCE at the start. Not after the first failure — before the first action.
+
+## 1. Clear Vite cache after installing packages
+
+After `npm install` of new packages, the dev server will crash with 500 / 504 errors.
+Always do this before restarting:
+
+```bash
+rm -rf node_modules/.vite
+```
+
+## 2. Flush server cache after changing decode/render logic
+
+Content fetched from GitHub is cached in memory (or Redis). If you fix how content is decoded or rendered, the old broken result is still cached. Flush it:
+
+```bash
+curl -X POST http://localhost:5173/api/webhook -H "Content-Type: application/json" -d '{"ref":"refs/heads/github"}'
+```
+
+Don't waste tool calls debugging "why didn't my fix work" — it's the cache.
+
+## 3. Authentication setup — do it once, don't lose it
+
+The `gh_token` cookie is `httpOnly: true`. You cannot set it with `document.cookie` or `javascript:` URLs.
+
+**Full auth setup (do this ONCE at the start):**
+
+```
+1. browser_navigate to /api/auth/dev-token?token=<PAT>     → sets httpOnly cookie
+2. browser_navigate to /#token=<PAT>                         → populates localStorage
+3. Verify: curl /api/status (check authenticated: true)
+```
+
+**After this, NEVER navigate with `#token=...` again.** Use plain URLs (`/timeline`, `/chapters/...`). The cookie persists across navigations. localStorage persists within the same origin. Re-adding the hash triggers `onMount` logic that can interfere.
+
+**After any code change:** HMR triggers a page reload that clears localStorage. Auth WILL look lost (no Logout/Edit/Drafts buttons). This is predictable — don't waste a tool call discovering it. Re-authenticate BEFORE checking your fix:
+
+```
+browser_navigate to /#token=<PAT> → restores localStorage
+```
+
+The cookie survives HMR. Only localStorage needs restoring.
+
+The test PAT is stored in `.env` as `GITHUB_TEST_PAT`. Read it from there — never hardcode it.
+
+## 4. The Edit button only appears on content pages
+
+Don't navigate to `/` and expect to see the Edit button. The home page has no `sourcePath`. Navigate to a wiki content page like `/chapters/...` to test editing.
+
+## 5. `browser_fill` doesn't trigger Svelte reactivity
+
+`browser_fill` sets the DOM `.value` directly without dispatching `input` events. Svelte's `bind:value` won't see the change — reactive state stays stale, and buttons gated by that state (like "Create Event") stay disabled.
+
+**Use `browser_type` with `clear: true` instead:**
+
+```
+browser_type({ ref, text: "my value", clear: true, slowly: true })
+```
+
+`slowly: true` types one character at a time, which fires `input` events that Svelte's binding picks up. Only needed for Svelte-bound inputs where downstream state depends on the value.
+
+## 6. JavaScript `.click()` doesn't trigger Svelte 5 event handlers
+
+Svelte 5 uses event delegation — handlers are attached to a shared ancestor, not the element itself. `document.querySelector('[data-testid="..."]').click()` fires a `click` event that Svelte's delegation may not catch.
+
+**Prefer `browser_click` with the element's ref** (works if the browser is properly sized per rule 0). If you must use JavaScript:
+
+```javascript
+const el = document.querySelector('[data-testid="wiki-edit"]');
+el.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
+el.dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
+el.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+```
+
+But really — just resize the browser (rule 0) and use `browser_click`.
+
+## 7. Element missing from accessibility snapshot — diagnostic flowchart
+
+When you add `role`, `aria-label`, or `data-testid` to an element and it still doesn't appear in `browser_snapshot`, follow these steps **in order**. Do NOT guess — each step is one `javascript:void(...)` call.
+
+**Step 1 — Does the element exist in the DOM?**
+
+```
+javascript:void(document.title = document.querySelectorAll('.my-selector').length + ' found')
+```
+
+- **0 found** → The library isn't rendering your content. Check the library's API docs for `template`, `content`, or `render` options.
+- **N found** → Go to step 2.
+
+**Step 2 — Are your custom attributes present?**
+
+```
+javascript:void(document.title = document.querySelector('.my-selector')?.getAttribute('role') + '|' + document.querySelector('.my-selector')?.getAttribute('aria-label'))
+```
+
+- **null|null** → The library has a **sanitizer stripping attributes**. Search docs/issues for "xss", "sanitize", "whitelist", or "filterOptions". In this project: vis-timeline strips all non-whitelisted attributes; fix with `xss: { disabled: true }` in dev mode.
+- **Values present** → Go to step 3.
+
+**Step 3 — Is the element visually hidden?**
+
+```
+javascript:void(document.title = getComputedStyle(document.querySelector('.my-selector')).visibility + '|' + getComputedStyle(document.querySelector('.my-selector')).display)
+```
+
+- **hidden|*anything*** → `visibility: hidden` removes elements from the accessibility tree. Override with CSS `visibility: visible !important`. In this project: SvelteFlow uses `visibility: hidden` for node measurement.
+- **visible|none** → `display: none` fully hides the element. Check if a parent conditionally hides it.
+- **visible|*not none*** → Go to step 4.
+
+**Step 4 — Is an ancestor hiding the subtree?**
+
+```
+javascript:void(document.title = document.querySelector('.my-selector')?.closest('[aria-hidden="true"]')?.className || 'no aria-hidden ancestor')
+```
+
+- **Found ancestor** → A parent has `aria-hidden="true"`, which removes the entire subtree from the accessibility tree. Override it or move your element outside.
+- **No ancestor** → The issue is something else (z-index clipping, iframe boundary, or a browser_snapshot tool limitation). Take a screenshot to verify the element is visually present.
+
+**This flowchart costs 1-4 tool calls. Without it, diagnosis takes 8-15.**
+
+## 8. Server sends correct data but UI doesn't render — diagnostic
+
+Different from rule 7 (element not in snapshot). Here the element doesn't exist in the DOM at all, even though the server is passing the right props. This cost 30+ tool calls in one test run because the LLM jumped randomly between server code, client code, cache, and screenshots.
+
+**Follow this order:**
+
+1. **Verify server data is correct** (1 call): `javascript:void(document.title = JSON.stringify(Object.entries(__sveltekit_data || {}).slice(0,5)))` or check the page's `<script>` tags for serialized data.
+2. **Verify the element's render condition** (1 call): Read the `{#if ...}` or ternary in the component template. Check exactly which variables gate rendering.
+3. **Check those variables in the client** (1 call): `javascript:void(document.title = ...)` to read the reactive state. If the server prop is correct but the `$state` variable is wrong, it's a hydration or initialization bug.
+4. **Fix and verify** — don't thrash between server/client/cache. The problem is always in step 2 or 3.
+
+**Do NOT:** flush caches, re-authenticate, check unrelated code paths, or take screenshots until steps 1-3 are done.
+
+## 9. Dismiss dropdowns before opening another
+
+Overlapping dropdowns block each other. If a dropdown is open (branch selector, DraftsPanel), the backdrop or z-index prevents clicking other toggles. This cost 6 tool calls in one test run.
+
+**To close an open dropdown:** Click the same toggle button that opened it (it toggles closed). Don't try Escape, clicking "elsewhere", or clicking the backdrop — these are unreliable.
+
+**Design note for developers:** Sibling dropdowns in the same header should auto-close when another opens. Add this to the component: `onclick` on a toggle should close all other open dropdowns first.
