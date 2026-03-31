@@ -41,11 +41,11 @@ Used raven to discover the door mechanism, a moonstone (10 platinum), and the dr
 
 Broke out of his cell using bed-frame rods. Summoned raven to scout (it was dissolved by acid). Called upon Malfas â€” received the blood-web shield (17 charges) at the cost of all ritual casting. Allied with the Nameless Monk (SeÃ±or Nadie). Navigated trap corridors using illusions and strategy. Encountered a mysterious pale woman with crimson eyes at a cliffhanger moment.
 
-In the demon's lair, poisoned his daggers with corrosive venom from the demon's cauldron. Delivered a devastating critical backstab on the demon. Got grabbed, stabbed with his own burning dagger, and knocked to **0 HP**. Scalp ripped off by the demon. Making death saving throws as the session ends.
+In the demon's lair, poisoned his daggers with corrosive venom from the demon's cauldron. Delivered a devastating critical backstab on the demon. Got grabbed, stabbed with his own burning dagger, and knocked to **0 HP**. Shaved his head in honor of Fuercitas after her death. Making death saving throws as the session ends.
 
-## Chapter 5 - The Battle of Brasboredon
+## Chapter 5 - The Battle of Brastabro
 
-Entered Brasboredon through the main gate during the revolution. Summoned raven familiar to scout from above â€” witnessed the massacre: twenty children of all races dead in the streets, dwarven mothers wailing over charred bones. Initially called for "guerra muerte contra los dragones" over the communication stone.
+Entered Brastabro through the main gate during the revolution. Summoned raven familiar to scout from above â€” witnessed the massacre: twenty children of all races dead in the streets, dwarven mothers wailing over charred bones. Initially called for "guerra muerte contra los dragones" over the communication stone.
 
 After seeing the bodies and being challenged by Tidus, delivered an **"I Have a Dream" speech** â€” a moment of moral clarity about racial harmony, refusing to repeat the cycles of hatred. *"Todos podemos ser diferentes. No tenemos que armar una guerra y repetir la historia."* Closed with the draconic prayer: *"Todos nacemos del fuego y morimos en el fuego."* Malfas responded with ravens. Gained **1 point of inspiration**.
 
@@ -92,7 +92,7 @@ Walked out of Brasboredon with Tidus, Nixira, and Berlin.
 | **Level** | 3 |
 | **HP** | Recovering |
 | **Location** | Outside Brasboredon â€” on the road |
-| **Conditions** | **Right hand severed**, bald (scalp ripped off), **Capa Sagrada** equipped (+5 ReligiÃ³n), patron connection critically weakened, **mark of Val** (sworn to protect dwarves), **magical dystrophy** (intermittent spell failure) |
+| **Conditions** | **Right hand severed**, bald (shaved head in honor of Fuercitas), **Capa Sagrada** equipped (+5 ReligiÃ³n), patron connection critically weakened, **mark of Val** (sworn to protect dwarves), **magical dystrophy** (intermittent spell failure) |
 | **Key Items** | **Capa Sagrada** (+5 ReligiÃ³n), Moonstone (10 platinum), cave maps, climbing gear, communication stone, **golden arrow** (Messi's keepsake) |
 
 
