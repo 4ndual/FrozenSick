@@ -48,7 +48,7 @@ Lina's shop was a modest house with eight locks on the door and four padlocks in
 
 Zacarias failed his constitution save and collapsed onto the sofa, incoherent and drooling.
 
-*"His medicine!"* Tidus improvised, telling Lina that Zacarias had been cursed by a warlock named Malacor and needed a specific compound. The deception check tied at eighteen — Lina was too experienced to be fooled easily but too flustered to call the bluff outright. While she ran upstairs to find supplies, Tidus searched her belongings and discovered something valuable: a Barca wool cape, recognizable by the purple vapor it emitted near heat. The legendary fabric from Love Dread sheep could withstand temperatures thirty degrees below zero.
+*"His medicine!"* Tidus improvised, telling Lina that Zacarias had been cursed by a warlock named Malacor and needed a specific compound. The deception check tied at eighteen — Lina was too experienced to be fooled easily but too flustered to call the bluff outright. While she ran upstairs to find supplies, Tidus searched her belongings and discovered something valuable: a Barca wool cape, recognizable by the purple vapor it emitted near heat. The legendary fabric from Love Dread sheep could withstand temperatures thirty degrees below zero. The cape was claimed by Zacarias.
 
 When Lady Circaven finally arrived, the situation resolved itself. The noblewoman swept in with aristocratic authority, immediately identified Lina's poisoned tea, covered the toxic plant with a cloth, and dismissed the seamstress's schemes as a known nuisance. *"Lina is a petty pickpocket. She and Dask drug travelers, steal their goods, and have Borco claim they got drunk. Modus operandi for years. Not dangerous — just pathetic."*
 
@@ -188,9 +188,9 @@ Three days back to La Ultima Gota. Seven days total. Their first mission, comple
 
 | Character | Condition | Notes |
 |-----------|-----------|-------|
-| **Tidus** | Alive, exhausted | Acquired Barca wool cape (cold resistance to -30C). Used Sleight of Hand to steal Circaven's Uroboros ring and later returned it as a key. Systematically secured every room with alarms and traps. Maintained self-deception to deny the paranormal throughout the mission. Net gold: +40 (share of 120 reward). |
+| **Tidus** | Alive, exhausted | Used Sleight of Hand to steal Circaven's Uroboros ring and later returned it as a key. Systematically secured every room with alarms and traps. Maintained self-deception to deny the paranormal throughout the mission. Net gold: +40 (share of 120 reward). |
 | **Nixira** | Alive, weakened | Blood rituals drained her vitality — the mansion absorbed her blood circles. Played harp to channel energy during group rituals. Discovered the green gemstone key and identified the portrait mechanism. Used Vicious Mockery — saw spectral daggers fly from her voice. Net gold: +40. |
-| **Zacarias** | Alive (9th resurrection), shaken | Died from psychic damage when Malfas punished him for performing rituals in the mansion. Identified the failed necromantic circles in the basement. Read the Ben family diary in Old Draconic. His raven familiar lost an eye to a wild raven alpha. Net gold: +40. 500 XP earned. |
+| **Zacarias** | Alive (9th resurrection), shaken | Acquired Barca wool cape (cold resistance to -30C). Died from psychic damage when Malfas punished him for performing rituals in the mansion. Identified the failed necromantic circles in the basement. Read the Ben family diary in Old Draconic. His raven familiar lost an eye to a wild raven alpha. Net gold: +40. 500 XP earned. |
 | **Circaven Ben** | Alive, relieved | Learned the truth about her family's curse and the hidden basement. Signed a purchase agreement for the mansion with the Calvo Manco guild. Remains as caretaker. |
 
 ---
