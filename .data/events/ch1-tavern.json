@@ -1,0 +1,33 @@
+{
+  "id": "ch1-tavern",
+  "title": "The Tavern Job",
+  "description": "The party meets at La Última Gota and takes their first contract together.",
+  "date": {
+    "year": 1489,
+    "month": 1,
+    "day": 1
+  },
+  "endDate": null,
+  "timelineId": "main-story",
+  "type": "quest",
+  "relations": [
+    {
+      "targetId": "ch2-plateau",
+      "type": "leads_to",
+      "label": "leads to"
+    }
+  ],
+  "tags": [
+    "chapter-1",
+    "party-origin"
+  ],
+  "color": null,
+  "icon": "scroll-text",
+  "secret": false,
+  "linkedChapter": "Chapter 1 - The Tavern",
+  "linkedCharacters": [
+    "Tidus",
+    "Nixira",
+    "Zacarías"
+  ]
+}

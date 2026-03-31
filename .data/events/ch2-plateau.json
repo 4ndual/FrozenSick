@@ -1,0 +1,42 @@
+{
+  "id": "ch2-plateau",
+  "title": "The Plateau",
+  "description": "The party ventures into the plateau region on their contract. xd",
+  "date": {
+    "year": 1489,
+    "month": 1,
+    "day": 15
+  },
+  "endDate": {
+    "year": 1489,
+    "month": 2,
+    "day": 5
+  },
+  "timelineId": "main-story",
+  "type": "travel",
+  "relations": [
+    {
+      "targetId": "ch1-tavern",
+      "type": "caused",
+      "label": "following"
+    },
+    {
+      "targetId": "ch3-turtle",
+      "type": "leads_to",
+      "label": "leads to"
+    }
+  ],
+  "tags": [
+    "chapter-2",
+    "exploration"
+  ],
+  "color": null,
+  "icon": "map-pin",
+  "secret": false,
+  "linkedChapter": "Chapter 2 - The Plateau",
+  "linkedCharacters": [
+    "Tidus",
+    "Nixira",
+    "Zacarías"
+  ]
+}
