@@ -24,259 +24,186 @@ Its walls were constructed of an incredible, brilliant black stone — vitreous,
 
 The symbol above the entrance, barely visible and cracked by sand and time, was twisted and unnatural. None of them recognized it fully, but it felt uncomfortably familiar.
 
-*"We don't know what's in there,"* Tidus said, studying the narrow staircase of archaeological excavation that descended approximately sixty-seven meters to the temple floor. *"It's a dungeon."*
-
-*"We paid sixty gold pieces for this information,"* Zacarias muttered, flipping through the guild's briefing notes. *"And they couldn't even give us a map."*
-
-**The Descent — Into the Black**
-
-They rolled initiative for entry order — the passages were too narrow for anything but single file. Zacarias went first with an eighteen, Tidus close behind. Nixira brought up the rear.
-
-The moment they crossed the threshold, the air changed. Cold and heavy, it pressed against them like a living thing. The echo of their own footsteps multiplied between columns and dark corridors. Then — an eruption of sound. Stone grinding against stone, a mechanism engaging somewhere above them. The entrance sealed shut behind them with a finality that left no room for ambiguity.
+They descended approximately sixty-seven meters down an archaeological excavation staircase. The moment they crossed the threshold, the air changed — cold, heavy, pressing against them like a living thing. Stone ground against stone somewhere above. The entrance sealed shut behind them with a finality that left no room for ambiguity.
 
 They were inside. The only way out was through.
 
-Tidus dropped to one knee, pressed his fingers to the floor, and scraped. Rat droppings — dry, seven or eight days old. Nearly a full tenday since whatever was here had driven every living thing to flee in panic. He looked at Zacarias with quiet certainty.
+**The Labyrinth Begins**
 
-*"The rats are gone. I've only seen this on ships — when they flee, it means something eats living things down here. Whatever it is, it scared them badly enough to abandon their tunnels entirely."*
+Tidus dropped to one knee and scraped the floor. Rat droppings — dry, seven or eight days old.
 
-The walls were vitreous and smooth — impossible to climb. No ventilation shafts, no cracks, no handholds. Tidus began his protocol: at every turn, he scored the walls with his dagger, marking their path through the labyrinth. Zacarias, with characteristic flair, inscribed "El Calvo Manco estuvo aca" at the entrance to every new corridor, along with a small logo of their guild. Nixira cast her dancing lights, placing a luminous orb above each of their heads.
+*"The rats are gone,"* he said quietly. *"I've only seen this on ships — when they flee like this, something down here eats living things. Whatever it is scared them badly enough to abandon their tunnels."*
 
-*"No respect,"* Zacarias announced to the darkness. *"Lunei sends us here, makes us pay, and doesn't even provide a map. I want to leave already."*
+The walls were vitreous and smooth — impossible to climb. Tidus began scoring them with his dagger at every turn, marking their path. Zacarias, with characteristic flair, inscribed "El Calvo Manco estuvo aca" at the entrance corridor with a small guild logo. Nixira cast dancing lights, placing luminous orbs above each of their heads.
 
-*"That tavern is basically ours,"* Tidus replied. *"Lunei could be gone for a hundred, two hundred years. It's almost like it belongs to us."*
+The dungeon revealed itself in layers of escalating danger: pressure plates that launched vitreous stone shards from the walls, corridors where hidden blades swung from concealed slots (detectable only by the pattern of disturbed dust — alternating north and south), and an electric grid trap that nearly killed Zacarias when he stepped on the wrong tile.
 
-*"Don't say that out loud."*
+**The Mirror — A Foul-Mouthed Ally**
 
-**The Iron Door and the Mirror**
+The first true chamber presented an imposing door of black forged iron. Nixira used Mage Hand to slide it open — and a voice erupted from within.
 
-The first true chamber presented itself after a narrow corridor that twisted and descended deeper into the earth. Before them stood an imposing door of black forged iron, mounted on rails — a sliding mechanism. Nixira used Mage Hand to push it open.
+*"Why are you moving me? Imbecile! Show some manners!"*
 
-The door slid west, and a voice erupted from it.
+The back of the door was a mirror, two meters tall, framed in ancient dark wood. The entity trapped within was not merely sentient but theatrically hostile. It showed their reflections scrambled — Tidus's body with Zacarias's gnomish head and Nixira's horns — and launched into a tirade of insults that would have made a sailor weep.
 
-*"Why are you moving me? Who's there?"*
+But Tidus understood vanity.
 
-A living door. Or rather — the back of the door was a mirror, two meters tall, framed in ancient dark wood gnawed by centuries of rot. And the mirror was furious.
+*"I didn't expect to find one of your kind here,"* he said, leaning against the wall. *"What is your favorite blood?"*
 
-*"Imbecile! Show some manners! Where is the respect?"*
+What followed was the most productive manipulation of an inanimate object in the campaign's history. Tidus flattered the mirror relentlessly — complimenting its frame, its surface, its brilliance. The mirror softened.
 
-Tidus, having leapt acrobatically over the threshold, found himself face to face with his own reflection — except the mirror was showing his body with Zacarias's gnomish features and Nixira's horns. The entity trapped within was not merely sentient but deeply, theatrically hostile.
+*"You're not as stupid as you look."*
 
-*"A group of idiots,"* the mirror declared. *"A deformed elf. An out-of-tune woman. And — is that a gnome? How disgusting."*
+They struck a bet: if Tidus survived and returned, the mirror would explain the exit mechanism. Tidus broke off a shard, wrapped it in cloth, and tied it to his belt. A portable, grudging ally.
 
-Every attempt at conversation was met with elaborate insults. The mirror called them stupid, ugly, smelly, and doomed. It had outlived ten groups of adventurers who had entered the temple, and it fully expected to outlive these three as well.
+**Cookie the Cockroach**
 
-But Tidus understood something the others did not. He understood vanity.
+Zacarias summoned a new familiar — a jet-black cockroach named Cookie. Small enough to slip through cracks, connected to Zacarias through their warlock bond. Cookie scouted rooms, detected traps, and became the party's eyes in the dark.
 
-*"I didn't expect to find one of your kind here,"* Tidus said casually, leaning against the wall. *"What is your favorite blood? Which race do you prefer?"*
+Her first significant discovery: a room of polished obsidian where the walls told a story in carved relief — a beautiful elven village, a tower destroyed by a furious mob, an elf lord of impossible beauty who knelt before a shadowed creature with fangs. The tale of an elf who became a vampire, immortalized in his own tomb.
 
-The mirror paused. Then, slowly: *"When they lift me up to drink — imbecile. When they press against me to feed."*
+**The Vampire's Heart**
 
-*"You're a vampire."*
+At the corridor's end, Cookie found a pillar, a small chest, and ancient elven inscriptions: *"All who enter the sacred temple of Bithanu shall be sacrificed if they do not possess the ancestral elven blood. Elves, you are welcome — but bring with you an offering of blood."*
 
-*"And you — are you one too? Where is your master?"*
+Tidus went alone. When he drew his dagger across his palm, the blood welled — and returned. The corridor recognized him. Inside the chest: a ruby the size of a fist, pulsing with internal light. The heart of the vampire lord of Bithanu. The mirror shard at his belt flared, burned, and crumbled to dust.
 
-*"I have no master. No one commands me."*
-
-What followed was the most productive manipulation of an inanimate object in the campaign's history. Tidus flattered the mirror relentlessly — complimenting its frame, its craftsmanship, its brilliant surface. The mirror, starved for validation after centuries of solitude, softened incrementally.
-
-*"You know what? You're not as stupid as you look."*
-
-*"And your surface is perfect. What can I say — total brilliance."*
-
-They struck a deal: if Tidus survived and returned, the mirror would personally explain how to open the exit door. Tidus broke off a small shard of the mirror — one hit point of damage to himself from the sharp edge — wrapped it in cloth, and tied it to his belt. A portable, grudging ally.
-
-**Cookie the Cockroach — Zacarias's New Familiar**
-
-With the mirror secured, Zacarias summoned a new familiar. A cockroach materialized — jet black, nearly invisible against the dark stone, feminine in presence. She crawled up his arm and perched on his ear.
-
-*"Her name is Cookie,"* Zacarias announced to his companions, who had not yet noticed the insect. *"She's going to help us explore."*
-
-*"You have a sister?"* Nixira observed.
-
-*"She has fear of what is in the room to the south,"* Zacarias reported after Cookie's first scouting run. *"She feels a thousand eyes watching her."*
-
-Cookie would prove invaluable — small enough to slip through cracks and under doors, quick enough to scout traps, and connected to Zacarias through their warlock bond. She could not speak, but she could feel, and what she felt in the depths of this temple was dread.
-
-**The Vampire's Corridor — Blood and Stone**
-
-Cookie's exploration of the polished southern corridor revealed something extraordinary. Where the rough vitreous stone gave way to mirror-smooth obsidian, the walls told a story in carved relief: a beautiful elven village, a tower destroyed by a furious mob, an elf lord of impossible beauty who knelt before a shadowed creature with fangs, and finally — the same lord, transformed, with blood dripping from his mouth. The story of an elf who became a vampire, immortalized in the walls of his own tomb.
-
-At the corridor's end: a pillar, a small chest, and a mirror frame thick with dried blood.
-
-The inscription along the baseboards, written in an ancient elven script, read: *"All who enter the sacred temple of Bithanu shall be sacrificed if they do not possess the ancestral elven blood. Elves, you are welcome — but bring with you an offering of blood. He who dares disturb my sacred heart shall face the consequences. Only those whose ancestors share our destiny may approach."*
-
-Tidus went alone.
-
-*"Let me go. I don't think it's a good idea for you two to enter."*
-
-*"You're the elf. It makes sense."*
-
-He walked the polished corridor with measured steps. When he reached the pillar and drew his dagger across his palm, the blood welled — and then returned. Absorbed back into his skin as if the wound had never existed. The corridor recognized him. It protected him.
-
-Inside the chest: a ruby the size of a fist, pulsing with a faint internal light. The heart of the vampire lord of Bithanu. The fragment of mirror Tidus carried at his belt flared, burned hot, and crumbled to dust.
-
-Tidus returned to his companions cradling the gem.
-
-*"I got the heart of a vampire elf lord,"* he said, tucking it into his pack. *"And in that corridor, I'm immortal. I stabbed my hand and the blood came back."*
-
-He paused, then showed them the rapidly closing wound on his palm. *"Also — I should probably mention this. I'm a vampire."*
-
-Nixira stared. Zacarias stared. Tidus maintained perfect composure.
-
-*"The part about vampires not being able to stand sunlight? It's a myth. My vampire ancestors spread it so people wouldn't believe we could walk in daylight. Silver too — a myth."*
+*"I got the heart of a vampire elf lord,"* Tidus reported, tucking the gem into his pack. Then, showing his rapidly healing palm: *"Also — I should mention. I'm a vampire."*
 
 He rolled deception. Eighteen plus six. They believed every word.
 
-**The Goblin Warband — Colmillo Negro**
+**The Goblin Warband and the Frenzy**
 
-Beyond the electric grid traps and the dart-loaded pressure plates, the party pushed deeper into the catacombs. In a chamber of rough-hewn stone — a contrast to the polished temple corridors — they found them: a warband of goblins, exhausted and battered, wearing small chest plates emblazoned with a distinctive symbol — a tooth encircled by a black scratch mark. Colmillo Negro. The Black Fang.
+Deeper in, the party found nine goblins from Colmillo Negro — the Black Fang — wearing chest plates emblazoned with a tooth encircled by a black scratch mark. Through theatrical deception (Tidus produced a dark stone and claimed it was a guild token from the Great Guild), they convinced the goblins they were allies.
 
-Nine goblins, all that remained of what had originally been a group of fifty. They had survived long enough to reach this level of the dungeon, but not much further.
+The celebration that followed was inevitable — goblins celebrated before, during, and after every mission. Music was required, alcohol was required, and touching something sacred was required. For the Calvo Manco, that meant the goblins touching Zacarias's bald head.
 
-*"Who is your leader?"* Tidus asked.
+Then the frenzy began. The chief drew his daggers and stabbed everything within reach. All nine goblins killed each other in their own celebration ritual. Zacarias, trapped at the center, absorbed sixty-four temporary hit points from the deaths through his warlock ability — Darwin's Blessing. Tidus acrobatically stole weapons mid-swing. The sole survivor was the chief, battered and bleeding, whom they named Rudy.
 
-*"What an imposing subject!"* the goblin chief replied, grinning with a mouth full of blackened, rotting teeth. *"We are here to kill anyone who was not sent by the Great Guild!"*
+**The Mimic and the Bridge**
 
-The party did not draw weapons. Instead, Tidus produced a dark fang-shaped stone from his pocket and held it up with a showman's flourish.
+Cookie's scouting led them to a golden chest — half-open, inviting. The moment she touched it, Zacarias's psychic link went dark. A mimic. Tidus put two crossbow bolts through it before it could close its jaw. Cookie was recovered, damaged but alive, though the mimic's magical containment properties temporarily severed her connection.
 
-*"The Great Guild sent us to find you. You've been here too long."*
+Beyond a rickety bridge spanning a bottomless void (one rope snapped under Tidus, another under Nixira's feather-light steps), the labyrinth grew more treacherous. Blade traps, pit traps, and the constant awareness that something worse waited ahead.
 
-*"The Great Guild does not send two groups for same mission. You are thieves."*
+The mirror's promise was honored: *"The exit requires three artifacts. A key. A ruby. And a medallion."*
 
-*"No — they sent us because you hadn't returned. Show us respect, or we leave you here."*
+**Part Two — The Minotaur**
 
-The deception check tied. The goblins were suspicious but not hostile. What tipped the balance was ritual: the goblins required a celebration before any mission, during any mission, and after any mission. Three days of feasting was standard. They had been celebrating in this chamber for two days already.
+Zacarias, in a characteristic impulse of reckless stupidity, sprinted ahead through two doors and found himself face-to-chest with a creature approximately two meters eighty tall, three-thirty including horns. A Minotaur, buffaloing air so dense that its nasal exhalation fell directly onto the gnome's bald head.
 
-The celebration required three things: music, alcohol, and the touching of something sacred. For the Calvo Manco, that meant the goblins wanted to touch Zacarias's bald head.
+Tidus fired from behind — crossbow bolt, sneak attack, thirteen damage — while Nixira screamed a warning. The Minotaur swung a makeshift hammer (a rock bound to a wooden plank with straw) at Zacarias's head. The gnome's blood shield absorbed the first blow, then the second — a critical hit — carved through all sixty-four points of temporary armor and five of real life, slamming him against a wall.
 
-*"They can touch it,"* Zacarias said with dignity. *"But with respect."*
+But Tidus, studying the creature from behind, noticed something that stopped him cold.
 
-Nixira played her harp. The goblins drooled crystalline saliva that hardened into impromptu daggers. And then, as goblin celebrations inevitably do, the festivities descended into a blood frenzy.
+The Minotaur was covered in lash marks. One horn was broken. An iron harness crossed its chest with a chain ring on its back — the kind used to bind prisoners. The "lair" was a prison cell, the doors sealed from the outside. This was not a monster guarding treasure. This was a slave.
 
-**The Frenzy — Nine Deaths**
+*"Wait,"* Tidus called. *"Look at it."*
 
-The goblin chief drew his two daggers and began stabbing everything within reach. The warriors drew their blades. The archers pulled their arrows and started plunging them into the nearest bodies. This was not combat — it was ritual. Goblin celebrations always required that blood be spilled.
+Nixira cast Sleep. The Minotaur — exhausted, starving, and emotionally broken — collapsed immediately. Two hundred kilos of tortured muscle, unconscious on the filthy floor.
 
-Tidus reacted instantly. With an acrobatics check of fifteen, he danced through the frenzied goblins surrounding Zacarias, pulling daggers from their hands mid-swing — an oxidized sword from one, a tiny dagger from an assassin. He moved like a pickpocket in a crowd, precise and untouchable.
+**Francisco**
 
-Zacarias was less fortunate. Trapped in the center of the frenzy, he took the full brunt of the celebration — punched, elbowed, and battered by the flat of every blade that couldn't reach its intended target. Four points of damage from sheer volume of impacts, his head covered in lumps.
+They named him Francisco. He was approximately one hundred and five years old — an adolescent by Minotaur standards — captured three months ago by the lord of this place and fed just enough to survive. When he woke, surrounded by three small creatures who had whips and shackles but were offering them as gifts rather than threats, Francisco wept.
 
-*"First time this happens when I play music,"* Nixira observed from a safe distance.
+*"I had no hope of surviving,"* he told them later. *"I was fed barely enough to live, and between feedings... he tortured me. For pleasure."*
 
-Each party member rolled a d4 to determine how many goblins killed each other. The total: nine. Every goblin except the chief died in their own celebration.
+Francisco knew the dungeon. He knew where the traps were, where the laboratories were, where his captor slept. And he was desperate to help the people who had freed him.
 
-And then Zacarias's warlock nature activated. Darwin's Blessing — when a creature dies within two squares, the warlock absorbs eight temporary hit points. Nine goblins had died around him. Eight times nine: sixty-four temporary hit points, layered like armor over his small gnomish frame.
+*"Francisco,"* Tidus said, *"guide us to the laboratories."*
 
-*"I didn't even have to take away their freedom,"* Nixira said, watching dark energy flow from the goblin corpses into Zacarias's body.
+The Minotaur stood, seven feet of scarred muscle holding an improvised maul, and began to walk. The party followed — a wood elf rogue, a tiefling bard, a gnome warlock with a cockroach on his shoulder, and a goblin chief named Rudy riding unconscious on Zacarias's back. Behind them, a trail of broken traps and the lingering scent of ozone.
 
-The chief survived, battered and bleeding but alive. They named him Rudy. He would accompany them whether he liked it or not.
+**The Laboratory — Mission Complete**
 
-**The Crying Painting — Tears and Cloth**
+Francisco led them to a chamber full of alchemical equipment: vials, organs, crystallized substances, and — on a shelf — fifteen supreme healing potions glowing red. A giant centipede, mutated and corrupted, guarded the room from the ceiling.
 
-In the corner of the goblin celebration chamber, Zacarias discovered a painting — a portrait of a crying elven woman, ancient and beautiful, her features unmistakably high elven. Pale skin, blue-tipped pointed ears, eyes that held the light of a forest moon even rendered in oil and canvas. The goblins had scratched it, spat on it, tried to tear it. Three pieces of cloth were missing from the canvas.
+They dispatched it, and in the process discovered the critical truth: the laboratory connected to a tunnel system burrowing upward through the earth. This was the source. The Count of Bithanu had been conducting experiments on insects — mutating them, corrupting them — and the altered creatures had been escaping through these tunnels to the surface, attacking the caravans above.
 
-The inscription at the bottom, partially damaged, read: *"So great is my sadness that my heart will only open with..."*
+Nixira solved it with fire. A single flame, cast into the tunnel entrance, ignited whatever organic material lined it. The tunnel collapsed in on itself, sealing the passage and incinerating hundreds of insects inside.
 
-The answer came from an unlikely source. Cookie, scouting the dead goblins, noticed something — the chief had strips of cloth tied around his wrists like bracers. The missing pieces of the painting.
+*"That's the mission,"* Tidus said, watching the tunnel mouth crumble. *"Now we need to get out."*
 
-Zacarias retrieved them from the goblin corpses. But the painting needed more than cloth. It needed tears.
+In the wreckage of the lab, they found Francisco's missing horn — and inside it, half of the exit key.
 
-*"I'm going to cry,"* Zacarias announced.
+**The Count — Varelius Ditanu**
 
-He sat down cross-legged, closed his eyes, and touched his bald head. He thought of Fuercis — his dead friend, the one whose loss still burned. The tears came. Not easily, not theatrically, but real.
+Francisco charged the wall separating the laboratory complex from the main hall. Stone exploded inward. The party entered the inner sanctum of the Forgotten Catacombs of Bithanu.
 
-Nixira searched for sad music to help him along. The tears were collected in a small alchemy vial.
+A long table of dark oak stretched like an altar across the room. Silver plates, impeccable and untouched. Cups filled with liquid too thick to be wine. Candelabras burning without melting a single drop of wax. Thirteen place settings. No guests.
 
-But tears alone did not open the door. The painting required a prayer — an elven prayer. Tidus knelt, placed one knee on the ground, bowed his head, and spoke in a language none of the others knew:
+And at the far end, rising from his chair with an ancient patience, a figure. White face, golden hair like spun coin, elegant clothing, a saber in one hand. Red eyes that burned like embers.
 
-*"Father Elf who art in heaven. And Mother also. Sanctified be thy names. In the name of the Father, of the Mother, of the Son-Elf, of the Spirit-Elf, and of the Holy Elf..."*
+*"To interrupt the dinner I am preparing for my guests?"* His voice was soft and measured. *"Allow me to introduce myself. I am Count Varelius Ditanu. Lord of these catacombs. Custodian of what lies beneath the earth. And for some time now, the last host of those who cross my threshold."*
 
-The painting turned. Extended its hands. The door opened.
+An elaborate bow. A flash of fangs.
 
-And in that same moment, Zacarias felt his Bal medallion grow warm and heavy. It was full — charged by the false prayer, by death energy, by something deeper and more dangerous that he did not yet understand.
+*"I must admit, I was not expecting visitors today. And yet here you are — covered in dust, still breathing."*
 
-**The Mimic — Cookie's Sacrifice**
+The walls were mirrors. Floor to ceiling, every surface reflective. Nixira's infernal knowledge supplied the critical intelligence: the House of Ditanu were vampires expelled from the underworld, lords of insects and crawling things. The only way to kill one was to destroy its heart with a sacred weapon. And the heart was the ruby Tidus carried in his pack.
 
-Beyond the moonlit corridor of polished stone, Cookie scouted ahead into a room with four doors and a golden chest at its center. Beautiful, half-open, inviting.
+But first — the keys. Zacarias's mosquito familiar, invisible on the ceiling, spotted a keychain hidden beneath the Count's cloak. While the vampire's attention focused on Tidus and the negotiations, Zacarias used Mage Hand through the mosquito to steal the keys. The vampire felt the theft too late — he grabbed Zacarias's hand and sank his fangs in, but by then the llavero was already sailing through the air toward Tidus's open palm.
 
-*"There's a delicious golden chest in there,"* Zacarias reported through their bond.
+The battle was brutal and strange. The mirrors were not mirrors — they were enchanted ghouls, frozen in reflective form, blocking attacks of opportunity and protecting the Count from flanking. Francisco charged around the perimeter, smashing them one by one with his maul, each mirror shattering to reveal rotting remains beneath. Nixira unleashed a fireball that calcinated the dining table into ash and burned the Count's cloak clean off his back. Tidus fired flame-tipped arrows. Zacarias alternated between being mind-controlled (the Count's Charm Person hitting with savage regularity) and breaking free to hurl Eldritch Blasts.
 
-*"Make Cookie circle the perimeter first,"* Tidus instructed. *"Check every door, every trap."*
+When the Count's health dropped below half, something shifted. His attacks grew desperate. He impaled Zacarias through the third eye with his rapier — a critical hit that would have triggered necrotoxic death across multiple rounds, but Nixira's earlier Hellish Rebuke triggered a divine intervention from Bal himself, who appeared in Zacarias's vision and said: *"Flee. I cannot contain it longer."*
 
-Cookie inspected methodically. North door — where they entered. East door — a magical barrier that burned her antenna on contact. South door — same barrier. West door — closed, wooden, unremarkable. And then she approached the chest.
+The necrotoxic damage was blocked. But the Count had drawn enough blood to satisfy some portion of an ancient debt — three units of twenty collected from Zacarias's warlock blood shield.
 
-The moment she made contact, Zacarias's psychic link went dark.
+Then Tidus pulled the ruby from his pack and pressed it against a mirror while the Count watched, and the vampire understood. His heart was in their hands. 
 
-*"Cookie!"* Zacarias cried. *"Cookie is gone — I lost her!"*
+*"Enough."*
 
-Tidus did not hesitate. He raised his crossbow and fired directly into the chest's lock. The bolt entered — and did not pass through. Instead, the golden surface began to deform. What had appeared as wood became flesh. What had seemed like metal became organs. The chest extended arm-like appendages ending in claws, sprouted legs, and opened its lid to reveal a mouth full of teeth.
+A burst of dark smoke. The Count seized the ruby from Zacarias's enchanted grip and vanished — teleporting away from his own domain, fleeing into the desert in a small carriage the party spotted from the entrance at noon.
 
-A mimic.
+He was alive. But he was beaten.
 
-Tidus's crossbow bolt had struck true — six plus four, ten damage straight into its nervous system. The creature screamed. Zacarias fired an Eldritch Blast that went wide, nearly hitting Tidus, who dodged with a casual sidestep and a look that said *what are you doing, idiot?*
+**The Spoils and the Exit**
 
-The mimic lunged at Tidus, locking onto his pack with its teeth. Acid saliva burned through the leather. But the creature was already dying — it choked on its own venom, convulsing and spraying acid in a radius that fell short of any target. Tidus watched it suffer with professional detachment, then put a second bolt through its open mouth when it turned for one final lunge. Ten more damage. The mimic collapsed.
+With the Count gone, his magic dissipated. The mirror-ghouls crumbled. The traps deactivated. Francisco guided them through every remaining room: a library, a sarcophagus chamber, a reception hall with a defunct teleportation circle. They looted methodically.
 
-Cookie was recovered — alive but damaged, missing four legs and half her body crushed. The mimic's unique property explained the psychic blackout: mimics functioned as magical containment cells, severing any arcane connection to creatures trapped inside them. It would take several turns before Cookie could be re-summoned.
+From the vampire's library, each chose a book:
+- **Zacarias** claimed a grimoire — a warlock's spellbook containing every spell in his class. He could now cast any warlock spell he knew of, prepared or not, by consulting the book (costing an extra action).
+- **Nixira** found a book of dark chorals that elevated her Command spell's save DC from 13 to 17.
+- **Tidus** took a tome of ancient religious knowledge, gaining expertise in both Religion and Arcana.
 
-*"If you ever learn to train mimics,"* the DM noted, *"they'd make excellent magical prisons."*
+The dungeon yielded sixty-three pieces of silver in cutlery and one hundred fifty-nine pieces of silver for the guild treasury, plus various personal treasures in platino.
 
-**The Bridge and the Blades**
+At the exit, the Great Guild's spectral mage — a hooded shadow of immense power — interviewed them. Francisco testified: three months of captivity, torture, and starvation at the hands of Count Ditanu. The mage accepted their evidence.
 
-The dungeon grew more dangerous. Beyond a door freed from its hinges by Rudy's persistent headbutting, a wooden bridge spanned a void of unknown depth. Tidus threw a stone into the darkness. No sound returned.
+*"The House of Ditanu is making moves again,"* the shadow observed. Then, to Nixira: *"The Seventh Circle must already be searching for you. The Guild cannot interfere in abyssal politics. But know this — we are watching."*
 
-The bridge itself was ancient — six ropes holding rotting planks over oblivion. When Tidus crossed with an acrobatic leap, one rope snapped. When Nixira followed, testing each plank with feather-light steps, the entire structure groaned and dipped twenty centimeters. The party crossed one at a time, each passage weakening the bridge further.
+**Rewards and the Future**
 
-Beyond the bridge: the blade corridor. Tidus noticed it first — the dust patterns on the floor, pushed alternately left and right in rhythmic waves. South, north, south, north. Hidden blades swinging from concealed slots in the walls.
+The mission was declared a success. The Great Guild awarded them:
+- **9,150 total experience** (3,050 each) — elevating all three members to **Level 5**
+- **A guild loan of 7,000 gold pieces** to purchase the Ben family mansion from Lady Circaven as their official headquarters, to be repaid through a percentage of future mission earnings
+- **A mercenary license** for Tidus — official authorization to hire combat support for any guild mission
+- **A standing offer** from King Minos of the Minotaur realm: Francisco would be available as an ally after three sessions, once he had paid his debt to the crown
 
-He stepped forward. The mechanism engaged. A blade the size of a door descended toward him at killing speed. He threw himself backward in a diagonal dodge, pressing flat against the wall. The blade missed his torso but nicked him — one point of psychic damage, not from the cut but from the pure terror of watching death swing past his eyes.
-
-*"Don't go through there,"* he called back, his voice steady despite his racing heart.
-
-The solution came from the trap's own design. The party discovered that activating the trap mechanism simultaneously triggered all the blades — and if the floor panels retracted fully, the ropes lost tension and the blades hung limp and harmless. Through a combination of thrown stones, Mage Hand, goblin saliva hardener, and a grappling hook fashioned from Zacarias's prosthetic, they triggered every panel at once.
-
-The blades fell slack. The corridor was passable — barely.
-
-**The Mirror's Promise**
-
-With the immediate dangers behind them, the party returned to the mirror shard — now dust — but found the original mirror still intact on its door. The bet had been honored: Tidus had survived.
-
-The mirror, grudgingly impressed, revealed the exit mechanism.
-
-*"The exit door requires three artifacts. A key. A ruby. And a medallion."*
-
-They had the ruby — the vampire's heart. Two remained.
-
-*"The medallion can be found in the southernmost section of this temple,"* the mirror said. *"The key — the first group took it. I lost track of them. They are probably dead."*
-
-*"So we need to find the Cofradía de los Valientes,"* Tidus said. *"Or what's left of them."*
-
-*"You are a beam of sunshine,"* the mirror replied. *"I hate sunshine."*
-
-The session ended with the Calvo Manco deep inside the Forgotten Catacombs of Bithanu, two-thirds of the way to their escape. The ruby was secured, the medallion's location known, and the key somewhere in the labyrinth — likely on the corpse of the first adventuring party that ever entered. Rudy the goblin snored on Zacarias's shoulder. Cookie was healing. And somewhere in the darkness ahead, whatever had mutated the insects and driven the rats to flee was still waiting.
+Francisco departed through a portal to green pastures and his wife Aurora, promising to return. Rudy the goblin was reported to Colmillo Negro's surviving tribe. And the party, battered, burned, poisoned, and five levels stronger, walked back toward La Ultima Gota with keys to a mansion, a vampire lord's grudge, and the knowledge that the desert still held the Count of Ditanu — wounded, angry, and very much alive.
 
 ---
 
 ## Key Revelations
 
-- **The Catacombs of Bithanu are a vampire lord's tomb** — The ancient temple was built by or for an elf who became a vampire, whose heart (a ruby) was sealed in a protected corridor accessible only to those of elven blood. The architecture, traps, and magical protections suggest a being of immense power.
-- **The Great Guild is economically threatened** — The mutant insect attacks on the northern trade route have prompted the Great Guild to plan magical portal bypasses, which would divert all traffic away from La Ultima Gota and similar establishments. The Calvo Manco's mission is as much about protecting their livelihood as clearing a dungeon.
-- **Fourteen groups have entered and none returned** — The temple's entrance mechanism seals behind entrants, and the structure only opens briefly at night. The Cofradía de los Valientes (first group) took the only key and vanished. Their bodies — and the key — are somewhere inside.
-- **Mimics are magical containment cells** — The mimic encounter revealed that these creatures sever arcane connections to anything trapped inside them. This property makes them potentially valuable as warlock tools for containing magical entities.
-- **Tidus claims to be a vampire** — Whether truth or masterful deception, Tidus revealed alleged vampiric heritage after his blood was absorbed and returned by the elven protection corridor. His companions believed him completely (deception check: 24).
-- **Zacarias's Bal medallion charged during a false prayer** — When Tidus performed an elven prayer to open the painting puzzle, Zacarias's infernal medallion filled with energy. The connection between the prayer, the deaths, and the medallion's charge remains unexplained.
+- **The Catacombs of Bithanu are the lair of Count Varelius Ditanu** — An ancient elf vampire of the House of Ditanu, a family expelled from the underworld who became lords of insects. The mutations plaguing the trade route were his experiments escaping to the surface.
+- **The House of Ditanu is a known threat** — The Great Guild recognized the family name with alarm. This is not a random dungeon monster but part of a larger political-infernal network.
+- **The Seventh Circle is hunting Nixira** — The Great Guild's mage warned Nixira directly. Her tiefling heritage and her desterrado status have attracted attention from infernal powers who want her returned.
+- **Mimics are magical containment cells** — The mimic encounter revealed that these creatures sever arcane connections to anything trapped inside them, potentially useful as warlock tools.
+- **Tidus claims vampiric heritage** — Truth or deception, Tidus's blood was healed by the elven corridor and his companions believe he is a vampire (deception check: 24).
+- **Zacarias's Bal medallion is a sacred weapon** — The medallion charged during a false prayer and functioned as holy damage against the vampire, suggesting Bal's power operates independently of Zacarias's intent.
 
 ---
 
 ## Consequences
 
-- **The party is trapped inside the catacombs** — The entrance sealed behind them. Escape requires three artifacts: the ruby (obtained), a medallion (located to the south), and a key (somewhere in the labyrinth, likely with the corpses of the Cofradía de los Valientes).
-- **The trade route crisis is ongoing** — Every day the party spends inside the dungeon is another day of caravan attacks on the surface. The Great Guild's portal plan advances regardless of whether the Calvo Manco succeeds.
-- **Rudy the goblin is now a companion** — The sole survivor of the Colmillo Negro warband, Rudy is armed (barely), loyal (questionably), and useful as a guide to areas the goblins have already explored.
-- **Cookie is temporarily disabled** — Zacarias's cockroach familiar suffered heavy damage inside the mimic and cannot be fully re-summoned until the containment effect dissipates. The party has lost their primary scouting tool at the worst possible time.
-- **The source of the mutations remains unknown** — The party entered the catacombs to find what was mutating the desert fauna. They have encountered traps, undead architecture, goblins, and a mimic — but not the source. Whatever it is, it lies deeper.
-- **The vampire lord's heart is in play** — The ruby Tidus carries is not merely a key component. It is the literal heart of an ancient vampire elf. Its full significance — and its dangers — remain unrevealed.
+- **Count Ditanu escaped with his heart** — The vampire lord fled at half health, taking the ruby with him. He knows the Calvo Manco by face and will not forget. His lair is known but his next move is not.
+- **The mutation source is sealed** — The collapsed tunnel effectively ends the insect attacks on the trade route, though the Count could potentially resume his experiments elsewhere.
+- **Level 5 unlocked** — All three party members reached a major power threshold. New spells, new abilities, new options in combat and exploration.
+- **The Ben mansion is officially theirs** — A 7,000 gold loan from the Great Guild purchases the haunted property from Lady Circaven. The Calvo Manco now has a headquarters independent of the Lunei family's Last Drop tavern.
+- **Francisco will return** — King Minos accepted the request to free Francisco from his service debt. After three sessions, the Minotaur will be available as a guild companion — a two-meter-eighty battering ram with a maul and a wife who runs a tavern.
+- **The Great Guild is watching Nixira** — The warning about the Seventh Circle was not casual. Nixira's infernal connections are becoming a liability — or an asset, depending on who is making the calculation.
 
 ---
 
@@ -284,82 +211,99 @@ The session ended with the Calvo Manco deep inside the Forgotten Catacombs of Bi
 
 | Character | Condition | Notes |
 |-----------|-----------|-------|
-| **Tidus** | Alive, lightly wounded | Took 1 psychic damage from blade trap near-miss. Carrying the ruby (vampire's heart), a mirror shard (now dust), and a grappling hook. Successfully claimed vampiric heritage via deception (nat 18 + 6). Stole goblin weapons during the frenzy. Leading navigation and trap detection. |
-| **Nixira** | Alive, resources depleted | Used dancing lights for illumination throughout. Mage Hand used extensively for door manipulation. Played harp during goblin celebration. Spells and cantrips heavily taxed by continuous dungeon exploration. |
-| **Zacarias** | Alive, temporarily empowered | 64 temporary HP from goblin deaths (Darwin's Blessing). Bal medallion fully charged (unknown implications). Lost Cookie temporarily to mimic containment. Bald head touched by nine goblins. 4 damage from goblin frenzy impacts. Carrying Eldritch Blast but conserving spell slots. |
-| **Rudy** | Alive, barely | Former chief of the Colmillo Negro goblin warband. Sole survivor of the celebration frenzy. Armed with a recovered dagger. Cooperative but dim. Currently unconscious and being carried. |
-| **Cookie** | Damaged, recovering | Cockroach familiar. Lost four legs and half her body inside the mimic. Cannot be fully re-summoned until mimic containment effect dissipates (~2 turns). |
+| **Tidus** | Alive, Level 5 | Acquired the vampire's heart (lost when Count fled), keys to the dungeon, mercenary hiring license. Gained Religion +5 and Arcana +4 from library tome. Claimed vampiric heritage. 63 pieces of silver looted. Leading navigator throughout. |
+| **Nixira** | Alive, Level 5 | Used Fireball to seal the mutation tunnels and damage the Count. Command spell DC upgraded from 13 to 17 via dark choral book. Warned by the Great Guild about the Seventh Circle hunting her. Hellish Rebuke triggered divine intervention from Bal to protect Zacarias. |
+| **Zacarias** | Alive, Level 5 | Absorbed 64 temp HP from goblin deaths (Darwin's Blessing), then lost it all to the Minotaur's critical hit. Acquired a Warlock Grimoire — can now cast any warlock spell from the book. Bal medallion charged and used as sacred weapon. Blood debt partially paid to Count Ditanu (3 of 20). Cookie damaged then recovered. |
+| **Francisco** | Alive, freed | Departed through portal to King Minos. Will return after 3 sessions as guild companion. Reunited with his horn. Wife Aurora awaits in "La Taberna de los Cuernos." |
+| **Rudy** | Status reported | Former chief of Colmillo Negro. Reported to surviving tribe by the Great Guild. Fate unknown. |
+| **Cookie** | Recovered | Cockroach familiar. Damaged by mimic, later lost again to centipede in the lab. Eventually re-summoned and functional. |
 
 ---
 
 ## Organizations Present
 
 ### The Calvo Manco Guild (El Gremio del Calvo Manco)
-On their second contracted mission, this time a dungeon crawl — significantly more dangerous than their first guild investigation. The mission was specifically requested by Lunei due to the economic threat to La Ultima Gota.
+Second contracted mission — a full dungeon crawl. Successfully neutralized the mutation source, survived a vampire lord, and leveled to 5. Now possess an official headquarters (Ben mansion) and mercenary hiring rights.
 
 | Member | Role | Status |
 |--------|------|--------|
-| **Tidus** | Navigator, trap specialist, negotiator | Active — carrying the vampire's heart |
-| **Nixira** | Illumination, magical support, social cover | Active — spell resources depleting |
-| **Zacarias** | Arcane specialist, familiar handler, tank (temp HP) | Active — 64 temp HP, Bal medallion charged |
+| **Tidus** | Navigator, trap specialist, vampire claimant | Level 5 — mercenary license acquired |
+| **Nixira** | Arcane support, fire specialist, infernal knowledge | Level 5 — under Seventh Circle surveillance |
+| **Zacarias** | Warlock, familiar handler, frontline tank | Level 5 — grimoire acquired, blood debt to Ditanu |
 
 ### The Great Guild (El Gran Gremio)
-The overarching guild authority that controls dungeon missions and trade route security. Provided the mission briefing and charged 60 gold for access to the dungeon's information. Has sent 14 groups into the catacombs with zero returns. Currently planning magical portal infrastructure that would bypass the trade route entirely.
+The overarching guild authority. Provided mission briefing, financed the mansion loan, and conducted the post-mission debrief via spectral mage. Recognized Count Ditanu as a known threat and flagged Nixira's infernal status.
 
 | Element | Role | Status |
 |---------|------|--------|
-| **Dungeon briefing** | Intelligence on the catacombs, entry key history | Provided — incomplete |
-| **Portal initiative** | Trade route bypass to counter caravan attacks | In planning — existential threat to La Ultima Gota |
+| **Spectral Mage** | Post-mission interviewer, loan officer | Active — approved all rewards |
+| **Portal initiative** | Trade route bypass plan | Likely suspended — mutation source sealed |
 
 ### Colmillo Negro (Black Fang)
-A goblin warband sent by the Great Guild as one of the fourteen groups to clear the catacombs. Originally fifty strong, reduced to nine by the time the party encountered them. All nine died in their own celebration frenzy except the chief.
+Goblin warband, originally fifty strong. Nine survivors encountered in the catacombs; all died in their own celebration frenzy except Chief Rudy.
 
 | Member | Role | Status |
 |--------|------|--------|
-| **Rudy (Chief)** | Warband leader, sole survivor | Alive — captured, cooperative, being carried |
-| **8 goblin warriors/archers/assassins** | Warband | Dead — killed each other in celebration frenzy |
+| **Rudy (Chief)** | Sole survivor, temporary companion | Reported to tribe — fate unknown |
 
-### Cofradía de los Valientes (Brotherhood of the Brave)
-The first adventuring party to enter the catacombs. Carried the original access key. Identified by their lion-and-flame insignia. Four members, names unknown. Never returned. The party must find their remains to recover the key needed for escape.
+### House of Ditanu (Casa Ditanu)
+Ancient elven vampire family expelled from the underworld. Count Varelius Ditanu operated the catacombs as both lair and laboratory, experimenting on desert fauna. The family is known to the Great Guild as a significant threat.
 
 | Member | Role | Status |
 |--------|------|--------|
-| **4 unnamed adventurers** | First dungeon party | Presumed dead — location and key unknown |
+| **Count Varelius Ditanu** | Lord of the Catacombs, vampire elf | Escaped at half health with his heart — alive and vengeful |
+
+### Kingdom of Minos
+Minotaur realm ruled by King Minos. Francisco Toro is a subject with a service debt to the crown. The king agreed to allow Francisco to serve with the Calvo Manco once his debt is paid.
+
+| Member | Role | Status |
+|--------|------|--------|
+| **King Minos** | Sovereign of the Minotaur realm | Accepted the request — Francisco will be available in 3 sessions |
+| **Francisco Toro** | Former prisoner, future guild companion | Freed — paying debt to King Minos |
 
 ---
 
 ## NPC Tracker — Chapter 9
 
+### Count Varelius Ditanu
+- **Who:** Ancient elf vampire of the House of Ditanu. Golden hair, red eyes, elegant bearing. Armed with a rapier (estoque) enchanted with necrotoxic damage. Lord of the Forgotten Catacombs of Bithanu. Approximately level 13 in combat statistics. Expelled from the underworld, now a lord of insects and subterranean creatures.
+- **What he did:** Operated the catacombs as a lair and laboratory, experimenting on desert fauna to create mutant insects. Held Francisco prisoner for three months. Set a dining table for thirteen imaginary guests. Fought the party using Charm Person, bat summons, rapier strikes, and mirror-ghoul defenses. Attempted to collect a "blood debt" from Zacarias.
+- **What happened to him:** Reduced to half health by the combined assault of the party and Francisco. Fled via teleportation with his heart (the ruby), escaping in a carriage visible from the dungeon entrance.
+- **Related to:** House of Ditanu (family), the mirror entity (servant), Francisco (prisoner), the Great Guild (known threat).
+- **End status:** **Alive, escaped** — wounded, without his lair's defenses, but in possession of his heart. Location unknown but presumably mobile.
+
+---
+
+### Francisco Toro
+- **Who:** Minotaur, approximately 2.8 meters tall (3.3 with horns), around 105-110 years old (adolescent for his race). Married to Aurora, who runs "La Taberna de los Cuernos." Subject of King Minos. Captured by Count Ditanu three months prior.
+- **What he did:** Initially fought the party while imprisoned and terrified. After being befriended, guided them through the dungeon, identified traps, and fought alongside them against giant spiders and the Count. Systematically destroyed the mirror-ghouls in the final battle using his maul.
+- **What happened to him:** Freed from captivity. His broken horn was recovered and reattached (containing half the exit key). Departed through a portal to King Minos's realm to pay his service debt, promising to return.
+- **Related to:** King Minos (sovereign), Aurora (wife), the Calvo Manco (rescuers/allies), Count Ditanu (captor).
+- **End status:** **Freed** — returning to King Minos. Will be available as guild companion after three sessions.
+
+---
+
 ### The Mirror of Bithanu
-- **Who:** A sentient mirror, approximately two meters tall in a dark wooden frame, containing the trapped essence of an entity connected to the vampire lord of Bithanu. Extraordinarily rude, vain, and hostile. Speaks with alternating contempt and grudging respect.
-- **What they did:** Insulted every member of the party extensively. Provided critical intelligence about the dungeon layout, the exit mechanism (three artifacts needed), and the location of the medallion. Made a bet with Tidus: if Tidus survived and returned, the mirror would explain the exit.
-- **What happened to them:** The mirror shard Tidus carried crumbled to dust when the ruby was retrieved. The original mirror remains on the iron door in the first chamber. The bet was honored — the mirror revealed the exit requirements.
-- **Related to:** The vampire lord of Bithanu (creator/master), Tidus (reluctant ally), the exit mechanism (knowledge holder).
-- **End status:** **Intact** — still mounted on the iron door. Grudgingly cooperative with Tidus specifically.
+- **Who:** A sentient mirror, two meters tall in a dark wooden frame, containing the trapped essence of an entity connected to the vampire lord. Extraordinarily rude, vain, and hostile. Speaks with alternating contempt and grudging respect.
+- **What they did:** Insulted every party member. Provided critical intelligence about the dungeon exit mechanism (three artifacts required). Made a bet with Tidus. Revealed the goblin presence, spider locations, and general dungeon layout through conversation.
+- **What happened to them:** The shard Tidus carried crumbled when the ruby was retrieved. The original mirror remains in the first chamber. Was later discovered to be part of the vampire's ghoul network.
+- **Related to:** Count Ditanu (master/creator), Tidus (reluctant ally).
+- **End status:** **Intact but abandoned** — the Count fled; the mirror's fate in the empty catacombs is unknown.
 
 ---
 
 ### Rudy (Goblin Chief of Colmillo Negro)
-- **Who:** Small goblin, former chief of the Colmillo Negro warband. Wears a chest plate with a tooth-and-scratch insignia. Rotting black teeth. Armed with two daggers (lost in frenzy), now carries a recovered dagger. Not intelligent but enthusiastic.
-- **What they did:** Led the goblin celebration frenzy that killed his entire warband. Survived the carnage through sheer luck. Was captured by the party and given a name. Headbutted a door open on command.
-- **What happened to them:** Sole survivor of nine goblins. Unconscious from injuries sustained in the frenzy. Being carried by the party as a guide and occasional battering ram.
-- **Related to:** Colmillo Negro (former leader), the Great Guild (sent by them), the Calvo Manco (captured by them).
-- **End status:** **Alive, unconscious** — being carried deeper into the dungeon. Cooperative when awake.
+- **Who:** Small goblin, former chief of the Black Fang warband. Rotting black teeth, chest plate with tooth insignia. Sole survivor of nine goblins.
+- **What he did:** Led the celebration frenzy that killed his warband. Accompanied the party as a captive guide. Headbutted doors open. Celebrated everything.
+- **What happened to him:** Reported to the surviving members of Colmillo Negro by the Great Guild. Separated from the party at mission's end.
+- **Related to:** Colmillo Negro (former leader), the Great Guild (reported to), the Calvo Manco (temporary companion).
+- **End status:** **Alive** — returned to tribe. Future relationship with the Calvo Manco unclear.
 
 ---
 
 ### Cookie
-- **Who:** A summoned cockroach familiar, jet black, female. Zacarias's chain pact companion for this dungeon. Small enough to scout through cracks and under doors. Connected to Zacarias through a psychic warlock bond.
-- **What she did:** Scouted multiple rooms, detected traps, identified the mimic's room layout, found magical barriers on south and east doors. Entered the mimic and was captured inside it.
-- **What happened to her:** Trapped inside the mimic, which severed her psychic connection to Zacarias. When the mimic was killed, she was recovered but severely damaged — missing four legs and half her body. Cannot be re-summoned until the mimic's containment effect fully dissipates.
-- **Related to:** Zacarias (master), the mimic (captor/damage source).
-- **End status:** **Damaged, recovering** — temporarily unable to be re-summoned. Expected to return within two exploration turns.
-
----
-
-### Lunei Milei Maili
-- **Who:** The Calvo Manco's guild contact and patron. Owner/operator of La Ultima Gota. Currently away on extended travel (possibly centuries).
-- **What they did:** Contacted Tidus directly to request the party take this specific mission. Did not provide funds — the party paid the 60-gold information fee themselves. Emphasized the economic urgency of the caravan attacks.
-- **What happened to them:** Not present. Communication was remote.
-- **Related to:** The Calvo Manco (sponsor), La Ultima Gota (owner), the Great Guild (member/contact).
-- **End status:** **Absent** — traveling. Left the tavern in the party's care.
+- **Who:** Summoned cockroach familiar, jet black, female. Zacarias's chain pact companion for dungeon exploration.
+- **What she did:** Scouted multiple rooms, detected traps, identified the mimic, explored the laboratory. Trapped inside the mimic (severing psychic connection), later lost again to the laboratory centipede.
+- **What happened to her:** Recovered after both incidents. The mimic's containment effect and the centipede's attack damaged her severely but she was re-summoned each time.
+- **Related to:** Zacarias (master), the mimic (first captor), the centipede (second attacker).
+- **End status:** **Active** — functional familiar, though bearing the scars of two near-deaths in a single dungeon.
