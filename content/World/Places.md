@@ -397,3 +397,57 @@ An elven guard post where the party received food, rest, and warnings about the 
 
 - **12th (Thaxningia) Regiment:** Formed during the Wiscomney Crusade (3rd Framping Era). Stationed in Thaxningia Margrave.
 
+
+---
+
+## Locations Introduced in Chapters 10–12
+
+### The Argenta Mansion
+
+**Type:** Noble residence  
+**Chapter(s):** 10–11
+
+House Argenta's mansion has ancestral magical defenses. Lucius's study contains a wardrobe portal, recently altered for members of the family and two unidentified races. In the cellar, a key hidden in a barrel of corrosive liquid and a concealed lever lead to a runed, magically protected stone door and a ritual chamber.
+
+### The Durst House
+
+**Type:** Isolated four-story house  
+**Location:** Reached through unnatural mist; precise location and cause of the journey's distortions are uncertain  
+**Chapter(s):** 12
+
+A white house with a sheltered porch, where Buster waits with a summoned hare. A portrait depicts the Durst family, including Rose and Thorn. A clock contradicts the travelers' sense of time, and a bloody warning claims a beast waits beneath the house. The upper floors remain unexplored.
+
+---
+
+## Locations and Updates — Chapters 13–14
+
+### The Durst House — Further Exploration
+
+**Chapter(s):** 13–14
+
+The party explores the upper rooms and discovers that an enchantment can reflect damage to the house's property back at the person responsible. A musical and arcane puzzle opens a barrier to a forbidden library containing cursed books, a trapped intruder's skeleton, and a chest of papers and scrolls. Strahd von Zarovich's letter alleges torture and sacrifice beneath the house; those claims remain unverified. A will conditionally names Rose and Thorn as heirs to the family property.
+
+The house moves on roots toward a valley. Its bedrooms have mirrors showing rooms across a divide; a ritual mirror and a sphere puzzle lead, according to the players' recap, to a concealed staircase. Magical darkness covers the hidden floor, where armor struck Tidus down and remains a threat. The party has reached that floor but has not freed the children or opened a hollow-sounding wooden section.
+
+### The Durst Mill and Vallaki
+
+**Type:** Mill and settlement named in documents  
+**Chapter(s):** 13
+
+A deed describes the family mill as east of Vallaki, a place unfamiliar to the travelers. Nixira found a key bearing the mill emblem, but its lock is unknown. Neither the mill nor Vallaki has been visited.
+
+### Barovia
+
+**Type:** Valley shown on a map  
+**Chapter(s):** 14
+
+A map found on the concealed floor depicts a bat-shaped valley named Barovia, with a castle, settlements, and a purple line. Hidden wardrobe messages plead for escape, warn against trusting others, and urge readers never to approach a well. Their authors and the well's location are unknown. A magical storm over the approaching valley is associated by Zacarías with memory erasure; its source and actual effects remain uncertain.
+
+## Locations and Updates — Chapter 15
+
+### The Durst House and Concealed Basement
+
+**Type:** Moving house and underground complex  
+**Chapter(s):** 12–15
+
+Beneath the house, the party found passages, signs of a community, Rose and Thorn's crypts, cult quarters and a ritual chamber. They burned the children's remains and escaped a summoned creature through the kitchen hatch. Alfonso's armor was destroyed delaying it; James Buster escaped badly injured. After the party got outside, the house rose and moved away amid mist and a purple dimensional effect. The creature was not shown defeated.

@@ -20,3 +20,10 @@
 | **Acquire the Zafiro Esmeralda** | Tidus secured the gem needed for Luney's cure. | Ch.6 |
 | **Kill the General** | Bixira drove a dagger into his heart, ending the volcanic assault. | Ch.6 |
 | **Bixira's Sacrifice** | Bixira spent her soul to stop the meteorite and kill the General. | Ch.6 |
+| **Argenta regency report** | Septimus was publicly named regent and the party reported to Luney. The ritual, Eric's killer, Elira's safety and the reward remain unresolved. | Ch.11 |
+| **Doctor Lucien Boss** | Shot and killed by Tidus during the ritual confrontation, as witnessed by the party; later public news described him as missing. | Ch.11 |
+| **Cellar key and hidden lever** | The party found the key in the barrel and the lever leading to the protected door; the vision's source remains unknown. | Ch.11 |
+| **Forbidden library barrier** | The party opened the musical and arcane barrier using the lamp, score, books and corrupted blood. The house's other dangers remain unresolved. | Ch.13 |
+| **Escape the Durst house** | The party and James Buster escaped; the horse was badly injured. The summoned creature was not shown defeated. | Ch.15 |
+| **Five-spirit seal** | The party opened the sealed door, allowing them to reach Rose and Thorn, at a cost to their companions. The children remain bound. | Ch.15 |
+| **Alfonso's stand** | The allied armor was destroyed delaying the creature; the fate of its animating entity is unknown. | Ch.15 |

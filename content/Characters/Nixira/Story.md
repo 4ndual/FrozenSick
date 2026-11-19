@@ -57,4 +57,38 @@ Regained consciousness inside the walls after the failed explosion, reconnected 
 | **Conditions** | Dwarven curse on her face, hunted by the El Velo de las Siete Canciones |
 | **Key Items** | 24-name list, instruments, warlord medallion from Bixira |
 
+## Chapter 10 — The Bloodstained Crest
 
+At the Argenta mansion, comforted the grieving butler Octavius and found an empty hollow book scented with the dinner dessert. Discovered papers proposing Octavius's dismissal and Elira's promotion; kept them and later showed her companions. Over wine, Octavius described the household's losses and a proposed IcePeak alliance. Nixira pocketed a bottle of volcanic wine.
+
+Used **Speak with Dead** on Eric. He refused to name his killer, appeared to say his death was planned, and spoke of keeping his house standing. Overlapping questions left other answers uncertain.
+
+## Chapter 11 — The Stolen Souls
+
+Comforted Elira, learned she was pregnant, and promised discretion. A touch revealed a controlling enchantment; briefly speaking more freely, Elira appeared to accuse Septimus of Eric's murder, but the accusation was not proof. Nixira's intimate meeting with Septimus was interrupted by Tidus and Zacarías, who feared for her safety.
+
+Cooperated with Serafina as the danger became clearer and shared what the party knew of Elira and the ritual. Escaped the confrontation with her companions; all three were subsequently wanted. Elira was later shown as Septimus's wife, apparently still enchanted.
+
+## Chapter 12 — The House in the Mist
+
+Spoke of wanting freedom from infernal control and eventually killing her father. Helped the dying Agatha dress and find comfort while the party created an illusory sunrise. Briefly dispersed the fog with radiant power, but it returned.
+
+At the wreck, questioned a lichen that described an attack on travelers but also tried to entangle her; its account remains unverified. Took a white feather whose origin is unknown. In the Durst house she saw purple tentacles outside; the party paused before exploring the upper floors.
+
+## Chapter 13 — The Forbidden Library
+
+Found a key bearing the Durst mill emblem, though its lock remained unknown. Her harp drew an answering piano, where the party encountered a small figure identified as Thorn. During an attempt to contact the children, she heard an unidentified voice declare the visitors unwelcome in its domain; the cord burned away and Zacarías suffered pain.
+
+Repaired a desk lamp and played a hidden musical score, helping the party open the barrier to a forbidden library. There they found a letter from **Strahd von Zarovich** alleging sacrifice and torture, and a will naming Rose and Thorn as conditional heirs. The allegations remained unverified, the children unreleased, and Vermilion and Dorotea missing.
+
+## Chapter 14 — The Hidden Floor
+
+Investigated mirrors linking views of the overlapping bedrooms and uncovered baby-faced sphere fragments in the cradle. Fitted them together with a jewel from the piano, though a piece was still missing. Healed Zacarías after a force injured him on the other side of the divide.
+
+On the concealed floor, helped find Tidus after armor struck him down and stabilized him. A hand mirror briefly showed her decaying reflection. The party found a map of **Barovia** and hidden messages pleading for escape and warning against a well; their authors and the well's location remained unknown. Rose and Thorn were not freed, and the missing sisters' whereabouts remained unknown.
+
+## Chapter 15 — The House Gives Chase
+
+Healed her companions and used flame to hold the armor at bay. After the five-spirit seal opened, her companion flowered and its remaining life was shortened. She comforted Thorn and vowed to protect and free him; a rose-and-thorn mark appeared on her.
+
+In the basement she found a map and ritual notes describing a forty-soul summoning. Rose and Thorn's remains were burned, but their souls were not yet free: Thorn said a purple gem must be destroyed at Strahd's altar. Nixira's shield broke protecting the party from flying bones during their escape.

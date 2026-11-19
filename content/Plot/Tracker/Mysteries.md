@@ -76,3 +76,40 @@
 - **Status:** Unresolved.
 - **Questions:** Who is that lord? Is he tied to the Kahel Varos thread, DragonBorn politics, or something even larger?
 
+
+## The Argenta Deaths and the Ritual
+
+- **What:** Eric was found dead beside an incomplete blood seal. His corpse refused to identify the killer and spoke of a plan to keep the house standing. Elira appeared to accuse Septimus while briefly freed to speak, but this is not proof.
+- **Questions:** Who killed Eric? How did Lucius die? The illness briefing conflicts with Lucien's report of unidentified poison; a relevant passage was torn from a physiology book. Who used the modified wardrobe portal and left the muddy tracks?
+- **Leads:** Zacarías's knowledge-transfer ritual gave him a vision of a key and hidden passage. The key and lever were later found. A grimoire described a four-soul transmutation; three souls were drawn from Tidus's medallion. Bhaal denied surrendering them willingly.
+- **Questions:** What was the ritual's outcome and what power was behind it? Is it connected to disrupted divine contact on DragonLand? No causal chain is established.
+
+## The Argenta Portraits
+
+- **What:** Serafina revealed concealed portraits showing deterioration associated with the family's meat consumption. Lucius's portrait showed a small blue crystal at his neck.
+- **Questions:** What is the crystal's significance?
+
+## The Missing Travelers and the Mist
+
+- **What:** A circle and three dots appeared in Tidus's vision and on a blood-marked tree; a scarf connected to his son was found near the wreck. Vermilion's altered tarot deck was found in the Durst house.
+- **Questions:** What connects the emblem, scarf and travelers? Where are Vermilion and Dorotea? The lichen's account of pale attackers and fleeing travelers is unverified.
+- **Status:** The mist distorted Tidus's apparent travel time, and the road later seemed to shorten. The cause is unknown.
+
+## The Durst House
+
+- **What:** A clock and portrait exchanged places; a bloody message claimed a beast beneath the house would wake at midnight and require a gift. Tentacles appeared outside and tracks crossed the ceiling.
+- **Questions:** Is the warning true? What is below, and what occupies the unexplored upper floors?
+
+## Durst House — Developments Through Chapter 14
+
+- **The children and the voice:** The children say their father forbade them from a dangerous room and ask to be freed; Nixira also heard an unidentified voice declare the visitors unwelcome in its domain. Their circumstances and the voice's identity remain uncertain.
+- **Strahd's letter:** Strahd von Zarovich rejected the addressee's worship and alleged sacrifice at a hidden altar and torture of visitors in a dungeon; he also referred to a stillborn child. These are his claims, not independently verified events.
+- **Overlapping rooms:** A ritual mirror links views of bedrooms across a divide; the apparent baby in a cradle concealed fragments of a sphere, and Tidus noticed fresh tea and a magical trace of unknown origin. After an unrecorded gap, the players recounted placing a piece or ball in the mirror frame.
+- **The moving house and storm:** Roots carry the house toward a valley; Zacarías recognized a magical storm associated with erasing memories. Its source and effects on the party are unknown.
+- **Barovia:** A map names the valley Barovia, and hidden messages warn of a well. Who wrote the messages and where the well lies remain unknown.
+
+## Durst House — Developments in Chapter 15
+
+- **The purple gem:** Thorn showed a spiritual image of a purple gem and said it must be destroyed at Strahd's altar to free the children. The image was not a physical gem recovered by the party; its location remains unknown. Burning the children's remains began, but did not complete, their release.
+- **The basement ritual:** Cult notes describe forty souls as the requirement for summoning a voracious creature called Strahd's astral stomach. The summoning was completed, but the notes do not establish a verified death count.
+- **The house and figure:** The house moved away after the escape. The white-haired figure's identity and the creature's subsequent fate remain unknown.

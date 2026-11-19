@@ -80,4 +80,36 @@ Walked out of Brasboredon with Nixira, ZacarÃ­as, and Berlin.
 | **Conditions** | Val medallion active (counter advancing, +2 potency), IcePeak favor coin |
 | **Key Items** | Scimitar, light crossbow, shortbow, daggers, **Val medallion (+2 potency)**, **Zafiro Esmeralda**, **Bomba de Oscuridad**, 600 gp, IcePeak favor coin, communication stone |
 
+## Chapter 10 — The Bloodstained Crest
 
+At House Argenta, recognized the unfinished mark beside **Eric** as an old dark elven ritual seal and insisted on questioning Octavius. Followed muddy tracks into Lucius's study, concealed a physiology book with a torn poison passage, and discovered a recently altered wardrobe portal. Took a magical pen that reveals the truth of a written lie after ten days, with ink for roughly two uses. Doctor Lucien Boss gave him a magical dragon-scale contact.
+
+## Chapter 11 — The Stolen Souls
+
+Recognized **Septimus** as the man who had once helped protect him after an affair with an elven princess. Trusted him and disclosed Elira's pregnancy despite Nixira's concern. Septimus proved to be a double agent. Tidus retrieved the cellar key, shot and killed Lucien during the ritual confrontation, and raised his medallion in the hope of capturing the doctor's soul. Instead, **three souls were drawn from the medallion**. Bhaal denied surrendering them willingly, urged the party to escape and directed them to a temple on the Sword Coast.
+
+The party fled and became wanted. Luney told Tidus he has **three children**; seeking them was discussed, not completed.
+
+## Chapter 12 — The House in the Mist
+
+Refused to bite the dying Agatha without her consent, leading to an argument in which he punched Zacarías. A vision showed gray figures, a sapphire associated with Vermilion, and a carriage bearing an emblem connected to his son; it did not establish the missing sisters' fate. Rode Buster into the fog, experiencing a much longer journey than the others observed.
+
+At the wreck, found a marked scarf linked to his son and opened Agatha's letter to her daughters, which remains undelivered. In the Durst house, took a hunting crossbow with twenty silver bolts and a tarot deck he recognized as **Vermilion's**, despite its changed illustrations. Its presence does not establish where she is.
+
+## Chapter 13 — The Forbidden Library
+
+Dressed in a servant's uniform and the wolf's head from a suit of armor, becoming a wolf-headed butler. Investigated the house's strange dimensions and found a hollow space behind the library shelves. Using Zacarías's focus, heard children's voices: they feared leaving their upstairs room and offered to help if freed.
+
+Helped solve the musical and arcane puzzle opening the forbidden library. There the party recovered deeds, a conditional will naming Rose and Thorn as heirs, and a letter from **Strahd von Zarovich** alleging atrocities at the house; its claims remained unverified. Neither the children nor the missing sisters were found.
+
+## Chapter 14 — The Hidden Floor
+
+Explored the other-plane bedroom and a spherical puzzle, noticing fresh tea and a magical trace with no clear owner. Read Zacarías's cards: the reading suggested a reprieve from death, associated his eventual death with flames, and left him feeling obligated to protect Tidus and give him valuable coins. Its exact effects remain uncertain.
+
+On the concealed floor, fired a burning crossbow bolt into the magical darkness. An animated metal figure struck him down when he tried to remove its helmet; Nixira stabilized him at **0 HP**. He was later active, though his final hit points were unclear. In a hidden room, the party found a map of **Barovia** and messages warning against approaching a well. Tidus found a hollow-sounding wooden section but had not opened it; Rose and Thorn remained trapped, and the sisters' whereabouts unknown.
+
+## Chapter 15 — The House Gives Chase
+
+Carefully brushed dust from a fragile page with a feather, allowing the party to read its warning and promise before it disintegrated. Rose and Thorn described a young person with a faint connection to Tidus who apparently escaped an earlier party; the relationship remains unknown.
+
+Found the children's crypts and helped investigate them. Their remains were burned, beginning but not completing their release. After Alfonso held off the summoned creature, Tidus helped turn aside a barrage of bones as the party escaped with the injured James Buster.

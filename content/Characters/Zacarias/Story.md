@@ -95,4 +95,36 @@ Walked out of Brasboredon with Tidus, Nixira, and Berlin.
 | **Conditions** | **Right hand severed**, bald (shaved head in honor of Fuercitas), **Capa Sagrada** equipped (+5 ReligiÃ³n), patron connection critically weakened, **mark of Val** (sworn to protect dwarves), **magical dystrophy** (intermittent spell failure) |
 | **Key Items** | **Capa Sagrada** (+5 ReligiÃ³n), Moonstone (10 platinum), cave maps, climbing gear, communication stone, **golden arrow** (Messi's keepsake) |
 
+## Chapter 10 — The Bloodstained Crest
 
+At the Argenta mansion, an invocation triggered the ancestral defenses and burned him for **21 damage**; no fall to 0 HP was established. Spoke with Doctor Lucien Boss about the monk who inspired his changed appearance and about his own mortality. Lucien proposed a discussion about gnomish emotions, but Zacarías made no commitment.
+
+Found a ledger of heavy maritime losses and unpaid bills. Completed the dead Eric's **knowledge-transfer blood ritual**, receiving a vision of a key in a wine barrel, a concealed passage and a purple glow. The source of the vision was unknown.
+
+## Chapter 11 — The Stolen Souls
+
+Questioned Elena about the family's losses and succession during an intimate encounter and took **eight rubies** from her clothing. Found the key in the cellar barrel. Later captured and magically restrained in the ritual chamber alongside an unconscious Elira; escaped with the party without seeing the ritual's outcome. No fall to 0 HP was established.
+
+## Chapter 12 — The House in the Mist
+
+Wanted after the Argenta affair, he hoped to reconnect with his gnomish roots. Spoke with the injured horse **James Buster**, whose fragmented account suggested an attack in the fog. Suggested Tidus bite the dying Agatha; after a heated argument and a punch, he apologized for his hurtful words. Used an illusion to change his appearance near the wanted notices.
+
+Took a runed amber fragment from a box near the wreck. His raven recovered the white feather when the wind carried it away. At the Durst house, persuaded Buster to shelter on the porch and summoned a hare to keep him company. No fall to 0 HP was documented.
+
+## Chapter 13 — The Forbidden Library
+
+Kicked a wolf's head taken from a suit of armor and suffered a reflected blow, revealing the house's protection against damage to its property. Reassured Buster outside and used a jewel as a pendulum to seek contact with unseen presences; a spectral hand briefly appeared. During Nixira's attempt at contact, the cord burned away and Zacarías was seized by pain.
+
+Helped solve the library's musical puzzle, recognizing a dangerous arcane key before the barrier opened. Warned that the hidden library's books were cursed. The party found a letter from **Strahd von Zarovich** alleging sacrifice and torture, but did not verify its claims. The children remained unreleased and the sisters missing. No fall to 0 HP was documented.
+
+## Chapter 14 — The Hidden Floor
+
+While Tidus slept, quietly took ten gold from his pockets. Recognized a magical storm associated with memory erasure and concealed his religious objects and grimoire; its source and actual effects remained unknown. Sent his bat to investigate the apparent baby in the cradle, sensing puzzle fragments instead. Joined Tidus on the other side of the bedroom divide, where a force threw him back; Nixira healed him.
+
+Tidus read his cards: the reading suggested an uncertain reprieve from death, associated his eventual death with flames, and left him feeling compelled to protect Tidus and give him valuable coins. He gave Tidus two platinum pieces; the effect's precise terms remain unclear. On the hidden floor, he and Nixira found Tidus after armor struck him down, and Nixira stabilized him. Rose and Thorn remained trapped, and neither missing sister was found. No fall to 0 HP was confirmed for Zacarías.
+
+## Chapter 15 — The House Gives Chase
+
+Helped open the five-spirit seal; his cobra became a wooden, flowering attachment at his stump, changing their bond. Hid inside Alfonso's armor on the descent and found seven apparently recent, blood-drained bodies in red robes.
+
+After the ritual summoned a creature, Alfonso held it back while the party fled. Zacarías used magic to carry the party farther away and fire against a barrage of bones. He slipped beneath James Buster to avoid a final blow; the horse survived badly wounded. No fall to 0 HP was confirmed.

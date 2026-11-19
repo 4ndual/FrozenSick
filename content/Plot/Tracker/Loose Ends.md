@@ -98,3 +98,34 @@
 
 - **What:** The undead guard at the Prison Tortuga exit disappeared into the missing recording gap.
 - **Status:** Outcome unknown.
+
+## Argenta Fallout
+
+- **What:** Warrants circulate for all three founders. Elira was shown as Septimus's pregnant wife and appeared still enchanted; her safety and consent are uncertain.
+- **Status:** Serafina's reported suicide was not witnessed. Octavius and Elena remained behind when the party fled; their fates are unknown. The extent of the revolutionary network's compromise is unknown.
+- **Follow-up:** The party interviewed Elira and explored the second floor and cellar. The hollow book's former contents and any connection to the deaths remain unknown.
+
+## The Guild's Obligations
+
+- **What:** The Great Guild had an important message for Nixira; delivery was pending in Chapter 10. The 7,000-gold headquarters loan remained in repayment.
+- **Status:** No later delivery or repayment is established in these chapters.
+
+## Agatha's Letter
+
+- **What:** Agatha asked that a letter reach her daughters. Tidus opened it after her death.
+- **Status:** Neither Vermilion nor Dorotea has been found, and delivery is not shown.
+
+## Durst House Follow-up — Chapters 13–14
+
+- **Children:** Rose and Thorn remain unfreed, despite the party reaching the concealed upper floor.
+- **Mill key and scrolls:** The lock for Nixira's mill-emblem key is unknown; the final distribution of the three recovered spell scrolls was deferred.
+- **Armor and hidden wood:** The armor that struck Tidus down has not been shown destroyed. A hollow-sounding section of wood remains unopened.
+- **Wardrobe warnings:** Unidentified writers plead for escape, warn against trusting others, and urge readers never to approach a well. Their identities and the well's location remain unknown.
+
+## Update After Chapter 15
+
+- **Armor:** The armor became the party's ally Alfonso and was destroyed while delaying the summoned creature. The fate of the entity animating it is unknown.
+- **Children:** Their remains were burned, beginning their release, but Rose and Thorn remain bound; Thorn said a purple gem must be destroyed at Strahd's altar.
+- **Creature and house:** The party escaped the summoned creature, which was not shown defeated. The house rose and moved away amid mist and a purple dimensional effect.
+- **White-haired figure:** A figure appeared near the escape and the travelers heard a promise that they would meet again. The figure's identity is unconfirmed.
+- **Tidus's connection:** The children described a young person with a faint connection to Tidus who apparently escaped an earlier party. The relationship is unknown.

@@ -185,3 +185,7 @@ Zacarias's pact grants power, protection, and a steady stream of costly conseque
 Spirits trapped beneath the volcanic lake under the demon's lair. Their full role is still unknown.
 
 
+
+### The Durst House Ritual — Chapter 15
+
+Notes in the cult's quarters describe a ritual requiring forty souls to summon a voracious creature called Strahd's astral stomach. The party reached the ritual chamber as the summoning was completed and escaped the creature. Forty is the ritual's stated requirement, not a verified count of deaths.
